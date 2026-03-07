@@ -2,7 +2,7 @@
 title: "FALLS PREVENTION | DIZZINESS | Physio to Home"
 description: "Dizziness is one of the strongest predictors of falls in older adults — and it's often treatable. North Tasmania's home physiotherapist explains the causes, red flags, and what to do."
 author: "Michael Ghattas, Physiotherapist"
-date: "2/27/2026"
+date: "2026-02-27"
 image: /images/blog/falls-prevention-dizziness.jpg
 tags: ["falls prevention", "dizziness", "vertigo", "BPPV", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "vestibular"]
 ---

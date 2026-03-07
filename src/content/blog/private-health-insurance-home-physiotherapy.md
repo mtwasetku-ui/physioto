@@ -2,7 +2,7 @@
 title: "PRIVATE HEALTH INSURANCE | HOME PHYSIOTHERAPY | Physio to Home"
 description: "Does your private health cover home physiotherapy visits? Physio to Home explains how extras cover works, what to check with your fund, and how to get the most from your entitlements in North Tasmania."
 author: "Michael Ghattas, Physiotherapist"
-date: "3/6/2026"
+date: "2026-03-06"
 image: /images/blog/private-health-insurance-home-physiotherapy.jpg
 
 tags: ["private health insurance", "extras cover", "physiotherapy rebate", "funded physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "health insurance physio"]

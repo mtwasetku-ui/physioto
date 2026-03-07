@@ -2,7 +2,7 @@
 title: "STROKE REHABILITATION | HOME PHYSIOTHERAPY | Physio to Home"
 description: "Returning home after a stroke is just the beginning of recovery. North Tasmania's home physiotherapist explains what stroke rehabilitation involves — and why consistency at home is what drives the best outcomes."
 author: "Michael Ghattas, Physiotherapist"
-date: "3/6/2026"
+date: "2026-03-06"
 image: /images/blog/stroke-rehabilitation-home-physiotherapy.jpg
 
 tags: ["stroke rehabilitation", "stroke recovery", "neurological physiotherapy", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "hemiplegia", "neuroplasticity"]

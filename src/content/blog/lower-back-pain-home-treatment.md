@@ -2,7 +2,7 @@
 title: "LOWER BACK PAIN | HOME TREATMENT | Physio to Home"
 description: "Lower back pain in older adults — what you can safely treat at home and when to see a physio. Honest, evidence-based advice from a North Tasmania home physiotherapist."
 author: "Michael Ghattas, Physiotherapist"
-date: "2/27/2026"
+date: "2026-02-27"
 image: /images/blog/lower-back-pain-home-treatment.jpg
 
 tags: ["lower back pain", "home treatment", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "chronic pain", "musculoskeletal"]

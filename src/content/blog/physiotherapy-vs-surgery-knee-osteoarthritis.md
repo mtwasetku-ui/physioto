@@ -2,7 +2,7 @@
 title: "PHYSIOTHERAPY VS SURGERY FOR KNEE OSTEOARTHRITIS | Physio to Home"
 description: "Should you have knee surgery or try physiotherapy first? The evidence might surprise you. North Tasmania's home physiotherapist compares the outcomes, the risks, and what the research actually says."
 author: "Michael Ghattas, Physiotherapist"
-date: "3/6/2026"
+date: "2026-03-06"
 image: /images/blog/physiotherapy-vs-surgery-knee-osteoarthritis.jpg
 
 tags: ["physiotherapy vs surgery knee", "knee replacement decision", "knee arthroscopy evidence", "knee OA treatment options", "avoid knee surgery", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "knee osteoarthritis treatment", "conservative vs surgical"]

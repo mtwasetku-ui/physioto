@@ -2,7 +2,7 @@
 title: "HIP FRACTURE REHABILITATION | HOME PHYSIOTHERAPY | Physio to Home"
 description: "Hip fracture is one of the most serious injuries an older Australian can sustain. North Tasmania's home physiotherapist explains the rehabilitation journey — from hospital discharge to regaining independence at home."
 author: "Michael Ghattas, Physiotherapist"
-date: "3/6/2026"
+date: "2026-03-06"
 image: /images/blog/hip-fracture-rehabilitation-home-physiotherapy.jpg
 
 tags: ["hip fracture", "hip fracture rehabilitation", "neck of femur fracture", "post-surgery recovery", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "falls prevention", "aged care"]

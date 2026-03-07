@@ -2,7 +2,7 @@
 title: "CHRONIC PAIN | HOME PHYSIOTHERAPY | Physio to Home"
 description: "Chronic pain affects 3.6 million Australians. North Tasmania's home physiotherapist explains how physio helps — and exactly what to expect from your first visit."
 author: "Michael Ghattas, Physiotherapist"
-date: "2/27/2026"
+date: "2026-02-27"
 image: /images/blog/chronic-pain-home-physiotherapy.jpg
 tags: ["chronic pain", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "pain management", "musculoskeletal"]
 ---

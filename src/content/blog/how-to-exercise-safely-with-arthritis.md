@@ -2,7 +2,7 @@
 title: "HOW TO EXERCISE SAFELY WITH ARTHRITIS | Physio to Home"
 description: "Should you exercise with arthritis? Yes — and the evidence is clear on how. North Tasmania's home physiotherapist explains the exact principles, the exercises that help most, and the common mistakes that make arthritis pain worse."
 author: "Michael Ghattas, Physiotherapist"
-date: "3/6/2026"
+date: "2026-03-06"
 image: /images/blog/how-to-exercise-safely-with-arthritis.jpg
 tags: ["exercise with arthritis", "arthritis exercise safe", "how to exercise arthritis", "osteoarthritis exercise", "arthritis home exercise", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "joint pain exercise", "arthritis self management"]
 ---

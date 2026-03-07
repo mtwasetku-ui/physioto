@@ -2,7 +2,7 @@
 title: "ROTATOR CUFF | SHOULDER REHABILITATION | Physio to Home"
 description: "Rotator cuff injuries are one of the most common causes of shoulder pain in adults. North Tasmania's home physiotherapist explains the injury, the evidence, and exactly what rehabilitation involves."
 author: "Michael Ghattas, Physiotherapist"
-date: "3/6/2026"
+date: "2026-03-06"
 image: /images/blog/rotator-cuff-shoulder-rehabilitation.jpg
 
 tags: ["rotator cuff", "shoulder pain", "shoulder rehabilitation", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "musculoskeletal", "shoulder injury"]
