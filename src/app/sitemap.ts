@@ -45,12 +45,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+  const blogPages: MetadataRoute.Sitemap = posts
+    .filter((post) => post.date && !isNaN(new Date(post.date).getTime()))
+    .map((post) => ({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
 
   return [...staticPages, ...blogPages]
 }
