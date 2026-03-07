@@ -86,7 +86,7 @@ function ChevronDown({ open }: { open: boolean }) {
   );
 }
 
-function ServiceCard({ service }) {
+function ServiceCard({ service }: { service: typeof services[0] }) {
   const [open, setOpen] = useState(false);
   return (
     <div style={{
