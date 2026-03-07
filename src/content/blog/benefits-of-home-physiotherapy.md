@@ -2,7 +2,7 @@
 title: "The Benefits of Home Physiotherapy"
 excerpt: "Discover why more Tasmanians are choosing in-home physiotherapy over clinic visits — and how it leads to faster, more effective recovery."
 author: "Michael Ghattas"
-date: "2025-03-01"
+date: "2026-02-27"
 category: "Physiotherapy Tips"
 featured: true
 ---
