@@ -127,14 +127,14 @@ export default function BookingClient() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">How It Works</h2>
           <p className="text-gray-500 text-center mb-10">
-            Getting started is straightforward. Here's what to expect from booking through to your first visit.
+            Getting started is straightforward. Here is what to expect from booking through to your first visit.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { step: '1', title: 'Submit a Request', desc: 'Fill in the booking form below with your details, preferred service, and a convenient time.' },
-              { step: '2', title: 'We Confirm', desc: "We'll call or email you within one business day to confirm your appointment and answer any questions." },
+              { step: '2', title: 'We Confirm', desc: 'We will call or email you within one business day to confirm your appointment and answer any questions.' },
               { step: '3', title: 'We Come to You', desc: 'Michael visits you at home at the agreed time, bringing all necessary equipment.' },
-              { step: '4', title: 'Your Treatment Plan', desc: 'After your initial assessment, you'll receive a personalised plan tailored to your goals and needs.' },
+              { step: '4', title: 'Your Treatment Plan', desc: 'After your initial assessment, you will receive a personalised plan tailored to your goals and needs.' },
             ].map(({ step, title, desc }) => (
               <div key={step} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                 <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">{step}</div>
@@ -157,13 +157,13 @@ export default function BookingClient() {
                   Icon: Phone,
                   title: 'Phone',
                   content: <a href="tel:1300433233" className="text-gray-600 hover:text-blue-600 transition-colors">1300 433 233</a>,
-                  sub: 'Mon–Fri: 8am – 6pm, Sat: 9am – 2pm',
+                  sub: 'Mon-Fri: 8am - 6pm, Sat: 9am - 2pm',
                 },
                 {
                   Icon: Mail,
                   title: 'Email',
                   content: <a href="mailto:info@physiotohome.com.au" className="text-gray-600 hover:text-blue-600 transition-colors">info@physiotohome.com.au</a>,
-                  sub: "We'll respond within 24 hours",
+                  sub: 'We will respond within 24 hours',
                 },
                 {
                   Icon: MapPin,
@@ -174,7 +174,7 @@ export default function BookingClient() {
                 {
                   Icon: Clock,
                   title: 'Availability',
-                  content: <p className="text-gray-600">Mon–Fri: 8am – 6pm</p>,
+                  content: <p className="text-gray-600">Mon-Fri: 8am - 6pm</p>,
                   sub: 'Saturday appointments available on request',
                 },
               ].map(({ Icon, title, content, sub }) => (
@@ -269,7 +269,7 @@ export default function BookingClient() {
               </Button>
 
               <p className="text-center text-sm text-gray-500">
-                We'll confirm your appointment by phone or email within one business day.
+                We will confirm your appointment by phone or email within one business day.
               </p>
             </form>
           </div>
