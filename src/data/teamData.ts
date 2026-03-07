@@ -29,7 +29,7 @@ export const teamMembers: TeamMember[] = [
     id: '2',
     name: 'Neveen Wahba',
     title: 'Practice Manager',
-    qualifications: 'Former Physio',
+    qualifications: 'Former Physio, Admin',
     specialties: 'Team Coordination and Staff Support',
     bio: 'Our Practice Manager ensures the clinic runs smoothly and efficiently while providing a welcoming experience for every patient. They coordinate appointments, manage daily operations, and support both clients and clinicians to ensure high-quality care. With a strong focus on organisation and patient service, they help create a friendly and professional environment where patients feel supported throughout their physiotherapy journey.',
     photo: '/team/neveen.webp',  
