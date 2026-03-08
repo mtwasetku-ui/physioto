@@ -87,26 +87,12 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
-        .serif { font-family: 'Playfair Display', Georgia, serif; }
-        .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-        .fade-up.in { opacity: 1; transform: none; }
-        .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
-        .card-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-        .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.15); }
-        .dots { background-image: radial-gradient(circle, currentColor 1px, transparent 1px); background-size: 24px 24px; }
-        .hero-fade { background: linear-gradient(108deg, rgba(10,32,46,.93) 0%, rgba(10,32,46,.78) 50%, rgba(10,32,46,.4) 100%); }
-        .divider { width:48px; height:3px; background:linear-gradient(90deg,#0891b2,#06b6d4); border-radius:2px; margin-bottom:1.25rem; }
-        .service-card-overlay { background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%); }
-        .service-card img { transition: transform 0.5s ease; }
-        .service-card:hover img { transform: scale(1.05); }
-      `}</style>
+     
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
-          <Image: /image/blog/mobile-physiotherapy-home-visits.jpg" alt="Physiotherapy at home" fill className="object-cover" priority />
+<Image src="/image/blog/mobile-physiotherapy-home-visits.jpg" alt="Physiotherapy at home" fill className="object-cover" priority />   
           <div className="absolute inset-0 hero-fade" />
         </div>
         <div className="absolute inset-0 dots text-white/5 pointer-events-none" />
