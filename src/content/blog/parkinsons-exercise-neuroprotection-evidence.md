@@ -3,6 +3,8 @@ title: "PARKINSON'S DISEASE & EXERCISE: THE NEUROPROTECTION EVIDENCE | Physio to
 description: "Emerging research suggests exercise may not just manage Parkinson's symptoms — it may slow the disease itself. North Tasmania's home physiotherapist examines the neuroprotection evidence and what it means for treatment."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-03-06"
+image: /image/blog/parkinsons-exercise-neuroprotection-evidence.jpg
+
 tags: ["Parkinson's disease exercise", "neuroprotection Parkinson's", "exercise neuroscience", "Parkinson's physiotherapy", "BDNF Parkinson's", "high intensity exercise Parkinson's", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "neuroplasticity"]
 ---
 
