@@ -3,7 +3,7 @@ title: "FALLS PREVENTION | FOOTWEAR | Physio to Home"
 description: "Up to 50% of falls in older adults involve inappropriate footwear. North Tasmania physiotherapist Michael Ghattas reveals which shoes are dangerous — and what to wear instead."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-02-27"
-image: /images/blog/falls-prevention-footwear.jpg
+image: /image/blog/falls-prevention-footwear.jpg
 tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "balance"]
 ---
 
