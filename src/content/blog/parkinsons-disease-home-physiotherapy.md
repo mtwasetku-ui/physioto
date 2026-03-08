@@ -3,7 +3,7 @@ title: "PARKINSON'S DISEASE | HOME PHYSIOTHERAPY | Physio to Home"
 description: "Physiotherapy is one of the most evidence-supported treatments for Parkinson's disease. North Tasmania's home physiotherapist explains what it involves — and why home delivery makes it more effective."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-03-06"
-image: /images/blog/parkinsons-disease-home-physiotherapy.jpg
+image: /image/blog/parkinsons-disease-home-physiotherapy.jpg
 
 tags: ["Parkinson's disease", "neurological physiotherapy", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "movement disorders", "falls prevention"]
 ---
