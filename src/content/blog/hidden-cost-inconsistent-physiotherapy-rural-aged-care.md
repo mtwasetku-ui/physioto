@@ -3,7 +3,7 @@ title: "THE HIDDEN COST OF INCONSISTENT PHYSIOTHERAPY IN RURAL AGED CARE | Physi
 description: "Inconsistent physiotherapy doesn't look like a crisis — it looks like slow decline. A North Tasmania home physiotherapist examines what the evidence says about treatment gaps, the cascade of deconditioning, and what it costs the system and the individual."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-03-06"
-image: /images/blog/hidden-cost-inconsistent-physiotherapy-rural-aged-care.jpg
+image: /image/blog/hidden-cost-inconsistent-physiotherapy-rural-aged-care.jpg
 
 tags: ["rural aged care", "physiotherapy consistency", "deconditioning older adults", "aged care physiotherapy", "rural health equity", "home care physiotherapy", "physiotherapy access", "Physio to Home", "North Tasmania", "health policy"]
 ---
