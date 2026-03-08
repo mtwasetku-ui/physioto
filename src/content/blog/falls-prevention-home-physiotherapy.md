@@ -3,7 +3,7 @@ title: "FALLS PREVENTION | HOME PHYSIOTHERAPY | Physio to Home"
 description: "Falls are the #1 cause of injury hospitalisation in older Australians. North Tasmania's home physiotherapist explains how to prevent them — without leaving home."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-02-25"
-image: /images/blog/falls-prevention-home-physiotherapy.jpg
+image: /image/blog/falls-prevention-home-physiotherapy.jpg
 tags: ["falls prevention", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "balance", "aged care"]
 ---
 
