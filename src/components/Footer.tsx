@@ -92,8 +92,8 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-400">© {currentYear} Physio to Home. All rights reserved.</p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a>
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</Link>
+              <Link href="/terms-of-service" className="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>
