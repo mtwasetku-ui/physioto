@@ -3,7 +3,7 @@ title: "Chronic Pain in Rural Tasmania: Why Distance Shouldn't Decide Your Care"
 description: "Living with chronic pain in regional or rural Tasmania? Learn how in-home physiotherapy from Physio to Home removes the barriers that stop people from getting the care they need."
 author: "Michael Ghattas, Physiotherapist"
 date: "2025-01-01"
-image: /images/blog/chronic-pain-rural-tasmania.jpg
+image: /image/blog/chronic-pain-rural-tasmania.jpg
 tags: ["chronic pain", "rural Tasmania", "in-home physiotherapy", "Launceston", "NDIS", "home care physio"]
 ---
 
