@@ -56,7 +56,7 @@ const services = [
   {
     id: 'musculoskeletal',
     name: 'Musculoskeletal Pain',
-    photo: 'https://images.unsplash.com/photo-1620815952154-0f6f1b5d47e7?auto=format&fit=crop&w=800&q=80',
+    photo: 'image/blog/neck-pain-cervicogenic-headache-home-physiotherapy.jpg',
     summary: 'Back, neck, hip, shoulder and joint pain treated with hands-on manual therapy and targeted exercise, adapted to your home environment.',
     detail: 'We assess and treat the full spectrum of musculoskeletal conditions — from acute injuries to long-standing chronic pain. Treatment is tailored to your home, using your furniture, floor space, and daily routines as part of the rehabilitation process.',
     conditions: ['Lower back pain', 'Neck pain & stiffness', 'Shoulder impingement', 'Hip & knee pain', 'Sciatica', 'Sports injuries'],
@@ -64,7 +64,7 @@ const services = [
   {
     id: 'post-surgery',
     name: 'Post-Surgery Rehabilitation',
-    photo: 'https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?auto=format&fit=crop&w=800&q=80',
+    photo: 'image/blog/post-surgery-knee-replacement.jpg',
     summary: 'Expert recovery support following joint replacements, fractures, and orthopaedic surgery — progressing you safely toward full independence.',
     detail: 'Recovering at home after surgery is most effective when guided by an experienced physiotherapist who can see your actual environment. We develop a progressive program that rebuilds strength, mobility, and confidence — right where you live.',
     conditions: ['Hip replacement', 'Knee replacement', 'Rotator cuff repair', 'Spinal surgery', 'Fracture recovery', 'ACL reconstruction'],
@@ -72,7 +72,7 @@ const services = [
   {
     id: 'falls-prevention',
     name: 'Falls Prevention',
-    photo: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
+    photo: 'image/blog/falls-prevention-dizziness.jpg',
     summary: 'Comprehensive balance and strength assessment in your own home, followed by a structured program designed to meaningfully reduce falls risk.',
     detail: 'Falls are a leading cause of injury in older Australians — but most are preventable. We assess your balance, strength, gait, and home hazards, then design a personalised program to address your specific risk factors.',
     conditions: ['Balance impairment', 'Dizziness & vertigo', 'Recurrent falls', 'Fear of falling', "Parkinson's disease", 'Post-stroke balance issues'],
@@ -80,7 +80,7 @@ const services = [
   {
     id: 'neurological',
     name: 'Neurological Rehabilitation',
-    photo: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80',
+    photo: 'image/blog/stroke-rehabilitation-home-physiotherapy.jpg',
     summary: "Specialised rehabilitation for stroke, Parkinson's disease, multiple sclerosis, and other neurological conditions — delivered at home.",
     detail: 'Neurological rehabilitation requires consistency and a familiar environment. Treating you at home allows us to address the real functional challenges you face each day. We use evidence-based techniques to maximise your independence and quality of life.',
     conditions: ['Stroke recovery', "Parkinson's disease", 'Multiple sclerosis', 'Acquired brain injury', 'Cervicogenic dizziness', 'Peripheral neuropathy'],
@@ -88,7 +88,7 @@ const services = [
   {
     id: 'aged-care',
     name: 'Aged Care & Mobility',
-    photo: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
+    photo: 'image/blog/parkinsons-disease-home-physiotherapy.jpg',
     summary: 'Compassionate, patient-centred physiotherapy for older Australians — supporting independence, dignity, and quality of life at home.',
     detail: 'We understand that maintaining independence is what matters most to older Australians and their families. Our aged care physiotherapy addresses mobility, strength, pain, and daily function — helping you or your loved one stay safely at home for longer.',
     conditions: ['Mobility decline', 'Osteoporosis', 'Osteoarthritis', 'General deconditioning', 'Aged care assessments', 'Home exercise programs'],
@@ -96,7 +96,7 @@ const services = [
   {
     id: 'chronic-pain',
     name: 'Chronic Pain Management',
-    photo: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80',
+    photo: 'image/blog/chronic-pain-rural-tasmania.jpg',
     summary: 'Evidence-based approaches to managing persistent pain, restoring function, and improving quality of life — without leaving home.',
     detail: 'Chronic pain is complex, but manageable. We combine hands-on treatment, graded exercise, education, and pain science to help you understand and gradually overcome persistent pain.',
     conditions: ['Fibromyalgia', 'Chronic lower back pain', 'Complex regional pain', 'Persistent joint pain', 'Post-COVID fatigue', 'Pain sensitisation'],
