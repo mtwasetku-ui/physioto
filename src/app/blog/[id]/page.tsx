@@ -290,10 +290,6 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
 
   return (
     <div style={{ minHeight: '100vh', background: '#fff', paddingBottom: 80 }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
-      `}</style>
-
       {/* Hero */}
       <div style={{ width: '100%', height: 'clamp(320px, 50vh, 520px)', position: 'relative', background: '#0f172a' }}>
         {post.image && (
