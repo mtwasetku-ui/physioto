@@ -3,7 +3,7 @@ title: "POST-SURGERY RECOVERY | HIP REPLACEMENT | Physio to Home"
 description: "Had a hip replacement in Tasmania? Michael Ghattas explains recovery week by week — from Day 1 at home to 6 months — including precautions, exercises, and funding."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-02-27"
-image: /images/blog/post-surgery-hip-replacement.jpg
+image: /image/blog/post-surgery-hip-replacement.jpg
 
 tags: ["post-surgery recovery", "hip replacement", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "rehabilitation", "total hip arthroplasty"]
 ---
