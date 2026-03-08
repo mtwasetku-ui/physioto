@@ -3,7 +3,7 @@ title: "KNEE OSTEOARTHRITIS | HOME PHYSIOTHERAPY | Physio to Home"
 description: "Knee osteoarthritis affects 1 in 5 Australians over 45. North Tasmania's home physiotherapist explains what actually works — and how to manage it without leaving home."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-03-06"
-image: /images/blog/knee-osteoarthritis-home-physiotherapy.jpg
+image: /image/blog/knee-osteoarthritis-home-physiotherapy.jpg
 
 tags: ["knee osteoarthritis", "knee pain", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "arthritis", "joint pain"]
 ---
