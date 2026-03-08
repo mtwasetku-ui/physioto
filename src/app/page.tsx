@@ -87,12 +87,11 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
-     
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
-<Image src="/image/blog/mobile-physiotherapy-home-visits.jpg" alt="Physiotherapy at home" fill className="object-cover" priority />   
+          <Image src="/image/blog/mobile-physiotherapy-home-visits.jpg" alt="Physiotherapy at home" fill className="object-cover" priority />
           <div className="absolute inset-0 hero-fade" />
         </div>
         <div className="absolute inset-0 dots text-white/5 pointer-events-none" />
