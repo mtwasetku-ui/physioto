@@ -1,11 +1,61 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+
+// Map condition label → blog slug (null = no matching post, renders as plain text)
+const CONDITION_LINKS: Record<string, string | null> = {
+  // Musculoskeletal
+  'Lower back pain':          'lower-back-pain-home-treatment',
+  'Neck pain & stiffness':    'neck-pain-cervicogenic-headache-home-physiotherapy',
+  'Shoulder impingement':     'rotator-cuff-shoulder-rehabilitation',
+  'Hip & knee pain':          'knee-osteoarthritis-home-physiotherapy',
+  'Sciatica':                 'sciatica-lumbar-radiculopathy-home-physiotherapy',
+  'Sports injuries':          null,
+
+  // Post-surgery
+  'Hip replacement':          'post-surgery-hip-replacement',
+  'Knee replacement':         'post-surgery-knee-replacement',
+  'Rotator cuff repair':      'rotator-cuff-shoulder-rehabilitation',
+  'Spinal surgery':           null,
+  'Fracture recovery':        'hip-fracture-rehabilitation-home-physiotherapy',
+  'ACL reconstruction':       null,
+
+  // Falls prevention
+  'Balance impairment':       'how-to-improve-balance-at-home-older-adults',
+  'Dizziness & vertigo':      'falls-prevention-dizziness',
+  'Recurrent falls':          'falls-prevention-home-physiotherapy',
+  'Fear of falling':          'falls-risk-ageing-parents-family-guide',
+  "Parkinson's disease":      'parkinsons-disease-home-physiotherapy',
+  'Post-stroke balance issues':'stroke-rehabilitation-home-physiotherapy',
+
+  // Neurological
+  'Stroke recovery':          'stroke-rehabilitation-home-physiotherapy',
+  'Multiple sclerosis':       'multiple-sclerosis-home-physiotherapy',
+  'Acquired brain injury':    null,
+  'Cervicogenic dizziness':   'cervicogenic-dizziness-misdiagnosed-clinical-overview',
+  'Peripheral neuropathy':    null,
+
+  // Aged care
+  'Mobility decline':         'how-to-improve-balance-at-home-older-adults',
+  'Osteoporosis':             'osteoporosis-bone-health-home-physiotherapy',
+  'Osteoarthritis':           'osteoarthritis-home-physiotherapy',
+  'General deconditioning':   'post-covid-fatigue-deconditioning-home-physiotherapy',
+  'Aged care assessments':    'my-aged-care-home-physiotherapy-funding',
+  'Home exercise programs':   'benefits-of-home-physiotherapy',
+
+  // Chronic pain
+  'Fibromyalgia':             null,
+  'Chronic lower back pain':  'lower-back-pain-home-treatment',
+  'Complex regional pain':    null,
+  'Persistent joint pain':    'how-to-exercise-safely-with-arthritis',
+  'Post-COVID fatigue':       'post-covid-fatigue-deconditioning-home-physiotherapy',
+  'Pain sensitisation':       'chronic-pain-home-physiotherapy',
+};
 
 const services = [
   {
     id: 'musculoskeletal',
     name: 'Musculoskeletal Pain',
-    icon: '🦴',
     photo: 'https://images.unsplash.com/photo-1620815952154-0f6f1b5d47e7?auto=format&fit=crop&w=800&q=80',
     summary: 'Back, neck, hip, shoulder and joint pain treated with hands-on manual therapy and targeted exercise, adapted to your home environment.',
     detail: 'We assess and treat the full spectrum of musculoskeletal conditions — from acute injuries to long-standing chronic pain. Treatment is tailored to your home, using your furniture, floor space, and daily routines as part of the rehabilitation process.',
@@ -14,7 +64,6 @@ const services = [
   {
     id: 'post-surgery',
     name: 'Post-Surgery Rehabilitation',
-    icon: '🏥',
     photo: 'https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?auto=format&fit=crop&w=800&q=80',
     summary: 'Expert recovery support following joint replacements, fractures, and orthopaedic surgery — progressing you safely toward full independence.',
     detail: 'Recovering at home after surgery is most effective when guided by an experienced physiotherapist who can see your actual environment. We develop a progressive program that rebuilds strength, mobility, and confidence — right where you live.',
@@ -23,7 +72,6 @@ const services = [
   {
     id: 'falls-prevention',
     name: 'Falls Prevention',
-    icon: '🧘',
     photo: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
     summary: 'Comprehensive balance and strength assessment in your own home, followed by a structured program designed to meaningfully reduce falls risk.',
     detail: 'Falls are a leading cause of injury in older Australians — but most are preventable. We assess your balance, strength, gait, and home hazards, then design a personalised program to address your specific risk factors.',
@@ -32,7 +80,6 @@ const services = [
   {
     id: 'neurological',
     name: 'Neurological Rehabilitation',
-    icon: '🧠',
     photo: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80',
     summary: "Specialised rehabilitation for stroke, Parkinson's disease, multiple sclerosis, and other neurological conditions — delivered at home.",
     detail: 'Neurological rehabilitation requires consistency and a familiar environment. Treating you at home allows us to address the real functional challenges you face each day. We use evidence-based techniques to maximise your independence and quality of life.',
@@ -41,7 +88,6 @@ const services = [
   {
     id: 'aged-care',
     name: 'Aged Care & Mobility',
-    icon: '👴',
     photo: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
     summary: 'Compassionate, patient-centred physiotherapy for older Australians — supporting independence, dignity, and quality of life at home.',
     detail: 'We understand that maintaining independence is what matters most to older Australians and their families. Our aged care physiotherapy addresses mobility, strength, pain, and daily function — helping you or your loved one stay safely at home for longer.',
@@ -50,7 +96,6 @@ const services = [
   {
     id: 'chronic-pain',
     name: 'Chronic Pain Management',
-    icon: '🫀',
     photo: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80',
     summary: 'Evidence-based approaches to managing persistent pain, restoring function, and improving quality of life — without leaving home.',
     detail: 'Chronic pain is complex, but manageable. We combine hands-on treatment, graded exercise, education, and pain science to help you understand and gradually overcome persistent pain.',
@@ -86,27 +131,52 @@ function ChevronDown({ open }: { open: boolean }) {
   );
 }
 
+function ConditionItem({ label }: { label: string }) {
+  const slug = CONDITION_LINKS[label];
+  return (
+    <li style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11.5, color: '#475569' }}>
+      <CheckCircle size={11} />
+      {slug ? (
+        <Link
+          href={`/blog/${slug}`}
+          style={{ color: '#0891b2', textDecoration: 'none', fontWeight: 500 }}
+          onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
+          onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
+        >
+          {label}
+        </Link>
+      ) : (
+        <span>{label}</span>
+      )}
+    </li>
+  );
+}
+
 function ServiceCard({ service }: { service: typeof services[0] }) {
   const [open, setOpen] = useState(false);
   return (
     <div style={{
-      background: '#fff', borderRadius: 20, overflow: 'hidden',
+      borderRadius: 20, overflow: 'hidden',
       border: '1px solid #f1f5f9', boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
       transition: 'box-shadow 0.2s', display: 'flex', flexDirection: 'column'
     }}
       onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)'}
       onMouseLeave={e => e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)'}
     >
-      <div style={{ position: 'relative', height: 200, overflow: 'hidden' }}>
+      <div style={{ position: 'relative', height: 260, overflow: 'hidden' }}>
         <img src={service.photo} alt={service.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 50%, transparent 100%)' }} />
-        <div style={{ position: 'absolute', bottom: 14, left: 18, right: 18, display: 'flex', alignItems: 'flex-end', gap: 10 }}>
-          <span style={{ fontSize: 28 }}>{service.icon}</span>
-          <h3 style={{ margin: 0, color: '#fff', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 19, fontWeight: 600, lineHeight: 1.2 }}>{service.name}</h3>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.1) 100%)' }} />
+        <div style={{ position: 'absolute', bottom: 18, left: 18, right: 18 }}>
+          <h3 style={{ margin: '0 0 8px', color: '#fff', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 19, fontWeight: 600, lineHeight: 1.2 }}>
+            {service.name}
+          </h3>
+          <p style={{ margin: 0, color: 'rgba(255,255,255,0.82)', fontSize: 13, lineHeight: 1.6 }}>
+            {service.summary}
+          </p>
         </div>
       </div>
-      <div style={{ padding: '20px 22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-        <p style={{ margin: '0 0 14px', color: '#64748b', fontSize: 13.5, lineHeight: 1.65 }}>{service.summary}</p>
+
+      <div style={{ padding: '14px 18px', background: '#fff' }}>
         <button onClick={() => setOpen(o => !o)} style={{
           display: 'inline-flex', alignItems: 'center', gap: 5,
           background: 'none', border: 'none', cursor: 'pointer',
@@ -120,9 +190,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
             <p style={{ margin: '0 0 8px', fontSize: 10, fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Conditions we treat</p>
             <ul style={{ margin: 0, padding: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 8px', listStyle: 'none' }}>
               {service.conditions.map(c => (
-                <li key={c} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11.5, color: '#475569' }}>
-                  <CheckCircle size={11} />{c}
-                </li>
+                <ConditionItem key={c} label={c} />
               ))}
             </ul>
           </div>
