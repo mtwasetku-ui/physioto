@@ -49,7 +49,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
  * each keyword links only once across the entire post.
  */
 function linkifyText(text: string, used: Set<string>): React.ReactNode {
-  // Sort keywords longest-first so specific phrases match before substrings
   const keywords = Object.keys(internalLinks).sort((a, b) => b.length - a.length)
 
   const segments: React.ReactNode[] = []
@@ -84,7 +83,7 @@ function linkifyText(text: string, used: Set<string>): React.ReactNode {
       <Link
         key={`${keyword}-${index}`}
         href={href}
-        className="text-blue-600 hover:text-blue-700 underline underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors"
+        style={{ color: '#0891b2', textDecoration: 'underline', textDecorationColor: '#bae6fd', textUnderlineOffset: 3 }}
       >
         {matched}
       </Link>
@@ -106,7 +105,7 @@ function renderInline(text: string, used: Set<string>): React.ReactNode {
     <>
       {parts.map((part, i) =>
         i % 2 === 1
-          ? <strong key={i}>{part}</strong>
+          ? <strong key={i} style={{ color: '#0f172a', fontWeight: 700 }}>{part}</strong>
           : <React.Fragment key={i}>{linkifyText(part, used)}</React.Fragment>
       )}
     </>
@@ -116,46 +115,160 @@ function renderInline(text: string, used: Set<string>): React.ReactNode {
 function renderMarkdown(content: string, currentSlug: string) {
   const lines = content.split('\n')
   const elements: React.ReactNode[] = []
-  // Track used keywords per post — shared across the whole render
   const used = new Set<string>()
-  // Never link to the current post
   Object.entries(internalLinks).forEach(([kw, slug]) => {
     if (slug === currentSlug || slug === `/blog/${currentSlug}`) used.add(kw)
   })
 
   let i = 0
+
   while (i < lines.length) {
     const line = lines[i]
 
+    // H1 — skip, shown in hero
+    if (line.startsWith('# ') && !line.startsWith('## ')) {
+      i++
+      continue
+    }
+
+    // H2
     if (line.startsWith('## ')) {
-      elements.push(<h2 key={i} className="text-2xl font-bold text-gray-900 mt-10 mb-4">{line.slice(3)}</h2>)
-    } else if (line.startsWith('### ')) {
-      elements.push(<h3 key={i} className="text-xl font-bold text-gray-900 mt-8 mb-3">{line.slice(4)}</h3>)
-    } else if (line.startsWith('**') && line.endsWith('**') && line.length > 4) {
-      elements.push(<p key={i} className="font-semibold text-gray-900 mb-2">{line.slice(2, -2)}</p>)
-    } else if (line.startsWith('- ')) {
+      elements.push(
+        <h2 key={i} style={{
+          fontFamily: "'Playfair Display', Georgia, serif",
+          fontSize: 'clamp(19px, 2.8vw, 24px)',
+          fontWeight: 700,
+          color: '#0f172a',
+          marginTop: 52,
+          marginBottom: 14,
+          paddingBottom: 12,
+          borderBottom: '2px solid #e0f2fe',
+          lineHeight: 1.3,
+        }}>
+          {line.slice(3)}
+        </h2>
+      )
+      i++
+      continue
+    }
+
+    // H3
+    if (line.startsWith('### ')) {
+      elements.push(
+        <h3 key={i} style={{
+          fontFamily: "'Playfair Display', Georgia, serif",
+          fontSize: 'clamp(16px, 2.2vw, 19px)',
+          fontWeight: 600,
+          color: '#0891b2',
+          marginTop: 32,
+          marginBottom: 8,
+          lineHeight: 1.35,
+        }}>
+          {line.slice(4)}
+        </h3>
+      )
+      i++
+      continue
+    }
+
+    // Horizontal rule — decorative divider
+    if (line.trim() === '---') {
+      elements.push(
+        <div key={i} style={{ margin: '44px 0', display: 'flex', alignItems: 'center', gap: 14 }}>
+          <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, transparent, #bae6fd)' }} />
+          <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#0891b2', flexShrink: 0 }} />
+          <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, #bae6fd, transparent)' }} />
+        </div>
+      )
+      i++
+      continue
+    }
+
+    // Standalone bold line (subheading)
+    if (line.startsWith('**') && line.endsWith('**') && line.length > 4 && !line.slice(2, -2).includes('**')) {
+      elements.push(
+        <p key={i} style={{
+          fontWeight: 700,
+          color: '#0f172a',
+          fontSize: 15.5,
+          marginBottom: 4,
+          marginTop: 22,
+          letterSpacing: '0.01em',
+        }}>
+          {line.slice(2, -2)}
+        </p>
+      )
+      i++
+      continue
+    }
+
+    // Bullet list
+    if (line.startsWith('- ')) {
       const listItems: string[] = []
       while (i < lines.length && lines[i].startsWith('- ')) {
         listItems.push(lines[i].slice(2))
         i++
       }
       elements.push(
-        <ul key={`list-${i}`} className="list-disc list-inside space-y-2 text-gray-700 mb-6 ml-4">
+        <ul key={`list-${i}`} style={{ margin: '4px 0 28px', padding: 0, listStyle: 'none' }}>
           {listItems.map((item, j) => (
-            <li key={j}>{renderInline(item, used)}</li>
+            <li key={j} style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: 12,
+              padding: '9px 12px',
+              background: j % 2 === 0 ? '#f8fafc' : '#fff',
+              borderRadius: 8,
+              fontSize: 16,
+              color: '#334155',
+              lineHeight: 1.65,
+            }}>
+              <span style={{
+                marginTop: 8,
+                width: 6,
+                height: 6,
+                borderRadius: '50%',
+                background: '#0891b2',
+                flexShrink: 0,
+              }} />
+              <span>{renderInline(item, used)}</span>
+            </li>
           ))}
         </ul>
       )
       continue
-    } else if (line.trim() === '') {
-      // skip blank lines
-    } else {
+    }
+
+    // Blank line
+    if (line.trim() === '') {
+      i++
+      continue
+    }
+
+    // Meta lines (author, date)
+    const isMetaLine = /^(Michael|Micheal)\s+Ghattas/.test(line) || /^\d+\/\d+\/\d+\s*·/.test(line)
+    if (isMetaLine) {
       elements.push(
-        <p key={i} className="text-gray-700 leading-relaxed mb-5">
+        <p key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 2, fontStyle: 'italic' }}>
           {renderInline(line, used)}
         </p>
       )
+      i++
+      continue
     }
+
+    // Body paragraph
+    elements.push(
+      <p key={i} style={{
+        color: '#374151',
+        fontSize: 16.5,
+        lineHeight: 1.9,
+        marginBottom: 22,
+        fontFamily: 'Georgia, serif',
+      }}>
+        {renderInline(line, used)}
+      </p>
+    )
     i++
   }
 
@@ -167,7 +280,6 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
   const post = getPostBySlug(id)
   if (!post) notFound()
 
-  // Resolve related posts from slugs in frontmatter (max 2)
   const relatedPosts = post.related_posts
     .slice(0, 2)
     .map((slug) => getPostBySlug(slug))
@@ -177,82 +289,194 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
     new Date(d).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })
 
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <div style={{ minHeight: '100vh', background: '#fff', paddingBottom: 80 }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+      `}</style>
+
       {/* Hero */}
-      <div className="w-full h-[40vh] md:h-[50vh] relative bg-gradient-to-r from-blue-800 to-blue-600">
+      <div style={{ width: '100%', height: 'clamp(320px, 50vh, 520px)', position: 'relative', background: '#0f172a' }}>
         {post.image && (
           <Image
             src={post.image}
             alt={post.title}
             fill
-            className="object-cover opacity-30"
+            style={{ objectFit: 'cover', opacity: 0.35 }}
             priority
           />
         )}
-        <div className="absolute inset-0 flex items-end pb-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <Link href="/blog" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors text-sm font-medium">
-              <ArrowLeft className="w-4 h-4 mr-2" /> Back to all posts
+        {/* gradient */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.4) 60%, transparent 100%)' }} />
+
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'flex-end', paddingBottom: 48 }}>
+          <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px', width: '100%' }}>
+            <Link href="/blog" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              color: 'rgba(255,255,255,0.75)', fontSize: 13, fontWeight: 500,
+              textDecoration: 'none', marginBottom: 20,
+            }}>
+              <ArrowLeft size={14} /> Back to all posts
             </Link>
-            <div className="mb-4">
-              <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">{post.category}</span>
+
+            <div style={{ marginBottom: 14 }}>
+              <span style={{
+                background: '#0891b2', color: '#fff',
+                fontSize: 11, fontWeight: 700, letterSpacing: '0.08em',
+                textTransform: 'uppercase', padding: '4px 12px', borderRadius: 999,
+              }}>
+                {post.category}
+              </span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">{post.title}</h1>
-            <div className="flex flex-wrap items-center text-white/90 text-sm gap-6">
-              <span className="flex items-center"><User className="w-4 h-4 mr-2" />{post.author}</span>
-              <span className="flex items-center"><Calendar className="w-4 h-4 mr-2" />{formatDate(post.date)}</span>
+
+            <h1 style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: 'clamp(24px, 4.5vw, 44px)',
+              color: '#fff',
+              margin: '0 0 20px',
+              lineHeight: 1.2,
+              fontWeight: 700,
+              maxWidth: 760,
+            }}>
+              {post.title}
+            </h1>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, alignItems: 'center' }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
+                <User size={14} />{post.author}
+              </span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
+                <Calendar size={14} />{formatDate(post.date)}
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="prose prose-lg max-w-none">
+      {/* Article content */}
+      <div style={{ maxWidth: 740, margin: '0 auto', padding: '56px 24px 0' }}>
+
+        {/* Excerpt / lead */}
+        {post.excerpt && (
+          <div style={{
+            background: 'linear-gradient(135deg, #f0f9ff, #e0f2fe)',
+            borderLeft: '4px solid #0891b2',
+            borderRadius: '0 12px 12px 0',
+            padding: '18px 22px',
+            marginBottom: 44,
+          }}>
+            <p style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: 17,
+              color: '#0c4a6e',
+              lineHeight: 1.7,
+              margin: 0,
+              fontStyle: 'italic',
+            }}>
+              {post.excerpt}
+            </p>
+          </div>
+        )}
+
+        {/* Body */}
+        <div>
           {renderMarkdown(post.content, post.slug)}
         </div>
-        <div className="mt-16 pt-8 border-t border-gray-200 flex justify-between items-center">
-          <div className="flex items-center text-gray-500"><Tag className="w-5 h-5 mr-2" /><span className="font-medium">{post.category}</span></div>
-          <Link href="/blog" className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors text-sm font-medium">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
+
+        {/* Footer bar */}
+        <div style={{
+          marginTop: 60,
+          paddingTop: 24,
+          borderTop: '1px solid #e2e8f0',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 12,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#64748b', fontSize: 13 }}>
+            <Tag size={15} />
+            <span style={{ fontWeight: 600 }}>{post.category}</span>
+          </div>
+          <Link href="/blog" style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '9px 18px',
+            border: '1px solid #e2e8f0',
+            borderRadius: 10,
+            color: '#374151',
+            fontSize: 13,
+            fontWeight: 500,
+            textDecoration: 'none',
+            background: '#f8fafc',
+          }}>
+            <ArrowLeft size={13} /> Back to Blog
           </Link>
         </div>
       </div>
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <div className="bg-gray-50 border-t border-gray-100 py-16">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div style={{ background: '#f8fafc', borderTop: '1px solid #e2e8f0', padding: '64px 24px', marginTop: 64 }}>
+          <div style={{ maxWidth: 740, margin: '0 auto' }}>
+            <div style={{ width: 40, height: 3, background: 'linear-gradient(90deg,#0891b2,#06b6d4)', borderRadius: 2, marginBottom: 16 }} />
+            <h2 style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: 26, fontWeight: 700, color: '#0f172a', margin: '0 0 32px',
+            }}>
+              Related Articles
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
               {relatedPosts.map((related) => (
                 <Link
                   key={related.slug}
                   href={`/blog/${related.slug}`}
-                  className="group bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col"
+                  style={{
+                    background: '#fff', borderRadius: 16,
+                    boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
+                    border: '1px solid #e2e8f0',
+                    overflow: 'hidden', display: 'flex', flexDirection: 'column',
+                    textDecoration: 'none',
+                    transition: 'box-shadow 0.2s, transform 0.2s',
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)'; (e.currentTarget as HTMLElement).style.transform = 'none' }}
                 >
-                  <div className="relative w-full h-40 bg-blue-50 flex items-center justify-center overflow-hidden">
+                  <div style={{ position: 'relative', width: '100%', height: 160, background: '#e0f2fe', overflow: 'hidden' }}>
                     {related.image ? (
                       <Image
                         src={related.image}
                         alt={related.title}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        style={{ objectFit: 'cover' }}
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     ) : (
-                      <span className="text-blue-200 font-bold text-5xl">P</span>
+                      <span style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48, fontWeight: 700, color: '#bae6fd' }}>P</span>
                     )}
-                    <div className="absolute top-3 left-3 z-10">
-                      <span className="bg-white/90 backdrop-blur-sm text-blue-700 text-xs font-bold px-3 py-1 rounded-full shadow-sm">{related.category}</span>
+                    <div style={{ position: 'absolute', top: 10, left: 10 }}>
+                      <span style={{ background: 'rgba(255,255,255,0.92)', color: '#0891b2', fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 999 }}>
+                        {related.category}
+                      </span>
                     </div>
                   </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <p className="text-xs text-gray-400 mb-2 flex items-center"><Calendar className="w-3 h-3 mr-1" />{formatDate(related.date)}</p>
-                    <h3 className="font-bold text-gray-900 mb-2 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">{related.title}</h3>
-                    <p className="text-gray-500 text-sm line-clamp-2 mb-4 flex-1">{related.excerpt}</p>
-                    <span className="inline-flex items-center text-blue-600 text-sm font-semibold group-hover:text-blue-700">
-                      Read Article <ArrowRight className="w-3 h-3 ml-1" />
+                  <div style={{ padding: '18px 20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <p style={{ color: '#94a3b8', fontSize: 12, marginBottom: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
+                      <Calendar size={11} />{formatDate(related.date)}
+                    </p>
+                    <h3 style={{
+                      fontFamily: "'Playfair Display', Georgia, serif",
+                      fontWeight: 700, color: '#0f172a', fontSize: 15,
+                      marginBottom: 8, lineHeight: 1.4,
+                      display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
+                    }}>
+                      {related.title}
+                    </h3>
+                    <p style={{ color: '#64748b', fontSize: 13, lineHeight: 1.6, flex: 1, marginBottom: 14,
+                      display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
+                    }}>
+                      {related.excerpt}
+                    </p>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, color: '#0891b2', fontSize: 13, fontWeight: 600 }}>
+                      Read Article <ArrowRight size={12} />
                     </span>
                   </div>
                 </Link>
