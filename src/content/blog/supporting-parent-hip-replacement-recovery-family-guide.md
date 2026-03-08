@@ -2,8 +2,8 @@
 title: "SUPPORTING A PARENT'S HIP REPLACEMENT RECOVERY | A FAMILY GUIDE | Physio to Home"
 description: "Your parent is coming home after a hip replacement. North Tasmania's home physiotherapist explains exactly what to expect, how to help safely, and why home physiotherapy in the first six weeks makes all the difference."
 author: "Michael Ghattas, Physiotherapist"
-date: "2026-03-06"
-image: /images/blog/supporting-parent-hip-replacement-recovery-family-guide.jpg
+date: "2026-03-07"
+image: /image/blog/supporting-parent-hip-replacement-recovery-family-guide.jpg
 
 tags: ["hip replacement family guide", "supporting parent hip replacement", "hip replacement recovery Tasmania", "aged care Tasmania", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "carer guide", "post-surgery family"]
 ---
