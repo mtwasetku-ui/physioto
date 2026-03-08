@@ -3,7 +3,7 @@ title: "FALLS RISK IN AGEING PARENTS | A GUIDE FOR FAMILIES | Physio to Home"
 description: "Worried about your elderly parent falling at home? North Tasmania's home physiotherapist explains the warning signs families miss, what actually reduces falls risk, and how to have the conversation."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-03-06"
-image: /images/blog/falls-risk-ageing-parents-family-guide.jpg
+image: /image/blog/falls-risk-ageing-parents-family-guide.jpg
 tags: ["falls prevention family", "elderly parent falls", "aged care Tasmania", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "carer guide", "ageing parents", "family caregiver"]
 ---
 
