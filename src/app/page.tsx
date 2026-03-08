@@ -106,7 +106,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=2000&q=80" alt="Physiotherapy at home" fill className="object-cover" priority />
+          <Image: /image/blog/mobile-physiotherapy-home-visits.jpg" alt="Physiotherapy at home" fill className="object-cover" priority />
           <div className="absolute inset-0 hero-fade" />
         </div>
         <div className="absolute inset-0 dots text-white/5 pointer-events-none" />
