@@ -3,7 +3,7 @@ title: "CERVICOGENIC DIZZINESS: THE MOST MISDIAGNOSED CAUSE OF DIZZINESS IN OLDE
 description: "Cervicogenic dizziness is estimated to affect up to 20% of people with chronic dizziness — and it is routinely missed. A North Tasmania physiotherapist with specialist training in cervicogenic dizziness explains the condition, the diagnostic challenge, and what treatment actually involves."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-03-06"
-image: /images/blog/cervicogenic-dizziness-misdiagnosed-clinical-overview.jpg
+image: /image/blog/cervicogenic-dizziness-misdiagnosed-clinical-overview.jpeg
 tags: ["cervicogenic dizziness", "dizziness diagnosis", "neck dizziness", "vestibular physiotherapy", "cervical vertigo", "dizziness older adults", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "cervical spine", "balance"]
 ---
 
