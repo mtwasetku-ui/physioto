@@ -2,8 +2,8 @@
 title: "HOW TO IMPROVE BALANCE AT HOME | EXERCISES FOR OLDER ADULTS | Physio to Home"
 description: "Balance declines with age — but it is trainable at any age. North Tasmania's home physiotherapist explains exactly how balance works, why it deteriorates, and 8 exercises you can start today to reduce your falls risk."
 author: "Michael Ghattas, Physiotherapist"
-date: "2026-03-06"
-image: /images/blog/how-to-improve-balance-at-home-older-adults.jpg
+date: "2026-03-07"
+image: /image/blog/how-to-improve-balance-at-home-older-adults.jpg
 
 tags: ["how to improve balance", "balance exercises older adults", "falls prevention exercises", "improve balance at home", "balance training elderly", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "falls prevention Tasmania", "balance rehabilitation"]
 ---
