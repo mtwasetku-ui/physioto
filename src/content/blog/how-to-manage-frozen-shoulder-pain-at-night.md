@@ -2,8 +2,8 @@
 title: "HOW TO MANAGE FROZEN SHOULDER PAIN AT NIGHT | Physio to Home"
 description: "Night pain is the most distressing feature of frozen shoulder — and it is the symptom that existing guides almost never address specifically. North Tasmania's home physiotherapist explains exactly what causes it and what actually helps."
 author: "Michael Ghattas, Physiotherapist"
-date: "2026-03-06"
-image: /images/blog/how-to-manage-frozen-shoulder-pain-at-night.jpg
+date: "2026-03-07"
+image: /image/blog/how-to-manage-frozen-shoulder-pain-at-night.jpg
 
 tags: ["frozen shoulder night pain", "how to sleep with frozen shoulder", "frozen shoulder pain relief", "adhesive capsulitis night pain", "shoulder pain at night", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "frozen shoulder relief", "shoulder pain sleeping"]
 ---
