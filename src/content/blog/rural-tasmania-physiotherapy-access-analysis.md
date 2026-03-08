@@ -3,7 +3,7 @@ title: "THE STATE OF HOME PHYSIOTHERAPY ACCESS IN RURAL TASMANIA | Physio to Hom
 description: "Tasmania has the oldest population of any Australian state and some of its most significant allied health deserts. This data-driven analysis examines what rural Tasmanians are missing, what it costs, and what needs to change."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-03-06"
-image: /images/blog/rural-tasmania-physiotherapy-access-analysis.jpg
+image: /image/blog/rural-tasmania-physiotherapy-access-analysis.jpg
 
 tags: ["rural health Tasmania", "allied health access", "home physiotherapy Tasmania", "health equity", "rural aged care", "physiotherapy workforce", "health policy Tasmania", "Physio to Home", "North Tasmania health"]
 ---
