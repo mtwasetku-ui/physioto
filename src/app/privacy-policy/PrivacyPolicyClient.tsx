@@ -175,10 +175,6 @@ function Section({ section }: { section: typeof sections[0] }) {
 export default function PrivacyPolicyClient() {
   return (
     <div style={{ minHeight: "100vh", background: "#f8fafc", fontFamily: "system-ui, sans-serif" }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
-      `}</style>
-
       {/* Hero */}
       <div style={{ background: "#0f172a", padding: "80px 24px 56px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
