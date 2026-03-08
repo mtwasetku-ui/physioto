@@ -81,7 +81,7 @@ A home visit gives me clinical information that no amount of clinic assessment c
 
 I can see whether your bathroom is actually safe, or whether the grab rail is in the wrong position to be useful. I can assess whether your walking frame is sized correctly for your home's door widths. I can see the threshold between your back door and the step that you've mentioned catching your foot on. I can observe you getting in and out of your actual car, not a simulated transfer exercise.
 
-This environmental assessment capability isn't a minor add-on to home physiotherapy — it is a core clinical advantage. The modifications and adaptations I recommend based on seeing your home are specific, practical, and immediately implementable. They're not generic advice derived from an imaginary home.
+This environmental assessment capability isn't a minor add-on to home physiotherapy, it is a core clinical advantage. The modifications and adaptations I recommend based on seeing your home are specific, practical, and immediately implementable. They're not generic advice derived from an imaginary home.
 
 For older adults managing falls risk, environmental assessment is one of the most evidence-supported components of an effective falls prevention programme. A Cochrane review of falls prevention interventions found that home hazard assessment and modification, delivered by a trained health professional, meaningfully reduces falls rates in high-risk older adults. That intervention requires a home visit — there's no clinic equivalent.
 
