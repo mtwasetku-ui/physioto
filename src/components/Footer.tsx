@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Linkedin } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -67,9 +67,8 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               {[
-                { href: 'https://www.facebook.com/physiotohome', Icon: Facebook, hover: 'hover:bg-blue-600' },
-                { href: 'https://www.instagram.com/physiotohome', Icon: Instagram, hover: 'hover:bg-pink-600' },
-                { href: 'https://www.linkedin.com/company/physiotohome', Icon: Linkedin, hover: 'hover:bg-blue-700' },
+                { href: 'https://www.facebook.com/profile.php?id=61565914211504', Icon: Facebook, hover: 'hover:bg-blue-600' },
+                { href: 'https://www.linkedin.com/company/physio-to-home/', Icon: Linkedin, hover: 'hover:bg-blue-700' },
               ].map(({ href, Icon, hover }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                   className={`w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center ${hover} transition-colors`}>
