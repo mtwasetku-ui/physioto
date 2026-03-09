@@ -113,8 +113,8 @@ export default function TeamClient() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Home Treatment Redefined</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">Discover personalised care in your home, tailored to your environment and treatment needs.</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Meet Our Team</h1>
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">AHPRA registered physiotherapists delivering expert in-home care across Tasmania.</p>
         </div>
       </div>
 
