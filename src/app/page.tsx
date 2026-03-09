@@ -10,13 +10,13 @@ interface Service { id: string; name: string; description: string }
 interface Testimonial { id: string; client_name: string; review_text: string; rating: number; service_type?: string }
 
 const servicePhotos: Record<string, string> = {
-  'musculoskeletal': 'https://images.unsplash.com/photo-1620815952154-0f6f1b5d47e7?auto=format&fit=crop&w=800&q=80',
-  'post-surgery': 'https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?auto=format&fit=crop&w=800&q=80',
-  'falls': 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
-  'neurological': 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80',
-  'aged': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
-  'equipment': 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=800&q=80',
-  'default': 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80',
+  'musculoskeletal': '/image/blog/neck-pain-cervicogenic-headache-home-physiotherapy.jpg',
+  'post-surgery': '/image/blog/hip-fracture-rehabilitation-home-physiotherapy.jpg',
+  'falls': '/image/blog/falls-prevention-home-physiotherapy.jpg',
+  'neurological': '/image/blog/neck-pain-cervicogenic-headache-home-physiotherapy.jpg',
+  'aged': '/image/blog/hip-fracture-rehabilitation-home-physiotherapy.jpg',
+  'equipment': '/image/blog/falls-prevention-home-physiotherapy.jpg',
+  'default': '/image/blog/neck-pain-cervicogenic-headache-home-physiotherapy.jpg',
 }
 
 const getServicePhoto = (name: string) => {
