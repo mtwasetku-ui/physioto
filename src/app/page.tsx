@@ -37,10 +37,10 @@ const stats = [
   { value: '15+', label: 'Years of Experience' },
   { value: 'TAS', label: 'Statewide Service' },
   { value: 'Same-week', label: 'Appointments' },
-  { value: 'AHPRA', label: 'Registered Practitioner' },
+  { value: 'AHPRA', label: 'Registered Team' },
 ]
 
-const trustBadges = ['No GP Referral Required','AHPRA Registered','Private Health Rebates','NDIS (Self & Plan Managed)','DVA Welcome','Medicare Care Plans']
+const trustBadges = ['No GP Referral Required','AHPRA Registered Team','Specialist Physiotherapists','Private Health Rebates','NDIS (Self & Plan Managed)','DVA Welcome','Medicare Care Plans']
 
 const conditions = [
   { emoji: '🧠', label: 'Neurological Rehab' },
@@ -106,7 +106,7 @@ export default function HomePage() {
               Physiotherapy<br /><span className="italic text-cyan-300">in your home.</span>
             </h1>
             <p className="text-slate-200 text-lg md:text-xl mb-8 max-w-xl leading-relaxed font-light">
-              Professional, personalised care delivered to your door — no waiting rooms, no travel, no compromise on quality.
+              Our team of AHPRA-registered physiotherapists brings expert, hands-on care directly to your door — whether you're in Hobart, Launceston, or anywhere across Tasmania.
             </p>
             <div className="flex flex-wrap gap-2 mb-10">
               {trustBadges.map((b) => (
@@ -149,14 +149,14 @@ export default function HomePage() {
           <div className={`text-center mb-14 fade-up ${vis('how') ? 'in' : ''}`}>
             <div className="divider mx-auto" />
             <p className="text-xs font-bold text-cyan-600 uppercase tracking-widest mb-3">Simple Process</p>
-            <h2 className="serif text-4xl md:text-5xl text-slate-900 mb-4">Care, <span className="italic">without the hassle</span></h2>
+            <h2 className="serif text-4xl md:text-5xl text-slate-900 mb-4">Expert care, <span className="italic">at your door</span></h2>
             <p className="text-slate-500 text-lg max-w-lg mx-auto">Getting started is straightforward — we handle the complexity so you can focus on recovering.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { n: '01', icon: Phone, title: 'Get in Touch', desc: "Call or book online. We'll have a brief chat about your needs and arrange a convenient time — often same-week." },
-              { n: '02', icon: MapPin, title: 'We Come to You', desc: 'Your physiotherapist arrives fully equipped to assess and begin treatment in the environment where you actually live.' },
-              { n: '03', icon: ArrowRight, title: 'Recover & Thrive', desc: 'A personalised treatment plan built around your goals and your home, evolving as you progress toward full recovery.' },
+              { n: '01', icon: Phone, title: 'Get in Touch', desc: "Call 1300 433 233 or submit a booking request. We'll have a quick conversation about what you're dealing with and find a time that suits you — usually within the same week." },
+              { n: '02', icon: MapPin, title: 'We Come to You', desc: 'Your physiotherapist arrives at your home, aged care facility, or workplace — fully equipped to assess and begin treatment at your first visit. No waiting rooms, no parking, no travel stress.' },
+              { n: '03', icon: ArrowRight, title: 'Recover & Thrive', desc: 'You'll receive a personalised plan designed around your home, your goals, and your life — not a generic protocol. We review and adapt it as you improve.' },
             ].map(({ n, icon: Icon, title, desc }, i) => (
               <div key={title} className={`bg-slate-50 rounded-2xl p-8 card-lift fade-up d${i+1} ${vis('how') ? 'in' : ''}`}>
                 <span className="serif text-5xl font-bold text-cyan-100 block mb-4" style={{lineHeight:1}}>{n}</span>
@@ -179,18 +179,18 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className={`fade-up ${vis('about') ? 'in' : ''}`}>
               <div className="divider" />
-              <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Why Home-Based Care?</p>
+              <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">A Team Built for Excellence</p>
               <h2 className="serif text-4xl md:text-5xl text-white mb-6 leading-tight">
-                Recovery happens<br /><span className="italic text-cyan-300">where you live.</span>
+                Specialist care,<br /><span className="italic text-cyan-300">where you live.</span>
               </h2>
               <p className="text-slate-300 text-lg leading-relaxed mb-5">
-                Clinic-based physiotherapy is designed around the clinic — not around you. By treating you at home, we see the stairs you climb, the chair you sit in, the garden you love. That context changes everything.
+                Physio to Home brings together a team of highly experienced, AHPRA-registered physiotherapists with extensive clinical backgrounds across hospital, rehabilitation, aged care, and community settings in Australia and internationally — giving our team a depth of expertise rarely found in a home-visit service.
               </p>
               <p className="text-slate-400 leading-relaxed mb-8">
-                Michael Ghattas brings over 15 years of experience across musculoskeletal, neurological, orthopaedic, and aged care settings to your doorstep — with every treatment plan built around your real daily environment.
+                We cover musculoskeletal and orthopaedic rehabilitation, neurological conditions, aged care, NDIS, falls prevention, chronic pain, and post-surgery recovery. Our team includes a specialist in cervicogenic dizziness — one of the most commonly misdiagnosed conditions in older adults — and practitioners with specific expertise in stroke, Parkinson's disease, and complex pain management. Every treatment plan is built around your real daily environment.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['AHPRA Registered','15+ Years Experience','Cervicogenic Dizziness Specialist','Evidence-Based Practice'].map((b) => (
+                {['All AHPRA Registered','Extensive Clinical Experience','Specialist Expertise','Evidence-Based Practice'].map((b) => (
                   <span key={b} className="inline-flex items-center gap-1.5 bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 rounded-full px-3 py-1.5 text-xs font-medium">
                     <CheckCircle className="w-3 h-3" />{b}
                   </span>
@@ -199,8 +199,8 @@ export default function HomePage() {
             </div>
             <div className={`grid grid-cols-2 gap-4 fade-up d2 ${vis('about') ? 'in' : ''}`}>
               {[
-                { Icon: Award, title: 'AHPRA Registered', desc: 'Fully regulated by the Australian Health Practitioner Regulation Agency' },
-                { Icon: Clock, title: 'Same-Week Care', desc: 'Fast access to treatment when you need it most' },
+                { Icon: Award, title: 'All AHPRA Registered', desc: 'Every member of our team is fully registered and regulated by the Australian Health Practitioner Regulation Agency' },
+                { Icon: Clock, title: 'Same-Week Appointments', desc: 'Fast access to the right clinician — often within the same week of your first call' },
                 { Icon: MapPin, title: 'Across Tasmania', desc: 'Serving communities throughout Tasmania, from the north to the south' },
                 { Icon: Shield, title: 'Fully Insured', desc: 'Comprehensive professional indemnity & public liability' },
               ].map(({ Icon, title, desc }) => (
@@ -222,7 +222,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className={`mb-14 fade-up ${vis('services') ? 'in' : ''}`}>
             <div className="divider" />
-            <p className="text-xs font-bold text-cyan-600 uppercase tracking-widest mb-3">What We Treat</p>
+            <p className="text-xs font-bold text-cyan-600 uppercase tracking-widest mb-3">What Our Team Treats</p>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <h2 className="serif text-4xl md:text-5xl text-slate-900">Services <span className="italic">built around you</span></h2>
               <Link href="/services" className="inline-flex items-center gap-1.5 text-cyan-600 font-semibold hover:text-cyan-700 transition-colors shrink-0 text-sm">
@@ -325,10 +325,10 @@ export default function HomePage() {
         <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4">Get Started Today</p>
           <h2 className="serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-            Ready to begin<br /><span className="italic text-cyan-300">your recovery?</span>
+            The right team,<br /><span className="italic text-cyan-300">at your door.</span>
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            Book your appointment today and experience professional physiotherapy in the comfort of your own home. No GP referral needed. Same-week appointments available across Tasmania.
+            Our team of specialist physiotherapists is ready to deliver the quality of care you deserve — in the comfort of your own home. No GP referral needed. Same-week appointments available across Tasmania.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/booking">
@@ -342,7 +342,7 @@ export default function HomePage() {
               </button>
             </a>
           </div>
-          <p className="text-slate-600 text-xs mt-8">Serving communities across Tasmania</p>
+          <p className="text-slate-600 text-xs mt-8">Launceston · Hobart · North West Coast · Regional Tasmania</p>
         </div>
       </section>
     </div>
