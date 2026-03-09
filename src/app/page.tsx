@@ -187,7 +187,7 @@ export default function HomePage() {
                 Physio to Home brings together a team of highly experienced, AHPRA-registered physiotherapists with extensive clinical backgrounds across hospital, rehabilitation, aged care, and community settings in Australia and internationally — giving our team a depth of expertise rarely found in a home-visit service.
               </p>
               <p className="text-slate-400 leading-relaxed mb-8">
-                We cover musculoskeletal and orthopaedic rehabilitation, neurological conditions, aged care, NDIS, falls prevention, chronic pain, and post-surgery recovery. Our team includes a specialist in cervicogenic dizziness — one of the most commonly misdiagnosed conditions in older adults — and practitioners with specific expertise in stroke, Parkinson disease, and complex pain management. Every treatment plan is built around your real daily environment.
+                We cover musculoskeletal and orthopaedic rehabilitation, neurological conditions, aged care, NDIS, falls prevention, chronic pain, and post-surgery recovery. Our team includes a specialist in cervicogenic dizziness — one of the most commonly misdiagnosed conditions in older adults — and practitioners with specific expertise in stroke, Parkinson&apos;s disease, and complex pain management. Every treatment plan is built around your real daily environment.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['All AHPRA Registered','Extensive Clinical Experience','Specialist Expertise','Evidence-Based Practice'].map((b) => (
