@@ -3,7 +3,7 @@ title: "THE COST OF NOT TREATING OSTEOPOROSIS | ECONOMIC & CLINICAL CASE | Physi
 description: "Osteoporosis-related fractures cost Australia over $3.8 billion annually — yet prevention remains dramatically underinvested. A North Tasmania physiotherapist examines the economic and clinical case for proactive management."
 author: "Michael Ghattas, Physiotherapist"
 date: "2026-03-06"
-image: /image/blog/cost-of-not-treating-osteoporosis-economic-clinical.jpg
+image: /image/blog/cost-of-not-treating-osteoporosis-economic-clinical.jpeg
 tags: ["osteoporosis cost", "fracture prevention economics", "osteoporosis Australia", "hip fracture cost", "bone health policy", "physiotherapy osteoporosis", "falls prevention economics", "home physiotherapy", "Physio to Home", "health economics"]
 ---
 
