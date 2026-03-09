@@ -17,7 +17,7 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     id: '1',
-    name: 'Michael Ghattas',
+    name: 'Micheal Ghattas',
     title: 'Principal Physiotherapist',
     qualifications: 'DPT, AHPRA Registered',
     specialties: 'Musculoskeletal, Neurological, Orthopaedic, Aged Care, Cervicogenic Dizziness',
