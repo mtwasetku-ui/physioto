@@ -23,9 +23,6 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
   },
-  alternates: {
-    canonical: BASE_URL,
-  },
   robots: {
     index: true,
     follow: true,
@@ -33,24 +30,64 @@ export const metadata: Metadata = {
   },
 }
 
+const TAS = { '@type': 'State', name: 'Tasmania' }
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'MedicalBusiness',
   name: 'Physio to Home',
-  description: 'AHPRA registered physiotherapists delivering expert in-home physiotherapy across Tasmania.',
+  description: 'AHPRA registered physiotherapist delivering expert in-home physiotherapy across Tasmania — including Launceston, Hobart, and the North West Coast.',
   url: BASE_URL,
   telephone: '1300433233',
   email: 'info@physiotohome.com',
   image: `${BASE_URL}/images/logo.png`,
   priceRange: '$$',
-  areaServed: {
-    '@type': 'State',
-    name: 'Tasmania',
-    containedInPlace: {
-      '@type': 'Country',
-      name: 'Australia',
-    },
-  },
+  areaServed: [
+    // Launceston & North
+    { '@type': 'City', name: 'Launceston', containedInPlace: TAS },
+    { '@type': 'City', name: 'Newnham', containedInPlace: TAS },
+    { '@type': 'City', name: 'Prospect', containedInPlace: TAS },
+    { '@type': 'City', name: 'Kings Meadows', containedInPlace: TAS },
+    { '@type': 'City', name: 'Riverside', containedInPlace: TAS },
+    { '@type': 'City', name: 'Ravenswood', containedInPlace: TAS },
+    { '@type': 'City', name: 'Mowbray', containedInPlace: TAS },
+    { '@type': 'City', name: 'Youngtown', containedInPlace: TAS },
+    { '@type': 'City', name: 'Summerhill', containedInPlace: TAS },
+    { '@type': 'City', name: 'St Leonards', containedInPlace: TAS },
+    { '@type': 'City', name: 'Longford', containedInPlace: TAS },
+    { '@type': 'City', name: 'Deloraine', containedInPlace: TAS },
+    { '@type': 'City', name: 'George Town', containedInPlace: TAS },
+    { '@type': 'City', name: 'Scottsdale', containedInPlace: TAS },
+    { '@type': 'City', name: 'Exeter', containedInPlace: TAS },
+    { '@type': 'City', name: 'Beaconsfield', containedInPlace: TAS },
+    { '@type': 'City', name: 'Perth', containedInPlace: TAS },
+    { '@type': 'City', name: 'Evandale', containedInPlace: TAS },
+    { '@type': 'City', name: 'Hadspen', containedInPlace: TAS },
+    { '@type': 'City', name: 'Legana', containedInPlace: TAS },
+    // North West Coast
+    { '@type': 'City', name: 'Devonport', containedInPlace: TAS },
+    { '@type': 'City', name: 'Burnie', containedInPlace: TAS },
+    { '@type': 'City', name: 'Ulverstone', containedInPlace: TAS },
+    { '@type': 'City', name: 'Wynyard', containedInPlace: TAS },
+    { '@type': 'City', name: 'Penguin', containedInPlace: TAS },
+    { '@type': 'City', name: 'Somerset', containedInPlace: TAS },
+    { '@type': 'City', name: 'Smithton', containedInPlace: TAS },
+    { '@type': 'City', name: 'Sheffield', containedInPlace: TAS },
+    { '@type': 'City', name: 'Latrobe', containedInPlace: TAS },
+    { '@type': 'City', name: 'Port Sorell', containedInPlace: TAS },
+    // Hobart & South
+    { '@type': 'City', name: 'Hobart', containedInPlace: TAS },
+    { '@type': 'City', name: 'Sandy Bay', containedInPlace: TAS },
+    { '@type': 'City', name: 'Glenorchy', containedInPlace: TAS },
+    { '@type': 'City', name: 'Moonah', containedInPlace: TAS },
+    { '@type': 'City', name: 'New Town', containedInPlace: TAS },
+    { '@type': 'City', name: 'Kingston', containedInPlace: TAS },
+    { '@type': 'City', name: 'Huonville', containedInPlace: TAS },
+    { '@type': 'City', name: 'Sorell', containedInPlace: TAS },
+    { '@type': 'City', name: 'Richmond', containedInPlace: TAS },
+    { '@type': 'City', name: 'Clarence', containedInPlace: TAS },
+    { '@type': 'City', name: 'Rosny Park', containedInPlace: TAS },
+  ],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Launceston',
