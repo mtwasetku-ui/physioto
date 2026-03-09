@@ -3,7 +3,7 @@
 const LAST_UPDATED = "8 March 2026";
 const COMPANY = "Physio to Home";
 const ABN = ""; // Add your ABN here
-const EMAIL = "info@physiotohome.com.au";
+const EMAIL = "info@physiotohome.com";
 const PHONE = "1300 433 233";
 const ADDRESS = "Launceston, Tasmania, Australia";
 
@@ -13,7 +13,7 @@ const sections = [
     title: "1. Introduction",
     content: `${COMPANY} ("we", "us", "our") is committed to protecting your personal information in accordance with the Australian Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs).
 
-This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website (physiotohome.com.au) or use our physiotherapy services. Please read it carefully.
+This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website (physiotohome.com) or use our physiotherapy services. Please read it carefully.
 
 By using our website or services, you consent to the practices described in this policy.`,
   },
