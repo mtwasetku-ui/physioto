@@ -67,9 +67,9 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               {[
-                { href: 'https://facebook.com', Icon: Facebook, hover: 'hover:bg-blue-600' },
-                { href: 'https://instagram.com', Icon: Instagram, hover: 'hover:bg-pink-600' },
-                { href: 'https://linkedin.com', Icon: Linkedin, hover: 'hover:bg-blue-700' },
+                { href: 'https://www.facebook.com/physiotohome', Icon: Facebook, hover: 'hover:bg-blue-600' },
+                { href: 'https://www.instagram.com/physiotohome', Icon: Instagram, hover: 'hover:bg-pink-600' },
+                { href: 'https://www.linkedin.com/company/physiotohome', Icon: Linkedin, hover: 'hover:bg-blue-700' },
               ].map(({ href, Icon, hover }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                   className={`w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center ${hover} transition-colors`}>
