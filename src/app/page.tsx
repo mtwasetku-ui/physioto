@@ -305,8 +305,8 @@ export default function HomePage() {
             <h2 className="serif text-3xl md:text-4xl text-slate-900 mb-3">Multiple ways to access care</h2>
             <p className="text-slate-500 max-w-md mx-auto text-sm">We work with a range of funding options so accessing quality physiotherapy is as simple as possible.</p>
           </div>
-          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 fade-up ${vis('funding') ? 'in' : ''}`}>
-            {[{e:'💳',l:'Private Health',s:'On-the-spot rebates'},{e:'♿',l:'NDIS',s:'Self & plan managed only'},{e:'🎖️',l:'DVA',s:'Department of Veterans Affairs'},{e:'🏥',l:'Medicare',s:'Chronic Disease Care Plans'}].map(({e,l,s}) => (
+          <div className={`grid grid-cols-2 md:grid-cols-5 gap-4 fade-up ${vis('funding') ? 'in' : ''}`}>
+            {[{e:'🏠',l:'My Aged Care',s:'Home care packages'},{e:'💳',l:'Private Health',s:'On-the-spot rebates'},{e:'♿',l:'NDIS',s:'Self & plan managed only'},{e:'🎖️',l:'DVA',s:'Department of Veterans Affairs'},{e:'🏥',l:'Medicare',s:'Chronic Disease Care Plans'}].map(({e,l,s}) => (
               <div key={l} className="bg-gradient-to-br from-cyan-50 to-slate-50 rounded-2xl p-6 text-center border border-cyan-100 card-lift">
                 <div className="text-3xl mb-3">{e}</div>
                 <p className="font-bold text-slate-900 text-sm mb-1">{l}</p>
