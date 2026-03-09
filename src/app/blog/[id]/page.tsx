@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const post = getPostBySlug(id)
   if (!post) return { title: 'Post Not Found' }
 
-  const BASE_URL = 'https://www.physiotohome.com.au'
+  const BASE_URL = 'https://www.physiotohome.com'
   const url = `${BASE_URL}/blog/${post.slug}`
 
   return {
