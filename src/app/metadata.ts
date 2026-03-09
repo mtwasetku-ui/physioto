@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const BASE_URL = 'https://www.physiotohome.com.au'
+const BASE_URL = 'https://www.physiotohome.com'
 
 export const homeMetadata: Metadata = {
   title: 'In-Home Physiotherapy Across Tasmania — Physio to Home',
