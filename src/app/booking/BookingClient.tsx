@@ -90,13 +90,13 @@ export default function BookingClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Physiotherapy That Comes to You</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Physio to Home brings professional physiotherapy directly to your door across Launceston and surrounds.
+            Physio to Home brings professional physiotherapy directly to your door across Tasmania.
             Whether you&apos;re recovering from surgery, managing a chronic condition, or looking to improve your strength
             and balance — we assess and treat you in the comfort of your own home.
           </p>
           <p className="text-blue-100 max-w-3xl mx-auto mt-4">
             With over 15 years of clinical experience, Michael provides personalised, one-on-one care with no waiting
-            rooms and no travel stress. We accept NDIS, My Aged Care, GP Management Plans, private health insurance,
+            rooms and no travel stress. We accept My Aged Care, GP Management Plans, private health insurance,
             and private paying clients.
           </p>
         </div>
@@ -105,12 +105,11 @@ export default function BookingClient() {
       {/* Stats */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
             {[
               { value: '15+', label: 'Years of experience' },
               { value: '1-on-1', label: 'Personalised care' },
-              { value: '20km', label: 'Service radius' },
-              { value: 'NDIS', label: 'Registered provider' },
+              { value: 'Tasmania', label: 'State-wide service' },
             ].map(({ value, label }) => (
               <div key={label}>
                 <div className="text-3xl font-bold text-blue-600">{value}</div>
@@ -168,8 +167,8 @@ export default function BookingClient() {
                 {
                   Icon: MapPin,
                   title: 'Location',
-                  content: <p className="text-gray-600">Launceston, Tasmania</p>,
-                  sub: 'Serving within 20km of Launceston',
+                  content: <p className="text-gray-600">Tasmania</p>,
+                  sub: 'Serving clients across the state',
                 },
                 {
                   Icon: Clock,
@@ -198,7 +197,7 @@ export default function BookingClient() {
                   'We come to you — no travel required',
                   'Initial assessment at your first visit',
                   'Personalised treatment plan',
-                  'NDIS, My Aged Care & private health accepted',
+                  'My Aged Care & private health accepted',
                 ].map((item) => (
                   <li key={item} className="flex items-start">
                     <span className="text-blue-600 mr-2">✓</span>
