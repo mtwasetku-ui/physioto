@@ -40,7 +40,7 @@ const structuredData = {
   description: 'Professional in-home physiotherapy across Tasmania. AHPRA registered physiotherapist with 15+ years experience.',
   url: BASE_URL,
   telephone: '1300433233',
-  email: 'info@physiotohome.com.au',
+  email: 'info@physiotohome.com',
   image: `${BASE_URL}/images/logo.png`,
   priceRange: '$$',
   areaServed: {
