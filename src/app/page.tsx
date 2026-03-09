@@ -156,7 +156,7 @@ export default function HomePage() {
             {[
               { n: '01', icon: Phone, title: 'Get in Touch', desc: "Call 1300 433 233 or submit a booking request. We'll have a quick conversation about what you're dealing with and find a time that suits you — usually within the same week." },
               { n: '02', icon: MapPin, title: 'We Come to You', desc: 'Your physiotherapist arrives at your home, aged care facility, or workplace — fully equipped to assess and begin treatment at your first visit. No waiting rooms, no parking, no travel stress.' },
-              { n: '03', icon: ArrowRight, title: 'Recover & Thrive', desc: 'You'll receive a personalised plan designed around your home, your goals, and your life — not a generic protocol. We review and adapt it as you improve.' },
+              { n: '03', icon: ArrowRight, title: 'Recover & Thrive', desc: "You'll receive a personalised plan designed around your home, your goals, and your life — not a generic protocol. We review and adapt it as you improve." },
             ].map(({ n, icon: Icon, title, desc }, i) => (
               <div key={title} className={`bg-slate-50 rounded-2xl p-8 card-lift fade-up d${i+1} ${vis('how') ? 'in' : ''}`}>
                 <span className="serif text-5xl font-bold text-cyan-100 block mb-4" style={{lineHeight:1}}>{n}</span>
@@ -342,7 +342,7 @@ export default function HomePage() {
               </button>
             </a>
           </div>
-          <p className="text-slate-600 text-xs mt-8">Launceston · Hobart · North West Coast · Regional Tasmania</p>
+          <p className="text-slate-600 text-xs mt-8">Launceston &middot; Hobart &middot; North West Coast &middot; Regional Tasmania</p>
         </div>
       </section>
     </div>
