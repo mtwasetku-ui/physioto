@@ -54,7 +54,7 @@ export function getAllPosts(): BlogPost[] {
     return {
       slug,
       title: (data.title as string) || 'Untitled',
-      excerpt: (data.excerpt as string) || (data.description as string) || '',
+      excerpt: (data.description as string) || (data.excerpt as string) || '',
       author: (data.author as string) || 'Physio to Home',
       date: (data.date as string) || '',
       category: (data.category as string) || 'General',
@@ -78,7 +78,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
   return {
     slug,
     title: (data.title as string) || 'Untitled',
-    excerpt: (data.excerpt as string) || (data.description as string) || '',
+    excerpt: (data.description as string) || (data.excerpt as string) || '',
     author: (data.author as string) || 'Physio to Home',
     date: (data.date as string) || '',
     category: (data.category as string) || 'General',
