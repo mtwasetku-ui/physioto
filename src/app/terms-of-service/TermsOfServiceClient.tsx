@@ -2,7 +2,7 @@
 
 const LAST_UPDATED = "8 March 2026";
 const COMPANY = "Physio to Home";
-const EMAIL = "info@physiotohome.com.au";
+const EMAIL = "info@physiotohome.com";
 const PHONE = "1300 433 233";
 const STATE = "Tasmania";
 
@@ -10,7 +10,7 @@ const sections = [
   {
     id: "acceptance",
     title: "1. Acceptance of Terms",
-    content: `By accessing our website (physiotohome.com.au) or booking and receiving physiotherapy services from ${COMPANY}, you agree to be bound by these Terms of Service ("Terms").
+    content: `By accessing our website (physiotohome.com) or booking and receiving physiotherapy services from ${COMPANY}, you agree to be bound by these Terms of Service ("Terms").
 
 If you do not agree to these Terms, please do not use our website or services. We reserve the right to update these Terms at any time — continued use after changes are posted constitutes acceptance.
 
@@ -93,7 +93,7 @@ Our services include (but are not limited to) musculoskeletal physiotherapy, pos
 
 Our Privacy Policy explains how we collect, use, store, and disclose your personal and health information in accordance with the Australian Privacy Act 1988 (Cth).
 
-You can read the full Privacy Policy at physiotohome.com.au/privacy-policy.`,
+You can read the full Privacy Policy at physiotohome.com/privacy-policy.`,
   },
   {
     id: "disputes",
