@@ -123,7 +123,7 @@ export default function TeamClient() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Compassionate Care in Your Home</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">At Physio to Home, we prioritise your comfort and well-being by providing personalised in-home physiotherapy services tailored to your unique living environment and treatment needs.</p>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">Our founder recognised something that clinic-based care often misses: recovery happens at home. By seeing you in your own environment, we can tailor treatment to your real daily challenges — the stairs you climb, the chair you sit in, the garden you love.</p>
-          <p className="text-lg text-gray-600 leading-relaxed">With over 15 years of experience across musculoskeletal, neurological, orthopaedic, and aged care settings, we bring clinical excellence directly to your doorstep across Launceston and surrounds.</p>
+          <p className="text-lg text-gray-600 leading-relaxed">With over 15 years of experience across musculoskeletal, neurological, orthopaedic, and aged care settings, we bring clinical excellence directly to your doorstep across Tasmania.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
