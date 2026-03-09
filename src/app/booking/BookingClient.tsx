@@ -95,7 +95,7 @@ export default function BookingClient() {
             and balance — we assess and treat you in the comfort of your own home.
           </p>
           <p className="text-blue-100 max-w-3xl mx-auto mt-4">
-            With over 15 years of clinical experience, Michael provides personalised, one-on-one care with no waiting
+            With over 15 years of clinical experience, Micheal provides personalised, one-on-one care with no waiting
             rooms and no travel stress. We accept My Aged Care, GP Management Plans, private health insurance,
             and private paying clients.
           </p>
@@ -132,7 +132,7 @@ export default function BookingClient() {
             {[
               { step: '1', title: 'Submit a Request', desc: 'Fill in the booking form below with your details, preferred service, and a convenient time.' },
               { step: '2', title: 'We Confirm', desc: "We'll call or email you within one business day to confirm your appointment and answer any questions." },
-              { step: '3', title: 'We Come to You', desc: 'Michael visits you at home at the agreed time, bringing all necessary equipment.' },
+              { step: '3', title: 'We Come to You', desc: 'Micheal visits you at home at the agreed time, bringing all necessary equipment.' },
               { step: '4', title: 'Your Treatment Plan', desc: "After your initial assessment, you'll receive a personalised plan tailored to your goals and needs." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
