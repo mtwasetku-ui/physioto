@@ -232,7 +232,7 @@ export default function ServicesPage() {
             Services <em style={{ color: '#67e8f9', fontStyle: 'italic' }}>built around you</em>
           </h1>
           <p style={{ color: '#94a3b8', fontSize: 17, lineHeight: 1.7, maxWidth: 560, margin: '0 auto 28px' }}>
-            Comprehensive in-home physiotherapy across Launceston and surrounds — tailored to your condition, your home, and your goals.
+            Comprehensive in-home physiotherapy across Tasmania — tailored to your condition, your home, and your goals.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8 }}>
             {badges.map(b => (
