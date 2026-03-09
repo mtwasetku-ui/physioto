@@ -161,7 +161,7 @@ export default function BookingClient() {
                 {
                   Icon: Mail,
                   title: 'Email',
-                  content: <a href="mailto:info@physiotohome.com.au" className="text-gray-600 hover:text-blue-600 transition-colors">info@physiotohome.com</a>,
+                  content: <a href="mailto:info@physiotohome.com" className="text-gray-600 hover:text-blue-600 transition-colors">info@physiotohome.com</a>,
                   sub: "We'll respond within 24 hours",
                 },
                 {
