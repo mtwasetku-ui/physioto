@@ -69,7 +69,7 @@ export default function ContactClient() {
             <div className="space-y-6 mb-12">
               {[
                 { Icon: Phone, title: 'Phone', content: <a href="tel:1300433233" className="text-gray-600 hover:text-blue-600 transition-colors">1300 433 233</a>, sub: 'Mon–Fri: 8am – 6pm, Sat: 9am – 2pm' },
-                { Icon: Mail, title: 'Email', content: <a href="mailto:info@physiotohome.com.au" className="text-gray-600 hover:text-blue-600 transition-colors">info@physiotohome.com</a>, sub: "We'll respond within 24 hours" },
+                { Icon: Mail, title: 'Email', content: <a href="mailto:info@physiotohome.com" className="text-gray-600 hover:text-blue-600 transition-colors">info@physiotohome.com</a>, sub: "We'll respond within 24 hours" },
                 { Icon: MapPin, title: 'Service Area', content: <p className="text-gray-600">Across Tasmania</p>, sub: 'We come to you — home, aged care facility, or workplace' },
               ].map(({ Icon, title, content, sub }) => (
                 <div key={title} className="flex items-start space-x-4">
