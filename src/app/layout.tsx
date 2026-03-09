@@ -37,7 +37,7 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'MedicalBusiness',
   name: 'Physio to Home',
-  description: 'Professional in-home physiotherapy across Tasmania. AHPRA registered physiotherapist with 15+ years experience.',
+  description: 'AHPRA registered physiotherapists delivering expert in-home physiotherapy across Tasmania.',
   url: BASE_URL,
   telephone: '1300433233',
   email: 'info@physiotohome.com',
@@ -70,9 +70,8 @@ const structuredData = {
   medicalSpecialty: 'Physiotherapy',
   hasMap: 'https://maps.google.com/?q=Launceston+Tasmania',
   sameAs: [
-    'https://www.facebook.com/physiotohome',
-    'https://www.instagram.com/physiotohome',
-    'https://www.linkedin.com/company/physiotohome',
+    'https://www.facebook.com/profile.php?id=61565914211504',
+    'https://www.linkedin.com/company/physio-to-home/',
   ],
 }
 
