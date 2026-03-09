@@ -19,7 +19,7 @@ These Terms are governed by the laws of ${STATE}, Australia.`,
   {
     id: "services",
     title: "2. Our Services",
-    content: `${COMPANY} provides in-home physiotherapy services delivered by AHPRA-registered physiotherapists across Launceston and surrounding areas of Tasmania.
+    content: `${COMPANY} provides in-home physiotherapy services delivered by AHPRA-registered physiotherapists across Tasmania.
 
 Our services include (but are not limited to) musculoskeletal physiotherapy, post-surgery rehabilitation, falls prevention, neurological rehabilitation, aged care physiotherapy, and chronic pain management — as described on our website.
 
