@@ -73,13 +73,13 @@ Home Care Packages are designed for older Australians with more complex or ongoi
 
 ### The four package levels
 
-**Level 1** — Basic care needs. Annual funding approximately $10,000.
+**Level 1** — Basic care needs. Annual funding approximately $11,000.
 
-**Level 2** — Low-level care needs. Annual funding approximately $17,000.
+**Level 2** — Low-level care needs. Annual funding approximately $19,000.
 
-**Level 3** — Intermediate care needs. Annual funding approximately $37,000.
+**Level 3** — Intermediate care needs. Annual funding approximately $41,000.
 
-**Level 4** — High-level care needs. Annual funding approximately $56,000.
+**Level 4** — High-level care needs. Annual funding approximately $63,000.
 
 These figures are approximate and are indexed periodically by the Australian Government. Your package coordinator will advise on the current amounts applicable to your level.
 
