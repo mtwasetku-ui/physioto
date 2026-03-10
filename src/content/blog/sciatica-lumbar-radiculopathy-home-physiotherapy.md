@@ -69,7 +69,7 @@ Sciatica typically presents as:
 - Numbness or tingling in the affected leg or foot
 - Weakness in the leg — difficulty lifting the foot (foot drop), weakness in calf strength, or difficulty climbing stairs
 - Symptoms that are worse with sitting, bending forward, or coughing and sneezing (positions that increase disc pressure)
-- In some positions or movements, significant relief — this is diagnostically important and guides treatment
+- In some positions or movements, significant relief — this is diagnostically important and guides treatment.
 
 The specific distribution of symptoms — which part of the leg is affected — helps identify which nerve root is involved, which guides treatment. Pain and tingling in the outer calf and top of the foot suggests L5; pain and tingling in the back of the calf and the sole of the foot suggests S1.
 
