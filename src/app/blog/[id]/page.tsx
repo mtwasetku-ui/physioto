@@ -97,19 +97,44 @@ function linkifyText(text: string, used: Set<string>): React.ReactNode {
 }
 
 /**
- * Splits a line by **bold** markers, then applies linkifyText to plain segments.
+ * Splits a line by **bold** markers and [text](url) markdown links,
+ * then applies linkifyText to plain segments.
  */
 function renderInline(text: string, used: Set<string>): React.ReactNode {
-  const parts = text.split(/\*\*(.*?)\*\*/)
-  return (
-    <>
-      {parts.map((part, i) =>
-        i % 2 === 1
-          ? <strong key={i} style={{ color: '#0f172a', fontWeight: 700 }}>{part}</strong>
-          : <React.Fragment key={i}>{linkifyText(part, used)}</React.Fragment>
-      )}
-    </>
-  )
+  // Tokenise: split on [text](url) first, then handle **bold** within plain segments
+  const tokens = text.split(/(\[[^\]]+\]\([^)]+\))/)
+  const nodes: React.ReactNode[] = []
+  let k = 0
+
+  tokens.forEach((token, ti) => {
+    if (ti % 2 === 1) {
+      // Markdown link token [label](href)
+      const m = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+      if (m) {
+        nodes.push(
+          <Link
+            key={`mdlink-${k++}`}
+            href={m[2]}
+            style={{ color: '#0891b2', textDecoration: 'underline', textDecorationColor: '#bae6fd', textUnderlineOffset: 3 }}
+          >
+            {m[1]}
+          </Link>
+        )
+      }
+    } else {
+      // Plain text — handle **bold** then linkify
+      const boldParts = token.split(/\*\*(.*?)\*\*/)
+      boldParts.forEach((bp, j) => {
+        if (j % 2 === 1) {
+          nodes.push(<strong key={`b-${k++}`} style={{ color: '#0f172a', fontWeight: 700 }}>{bp}</strong>)
+        } else if (bp) {
+          nodes.push(<React.Fragment key={`t-${k++}`}>{linkifyText(bp, used)}</React.Fragment>)
+        }
+      })
+    }
+  })
+
+  return <>{nodes}</>
 }
 
 function renderMarkdown(content: string, currentSlug: string) {
@@ -145,7 +170,7 @@ function renderMarkdown(content: string, currentSlug: string) {
           borderBottom: '2px solid #e0f2fe',
           lineHeight: 1.3,
         }}>
-          {line.slice(3)}
+          {renderInline(line.slice(3), used)}
         </h2>
       )
       i++
@@ -164,7 +189,7 @@ function renderMarkdown(content: string, currentSlug: string) {
           marginBottom: 8,
           lineHeight: 1.35,
         }}>
-          {line.slice(4)}
+          {renderInline(line.slice(4), used)}
         </h3>
       )
       i++
@@ -195,7 +220,7 @@ function renderMarkdown(content: string, currentSlug: string) {
           marginTop: 22,
           letterSpacing: '0.01em',
         }}>
-          {line.slice(2, -2)}
+          {renderInline(line.slice(2, -2), used)}
         </p>
       )
       i++
