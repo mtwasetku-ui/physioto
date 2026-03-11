@@ -52,7 +52,7 @@ export const teamMembers: TeamMember[] = [
     qualifications: 'BPhty, MPT, AHPRA Registered',
     specialties: 'Neurological Rehabilitation, Musculoskeletal, Aged Care, Cardiopulmonary, NDIS & Home Care',
     bio: "Blessed brings over 16 years of physiotherapy experience across hospital, aged care, and community settings in India and Australia. He holds a Bachelor and Master of Physiotherapy from Tamil Nadu Dr. MGR Medical University and is AHPRA registered. Blessed has worked extensively with neurological conditions including stroke, Parkinson's disease, cerebral palsy and spinal injuries, as well as musculoskeletal and cardiopulmonary rehabilitation. Most recently he has been based in Launceston, working with NDIS and home care participants \u2014 making him a natural fit for the Physio to Home model. He is known for his patient-centred approach and his ability to design individualised programs that meet people where they are.",
-   photo: '/team/blessed.png',
+   photo: '/team/blessed.jpg',
     order: 3,
   },
 ]
