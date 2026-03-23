@@ -55,13 +55,5 @@ export const teamMembers: TeamMember[] = [
    photo: '/team/blessed.jpg',
     order: 3,
   },
-   {
-    id: '5',
-    name: 'Michaela Smith',
-    title: 'Senior Physiotherapist',
-    qualifications: 'B.Physio, APAM, AHPRA Registered',
-specialties: 'Chronic Disease Management, Falls Prevention, Neurological Rehabilitation, Orthopaedic Surgery Recovery, Post-Hospitalisation Rehabilitation, Pelvic Health',    bio: "Michaela brings over 12 years of experience as a senior physiotherapist across hospital, community and home visiting settings in Australia. Based in North West Tasmania, Michaela is particularly skilled in chronic disease management, falls prevention, neurological rehabilitation, and recovery from orthopedic surgeries and prolonged hospital stays. She also holds a specialist interest in pelvic health. Her practice is rooted in a holistic and individualised approach that treats the whole person rather than just the condition. She ensures that every management plan meets her patients exactly where they are to support their long-term well-being and goals..",
-   photo: '/team/michaela.jpg',
-    order: 3,
-  },
+ 
 ]
