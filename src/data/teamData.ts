@@ -55,5 +55,15 @@ export const teamMembers: TeamMember[] = [
    photo: '/team/blessed.jpg',
     order: 3,
   },
+   {
+    id: '5',
+    name: 'Kanza Nadeem',
+    title: 'Physiotherapist',
+    qualifications: 'BPhty, DPT, AHPRA Registered',
+    specialties: 'Musculoskeletal, neurological rehabilitation, Manual Therapy, Dry Needlin ',
+    bio: 'Kanza is AHPRA registered Physiotherapist, did her Doctor of physical therapy from LMDC, with advanced training in neurological rehabilitation and musculoskeletal. She works with conditions such as cerebral palsy and hemiplegia, focusing on improving mobility, function, and quality of life. She also integrates musculoskeletal rehabilitation and post operative rehabilitation and women’s health physiotherapy into her holistic approach to care. Kanza is trained and competent physiotherapy with her expertise in Mobilisation and Manual Therapy , Dry Needling, Kineso Tapping. Her treatment is more research based clinical approaches',
+    photo: '/team/kanza.jpg',
+    order: 3,
+  },
  
 ]
