@@ -352,18 +352,33 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
   }
 
   // FAQPage schema — parse FAQ Q&A pairs from post content
-  const faqSection = post.content.match(/## (?:Frequently Asked Questions|FAQ|Common Questions)[\s\S]*/)
+  // FAQPage schema — line-by-line parser (no ES2018 regex flags needed)
   let faqSchema: Record<string, unknown> | null = null
-  if (faqSection) {
-    const qaPairs = Array.from(faqSection[0].matchAll(/###\s+(.+?)\n+([^#]+?)(?=###|##|$)/gs))
-      .map(m => ({
-        '@type': 'Question',
-        name: m[1].trim(),
-        acceptedAnswer: { '@type': 'Answer', text: m[2].trim().replace(/\n+/g, ' ') },
-      }))
-      .filter(q => q.name && q.acceptedAnswer.text)
-    if (qaPairs.length > 0) {
-      faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: qaPairs }
+  const faqHeading = /^## (?:Frequently Asked Questions|FAQ|Common Questions)/
+  const lines = post.content.split('\n')
+  const faqStart = lines.findIndex((l) => faqHeading.test(l))
+  if (faqStart !== -1) {
+    const faqLines = lines.slice(faqStart + 1)
+    const entities: { '@type': string; name: string; acceptedAnswer: { '@type': string; text: string } }[] = []
+    let currentQ = ''
+    let currentA: string[] = []
+    for (const line of faqLines) {
+      if (line.startsWith('## ')) break // next top-level section
+      if (line.startsWith('### ')) {
+        if (currentQ && currentA.join(' ').trim()) {
+          entities.push({ '@type': 'Question', name: currentQ, acceptedAnswer: { '@type': 'Answer', text: currentA.join(' ').trim() } })
+        }
+        currentQ = line.slice(4).trim()
+        currentA = []
+      } else if (currentQ && line.trim()) {
+        currentA.push(line.trim())
+      }
+    }
+    if (currentQ && currentA.join(' ').trim()) {
+      entities.push({ '@type': 'Question', name: currentQ, acceptedAnswer: { '@type': 'Answer', text: currentA.join(' ').trim() } })
+    }
+    if (entities.length > 0) {
+      faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: entities }
     }
   }
 
