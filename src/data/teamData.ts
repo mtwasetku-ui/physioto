@@ -3,7 +3,7 @@ export interface TeamMember {
   name: string
   title: string
   qualifications?: string
-  AHPRA registration number: string
+"AHPRA registration number": string
   specialties?: string
   bio?: string
   /**
