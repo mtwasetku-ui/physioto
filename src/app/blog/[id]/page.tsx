@@ -313,8 +313,74 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
   const formatDate = (d: string) =>
     new Date(d).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })
 
+
+  // ── Structured Data ────────────────────────────────────────────────
+  const BASE_URL = 'https://www.physiotohome.com'
+  const postUrl = `${BASE_URL}/blog/${post.slug}`
+  const imageUrl = post.image
+    ? (post.image.startsWith('http') ? post.image : `${BASE_URL}${post.image}`)
+    : `${BASE_URL}/images/og-default.jpg`
+
+  // Article schema (E-E-A-T signal for YMYL healthcare content)
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    image: imageUrl,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+      jobTitle: 'Physiotherapist',
+      identifier: 'AHPRA PHY0001874391',
+      worksFor: {
+        '@type': 'MedicalBusiness',
+        name: 'Physio to Home',
+        url: BASE_URL,
+      },
+    },
+    publisher: {
+      '@type': 'MedicalBusiness',
+      name: 'Physio to Home',
+      url: BASE_URL,
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
+    url: postUrl,
+  }
+
+  // FAQPage schema — parse FAQ Q&A pairs from post content
+  const faqMatches = [...post.content.matchAll(/###\s+(.+?)\n+([^#]+?)(?=###|##|$)/gs)]
+  const faqSection = post.content.match(/## (?:Frequently Asked Questions|FAQ|Common Questions)[\s\S]*/)
+  let faqSchema: Record<string, unknown> | null = null
+  if (faqSection) {
+    const qaPairs = [...faqSection[0].matchAll(/###\s+(.+?)\n+([^#]+?)(?=###|##|$)/gs)]
+      .map(m => ({
+        '@type': 'Question',
+        name: m[1].trim(),
+        acceptedAnswer: { '@type': 'Answer', text: m[2].trim().replace(/\n+/g, ' ') },
+      }))
+      .filter(q => q.name && q.acceptedAnswer.text)
+    if (qaPairs.length > 0) {
+      faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: qaPairs }
+    }
+  }
+
   return (
     <div style={{ minHeight: '100vh', background: '#fff', paddingBottom: 80 }}>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Hero */}
       <div style={{ width: '100%', height: 'clamp(320px, 50vh, 520px)', position: 'relative', background: '#0f172a' }}>
         {post.image && (
