@@ -63,6 +63,11 @@ function FlipCard({ member }: { member: TeamMember }) {
           <div className="mb-5 pb-4 border-b border-blue-400/40">
             <h3 className="text-2xl font-bold text-white">{member.name}</h3>
             <p className="text-blue-200 font-medium text-sm mt-1">{member.title}</p>
+            {member["AHPRA registration number"] && (
+              <p className="text-blue-300/70 text-xs mt-1">
+                AHPRA: {member["AHPRA registration number"]}
+              </p>
+            )}
           </div>
 
           <div className="flex-1 overflow-y-auto space-y-4 pr-1">
