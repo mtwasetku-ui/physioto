@@ -352,11 +352,10 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
   }
 
   // FAQPage schema — parse FAQ Q&A pairs from post content
-  const faqMatches = [...post.content.matchAll(/###\s+(.+?)\n+([^#]+?)(?=###|##|$)/gs)]
   const faqSection = post.content.match(/## (?:Frequently Asked Questions|FAQ|Common Questions)[\s\S]*/)
   let faqSchema: Record<string, unknown> | null = null
   if (faqSection) {
-    const qaPairs = [...faqSection[0].matchAll(/###\s+(.+?)\n+([^#]+?)(?=###|##|$)/gs)]
+    const qaPairs = Array.from(faqSection[0].matchAll(/###\s+(.+?)\n+([^#]+?)(?=###|##|$)/gs))
       .map(m => ({
         '@type': 'Question',
         name: m[1].trim(),
