@@ -76,4 +76,15 @@ export const teamMembers: TeamMember[] = [
     photo: '/team/rafik.jpg',
     order: 3,
   },
+  {
+    id: '7',
+    name: 'Christine Girgis',
+    title: 'Physiotherapist',
+    qualifications: 'BPhty, AHPRA Registered',
+    "AHPRA registration number": ' PHY0002184461',
+    specialties: 'Musculoskeletal, Chronic Pain, Neurological Rehabilitation, Aged Care, NDIS, WorkCover',
+    bio: "Christine enjoys helping people improve mobility, reduce pain, and build independence in everyday life. Her approach is calm, supportive, and focused on achievable long-term progress. She has worked across musculoskeletal clinics, community rehabilitation, aged care, WorkCover programs, and NDIS services both overseas and throughout Australia, including nearly seven years in Queensland. Christine has extensive experience supporting people living with chronic pain, mobility challenges, neurological conditions, and functional limitations. She was inspired to pursue physiotherapy after seeing firsthand how rehabilitation positively transformed the life of a close family member, and values the combination of movement, problem-solving, and genuine human connection the profession offers.",
+    photo: '/team/christine.jpg',
+    order: 7,
+  },
 ]
