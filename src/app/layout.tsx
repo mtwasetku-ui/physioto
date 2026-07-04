@@ -1,10 +1,14 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
+import { Suspense } from 'react'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/toaster'
+import GAPageViewTracker from '@/components/GAPageViewTracker'
 
 const BASE_URL = 'https://www.physiotohome.com'
+const GA_ID = 'G-78YHHCX8JE'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -129,6 +133,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="flex flex-col min-h-screen">
+        {/* Google tag (gtag.js) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
+        <Suspense fallback={null}>
+          <GAPageViewTracker />
+        </Suspense>
+
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
