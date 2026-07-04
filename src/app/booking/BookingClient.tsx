@@ -155,8 +155,8 @@ export default function BookingClient() {
                 <h3 className="font-semibold text-gray-900 mb-1 text-lg">NDIS Client? Download Our Intake Form</h3>
                 <p className="text-gray-600 text-sm max-w-xl">
                   If you&apos;re a self-managed or plan-managed NDIS participant, please download and complete our
-                  NDIS Client Intake Form ahead of your appointment. You can bring it to your first visit or email
-                  it back to us in advance.
+                  NDIS Client Intake Form ahead of your appointment. You can email
+                  it back in advance to Info@physiotohome.com.
                 </p>
               </div>
             </div>
