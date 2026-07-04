@@ -161,7 +161,7 @@ export default function BookingClient() {
               </div>
             </div>
             <a
-              href="/ndis-client-intake-form.pdf"
+              href="/ndis.pdf"
               download
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-3 transition-colors flex-shrink-0"
             >
