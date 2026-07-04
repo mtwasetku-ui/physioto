@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, FileDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input, Label, Textarea } from '@/components/ui/form-elements'
 import { useToast } from '@/hooks/use-toast'
@@ -141,6 +141,33 @@ export default function BookingClient() {
                 <p className="text-gray-600 text-sm">{desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* NDIS Intake Form Download */}
+        <div className="mb-16">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <FileDown className="w-6 h-6 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-1 text-lg">NDIS Client? Download Our Intake Form</h3>
+                <p className="text-gray-600 text-sm max-w-xl">
+                  If you&apos;re a self-managed or plan-managed NDIS participant, please download and complete our
+                  NDIS Client Intake Form ahead of your appointment. You can bring it to your first visit or email
+                  it back to us in advance.
+                </p>
+              </div>
+            </div>
+            <a
+              href="/ndis-client-intake-form.pdf"
+              download
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-3 transition-colors flex-shrink-0"
+            >
+              <FileDown className="w-4 h-4 mr-2" />
+              Download NDIS Intake Form
+            </a>
           </div>
         </div>
 
