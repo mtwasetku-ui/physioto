@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Mail, MapPin, Facebook, Linkedin } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Linkedin, Star } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -76,6 +76,17 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+
+            <a
+              href="https://g.page/r/CZtUAxvGoYdLEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 bg-gray-800 hover:bg-amber-500 hover:text-gray-900 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-colors"
+            >
+              <Star className="w-4 h-4" />
+              Leave us a review
+            </a>
+
             <div className="mt-6">
               <p className="text-sm text-gray-400">
                 <span className="font-medium text-white">Business Hours:</span><br />
