@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Map condition label → blog slug (null = no matching post, renders as plain text)
 const CONDITION_LINKS: Record<string, string | null> = {
@@ -164,7 +165,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
       onMouseLeave={e => e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)'}
     >
       <div style={{ position: 'relative', height: 260, overflow: 'hidden' }}>
-        <img src={service.photo} alt={service.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <Image src={`/${service.photo}`} alt={service.name} fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.1) 100%)' }} />
         <div style={{ position: 'absolute', bottom: 18, left: 18, right: 18 }}>
           <h3 style={{ margin: '0 0 8px', color: '#fff', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 19, fontWeight: 600, lineHeight: 1.2 }}>
