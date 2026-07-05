@@ -1,7 +1,7 @@
 ---
 title: "The Benefits of Home Physiotherapy | Physio to Home"
 description: "Home physiotherapy isn't a compromise — for most patients, it produces better outcomes than clinic care. North Tasmania's home physiotherapist explains why, and who benefits most."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2025-03-01"
 image: /image/blog/benefits-of-home-physiotherapy.jpg
 category: "Physiotherapy Tips"
