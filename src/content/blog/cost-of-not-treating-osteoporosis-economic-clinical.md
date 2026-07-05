@@ -1,7 +1,7 @@
 ---
 title: "The Cost of Not Treating Osteoporosis: Economic & Clinical Case | Physio to Home"
 description: "Osteoporosis-related fractures cost Australia over $3.8 billion annually — yet prevention remains dramatically underinvested. A North Tasmania physiotherapist examines the economic and clinical case for proactive management."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Conditions & Rehab"
 featured: false
