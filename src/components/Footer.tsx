@@ -21,7 +21,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Providing professional physiotherapy services in the comfort of your home across Tasmania for over 15 years. Your health, our priority.
+              Providing professional physiotherapy services in the comfort of your home in Launceston and across Tasmania for over 15 years. Your health, our priority.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm font-medium text-white">Location</p>
-                  <p className="text-sm">Serving communities across Tasmania</p>
+                  <p className="text-sm">Based in Launceston, serving all of Tasmania</p>
                 </div>
               </li>
             </ul>
