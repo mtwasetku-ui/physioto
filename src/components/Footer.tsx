@@ -99,6 +99,25 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800">
+          <h3 className="text-white font-semibold mb-4 text-sm">Areas We Cover</h3>
+          <div className="flex flex-wrap gap-x-2 gap-y-2 text-sm">
+            {[
+              ['Launceston', '/blog/home-physiotherapy-launceston'],
+              ['Deloraine', '/blog/home-physiotherapy-deloraine'],
+              ['George Town', '/blog/home-physiotherapy-george-town'],
+              ['Longford', '/blog/home-physiotherapy-longford'],
+              ['Scottsdale', '/blog/home-physiotherapy-scottsdale'],
+              ['Tamar Valley, Exeter & Beaconsfield', '/blog/home-physiotherapy-tamar-valley-exeter-beaconsfield'],
+            ].map(([name, path], i, arr) => (
+              <span key={path} className="flex items-center">
+                <Link href={path} className="text-gray-400 hover:text-blue-400 transition-colors">{name}</Link>
+                {i < arr.length - 1 && <span className="text-gray-700 ml-2">·</span>}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-400">© {currentYear} Physio to Home. All rights reserved.</p>
             <div className="flex space-x-6 text-sm">
