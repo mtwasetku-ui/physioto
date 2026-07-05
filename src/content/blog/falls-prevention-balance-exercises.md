@@ -1,7 +1,7 @@
 ---
 title: "Falls Prevention | Balance Exercises | Physio to Home"
 description: "Physiotherapist-designed balance exercises for seniors — three progressive levels you can do at home with just a chair. Safe, evidence-based, and tailored for older Tasmanians."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-02-27"
 category: "Falls Prevention"
 featured: false
