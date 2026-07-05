@@ -3,24 +3,24 @@ import type { Metadata } from 'next'
 const BASE_URL = 'https://www.physiotohome.com'
 
 export const homeMetadata: Metadata = {
-  title: 'In-Home Physiotherapy Across Tasmania — Physio to Home',
-  description: 'Physio to Home delivers professional physiotherapy to your door across Tasmania. AHPRA registered, no GP referral needed, same-week appointments. Call 1300 433 233.',
+  title: 'Home Physiotherapy Launceston — In-Home Care Across Tasmania',
+  description: 'Physio to Home delivers professional physiotherapy to your door in Launceston and across Tasmania. AHPRA registered, no GP referral needed, same-week appointments. Call 1300 433 233.',
   alternates: { canonical: BASE_URL },
   openGraph: {
-    title: 'In-Home Physiotherapy Across Tasmania — Physio to Home',
-    description: 'Professional physiotherapy delivered to your door. No waiting rooms, no travel. Serving all of Tasmania.',
+    title: 'Home Physiotherapy Launceston — In-Home Care Across Tasmania',
+    description: 'Professional physiotherapy delivered to your door in Launceston. No waiting rooms, no travel. Also serving all of Tasmania.',
     url: BASE_URL,
-    images: [{ url: '/images/og-home.jpg', width: 1200, height: 630, alt: 'Physio to Home — In-Home Physiotherapy Tasmania' }],
+    images: [{ url: '/images/og-home.jpg', width: 1200, height: 630, alt: 'Physio to Home — In-Home Physiotherapy Launceston, Tasmania' }],
   },
 }
 
 export const servicesMetadata: Metadata = {
-  title: 'Physiotherapy Services — In-Home Care Across Tasmania',
-  description: 'Comprehensive in-home physiotherapy services across Tasmania including musculoskeletal pain, post-surgery rehab, falls prevention, neurological rehab, and aged care. No GP referral required.',
+  title: 'Physiotherapy Services in Launceston — In-Home Care Across Tasmania',
+  description: 'Comprehensive in-home physiotherapy services in Launceston and across Tasmania including musculoskeletal pain, post-surgery rehab, falls prevention, neurological rehab, and aged care. No GP referral required.',
   alternates: { canonical: `${BASE_URL}/services` },
   openGraph: {
-    title: 'Physiotherapy Services — In-Home Care Across Tasmania',
-    description: 'Musculoskeletal pain, post-surgery rehab, falls prevention, neurological rehab and more — all delivered to your home across Tasmania.',
+    title: 'Physiotherapy Services in Launceston — In-Home Care Across Tasmania',
+    description: 'Musculoskeletal pain, post-surgery rehab, falls prevention, neurological rehab and more — delivered to your home in Launceston and beyond.',
     url: `${BASE_URL}/services`,
   },
 }
