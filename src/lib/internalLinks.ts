@@ -54,6 +54,11 @@ export const internalLinks: Record<string, string> = {
   // Funding
   'NDIS physiotherapy':                'ndis-home-physiotherapy-funding',
   'NDIS':                              'ndis-home-physiotherapy-funding',
+  'Functional Capacity Assessment':    'ndis-functional-capacity-assessment-physiotherapy',
+  'NDIS Functional Capacity Assessment': 'ndis-functional-capacity-assessment-physiotherapy',
+  'choosing an NDIS physiotherapist':  'how-to-choose-ndis-physiotherapist-checklist',
+  'support coordinator':               'ndis-support-coordinators-guide-home-physiotherapy-referrals',
+  'NDIS physiotherapy goals':          'writing-ndis-physiotherapy-goals-plan-review',
   'My Aged Care':                      'my-aged-care-home-physiotherapy-funding',
   'GP Management Plan':                'medicare-gp-management-plan-physiotherapy-funding',
   'private health insurance':          'private-health-insurance-home-physiotherapy',
