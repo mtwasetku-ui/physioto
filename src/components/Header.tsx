@@ -23,7 +23,7 @@ export default function Header() {
   const isActive = (path: string) => pathname === path
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <header className="sticky top-0 z-50 bg-emerald-50/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center">
@@ -42,8 +42,8 @@ export default function Header() {
               <Link
                 key={link.path}
                 href={link.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  isActive(link.path) ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                className={`px-4 py-2 rounded-lg text-base font-medium transition-all duration-200 ${
+                  isActive(link.path) ? 'bg-emerald-50 text-emerald-600' : 'text-gray-700 hover:bg-gray-50 hover:text-emerald-600'
                 }`}
               >
                 {link.name}
@@ -52,12 +52,12 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:1300433233" className="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="tel:1300433233" className="flex items-center text-gray-700 hover:text-emerald-600 transition-colors">
               <Phone className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">1300 433 233</span>
+              <span className="text-base font-medium">1300 433 233</span>
             </a>
             <Link href="/booking">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">Book Appointment</Button>
+              <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">Book Appointment</Button>
             </Link>
           </div>
 
@@ -77,8 +77,8 @@ export default function Header() {
                   key={link.path}
                   href={link.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    isActive(link.path) ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50'
+                  className={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                    isActive(link.path) ? 'bg-emerald-50 text-emerald-600' : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
                   {link.name}
@@ -90,7 +90,7 @@ export default function Header() {
                   <span className="text-sm font-medium">1300 433 233</span>
                 </a>
                 <Link href="/booking" onClick={() => setIsMenuOpen(false)} className="block px-4">
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Book Appointment</Button>
+                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">Book Appointment</Button>
                 </Link>
               </div>
             </nav>
