@@ -115,9 +115,9 @@ const fundingOptions = [
 
 const badges = ['No GP Referral Required', 'AHPRA Registered', 'Same-Week Appointments', 'NDIS Welcome'];
 
-function CheckCircle({ size = 12 }) {
+function CheckCircle({ size = 14 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#22d3ee" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
     </svg>
   );
@@ -125,7 +125,7 @@ function CheckCircle({ size = 12 }) {
 
 function ChevronDown({ open }: { open: boolean }) {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
       style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>
       <polyline points="6 9 12 15 18 9" />
     </svg>
@@ -135,12 +135,12 @@ function ChevronDown({ open }: { open: boolean }) {
 function ConditionItem({ label }: { label: string }) {
   const slug = CONDITION_LINKS[label];
   return (
-    <li style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11.5, color: '#475569' }}>
-      <CheckCircle size={11} />
+    <li style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 14.5, color: '#475569' }}>
+      <CheckCircle size={13} />
       {slug ? (
         <Link
           href={`/blog/${slug}`}
-          style={{ color: '#0891b2', textDecoration: 'none', fontWeight: 500 }}
+          style={{ color: '#059669', textDecoration: 'none', fontWeight: 600 }}
           onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
           onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
         >
@@ -164,32 +164,32 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
       onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)'}
       onMouseLeave={e => e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)'}
     >
-      <div style={{ position: 'relative', height: 260, overflow: 'hidden' }}>
+      <div style={{ position: 'relative', height: 280, overflow: 'hidden' }}>
         <Image src={`/${service.photo}`} alt={service.name} fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.1) 100%)' }} />
-        <div style={{ position: 'absolute', bottom: 18, left: 18, right: 18 }}>
-          <h3 style={{ margin: '0 0 8px', color: '#fff', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 19, fontWeight: 600, lineHeight: 1.2 }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(4,30,20,0.9) 0%, rgba(4,30,20,0.5) 55%, rgba(4,30,20,0.12) 100%)' }} />
+        <div style={{ position: 'absolute', bottom: 20, left: 20, right: 20 }}>
+          <h3 style={{ margin: '0 0 10px', color: '#fff', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, fontWeight: 600, lineHeight: 1.2 }}>
             {service.name}
           </h3>
-          <p style={{ margin: 0, color: 'rgba(255,255,255,0.82)', fontSize: 13, lineHeight: 1.6 }}>
+          <p style={{ margin: 0, color: 'rgba(255,255,255,0.88)', fontSize: 16, lineHeight: 1.6 }}>
             {service.summary}
           </p>
         </div>
       </div>
 
-      <div style={{ padding: '14px 18px', background: '#fff' }}>
+      <div style={{ padding: '18px 22px', background: '#fff' }}>
         <button onClick={() => setOpen(o => !o)} style={{
-          display: 'inline-flex', alignItems: 'center', gap: 5,
+          display: 'inline-flex', alignItems: 'center', gap: 6,
           background: 'none', border: 'none', cursor: 'pointer',
-          color: '#0891b2', fontWeight: 700, fontSize: 13, padding: 0
+          color: '#059669', fontWeight: 700, fontSize: 16, padding: 0
         }}>
           {open ? 'Show less' : 'Learn more'} <ChevronDown open={open} />
         </button>
         {open && (
-          <div style={{ marginTop: 14, borderTop: '1px solid #f1f5f9', paddingTop: 14 }}>
-            <p style={{ margin: '0 0 12px', color: '#64748b', fontSize: 13, lineHeight: 1.65 }}>{service.detail}</p>
-            <p style={{ margin: '0 0 8px', fontSize: 10, fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Conditions we treat</p>
-            <ul style={{ margin: 0, padding: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 8px', listStyle: 'none' }}>
+          <div style={{ marginTop: 16, borderTop: '1px solid #f1f5f9', paddingTop: 16 }}>
+            <p style={{ margin: '0 0 14px', color: '#475569', fontSize: 16, lineHeight: 1.65 }}>{service.detail}</p>
+            <p style={{ margin: '0 0 10px', fontSize: 12.5, fontWeight: 800, color: '#059669', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Conditions we treat</p>
+            <ul style={{ margin: 0, padding: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 10px', listStyle: 'none' }}>
               {service.conditions.map(c => (
                 <ConditionItem key={c} label={c} />
               ))}
@@ -210,13 +210,13 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom, #f8fafc, #fff)', fontFamily: 'system-ui, sans-serif' }}>
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom, #f0fdf9, #fff)', fontFamily: 'system-ui, sans-serif' }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
         .dots-bg { background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 24px 24px; }
-        .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+        .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
         @media (max-width: 580px) { .card-grid { grid-template-columns: 1fr; } }
-        .funding-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+        .funding-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
         @media (max-width: 960px) { .funding-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 500px) { .funding-grid { grid-template-columns: repeat(2, 1fr); } }
         .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -224,24 +224,24 @@ export default function ServicesPage() {
       `}</style>
 
       {/* HERO */}
-      <section className="dots-bg" style={{ background: '#0f172a', padding: '80px 24px 72px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -80, right: -40, width: 380, height: 380, background: 'radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%)', pointerEvents: 'none' }} />
-        <div style={{ maxWidth: 760, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
-          <p style={{ color: '#22d3ee', fontSize: 11, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 16px' }}>What We Offer</p>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(38px, 6vw, 58px)', color: '#fff', margin: '0 0 18px', lineHeight: 1.15 }}>
-            Launceston Physiotherapy Services <em style={{ color: '#67e8f9', fontStyle: 'italic' }}>built around you</em>
+      <section className="dots-bg" style={{ background: 'linear-gradient(135deg, #064e3b, #022c22)', padding: '88px 24px 80px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -80, right: -40, width: 380, height: 380, background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <p style={{ color: '#6ee7b7', fontSize: 13, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 18px' }}>What We Offer</p>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(42px, 6.5vw, 62px)', color: '#fff', margin: '0 0 20px', lineHeight: 1.15 }}>
+            Launceston Physiotherapy Services <em style={{ color: '#6ee7b7', fontStyle: 'italic' }}>built around you</em>
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: 17, lineHeight: 1.7, maxWidth: 560, margin: '0 auto 28px' }}>
+          <p style={{ color: '#cbd5e1', fontSize: 19, lineHeight: 1.7, maxWidth: 600, margin: '0 auto 32px' }}>
             Comprehensive in-home physiotherapy based in Launceston and serving all of Tasmania — tailored to your condition, your home, and your goals.
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8 }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10 }}>
             {badges.map(b => (
               <span key={b} style={{
-                display: 'inline-flex', alignItems: 'center', gap: 6,
-                background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)',
-                borderRadius: 999, padding: '5px 12px', fontSize: 11.5, color: 'rgba(255,255,255,0.85)', fontWeight: 500
+                display: 'inline-flex', alignItems: 'center', gap: 7,
+                background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(110,231,183,0.3)',
+                borderRadius: 999, padding: '7px 15px', fontSize: 14, color: '#d1fae5', fontWeight: 600
               }}>
-                <CheckCircle size={11} />{b}
+                <CheckCircle size={13} />{b}
               </span>
             ))}
           </div>
@@ -249,11 +249,11 @@ export default function ServicesPage() {
       </section>
 
       {/* SERVICES */}
-      <section style={{ maxWidth: 1100, margin: '0 auto', padding: '72px 24px' }}>
-        <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 52 }}>
-          <div style={{ width: 48, height: 3, background: 'linear-gradient(90deg,#0891b2,#06b6d4)', borderRadius: 2, margin: '0 auto 20px' }} />
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(28px, 4vw, 38px)', color: '#0f172a', margin: '0 0 10px' }}>Our Physiotherapy Services</h2>
-          <p style={{ color: '#64748b', fontSize: 14, maxWidth: 480, margin: '0 auto', lineHeight: 1.65 }}>
+      <section style={{ maxWidth: 1150, margin: '0 auto', padding: '80px 24px' }}>
+        <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 56 }}>
+          <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, margin: '0 auto 22px' }} />
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(32px, 4.5vw, 44px)', color: '#0f172a', margin: '0 0 12px' }}>Our Physiotherapy Services</h2>
+          <p style={{ color: '#475569', fontSize: 17, maxWidth: 520, margin: '0 auto', lineHeight: 1.65 }}>
             We treat a wide range of conditions. Click any service to learn more about how we can help.
           </p>
         </div>
@@ -267,27 +267,27 @@ export default function ServicesPage() {
       </section>
 
       {/* FUNDING */}
-      <section style={{ background: '#f8fafc', borderTop: '1px solid #e2e8f0', padding: '64px 24px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 40, transitionDelay: '0.3s' }}>
-            <div style={{ width: 48, height: 3, background: 'linear-gradient(90deg,#0891b2,#06b6d4)', borderRadius: 2, margin: '0 auto 20px' }} />
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(26px, 3.5vw, 36px)', color: '#0f172a', margin: '0 0 10px' }}>Funding & Payment Options</h2>
-            <p style={{ color: '#64748b', fontSize: 13.5, maxWidth: 400, margin: '0 auto' }}>We make accessing quality care as simple as possible.</p>
+      <section style={{ background: '#ecfdf5', borderTop: '1px solid #d1fae5', padding: '72px 24px' }}>
+        <div style={{ maxWidth: 1150, margin: '0 auto' }}>
+          <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 44, transitionDelay: '0.3s' }}>
+            <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, margin: '0 auto 22px' }} />
+            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(30px, 4vw, 42px)', color: '#0f172a', margin: '0 0 12px' }}>Funding & Payment Options</h2>
+            <p style={{ color: '#475569', fontSize: 16, maxWidth: 440, margin: '0 auto' }}>We make accessing quality care as simple as possible.</p>
           </div>
           <div className="funding-grid">
             {fundingOptions.map(({ emoji, label, desc }) => (
               <div key={label} style={{
-                background: '#fff', borderRadius: 16, padding: '20px 14px',
-                textAlign: 'center', border: '1px solid #e2e8f0',
+                background: '#fff', borderRadius: 18, padding: '24px 16px',
+                textAlign: 'center', border: '1px solid #d1fae5',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                transition: 'box-shadow 0.2s'
+                transition: 'box-shadow 0.2s, transform 0.2s'
               }}
-                onMouseEnter={e => e.currentTarget.style.boxShadow = '0 6px 18px rgba(0,0,0,0.09)'}
-                onMouseLeave={e => e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)'}
+                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 8px 22px rgba(5,150,105,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'none'; }}
               >
-                <div style={{ fontSize: 28, marginBottom: 8 }}>{emoji}</div>
-                <p style={{ margin: '0 0 4px', fontWeight: 700, color: '#0f172a', fontSize: 11 }}>{label}</p>
-                <p style={{ margin: 0, color: '#94a3b8', fontSize: 10.5 }}>{desc}</p>
+                <div style={{ fontSize: 34, marginBottom: 10 }}>{emoji}</div>
+                <p style={{ margin: '0 0 5px', fontWeight: 700, color: '#0f172a', fontSize: 14.5 }}>{label}</p>
+                <p style={{ margin: 0, color: '#64748b', fontSize: 13 }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -295,34 +295,34 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="dots-bg" style={{ background: '#0f172a', padding: '80px 24px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -60, right: -30, width: 300, height: 300, background: 'radial-gradient(circle, rgba(6,182,212,0.13) 0%, transparent 70%)', pointerEvents: 'none' }} />
-        <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
-          <p style={{ color: '#22d3ee', fontSize: 11, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 14px' }}>Get Started Today</p>
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(32px, 5vw, 48px)', color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>
-            Ready to begin<br /><em style={{ color: '#67e8f9' }}>your recovery?</em>
+      <section className="dots-bg" style={{ background: 'linear-gradient(135deg, #064e3b, #022c22)', padding: '88px 24px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -60, right: -30, width: 300, height: 300, background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: 660, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <p style={{ color: '#6ee7b7', fontSize: 13, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 16px' }}>Get Started Today</p>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(36px, 5.5vw, 52px)', color: '#fff', margin: '0 0 18px', lineHeight: 1.2 }}>
+            Ready to begin<br /><em style={{ color: '#6ee7b7' }}>your recovery?</em>
           </h2>
-          <p style={{ color: '#94a3b8', fontSize: 15.5, lineHeight: 1.7, marginBottom: 36 }}>
+          <p style={{ color: '#cbd5e1', fontSize: 18, lineHeight: 1.7, marginBottom: 40 }}>
             Book your appointment today and experience professional physiotherapy in the comfort of your own home. No GP referral needed.
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
             <button style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: '#06b6d4', color: '#fff', fontWeight: 700,
-              border: 'none', borderRadius: 12, padding: '14px 28px', fontSize: 15,
-              cursor: 'pointer', boxShadow: '0 8px 24px rgba(6,182,212,0.3)',
+              display: 'inline-flex', alignItems: 'center', gap: 9,
+              background: '#10b981', color: '#fff', fontWeight: 700,
+              border: 'none', borderRadius: 12, padding: '16px 32px', fontSize: 17,
+              cursor: 'pointer', boxShadow: '0 8px 24px rgba(16,185,129,0.35)',
               transition: 'background 0.15s, transform 0.15s'
             }}
-              onMouseEnter={e => { e.currentTarget.style.background = '#22d3ee'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#06b6d4'; e.currentTarget.style.transform = 'none'; }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#34d399'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#10b981'; e.currentTarget.style.transform = 'none'; }}
             >
               📅 Book Your Appointment
             </button>
             <button style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
+              display: 'inline-flex', alignItems: 'center', gap: 9,
               background: 'rgba(255,255,255,0.08)', color: '#fff',
               border: '1px solid rgba(255,255,255,0.18)', borderRadius: 12,
-              padding: '14px 28px', fontSize: 15, cursor: 'pointer',
+              padding: '16px 32px', fontSize: 17, cursor: 'pointer',
               transition: 'background 0.15s'
             }}
               onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.14)'}
