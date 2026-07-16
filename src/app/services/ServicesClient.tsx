@@ -214,8 +214,7 @@ export default function ServicesPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
         .dots-bg { background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 24px 24px; }
-        .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-        @media (max-width: 900px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+        .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
         @media (max-width: 580px) { .card-grid { grid-template-columns: 1fr; } }
         .funding-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
         @media (max-width: 960px) { .funding-grid { grid-template-columns: repeat(3, 1fr); } }
