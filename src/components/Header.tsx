@@ -32,7 +32,7 @@ export default function Header() {
               alt="Physio to Home"
               width={160}
               height={60}
-              className="h-18 w-auto"
+              className="h-17 w-auto"
               priority
             />
           </Link>
