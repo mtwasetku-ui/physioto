@@ -86,15 +86,15 @@ export default function BookingClient() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
 
       {/* Hero */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+      <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Physiotherapy That Comes to You</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
             Physio to Home brings professional physiotherapy directly to your door across Tasmania.
             Whether you&apos;re recovering from surgery, managing a chronic condition, or looking to improve your strength
             and balance — we assess and treat you in the comfort of your own home.
           </p>
-          <p className="text-blue-100 max-w-3xl mx-auto mt-4">
+          <p className="text-emerald-100 max-w-3xl mx-auto mt-4">
             With over 15 years of clinical experience, Micheal provides personalised, one-on-one care with no waiting
             rooms and no travel stress. We accept My Aged Care, GP Management Plans, private health insurance,
             and private paying clients.
@@ -112,7 +112,7 @@ export default function BookingClient() {
               { value: 'Tasmania', label: 'State-wide service' },
             ].map(({ value, label }) => (
               <div key={label}>
-                <div className="text-3xl font-bold text-blue-600">{value}</div>
+                <div className="text-3xl font-bold text-emerald-600">{value}</div>
                 <div className="text-sm text-gray-500 mt-1">{label}</div>
               </div>
             ))}
@@ -136,7 +136,7 @@ export default function BookingClient() {
               { step: '4', title: 'Your Treatment Plan', desc: "After your initial assessment, you'll receive a personalised plan tailored to your goals and needs." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mb-4">{step}</div>
+                <div className="w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold mb-4">{step}</div>
                 <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
                 <p className="text-gray-600 text-sm">{desc}</p>
               </div>
@@ -148,8 +148,8 @@ export default function BookingClient() {
         <div className="mb-16">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <FileDown className="w-6 h-6 text-blue-600" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <FileDown className="w-6 h-6 text-emerald-600" />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1 text-lg">NDIS Client? Download Our Intake Form</h3>
@@ -163,7 +163,7 @@ export default function BookingClient() {
             <a
               href="/ndis.pdf"
               download
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-3 transition-colors flex-shrink-0"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-5 py-3 transition-colors flex-shrink-0"
             >
               <FileDown className="w-4 h-4 mr-2" />
               Download NDIS Intake Form
@@ -182,13 +182,13 @@ export default function BookingClient() {
                 {
                   Icon: Phone,
                   title: 'Phone',
-                  content: <a href="tel:1300433233" className="text-gray-600 hover:text-blue-600 transition-colors">1300 433 233</a>,
+                  content: <a href="tel:1300433233" className="text-gray-600 hover:text-emerald-600 transition-colors">1300 433 233</a>,
                   sub: 'Mon–Fri: 8am – 6pm, Sat: 9am – 2pm',
                 },
                 {
                   Icon: Mail,
                   title: 'Email',
-                  content: <a href="mailto:info@physiotohome.com" className="text-gray-600 hover:text-blue-600 transition-colors">info@physiotohome.com</a>,
+                  content: <a href="mailto:info@physiotohome.com" className="text-gray-600 hover:text-emerald-600 transition-colors">info@physiotohome.com</a>,
                   sub: "We'll respond within 24 hours",
                 },
                 {
@@ -205,8 +205,8 @@ export default function BookingClient() {
                 },
               ].map(({ Icon, title, content, sub }) => (
                 <div key={title} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">{title}</h3>
@@ -217,7 +217,7 @@ export default function BookingClient() {
               ))}
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">What to Expect</h3>
               <ul className="space-y-3 text-gray-700">
                 {[
@@ -227,7 +227,7 @@ export default function BookingClient() {
                   'My Aged Care & private health accepted',
                 ].map((item) => (
                   <li key={item} className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
+                    <span className="text-emerald-600 mr-2">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -264,7 +264,7 @@ export default function BookingClient() {
               <div>
                 <Label htmlFor="service">Service Required *</Label>
                 <select id="service" name="service" value={formData.service} onChange={handleChange}
-                  className={`w-full rounded-md border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.service ? 'border-red-500' : 'border-gray-300'}`}>
+                  className={`w-full rounded-md border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 ${errors.service ? 'border-red-500' : 'border-gray-300'}`}>
                   <option value="">Select a service...</option>
                   {SERVICES.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
@@ -279,7 +279,7 @@ export default function BookingClient() {
               <div>
                 <Label htmlFor="preferredTime">Preferred Time (Optional)</Label>
                 <select id="preferredTime" name="preferredTime" value={formData.preferredTime} onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
                   {TIME_OPTIONS.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
               </div>
@@ -290,7 +290,7 @@ export default function BookingClient() {
                   placeholder="Tell us about your condition or anything else we should know..." rows={4} />
               </div>
 
-              <Button type="submit" disabled={loading} className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+              <Button type="submit" disabled={loading} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">
                 {loading ? 'Sending...' : <><span>Submit Booking Request</span><Send className="w-4 h-4 ml-2" /></>}
               </Button>
 
