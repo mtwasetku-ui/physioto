@@ -55,10 +55,10 @@ export default function ContactClient() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+      <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">Have questions? We&apos;re here to help. Reach out and we&apos;ll respond as soon as possible.</p>
+          <p className="text-xl text-emerald-100 max-w-3xl mx-auto">Have questions? We&apos;re here to help. Reach out and we&apos;ll respond as soon as possible.</p>
         </div>
       </div>
 
@@ -68,21 +68,21 @@ export default function ContactClient() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
             <div className="space-y-6 mb-12">
               {[
-                { Icon: Phone, title: 'Phone', content: <a href="tel:1300433233" className="text-gray-600 hover:text-blue-600 transition-colors">1300 433 233</a>, sub: 'Mon–Fri: 8am – 6pm, Sat: 9am – 2pm' },
-                { Icon: Mail, title: 'Email', content: <a href="mailto:info@physiotohome.com" className="text-gray-600 hover:text-blue-600 transition-colors">info@physiotohome.com</a>, sub: "We'll respond within 24 hours" },
+                { Icon: Phone, title: 'Phone', content: <a href="tel:1300433233" className="text-gray-600 hover:text-emerald-600 transition-colors">1300 433 233</a>, sub: 'Mon–Fri: 8am – 6pm, Sat: 9am – 2pm' },
+                { Icon: Mail, title: 'Email', content: <a href="mailto:info@physiotohome.com" className="text-gray-600 hover:text-emerald-600 transition-colors">info@physiotohome.com</a>, sub: "We'll respond within 24 hours" },
                 { Icon: MapPin, title: 'Service Area', content: <p className="text-gray-600">Across Tasmania</p>, sub: 'We come to you — home, aged care facility, or workplace' },
               ].map(({ Icon, title, content, sub }) => (
                 <div key={title} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0"><Icon className="w-6 h-6 text-blue-600" /></div>
+                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0"><Icon className="w-6 h-6 text-emerald-600" /></div>
                   <div><h3 className="font-semibold text-gray-900 mb-1">{title}</h3>{content}<p className="text-sm text-gray-500 mt-1">{sub}</p></div>
                 </div>
               ))}
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Why Choose Us?</h3>
               <ul className="space-y-3 text-gray-700">
                 {['15+ years of trusted service across Tasmania','AHPRA registered physiotherapist','Convenient home-based care — we come to you','Personalised treatment plans'].map((item) => (
-                  <li key={item} className="flex items-start"><span className="text-blue-600 mr-2">✓</span><span>{item}</span></li>
+                  <li key={item} className="flex items-start"><span className="text-emerald-600 mr-2">✓</span><span>{item}</span></li>
                 ))}
               </ul>
             </div>
@@ -105,7 +105,7 @@ export default function ContactClient() {
                 <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell us how we can help you..." rows={6} className={errors.message ? 'border-red-500' : ''} />
                 {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
               </div>
-              <Button type="submit" disabled={loading} className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+              <Button type="submit" disabled={loading} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">
                 {loading ? 'Sending...' : <><span>Send Message</span><Send className="w-4 h-4 ml-2" /></>}
               </Button>
             </form>
