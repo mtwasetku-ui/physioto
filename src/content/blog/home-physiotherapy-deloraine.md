@@ -1,7 +1,7 @@
 ---
 title: "Home Physiotherapy Deloraine | Physio to Home"
 description: "Home physiotherapy visits in Deloraine and the Meander Valley, Tasmania. Physio to Home brings AHPRA-registered in-home physio to Deloraine — no trip to Launceston required."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-04"
 category: "Local Areas"
 featured: false
