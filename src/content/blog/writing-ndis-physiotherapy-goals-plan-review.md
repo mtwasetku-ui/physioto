@@ -1,7 +1,7 @@
 ---
 title: "How to Write NDIS Physiotherapy Goals for Your Plan Review | Physio to Home"
 description: "Clear, specific physiotherapy goals can strengthen your NDIS plan review. North Tasmania's home physiotherapist explains how to write goals the NDIA can act on, with real examples."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-07-15"
 category: "Funding & Access"
 featured: false
