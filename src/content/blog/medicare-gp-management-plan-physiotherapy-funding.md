@@ -1,7 +1,7 @@
 ---
 title: "Medicare GP Management Plan | Physiotherapy Funding | Physio to Home"
 description: "Your GP can fund up to 5 home physiotherapy visits per year through Medicare. North Tasmania's home physiotherapist explains exactly how the GP Management Plan works and how to get one."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-08"
 category: "Funding & Access"
 featured: true
