@@ -1,7 +1,7 @@
 ---
 title: "Frozen Shoulder | Adhesive Capsulitis | Home Physiotherapy | Physio to Home"
 description: "Frozen shoulder affects up to 5% of adults and is one of the most painful and mismanaged shoulder conditions. North Tasmania's home physiotherapist explains the three stages, what actually helps, and what makes it worse."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Pain Management"
 featured: false
