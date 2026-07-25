@@ -1,7 +1,7 @@
 ---
 title: "Home Physiotherapy Longford | Physio to Home"
 description: "Home physiotherapy visits in Longford and the Midlands, Tasmania. Physio to Home brings qualified in-home physio to Longford residents — serving the rural communities south of Launceston."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-05"
 category: "Local Areas"
 featured: false
