@@ -1,7 +1,7 @@
 ---
 title: "Mobile Physiotherapy | Home Visits | Physio to Home"
 description: "Mobile physiotherapy across North Tasmania — AHPRA-registered home visits for older adults, rural residents, and post-surgery patients. Find out how to book and what to expect."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-02-27"
 category: "Physiotherapy Tips"
 featured: false
