@@ -3,57 +3,57 @@ import type { Metadata } from 'next'
 const BASE_URL = 'https://www.physiotohome.com'
 
 export const homeMetadata: Metadata = {
-  title: 'Home Physiotherapy Launceston — In-Home Care Across Tasmania',
-  description: 'Physio to Home delivers professional physiotherapy to your door in Launceston and across Tasmania. AHPRA registered, no GP referral needed, same-week appointments. Call 1300 433 233.',
+  title: 'Home Physiotherapy Tasmania — In-Home Care, Statewide',
+  description: 'Physio to Home delivers professional physiotherapy to your door anywhere in Tasmania, based in Launceston. AHPRA registered, no GP referral needed, same-week appointments. Call 1300 433 233.',
   alternates: { canonical: BASE_URL },
   openGraph: {
-    title: 'Home Physiotherapy Launceston — In-Home Care Across Tasmania',
-    description: 'Professional physiotherapy delivered to your door in Launceston. No waiting rooms, no travel. Also serving all of Tasmania.',
+    title: 'Home Physiotherapy Tasmania — In-Home Care, Statewide',
+    description: 'Professional physiotherapy delivered to your door, anywhere in Tasmania. No waiting rooms, no travel.',
     url: BASE_URL,
-    images: [{ url: '/images/og-home.jpg', width: 1200, height: 630, alt: 'Physio to Home — In-Home Physiotherapy Launceston, Tasmania' }],
+    images: [{ url: '/images/og-home.jpg', width: 1200, height: 630, alt: 'Physio to Home — In-Home Physiotherapy Across Tasmania' }],
   },
 }
 
 export const servicesMetadata: Metadata = {
-  title: 'Physiotherapy Services in Launceston — In-Home Care Across Tasmania',
-  description: 'Comprehensive in-home physiotherapy services in Launceston and across Tasmania including musculoskeletal pain, post-surgery rehab, falls prevention, neurological rehab, and aged care. No GP referral required.',
+  title: 'Physiotherapy Services Across Tasmania — In-Home Care',
+  description: 'Comprehensive in-home physiotherapy services across Tasmania, based in Launceston, including musculoskeletal pain, post-surgery rehab, falls prevention, neurological rehab, and aged care. No GP referral required.',
   alternates: { canonical: `${BASE_URL}/services` },
   openGraph: {
-    title: 'Physiotherapy Services in Launceston — In-Home Care Across Tasmania',
-    description: 'Musculoskeletal pain, post-surgery rehab, falls prevention, neurological rehab and more — delivered to your home in Launceston and beyond.',
+    title: 'Physiotherapy Services Across Tasmania — In-Home Care',
+    description: 'Musculoskeletal pain, post-surgery rehab, falls prevention, neurological rehab and more — delivered to your home, anywhere in Tasmania.',
     url: `${BASE_URL}/services`,
   },
 }
 
 export const bookingMetadata: Metadata = {
-  title: 'Book an Appointment — In-Home Physiotherapy Launceston',
-  description: 'Book your in-home physiotherapy appointment with Physio to Home in Launceston. Same-week appointments available, also serving all of Tasmania. NDIS, DVA, Medicare and private health accepted.',
+  title: 'Book an Appointment — In-Home Physiotherapy Tasmania',
+  description: 'Book your in-home physiotherapy appointment with Physio to Home, serving all of Tasmania. Same-week appointments available. NDIS, DVA, Medicare and private health accepted.',
   alternates: { canonical: `${BASE_URL}/booking` },
   openGraph: {
-    title: 'Book an Appointment — Physio to Home Launceston',
-    description: 'Same-week appointments available in Launceston. We come to you anywhere in Tasmania.',
+    title: 'Book an Appointment — Physio to Home Tasmania',
+    description: 'Same-week appointments available. We come to you, anywhere in Tasmania.',
     url: `${BASE_URL}/booking`,
   },
 }
 
 export const contactMetadata: Metadata = {
-  title: 'Contact Us — Physio to Home Launceston',
-  description: 'Get in touch with Physio to Home, based in Launceston. Call 1300 433 233 or send us a message. In-home physiotherapy across Launceston and Tasmania — we\'re happy to discuss your needs.',
+  title: 'Contact Us — Physio to Home Tasmania',
+  description: 'Get in touch with Physio to Home, serving all of Tasmania. Call 1300 433 233 or send us a message — we\'re happy to discuss your needs.',
   alternates: { canonical: `${BASE_URL}/contact` },
   openGraph: {
-    title: 'Contact Physio to Home — Launceston, Tasmania',
-    description: 'Call 1300 433 233 or send a message. In-home physiotherapy based in Launceston, serving all of Tasmania.',
+    title: 'Contact Physio to Home — Tasmania',
+    description: 'Call 1300 433 233 or send a message. In-home physiotherapy serving all of Tasmania, based in Launceston.',
     url: `${BASE_URL}/contact`,
   },
 }
 
 export const teamMetadata: Metadata = {
-  title: 'Our Team — Experienced Physiotherapists in Launceston',
-  description: 'Meet the Physio to Home team, based in Launceston. AHPRA registered physiotherapists with 15+ years of experience in musculoskeletal, neurological, orthopaedic, and aged care physiotherapy across Tasmania.',
+  title: 'Our Team — Experienced Physiotherapists Across Tasmania',
+  description: 'Meet the Physio to Home team, serving all of Tasmania from our Launceston base. AHPRA registered physiotherapists with 15+ years of experience in musculoskeletal, neurological, orthopaedic, and aged care physiotherapy.',
   alternates: { canonical: `${BASE_URL}/team` },
   openGraph: {
-    title: 'Our Team — Physio to Home Launceston',
-    description: 'AHPRA registered physiotherapists with 15+ years experience delivering in-home care in Launceston and across Tasmania.',
+    title: 'Our Team — Physio to Home Tasmania',
+    description: 'AHPRA registered physiotherapists with 15+ years experience delivering in-home care across Tasmania.',
     url: `${BASE_URL}/team`,
   },
 }
