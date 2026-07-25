@@ -13,16 +13,16 @@ const GA_ID = 'G-78YHHCX8JE'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Physio to Home — Home Visit Physiotherapy in Launceston',
+    default: 'Physio to Home — In-Home Physiotherapy Across Tasmania',
     template: '%s | Physio to Home',
   },
-  description: 'Professional in-home physiotherapy in Launceston and across Tasmania. AHPRA registered, no GP referral needed, same-week appointments available.',
+  description: 'Professional in-home physiotherapy across Tasmania, based in Launceston. AHPRA registered, no GP referral needed, same-week appointments available.',
   openGraph: {
     siteName: 'Physio to Home',
     type: 'website',
     locale: 'en_AU',
     url: BASE_URL,
-    images: [{ url: '/images/og-default.jpg', width: 1200, height: 630, alt: 'Physio to Home — In-Home Physiotherapy Launceston, Tasmania' }],
+    images: [{ url: '/images/og-default.jpg', width: 1200, height: 630, alt: 'Physio to Home — In-Home Physiotherapy Across Tasmania' }],
   },
   twitter: {
     card: 'summary_large_image',
