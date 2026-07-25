@@ -1,7 +1,7 @@
 ---
 title: "My Aged Care vs NDIS — Which Funding Applies to You? | Physio to Home"
 description: "My Aged Care and NDIS both fund physiotherapy — but they are entirely different systems. North Tasmania's home physiotherapist explains which applies to your situation, what each covers, and how to access both."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-08"
 category: "Funding & Access"
 featured: false
