@@ -229,10 +229,10 @@ export default function ServicesPage() {
         <div style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
           <p style={{ color: '#6ee7b7', fontSize: 13, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 18px' }}>What We Offer</p>
           <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(42px, 6.5vw, 62px)', color: '#fff', margin: '0 0 20px', lineHeight: 1.15 }}>
-            Launceston Physiotherapy Services <em style={{ color: '#6ee7b7', fontStyle: 'italic' }}>built around you</em>
+            Tasmania-Wide Physiotherapy Services <em style={{ color: '#6ee7b7', fontStyle: 'italic' }}>built around you</em>
           </h1>
           <p style={{ color: '#cbd5e1', fontSize: 19, lineHeight: 1.7, maxWidth: 600, margin: '0 auto 32px' }}>
-            Comprehensive in-home physiotherapy based in Launceston and serving all of Tasmania — tailored to your condition, your home, and your goals.
+            Comprehensive in-home physiotherapy across Tasmania, based in Launceston — tailored to your condition, your home, and your goals.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10 }}>
             {badges.map(b => (
