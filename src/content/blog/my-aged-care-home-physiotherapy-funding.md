@@ -1,7 +1,7 @@
 ---
 title: "My Aged Care | Home Physiotherapy Funding | Physio to Home"
 description: "Did you know your Home Care Package can fund in-home physiotherapy? North Tasmania's home physiotherapist explains exactly how My Aged Care works — and how to use it for physio visits."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-08"
 category: "Funding & Access"
 featured: true
