@@ -1,7 +1,7 @@
 ---
 title: "Home Physiotherapy Scottsdale | Physio to Home"
 description: "Home physiotherapy visits in Scottsdale and the Northeast, Tasmania. Physio to Home brings AHPRA-registered in-home physio to Scottsdale residents — no long drive to Launceston required."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-05"
 category: "Local Areas"
 featured: false
