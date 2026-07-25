@@ -18,11 +18,11 @@ export const teamMembers: TeamMember[] = [
     qualifications: 'BPhty, DPT, AHPRA Registered',
     "AHPRA registration number": 'PHY0002634794',
     specialties: 'Musculoskeletal, Neurological, Orthopaedic, Aged Care, Cervicogenic Dizziness',
-    bio: `Michael is an experienced physiotherapist with over 15 years of experience in physiotherapy. His career has taken him across several countries, including Egypt, Kuwait, and Australia, where he has worked with a wide range of patients and conditions. This experience has shaped his practical, results-focused approach to rehabilitation.
+    bio: `Micheal is an experienced physiotherapist with over 15 years of experience in physiotherapy. His career has taken him across several countries, including Egypt, Kuwait, and Australia, where he has worked with a wide range of patients and conditions. This experience has shaped his practical, results-focused approach to rehabilitation.
 
-Through Physio to Home, Michael focuses on delivering high-quality physiotherapy in the comfort of patients' homes. His goal is to help people improve mobility, manage pain, and maintain independence in their everyday lives.
+Through Physio to Home, Micheal focuses on delivering high-quality physiotherapy in the comfort of patients' homes. His goal is to help people improve mobility, manage pain, and maintain independence in their everyday lives.
 
-Outside of work, Michael enjoys spending time with family, listening to music, and cooking.`,
+Outside of work, Micheal enjoys spending time with family, listening to music, and cooking.`,
     photo: '/team/micheal.webp',
     order: 4,
   },
