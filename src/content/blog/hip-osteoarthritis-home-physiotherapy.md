@@ -1,7 +1,7 @@
 ---
 title: "Hip Osteoarthritis | Home Physiotherapy | Physio to Home"
 description: "Hip osteoarthritis is one of the leading causes of pain and disability in older Australians — and physiotherapy is its most evidence-supported non-surgical treatment. North Tasmania's home physiotherapist explains what works and why."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-02"
 category: "Conditions & Rehab"
 featured: false
