@@ -16,7 +16,7 @@ Post-COVID syndrome affects an estimated 5–10% of people who contract COVID-19
 
 Micheal Ghattas
 
-3/6/2026 · 7 min read
+3/7/2026 · 7 min read
 
 ---
 
