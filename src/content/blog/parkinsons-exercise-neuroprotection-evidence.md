@@ -1,7 +1,7 @@
 ---
 title: "Parkinson's Disease & Exercise: The Neuroprotection Evidence | Physio to Home"
 description: "Emerging research suggests exercise may not just manage Parkinson's symptoms — it may slow the disease itself. North Tasmania's home physiotherapist examines the neuroprotection evidence and what it means for treatment."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Conditions & Rehab"
 featured: false
