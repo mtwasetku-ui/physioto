@@ -15,7 +15,7 @@ Up to 50% of falls in older adults involve inappropriate footwear. North Tasmani
 
 Micheal Ghattas
 
-2/27/2026 · 9 min read
+6/27/2026 · 9 min read
 
 ---
 
