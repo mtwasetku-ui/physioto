@@ -1,7 +1,7 @@
 ---
 title: "NDIS Functional Capacity Assessment | What a Physiotherapy FCA Involves | Physio to Home"
 description: "A Functional Capacity Assessment can strengthen your NDIS plan review or first plan application. North Tasmania's home physiotherapist explains what an FCA involves, what it costs to fund, and how to prepare."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-07-10"
 category: "Funding & Access"
 featured: false
