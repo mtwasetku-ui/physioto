@@ -1,7 +1,7 @@
 ---
 title: "Osteoarthritis (OA) | Home Physiotherapy | Physio to Home"
 description: "Arthritis affects over 3.6 million Australians — and physiotherapy is the most evidence-supported non-surgical treatment. North Tasmania's home physiotherapist explains what it can do, and how to access it without leaving home."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-02-21"
 category: "Conditions & Rehab"
 featured: false
