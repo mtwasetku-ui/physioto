@@ -1,7 +1,7 @@
 ---
 title: "Hip Fracture Rehabilitation | Home Physiotherapy | Physio to Home"
 description: "Hip fracture is one of the most serious injuries an older Australian can sustain. North Tasmania's home physiotherapist explains the rehabilitation journey — from hospital discharge to regaining independence at home."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-02"
 category: "Post-Surgery Recovery"
 featured: false
