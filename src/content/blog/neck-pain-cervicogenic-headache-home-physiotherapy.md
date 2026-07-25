@@ -1,7 +1,7 @@
 ---
 title: "Neck Pain & Cervicogenic Headache | Home Physiotherapy | Physio to Home"
 description: "Neck pain affects 1 in 3 Australians at any given time — and cervicogenic headache is one of its most underdiagnosed consequences. North Tasmania's home physiotherapist explains both conditions and exactly how physiotherapy helps."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-07"
 category: "Pain Management"
 featured: false
