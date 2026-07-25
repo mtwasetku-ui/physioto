@@ -1,7 +1,7 @@
 ---
 title: "Home Physiotherapy Launceston | Physio to Home"
 description: "Launceston's home visit physiotherapist. Physio to Home provides AHPRA-registered, in-home physiotherapy across Launceston and surrounding suburbs — no travel, no clinic, no waiting room."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-04"
 category: "Local Areas"
 featured: false
