@@ -1,7 +1,7 @@
 ---
 title: "Home Physiotherapy George Town | Physio to Home"
 description: "Home physiotherapy visits in George Town and Low Head, Tasmania. Physio to Home brings AHPRA-registered in-home physio to George Town residents — no travel to Launceston required."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-04"
 category: "Local Areas"
 featured: false
