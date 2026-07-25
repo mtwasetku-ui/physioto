@@ -1,7 +1,7 @@
 ---
 title: "Post-Surgery Recovery | Knee Replacement | Physio to Home"
 description: "Had a knee replacement in Tasmania? Michael Ghattas explains recovery week by week — from Day 1 at home to 6 months — including exercises, swelling management, and funding."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Post-Surgery Recovery"
 featured: false
