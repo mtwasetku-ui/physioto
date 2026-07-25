@@ -1,7 +1,7 @@
 ---
 title: "NDIS | Home Physiotherapy Funding | Physio to Home"
 description: "NDIS can fund home physiotherapy visits in North Tasmania. Physio to Home explains which support categories apply, how to use your plan, and what to expect from your first visit."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Funding & Access"
 featured: false
