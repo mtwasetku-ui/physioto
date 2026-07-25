@@ -1,7 +1,7 @@
 ---
 title: "Stroke Rehabilitation | Home Physiotherapy | Physio to Home"
 description: "Returning home after a stroke is just the beginning of recovery. North Tasmania's home physiotherapist explains what stroke rehabilitation involves — and why consistency at home is what drives the best outcomes."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-08"
 category: "Conditions & Rehab"
 featured: true
