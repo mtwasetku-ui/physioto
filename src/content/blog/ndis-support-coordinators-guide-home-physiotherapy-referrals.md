@@ -1,7 +1,7 @@
 ---
 title: "A Support Coordinator's Guide to Referring for Home Physiotherapy | NDIS | Physio to Home"
 description: "Referring an NDIS participant for physiotherapy involves more than a phone call. North Tasmania's home physiotherapist sets out what support coordinators need to know about referrals, documentation, and funding categories."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-07-13"
 category: "Funding & Access"
 featured: false
