@@ -1,7 +1,7 @@
 ---
 title: "Tennis Elbow & Golfer's Elbow | Home Physiotherapy | Physio to Home"
 description: "Tennis elbow affects 1–3% of adults annually and is one of the most mismanaged musculoskeletal conditions. North Tasmania's home physiotherapist explains the tendinopathy model, what works, and what makes it worse."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Pain Management"
 featured: false
