@@ -1,7 +1,7 @@
 ---
 title: "Home Physiotherapy vs Clinic Physiotherapy — Which Is Better? | Physio to Home"
 description: "Is home physiotherapy as good as clinic? For many patients — particularly older adults and those in rural areas — the evidence suggests it may be better. North Tasmania's home physiotherapist explains what the research says."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Physiotherapy Tips"
 featured: true
