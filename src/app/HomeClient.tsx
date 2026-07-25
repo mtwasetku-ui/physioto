@@ -103,10 +103,10 @@ export default function HomeClient() {
               <span className="text-emerald-300 text-xs font-semibold tracking-widest uppercase">Based in Launceston · Tasmania-Wide</span>
             </div>
             <h1 className="serif text-5xl md:text-6xl lg:text-[4.5rem] text-white mb-6 leading-[1.1]">
-              Launceston Physiotherapy<br /><span className="italic text-emerald-300">in your home.</span>
+              Tasmania-Wide Physiotherapy<br /><span className="italic text-emerald-300">in your home.</span>
             </h1>
             <p className="text-slate-200 text-lg md:text-xl mb-8 max-w-2xl leading-relaxed font-light">
-              Our team of AHPRA-registered physiotherapists brings expert, hands-on care directly to your door across Launceston — and anywhere else in Tasmania, including Hobart and the North West Coast.
+              Our team of AHPRA-registered physiotherapists brings expert, hands-on care directly to your door anywhere in Tasmania — including Hobart, the North West Coast, and our home base of Launceston.
             </p>
             <div className="flex flex-wrap gap-2 mb-10">
               {trustBadges.slice(0, 4).map((b) => (
