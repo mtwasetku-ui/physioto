@@ -1,7 +1,7 @@
 ---
 title: "Home Physiotherapy — Tamar Valley | Exeter | Beaconsfield | Physio to Home"
 description: "Home physiotherapy visits in Exeter, Beaconsfield, Beauty Point, and the Tamar Valley, Tasmania. Physio to Home brings AHPRA-registered in-home physio to Tamar Valley communities."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-03"
 category: "Local Areas"
 featured: false
