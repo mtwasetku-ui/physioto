@@ -1,7 +1,7 @@
 ---
 title: "Osteoporosis & Bone Health | Home Physiotherapy | Physio to Home"
 description: "Osteoporosis affects 1 in 3 women and 1 in 5 men over 50 in Australia. North Tasmania's home physiotherapist explains how physiotherapy builds bone strength, reduces fracture risk, and keeps you moving safely."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Conditions & Rehab"
 featured: false
