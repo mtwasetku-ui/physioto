@@ -1,7 +1,7 @@
 ---
 title: "How to Choose an NDIS Physiotherapist | A Checklist for Participants & Families | Physio to Home"
 description: "Choosing the right NDIS physiotherapist affects your goals, your budget, and your comfort. North Tasmania's home physiotherapist shares a practical checklist for participants and families making the decision."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-07-11"
 category: "Funding & Access"
 featured: false
