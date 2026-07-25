@@ -1,7 +1,7 @@
 ---
 title: "Supporting a Parent with Parkinson's Disease | A Family Guide | Physio to Home"
 description: "Caring for a parent with Parkinson's disease at home in Tasmania? North Tasmania's home physiotherapist explains what families need to know about mobility, falls, freezing, and how home physiotherapy helps everyone."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Aged Care"
 featured: false
