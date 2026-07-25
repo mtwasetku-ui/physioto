@@ -117,7 +117,13 @@ function TeamModal({ member, onClose }: { member: TeamMember; onClose: () => voi
               </div>
             )}
             {member.bio && (
-              <p className="text-emerald-50 text-lg md:text-xl leading-relaxed border-t border-emerald-400/30 pt-6">{member.bio}</p>
+              <div className="space-y-4 border-t border-emerald-400/30 pt-6">
+                {member.bio.split(/\n\s*\n/).map((paragraph, index) => (
+                  <p key={index} className="text-emerald-50 text-lg md:text-xl leading-relaxed">
+                    {paragraph.trim()}
+                  </p>
+                ))}
+              </div>
             )}
             {!member.qualifications && !member.specialties && !member.bio && (
               <p className="text-emerald-200 text-lg italic">More information coming soon.</p>
