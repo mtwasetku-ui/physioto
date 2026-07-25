@@ -1,7 +1,7 @@
 ---
 title: "Sciatica & Lumbar Radiculopathy | Home Physiotherapy | Physio to Home"
 description: "Sciatica affects up to 40% of people at some point in their lives. North Tasmania's home physiotherapist explains what it really is, what makes it better or worse, and exactly how physiotherapy helps."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Pain Management"
 featured: false
