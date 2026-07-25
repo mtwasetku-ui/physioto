@@ -1,7 +1,7 @@
 ---
 title: "Multiple Sclerosis | Home Physiotherapy | Physio to Home"
 description: "Multiple sclerosis affects over 33,000 Australians and is the most common neurological condition in young adults. North Tasmania's home physiotherapist explains how physiotherapy helps manage MS symptoms, maintain function, and slow disability progression."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Conditions & Rehab"
 featured: false
