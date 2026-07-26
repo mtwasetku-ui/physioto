@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Physiotherapy for Osteoporosis: A Guide to Bone Health and Safe Movement for Older Tasmanians
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -126,15 +126,15 @@ If you have experienced sudden onset of severe back pain without a clear injury,
 
 **1 Clinical history and risk assessment (15–20 minutes)**
 
-Michael will ask about your osteoporosis diagnosis, DEXA scan results if available, fracture history, current medications, falls history, activity levels, and any current pain or movement concerns.
+Micheal will ask about your osteoporosis diagnosis, DEXA scan results if available, fracture history, current medications, falls history, activity levels, and any current pain or movement concerns.
 
 **2 Physical assessment (15–20 minutes)**
 
-Michael will assess your balance, lower limb strength, gait, posture, and functional mobility. A postural screen and assessment of kyphosis is included for all patients with known vertebral involvement.
+Micheal will assess your balance, lower limb strength, gait, posture, and functional mobility. A postural screen and assessment of kyphosis is included for all patients with known vertebral involvement.
 
 **3 Education and explanation (10 minutes)**
 
-Michael will explain your specific risk profile, which movements are safe and which to avoid, and give you an honest, evidence-based picture of what physiotherapy can achieve for your situation.
+Micheal will explain your specific risk profile, which movements are safe and which to avoid, and give you an honest, evidence-based picture of what physiotherapy can achieve for your situation.
 
 **4 Initial programme prescription (15 minutes)**
 
@@ -168,11 +168,11 @@ Book your first home visit today →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and bone health management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and bone health management delivered entirely in the home setting.
 
 ---
 
