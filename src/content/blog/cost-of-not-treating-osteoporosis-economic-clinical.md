@@ -21,7 +21,7 @@ Micheal Ghattas
 
 ## The Economic and Clinical Cost of Undertreated Osteoporosis in Australia: A Case for Proactive Physiotherapy
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -152,11 +152,11 @@ For GPs, aged care coordinators, and patients in North Tasmania, proactive osteo
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in osteoporosis management, falls prevention, and home-based rehabilitation for complex presentations.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in osteoporosis management, falls prevention, and home-based rehabilitation for complex presentations.
 
 Correspondence and GP referrals: physiotohome.com
 
