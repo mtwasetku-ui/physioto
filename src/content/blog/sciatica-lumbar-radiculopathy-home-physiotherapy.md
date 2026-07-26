@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Managing Sciatica and Lumbar Radiculopathy at Home: A Guide from a North Tasmania Home Physiotherapist
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -131,15 +131,15 @@ For sciatica related to lumbar facet joint dysfunction or piriformis syndrome, m
 
 **1 Detailed clinical history (15–20 minutes)**
 
-Michael will ask about the onset of your leg pain, its exact distribution, what makes it better and worse, any imaging results, and any neurological symptoms including numbness, tingling, or weakness. A careful history is often the most diagnostically informative part of the assessment.
+Micheal will ask about the onset of your leg pain, its exact distribution, what makes it better and worse, any imaging results, and any neurological symptoms including numbness, tingling, or weakness. A careful history is often the most diagnostically informative part of the assessment.
 
 **2 Physical assessment including directional preference testing (20 minutes)**
 
-Michael will assess your lumbar range of motion, neurological status (reflexes, sensation, strength), and — critically — your response to repeated movements in different directions to identify your directional preference. This assessment directly guides the exercise approach used in treatment.
+Micheal will assess your lumbar range of motion, neurological status (reflexes, sensation, strength), and — critically — your response to repeated movements in different directions to identify your directional preference. This assessment directly guides the exercise approach used in treatment.
 
 **3 Explanation of findings (10 minutes)**
 
-Michael will explain what is causing your leg symptoms, why they behave the way they do, and what the evidence says about your specific presentation and prognosis. For most people, this explanation is genuinely reassuring.
+Micheal will explain what is causing your leg symptoms, why they behave the way they do, and what the evidence says about your specific presentation and prognosis. For most people, this explanation is genuinely reassuring.
 
 **4 Treatment and exercise prescription (15–20 minutes)**
 
@@ -177,11 +177,11 @@ Book your first home visit today →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in lumbar spine rehabilitation, chronic pain management, and home-based physiotherapy for complex musculoskeletal presentations.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in lumbar spine rehabilitation, chronic pain management, and home-based physiotherapy for complex musculoskeletal presentations.
 
 ---
 
