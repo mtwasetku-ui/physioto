@@ -102,7 +102,9 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4 text-sm">Areas We Cover</h3>
           <div className="flex flex-wrap gap-x-2 gap-y-2 text-sm">
             {[
+              ['Hobart', '/blog/home-physiotherapy-hobart'],
               ['Launceston', '/blog/home-physiotherapy-launceston'],
+              ['Devonport & Burnie', '/blog/home-physiotherapy-devonport-burnie'],
               ['Deloraine', '/blog/home-physiotherapy-deloraine'],
               ['George Town', '/blog/home-physiotherapy-george-town'],
               ['Longford', '/blog/home-physiotherapy-longford'],
