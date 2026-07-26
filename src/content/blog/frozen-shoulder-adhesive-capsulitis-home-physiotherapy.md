@@ -21,7 +21,7 @@ Micheal Ghattas
 
 ## Frozen Shoulder: A Complete Guide to Adhesive Capsulitis and How Home Physiotherapy Helps
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -110,7 +110,7 @@ What the evidence does not support is aggressive stretching in the freezing stag
 
 The single most important principle in physiotherapy for frozen shoulder is matching the treatment to the stage. The approach in the painful freezing stage is fundamentally different from the approach in the stiff frozen stage, and applying frozen-stage stretching to a freezing-stage shoulder is one of the most common and most harmful errors in management.
 
-Michael will determine your current stage at the initial assessment and design your programme accordingly.
+Micheal will determine your current stage at the initial assessment and design your programme accordingly.
 
 ### Manual Therapy and Capsular Mobilisation
 
@@ -118,7 +118,7 @@ In the frozen stage, hands-on joint mobilisation directed at the glenohumeral ca
 
 ### Stretching Programme
 
-A structured home stretching programme — specifically targeting the directions of greatest restriction — is an essential complement to hands-on treatment and must be performed consistently, typically twice daily, between physiotherapy visits. Michael will teach the specific stretches most relevant to your pattern of restriction using your actual furniture and door frames at home.
+A structured home stretching programme — specifically targeting the directions of greatest restriction — is an essential complement to hands-on treatment and must be performed consistently, typically twice daily, between physiotherapy visits. Micheal will teach the specific stretches most relevant to your pattern of restriction using your actual furniture and door frames at home.
 
 ### Pendulum and Gravity-Assisted Exercises
 
@@ -130,7 +130,7 @@ As range of motion recovers in the thawing stage, a progressive rotator cuff and
 
 ### Collaboration With Your GP
 
-Physiotherapy for frozen shoulder works best in coordination with medical management. A corticosteroid injection from your GP or specialist in the early-to-middle frozen stage can significantly reduce capsular inflammation and make physiotherapy more effective. Michael communicates with your GP and can write a clinical summary to support the case for injection if appropriate to your presentation.
+Physiotherapy for frozen shoulder works best in coordination with medical management. A corticosteroid injection from your GP or specialist in the early-to-middle frozen stage can significantly reduce capsular inflammation and make physiotherapy more effective. Micheal communicates with your GP and can write a clinical summary to support the case for injection if appropriate to your presentation.
 
 ---
 
@@ -138,15 +138,15 @@ Physiotherapy for frozen shoulder works best in coordination with medical manage
 
 **1 Clinical history (15–20 minutes)**
 
-Michael will ask about the onset and progression of your shoulder stiffness, the pattern and severity of your pain (particularly night pain), any associated medical conditions, and any previous treatments. The history is often enough to confirm the diagnosis before any physical assessment.
+Micheal will ask about the onset and progression of your shoulder stiffness, the pattern and severity of your pain (particularly night pain), any associated medical conditions, and any previous treatments. The history is often enough to confirm the diagnosis before any physical assessment.
 
 **2 Shoulder assessment (15–20 minutes)**
 
-Michael will measure your active and passive range of motion in all planes, assess the quality of capsular end-feel, and distinguish frozen shoulder from other shoulder pathology. The physical examination will confirm the stage and the pattern of restriction, which directly guides treatment planning.
+Micheal will measure your active and passive range of motion in all planes, assess the quality of capsular end-feel, and distinguish frozen shoulder from other shoulder pathology. The physical examination will confirm the stage and the pattern of restriction, which directly guides treatment planning.
 
 **3 Stage explanation and management plan (10 minutes)**
 
-Michael will explain your stage, what to expect over the coming months, what the physiotherapy programme will involve, and what medical management options are worth discussing with your GP.
+Micheal will explain your stage, what to expect over the coming months, what the physiotherapy programme will involve, and what medical management options are worth discussing with your GP.
 
 **4 Initial treatment (15 minutes)**
 
@@ -188,11 +188,11 @@ Book your first home visit today →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in shoulder rehabilitation, musculoskeletal physiotherapy, and home-based care for complex presentations.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in shoulder rehabilitation, musculoskeletal physiotherapy, and home-based care for complex presentations.
 
 ---
 
