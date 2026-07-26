@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Home Physiotherapy vs Clinic: What the Evidence Says and How to Choose
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -119,7 +119,7 @@ Yes — the physiotherapist providing home visits is the same AHPRA-registered c
 
 ### Can physiotherapy equipment be brought to the home?
 
-Yes. At Physio to Home, Michael brings the assessment and treatment equipment needed for most presentations — including resistance bands, assessment tools, and relevant educational materials. The treatment is not limited by the home environment.
+Yes. At Physio to Home, Micheal brings the assessment and treatment equipment needed for most presentations — including resistance bands, assessment tools, and relevant educational materials. The treatment is not limited by the home environment.
 
 ### Is home physiotherapy more expensive than clinic physiotherapy?
 
@@ -137,7 +137,7 @@ Book your first home visit today →
 
 ## About the Author
 
-Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 Founder, Physio to Home — North Tasmania's home physiotherapy service.
 
 ---
