@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Managing Neck Pain and Cervicogenic Headache at Home: A Guide from a North Tasmania Home Physiotherapist
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -118,15 +118,15 @@ Restriction in the thoracic spine — the mid-back — is one of the most common
 
 **1 A detailed clinical conversation (15–20 minutes)**
 
-Michael will ask about the onset and nature of your neck pain or headache — its location, character, triggers, and pattern. For patients with headache, he will ask specifically about the features that distinguish cervicogenic headache from other headache types. Understanding the full picture before touching the neck is essential.
+Micheal will ask about the onset and nature of your neck pain or headache — its location, character, triggers, and pattern. For patients with headache, he will ask specifically about the features that distinguish cervicogenic headache from other headache types. Understanding the full picture before touching the neck is essential.
 
 **2 Cervical assessment in your home environment (15–20 minutes)**
 
-Michael will assess your cervical range of motion, joint mobility, deep flexor strength, posture, and neurological status (if arm symptoms are present). The home environment allows assessment of your actual workstation, sleeping setup, and daily postures — the specific factors that are likely contributing to your symptoms.
+Micheal will assess your cervical range of motion, joint mobility, deep flexor strength, posture, and neurological status (if arm symptoms are present). The home environment allows assessment of your actual workstation, sleeping setup, and daily postures — the specific factors that are likely contributing to your symptoms.
 
 **3 Explanation of findings (10 minutes)**
 
-Michael will explain clearly what is driving your neck pain or headache, whether the cervical spine is likely the source of your headaches, and what a realistic treatment trajectory looks like.
+Micheal will explain clearly what is driving your neck pain or headache, whether the cervical spine is likely the source of your headaches, and what a realistic treatment trajectory looks like.
 
 **4 Hands-on treatment (15–20 minutes)**
 
@@ -142,7 +142,7 @@ You will leave the first visit with a clear, targeted exercise programme — spe
 
 ### How do I know if my headaches are coming from my neck?
 
-The most reliable indicators are: headaches that start at the back of the head or neck; headaches that are consistently on one side; headaches triggered or worsened by neck movement or sustained postures; and associated neck stiffness. A physiotherapy assessment is the most practical way to determine whether your cervical spine is the source. Michael can reproduce and reduce your headache through cervical examination — a diagnostic response that strongly confirms the cervical origin.
+The most reliable indicators are: headaches that start at the back of the head or neck; headaches that are consistently on one side; headaches triggered or worsened by neck movement or sustained postures; and associated neck stiffness. A physiotherapy assessment is the most practical way to determine whether your cervical spine is the source. Micheal can reproduce and reduce your headache through cervical examination — a diagnostic response that strongly confirms the cervical origin.
 
 ### Can physiotherapy cure cervicogenic headache?
 
@@ -168,11 +168,11 @@ Book your first home visit today →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has specialist training in the assessment and treatment of cervicogenic dizziness and cervicogenic headache, and treats complex cervical presentations as a particular area of clinical focus.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has specialist training in the assessment and treatment of cervicogenic dizziness and cervicogenic headache, and treats complex cervical presentations as a particular area of clinical focus.
 
 ---
 
