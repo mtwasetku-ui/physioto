@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## How to Support Your Parent's Recovery After Hip Replacement: A Guide for Families in North Tasmania
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -174,11 +174,11 @@ Contact us today — we can usually arrange a first visit within the first week 
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in post-surgical rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in post-surgical rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
 
 ---
 
