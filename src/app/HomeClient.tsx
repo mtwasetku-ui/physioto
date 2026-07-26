@@ -91,7 +91,7 @@ export default function HomeClient() {
       {/* HERO */}
       <section className="relative flex items-center py-28 md:py-32">
         <div className="absolute inset-0">
-          <Image src="/image/blog/mobile-physiotherapy-home-visits.jpg" alt="Physiotherapy at home" fill className="object-cover" priority />
+          <Image src="/image/blog/mobile-physiotherapy-home-visits.jpg" alt="Physiotherapy at home" fill className="object-cover" priority sizes="100vw" quality={75} />
           <div className="absolute inset-0 hero-fade" />
         </div>
         <div className="absolute inset-0 dots text-white/5 pointer-events-none" />
@@ -263,10 +263,12 @@ export default function HomeClient() {
                 href="/services"
                 className={`service-card group relative rounded-2xl overflow-hidden h-80 block card-lift fade-up d${i+1} ${vis('services') ? 'in' : ''}`}
               >
-                <img
+                <Image
                   src={getServicePhoto(s.name)}
                   alt={s.name}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 service-card-overlay" />
                 <div className="absolute inset-0 p-7 flex flex-col justify-end">
