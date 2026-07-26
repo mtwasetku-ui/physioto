@@ -164,7 +164,7 @@ Yes — the full range of musculoskeletal, neurological, and aged care condition
 Same-week appointments are available across Launceston and surrounding North Tasmania. No GP referral required.
 
 **Call:** 1300 433 233
-**Email:** info@physiotohome.com.au
+**Email:** info@physiotohome.com
 
 ---
 
