@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Rotator Cuff Injury and Shoulder Rehabilitation at Home: A Guide from a North Tasmania Home Physiotherapist
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -122,15 +122,15 @@ For people who have had rotator cuff repair surgery, physiotherapy is an essenti
 
 **1 A clinical conversation about your shoulder and your life (15–20 minutes)**
 
-Michael will ask about the onset of your shoulder problem, what aggravates and relieves it, any imaging or previous treatments, and most importantly — what you want to be able to do that the shoulder is currently preventing. Understanding your specific goals (reaching overhead, sleeping on your side, returning to gardening) is essential to a useful rehabilitation plan.
+Micheal will ask about the onset of your shoulder problem, what aggravates and relieves it, any imaging or previous treatments, and most importantly — what you want to be able to do that the shoulder is currently preventing. Understanding your specific goals (reaching overhead, sleeping on your side, returning to gardening) is essential to a useful rehabilitation plan.
 
 **2 Physical assessment of the shoulder in your home environment (15–20 minutes)**
 
-Michael will assess your shoulder range of motion, strength, rotator cuff integrity, scapular control, and posture. Because this happens at home, he can also observe how you use your shoulder in functional tasks relevant to your daily routine — reaching into overhead cupboards, lifting from low surfaces, carrying groceries.
+Micheal will assess your shoulder range of motion, strength, rotator cuff integrity, scapular control, and posture. Because this happens at home, he can also observe how you use your shoulder in functional tasks relevant to your daily routine — reaching into overhead cupboards, lifting from low surfaces, carrying groceries.
 
 **3 Education and explanation of findings (10 minutes)**
 
-Michael will explain what is happening in your shoulder in plain language — the type of injury or pathology, why it is painful, and what a realistic rehabilitation trajectory looks like. This conversation addresses common misconceptions (such as the belief that a rotator cuff tear inevitably requires surgery) and provides a clear rationale for the programme.
+Micheal will explain what is happening in your shoulder in plain language — the type of injury or pathology, why it is painful, and what a realistic rehabilitation trajectory looks like. This conversation addresses common misconceptions (such as the belief that a rotator cuff tear inevitably requires surgery) and provides a clear rationale for the programme.
 
 **4 Hands-on treatment where appropriate (15 minutes)**
 
@@ -224,11 +224,11 @@ Book your first home visit today — and get your shoulder moving again →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and post-surgical care delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and post-surgical care delivered entirely in the home setting.
 
 ---
 
