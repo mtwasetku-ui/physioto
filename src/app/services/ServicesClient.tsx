@@ -168,7 +168,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
         <Image src={`/${service.photo}`} alt={service.name} fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(4,30,20,0.9) 0%, rgba(4,30,20,0.5) 55%, rgba(4,30,20,0.12) 100%)' }} />
         <div style={{ position: 'absolute', bottom: 20, left: 20, right: 20 }}>
-          <h3 style={{ margin: '0 0 10px', color: '#fff', fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, fontWeight: 600, lineHeight: 1.2 }}>
+          <h3 style={{ margin: '0 0 10px', color: '#fff', fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 24, fontWeight: 600, lineHeight: 1.2 }}>
             {service.name}
           </h3>
           <p style={{ margin: 0, color: 'rgba(255,255,255,0.88)', fontSize: 16, lineHeight: 1.6 }}>
@@ -212,7 +212,6 @@ export default function ServicesPage() {
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom, #f0fdf9, #fff)', fontFamily: 'system-ui, sans-serif' }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
         .dots-bg { background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 24px 24px; }
         .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
         @media (max-width: 580px) { .card-grid { grid-template-columns: 1fr; } }
@@ -228,7 +227,7 @@ export default function ServicesPage() {
         <div style={{ position: 'absolute', top: -80, right: -40, width: 380, height: 380, background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
           <p style={{ color: '#6ee7b7', fontSize: 13, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 18px' }}>What We Offer</p>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(42px, 6.5vw, 62px)', color: '#fff', margin: '0 0 20px', lineHeight: 1.15 }}>
+          <h1 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(42px, 6.5vw, 62px)', color: '#fff', margin: '0 0 20px', lineHeight: 1.15 }}>
             Tasmania-Wide Physiotherapy Services <em style={{ color: '#6ee7b7', fontStyle: 'italic' }}>built around you</em>
           </h1>
           <p style={{ color: '#cbd5e1', fontSize: 19, lineHeight: 1.7, maxWidth: 600, margin: '0 auto 32px' }}>
@@ -252,7 +251,7 @@ export default function ServicesPage() {
       <section style={{ maxWidth: 1150, margin: '0 auto', padding: '80px 24px' }}>
         <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 56 }}>
           <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, margin: '0 auto 22px' }} />
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(32px, 4.5vw, 44px)', color: '#0f172a', margin: '0 0 12px' }}>Our Physiotherapy Services</h2>
+          <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(32px, 4.5vw, 44px)', color: '#0f172a', margin: '0 0 12px' }}>Our Physiotherapy Services</h2>
           <p style={{ color: '#475569', fontSize: 17, maxWidth: 520, margin: '0 auto', lineHeight: 1.65 }}>
             We treat a wide range of conditions. Click any service to learn more about how we can help.
           </p>
@@ -271,7 +270,7 @@ export default function ServicesPage() {
         <div style={{ maxWidth: 1150, margin: '0 auto' }}>
           <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 44, transitionDelay: '0.3s' }}>
             <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, margin: '0 auto 22px' }} />
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(30px, 4vw, 42px)', color: '#0f172a', margin: '0 0 12px' }}>Funding & Payment Options</h2>
+            <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(30px, 4vw, 42px)', color: '#0f172a', margin: '0 0 12px' }}>Funding & Payment Options</h2>
             <p style={{ color: '#475569', fontSize: 16, maxWidth: 440, margin: '0 auto' }}>We make accessing quality care as simple as possible.</p>
           </div>
           <div className="funding-grid">
@@ -299,7 +298,7 @@ export default function ServicesPage() {
         <div style={{ position: 'absolute', top: -60, right: -30, width: 300, height: 300, background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 660, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
           <p style={{ color: '#6ee7b7', fontSize: 13, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 16px' }}>Get Started Today</p>
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(36px, 5.5vw, 52px)', color: '#fff', margin: '0 0 18px', lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(36px, 5.5vw, 52px)', color: '#fff', margin: '0 0 18px', lineHeight: 1.2 }}>
             Ready to begin<br /><em style={{ color: '#6ee7b7' }}>your recovery?</em>
           </h2>
           <p style={{ color: '#cbd5e1', fontSize: 18, lineHeight: 1.7, marginBottom: 40 }}>
