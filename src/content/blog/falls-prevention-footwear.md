@@ -1,6 +1,6 @@
 ---
 title: "Falls Prevention | Footwear | Physio to Home"
-description: "Up to 50% of falls in older adults involve inappropriate footwear. North Tasmania physiotherapist Michael Ghattas reveals which shoes are dangerous — and what to wear instead."
+description: "Up to 50% of falls in older adults involve inappropriate footwear. North Tasmania physiotherapist Micheal Ghattas reveals which shoes are dangerous — and what to wear instead."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-02-27"
 category: "Falls Prevention"
@@ -11,7 +11,7 @@ tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home phys
 
 # FALLS PREVENTION | FOOTWEAR
 
-Up to 50% of falls in older adults involve inappropriate footwear. North Tasmania physiotherapist Michael Ghattas reveals which shoes are dangerous — and what to wear instead.
+Up to 50% of falls in older adults involve inappropriate footwear. North Tasmania physiotherapist Micheal Ghattas reveals which shoes are dangerous — and what to wear instead.
 
 Micheal Ghattas
 
@@ -21,7 +21,7 @@ Micheal Ghattas
 
 ## The Role of Footwear in Preventing Falls: What Older Tasmanians Need to Know
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -145,9 +145,9 @@ North Tasmania's weather — particularly in autumn and winter — means wet pat
 
 ## When Footwear Assessment Is Part of a Broader Falls Review
 
-Footwear is one component of a comprehensive falls risk assessment — important on its own, but most powerful when reviewed alongside balance, strength, medications, vision, and home hazards together. In a home physiotherapy visit, Michael reviews footwear as a routine part of the falls assessment and can make specific recommendations based on your foot shape, any conditions present, and the specific flooring and surfaces in your home.
+Footwear is one component of a comprehensive falls risk assessment — important on its own, but most powerful when reviewed alongside balance, strength, medications, vision, and home hazards together. In a home physiotherapy visit, Micheal reviews footwear as a routine part of the falls assessment and can make specific recommendations based on your foot shape, any conditions present, and the specific flooring and surfaces in your home.
 
-If footwear issues are complex — particularly for people with diabetes, peripheral neuropathy, or significant foot deformities — Michael will refer to a podiatrist as part of a coordinated care approach. In North Tasmania, podiatry services are available in Launceston and through some community health services in regional areas.
+If footwear issues are complex — particularly for people with diabetes, peripheral neuropathy, or significant foot deformities — Micheal will refer to a podiatrist as part of a coordinated care approach. In North Tasmania, podiatry services are available in Launceston and through some community health services in regional areas.
 
 ### A simple action you can take today
 
@@ -189,11 +189,11 @@ Book your home falls risk assessment today →
 
 ---
 
-## About the Author — Michael Ghattas, DPT
+## About the Author — Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation.
 
 ---
 
