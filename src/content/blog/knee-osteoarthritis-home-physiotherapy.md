@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Managing Knee Osteoarthritis at Home: A Guide from a North Tasmania Home Physiotherapist
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -80,7 +80,7 @@ A structured strengthening programme targeting the quadriceps, hamstrings, hip a
 
 ### Pain Education
 
-Understanding knee osteoarthritis — including why it is painful, why it fluctuates, and what influences it — is a genuinely therapeutic intervention. Research shows that people with OA who receive structured pain education have lower pain levels, better function, and are less likely to pursue surgery than those who do not. Michael incorporates pain education into every initial consultation.
+Understanding knee osteoarthritis — including why it is painful, why it fluctuates, and what influences it — is a genuinely therapeutic intervention. Research shows that people with OA who receive structured pain education have lower pain levels, better function, and are less likely to pursue surgery than those who do not. Micheal incorporates pain education into every initial consultation.
 
 ### Manual Therapy
 
@@ -96,7 +96,7 @@ One of the most common patterns in knee OA is boom-and-bust: a good day leads to
 
 ### Weight Management Advice
 
-Every kilogram of body weight generates approximately three to five kilograms of compressive force on the knee joint during walking. For people who are overweight, even modest weight reduction produces disproportionate reductions in knee load and pain. While weight management is not primarily a physiotherapy intervention, Michael provides practical advice and can refer to a dietitian where appropriate.
+Every kilogram of body weight generates approximately three to five kilograms of compressive force on the knee joint during walking. For people who are overweight, even modest weight reduction produces disproportionate reductions in knee load and pain. While weight management is not primarily a physiotherapy intervention, Micheal provides practical advice and can refer to a dietitian where appropriate.
 
 ---
 
@@ -106,15 +106,15 @@ For many people, uncertainty about what a home visit involves is enough to delay
 
 **1 A clinical conversation about your knee and your life (15–20 minutes)**
 
-Michael will ask about the history of your knee pain, your current level of function, what makes it better or worse, what treatments you have already tried, and — most importantly — what you want to be able to do that the knee is currently preventing. This is not a form-filling exercise; it is the foundation of a personalised treatment plan.
+Micheal will ask about the history of your knee pain, your current level of function, what makes it better or worse, what treatments you have already tried, and — most importantly — what you want to be able to do that the knee is currently preventing. This is not a form-filling exercise; it is the foundation of a personalised treatment plan.
 
 **2 Physical assessment in your home environment (15–20 minutes)**
 
-Michael will assess your knee range of motion, quadriceps and hip strength, gait, and balance. Because this happens at home, it can include observing how you get up from your usual chair, navigate your specific stairs, and walk on your own floor surfaces. This context is invaluable and impossible to replicate in a clinic.
+Micheal will assess your knee range of motion, quadriceps and hip strength, gait, and balance. Because this happens at home, it can include observing how you get up from your usual chair, navigate your specific stairs, and walk on your own floor surfaces. This context is invaluable and impossible to replicate in a clinic.
 
 **3 Education and explanation of findings (10 minutes)**
 
-Michael will explain what is contributing to your knee pain in plain language, address any misconceptions about OA and exercise, and give you an honest picture of what physiotherapy can realistically achieve for your specific situation.
+Micheal will explain what is contributing to your knee pain in plain language, address any misconceptions about OA and exercise, and give you an honest picture of what physiotherapy can realistically achieve for your specific situation.
 
 **4 Hands-on treatment where appropriate (15 minutes)**
 
@@ -126,7 +126,7 @@ You will leave the first visit with a small, manageable set of exercises tailore
 
 **6 A plan for ongoing care**
 
-Michael will recommend a treatment frequency and discuss funding options including Medicare GP Management Plans, My Aged Care Home Care Packages, and private health insurance.
+Micheal will recommend a treatment frequency and discuss funding options including Medicare GP Management Plans, My Aged Care Home Care Packages, and private health insurance.
 
 ---
 
@@ -202,7 +202,7 @@ A common reason physiotherapy fails for knee OA is insufficient exercise load �
 
 ### Can physiotherapy help if I am also overweight?
 
-Yes, absolutely. In fact, the combination of physiotherapy and modest weight reduction produces greater improvements in knee pain and function than either alone. Michael works with many patients for whom weight is a contributing factor, and takes a practical, non-judgmental approach to this aspect of management.
+Yes, absolutely. In fact, the combination of physiotherapy and modest weight reduction produces greater improvements in knee pain and function than either alone. Micheal works with many patients for whom weight is a contributing factor, and takes a practical, non-judgmental approach to this aspect of management.
 
 ---
 
@@ -216,11 +216,11 @@ Book your first home visit today — and find out what moving with less pain fee
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
 
 ---
 
