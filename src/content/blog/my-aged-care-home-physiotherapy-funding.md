@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## How to Use My Aged Care to Fund Home Physiotherapy in Tasmania
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -184,11 +184,11 @@ Contact us today — we will check your funding eligibility at no cost and no ob
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in aged care physiotherapy, falls prevention, and post-surgical rehabilitation delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in aged care physiotherapy, falls prevention, and post-surgical rehabilitation delivered entirely in the home setting.
 
 ---
 
