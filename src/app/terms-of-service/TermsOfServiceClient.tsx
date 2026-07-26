@@ -149,7 +149,7 @@ function Section({ section }: { section: typeof sections[0] }) {
   return (
     <div id={section.id} style={{ marginBottom: 48, scrollMarginTop: 100 }}>
       <h2 style={{
-        fontFamily: "'Playfair Display', Georgia, serif",
+        fontFamily: "var(--font-playfair), Georgia, serif",
         fontSize: 22, fontWeight: 600, color: "#0f172a",
         margin: "0 0 16px", paddingBottom: 10,
         borderBottom: "1px solid #e2e8f0"
@@ -171,7 +171,7 @@ export default function TermsOfServiceClient() {
             Legal
           </p>
           <h1 style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily: "var(--font-playfair), Georgia, serif",
             fontSize: "clamp(34px, 5vw, 48px)", color: "#fff",
             margin: "0 0 14px", lineHeight: 1.15
           }}>
