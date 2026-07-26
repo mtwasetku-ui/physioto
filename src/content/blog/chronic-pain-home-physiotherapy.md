@@ -21,7 +21,7 @@ Micheal Ghattas
 
 ## Managing Chronic Pain at Home: What to Expect from a Home Physiotherapy Visit?
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -67,7 +67,7 @@ Avoiding movement is one of the most common responses to chronic pain — and un
 
 ### Pain Education
 
-Research consistently shows that people who understand the neuroscience of pain — why it persists, how the nervous system contributes, and what influences it — experience meaningful reductions in pain intensity and disability. This is called pain neuroscience education, and it is a core part of how Michael approaches chronic pain management at Physio to Home.
+Research consistently shows that people who understand the neuroscience of pain — why it persists, how the nervous system contributes, and what influences it — experience meaningful reductions in pain intensity and disability. This is called pain neuroscience education, and it is a core part of how Micheal approaches chronic pain management at Physio to Home.
 
 ### Manual Therapy
 
@@ -89,15 +89,15 @@ For many people, the uncertainty of what a home visit involves is enough to dela
 
 **1 Introduction and a conversation about your pain history (15–20 minutes)**
 
-We start by listening. Michael will ask about your pain — where it is, when it started, what makes it better or worse, what you have already tried, and most importantly, what it is stopping you from doing that you want to be able to do again. There are no wrong answers. This is not a form-filling exercise; it is a genuine clinical conversation.
+We start by listening. Micheal will ask about your pain — where it is, when it started, what makes it better or worse, what you have already tried, and most importantly, what it is stopping you from doing that you want to be able to do again. There are no wrong answers. This is not a form-filling exercise; it is a genuine clinical conversation.
 
 **2 A physical assessment in your home environment (15–20 minutes)**
 
-Michael will assess your movement, strength, posture, and any specific areas of pain. Because this happens in your home rather than a clinic, it can include observing how you get up from your usual chair, walk through your hallway, climb your specific stairs, or perform tasks that are part of your daily routine. This context is invaluable and simply not possible in a clinic.
+Micheal will assess your movement, strength, posture, and any specific areas of pain. Because this happens in your home rather than a clinic, it can include observing how you get up from your usual chair, walk through your hallway, climb your specific stairs, or perform tasks that are part of your daily routine. This context is invaluable and simply not possible in a clinic.
 
 **3 Pain education and a shared explanation of findings (10 minutes)**
 
-Michael will explain what is contributing to your pain in plain language — not medical jargon. This includes a brief overview of how chronic pain works if relevant, and an honest discussion of what physiotherapy can and cannot achieve for your specific situation.
+Micheal will explain what is contributing to your pain in plain language — not medical jargon. This includes a brief overview of how chronic pain works if relevant, and an honest discussion of what physiotherapy can and cannot achieve for your specific situation.
 
 **4 Hands-on treatment where appropriate (15–20 minutes)**
 
@@ -105,11 +105,11 @@ Depending on your assessment findings, the first session may include some manual
 
 **5 Your personalised home exercise programme (10 minutes)**
 
-You will leave the first visit with a small, manageable set of exercises tailored to your specific pain presentation, goals, and home environment. These are not generic handouts — they are chosen based on what Michael observed during your assessment, using equipment you actually have at home.
+You will leave the first visit with a small, manageable set of exercises tailored to your specific pain presentation, goals, and home environment. These are not generic handouts — they are chosen based on what Micheal observed during your assessment, using equipment you actually have at home.
 
 **6 A plan for ongoing care**
 
-Michael will recommend a treatment frequency based on your needs and discuss funding options — including Medicare GP Management Plans, My Aged Care Home Care Packages, and NDIS plans. You are never obligated to commit to anything on the day.
+Micheal will recommend a treatment frequency based on your needs and discuss funding options — including Medicare GP Management Plans, My Aged Care Home Care Packages, and NDIS plans. You are never obligated to commit to anything on the day.
 
 ---
 
@@ -125,7 +125,7 @@ You do not need to do much — the whole point of a home visit is that it meets 
 
 - Clear a small space in your main living area if possible — enough room to stand and take a few steps
 
-- Write down two or three activities that chronic pain is currently preventing you from doing. This helps Michael understand your goals beyond just pain reduction
+- Write down two or three activities that chronic pain is currently preventing you from doing. This helps Micheal understand your goals beyond just pain reduction
 
 ---
 
@@ -163,7 +163,7 @@ Yes — and the evidence is strong. A 2021 systematic review published in the Br
 
 ### Will the physiotherapist need to touch the painful area?
 
-Only with your full consent, and only if it is clinically appropriate. Manual therapy is one tool among many — not every visit involves hands-on treatment. Michael will always explain what he is doing and why before touching any area, and you can decline any technique at any time.
+Only with your full consent, and only if it is clinically appropriate. Manual therapy is one tool among many — not every visit involves hands-on treatment. Micheal will always explain what he is doing and why before touching any area, and you can decline any technique at any time.
 
 ### I have had chronic pain for years. Is it too late to benefit from physiotherapy?
 
@@ -171,11 +171,11 @@ It is never too late. While long-standing chronic pain can be more complex to ma
 
 ### How many sessions will I need?
 
-This varies considerably depending on the type and duration of your pain, your overall health, and your goals. Some patients notice significant improvements within four to six sessions. Others benefit from ongoing maintenance physiotherapy — particularly for conditions like arthritis or spinal degeneration where the underlying cause is not reversible. Michael will give you an honest estimate at your first visit.
+This varies considerably depending on the type and duration of your pain, your overall health, and your goals. Some patients notice significant improvements within four to six sessions. Others benefit from ongoing maintenance physiotherapy — particularly for conditions like arthritis or spinal degeneration where the underlying cause is not reversible. Micheal will give you an honest estimate at your first visit.
 
 ### Can a home physio visit help if I also have a condition like arthritis or osteoporosis?
 
-Absolutely. Osteoarthritis and osteoporosis are among the most common conditions Michael treats in the home setting. Exercise is first-line treatment for both — and home-based delivery means the programme can be designed around your actual home environment, your furniture, and your daily routine.
+Absolutely. Osteoarthritis and osteoporosis are among the most common conditions Micheal treats in the home setting. Exercise is first-line treatment for both — and home-based delivery means the programme can be designed around your actual home environment, your furniture, and your daily routine.
 
 ---
 
@@ -189,11 +189,11 @@ Book your first home visit today — and find out what life with better pain man
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in chronic pain management, falls prevention, and post-surgical rehabilitation delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in chronic pain management, falls prevention, and post-surgical rehabilitation delivered entirely in the home setting.
 
 ---
 
