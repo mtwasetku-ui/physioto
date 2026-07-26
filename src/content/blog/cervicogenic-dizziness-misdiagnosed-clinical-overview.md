@@ -21,7 +21,7 @@ Micheal Ghattas
 
 ## Cervicogenic Dizziness: A Clinical Overview for Patients, Families, and Referring Clinicians
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -166,7 +166,7 @@ Red flag features requiring urgent medical assessment: sudden onset severe "thun
 
 ## Cervicogenic Dizziness in North Tasmania: A Specialist Focus
 
-Cervicogenic dizziness assessment and treatment is an area of specialist clinical focus at Physio to Home. Michael Ghattas has specific training in the assessment and management of cervicogenic dizziness, including head repositioning accuracy testing, upper cervical manual therapy, and cervical sensorimotor retraining.
+Cervicogenic dizziness assessment and treatment is an area of specialist clinical focus at Physio to Home. Micheal Ghattas has specific training in the assessment and management of cervicogenic dizziness, including head repositioning accuracy testing, upper cervical manual therapy, and cervical sensorimotor retraining.
 
 For people in North Tasmania experiencing chronic dizziness that has not been adequately explained — particularly where concurrent neck pain or stiffness is present — a home physiotherapy assessment offers a clinically appropriate and practically accessible pathway that does not require referral to a tertiary vestibular centre.
 
@@ -176,11 +176,11 @@ For GPs managing patients with chronic dizziness in North Tasmania, Physio to Ho
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving North Tasmania. He has specialist training in the assessment and treatment of cervicogenic dizziness and cervicogenic headache, and manages complex cervical presentations as a primary clinical focus.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving North Tasmania. He has specialist training in the assessment and treatment of cervicogenic dizziness and cervicogenic headache, and manages complex cervical presentations as a primary clinical focus.
 
 Referrals and correspondence: physiotohome.com
 
