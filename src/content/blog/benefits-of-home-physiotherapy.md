@@ -13,7 +13,7 @@ tags: ["benefits of home physiotherapy", "in-home physiotherapy", "mobile physio
 
 Home physiotherapy isn't a compromise — for most patients, it produces better outcomes than clinic care. North Tasmania's home physiotherapist explains exactly why, and who benefits most.
 
-Michael Ghattas
+Micheal Ghattas
 
 3/1/2025 · 7 min read
 
@@ -21,7 +21,7 @@ Michael Ghattas
 
 ## Why Home Physiotherapy Works Better Than Most People Expect
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2025
 
