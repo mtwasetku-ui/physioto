@@ -21,7 +21,7 @@ Micheal Ghattas
 
 ## Balance Exercises for Seniors: A Safe, Progressive Programme You Can Do at Home
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -313,7 +313,7 @@ Balance exercise is one of the most important components of fall prevention — 
 
 ### Can a physiotherapist supervise these exercises during a home visit?
 
-Yes — and for many patients, particularly those at higher fall risk or with more complex balance problems, supervised sessions are significantly more effective than unsupervised training alone. A home visit from Physio to Home allows Michael to observe your technique, correct errors in real time, and progress your programme at the right pace. Sessions can be funded through Medicare, My Aged Care, NDIS, and private health insurance.
+Yes — and for many patients, particularly those at higher fall risk or with more complex balance problems, supervised sessions are significantly more effective than unsupervised training alone. A home visit from Physio to Home allows Micheal to observe your technique, correct errors in real time, and progress your programme at the right pace. Sessions can be funded through Medicare, My Aged Care, NDIS, and private health insurance.
 
 ---
 
@@ -327,11 +327,11 @@ Book a home balance assessment today — we cover all of North Tasmania →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, balance rehabilitation, and aged care physiotherapy — all delivered in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, balance rehabilitation, and aged care physiotherapy — all delivered in the home setting.
 
 ---
 
