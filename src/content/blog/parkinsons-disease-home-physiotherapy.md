@@ -1,7 +1,7 @@
 ---
 title: "Parkinson's Disease | Home Physiotherapy | Physio to Home"
 description: "Physiotherapy is one of the most evidence-supported treatments for Parkinson's disease. North Tasmania's home physiotherapist explains what it involves — and why home delivery makes it more effective."
-author: "Michael Ghattas, Physiotherapist"
+author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Conditions & Rehab"
 featured: true
@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Physiotherapy for Parkinson's Disease at Home: A Guide for Tasmanians and Their Families
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -116,7 +116,7 @@ When you contact Physio to Home to arrange your first visit, please mention your
 
 Parkinson's disease affects the whole family, not just the person diagnosed. Family members and carers often become central to the management of the condition — supporting daily exercise, providing cues during freezing episodes, assisting with transfers, and monitoring for falls.
 
-A home physiotherapy visit is an opportunity for family members and carers to learn alongside the person with Parkinson's. Michael regularly involves carers in sessions — explaining the rationale for exercises, demonstrating safe handling and cueing techniques, and identifying environmental modifications that make daily care safer and more effective.
+A home physiotherapy visit is an opportunity for family members and carers to learn alongside the person with Parkinson's. Micheal regularly involves carers in sessions — explaining the rationale for exercises, demonstrating safe handling and cueing techniques, and identifying environmental modifications that make daily care safer and more effective.
 
 If you care for someone with Parkinson's disease in North Tasmania and are unsure how to support their mobility safely, a home visit is one of the most practical things you can arrange.
 
@@ -126,15 +126,15 @@ If you care for someone with Parkinson's disease in North Tasmania and are unsur
 
 **1 A thorough clinical conversation (15–20 minutes)**
 
-Michael will ask about your Parkinson's history, current medications and their timing, your main movement difficulties, your daily routine, your falls history, and what you most want to be able to continue doing. Family members and carers are welcome and encouraged to be present.
+Micheal will ask about your Parkinson's history, current medications and their timing, your main movement difficulties, your daily routine, your falls history, and what you most want to be able to continue doing. Family members and carers are welcome and encouraged to be present.
 
 **2 Physical assessment in your home environment (15–20 minutes)**
 
-Michael will assess your gait, balance, posture, transfers, rigidity, and freezing triggers. Because this takes place in your home, it will include observing your actual walking environment — your hallway width, your doorways, your flooring transitions, your stairs. This assessment cannot be replicated in a clinic.
+Micheal will assess your gait, balance, posture, transfers, rigidity, and freezing triggers. Because this takes place in your home, it will include observing your actual walking environment — your hallway width, your doorways, your flooring transitions, your stairs. This assessment cannot be replicated in a clinic.
 
 **3 Education and explanation of findings (10 minutes)**
 
-Michael will explain what is driving your specific movement difficulties and discuss the evidence base for physiotherapy in Parkinson's. Many people find it clarifying to understand the neuroscience behind why certain interventions — particularly cueing and high-intensity exercise — are so effective.
+Micheal will explain what is driving your specific movement difficulties and discuss the evidence base for physiotherapy in Parkinson's. Many people find it clarifying to understand the neuroscience behind why certain interventions — particularly cueing and high-intensity exercise — are so effective.
 
 **4 Practical treatment and cueing work (15–20 minutes)**
 
@@ -182,7 +182,7 @@ It is never too late. Even in people with advanced Parkinson's who are falling r
 
 ### How often should someone with Parkinson's disease see a physiotherapist?
 
-This varies considerably depending on stage of disease, current goals, and functional level. In the early to middle stages, most people benefit from fortnightly or monthly visits combined with a consistent daily home programme. In more advanced stages, or during a period of notable functional decline, more frequent visits may be warranted. Michael will discuss the appropriate frequency at your first visit and adjust as your needs change.
+This varies considerably depending on stage of disease, current goals, and functional level. In the early to middle stages, most people benefit from fortnightly or monthly visits combined with a consistent daily home programme. In more advanced stages, or during a period of notable functional decline, more frequent visits may be warranted. Micheal will discuss the appropriate frequency at your first visit and adjust as your needs change.
 
 ### Can physiotherapy help with non-motor symptoms like fatigue and sleep?
 
@@ -200,11 +200,11 @@ Book your first home visit today — we cover all of North Tasmania →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
 
 ---
 
