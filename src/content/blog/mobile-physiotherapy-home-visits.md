@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Mobile Physiotherapy in North Tasmania: How to Book and What to Expect
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -102,7 +102,7 @@ Physio to Home provides assessment and treatment for a wide range of musculoskel
 
 ### Not sure if we can help with your condition?
 
-Contact us before you book. Michael will have a brief phone conversation with you to understand your situation and confirm whether mobile physiotherapy is appropriate and what it can realistically achieve for you. There is no cost or obligation for this initial conversation.
+Contact us before you book. Micheal will have a brief phone conversation with you to understand your situation and confirm whether mobile physiotherapy is appropriate and what it can realistically achieve for you. There is no cost or obligation for this initial conversation.
 
 ---
 
@@ -128,11 +128,11 @@ You do not need to do much. Wear comfortable, loose-fitting clothing you can mov
 
 ### Step 5 Your first visit
 
-Michael will introduce himself and begin with a detailed clinical conversation about your condition, history, and goals. He will conduct a physical assessment in your home environment — observing how you move in your actual space. He will explain his findings in plain language, begin hands-on treatment where appropriate, provide a personalized home exercise program, and discuss a plan for ongoing care. You will never be pressured to commit to a treatment plan on the day.
+Micheal will introduce himself and begin with a detailed clinical conversation about your condition, history, and goals. He will conduct a physical assessment in your home environment — observing how you move in your actual space. He will explain his findings in plain language, begin hands-on treatment where appropriate, provide a personalized home exercise program, and discuss a plan for ongoing care. You will never be pressured to commit to a treatment plan on the day.
 
 ### Step 6 Ongoing care
 
-Subsequent visits build on the first assessment, progressing your exercise programe, delivering hands-on treatment, and adjusting the approach based on your response. Michael communicates with your GP and other treating health professionals as needed, with your consent. Visit frequency is determined by your clinical needs — we will always recommend the minimum visits needed to achieve your goals, not the maximum your funding will cover.
+Subsequent visits build on the first assessment, progressing your exercise programe, delivering hands-on treatment, and adjusting the approach based on your response. Micheal communicates with your GP and other treating health professionals as needed, with your consent. Visit frequency is determined by your clinical needs — we will always recommend the minimum visits needed to achieve your goals, not the maximum your funding will cover.
 
 ---
 
@@ -142,7 +142,7 @@ Every visit is tailored to the patient and the stage of treatment. Here is a gen
 
 ### Initial Assessment (First Visit)
 
-The first visit is the most important. Michael begins with a structured clinical history — understanding your condition, what has been tried before, what your daily life looks like, and what you want to be able to do that you currently cannot. He will then conduct a physical assessment appropriate to your presentation — which may include balance testing, strength assessment, range of motion measurement, postural observation, and gait analysis. He will also review your home environment for relevant hazards or factors affecting your condition.
+The first visit is the most important. Micheal begins with a structured clinical history — understanding your condition, what has been tried before, what your daily life looks like, and what you want to be able to do that you currently cannot. He will then conduct a physical assessment appropriate to your presentation — which may include balance testing, strength assessment, range of motion measurement, postural observation, and gait analysis. He will also review your home environment for relevant hazards or factors affecting your condition.
 
 ### Hands-On Treatment
 
@@ -154,7 +154,7 @@ Every visit includes a home exercise component. Exercises are chosen specificall
 
 ### Education and Self-Management
 
-Understanding your condition is a core part of physiotherapy — not an optional extra. Michael takes time at every visit to explain what is happening in plain language, what to expect as you progress, what to do if symptoms worsen, and what you can do independently between visits to support your recovery.
+Understanding your condition is a core part of physiotherapy — not an optional extra. Micheal takes time at every visit to explain what is happening in plain language, what to expect as you progress, what to do if symptoms worsen, and what you can do independently between visits to support your recovery.
 
 ---
 
@@ -246,7 +246,7 @@ No — you do not need a referral to book a private physiotherapy appointment. Y
 
 ### How is mobile physiotherapy different from what a clinic offers?
 
-The clinical skills and treatment techniques are identical — Michael is the same physiotherapist whether he sees you at home or in a clinic. The difference is context. At home, the assessment happens in the environment where your condition affects you most. Exercises are designed for your actual space. Home hazards and daily routines are observed directly. For most of our patients — particularly older adults and those in rural areas — this contextual advantage produces better outcomes than an equivalent program delivered in a clinic.
+The clinical skills and treatment techniques are identical — Micheal is the same physiotherapist whether he sees you at home or in a clinic. The difference is context. At home, the assessment happens in the environment where your condition affects you most. Exercises are designed for your actual space. Home hazards and daily routines are observed directly. For most of our patients — particularly older adults and those in rural areas — this contextual advantage produces better outcomes than an equivalent program delivered in a clinic.
 
 ### What areas in North Tasmania do you service?
 
@@ -258,7 +258,7 @@ Our fee schedule is available on request. Many patients access significant subsi
 
 ### Can mobile physiotherapy help with conditions not listed here?
 
-Quite possibly — the conditions listed on this page reflect our most common presentations but are not exhaustive. If you have a musculoskeletal, neurological, or aged care condition not mentioned here, contact us for a brief conversation. Michael will let you know honestly whether mobile physiotherapy is appropriate for your situation and what it can realistically achieve.
+Quite possibly — the conditions listed on this page reflect our most common presentations but are not exhaustive. If you have a musculoskeletal, neurological, or aged care condition not mentioned here, contact us for a brief conversation. Micheal will let you know honestly whether mobile physiotherapy is appropriate for your situation and what it can realistically achieve.
 
 ### Is mobile physiotherapy available for younger adults or only older patients?
 
@@ -278,11 +278,11 @@ No referral required for private bookings. Funding check at no cost.
 
 ---
 
-## About the Author — Michael Ghattas, DPT
+## About the Author — Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specializes in falls prevention, chronic pain management, post-surgical rehabilitation, and aged care physiotherapy — all delivered in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specializes in falls prevention, chronic pain management, post-surgical rehabilitation, and aged care physiotherapy — all delivered in the home setting.
 
 ---
 
