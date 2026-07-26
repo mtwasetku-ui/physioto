@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## The Allied Health Desert at Australia's Southern Edge: A Clinical Perspective on Physiotherapy Access in Rural Tasmania
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -147,11 +147,11 @@ If you are a GP, aged care coordinator, health planner, or policymaker who found
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has a clinical and advocacy interest in rural allied health access and the role of home-based delivery models in addressing health equity gaps in regional communities.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has a clinical and advocacy interest in rural allied health access and the role of home-based delivery models in addressing health equity gaps in regional communities.
 
 Correspondence and media enquiries: physiotohome.com
 
