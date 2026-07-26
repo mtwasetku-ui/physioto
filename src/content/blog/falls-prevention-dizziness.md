@@ -21,7 +21,7 @@ Micheal Ghattas
 
 ## When Is Dizziness a Fall Risk? What Older Tasmanians and Their Families Need to Know
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -165,7 +165,7 @@ The following situations are not emergencies but warrant professional assessment
 
 - Dizziness that started or worsened shortly after a new medication was prescribed
 
-For many of these presentations, a home physiotherapy assessment is the ideal first step. Michael can assess your specific type of dizziness, screen for red flags requiring GP or specialist referral, and begin treatment in the same visit where appropriate.
+For many of these presentations, a home physiotherapy assessment is the ideal first step. Micheal can assess your specific type of dizziness, screen for red flags requiring GP or specialist referral, and begin treatment in the same visit where appropriate.
 
 ---
 
@@ -201,7 +201,7 @@ Dizziness — particularly vertigo — significantly impairs driving ability. If
 
 ## What a Home Physiotherapy Assessment for Dizziness Involves
 
-A physiotherapy assessment for dizziness is quite different from a general health check. Michael uses a structured clinical assessment that includes:
+A physiotherapy assessment for dizziness is quite different from a general health check. Micheal uses a structured clinical assessment that includes:
 
 - A detailed history of your dizziness — when it started, what triggers it, how long episodes last, what makes it better or worse, and how it affects your daily life
 
@@ -215,7 +215,7 @@ A physiotherapy assessment for dizziness is quite different from a general healt
 
 - Medication and medical history review — identifying contributing medications and conditions
 
-Following the assessment, Michael will either begin treatment in the same session (for conditions like BPPV, where immediate treatment is appropriate), provide a home exercise programme, refer to your GP with a clinical summary, or coordinate with your existing care team.
+Following the assessment, Micheal will either begin treatment in the same session (for conditions like BPPV, where immediate treatment is appropriate), provide a home exercise programme, refer to your GP with a clinical summary, or coordinate with your existing care team.
 
 ---
 
@@ -275,11 +275,11 @@ Book a home dizziness and falls risk assessment today →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in vestibular physiotherapy, falls prevention, and aged care — all delivered in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in vestibular physiotherapy, falls prevention, and aged care — all delivered in the home setting.
 
 ---
 
