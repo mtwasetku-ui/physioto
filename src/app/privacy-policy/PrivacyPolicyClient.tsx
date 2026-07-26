@@ -2,137 +2,126 @@
 
 const LAST_UPDATED = "8 March 2026";
 const COMPANY = "Physio to Home";
-const ABN = ""; // Add your ABN here
 const EMAIL = "info@physiotohome.com";
 const PHONE = "1300 433 233";
-const ADDRESS = "Launceston, Tasmania, Australia";
+const STATE = "Tasmania";
 
 const sections = [
   {
-    id: "introduction",
-    title: "1. Introduction",
-    content: `${COMPANY} ("we", "us", "our") is committed to protecting your personal information in accordance with the Australian Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs).
+    id: "acceptance",
+    title: "1. Acceptance of Terms",
+    content: `By accessing our website (physiotohome.com) or booking and receiving physiotherapy services from ${COMPANY}, you agree to be bound by these Terms of Service ("Terms").
 
-This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website (physiotohome.com) or use our physiotherapy services. Please read it carefully.
+If you do not agree to these Terms, please do not use our website or services. We reserve the right to update these Terms at any time — continued use after changes are posted constitutes acceptance.
 
-By using our website or services, you consent to the practices described in this policy.`,
+These Terms are governed by the laws of ${STATE}, Australia.`,
   },
   {
-    id: "collection",
-    title: "2. Information We Collect",
-    content: `We collect personal information that is necessary to provide our physiotherapy services and operate our website. This may include:
+    id: "services",
+    title: "2. Our Services",
+    content: `${COMPANY} provides in-home physiotherapy services delivered by AHPRA-registered physiotherapists across Tasmania.
 
-**Contact information** — name, email address, phone number, and home address (required to arrange home visits).
+Our services include (but are not limited to) musculoskeletal physiotherapy, post-surgery rehabilitation, falls prevention, neurological rehabilitation, aged care physiotherapy, and chronic pain management — as described on our website.
 
-**Health information** — medical history, current conditions, medications, and details relevant to your physiotherapy treatment. This is sensitive information under the Privacy Act and is handled with the highest level of care.
+**Service availability:** Services are subject to practitioner availability and geographic coverage. We reserve the right to decline, modify, or discontinue services at our reasonable discretion.
 
-**Appointment and billing information** — booking details, Medicare, DVA, NDIS, or private health insurance numbers as applicable.
-
-**Website usage data** — IP address, browser type, pages visited, and time spent on pages, collected automatically via cookies and analytics tools (see Section 5).
-
-We collect this information directly from you — via our website contact forms, booking system, phone calls, or in person during consultations — or in some cases from referring health professionals with your consent.`,
+**Professional standards:** All treatment is provided in accordance with Physiotherapy Board of Australia standards and AHPRA requirements. Nothing in these Terms limits our professional obligations to you as a patient.`,
   },
   {
-    id: "use",
-    title: "3. How We Use Your Information",
-    content: `We use your personal information only for the purposes for which it was collected, including:
+    id: "bookings",
+    title: "3. Appointments & Cancellations",
+    content: `**Booking:** Appointments can be made via our website, phone, or email. A booking is confirmed once you receive written or verbal confirmation from us.
 
-- Providing, managing, and improving our physiotherapy services
-- Scheduling and confirming appointments
-- Processing payments and insurance claims (Medicare, DVA, NDIS, private health)
-- Communicating with you about your care, including follow-up and appointment reminders
-- Complying with our legal and professional obligations as AHPRA-registered practitioners
-- Improving our website and understanding how visitors use it
-- Responding to enquiries and feedback
+**Cancellation policy:** We require at least 24 hours notice to cancel or reschedule an appointment. Cancellations made with less than 24 hours notice, or failure to be present at the scheduled time ("no-show"), may attract a cancellation fee.
 
-We will not use your information for unrelated purposes without first seeking your consent.`,
+**Late arrivals:** If you are unable to be ready at the scheduled appointment time, please notify us as soon as possible. We will do our best to accommodate you, but shortened appointment times may still be charged at the full rate.
+
+**Our right to cancel:** We reserve the right to cancel or reschedule appointments due to practitioner illness, emergency, or circumstances beyond our control. We will provide as much notice as possible and will not charge a cancellation fee in such cases.`,
   },
   {
-    id: "disclosure",
-    title: "4. Disclosure to Third Parties",
-    content: `We do not sell, rent, or trade your personal information. We may share your information with third parties only in the following circumstances:
+    id: "fees",
+    title: "4. Fees & Payment",
+    content: `**Fees:** Our current fee schedule is available on request. Fees may vary depending on the type of service, duration, and applicable funding arrangements.
 
-**Referring and treating health professionals** — with your consent, we may share clinical information with your GP, specialist, or other treating practitioners to coordinate your care.
+**Payment:** Payment is due at the time of service unless a prior billing arrangement has been made. We accept payment via EFTPOS, credit card, bank transfer, and Medicare/DVA/NDIS/private health insurance claims where applicable.
 
-**Funding bodies** — Medicare, DVA, NDIS, My Aged Care, or your private health insurer, as required to process claims on your behalf.
+**Funding bodies:** We process claims on your behalf for Medicare (Chronic Disease Management Plans), DVA, NDIS, My Aged Care, and registered private health insurers. It is your responsibility to ensure you hold valid entitlements and to provide accurate information. Any gap payments remain your responsibility.
 
-**Service providers** — trusted third-party providers who assist us in operating our business (e.g. booking software, cloud storage, email platforms). These providers are contractually required to handle your data securely and only for the purposes we specify.
-
-**Legal requirements** — we may disclose your information if required by law, a court order, or to protect the rights and safety of our clients, staff, or the public.
-
-All third parties we engage are required to comply with applicable Australian privacy laws.`,
+**Debt collection:** Unpaid accounts may be referred to a debt collection agency. You will be responsible for any reasonable costs incurred in recovering outstanding amounts.`,
   },
   {
-    id: "cookies",
-    title: "5. Cookies & Website Analytics",
-    content: `Our website uses cookies — small text files stored on your device — to enhance your browsing experience and help us understand how our site is used.
+    id: "health",
+    title: "5. Health Information & Consent",
+    content: `**Informed consent:** By proceeding with treatment, you consent to the physiotherapy assessment and treatment proposed by your practitioner. You have the right to ask questions, seek a second opinion, and withdraw consent at any time.
 
-**Types of cookies we use:**
+**Accuracy of information:** You agree to provide accurate and complete health information to your treating physiotherapist. Withholding relevant medical information may affect the safety and effectiveness of your treatment. ${COMPANY} accepts no liability for adverse outcomes resulting from inaccurate or incomplete information provided by you.
 
-- **Essential cookies** — necessary for the website to function (e.g. session management, form security). These cannot be disabled.
-- **Analytics cookies** — we use Google Analytics to collect anonymous data about site traffic and usage patterns. This helps us improve our content and user experience. No personally identifiable information is included.
-- **Preference cookies** — remember your settings and preferences across visits.
+**Emergency situations:** In the event of a medical emergency during a home visit, our physiotherapist will take reasonable steps to ensure your safety, including calling emergency services. You consent to this.
 
-**Your choices:** You can control or disable cookies through your browser settings at any time. Note that disabling certain cookies may affect the functionality of our website.
-
-We do not use cookies for advertising or sell cookie data to third parties.`,
+**Referral:** If your condition requires care beyond physiotherapy, your practitioner may recommend referral to another health professional. Acting on such recommendations is your choice.`,
   },
   {
-    id: "security",
-    title: "6. Data Security",
-    content: `We take the security of your personal information seriously and implement reasonable technical and organisational measures to protect it from unauthorised access, misuse, loss, or disclosure.
+    id: "liability",
+    title: "6. Limitation of Liability",
+    content: `To the maximum extent permitted by Australian law:
 
-Measures include secure HTTPS encryption on our website, access controls limiting who can view sensitive information, and using reputable, security-certified third-party platforms for data storage and communication.
+**No guarantee of outcomes:** Physiotherapy outcomes vary between individuals. We do not guarantee specific results from treatment. Our obligation is to provide services with reasonable care and skill.
 
-Health records are retained in accordance with our obligations under the Health Records Act and AHPRA guidelines. Despite our best efforts, no data transmission over the internet is completely secure — if you have concerns, please contact us directly.`,
+**Limitation of damages:** Our liability to you for any loss or damage arising from our services or website is limited to the fees paid by you for the specific service giving rise to the claim, or the minimum amount permitted by law.
+
+**Excluded losses:** We are not liable for any indirect, consequential, special, or incidental losses, including loss of income or opportunity, even if we have been advised of the possibility of such losses.
+
+**Consumer guarantees:** Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy you have under the Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010) that cannot be excluded.`,
   },
   {
-    id: "rights",
-    title: "7. Your Rights — Access & Correction",
-    content: `Under the Australian Privacy Act, you have the right to:
+    id: "website",
+    title: "7. Website Use",
+    content: `**General information only:** Content on our website is provided for general informational purposes and does not constitute medical advice. Always consult a qualified health professional for advice specific to your condition.
 
-**Access** — request a copy of the personal information we hold about you. We will respond within 30 days. In some circumstances a fee may apply to cover our reasonable costs.
+**Accuracy:** We endeavour to keep website content accurate and up to date, but make no warranties about its completeness, accuracy, or suitability for any particular purpose.
 
-**Correction** — request that we correct any personal information that is inaccurate, out of date, incomplete, or misleading. We will act on reasonable correction requests promptly.
+**Intellectual property:** All content on this website — including text, images, logos, and design — is the property of ${COMPANY} or its licensors and is protected by Australian copyright law. You may not reproduce, distribute, or use our content without prior written permission.
 
-**Deletion** — in certain circumstances, you may request that we delete your personal information. Note that we are required to retain health records for a minimum period under applicable law, so not all deletion requests can be fulfilled.
+**Links:** Our website may contain links to third-party websites. We are not responsible for the content or privacy practices of those sites.
 
-**Withdrawal of consent** — where we rely on your consent to process information, you may withdraw that consent at any time, though this will not affect processing already carried out.
-
-To exercise any of these rights, please contact us using the details in Section 9.`,
+**Prohibited use:** You must not use our website in any way that is unlawful, harmful, or that interferes with its normal operation.`,
   },
   {
-    id: "retention",
-    title: "8. Data Retention",
-    content: `We retain your personal information for as long as necessary to fulfil the purposes for which it was collected, including meeting legal, accounting, and professional obligations.
+    id: "privacy",
+    title: "8. Privacy",
+    content: `Your use of our services and website is also governed by our Privacy Policy, which is incorporated into these Terms by reference.
 
-Health records are retained for a minimum of 7 years from the date of last treatment for adults, or until the age of 25 for patients who were minors at the time of treatment, in line with Australian health record requirements.
+Our Privacy Policy explains how we collect, use, store, and disclose your personal and health information in accordance with the Australian Privacy Act 1988 (Cth).
 
-Non-clinical information (e.g. marketing preferences, general enquiry data) is retained for a shorter period and deleted when no longer needed.`,
+You can read the full Privacy Policy at physiotohome.com/privacy-policy.`,
   },
   {
-    id: "complaints",
-    title: "9. Complaints & Contact",
-    content: `If you have a concern about how we have handled your personal information, please contact us first so we can try to resolve it:
+    id: "disputes",
+    title: "9. Disputes",
+    content: `If you have a complaint about our services, please contact us in the first instance so we can attempt to resolve it:
 
 **Email:** ${EMAIL}
 **Phone:** ${PHONE}
-**Mail:** ${COMPANY}, ${ADDRESS}
 
-We will acknowledge your complaint within 5 business days and aim to resolve it within 30 days.
+We will acknowledge complaints within 5 business days and aim to resolve them within 30 days.
 
-If you are not satisfied with our response, you may lodge a complaint with the **Office of the Australian Information Commissioner (OAIC)**:
+If we are unable to resolve a dispute, you may refer it to:
+- **AHPRA** (for concerns about professional conduct): ahpra.gov.au
+- **Health Complaints Commissioner Tasmania**: 1800 001 170
+- **Consumer Affairs Tasmania**: 1300 654 499
 
-- Website: www.oaic.gov.au
-- Phone: 1300 363 992
-- Mail: GPO Box 5218, Sydney NSW 2001`,
+These Terms are governed by the laws of ${STATE}, Australia. Any legal proceedings must be brought in the courts of ${STATE}.`,
   },
   {
-    id: "changes",
-    title: "10. Changes to This Policy",
-    content: `We may update this Privacy Policy from time to time to reflect changes in our practices or legal obligations. When we do, we will update the "Last updated" date at the top of this page.
+    id: "general",
+    title: "10. General",
+    content: `**Severability:** If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions continue in full force.
 
-We encourage you to review this policy periodically. Continued use of our website or services after any changes constitutes your acceptance of the updated policy.`,
+**Waiver:** Failure to enforce any provision of these Terms does not constitute a waiver of our right to enforce it in the future.
+
+**Entire agreement:** These Terms, together with our Privacy Policy and any written service agreements, constitute the entire agreement between you and ${COMPANY} regarding your use of our website and services.
+
+**Contact:** For any questions about these Terms, contact us at ${EMAIL} or ${PHONE}.`,
   },
 ];
 
@@ -160,7 +149,7 @@ function Section({ section }: { section: typeof sections[0] }) {
   return (
     <div id={section.id} style={{ marginBottom: 48, scrollMarginTop: 100 }}>
       <h2 style={{
-        fontFamily: "'Playfair Display', Georgia, serif",
+        fontFamily: "var(--font-playfair), Georgia, serif",
         fontSize: 22, fontWeight: 600, color: "#0f172a",
         margin: "0 0 16px", paddingBottom: 10,
         borderBottom: "1px solid #e2e8f0"
@@ -172,7 +161,7 @@ function Section({ section }: { section: typeof sections[0] }) {
   );
 }
 
-export default function PrivacyPolicyClient() {
+export default function TermsOfServiceClient() {
   return (
     <div style={{ minHeight: "100vh", background: "#f8fafc", fontFamily: "system-ui, sans-serif" }}>
       {/* Hero */}
@@ -182,11 +171,11 @@ export default function PrivacyPolicyClient() {
             Legal
           </p>
           <h1 style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily: "var(--font-playfair), Georgia, serif",
             fontSize: "clamp(34px, 5vw, 48px)", color: "#fff",
             margin: "0 0 14px", lineHeight: 1.15
           }}>
-            Privacy Policy
+            Terms of Service
           </h1>
           <p style={{ color: "#94a3b8", fontSize: 15, margin: 0 }}>
             Last updated: {LAST_UPDATED}
@@ -228,7 +217,7 @@ export default function PrivacyPolicyClient() {
           borderLeft: "4px solid #0891b2", marginTop: 16
         }}>
           <p style={{ margin: 0, color: "#475569", fontSize: 13.5, lineHeight: 1.65 }}>
-            <strong style={{ color: "#0f172a" }}>Note:</strong> This policy is provided for general information purposes. For specific legal advice regarding your privacy rights, please consult a qualified Australian privacy law professional.
+            <strong style={{ color: "#0f172a" }}>Note:</strong> These Terms are provided for general informational purposes. For legal advice specific to your situation, please consult a qualified Australian legal professional.
           </p>
         </div>
       </div>
