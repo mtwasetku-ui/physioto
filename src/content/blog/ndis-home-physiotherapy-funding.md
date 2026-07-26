@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## How to Use Your NDIS Plan to Fund Home Physiotherapy in Tasmania
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -142,7 +142,7 @@ NDIS fully supports home-based delivery for physiotherapy. There is no requireme
 
 **1 Review of your NDIS plan and goals**
 
-Michael will begin by reviewing your current NDIS goals and support funding to ensure the physiotherapy programme is aligned with your plan objectives. If you have a Functional Capacity Assessment or previous physiotherapy reports, these are useful to have available.
+Micheal will begin by reviewing your current NDIS goals and support funding to ensure the physiotherapy programme is aligned with your plan objectives. If you have a Functional Capacity Assessment or previous physiotherapy reports, these are useful to have available.
 
 **2 Clinical assessment in your home (20–25 minutes)**
 
@@ -150,7 +150,7 @@ A thorough assessment of your movement, strength, balance, functional transfers,
 
 **3 Goal-setting (10 minutes)**
 
-Michael will work with you to identify specific, meaningful goals for physiotherapy — framed in the language of your NDIS plan where possible (for example, "walk independently to the letterbox" or "transfer from bed to wheelchair without assistance").
+Micheal will work with you to identify specific, meaningful goals for physiotherapy — framed in the language of your NDIS plan where possible (for example, "walk independently to the letterbox" or "transfer from bed to wheelchair without assistance").
 
 **4 Initial treatment and programme planning (15–20 minutes)**
 
@@ -158,7 +158,7 @@ The first session includes initial hands-on treatment or supervised exercise, an
 
 **5 Documentation**
 
-Following the assessment, Michael provides a written summary of findings and the proposed programme. This documentation can be shared with your support coordinator and used to support plan reviews if required.
+Following the assessment, Micheal provides a written summary of findings and the proposed programme. This documentation can be shared with your support coordinator and used to support plan reviews if required.
 
 ---
 
@@ -196,11 +196,11 @@ Contact us today to discuss your situation — no obligation, no cost →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and disability-related physiotherapy delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and disability-related physiotherapy delivered entirely in the home setting.
 
 ---
 
