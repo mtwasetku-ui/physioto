@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## How to Improve Balance at Home: A Practical Guide for Older Adults
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -162,7 +162,7 @@ Book your home assessment today →
 
 ## About the Author
 
-Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 Founder, Physio to Home — North Tasmania's home physiotherapy service.
 
 ---
