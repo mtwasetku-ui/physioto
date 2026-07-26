@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { Award, Heart, X } from 'lucide-react'
 import { teamMembers, type TeamMember } from '@/data/teamData'
 
@@ -12,11 +13,12 @@ function TeamCard({ member, onOpen }: { member: TeamMember; onOpen: (m: TeamMemb
       onClick={() => onOpen(member)}
     >
       {member.photo ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
           src={member.photo}
           alt={member.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       ) : (
         <div className="w-full h-full bg-gradient-to-br from-emerald-400 to-emerald-700 flex items-center justify-center">
@@ -76,8 +78,13 @@ function TeamModal({ member, onClose }: { member: TeamMember; onClose: () => voi
         {/* Photo side */}
         <div className="relative h-64 md:h-auto md:self-start md:sticky md:top-0 md:aspect-[3/4] md:max-h-[85vh] rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none overflow-hidden">
           {member.photo ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-top" />
+            <Image
+              src={member.photo}
+              alt={member.name}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 340px"
+            />
           ) : (
             <div className="w-full h-full bg-emerald-900/40 flex items-center justify-center">
               <span className="text-8xl font-bold text-white opacity-80">{member.name.charAt(0)}</span>
