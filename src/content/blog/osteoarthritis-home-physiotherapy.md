@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Arthritis Pain Management at Home: What Physiotherapy Can Do for Older Tasmanians
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -206,11 +206,11 @@ Book a home arthritis assessment today — we cover all of North Tasmania →
 
 ---
 
-## About the Author — Michael Ghattas, DPT
+## About the Author — Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in chronic pain management, arthritis rehabilitation, falls prevention, and post-surgical care — all delivered in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in chronic pain management, arthritis rehabilitation, falls prevention, and post-surgical care — all delivered in the home setting.
 
 ---
 
