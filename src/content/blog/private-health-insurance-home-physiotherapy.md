@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Using Private Health Insurance for Home Physiotherapy in North Tasmania
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -151,11 +151,11 @@ Contact us today — we help you understand your options before you commit →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in home-based physiotherapy for older adults, post-surgical rehabilitation, and chronic pain management across North Tasmania.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in home-based physiotherapy for older adults, post-surgical rehabilitation, and chronic pain management across North Tasmania.
 
 ---
 
