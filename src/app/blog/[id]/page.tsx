@@ -332,9 +332,10 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
     dateModified: post.date,
     author: {
       '@type': 'Person',
-      name: post.author,
+      name: 'Micheal Ghattas',
       jobTitle: 'Physiotherapist',
-      identifier: 'AHPRA PHY0001874391',
+      identifier: 'AHPRA PHY0002634794',
+      url: `${BASE_URL}/team`,
       worksFor: {
         '@type': 'MedicalBusiness',
         name: 'Physio to Home',
@@ -442,9 +443,9 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
             </h1>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, alignItems: 'center' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
+              <Link href="/team" style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13, textDecoration: 'none' }}>
                 <User size={14} />{post.author}
-              </span>
+              </Link>
               <span style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
                 <Calendar size={14} />{formatDate(post.date)}
               </span>
