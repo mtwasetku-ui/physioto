@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## My Aged Care vs NDIS: Which Funding System Applies for Home Physiotherapy?
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -162,7 +162,7 @@ Contact us today — we will help you find the right pathway →
 
 ## About the Author
 
-Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 Founder, Physio to Home — North Tasmania's home physiotherapy service.
 
 ---
