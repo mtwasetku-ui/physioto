@@ -1,6 +1,6 @@
 ---
 title: "Post-Surgery Recovery | Knee Replacement | Physio to Home"
-description: "Had a knee replacement in Tasmania? Michael Ghattas explains recovery week by week — from Day 1 at home to 6 months — including exercises, swelling management, and funding."
+description: "Had a knee replacement in Tasmania? Micheal Ghattas explains recovery week by week — from Day 1 at home to 6 months — including exercises, swelling management, and funding."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-06"
 category: "Post-Surgery Recovery"
@@ -11,7 +11,7 @@ tags: ["post-surgery recovery", "knee replacement", "physiotherapy North Tasmani
 
 # POST-SURGERY RECOVERY | KNEE REPLACEMENT
 
-Had a knee replacement in Tasmania? Michael Ghattas explains recovery week by week — from Day 1 at home to 6 months — including exercises, swelling management, and funding.
+Had a knee replacement in Tasmania? Micheal Ghattas explains recovery week by week — from Day 1 at home to 6 months — including exercises, swelling management, and funding.
 
 Micheal Ghattas
 
@@ -21,7 +21,7 @@ Micheal Ghattas
 
 ## Knee Replacement Recovery Week by Week: A Home Physiotherapist's Guide for Tasmanians
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -257,11 +257,11 @@ Book your first home visit today — we cover all of North Tasmania →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in post-surgical rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in post-surgical rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
 
 ---
 
