@@ -12,6 +12,12 @@
  */
 
 export const internalLinks: Record<string, string> = {
+  // Locations
+  'Hobart':                            'home-physiotherapy-hobart',
+  'North West Coast':                  'home-physiotherapy-devonport-burnie',
+  'Devonport':                         'home-physiotherapy-devonport-burnie',
+  'Burnie':                            'home-physiotherapy-devonport-burnie',
+
   // Falls & balance
   'falls prevention exercises':        'falls-prevention-balance-exercises',
   'falls prevention':                  'falls-prevention-home-physiotherapy',
