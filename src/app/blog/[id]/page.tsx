@@ -160,7 +160,7 @@ function renderMarkdown(content: string, currentSlug: string) {
     if (line.startsWith('## ')) {
       elements.push(
         <h2 key={i} style={{
-          fontFamily: "'Playfair Display', Georgia, serif",
+          fontFamily: "var(--font-playfair), Georgia, serif",
           fontSize: 'clamp(19px, 2.8vw, 24px)',
           fontWeight: 700,
           color: '#0f172a',
@@ -181,7 +181,7 @@ function renderMarkdown(content: string, currentSlug: string) {
     if (line.startsWith('### ')) {
       elements.push(
         <h3 key={i} style={{
-          fontFamily: "'Playfair Display', Georgia, serif",
+          fontFamily: "var(--font-playfair), Georgia, serif",
           fontSize: 'clamp(16px, 2.2vw, 19px)',
           fontWeight: 600,
           color: '#0891b2',
@@ -431,7 +431,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
             </div>
 
             <h1 style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "var(--font-playfair), Georgia, serif",
               fontSize: 'clamp(24px, 4.5vw, 44px)',
               color: '#fff',
               margin: '0 0 20px',
@@ -467,7 +467,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
             marginBottom: 44,
           }}>
             <p style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "var(--font-playfair), Georgia, serif",
               fontSize: 17,
               color: '#0c4a6e',
               lineHeight: 1.7,
@@ -521,7 +521,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
           <div style={{ maxWidth: 740, margin: '0 auto' }}>
             <div style={{ width: 40, height: 3, background: 'linear-gradient(90deg,#0891b2,#06b6d4)', borderRadius: 2, marginBottom: 16 }} />
             <h2 style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "var(--font-playfair), Georgia, serif",
               fontSize: 26, fontWeight: 700, color: '#0f172a', margin: '0 0 32px',
             }}>
               Related Articles
@@ -565,7 +565,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
                       <Calendar size={11} />{formatDate(related.date)}
                     </p>
                     <h3 style={{
-                      fontFamily: "'Playfair Display', Georgia, serif",
+                      fontFamily: "var(--font-playfair), Georgia, serif",
                       fontWeight: 700, color: '#0f172a', fontSize: 15,
                       marginBottom: 8, lineHeight: 1.4,
                       display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
