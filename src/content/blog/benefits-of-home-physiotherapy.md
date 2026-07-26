@@ -170,7 +170,7 @@ Same-week appointments are available across Launceston and surrounding North Tas
 
 ## About the Author
 
-Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 Founder, Physio to Home — North Tasmania's home physiotherapy service.
 
 ---
