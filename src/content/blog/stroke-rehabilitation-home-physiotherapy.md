@@ -22,7 +22,7 @@ Micheal Ghattas
 
 ## Stroke Rehabilitation at Home: A Guide for Survivors and Families in North Tasmania
 
-By Michael Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -114,15 +114,15 @@ If you or a family member had a stroke and feel that rehabilitation was disconti
 
 **1 A comprehensive clinical conversation (15–20 minutes)**
 
-Michael will ask about the stroke — when it happened, what was affected, what rehabilitation has been received so far, and how function has changed since discharge. Family members and carers are welcome and encouraged to be present. Understanding the home context — who helps with what, what the daily routine looks like, and what the person most wants to regain — is as important as the clinical history.
+Micheal will ask about the stroke — when it happened, what was affected, what rehabilitation has been received so far, and how function has changed since discharge. Family members and carers are welcome and encouraged to be present. Understanding the home context — who helps with what, what the daily routine looks like, and what the person most wants to regain — is as important as the clinical history.
 
 **2 A thorough physical assessment in your home environment (20–25 minutes)**
 
-Michael will assess movement, strength, tone, sensation, balance, gait, and transfer ability in your actual home. This will include walking through your hallway, negotiating your stairs, sitting and standing from your usual chair, and any specific functional tasks that are current challenges.
+Micheal will assess movement, strength, tone, sensation, balance, gait, and transfer ability in your actual home. This will include walking through your hallway, negotiating your stairs, sitting and standing from your usual chair, and any specific functional tasks that are current challenges.
 
 **3 Explanation of findings and rehabilitation plan (10 minutes)**
 
-Michael will explain the current picture clearly — what is contributing to the movement difficulties, what is realistic to achieve with physiotherapy, and what an appropriate programme looks like. This conversation is always honest about what is achievable and realistic about timelines.
+Micheal will explain the current picture clearly — what is contributing to the movement difficulties, what is realistic to achieve with physiotherapy, and what an appropriate programme looks like. This conversation is always honest about what is achievable and realistic about timelines.
 
 **4 Initial treatment and practice (15–20 minutes)**
 
@@ -138,7 +138,7 @@ You will leave the first visit with a clear, manageable daily practice programme
 
 Caring for a family member who has had a stroke is demanding and sometimes frightening. One of the most helpful things a home physiotherapy visit can do for a family is provide clear, practical guidance on safe handling and movement assistance — so that carers feel confident rather than anxious when helping with transfers, walking, and daily activities.
 
-Specific things Michael addresses with carers during home visits include: how to assist with standing and walking without creating dependency or increasing fall risk, how to position the affected limb during rest to manage tone and prevent contracture, how to recognise signs of fatigue and when to reduce activity, and how to set up the home environment to support both safety and recovery practice.
+Specific things Micheal addresses with carers during home visits include: how to assist with standing and walking without creating dependency or increasing fall risk, how to position the affected limb during rest to manage tone and prevent contracture, how to recognise signs of fatigue and when to reduce activity, and how to set up the home environment to support both safety and recovery practice.
 
 Carer involvement in stroke rehabilitation is strongly associated with better outcomes for the person recovering — and better wellbeing for the carer.
 
@@ -200,11 +200,11 @@ Book your first home visit today — we cover all of North Tasmania →
 
 ## About the Author
 
-Michael Ghattas, DPT
+Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
 
-Michael is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and post-surgical care delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and post-surgical care delivered entirely in the home setting.
 
 ---
 
