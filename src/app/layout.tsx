@@ -18,6 +18,38 @@ const playfair = Playfair_Display({
 
 const BASE_URL = 'https://www.physiotohome.com'
 const GA_ID = 'G-78YHHCX8JE'
+const PB_URL = 'https://physio-pb.fly.dev'
+
+// Computes AggregateRating from the same testimonials shown on-page (featured = true),
+// so the schema never claims a rating count that isn't actually visible to visitors.
+// Returns null (schema omits aggregateRating entirely) rather than a placeholder if
+// the fetch fails or no rated reviews exist yet.
+async function getAggregateRating() {
+  try {
+    const res = await fetch(
+      `${PB_URL}/api/collections/testimonials/records?perPage=200&filter=${encodeURIComponent('featured = true')}&fields=rating`,
+      { next: { revalidate: 3600 } } // re-check hourly rather than refetching on every request
+    )
+    if (!res.ok) return null
+
+    const data = await res.json()
+    const ratings: number[] = (data.items ?? [])
+      .map((item: { rating?: number }) => item.rating)
+      .filter((r: unknown): r is number => typeof r === 'number' && r > 0)
+
+    if (ratings.length === 0) return null
+
+    const average = ratings.reduce((sum, r) => sum + r, 0) / ratings.length
+
+    return {
+      '@type': 'AggregateRating',
+      ratingValue: Number(average.toFixed(1)),
+      reviewCount: ratings.length,
+    }
+  } catch {
+    return null
+  }
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -125,14 +157,19 @@ const structuredData = {
   ],
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const aggregateRating = await getAggregateRating()
+  const businessSchema = aggregateRating
+    ? { ...structuredData, aggregateRating }
+    : structuredData
+
   return (
     <html lang="en" className={playfair.variable}>
       <head>
         <meta name="msvalidate.01" content="EB4FA79F25221C5C5EA86027899A0790" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
         />
       </head>
       <body className="flex flex-col min-h-screen">
