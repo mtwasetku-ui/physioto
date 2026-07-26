@@ -53,6 +53,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'home-physiotherapy-longford',
     'home-physiotherapy-scottsdale',
     'home-physiotherapy-tamar-valley-exeter-beaconsfield',
+    'home-physiotherapy-hobart',
+    'home-physiotherapy-devonport-burnie',
   ]
 
   // High-intent evergreen guides get 0.7
