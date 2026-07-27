@@ -7,11 +7,12 @@ import type { BlogPost } from '@/lib/blog'
 
 export default function RelatedPostCard({
   related,
-  formatDate,
 }: {
   related: BlogPost
-  formatDate: (d: string) => string
 }) {
+  const formatDate = (d: string) =>
+    new Date(d).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })
+
   return (
     <Link
       href={`/blog/${related.slug}`}
