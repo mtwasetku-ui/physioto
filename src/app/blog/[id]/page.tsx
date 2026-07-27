@@ -529,7 +529,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
               {relatedPosts.map((related) => (
-                <RelatedPostCard key={related.slug} related={related} formatDate={formatDate} />
+                <RelatedPostCard key={related.slug} related={related} />
               ))}
             </div>
           </div>
