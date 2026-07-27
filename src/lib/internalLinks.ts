@@ -65,6 +65,8 @@ export const internalLinks: Record<string, string> = {
   'choosing an NDIS physiotherapist':  'how-to-choose-ndis-physiotherapist-checklist',
   'support coordinator':               'ndis-support-coordinators-guide-home-physiotherapy-referrals',
   'NDIS physiotherapy goals':          'writing-ndis-physiotherapy-goals-plan-review',
+  'DVA physiotherapy':                  'dva-physiotherapy-tasmania',
+  'DVA':                                'dva-physiotherapy-tasmania',
   'My Aged Care':                      'my-aged-care-home-physiotherapy-funding',
   'GP Management Plan':                'medicare-gp-management-plan-physiotherapy-funding',
   'private health insurance':          'private-health-insurance-home-physiotherapy',
