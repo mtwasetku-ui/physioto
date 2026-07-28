@@ -90,8 +90,8 @@ export default function Footer() {
             <div className="mt-6">
               <p className="text-sm text-gray-400">
                 <span className="font-medium text-white">Business Hours:</span><br />
-                Monday - Friday: 8am - 6pm<br />
-                Saturday: 9am - 2pm<br />
+                Monday - Saturday: 9am - 5pm<br />
+                
                 Sunday: Closed
               </p>
             </div>
