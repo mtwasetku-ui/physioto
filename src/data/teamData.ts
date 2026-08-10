@@ -111,4 +111,19 @@ Outside the clinic, she stays active and practices what she preaches—you'll of
     photo: '/team/cheng.jpg',
     order: 8,
   },
+  {
+  id: '9',
+  name: 'Shweta Gautam',
+  title: 'Physiotherapist',
+  qualifications: 'AHPRA Registered Physiotherapist',
+  "AHPRA registration number": 'PHY0002747266',
+  specialties: 'Musculoskeletal, Orthopaedic Rehabilitation, Neurological Rehabilitation, Occupational Rehabilitation, Return to Work',
+  bio: `Shweta is an AHPRA-registered Physiotherapist with experience in both clinical physiotherapy and occupational rehabilitation. She has worked with a wide range of clients, helping individuals recover from musculoskeletal, orthopaedic, and neurological conditions while supporting safe and sustainable return to work.
+
+Shweta is passionate about delivering personalised, evidence-based care that empowers people to regain their independence, reduce pain, and improve their quality of life. She believes in building strong relationships with her clients and tailoring treatment plans to suit each person's goals and lifestyle.
+
+Through Physio To Home, Shweta is committed to providing compassionate, high-quality physiotherapy in the comfort of your own home, helping clients achieve the best possible outcomes with confidence and support.`,
+  photo: '/team/shweta.jpg',
+  order: 9,
+},
 ]
