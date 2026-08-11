@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { signIn } from 'next-auth/react'
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
@@ -72,6 +72,23 @@ function LoginForm() {
   )
 }
 
+function LoginFormFallback() {
+  return (
+    <div className="min-h-screen flex items-center justify-center px-4">
+      <div className="w-full max-w-sm">
+        <div className="flex flex-col items-center mb-8">
+          <Image src="/images/logo.png" alt="Physio to Home" width={56} height={56} />
+          <h1 className="serif text-2xl text-primary font-semibold mt-4">Staff Portal</h1>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function PortalLoginPage() {
-  return <LoginForm />
+  return (
+    <Suspense fallback={<LoginFormFallback />}>
+      <LoginForm />
+    </Suspense>
+  )
 }
