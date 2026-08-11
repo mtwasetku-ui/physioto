@@ -133,6 +133,7 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
   const [existingDraftId, setExistingDraftId] = useState<string | null>(null)
   const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
   const [error, setError] = useState<string | null>(null)
+  const [saveError, setSaveError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch('/api/templates')
@@ -183,6 +184,7 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
 
   async function save(draft: boolean) {
     setStatus('saving')
+    setSaveError(null)
     const sections = template!.content.sections.map((s) => ({
       name: s.name,
       answers: s.questions.map((q) => ({
@@ -210,6 +212,11 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
         setAnswers({})
       }
     } else {
+      // The API route already returns Cliniko's real rejection reason in
+      // `error` — surface it instead of a generic message so the actual
+      // problem (e.g. a specific field Cliniko rejected) is visible.
+      const body = await res.json().catch(() => null)
+      setSaveError(body?.error || `Save failed (HTTP ${res.status})`)
       setStatus('error')
     }
   }
@@ -271,7 +278,9 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
           Save as final
         </Button>
         {status === 'saved' && <span className="text-sm text-primary font-medium">Saved</span>}
-        {status === 'error' && <span className="text-sm text-destructive font-medium">Couldn&apos;t save — try again</span>}
+        {status === 'error' && (
+          <span className="text-sm text-destructive font-medium">{saveError || "Couldn't save — try again"}</span>
+        )}
       </div>
       {!existingDraftId ? null : (
         <p className="text-xs text-muted-foreground mt-2">
