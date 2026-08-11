@@ -27,6 +27,7 @@ export async function POST(req: Request) {
     })
     return NextResponse.json({ attachment })
   } catch (e: any) {
+    console.error('[attachments/finalize] failed', e)
     return NextResponse.json({ error: e.message || 'Failed to finalize attachment' }, { status: 502 })
   }
 }
