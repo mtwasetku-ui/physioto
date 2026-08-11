@@ -22,8 +22,10 @@ export async function GET() {
 
   try {
     const appointmentTypes = await listAppointmentTypesForPractice()
+    console.log('[appointments] loaded types', { count: appointmentTypes.length })
     return NextResponse.json({ appointmentTypes })
   } catch (e: any) {
+    console.error('[appointments] failed to load types', e)
     return NextResponse.json({ error: e.message || 'Failed to load appointment types' }, { status: 502 })
   }
 }
