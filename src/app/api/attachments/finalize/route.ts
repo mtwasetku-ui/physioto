@@ -5,9 +5,9 @@ import { isPatientAssignedToEmail, writeAuditLog } from '@/lib/db'
 import { finalizeAttachment } from '@/lib/cliniko'
 
 export async function POST(req: Request) {
-  const { patientId, key, fileName, contentType } = await req.json()
-  if (!patientId || !key || !fileName) {
-    return NextResponse.json({ error: 'patientId, key and fileName required' }, { status: 400 })
+  const { patientId, uploadUrl, fileName } = await req.json()
+  if (!patientId || !uploadUrl) {
+    return NextResponse.json({ error: 'patientId and uploadUrl required' }, { status: 400 })
   }
 
   const session = await getServerSession(authOptions)
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
   if (!assigned) return NextResponse.json({ error: 'Not assigned to this patient' }, { status: 403 })
 
   try {
-    const attachment = await finalizeAttachment({ patientId, key, fileName, contentType })
+    const attachment = await finalizeAttachment({ patientId, uploadUrl })
     await writeAuditLog({
       actorEmail: email,
       action: 'attachment_upload',
