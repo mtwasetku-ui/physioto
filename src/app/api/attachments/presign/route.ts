@@ -23,6 +23,7 @@ export async function POST(req: Request) {
     const presigned = await getAttachmentPresignedPost(patientId)
     return NextResponse.json(presigned)
   } catch (e: any) {
+    console.error('[attachments/presign] failed', e)
     return NextResponse.json({ error: e.message || 'Failed to get upload URL' }, { status: 502 })
   }
 }
