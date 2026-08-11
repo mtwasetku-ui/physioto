@@ -1,4 +1,4 @@
-import type { Adapter } from 'next-auth/adapters'
+import type { Adapter, AdapterUser } from 'next-auth/adapters'
 import { sql } from '@/lib/db'
 
 // NextAuth's Email (magic-link) provider requires an adapter with these
@@ -49,13 +49,13 @@ export function PostgresVerificationAdapter(): Adapter {
       return null
     },
 
-    async createUser(user) {
+    async createUser(user: Omit<AdapterUser, 'id'>) {
       // Fabricated, not persisted — id doubles as the email since that's
       // all downstream code (the jwt callback, isEmailAllowed) needs.
       return { id: user.email as string, email: user.email as string, emailVerified: user.emailVerified ?? null }
     },
 
-    async getUser(id) {
+    async getUser(id: string) {
       return { id, email: id, emailVerified: null }
     },
   } as Adapter
