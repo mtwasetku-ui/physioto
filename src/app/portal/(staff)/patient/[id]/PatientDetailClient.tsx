@@ -8,10 +8,11 @@ import type { ClinikoPatientInfo } from '@/lib/cliniko'
 type Tab = 'note' | 'timeline' | 'attachments'
 
 interface Question {
-  id: number
+  // Cliniko questions have no numeric id — name is the only identifier,
+  // and only unique within its own section.
   name: string
-  question_type: string
-  answer_options?: string[]
+  type: string
+  answers?: { value: string; selected?: boolean }[]
   required?: boolean
 }
 interface Section {
@@ -22,6 +23,12 @@ interface Template {
   id: number
   name: string
   content: { sections: Section[] }
+}
+
+// Composite key for a question, since Cliniko only identifies questions
+// by (section name, question name) — never a plain id.
+function questionKey(sectionName: string, question: Question) {
+  return `${sectionName}::${question.name}`
 }
 
 const TEMPLATE_NAMES = ['Initial Consultation', 'Standard Consultation']
@@ -122,7 +129,7 @@ function InfoRow({ icon: Icon, label, value }: { icon: any; label: string; value
 function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: string }) {
   const [templates, setTemplates] = useState<Template[] | null>(null)
   const [templateName, setTemplateName] = useState<string>(TEMPLATE_NAMES[0])
-  const [answers, setAnswers] = useState<Record<number, string | string[]>>({})
+  const [answers, setAnswers] = useState<Record<string, string | string[]>>({})
   const [existingDraftId, setExistingDraftId] = useState<string | null>(null)
   const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
   const [error, setError] = useState<string | null>(null)
@@ -168,8 +175,8 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
   const unsupported = new Set<string>()
   for (const s of template.content.sections) {
     for (const q of s.questions) {
-      if (!['text', 'paragraph_text', 'radio_buttons', 'checkboxes'].includes(q.question_type)) {
-        unsupported.add(q.question_type)
+      if (!['text', 'paragraph', 'radiobuttons', 'checkboxes', 'date'].includes(q.type)) {
+        unsupported.add(q.type)
       }
     }
   }
@@ -178,7 +185,10 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
     setStatus('saving')
     const sections = template!.content.sections.map((s) => ({
       name: s.name,
-      answers: s.questions.map((q) => ({ questionId: q.id, value: answers[q.id] ?? (q.question_type === 'checkboxes' ? [] : '') })),
+      answers: s.questions.map((q) => ({
+        questionName: q.name,
+        value: answers[questionKey(s.name, q)] ?? (q.type === 'checkboxes' ? [] : ''),
+      })),
     }))
 
     const res = await fetch('/api/notes', {
@@ -237,9 +247,17 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
           <div key={section.name} className="bg-white border border-border rounded-lg p-5">
             <h3 className="font-semibold text-foreground mb-4">{section.name}</h3>
             <div className="space-y-4">
-              {section.questions.map((q) => (
-                <QuestionField key={q.id} question={q} value={answers[q.id]} onChange={(v) => setAnswers((a) => ({ ...a, [q.id]: v }))} />
-              ))}
+              {section.questions.map((q) => {
+                const key = questionKey(section.name, q)
+                return (
+                  <QuestionField
+                    key={key}
+                    question={q}
+                    value={answers[key]}
+                    onChange={(v) => setAnswers((a) => ({ ...a, [key]: v }))}
+                  />
+                )
+              })}
             </div>
           </div>
         ))}
@@ -273,7 +291,7 @@ function QuestionField({
   value: string | string[] | undefined
   onChange: (v: string | string[]) => void
 }) {
-  if (question.question_type === 'paragraph_text') {
+  if (question.type === 'paragraph') {
     return (
       <div>
         <label className="text-sm font-medium text-foreground block mb-1.5">{question.name}</label>
@@ -287,12 +305,12 @@ function QuestionField({
     )
   }
 
-  if (question.question_type === 'radio_buttons') {
+  if (question.type === 'radiobuttons') {
     return (
       <div>
         <label className="text-sm font-medium text-foreground block mb-1.5">{question.name}</label>
         <div className="flex flex-wrap gap-2">
-          {(question.answer_options || []).map((opt) => (
+          {(question.answers || []).map((a) => a.value).map((opt) => (
             <button
               type="button"
               key={opt}
@@ -309,13 +327,13 @@ function QuestionField({
     )
   }
 
-  if (question.question_type === 'checkboxes') {
+  if (question.type === 'checkboxes') {
     const selected = (value as string[]) || []
     return (
       <div>
         <label className="text-sm font-medium text-foreground block mb-1.5">{question.name}</label>
         <div className="flex flex-wrap gap-2">
-          {(question.answer_options || []).map((opt) => {
+          {(question.answers || []).map((a) => a.value).map((opt) => {
             const active = selected.includes(opt)
             return (
               <button
@@ -386,14 +404,22 @@ function Timeline({ patientId }: { patientId: string }) {
               {(note.content?.sections || []).map((s: any) => (
                 <div key={s.name} className="mb-3 last:mb-0">
                   <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">{s.name}</div>
-                  {s.questions.map((q: any) => (
-                    <div key={q.id} className="text-sm mb-1">
-                      <span className="text-foreground font-medium">{q.name}: </span>
-                      <span className="text-muted-foreground">
-                        {Array.isArray(q.answer) ? q.answer.join(', ') || '—' : q.answer || '—'}
-                      </span>
-                    </div>
-                  ))}
+                  {s.questions.map((q: any) => {
+                    // text/paragraph/date -> plain "answer" string.
+                    // radiobuttons/checkboxes -> "answers": [{value, selected}].
+                    const display = Array.isArray(q.answers)
+                      ? q.answers
+                          .filter((a: any) => a.selected)
+                          .map((a: any) => a.value)
+                          .join(', ') || '—'
+                      : q.answer || '—'
+                    return (
+                      <div key={`${s.name}::${q.name}`} className="text-sm mb-1">
+                        <span className="text-foreground font-medium">{q.name}: </span>
+                        <span className="text-muted-foreground">{display}</span>
+                      </div>
+                    )
+                  })}
                 </div>
               ))}
             </div>
@@ -424,27 +450,34 @@ function Attachments({ patientId }: { patientId: string }) {
     setUploading(true)
     setError(null)
     try {
-      // Step 1: server asks Cliniko for a presigned S3 POST
+      // Step 1: server asks Cliniko for a presigned S3 POST for this patient
       const presignRes = await fetch('/api/attachments/presign', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ patientId, fileName: file.name, contentType: file.type }),
+        body: JSON.stringify({ patientId }),
       })
       if (!presignRes.ok) throw new Error('presign failed')
-      const { url, fields, key } = await presignRes.json()
+      const { url, fields } = await presignRes.json()
 
-      // Step 2: browser uploads straight to S3, never touching our server
+      // Step 2: browser uploads straight to S3, never touching our server.
+      // fields.key contains an unresolved "${filename}" placeholder that S3
+      // substitutes server-side, and success_action_status:201 makes S3
+      // return XML containing the real <Key> — that's the one Cliniko needs.
       const formData = new FormData()
       Object.entries(fields).forEach(([k, v]) => formData.append(k, v as string))
       formData.append('file', file)
       const s3Res = await fetch(url, { method: 'POST', body: formData })
       if (!s3Res.ok) throw new Error('S3 upload failed')
+      const s3Xml = await s3Res.text()
+      const realKey = new DOMParser().parseFromString(s3Xml, 'text/xml').querySelector('Key')?.textContent
+      if (!realKey) throw new Error('S3 did not return an object key')
 
-      // Step 3: server registers the object as a real Cliniko attachment
+      // Step 3: server registers the object as a real Cliniko attachment.
+      // Cliniko wants a single upload_url = presign url + the real key.
       const finalizeRes = await fetch('/api/attachments/finalize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ patientId, key, fileName: file.name, contentType: file.type }),
+        body: JSON.stringify({ patientId, uploadUrl: `${url}${realKey}`, fileName: file.name }),
       })
       if (!finalizeRes.ok) throw new Error('finalize failed')
 
@@ -485,7 +518,7 @@ function Attachments({ patientId }: { patientId: string }) {
               className="flex items-center gap-3 px-4 py-3 hover:bg-secondary/50 transition-colors"
             >
               <Paperclip className="h-4 w-4 text-primary flex-shrink-0" />
-              <span className="text-sm text-foreground">{a.file_name}</span>
+              <span className="text-sm text-foreground">{a.filename}</span>
               <span className="text-xs text-muted-foreground ml-auto">
                 {new Date(a.created_at).toLocaleDateString('en-AU')}
               </span>
