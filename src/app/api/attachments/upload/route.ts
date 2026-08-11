@@ -83,7 +83,7 @@ export async function POST(req: Request) {
       throw new Error(s3Error || `S3 upload failed (HTTP ${s3Res.status})`)
     }
     const rawKey = s3Xml.match(/<Key>(.*?)<\/Key>/)?.[1]
-    if (!rawKey) throw new Error(`S3 did not return an object key. Raw S3 response: ${s3Xml.slice(0, 500)}`)
+    if (!rawKey) throw new Error('S3 did not return an object key')
 
     // The Key S3 gives us isn't URL-safe as-is: it's XML-entity-encoded
     // (e.g. "&" comes back as "&amp;") and can contain characters from the
@@ -99,19 +99,21 @@ export async function POST(req: Request) {
       .replace(/&quot;/g, '"')
       .replace(/&apos;/g, "'")
     const encodedKey = decodedKey.split('/').map(encodeURIComponent).join('/')
-    const uploadUrl = `${url}${encodedKey}`
+
+    // Cliniko's docs example shows `url` with a trailing slash, but that's
+    // not guaranteed across accounts/shards — confirmed live, this account's
+    // presign `url` has NO trailing slash, so naive concatenation fused the
+    // bucket host directly onto the key's leading digits (e.g. "...com" +
+    // "168905..." => "...com168905...", an invalid URL). Insert the
+    // separator ourselves instead of assuming either way.
+    const uploadUrl = url.endsWith('/') ? `${url}${encodedKey}` : `${url}/${encodedKey}`
 
     // Step 3: register the object as a real Cliniko patient attachment.
     let attachment
     try {
       attachment = await finalizeAttachment({ patientId, uploadUrl })
     } catch (finalizeErr: any) {
-      // TEMP diagnostic: surface exactly what we sent so we can see why
-      // Cliniko is rejecting it, instead of guessing blind. Remove once
-      // the real cause is confirmed.
-      throw new Error(
-        `${finalizeErr.message} | attempted uploadUrl: ${uploadUrl} | presign url: ${url} | rawKey: ${rawKey}`,
-      )
+      throw new Error(`${finalizeErr.message} | attempted uploadUrl: ${uploadUrl}`)
     }
 
     await writeAuditLog({
