@@ -5,9 +5,9 @@ import { isPatientAssignedToEmail } from '@/lib/db'
 import { getAttachmentPresignedPost } from '@/lib/cliniko'
 
 export async function POST(req: Request) {
-  const { patientId, fileName, contentType } = await req.json()
-  if (!patientId || !fileName) {
-    return NextResponse.json({ error: 'patientId and fileName required' }, { status: 400 })
+  const { patientId } = await req.json()
+  if (!patientId) {
+    return NextResponse.json({ error: 'patientId required' }, { status: 400 })
   }
 
   const session = await getServerSession(authOptions)
@@ -18,10 +18,9 @@ export async function POST(req: Request) {
   if (!assigned) return NextResponse.json({ error: 'Not assigned to this patient' }, { status: 403 })
 
   try {
-    // Field names here (url/fields/key) match Cliniko's documented shape
-    // but haven't been round-tripped against a live sandbox — verify
-    // against a real response before relying on this in production.
-    const presigned = await getAttachmentPresignedPost(fileName, contentType || 'application/octet-stream')
+    // Cliniko generates this itself per-patient (GET, no body) — it
+    // returns { url, fields } for the S3 POST.
+    const presigned = await getAttachmentPresignedPost(patientId)
     return NextResponse.json(presigned)
   } catch (e: any) {
     return NextResponse.json({ error: e.message || 'Failed to get upload URL' }, { status: 502 })
