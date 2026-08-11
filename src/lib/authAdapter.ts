@@ -7,9 +7,12 @@ import { sql } from '@/lib/db'
 //
 // We don't need full user/account/session persistence: the app uses JWT
 // sessions and gates access via the hand-managed `allowed_emails` table
-// (see `isEmailAllowed` in db.ts), so `getUserByEmail` just returns null —
-// NextAuth falls back to a synthetic `{ id: email, email }` user in that
-// case, which is all a JWT-session app needs.
+// (see `isEmailAllowed` in db.ts). But NextAuth's internal callback handler
+// (core/lib/callback-handler.js) unconditionally calls `getUserByEmail`,
+// then `createUser` when no user is found, and `getUser` when a session
+// cookie is already present — so all three must exist on the adapter even
+// though we have no real users table. They just fabricate an in-memory
+// user shaped `{ id: email, email }`, which is all a JWT-session app needs.
 //
 // Requires a `verification_tokens` table:
 //
@@ -44,6 +47,16 @@ export function PostgresVerificationAdapter(): Adapter {
     async getUserByEmail() {
       // No persistent users table — see comment above.
       return null
+    },
+
+    async createUser(user) {
+      // Fabricated, not persisted — id doubles as the email since that's
+      // all downstream code (the jwt callback, isEmailAllowed) needs.
+      return { id: user.email as string, email: user.email as string, emailVerified: user.emailVerified ?? null }
+    },
+
+    async getUser(id) {
+      return { id, email: id, emailVerified: null }
     },
   } as Adapter
 }
