@@ -2,11 +2,17 @@ import type { NextAuthOptions } from 'next-auth'
 import EmailProvider from 'next-auth/providers/email'
 import { createTransport } from 'nodemailer'
 import { isEmailAllowed } from '@/lib/db'
+import { PostgresVerificationAdapter } from '@/lib/authAdapter'
 
 // Magic-link sign-in, gated to a hand-managed allow-list (see app/admin).
 // Emails are sent via the practice's existing Zoho Mail account over SMTP —
 // no separate transactional-email account to manage for 2-3 contractors.
+//
+// The Email provider requires an adapter to store verification tokens —
+// see authAdapter.ts. Without it NextAuth fails validation before ever
+// attempting to send mail (EMAIL_REQUIRES_ADAPTER_ERROR).
 export const authOptions: NextAuthOptions = {
+  adapter: PostgresVerificationAdapter(),
   providers: [
     EmailProvider({
       server: {
