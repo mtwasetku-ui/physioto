@@ -82,13 +82,28 @@ export async function POST(req: Request) {
       const s3Error = s3Xml.match(/<Message>(.*?)<\/Message>/)?.[1]
       throw new Error(s3Error || `S3 upload failed (HTTP ${s3Res.status})`)
     }
-    const realKey = s3Xml.match(/<Key>(.*?)<\/Key>/)?.[1]
-    if (!realKey) throw new Error('S3 did not return an object key')
+    const rawKey = s3Xml.match(/<Key>(.*?)<\/Key>/)?.[1]
+    if (!rawKey) throw new Error('S3 did not return an object key')
+
+    // The Key S3 gives us isn't URL-safe as-is: it's XML-entity-encoded
+    // (e.g. "&" comes back as "&amp;") and can contain characters from the
+    // original filename — spaces, parentheses, "#", "+", etc. — that are
+    // valid in an S3 key but not in a raw URL path. Cliniko's upload_url
+    // validation rejects the URL outright if we just paste the raw Key on,
+    // so decode the XML entities first, then percent-encode each path
+    // segment (but not the "/" separators) before building the final URL.
+    const decodedKey = rawKey
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
+    const encodedKey = decodedKey.split('/').map(encodeURIComponent).join('/')
 
     // Step 3: register the object as a real Cliniko patient attachment.
     const attachment = await finalizeAttachment({
       patientId,
-      uploadUrl: `${url}${realKey}`,
+      uploadUrl: `${url}${encodedKey}`,
     })
 
     await writeAuditLog({
