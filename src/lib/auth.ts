@@ -1,5 +1,6 @@
 import type { NextAuthOptions } from 'next-auth'
 import EmailProvider from 'next-auth/providers/email'
+import { createTransport } from 'nodemailer'
 import { isEmailAllowed } from '@/lib/db'
 
 // Magic-link sign-in, gated to a hand-managed allow-list (see app/admin).
@@ -19,6 +20,47 @@ export const authOptions: NextAuthOptions = {
       },
       from: process.env.ZOHO_SMTP_FROM || process.env.ZOHO_SMTP_USER,
       maxAge: 15 * 60, // magic link expires after 15 minutes
+      // TEMP DEBUG: log the real SMTP config + Zoho's raw response so we can
+      // see in Vercel's runtime logs why messages aren't landing in Sent.
+      // Safe to remove once delivery is confirmed working again.
+      async sendVerificationRequest({ identifier, url, provider }) {
+        const serverConfig = provider.server as {
+          host: string
+          port: number
+          auth: { user: string }
+        }
+        console.log('[magic-link] config', {
+          host: serverConfig.host,
+          port: serverConfig.port,
+          user: serverConfig.auth.user,
+          from: provider.from,
+          to: identifier,
+        })
+        const transport = createTransport(provider.server)
+        try {
+          const result = await transport.sendMail({
+            to: identifier,
+            from: provider.from,
+            subject: `Sign in to Physio to Home Staff Portal`,
+            text: `Sign in: ${url}\n\nThis link expires in 15 minutes.`,
+            html: `<p><a href="${url}">Sign in to the Staff Portal</a></p><p>This link expires in 15 minutes.</p>`,
+          })
+          console.log('[magic-link] send result', {
+            accepted: result.accepted,
+            rejected: result.rejected,
+            pending: result.pending,
+            response: result.response,
+            messageId: result.messageId,
+          })
+          const failed = result.rejected.concat(result.pending).filter(Boolean)
+          if (failed.length) {
+            throw new Error(`Email (${failed.join(', ')}) could not be sent`)
+          }
+        } catch (error) {
+          console.error('[magic-link] send failed', error)
+          throw error
+        }
+      },
     }),
   ],
   pages: {
