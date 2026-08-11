@@ -21,8 +21,8 @@ src/app/api/auth/[...nextauth]/route.ts      NextAuth handler
 src/app/api/templates/route.ts               GET  — live treatment note templates from Cliniko
 src/app/api/notes/route.ts                   GET/POST/PATCH — timeline, create, update-draft
 src/app/api/attachments/route.ts             GET  — list attachments for a patient
-src/app/api/attachments/presign/route.ts     POST — step 1 of upload handshake
-src/app/api/attachments/finalize/route.ts    POST — step 3 of upload handshake
+src/app/api/attachments/upload/route.ts      POST — uploads via our server (proxied; see note below),
+                                              then registers the attachment with Cliniko
 src/app/api/attachments/[id]/download/route.ts  GET — proxied download
 src/app/api/admin/emails/route.ts            POST/DELETE — manage staff allow-list
 src/app/api/admin/assignments/route.ts       POST/DELETE — manage patient assignments
@@ -83,7 +83,16 @@ Also changed: `src/components/Footer.tsx` (quiet "Staff Login" link), `package.j
      `radio_buttons` and `checkboxes` questions (this code assumes a plain string / string
      array — confirm against a real template + real save)
    - the field names in the S3 presigned-POST response (`url`/`fields`/`key` — Cliniko's docs
-     and actual response can drift slightly)
+     and actual response can drift slightly) — confirmed correct against live Cliniko
+2. **Attachment uploads are proxied through our own server, capped at 4MB.** Cliniko's S3
+   bucket (`cliniko-files-*.s3.*.amazonaws.com`) has no CORS policy allowing our origin, so a
+   direct browser→S3 upload (as Cliniko's own docs describe) gets blocked by the browser
+   before it leaves the page. Routing the upload through `/api/attachments/upload` sidesteps
+   CORS (server-to-server requests aren't subject to it), but Vercel Serverless Functions have
+   a hard 4.5MB request body limit, so this only works for small files for now.
+   **To lift the cap:** ask Cliniko support to whitelist `https://www.physiotohome.com` (and
+   any other portal origins) in that bucket's CORS policy — once they do, the upload can go
+   straight browser→S3 again and the 4MB cap can be removed.
    - the `/patients/{id}/individual_appointments` query-param syntax for "next appointment only"
 2. **Loading/error states** are minimal throughout — functional, not polished.
 3. **Booking/appointment linking in the note UI.** `createTreatmentNote` accepts a `bookingId`
