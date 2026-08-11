@@ -9,7 +9,7 @@ export const authOptions: NextAuthOptions = {
   providers: [
     EmailProvider({
       server: {
-        host: process.env.ZOHO_SMTP_HOST || 'smtp.zoho.com',
+        host: process.env.ZOHO_SMTP_HOST || 'smtp.zoho.com.au',
         port: Number(process.env.ZOHO_SMTP_PORT || 465),
         secure: true,
         auth: {
