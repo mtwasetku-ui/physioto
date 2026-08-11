@@ -5,7 +5,7 @@ import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock } fro
 import { Button } from '@/components/ui/button'
 import type { ClinikoPatientInfo } from '@/lib/cliniko'
 
-type Tab = 'note' | 'timeline' | 'attachments'
+type Tab = 'note' | 'timeline' | 'attachments' | 'book'
 
 interface Question {
   // Cliniko questions have no numeric id — name is the only identifier,
@@ -31,6 +31,14 @@ function questionKey(sectionName: string, question: Question) {
   return `${sectionName}::${question.name}`
 }
 
+// Body chart questions can't be answered through this plain form — they
+// need a drawing surface Cliniko itself provides — so they're dropped
+// entirely rather than shown as an "unsupported" warning.
+const DROPPED_QUESTION_TYPES = ['bodycharts']
+function visibleQuestions(section: Section): Question[] {
+  return section.questions.filter((q) => !DROPPED_QUESTION_TYPES.includes(q.type))
+}
+
 const TEMPLATE_NAMES = ['Initial Consultation', 'Standard Consultation']
 
 export default function PatientDetailClient({
@@ -38,11 +46,13 @@ export default function PatientDetailClient({
   patient,
   nextAppointment,
   authorEmail,
+  isAdmin,
 }: {
   patientId: string
   patient: ClinikoPatientInfo
   nextAppointment: any
   authorEmail: string
+  isAdmin: boolean
 }) {
   const [tab, setTab] = useState<Tab>('note')
 
@@ -61,6 +71,7 @@ export default function PatientDetailClient({
             ['note', 'New note', FileText],
             ['timeline', 'Visit history', Clock],
             ['attachments', 'Attachments', Paperclip],
+            ...(isAdmin ? ([['book', 'Book visit', Calendar]] as const) : []),
           ] as const
         ).map(([id, label, Icon]) => (
           <button
@@ -81,6 +92,7 @@ export default function PatientDetailClient({
       {tab === 'note' && <NoteForm patientId={patientId} authorEmail={authorEmail} />}
       {tab === 'timeline' && <Timeline patientId={patientId} />}
       {tab === 'attachments' && <Attachments patientId={patientId} />}
+      {tab === 'book' && isAdmin && <BookVisit patientId={patientId} />}
     </div>
   )
 }
@@ -175,7 +187,7 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
 
   const unsupported = new Set<string>()
   for (const s of template.content.sections) {
-    for (const q of s.questions) {
+    for (const q of visibleQuestions(s)) {
       if (!['text', 'paragraph', 'radiobuttons', 'checkboxes', 'date'].includes(q.type)) {
         unsupported.add(q.type)
       }
@@ -185,13 +197,19 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
   async function save(draft: boolean) {
     setStatus('saving')
     setSaveError(null)
-    const sections = template!.content.sections.map((s) => ({
-      name: s.name,
-      answers: s.questions.map((q) => ({
-        questionName: q.name,
-        value: answers[questionKey(s.name, q)] ?? (q.type === 'checkboxes' ? [] : ''),
-      })),
-    }))
+    const sections = template!.content.sections
+      .map((s) => {
+        const questions = visibleQuestions(s)
+        if (questions.length === 0) return null // section was only a body chart
+        return {
+          name: s.name,
+          answers: questions.map((q) => ({
+            questionName: q.name,
+            value: answers[questionKey(s.name, q)] ?? (q.type === 'checkboxes' ? [] : ''),
+          })),
+        }
+      })
+      .filter((s): s is { name: string; answers: any[] } => s !== null)
 
     const res = await fetch('/api/notes', {
       method: existingDraftId ? 'PATCH' : 'POST',
@@ -250,24 +268,27 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
       )}
 
       <div className="space-y-6">
-        {template.content.sections.map((section) => (
-          <div key={section.name} className="bg-white border border-border rounded-lg p-5">
-            <h3 className="font-semibold text-foreground mb-4">{section.name}</h3>
-            <div className="space-y-4">
-              {section.questions.map((q) => {
-                const key = questionKey(section.name, q)
-                return (
-                  <QuestionField
-                    key={key}
-                    question={q}
-                    value={answers[key]}
-                    onChange={(v) => setAnswers((a) => ({ ...a, [key]: v }))}
-                  />
-                )
-              })}
+        {template.content.sections
+          .map((section) => ({ section, questions: visibleQuestions(section) }))
+          .filter(({ questions }) => questions.length > 0)
+          .map(({ section, questions }) => (
+            <div key={section.name} className="bg-white border border-border rounded-lg p-5">
+              <h3 className="font-semibold text-foreground mb-4">{section.name}</h3>
+              <div className="space-y-4">
+                {questions.map((q) => {
+                  const key = questionKey(section.name, q)
+                  return (
+                    <QuestionField
+                      key={key}
+                      question={q}
+                      value={answers[key]}
+                      onChange={(v) => setAnswers((a) => ({ ...a, [key]: v }))}
+                    />
+                  )
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
 
       <div className="flex items-center gap-3 mt-6">
@@ -535,6 +556,133 @@ function Attachments({ patientId }: { patientId: string }) {
           ))}
         </div>
       )}
+    </div>
+  )
+}
+
+// Admin-only. Always books under Physio to Home + Micheal's own
+// practitioner record — see /api/appointments and lib/cliniko.ts. There's
+// no business/practitioner picker here on purpose, since this account has
+// a few businesses sharing one API key and this should never create a
+// booking under someone else's name or in a different business.
+function BookVisit({ patientId }: { patientId: string }) {
+  const [types, setTypes] = useState<{ id: string; name: string; duration_in_minutes: number }[] | null>(null)
+  const [appointmentTypeId, setAppointmentTypeId] = useState('')
+  const [date, setDate] = useState('')
+  const [time, setTime] = useState('')
+  const [notes, setNotes] = useState('')
+  const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetch('/api/appointments')
+      .then((r) => r.json())
+      .then((data) => {
+        setTypes(data.appointmentTypes || [])
+        if (data.appointmentTypes?.[0]) setAppointmentTypeId(data.appointmentTypes[0].id)
+      })
+      .catch(() => setTypes([]))
+  }, [])
+
+  const selectedType = types?.find((t) => t.id === appointmentTypeId)
+
+  async function book() {
+    if (!appointmentTypeId || !date || !time || !selectedType) return
+    setStatus('saving')
+    setError(null)
+    const startsAt = new Date(`${date}T${time}:00`).toISOString()
+
+    const res = await fetch('/api/appointments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        patientId,
+        appointmentTypeId,
+        startsAt,
+        durationMinutes: selectedType.duration_in_minutes,
+        notes: notes || undefined,
+      }),
+    })
+
+    if (res.ok) {
+      setStatus('saved')
+      setDate('')
+      setTime('')
+      setNotes('')
+    } else {
+      const body = await res.json().catch(() => null)
+      setError(body?.error || `Booking failed (HTTP ${res.status})`)
+      setStatus('error')
+    }
+  }
+
+  if (!types) return <div className="text-muted-foreground text-sm">Loading appointment types…</div>
+
+  if (types.length === 0) {
+    return (
+      <div className="text-muted-foreground text-sm">
+        No appointment types found for Physio to Home under your practitioner record in Cliniko. Check
+        CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are set correctly.
+      </div>
+    )
+  }
+
+  return (
+    <div className="bg-white border border-border rounded-lg p-5 max-w-md">
+      <div className="space-y-4">
+        <div>
+          <label className="text-sm font-medium text-foreground block mb-1.5">Appointment type</label>
+          <select
+            className="w-full border border-input rounded-md px-3 py-2 text-sm bg-white"
+            value={appointmentTypeId}
+            onChange={(e) => setAppointmentTypeId(e.target.value)}
+          >
+            {types.map((t) => (
+              <option key={t.id} value={t.id}>
+                {t.name} ({t.duration_in_minutes} min)
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="text-sm font-medium text-foreground block mb-1.5">Date</label>
+            <input
+              type="date"
+              className="w-full border border-input rounded-md px-3 py-2 text-sm"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="text-sm font-medium text-foreground block mb-1.5">Time</label>
+            <input
+              type="time"
+              className="w-full border border-input rounded-md px-3 py-2 text-sm"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="text-sm font-medium text-foreground block mb-1.5">Notes (optional)</label>
+          <textarea
+            className="w-full border border-input rounded-md px-3 py-2 text-sm min-h-[70px]"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+          />
+        </div>
+      </div>
+
+      <div className="flex items-center gap-3 mt-5">
+        <Button onClick={book} disabled={status === 'saving' || !date || !time}>
+          {status === 'saving' ? 'Booking…' : 'Book appointment'}
+        </Button>
+        {status === 'saved' && <span className="text-sm text-emerald-700 font-medium">Booked ✓</span>}
+        {status === 'error' && <span className="text-sm text-destructive font-medium">{error}</span>}
+      </div>
     </div>
   )
 }

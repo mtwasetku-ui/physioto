@@ -22,12 +22,15 @@ export default async function PatientDetailPage({ params }: { params: { id: stri
     getNextAppointment(params.id).catch(() => null),
   ])
 
+  const isAdmin = email.toLowerCase() === (process.env.ADMIN_EMAIL || '').toLowerCase()
+
   return (
     <PatientDetailClient
       patientId={params.id}
       patient={patient}
       nextAppointment={nextAppointment}
       authorEmail={email}
+      isAdmin={isAdmin}
     />
   )
 }
