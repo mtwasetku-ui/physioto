@@ -476,48 +476,32 @@ function Attachments({ patientId }: { patientId: string }) {
 
   useEffect(refresh, [patientId])
 
+  // Cliniko's S3 bucket has no CORS policy for our origin, so a browser
+  // fetch() straight to S3 gets blocked before it leaves the browser. This
+  // route uploads through our own server instead (server-to-server has no
+  // CORS restriction) — see README.portal.md "Open next steps" for the
+  // longer-term fix and why that caps us at MAX_UPLOAD_MB for now.
+  const MAX_UPLOAD_MB = 4
+
   async function handleUpload(file: File) {
+    if (file.size > MAX_UPLOAD_MB * 1024 * 1024) {
+      setError(`File is too large. Uploads are currently limited to ${MAX_UPLOAD_MB}MB.`)
+      return
+    }
     setUploading(true)
     setError(null)
     try {
-      // Step 1: server asks Cliniko for a presigned S3 POST for this patient
-      const presignRes = await fetch('/api/attachments/presign', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ patientId }),
-      })
-      if (!presignRes.ok) {
-        const body = await presignRes.json().catch(() => null)
-        throw new Error(body?.error || `Presign failed (HTTP ${presignRes.status})`)
-      }
-      const { url, fields } = await presignRes.json()
-
-      // Step 2: browser uploads straight to S3, never touching our server.
-      // fields.key contains an unresolved "${filename}" placeholder that S3
-      // substitutes server-side, and success_action_status:201 makes S3
-      // return XML containing the real <Key> — that's the one Cliniko needs.
       const formData = new FormData()
-      Object.entries(fields).forEach(([k, v]) => formData.append(k, v as string))
+      formData.append('patientId', patientId)
       formData.append('file', file)
-      const s3Res = await fetch(url, { method: 'POST', body: formData })
-      const s3Xml = await s3Res.text()
-      if (!s3Res.ok) {
-        const s3Error = new DOMParser().parseFromString(s3Xml, 'text/xml').querySelector('Message')?.textContent
-        throw new Error(s3Error || `S3 upload failed (HTTP ${s3Res.status})`)
-      }
-      const realKey = new DOMParser().parseFromString(s3Xml, 'text/xml').querySelector('Key')?.textContent
-      if (!realKey) throw new Error('S3 did not return an object key')
 
-      // Step 3: server registers the object as a real Cliniko attachment.
-      // Cliniko wants a single upload_url = presign url + the real key.
-      const finalizeRes = await fetch('/api/attachments/finalize', {
+      const res = await fetch('/api/attachments/upload', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ patientId, uploadUrl: `${url}${realKey}`, fileName: file.name }),
+        body: formData,
       })
-      if (!finalizeRes.ok) {
-        const body = await finalizeRes.json().catch(() => null)
-        throw new Error(body?.error || `Finalize failed (HTTP ${finalizeRes.status})`)
+      if (!res.ok) {
+        const body = await res.json().catch(() => null)
+        throw new Error(body?.error || `Upload failed (HTTP ${res.status})`)
       }
 
       refresh()
@@ -532,7 +516,7 @@ function Attachments({ patientId }: { patientId: string }) {
     <div>
       <label className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-dashed border-input text-sm text-muted-foreground hover:border-primary hover:text-primary cursor-pointer mb-4 transition-colors">
         <Upload className="h-4 w-4" />
-        {uploading ? 'Uploading…' : 'Upload file (up to 500MB)'}
+        {uploading ? 'Uploading…' : `Upload file (up to ${MAX_UPLOAD_MB}MB)`}
         <input
           type="file"
           className="hidden"
