@@ -4,7 +4,7 @@ import { neon } from '@neondatabase/serverless'
 // databases to Neon and recommends their SDK directly for new setups.
 // POSTGRES_URL is still the env var Vercel populates when you connect a
 // Postgres store to the project, so no env var changes needed.
-const sql = neon(process.env.POSTGRES_URL!)
+export const sql = neon(process.env.POSTGRES_URL!)
 
 // ── Allowed emails ──────────────────────────────────────────────
 
