@@ -43,13 +43,20 @@ async function clinikoFetch(path: string, init: RequestInit = {}) {
 
 // ── Treatment note templates ────────────────────────────────────
 
-export type ClinikoQuestionType = 'text' | 'paragraph_text' | 'radio_buttons' | 'checkboxes'
+// Cliniko question types (real field is "type", not "question_type" —
+// see https://github.com/redguava/cliniko-api/blob/main/sections/treatment_note_templates.md).
+export type ClinikoQuestionType = 'text' | 'paragraph' | 'radiobuttons' | 'checkboxes' | 'date'
 
+// IMPORTANT: Cliniko does NOT give questions a numeric id. A question is
+// only ever identified by its (section name, question name) pair. Any
+// code that keys off `question.id` is keying off `undefined` for every
+// question, which collapses them all onto one slot.
 export interface ClinikoTemplateQuestion {
-  id: number
   name: string
-  question_type: ClinikoQuestionType | string
-  answer_options?: string[]
+  type: ClinikoQuestionType | string
+  // Default/available choices for radiobuttons & checkboxes. Text/paragraph
+  // questions never have this.
+  answers?: { value: string; selected?: boolean }[]
   required?: boolean
 }
 
@@ -64,13 +71,13 @@ export interface ClinikoTemplate {
   content: { sections: ClinikoTemplateSection[] }
 }
 
-const SUPPORTED_QUESTION_TYPES: string[] = ['text', 'paragraph_text', 'radio_buttons', 'checkboxes']
+const SUPPORTED_QUESTION_TYPES: string[] = ['text', 'paragraph', 'radiobuttons', 'checkboxes', 'date']
 
 export function unsupportedQuestionTypes(template: ClinikoTemplate): string[] {
   const found = new Set<string>()
   for (const section of template.content?.sections ?? []) {
     for (const q of section.questions ?? []) {
-      if (!SUPPORTED_QUESTION_TYPES.includes(q.question_type)) found.add(q.question_type)
+      if (!SUPPORTED_QUESTION_TYPES.includes(q.type)) found.add(q.type)
     }
   }
   return Array.from(found)
@@ -98,8 +105,11 @@ export async function getTemplateByExactName(name: string): Promise<ClinikoTempl
 // ── Treatment notes ─────────────────────────────────────────────
 
 export interface NoteAnswer {
-  questionId: number
-  // text/paragraph_text -> string; radio_buttons -> string; checkboxes -> string[]
+  // Questions have no id in Cliniko — name is the only identifier, and
+  // only unique within its section, so both are needed to find the
+  // matching question back in the template.
+  questionName: string
+  // text/paragraph/date -> string; radiobuttons -> single selected string; checkboxes -> string[]
   value: string | string[]
 }
 
@@ -110,7 +120,12 @@ export interface NoteSectionInput {
 
 // Builds the content.sections[].questions[] payload Cliniko expects,
 // keyed against the live template so we never send a shape the template
-// doesn't define.
+// doesn't define. Cliniko's own rules (see treatment_notes.md):
+//  - text/paragraph/date: "answer" is a plain string; if there's no
+//    answer, the property must be OMITTED (not sent as "").
+//  - radiobuttons/checkboxes: "answers" is an array of {value, selected};
+//    if nothing is selected, the property must be OMITTED (an empty
+//    array is explicitly rejected as invalid).
 function buildNoteContent(template: ClinikoTemplate, sections: NoteSectionInput[]) {
   return {
     sections: template.content.sections.map((templateSection) => {
@@ -118,13 +133,27 @@ function buildNoteContent(template: ClinikoTemplate, sections: NoteSectionInput[
       return {
         name: templateSection.name,
         questions: templateSection.questions.map((q) => {
-          const answer = input?.answers.find((a) => a.questionId === q.id)
-          return {
-            id: q.id,
-            name: q.name,
-            question_type: q.question_type,
-            answer: answer?.value ?? (q.question_type === 'checkboxes' ? [] : ''),
+          const answer = input?.answers.find((a) => a.questionName === q.name)
+          const base = { name: q.name, type: q.type }
+
+          if (q.type === 'radiobuttons' || q.type === 'checkboxes') {
+            const selected = new Set(
+              Array.isArray(answer?.value) ? answer!.value : answer?.value ? [answer.value as string] : []
+            )
+            if (selected.size === 0) return base
+            return {
+              ...base,
+              answers: (q.answers ?? Array.from(selected).map((value) => ({ value }))).map((opt) => ({
+                value: opt.value,
+                selected: selected.has(opt.value),
+              })),
+            }
           }
+
+          // text / paragraph / date
+          const value = typeof answer?.value === 'string' ? answer.value : ''
+          if (!value) return base
+          return { ...base, answer: value }
         }),
       }
     }),
@@ -173,7 +202,11 @@ export async function updateTreatmentNote(params: {
 }
 
 export async function listTreatmentNotesForPatient(patientId: string) {
-  const data = await clinikoFetch(`/patients/${patientId}/treatment_notes?per_page=100&sort=-created_at`)
+  // Cliniko's sort syntax is "field:direction" (e.g. "created_at:desc"),
+  // not the Rails/JSON:API leading-minus convention. The old "-created_at"
+  // form is rejected by the API, which made this call fail silently
+  // (the UI just showed "No visit notes yet").
+  const data = await clinikoFetch(`/patients/${patientId}/treatment_notes?per_page=100&sort=created_at:desc`)
   return data.treatment_notes ?? []
 }
 
@@ -221,49 +254,55 @@ export async function getNextAppointment(patientId: string) {
 
 // ── Attachments ──────────────────────────────────────────────────
 
+// The resource is "patient_attachments" throughout the real API, not
+// "attachments" — see
+// https://github.com/redguava/cliniko-api/blob/main/sections/patient_attachments.md
 export async function listAttachments(patientId: string) {
-  const data = await clinikoFetch(`/patients/${patientId}/attachments?per_page=100&sort=-created_at`)
-  return data.attachments ?? []
+  const data = await clinikoFetch(`/patients/${patientId}/patient_attachments?per_page=100&sort=created_at:desc`)
+  return data.patient_attachments ?? []
 }
 
 // Step 1 of the 3-step upload handshake: ask Cliniko for a presigned S3
-// POST. The browser uploads directly to S3 with this (step 2, done
-// client-side) — the file never touches the portal's server, so there's
-// no server-side size bottleneck for Cliniko's 500MB cap.
-export async function getAttachmentPresignedPost(fileName: string, contentType: string) {
-  return clinikoFetch('/attachments/presigned_post', {
-    method: 'POST',
-    body: JSON.stringify({ file_name: fileName, content_type: contentType }),
-  })
+// POST. This is a GET against the patient, not a POST with a body —
+// Cliniko generates the presign itself, it doesn't take a filename here.
+// The browser uploads directly to S3 with the result (step 2, done
+// client-side) — the file never touches the portal's server.
+export async function getAttachmentPresignedPost(patientId: string) {
+  return clinikoFetch(`/patients/${patientId}/attachment_presigned_post`)
 }
 
 // Step 3: register the now-uploaded S3 object as a real Cliniko patient
-// attachment.
+// attachment. Cliniko wants a single `upload_url` — the presign's `url`
+// plus the actual S3 object Key returned in the S3 XML response after
+// upload (the presign's fields.key still has an unresolved ${filename}
+// placeholder, so it can't be used directly).
 export async function finalizeAttachment(params: {
   patientId: string
-  key: string
-  fileName: string
-  contentType: string
+  uploadUrl: string
+  description?: string
 }) {
-  const { patientId, key, fileName, contentType } = params
-  return clinikoFetch('/attachments', {
+  const { patientId, uploadUrl, description } = params
+  return clinikoFetch('/patient_attachments', {
     method: 'POST',
     body: JSON.stringify({
       patient_id: patientId,
-      key,
-      file_name: fileName,
-      content_type: contentType,
+      upload_url: uploadUrl,
+      ...(description ? { description } : {}),
     }),
   })
 }
 
 // Physios never get a raw S3/Cliniko URL — the server fetches the bytes
-// with the admin key and streams them through.
+// with the admin key and streams them through. Cliniko exposes this via
+// the attachment's own `content.links.self`, not a bespoke /download
+// route — worth confirming the exact response (redirect vs binary) once
+// against a live sandbox.
 export async function fetchAttachmentBytes(attachmentId: string) {
   if (!API_BASE) throw new Error('CLINIKO_API_BASE is not set')
-  const res = await fetch(`${API_BASE}/attachments/${attachmentId}/download`, {
+  const res = await fetch(`${API_BASE}/patient_attachments/${attachmentId}/content`, {
     headers: { Authorization: authHeader(), 'User-Agent': USER_AGENT },
     cache: 'no-store',
+    redirect: 'follow',
   })
   if (!res.ok) throw new Error(`Cliniko attachment download failed: ${res.status}`)
   return res
