@@ -89,6 +89,7 @@ type AuditAction =
   | 'note_update'
   | 'attachment_upload'
   | 'attachment_view'
+  | 'appointment_create'
   | 'admin_email_add'
   | 'admin_email_remove'
   | 'admin_assignment_add'

@@ -15,6 +15,15 @@ const API_BASE = process.env.CLINIKO_API_BASE // e.g. https://api.au4.cliniko.co
 const API_KEY = process.env.CLINIKO_API_KEY
 const USER_AGENT = process.env.CLINIKO_USER_AGENT || 'Physio to Home Staff Portal (info@physiotohome.com)'
 
+// This Cliniko account has more than one business (Physio to Home,
+// Summerdale Medical Centre, AlphaCare) sharing the one API key.
+// Booking from the portal is deliberately hardcoded to a single
+// business + practitioner (Micheal's own) via env vars, rather than
+// exposing a business/practitioner picker — contractors aren't meant to
+// be creating appointments under Micheal's name in other businesses.
+const BUSINESS_ID = process.env.CLINIKO_BUSINESS_ID // Physio to Home's business id
+const PRACTITIONER_ID = process.env.CLINIKO_PRACTITIONER_ID // Micheal's own practitioner id
+
 function authHeader() {
   if (!API_KEY) throw new Error('CLINIKO_API_KEY is not set')
   return 'Basic ' + Buffer.from(`${API_KEY}:`).toString('base64')
@@ -73,10 +82,21 @@ export interface ClinikoTemplate {
 
 const SUPPORTED_QUESTION_TYPES: string[] = ['text', 'paragraph', 'radiobuttons', 'checkboxes', 'date']
 
+// Body chart questions can't be answered through this form (they need a
+// drawing/markup surface Cliniko itself provides) — they're dropped
+// entirely rather than flagged as "unsupported", since there's nothing
+// to add for them in Cliniko afterwards other than opening the note
+// there directly if a body chart is actually needed.
+const DROPPED_QUESTION_TYPES: string[] = ['bodycharts']
+
+export function visibleQuestions(section: ClinikoTemplateSection): ClinikoTemplateQuestion[] {
+  return section.questions.filter((q) => !DROPPED_QUESTION_TYPES.includes(q.type))
+}
+
 export function unsupportedQuestionTypes(template: ClinikoTemplate): string[] {
   const found = new Set<string>()
   for (const section of template.content?.sections ?? []) {
-    for (const q of section.questions ?? []) {
+    for (const q of visibleQuestions(section)) {
       if (!SUPPORTED_QUESTION_TYPES.includes(q.type)) found.add(q.type)
     }
   }
@@ -127,12 +147,15 @@ export interface NoteSectionInput {
 //    if nothing is selected, the property must be OMITTED (an empty
 //    array is explicitly rejected as invalid).
 function buildNoteContent(template: ClinikoTemplate, sections: NoteSectionInput[]) {
-  return {
-    sections: template.content.sections.map((templateSection) => {
+  const builtSections = template.content.sections
+    .map((templateSection) => {
       const input = sections.find((s) => s.name === templateSection.name)
+      const questions = visibleQuestions(templateSection)
+      if (questions.length === 0) return null // e.g. a section that was only a body chart
+
       return {
         name: templateSection.name,
-        questions: templateSection.questions.map((q) => {
+        questions: questions.map((q) => {
           const answer = input?.answers.find((a) => a.questionName === q.name)
           const base = { name: q.name, type: q.type }
 
@@ -156,8 +179,10 @@ function buildNoteContent(template: ClinikoTemplate, sections: NoteSectionInput[
           return { ...base, answer: value }
         }),
       }
-    }),
-  }
+    })
+    .filter((s): s is { name: string; questions: any[] } => s !== null)
+
+  return { sections: builtSections }
 }
 
 export async function createTreatmentNote(params: {
@@ -292,7 +317,58 @@ export async function finalizeAttachment(params: {
   })
 }
 
-// Physios never get a raw S3/Cliniko URL — the server fetches the bytes
+// ── Appointments (booking) ──────────────────────────────────────
+//
+// See https://github.com/redguava/cliniko-api/blob/main/sections/individual_appointments.md
+// POST body: { starts_at, ends_at?, patient_id, practitioner_id, appointment_type_id, business_id, notes? }
+
+export interface ClinikoAppointmentType {
+  id: string
+  name: string
+  duration_in_minutes: number
+}
+
+// Only the appointment types actually offered by Physio to Home for
+// Micheal's own practitioner record — not every type across every
+// business on the account.
+export async function listAppointmentTypesForPractice(): Promise<ClinikoAppointmentType[]> {
+  if (!BUSINESS_ID || !PRACTITIONER_ID) {
+    throw new Error('CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are not set')
+  }
+  const data = await clinikoFetch(
+    `/businesses/${BUSINESS_ID}/practitioners/${PRACTITIONER_ID}/appointment_types?per_page=100`
+  )
+  return data.appointment_types ?? []
+}
+
+// business_id and practitioner_id are never accepted as input here —
+// they're always Physio to Home + Micheal, pulled from env, so this can
+// never accidentally book an appointment under someone else's name or
+// in one of the other businesses on the account.
+export async function createIndividualAppointment(params: {
+  patientId: string
+  appointmentTypeId: string
+  startsAt: string
+  endsAt: string
+  notes?: string
+}) {
+  if (!BUSINESS_ID || !PRACTITIONER_ID) {
+    throw new Error('CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are not set')
+  }
+  const { patientId, appointmentTypeId, startsAt, endsAt, notes } = params
+  return clinikoFetch('/individual_appointments', {
+    method: 'POST',
+    body: JSON.stringify({
+      patient_id: patientId,
+      practitioner_id: PRACTITIONER_ID,
+      business_id: BUSINESS_ID,
+      appointment_type_id: appointmentTypeId,
+      starts_at: startsAt,
+      ends_at: endsAt,
+      ...(notes ? { notes } : {}),
+    }),
+  })
+}
 // with the admin key and streams them through. Cliniko exposes this via
 // the attachment's own `content.links.self`, not a bespoke /download
 // route — worth confirming the exact response (redirect vs binary) once
