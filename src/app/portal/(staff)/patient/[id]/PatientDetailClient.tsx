@@ -573,15 +573,24 @@ function BookVisit({ patientId }: { patientId: string }) {
   const [notes, setNotes] = useState('')
   const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
   const [error, setError] = useState<string | null>(null)
+  const [fetchError, setFetchError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch('/api/appointments')
-      .then((r) => r.json())
-      .then((data) => {
+      .then(async (r) => {
+        const data = await r.json().catch(() => ({}))
+        if (!r.ok) {
+          setFetchError(data?.error || `Failed to load appointment types (HTTP ${r.status})`)
+          setTypes([])
+          return
+        }
         setTypes(data.appointmentTypes || [])
         if (data.appointmentTypes?.[0]) setAppointmentTypeId(data.appointmentTypes[0].id)
       })
-      .catch(() => setTypes([]))
+      .catch((e) => {
+        setFetchError(e?.message || 'Network error loading appointment types')
+        setTypes([])
+      })
   }, [])
 
   const selectedType = types?.find((t) => t.id === appointmentTypeId)
@@ -621,8 +630,14 @@ function BookVisit({ patientId }: { patientId: string }) {
   if (types.length === 0) {
     return (
       <div className="text-muted-foreground text-sm">
-        No appointment types found for Physio to Home under your practitioner record in Cliniko. Check
-        CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are set correctly.
+        {fetchError ? (
+          <>Couldn&apos;t load appointment types: {fetchError}</>
+        ) : (
+          <>
+            No appointment types found for Physio to Home under your practitioner record in Cliniko. Check
+            CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are set correctly.
+          </>
+        )}
       </div>
     )
   }
