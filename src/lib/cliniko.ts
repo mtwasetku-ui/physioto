@@ -332,12 +332,14 @@ export interface ClinikoAppointmentType {
 // Micheal's own practitioner record — not every type across every
 // business on the account.
 export async function listAppointmentTypesForPractice(): Promise<ClinikoAppointmentType[]> {
-  if (!BUSINESS_ID || !PRACTITIONER_ID) {
-    throw new Error('CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are not set')
+  if (!PRACTITIONER_ID) {
+    throw new Error('CLINIKO_PRACTITIONER_ID is not set')
   }
-  const data = await clinikoFetch(
-    `/businesses/${BUSINESS_ID}/practitioners/${PRACTITIONER_ID}/appointment_types?per_page=100`
-  )
+  // Per Cliniko's API docs, appointment types are listed directly under the
+  // practitioner — not nested under /businesses/{id}/practitioners/{id}.
+  // That nested path only exists for a specific appointment type's
+  // available_times/next_available_time sub-resources.
+  const data = await clinikoFetch(`/practitioners/${PRACTITIONER_ID}/appointment_types?per_page=100`)
   return data.appointment_types ?? []
 }
 
