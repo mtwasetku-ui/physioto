@@ -486,7 +486,10 @@ function Attachments({ patientId }: { patientId: string }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ patientId }),
       })
-      if (!presignRes.ok) throw new Error('presign failed')
+      if (!presignRes.ok) {
+        const body = await presignRes.json().catch(() => null)
+        throw new Error(body?.error || `Presign failed (HTTP ${presignRes.status})`)
+      }
       const { url, fields } = await presignRes.json()
 
       // Step 2: browser uploads straight to S3, never touching our server.
@@ -497,8 +500,11 @@ function Attachments({ patientId }: { patientId: string }) {
       Object.entries(fields).forEach(([k, v]) => formData.append(k, v as string))
       formData.append('file', file)
       const s3Res = await fetch(url, { method: 'POST', body: formData })
-      if (!s3Res.ok) throw new Error('S3 upload failed')
       const s3Xml = await s3Res.text()
+      if (!s3Res.ok) {
+        const s3Error = new DOMParser().parseFromString(s3Xml, 'text/xml').querySelector('Message')?.textContent
+        throw new Error(s3Error || `S3 upload failed (HTTP ${s3Res.status})`)
+      }
       const realKey = new DOMParser().parseFromString(s3Xml, 'text/xml').querySelector('Key')?.textContent
       if (!realKey) throw new Error('S3 did not return an object key')
 
@@ -509,11 +515,14 @@ function Attachments({ patientId }: { patientId: string }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ patientId, uploadUrl: `${url}${realKey}`, fileName: file.name }),
       })
-      if (!finalizeRes.ok) throw new Error('finalize failed')
+      if (!finalizeRes.ok) {
+        const body = await finalizeRes.json().catch(() => null)
+        throw new Error(body?.error || `Finalize failed (HTTP ${finalizeRes.status})`)
+      }
 
       refresh()
-    } catch {
-      setError('Upload failed — try again.')
+    } catch (e: any) {
+      setError(e?.message || 'Upload failed — try again.')
     } finally {
       setUploading(false)
     }
