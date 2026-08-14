@@ -12,9 +12,16 @@ export interface BlogPost {
   image: string
   content: string
   related_posts: string[]
+  readingTime: number
 }
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
+const WORDS_PER_MINUTE = 200
+
+function calculateReadingTime(content: string): number {
+  const wordCount = content.trim().split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.round(wordCount / WORDS_PER_MINUTE))
+}
 
 function parseFrontmatter(raw: string): { data: Record<string, string | boolean | string[]>; content: string } {
   const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/)
@@ -62,6 +69,7 @@ export function getAllPosts(): BlogPost[] {
       image: (data.image as string) || '',
       related_posts: (data.related_posts as string[]) || [],
       content,
+      readingTime: calculateReadingTime(content),
     }
   })
 
@@ -86,5 +94,6 @@ export function getPostBySlug(slug: string): BlogPost | null {
     image: (data.image as string) || '',
     related_posts: (data.related_posts as string[]) || [],
     content,
+    readingTime: calculateReadingTime(content),
   }
 }
