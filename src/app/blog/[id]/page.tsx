@@ -2,11 +2,16 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { Calendar, User, ArrowLeft, Tag } from 'lucide-react'
+import { Calendar, User, ArrowLeft, Tag, Clock } from 'lucide-react'
 import { getPostBySlug, getAllPosts } from '@/lib/blog'
 import { internalLinks } from '@/lib/internalLinks'
 import RelatedPostCard from './RelatedPostCard'
 import type { Metadata } from 'next'
+
+// Ceiling on how many auto-generated keyword links a single article can accumulate.
+// Without this, long articles can pick up 20+ links (every configured keyword that
+// happens to appear), which reads as spammy and dilutes anchor-text relevance.
+const MAX_AUTO_LINKS = 5
 
 export async function generateStaticParams() {
   const posts = getAllPosts()
@@ -47,15 +52,22 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 /**
  * Replaces the first occurrence of each configured keyword in a text string
  * with an internal blog link. Tracks used keywords via the `used` Set so
- * each keyword links only once across the entire post.
+ * each keyword links only once across the entire post, and stops entirely
+ * once `budget.count` reaches MAX_AUTO_LINKS so a single article can't
+ * accumulate an unbounded number of auto-inserted links.
  */
-function linkifyText(text: string, used: Set<string>): React.ReactNode {
+function linkifyText(text: string, used: Set<string>, budget: { count: number }): React.ReactNode {
   const keywords = Object.keys(internalLinks).sort((a, b) => b.length - a.length)
 
   const segments: React.ReactNode[] = []
   let remaining = text
 
   while (remaining.length > 0) {
+    if (budget.count >= MAX_AUTO_LINKS) {
+      segments.push(remaining)
+      break
+    }
+
     let earliest: { index: number; keyword: string } | null = null
 
     for (const kw of keywords) {
@@ -91,6 +103,7 @@ function linkifyText(text: string, used: Set<string>): React.ReactNode {
     )
 
     used.add(keyword)
+    budget.count++
     remaining = remaining.slice(index + keyword.length)
   }
 
@@ -99,9 +112,10 @@ function linkifyText(text: string, used: Set<string>): React.ReactNode {
 
 /**
  * Splits a line by **bold** markers and [text](url) markdown links,
- * then applies linkifyText to plain segments.
+ * then applies linkifyText to plain segments — unless autoLink is false
+ * (used for headings, so keyword links don't land inside H2/H3 text).
  */
-function renderInline(text: string, used: Set<string>): React.ReactNode {
+function renderInline(text: string, used: Set<string>, budget: { count: number }, autoLink: boolean = true): React.ReactNode {
   // Tokenise: split on [text](url) first, then handle **bold** within plain segments
   const tokens = text.split(/(\[[^\]]+\]\([^)]+\))/)
   const nodes: React.ReactNode[] = []
@@ -123,13 +137,13 @@ function renderInline(text: string, used: Set<string>): React.ReactNode {
         )
       }
     } else {
-      // Plain text — handle **bold** then linkify
+      // Plain text — handle **bold** then linkify (if autoLink is enabled)
       const boldParts = token.split(/\*\*(.*?)\*\*/)
       boldParts.forEach((bp, j) => {
         if (j % 2 === 1) {
           nodes.push(<strong key={`b-${k++}`} style={{ color: '#0f172a', fontWeight: 700 }}>{bp}</strong>)
         } else if (bp) {
-          nodes.push(<React.Fragment key={`t-${k++}`}>{linkifyText(bp, used)}</React.Fragment>)
+          nodes.push(<React.Fragment key={`t-${k++}`}>{autoLink ? linkifyText(bp, used, budget) : bp}</React.Fragment>)
         }
       })
     }
@@ -142,6 +156,7 @@ function renderMarkdown(content: string, currentSlug: string) {
   const lines = content.split('\n')
   const elements: React.ReactNode[] = []
   const used = new Set<string>()
+  const budget = { count: 0 }
   Object.entries(internalLinks).forEach(([kw, slug]) => {
     if (slug === currentSlug || slug === `/blog/${currentSlug}`) used.add(kw)
   })
@@ -171,7 +186,7 @@ function renderMarkdown(content: string, currentSlug: string) {
           borderBottom: '2px solid #e0f2fe',
           lineHeight: 1.3,
         }}>
-          {renderInline(line.slice(3), used)}
+          {renderInline(line.slice(3), used, budget, false)}
         </h2>
       )
       i++
@@ -190,7 +205,7 @@ function renderMarkdown(content: string, currentSlug: string) {
           marginBottom: 8,
           lineHeight: 1.35,
         }}>
-          {renderInline(line.slice(4), used)}
+          {renderInline(line.slice(4), used, budget, false)}
         </h3>
       )
       i++
@@ -221,7 +236,7 @@ function renderMarkdown(content: string, currentSlug: string) {
           marginTop: 22,
           letterSpacing: '0.01em',
         }}>
-          {renderInline(line.slice(2, -2), used)}
+          {renderInline(line.slice(2, -2), used, budget)}
         </p>
       )
       i++
@@ -257,7 +272,7 @@ function renderMarkdown(content: string, currentSlug: string) {
                 background: '#0891b2',
                 flexShrink: 0,
               }} />
-              <span>{renderInline(item, used)}</span>
+              <span>{renderInline(item, used, budget)}</span>
             </li>
           ))}
         </ul>
@@ -271,18 +286,6 @@ function renderMarkdown(content: string, currentSlug: string) {
       continue
     }
 
-    // Meta lines (author, date)
-    const isMetaLine = /^(Michael|Micheal)\s+Ghattas/.test(line) || /^\d+\/\d+\/\d+\s*·/.test(line)
-    if (isMetaLine) {
-      elements.push(
-        <p key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 2, fontStyle: 'italic' }}>
-          {renderInline(line, used)}
-        </p>
-      )
-      i++
-      continue
-    }
-
     // Body paragraph
     elements.push(
       <p key={i} style={{
@@ -292,7 +295,7 @@ function renderMarkdown(content: string, currentSlug: string) {
         marginBottom: 22,
         fontFamily: 'Georgia, serif',
       }}>
-        {renderInline(line, used)}
+        {renderInline(line, used, budget)}
       </p>
     )
     i++
@@ -449,6 +452,9 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
               </Link>
               <span style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
                 <Calendar size={14} />{formatDate(post.date)}
+              </span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
+                <Clock size={14} />{post.readingTime} min read
               </span>
             </div>
           </div>
