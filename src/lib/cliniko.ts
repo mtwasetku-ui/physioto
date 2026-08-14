@@ -215,12 +215,14 @@ export async function updateTreatmentNote(params: {
   template: ClinikoTemplate
   sections: NoteSectionInput[]
   draft: boolean
+  bookingId?: string
 }) {
-  const { noteId, template, sections, draft } = params
+  const { noteId, template, sections, draft, bookingId } = params
   return clinikoFetch(`/treatment_notes/${noteId}`, {
     method: 'PATCH',
     body: JSON.stringify({
       draft,
+      ...(bookingId ? { booking_id: bookingId } : {}),
       content: buildNoteContent(template, sections),
     }),
   })
