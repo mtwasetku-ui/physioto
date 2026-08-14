@@ -374,18 +374,37 @@ export async function createIndividualAppointment(params: {
   })
 }
 // with the admin key and streams them through. Cliniko exposes this via
-// the attachment's own `content.links.self`, not a bespoke /download
-// route — worth confirming the exact response (redirect vs binary) once
-// against a live sandbox.
+// the attachment's own `content.links.self`, which — confirmed against a
+// live account — doesn't return the file directly. It 303-redirects to a
+// presigned S3 URL. Node's automatic redirect-following isn't reliable
+// for that cross-origin hop (it can come back as a raw 303 instead of
+// actually following through), so the redirect is handled by hand here:
+// read the Location header off Cliniko's response, then make a second,
+// unauthenticated request to fetch the actual bytes. The S3 URL is
+// presigned and doesn't want our Cliniko Authorization header on that
+// second hop — sending it along could make S3 reject the request outright.
 export async function fetchAttachmentBytes(attachmentId: string) {
   if (!API_BASE) throw new Error('CLINIKO_API_BASE is not set')
-  const res = await fetch(`${API_BASE}/patient_attachments/${attachmentId}/content`, {
+  const first = await fetch(`${API_BASE}/patient_attachments/${attachmentId}/content`, {
     headers: { Authorization: authHeader(), 'User-Agent': USER_AGENT },
     cache: 'no-store',
-    redirect: 'follow',
+    redirect: 'manual',
   })
-  if (!res.ok) throw new Error(`Cliniko attachment download failed: ${res.status}`)
-  return res
+
+  if (first.status >= 300 && first.status < 400) {
+    const location = first.headers.get('location')
+    if (!location) {
+      throw new Error(`Cliniko attachment download failed: ${first.status} redirect with no Location header`)
+    }
+    const final = await fetch(location, { cache: 'no-store' })
+    if (!final.ok) {
+      throw new Error(`Cliniko attachment download failed: ${final.status} fetching the redirected file`)
+    }
+    return final
+  }
+
+  if (!first.ok) throw new Error(`Cliniko attachment download failed: ${first.status}`)
+  return first
 }
 
 // ── Patient search (admin: assigning a patient by name, not raw ID) ──
