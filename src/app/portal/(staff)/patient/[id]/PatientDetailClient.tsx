@@ -672,7 +672,7 @@ function Attachments({ patientId }: { patientId: string }) {
           {attachments.map((a) => (
             <a
               key={a.id}
-              href={`/api/attachments/${a.id}/download?patientId=${patientId}`}
+              href={`/api/attachments/${a.id}/download?patientId=${patientId}&filename=${encodeURIComponent(a.filename || '')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-4 py-3 hover:bg-secondary/50 transition-colors"
