@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { Trash2, Plus } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Trash2, Plus, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 interface AllowedEmail {
@@ -17,6 +17,12 @@ interface Assignment {
   patient_label: string | null
   created_at: string
 }
+interface PatientResult {
+  id: string
+  firstName: string
+  lastName: string
+  dateOfBirth: string | null
+}
 
 export default function AdminClient({
   initialEmails,
@@ -31,8 +37,37 @@ export default function AdminClient({
   const [newEmail, setNewEmail] = useState('')
   const [newDisplayName, setNewDisplayName] = useState('')
   const [assignEmail, setAssignEmail] = useState('')
-  const [assignPatientId, setAssignPatientId] = useState('')
-  const [assignLabel, setAssignLabel] = useState('')
+
+  // Patient search — replaces typing a raw Cliniko patient ID by hand.
+  const [patientQuery, setPatientQuery] = useState('')
+  const [patientResults, setPatientResults] = useState<PatientResult[] | null>(null)
+  const [searching, setSearching] = useState(false)
+  const [selectedPatient, setSelectedPatient] = useState<PatientResult | null>(null)
+  const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    if (selectedPatient) return // don't re-search once a patient's picked
+    if (searchTimeout.current) clearTimeout(searchTimeout.current)
+    if (patientQuery.trim().length < 2) {
+      setPatientResults(null)
+      return
+    }
+    searchTimeout.current = setTimeout(async () => {
+      setSearching(true)
+      try {
+        const res = await fetch(`/api/admin/patients/search?q=${encodeURIComponent(patientQuery)}`)
+        const data = await res.json()
+        setPatientResults(data.patients || [])
+      } catch {
+        setPatientResults([])
+      } finally {
+        setSearching(false)
+      }
+    }, 300)
+    return () => {
+      if (searchTimeout.current) clearTimeout(searchTimeout.current)
+    }
+  }, [patientQuery, selectedPatient])
 
   async function addEmail() {
     if (!newEmail) return
@@ -63,17 +98,22 @@ export default function AdminClient({
   }
 
   async function addAssignment() {
-    if (!assignEmail || !assignPatientId) return
+    if (!assignEmail || !selectedPatient) return
     const res = await fetch('/api/admin/assignments', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: assignEmail, clinikoPatientId: assignPatientId, patientLabel: assignLabel || undefined }),
+      body: JSON.stringify({
+        email: assignEmail,
+        clinikoPatientId: selectedPatient.id,
+        patientLabel: `${selectedPatient.firstName} ${selectedPatient.lastName}`,
+      }),
     })
     if (res.ok) {
       const { assignment } = await res.json()
       setAssignments((a) => [assignment, ...a.filter((x) => x.id !== assignment.id)])
-      setAssignPatientId('')
-      setAssignLabel('')
+      setSelectedPatient(null)
+      setPatientQuery('')
+      setPatientResults(null)
     }
   }
 
@@ -137,34 +177,70 @@ export default function AdminClient({
           Which Cliniko patient(s) each physio can see full history for, write notes on, and manage attachments for.
         </p>
 
-        <div className="bg-white border border-border rounded-lg p-4 flex flex-col sm:flex-row gap-2 mb-4">
-          <select
-            value={assignEmail}
-            onChange={(e) => setAssignEmail(e.target.value)}
-            className="h-10 px-3 rounded-md border border-input bg-background text-sm"
-          >
-            <option value="">Select staff…</option>
-            {emails.map((e) => (
-              <option key={e.email} value={e.email}>
-                {e.display_name || e.email}
-              </option>
-            ))}
-          </select>
-          <input
-            placeholder="Cliniko patient ID"
-            value={assignPatientId}
-            onChange={(e) => setAssignPatientId(e.target.value)}
-            className="flex-1 h-10 px-3 rounded-md border border-input bg-background text-sm"
-          />
-          <input
-            placeholder="Patient name (optional, display only)"
-            value={assignLabel}
-            onChange={(e) => setAssignLabel(e.target.value)}
-            className="flex-1 h-10 px-3 rounded-md border border-input bg-background text-sm"
-          />
-          <Button onClick={addAssignment}>
-            <Plus className="h-4 w-4 mr-1" /> Assign
-          </Button>
+        <div className="bg-white border border-border rounded-lg p-4 mb-4">
+          <div className="flex flex-col sm:flex-row gap-2">
+            <select
+              value={assignEmail}
+              onChange={(e) => setAssignEmail(e.target.value)}
+              className="h-10 px-3 rounded-md border border-input bg-background text-sm"
+            >
+              <option value="">Select staff…</option>
+              {emails.map((e) => (
+                <option key={e.email} value={e.email}>
+                  {e.display_name || e.email}
+                </option>
+              ))}
+            </select>
+
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <input
+                placeholder="Search patients by name…"
+                value={selectedPatient ? `${selectedPatient.firstName} ${selectedPatient.lastName}` : patientQuery}
+                onChange={(e) => {
+                  setSelectedPatient(null)
+                  setPatientQuery(e.target.value)
+                }}
+                className="w-full h-10 pl-9 pr-3 rounded-md border border-input bg-background text-sm"
+              />
+              {!selectedPatient && (patientResults || searching) && patientQuery.trim().length >= 2 && (
+                <div className="absolute z-10 top-11 left-0 right-0 bg-white border border-border rounded-lg shadow-lg max-h-64 overflow-y-auto">
+                  {searching && <div className="px-3 py-2 text-sm text-muted-foreground">Searching…</div>}
+                  {!searching && patientResults?.length === 0 && (
+                    <div className="px-3 py-2 text-sm text-muted-foreground">No matching patients in Cliniko.</div>
+                  )}
+                  {!searching &&
+                    patientResults?.map((p) => (
+                      <button
+                        key={p.id}
+                        type="button"
+                        onClick={() => {
+                          setSelectedPatient(p)
+                          setPatientResults(null)
+                        }}
+                        className="w-full text-left px-3 py-2 text-sm hover:bg-secondary/50 border-b border-border last:border-b-0"
+                      >
+                        <div className="font-medium text-foreground">
+                          {p.firstName} {p.lastName}
+                        </div>
+                        {p.dateOfBirth && (
+                          <div className="text-xs text-muted-foreground">DOB {p.dateOfBirth}</div>
+                        )}
+                      </button>
+                    ))}
+                </div>
+              )}
+            </div>
+
+            <Button onClick={addAssignment} disabled={!assignEmail || !selectedPatient}>
+              <Plus className="h-4 w-4 mr-1" /> Assign
+            </Button>
+          </div>
+          {selectedPatient && (
+            <p className="text-xs text-muted-foreground mt-2">
+              Cliniko ID {selectedPatient.id} — clear the search box to pick someone else.
+            </p>
+          )}
         </div>
 
         <div className="bg-white border border-border rounded-lg divide-y divide-border">
