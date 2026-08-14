@@ -385,3 +385,61 @@ export async function fetchAttachmentBytes(attachmentId: string) {
   if (!res.ok) throw new Error(`Cliniko attachment download failed: ${res.status}`)
   return res
 }
+
+// ── Patient search (admin: assigning a patient by name, not raw ID) ──
+
+export interface ClinikoPatientSearchResult {
+  id: string
+  firstName: string
+  lastName: string
+  dateOfBirth: string | null
+}
+
+// Cliniko's filter syntax supports "or" groups across fields — see
+// https://developer.cliniko.com/api-docs#filtering — but this exact form
+// (partial match "~" inside an "or[...]" group) hasn't been round-tripped
+// against a live sandbox yet, same caveat as the rest of this file. If it
+// ever comes back empty where results are expected, the fallback is two
+// separate q[]=first_name:~:X / q[]=last_name:~:X calls merged client-side.
+export async function searchPatients(query: string, limit = 8): Promise<ClinikoPatientSearchResult[]> {
+  const term = query.trim()
+  if (term.length < 2) return []
+  const q = encodeURIComponent(`or[first_name:~:${term},last_name:~:${term}]`)
+  const data = await clinikoFetch(`/patients?q[]=${q}&per_page=${limit}`)
+  return (data.patients ?? []).map((p: any) => ({
+    id: String(p.id),
+    firstName: p.first_name,
+    lastName: p.last_name,
+    dateOfBirth: p.date_of_birth ?? null,
+  }))
+}
+
+// ── Availability (so the booking form can't offer a slot Cliniko would reject) ──
+
+// Nested under business + practitioner + appointment type — this is the
+// one sub-resource that actually lives at that nested path (everything
+// else here uses the flat /practitioners/{id}/... form, per the comment
+// on listAppointmentTypesForPractice above).
+export async function getAvailableTimes(appointmentTypeId: string, fromDate: string, toDate: string) {
+  if (!BUSINESS_ID || !PRACTITIONER_ID) {
+    throw new Error('CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are not set')
+  }
+  const data = await clinikoFetch(
+    `/businesses/${BUSINESS_ID}/practitioners/${PRACTITIONER_ID}/appointment_types/${appointmentTypeId}/available_times?from=${fromDate}&to=${toDate}`
+  )
+  return data.available_times ?? []
+}
+
+// ── Appointments for a single patient (note-linking picker) ──────
+
+// Recent past (default 30 days) plus all upcoming, ascending by time, so
+// the note form can offer "which visit was this note written for" without
+// pulling the patient's entire appointment history.
+export async function listAppointmentsForPatient(patientId: string, opts: { fromDaysAgo?: number; limit?: number } = {}) {
+  const { fromDaysAgo = 30, limit = 20 } = opts
+  const from = new Date(Date.now() - fromDaysAgo * 24 * 60 * 60 * 1000).toISOString()
+  const data = await clinikoFetch(
+    `/patients/${patientId}/individual_appointments?q[]=starts_at:>${from}&sort=starts_at:asc&per_page=${limit}`
+  )
+  return data.individual_appointments ?? []
+}
