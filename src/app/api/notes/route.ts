@@ -1,4 +1,3 @@
-
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
@@ -77,7 +76,7 @@ export async function POST(req: Request) {
 // the note has already been finalised (draft:false) — no extra lock here.
 export async function PATCH(req: Request) {
   const body = await req.json()
-  const { patientId, noteId, templateName, sections, draft } = body
+  const { patientId, noteId, templateName, sections, draft, bookingId } = body
   if (!patientId || !noteId || !templateName || !sections) {
     return NextResponse.json({ error: 'patientId, noteId, templateName and sections required' }, { status: 400 })
   }
@@ -87,7 +86,7 @@ export async function PATCH(req: Request) {
 
   try {
     const template = await getTemplateByExactName(templateName)
-    const note = await updateTreatmentNote({ noteId, template, sections, draft: !!draft })
+    const note = await updateTreatmentNote({ noteId, template, sections, draft: !!draft, bookingId })
     await writeAuditLog({
       actorEmail: auth.email!,
       action: 'note_update',
