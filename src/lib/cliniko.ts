@@ -401,17 +401,33 @@ export interface ClinikoPatientSearchResult {
 // against a live sandbox yet, same caveat as the rest of this file. If it
 // ever comes back empty where results are expected, the fallback is two
 // separate q[]=first_name:~:X / q[]=last_name:~:X calls merged client-side.
+// Cliniko's q[] filters are ANDed together — there is no "or[...]" group
+// syntax (that was never a real part of the API despite looking plausible;
+// see https://docs.api.cliniko.com/ "Filtering Results"). So a name search
+// has to be two separate requests — one matching first_name, one matching
+// last_name — merged and de-duped by id, rather than one query with an OR.
 export async function searchPatients(query: string, limit = 8): Promise<ClinikoPatientSearchResult[]> {
   const term = query.trim()
   if (term.length < 2) return []
-  const q = encodeURIComponent(`or[first_name:~:${term},last_name:~:${term}]`)
-  const data = await clinikoFetch(`/patients?q[]=${q}&per_page=${limit}`)
-  return (data.patients ?? []).map((p: any) => ({
+
+  const toResult = (p: any): ClinikoPatientSearchResult => ({
     id: String(p.id),
     firstName: p.first_name,
     lastName: p.last_name,
     dateOfBirth: p.date_of_birth ?? null,
-  }))
+  })
+
+  const [byFirst, byLast] = await Promise.all([
+    clinikoFetch(`/patients?q[]=${encodeURIComponent(`first_name:~${term}`)}&per_page=${limit}`),
+    clinikoFetch(`/patients?q[]=${encodeURIComponent(`last_name:~${term}`)}&per_page=${limit}`),
+  ])
+
+  const merged = new Map<string, ClinikoPatientSearchResult>()
+  for (const p of [...(byFirst.patients ?? []), ...(byLast.patients ?? [])]) {
+    const r = toResult(p)
+    if (!merged.has(r.id)) merged.set(r.id, r)
+  }
+  return Array.from(merged.values()).slice(0, limit)
 }
 
 // ── Availability (so the booking form can't offer a slot Cliniko would reject) ──
