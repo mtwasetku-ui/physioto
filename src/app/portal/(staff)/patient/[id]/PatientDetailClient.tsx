@@ -7,6 +7,66 @@ import type { ClinikoPatientInfo } from '@/lib/cliniko'
 
 type Tab = 'note' | 'timeline' | 'attachments' | 'book'
 
+// ── Safe HTML rendering for "paragraph" question answers ─────────
+//
+// Cliniko stores paragraph-question answers as HTML (their editor
+// supports basic rich text) and only sanitizes to a small allowlist of
+// tags on their end — see https://docs.api.cliniko.com/. Rendering that
+// string directly as text (the old behaviour here) shows the raw tags
+// literally, e.g. "<p>Mobility with Gutter frame...</p>", instead of a
+// formatted paragraph. Rendering it with dangerouslySetInnerHTML would
+// fix the display but re-trusts a third-party string as markup. Instead
+// we parse it and only rebuild the same allowlisted tags as real React
+// elements — anything else is unwrapped to its plain text content.
+const ALLOWED_HTML_TAGS = new Set(['P', 'DIV', 'BR', 'UL', 'OL', 'LI', 'BLOCKQUOTE', 'H1', 'H2', 'B', 'I', 'U', 'A'])
+
+function stripHtmlTags(html: string): string {
+  return html
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function sanitizedHtmlNode(node: ChildNode, key: string): React.ReactNode {
+  if (node.nodeType === Node.TEXT_NODE) return node.textContent
+  if (node.nodeType !== Node.ELEMENT_NODE) return null
+  const el = node as Element
+  const tag = el.tagName
+  const children = Array.from(el.childNodes).map((child, i) => sanitizedHtmlNode(child, `${key}-${i}`))
+
+  if (!ALLOWED_HTML_TAGS.has(tag)) {
+    // Not on Cliniko's own allowlist — drop the wrapper, keep its text.
+    return <span key={key}>{children}</span>
+  }
+  if (tag === 'BR') return <br key={key} />
+  if (tag === 'A') {
+    const href = el.getAttribute('href') || ''
+    const safeHref = /^https?:\/\//i.test(href) ? href : undefined
+    return (
+      <a key={key} href={safeHref} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+        {children}
+      </a>
+    )
+  }
+  const Tag = tag.toLowerCase() as any
+  return <Tag key={key}>{children}</Tag>
+}
+
+// Renders a Cliniko paragraph-question answer as actual formatted text
+// rather than a raw HTML string. Falls back to plain stripped text if
+// parsing fails or (during server rendering) DOMParser isn't available.
+function ClinikoHtml({ html, className }: { html: string; className?: string }) {
+  if (typeof window === 'undefined' || typeof DOMParser === 'undefined') {
+    return <div className={className}>{stripHtmlTags(html)}</div>
+  }
+  try {
+    const doc = new DOMParser().parseFromString(html, 'text/html')
+    return <div className={className}>{Array.from(doc.body.childNodes).map((n, i) => sanitizedHtmlNode(n, String(i)))}</div>
+  } catch {
+    return <div className={className}>{stripHtmlTags(html)}</div>
+  }
+}
+
 interface Question {
   // Cliniko questions have no numeric id — name is the only identifier,
   // and only unique within its own section.
@@ -484,27 +544,51 @@ function Timeline({ patientId }: { patientId: string }) {
                   <span className="text-xs px-2 py-1 rounded-full bg-amber-100 text-amber-800 font-medium">Draft</span>
                 )}
               </div>
-              {(note.content?.sections || []).map((s: any) => (
-                <div key={s.name} className="mb-3 last:mb-0">
-                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">{s.name}</div>
-                  {s.questions.map((q: any) => {
-                    // text/paragraph/date -> plain "answer" string.
-                    // radiobuttons/checkboxes -> "answers": [{value, selected}].
-                    const display = Array.isArray(q.answers)
-                      ? q.answers
-                          .filter((a: any) => a.selected)
-                          .map((a: any) => a.value)
-                          .join(', ') || '—'
-                      : q.answer || '—'
-                    return (
-                      <div key={`${s.name}::${q.name}`} className="text-sm mb-1">
-                        <span className="text-foreground font-medium">{q.name}: </span>
-                        <span className="text-muted-foreground">{display}</span>
-                      </div>
-                    )
-                  })}
-                </div>
-              ))}
+              {(note.content?.sections || []).map((s: any) => {
+                // Only show questions that actually have content — an
+                // empty section full of "—" placeholders is exactly the
+                // "summary" look we're moving away from here.
+                const answered = s.questions
+                  .map((q: any) => {
+                    const isMultiChoice = Array.isArray(q.answers)
+                    const value = isMultiChoice
+                      ? q.answers.filter((a: any) => a.selected).map((a: any) => a.value)
+                      : q.answer
+                    const hasValue = isMultiChoice ? value.length > 0 : !!(value && String(value).trim())
+                    return { q, value, hasValue }
+                  })
+                  .filter(({ hasValue }: any) => hasValue)
+
+                if (answered.length === 0) return null
+
+                return (
+                  <div key={s.name} className="mb-4 last:mb-0">
+                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+                      {s.name}
+                    </div>
+                    {answered.map(({ q, value }: any) => {
+                      if (q.type === 'paragraph') {
+                        return (
+                          <div key={`${s.name}::${q.name}`} className="mb-3 last:mb-0">
+                            <div className="text-xs font-medium text-foreground mb-0.5">{q.name}</div>
+                            <ClinikoHtml
+                              html={value}
+                              className="text-sm text-muted-foreground leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0"
+                            />
+                          </div>
+                        )
+                      }
+                      const display = Array.isArray(value) ? value.join(', ') : value
+                      return (
+                        <div key={`${s.name}::${q.name}`} className="text-sm mb-1">
+                          <span className="text-foreground font-medium">{q.name}: </span>
+                          <span className="text-muted-foreground">{display}</span>
+                        </div>
+                      )
+                    })}
+                  </div>
+                )
+              })}
             </div>
           </div>
         ))}
