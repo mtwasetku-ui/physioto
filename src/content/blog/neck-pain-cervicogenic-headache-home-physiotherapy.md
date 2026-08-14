@@ -12,14 +12,6 @@ tags: ["neck pain", "cervicogenic headache", "home physiotherapy", "physiotherap
 
 # NECK PAIN & CERVICOGENIC HEADACHE | HOME PHYSIOTHERAPY
 
-Neck pain affects 1 in 3 Australians at any given time — and cervicogenic headache is one of its most underdiagnosed consequences. North Tasmania's home physiotherapist explains both conditions and exactly how physiotherapy helps.
-
-Micheal Ghattas
-
-3/6/2026 · 8 min read
-
----
-
 ## Managing Neck Pain and Cervicogenic Headache at Home: A Guide from a North Tasmania Home Physiotherapist
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

@@ -12,14 +12,6 @@ tags: ["Parkinson's disease exercise", "neuroprotection Parkinson's", "exercise 
 
 # PARKINSON'S DISEASE & EXERCISE: THE NEUROPROTECTION EVIDENCE
 
-Emerging research suggests exercise may not just manage Parkinson's symptoms — it may slow the disease itself. North Tasmania's home physiotherapist examines the neuroprotection evidence and what it means for clinical practice.
-
-Micheal Ghattas
-
-3/6/2026 · 10 min read
-
----
-
 ## Exercise as Disease Modification in Parkinson's Disease: What the Evidence Says and Why It Matters Clinically
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

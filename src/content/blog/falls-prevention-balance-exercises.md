@@ -11,14 +11,6 @@ tags: ["falls prevention", "balance exercises", "seniors", "physiotherapy North 
 
 # FALLS PREVENTION | BALANCE EXERCISES
 
-Physiotherapist-designed balance exercises for seniors — three progressive levels you can do at home with just a chair. Safe, evidence-based, and tailored for older Tasmanians.
-
-Micheal Ghattas
-
-2/27/2026 · 11 min read
-
----
-
 ## Balance Exercises for Seniors: A Safe, Progressive Programme You Can Do at Home
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

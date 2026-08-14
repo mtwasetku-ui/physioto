@@ -12,14 +12,6 @@ tags: ["hip replacement family guide", "supporting parent hip replacement", "hip
 
 # SUPPORTING A PARENT'S HIP REPLACEMENT RECOVERY
 
-Your parent is coming home after a hip replacement. North Tasmania's home physiotherapist explains exactly what to expect, how to help safely, and why home physiotherapy in the first six weeks makes all the difference.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## How to Support Your Parent's Recovery After Hip Replacement: A Guide for Families in North Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

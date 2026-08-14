@@ -12,14 +12,6 @@ tags: ["how to improve balance", "balance exercises older adults", "falls preven
 
 # HOW TO IMPROVE BALANCE AT HOME | EXERCISES FOR OLDER ADULTS
 
-Balance declines with age — but it is trainable at any age. North Tasmania's home physiotherapist explains exactly how balance works, why it deteriorates, and 8 exercises you can start today to reduce your falls risk.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## How to Improve Balance at Home: A Practical Guide for Older Adults
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

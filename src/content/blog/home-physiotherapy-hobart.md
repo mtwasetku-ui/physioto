@@ -12,14 +12,6 @@ tags: ["physiotherapy Hobart", "home physiotherapy Hobart", "mobile physiotherap
 
 # HOME PHYSIOTHERAPY HOBART
 
-Hobart's home visit physiotherapy team. Physio to Home brings AHPRA-registered, in-home physiotherapy to Hobart and greater Hobart — steep streets and scarce parking are exactly why we come to you.
-
-Micheal Ghattas
-
-26/7/2026 · 6 min read
-
----
-
 ## Physiotherapy at Your Door, Anywhere in Hobart
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience

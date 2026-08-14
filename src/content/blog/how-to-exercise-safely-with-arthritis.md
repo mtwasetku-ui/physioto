@@ -11,14 +11,6 @@ tags: ["exercise with arthritis", "arthritis exercise safe", "how to exercise ar
 
 # HOW TO EXERCISE SAFELY WITH ARTHRITIS
 
-Should you exercise with arthritis? Yes — and the evidence is clear on how. North Tasmania's home physiotherapist explains the exact principles, the exercises that help most, and the common mistakes that make arthritis pain worse.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## How to Exercise Safely With Arthritis: A Practical Guide
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

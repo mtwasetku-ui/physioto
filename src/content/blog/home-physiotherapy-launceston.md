@@ -12,14 +12,6 @@ tags: ["physiotherapy Launceston", "home physiotherapy Launceston", "mobile phys
 
 # HOME PHYSIOTHERAPY LAUNCESTON
 
-Launceston's home visit physiotherapy team. Physio to Home provides AHPRA-registered, in-home physiotherapy across Launceston and surrounding suburbs — no travel, no clinic, no waiting room.
-
-Micheal Ghattas
-
-25/7/2026 · 6 min read
-
----
-
 ## Physiotherapy at Your Door, Anywhere in Launceston
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

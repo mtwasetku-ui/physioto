@@ -12,14 +12,6 @@ tags: ["physiotherapy vs surgery knee", "knee replacement decision", "knee arthr
 
 # PHYSIOTHERAPY VS SURGERY FOR KNEE OSTEOARTHRITIS
 
-Should you have knee surgery or try physiotherapy first? The evidence might surprise you. North Tasmania's home physiotherapist compares the outcomes, the risks, and what the research actually says.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## Physiotherapy vs Surgery for Knee Osteoarthritis: What Does the Evidence Actually Say?
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

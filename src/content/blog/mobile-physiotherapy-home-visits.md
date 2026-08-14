@@ -12,14 +12,6 @@ tags: ["mobile physiotherapy", "home visits", "physiotherapy North Tasmania", "i
 
 # MOBILE PHYSIOTHERAPY | HOME VISITS
 
-Mobile physiotherapy across North Tasmania — AHPRA-registered home visits for older adults, rural residents, and post-surgery patients. Find out how to book and what to expect.
-
-Micheal Ghattas
-
-2/27/2026 · 11 min read
-
----
-
 ## Mobile Physiotherapy in North Tasmania: How to Book and What to Expect
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

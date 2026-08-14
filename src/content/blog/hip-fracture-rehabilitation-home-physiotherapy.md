@@ -12,14 +12,6 @@ tags: ["hip fracture", "hip fracture rehabilitation", "neck of femur fracture", 
 
 # HIP FRACTURE REHABILITATION | HOME PHYSIOTHERAPY
 
-Hip fracture is one of the most serious injuries an older Australian can sustain. North Tasmania's home physiotherapist explains the rehabilitation journey — from hospital discharge to regaining independence at home.
-
-Micheal Ghattas
-
-3/6/2026 · 8 min read
-
----
-
 ## Hip Fracture Rehabilitation at Home: A Guide for Patients and Families in North Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

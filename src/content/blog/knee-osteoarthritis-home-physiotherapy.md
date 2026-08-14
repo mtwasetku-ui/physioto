@@ -12,14 +12,6 @@ tags: ["knee osteoarthritis", "knee pain", "home physiotherapy", "physiotherapy 
 
 # KNEE OSTEOARTHRITIS | HOME PHYSIOTHERAPY
 
-Knee osteoarthritis affects 1 in 5 Australians over 45. North Tasmania's home physiotherapist explains what actually works — and how to manage it without leaving home.
-
-Micheal Ghattas
-
-3/6/2026 · 8 min read
-
----
-
 ## Managing Knee Osteoarthritis at Home: A Guide from a North Tasmania Home Physiotherapist
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

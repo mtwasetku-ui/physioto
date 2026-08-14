@@ -11,14 +11,6 @@ tags: ["frozen shoulder", "adhesive capsulitis", "shoulder pain", "shoulder stif
 
 # FROZEN SHOULDER | ADHESIVE CAPSULITIS | HOME PHYSIOTHERAPY
 
-Frozen shoulder affects up to 5% of adults and is one of the most painful and mismanaged shoulder conditions. North Tasmania's home physiotherapist explains the three stages, what actually helps, and what makes it worse.
-
-Micheal Ghattas
-
-3/6/2026 · 8 min read
-
----
-
 ## Frozen Shoulder: A Complete Guide to Adhesive Capsulitis and How Home Physiotherapy Helps
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

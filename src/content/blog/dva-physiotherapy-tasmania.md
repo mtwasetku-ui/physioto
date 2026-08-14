@@ -13,14 +13,6 @@ tags: ["DVA", "DVA physiotherapy", "veterans physiotherapy Tasmania", "Gold Card
 
 # DVA HOME PHYSIOTHERAPY FUNDING — TASMANIA
 
-DVA Gold and White Card holders can access funded home physiotherapy in Tasmania. Physio to Home explains eligibility, referrals, and what to expect.
-
-Micheal Ghattas
-
-7/27/2026 · 8 min read
-
----
-
 ## DVA-Funded Home Physiotherapy for Veterans in Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

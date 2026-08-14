@@ -12,14 +12,6 @@ tags: ["physiotherapy Devonport", "home physiotherapy Devonport", "physiotherapy
 
 # HOME PHYSIOTHERAPY DEVONPORT & BURNIE
 
-Home visit physiotherapy across Devonport, Burnie and Tasmania's North West Coast. Physio to Home brings AHPRA-registered, in-home physiotherapy to the coast — no trip into town required.
-
-Micheal Ghattas
-
-26/7/2026 · 6 min read
-
----
-
 ## Physiotherapy at Your Door, Across the North West Coast
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience

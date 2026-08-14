@@ -12,14 +12,6 @@ tags: ["physiotherapy Scottsdale", "home physiotherapy Scottsdale", "mobile phys
 
 # HOME PHYSIOTHERAPY SCOTTSDALE
 
-Home physiotherapy visits in Scottsdale and Tasmania's northeast. Physio to Home brings AHPRA-registered in-home physio to one of the state's most underserved regions.
-
-Micheal Ghattas
-
-25/7/2026 · 5 min read
-
----
-
 ## Bringing Physiotherapy to Tasmania's Northeast
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

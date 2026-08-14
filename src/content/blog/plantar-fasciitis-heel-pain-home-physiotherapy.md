@@ -12,14 +12,6 @@ tags: ["plantar fasciitis", "heel pain", "foot pain physiotherapy", "plantar fas
 
 # PLANTAR FASCIITIS & HEEL PAIN | HOME PHYSIOTHERAPY
 
-Plantar fasciitis is the most common cause of heel pain in Australia, affecting 1 in 10 people at some point in their lives. North Tasmania's home physiotherapist explains what it is, why it persists, and exactly how to treat it.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## Plantar Fasciitis: Why Heel Pain Is So Stubborn — and How Physiotherapy Fixes It
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

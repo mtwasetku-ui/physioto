@@ -12,14 +12,6 @@ tags: ["hip osteoarthritis", "hip pain", "hip arthritis", "home physiotherapy", 
 
 # HIP OSTEOARTHRITIS | HOME PHYSIOTHERAPY
 
-Hip osteoarthritis is one of the leading causes of pain and disability in older Australians — and physiotherapy is its most evidence-supported non-surgical treatment. North Tasmania's home physiotherapist explains what works and why.
-
-Micheal Ghattas
-
-3/6/2026 · 8 min read
-
----
-
 ## Managing Hip Osteoarthritis at Home: A Guide from a North Tasmania Home Physiotherapist
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

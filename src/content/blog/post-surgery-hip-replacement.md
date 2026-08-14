@@ -12,14 +12,6 @@ tags: ["post-surgery recovery", "hip replacement", "physiotherapy North Tasmania
 
 # POST-SURGERY RECOVERY | HIP REPLACEMENT
 
-Had a hip replacement in Tasmania? Micheal Ghattas explains recovery week by week — from Day 1 at home to 6 months — including precautions, exercises, and funding.
-
-Micheal Ghattas
-
-2/27/2026 · 8 min read
-
----
-
 ## Hip Replacement Recovery Week by Week: A Home Physiotherapist's Guide for Tasmanians
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

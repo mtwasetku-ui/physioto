@@ -12,14 +12,6 @@ tags: ["tennis elbow", "golfer's elbow", "lateral epicondylalgia", "medial epico
 
 # TENNIS ELBOW & GOLFER'S ELBOW | HOME PHYSIOTHERAPY
 
-Tennis elbow affects 1–3% of adults annually and is one of the most mismanaged musculoskeletal conditions. North Tasmania's home physiotherapist explains the tendinopathy model, what works, and what makes it worse.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## Tennis Elbow and Golfer's Elbow: A Physiotherapy Guide for North Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

@@ -12,14 +12,6 @@ tags: ["physiotherapy Deloraine", "home physiotherapy Deloraine", "mobile physio
 
 # HOME PHYSIOTHERAPY DELORAINE
 
-Home physiotherapy visits in Deloraine and the Meander Valley, Tasmania. Physio to Home brings AHPRA-registered in-home physio to Deloraine — no 50 km round trip to Launceston required.
-
-Micheal Ghattas
-
-25/7/2026 · 5 min read
-
----
-
 ## Physiotherapy in the Meander Valley, Delivered to Your Door
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

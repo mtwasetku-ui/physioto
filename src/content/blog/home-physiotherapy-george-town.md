@@ -12,14 +12,6 @@ tags: ["physiotherapy George Town", "home physiotherapy George Town", "mobile ph
 
 # HOME PHYSIOTHERAPY GEORGE TOWN
 
-Home physiotherapy visits in George Town, Low Head, and the Tamar estuary, Tasmania. Physio to Home brings AHPRA-registered in-home physio to George Town residents.
-
-Micheal Ghattas
-
-25/7/2026 · 5 min read
-
----
-
 ## In-Home Physiotherapy at the Mouth of the Tamar
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

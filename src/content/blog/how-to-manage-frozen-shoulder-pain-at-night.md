@@ -12,14 +12,6 @@ tags: ["frozen shoulder night pain", "how to sleep with frozen shoulder", "froze
 
 # HOW TO MANAGE FROZEN SHOULDER PAIN AT NIGHT
 
-Night pain is the most distressing feature of frozen shoulder — and it is the symptom that existing guides almost never address specifically. North Tasmania's home physiotherapist explains exactly what causes it and what actually helps.
-
-Micheal Ghattas
-
-3/6/2026 · 6 min read
-
----
-
 ## Frozen Shoulder Night Pain: Why It Happens and How to Manage It
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

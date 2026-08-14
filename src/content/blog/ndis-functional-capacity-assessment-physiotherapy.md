@@ -12,14 +12,6 @@ tags: ["NDIS functional capacity assessment", "NDIS FCA physiotherapist", "NDIS 
 
 # NDIS FUNCTIONAL CAPACITY ASSESSMENT: WHAT IT INVOLVES
 
-A Functional Capacity Assessment can strengthen your NDIS plan review or first plan application. North Tasmania's home physiotherapist explains what an FCA involves, what it costs to fund, and how to prepare.
-
-Micheal Ghattas
-
-7/10/2026 · 8 min read
-
----
-
 ## What Is a Functional Capacity Assessment, and Why Does the NDIS Ask for One?
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

@@ -12,14 +12,6 @@ tags: ["osteoarthritis", "arthritis", "chronic pain", "physiotherapy North Tasma
 
 # Osteoarthritis (OA)
 
-Arthritis affects over 3.6 million Australians — and physiotherapy is the most evidence-supported non-surgical treatment. North Tasmania's home physiotherapist explains what it can do, and how to access it without leaving home.
-
-Micheal Ghattas
-
-12/19/2025 · 10 min read
-
----
-
 ## Arthritis Pain Management at Home: What Physiotherapy Can Do for Older Tasmanians
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

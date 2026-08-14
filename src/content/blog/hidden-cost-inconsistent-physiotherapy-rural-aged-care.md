@@ -12,14 +12,6 @@ tags: ["rural aged care", "physiotherapy consistency", "deconditioning older adu
 
 # THE HIDDEN COST OF INCONSISTENT PHYSIOTHERAPY IN AGED CARE
 
-Inconsistent physiotherapy doesn't look like a crisis — it looks like slow decline. A North Tasmania home physiotherapist examines what the evidence says about treatment gaps, the cascade of deconditioning, and what it costs the system and the individual.
-
-Micheal Ghattas
-
-3/6/2026 · 9 min read
-
----
-
 ## The Invisible Harm: What Inconsistent Physiotherapy Does to Older Adults in Rural Communities
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

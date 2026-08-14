@@ -12,14 +12,6 @@ tags: ["rural health Tasmania", "allied health access", "home physiotherapy Tasm
 
 # THE STATE OF HOME PHYSIOTHERAPY ACCESS IN RURAL TASMANIA
 
-Tasmania has the oldest population of any Australian state and some of its most significant allied health deserts. This data-driven analysis examines what rural Tasmanians are missing, what it costs, and what needs to change.
-
-Micheal Ghattas
-
-3/6/2026 · 10 min read
-
----
-
 ## The Allied Health Desert at Australia's Southern Edge: A Clinical Perspective on Physiotherapy Access in Rural Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

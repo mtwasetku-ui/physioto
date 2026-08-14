@@ -12,14 +12,6 @@ tags: ["NDIS", "NDIS physiotherapy", "NDIS North Tasmania", "funded physiotherap
 
 # NDIS | HOME PHYSIOTHERAPY FUNDING
 
-NDIS can fund home physiotherapy visits in North Tasmania. Physio to Home explains which support categories apply, how to use your plan, and what to expect from your first visit.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## How to Use Your NDIS Plan to Fund Home Physiotherapy in Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

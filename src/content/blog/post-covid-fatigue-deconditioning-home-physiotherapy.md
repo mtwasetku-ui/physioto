@@ -12,14 +12,6 @@ tags: ["long COVID physiotherapy", "post-COVID fatigue", "long COVID Tasmania", 
 
 # POST-COVID FATIGUE & DECONDITIONING | HOME PHYSIOTHERAPY
 
-Post-COVID syndrome affects an estimated 5–10% of people who contract COVID-19. North Tasmania's home physiotherapist explains the physiotherapy approach to long COVID fatigue, breathlessness, and deconditioning.
-
-Micheal Ghattas
-
-3/7/2026 · 7 min read
-
----
-
 ## Post-COVID Syndrome: How Home Physiotherapy Helps Recovery
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

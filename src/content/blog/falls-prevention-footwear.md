@@ -11,14 +11,6 @@ tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home phys
 
 # FALLS PREVENTION | FOOTWEAR
 
-Up to 50% of falls in older adults involve inappropriate footwear. North Tasmania physiotherapist Micheal Ghattas reveals which shoes are dangerous — and what to wear instead.
-
-Micheal Ghattas
-
-6/27/2026 · 9 min read
-
----
-
 ## The Role of Footwear in Preventing Falls: What Older Tasmanians Need to Know
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

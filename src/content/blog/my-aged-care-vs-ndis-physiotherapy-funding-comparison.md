@@ -12,14 +12,6 @@ tags: ["My Aged Care vs NDIS", "NDIS or My Aged Care", "aged care NDIS differenc
 
 # MY AGED CARE VS NDIS — WHICH FUNDING APPLIES TO YOU?
 
-My Aged Care and NDIS both fund physiotherapy — but they are entirely different systems with different eligibility rules, different processes, and different amounts of support. North Tasmania's home physiotherapist explains which applies to your situation.
-
-Micheal Ghattas
-
-3/6/2026 · 6 min read
-
----
-
 ## My Aged Care vs NDIS: Which Funding System Applies for Home Physiotherapy?
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

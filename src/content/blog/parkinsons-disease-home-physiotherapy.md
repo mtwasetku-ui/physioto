@@ -12,14 +12,6 @@ tags: ["Parkinson's disease", "neurological physiotherapy", "home physiotherapy"
 
 # PARKINSON'S DISEASE | HOME PHYSIOTHERAPY
 
-Physiotherapy is one of the most evidence-supported treatments for Parkinson's disease. North Tasmania's home physiotherapist explains what it involves — and why home delivery makes it more effective.
-
-Micheal Ghattas
-
-3/6/2026 · 8 min read
-
----
-
 ## Physiotherapy for Parkinson's Disease at Home: A Guide for Tasmanians and Their Families
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

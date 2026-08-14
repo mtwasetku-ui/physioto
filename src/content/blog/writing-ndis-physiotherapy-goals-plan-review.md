@@ -12,14 +12,6 @@ tags: ["NDIS physiotherapy goals", "NDIS plan review", "writing NDIS goals", "ND
 
 # HOW TO WRITE NDIS PHYSIOTHERAPY GOALS FOR YOUR PLAN REVIEW
 
-Clear, specific physiotherapy goals can strengthen your NDIS plan review. North Tasmania's home physiotherapist explains how to write goals the NDIA can act on, with real examples.
-
-Micheal Ghattas
-
-7/15/2026 · 7 min read
-
----
-
 ## Why the Way You Write Your Goals Affects Your Physiotherapy Funding
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

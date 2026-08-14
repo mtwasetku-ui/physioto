@@ -11,14 +11,6 @@ tags: ["cervicogenic dizziness", "dizziness diagnosis", "neck dizziness", "vesti
 
 # CERVICOGENIC DIZZINESS IN OLDER ADULTS: OFTEN MISDIAGNOSED
 
-Cervicogenic dizziness is estimated to affect up to 20% of people with chronic dizziness — and it is routinely missed. A North Tasmania physiotherapist with specialist training explains the condition, the diagnostic challenge, and what treatment actually involves.
-
-Micheal Ghattas
-
-3/6/2026 · 10 min read
-
----
-
 ## Cervicogenic Dizziness: A Clinical Overview for Patients, Families, and Referring Clinicians
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

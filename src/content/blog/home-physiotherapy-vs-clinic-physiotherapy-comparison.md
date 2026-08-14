@@ -12,14 +12,6 @@ tags: ["home physiotherapy vs clinic", "home physio better than clinic", "mobile
 
 # HOME PHYSIOTHERAPY VS CLINIC PHYSIOTHERAPY: WHICH IS BETTER?
 
-Is home physiotherapy as good as clinic? For many patients — particularly older adults and those in rural areas — the evidence suggests it may be better. North Tasmania's home physiotherapist explains what the research says and the five factors that determine which is right for you.
-
-Micheal Ghattas
-
-3/6/2026 · 6 min read
-
----
-
 ## Home Physiotherapy vs Clinic: What the Evidence Says and How to Choose
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

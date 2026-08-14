@@ -11,14 +11,6 @@ tags: ["falls prevention family", "elderly parent falls", "aged care Tasmania", 
 
 # FALLS RISK IN AGEING PARENTS | A GUIDE FOR FAMILIES
 
-Worried about your elderly parent falling at home? North Tasmania's home physiotherapist explains the warning signs families miss, what actually reduces falls risk, and how to have the conversation.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## What Families Need to Know About Falls Risk in Ageing Parents
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

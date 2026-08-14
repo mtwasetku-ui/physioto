@@ -12,14 +12,6 @@ tags: ["lower back pain", "home treatment", "physiotherapy North Tasmania", "in-
 
 # LOWER BACK PAIN | HOME TREATMENT
 
-Lower back pain in older adults — what you can safely treat at home and when to see a physio. Honest, evidence-based advice from a North Tasmania home physiotherapist.
-
-Micheal Ghattas
-
-2/27/2026 · 9 min read
-
----
-
 ## Lower Back Pain in Older Adults: What You Can Treat at Home and When to See a Physiotherapist
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

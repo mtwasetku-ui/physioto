@@ -12,14 +12,6 @@ tags: ["multiple sclerosis physiotherapy", "MS home physiotherapy", "MS fatigue 
 
 # MULTIPLE SCLEROSIS | HOME PHYSIOTHERAPY
 
-Multiple sclerosis affects over 33,000 Australians and is the most common neurological condition in young adults. North Tasmania's home physiotherapist explains how physiotherapy helps manage MS symptoms, maintain function, and slow disability progression.
-
-Micheal Ghattas
-
-3/6/2026 · 8 min read
-
----
-
 ## Physiotherapy for Multiple Sclerosis: A Guide for People with MS and Their Families in North Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

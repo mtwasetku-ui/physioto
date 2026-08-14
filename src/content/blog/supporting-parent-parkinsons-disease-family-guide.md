@@ -12,14 +12,6 @@ tags: ["Parkinson's disease family guide", "caring for parent Parkinson's", "Par
 
 # SUPPORTING A PARENT WITH PARKINSON'S DISEASE
 
-Caring for a parent with Parkinson's disease at home in Tasmania? North Tasmania's home physiotherapist explains what families need to know about mobility, falls, freezing, and how home physiotherapy helps everyone.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## What Families Need to Know About Parkinson's Disease and Home Physiotherapy
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

@@ -11,14 +11,6 @@ tags: ["chronic pain", "home physiotherapy", "physiotherapy North Tasmania", "in
 
 # CHRONIC PAIN | HOME PHYSIOTHERAPY
 
-Chronic pain affects 3.6 million Australians. North Tasmania's home physiotherapist explains how physio helps — and exactly what to expect from your first visit.
-
-Micheal Ghattas
-
-2/27/2026 · 8 min read
-
----
-
 ## Managing Chronic Pain at Home: What to Expect from a Home Physiotherapy Visit?
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

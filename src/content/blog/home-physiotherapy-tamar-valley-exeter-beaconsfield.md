@@ -12,14 +12,6 @@ tags: ["physiotherapy Exeter Tasmania", "physiotherapy Tamar Valley", "home phys
 
 # HOME PHYSIOTHERAPY TAMAR VALLEY | EXETER | BEACONSFIELD | BEAUTY POINT
 
-Home physiotherapy visits across the Tamar Valley — Exeter, Beaconsfield, Beauty Point, and West Tamar. Physio to Home brings AHPRA-registered in-home physio to the region.
-
-Micheal Ghattas
-
-25/7/2026 · 5 min read
-
----
-
 ## Physiotherapy Across Tasmania's Retirement Coast
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

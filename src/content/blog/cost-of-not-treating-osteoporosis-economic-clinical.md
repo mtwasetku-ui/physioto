@@ -11,14 +11,6 @@ tags: ["osteoporosis cost", "fracture prevention economics", "osteoporosis Austr
 
 # THE COST OF NOT TREATING OSTEOPOROSIS
 
-Osteoporosis-related fractures cost Australia over $3.8 billion annually — yet prevention remains dramatically underinvested. A North Tasmania physiotherapist examines the economic and clinical case for proactive management.
-
-Micheal Ghattas
-
-3/6/2026 · 9 min read
-
----
-
 ## The Economic and Clinical Cost of Undertreated Osteoporosis in Australia: A Case for Proactive Physiotherapy
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

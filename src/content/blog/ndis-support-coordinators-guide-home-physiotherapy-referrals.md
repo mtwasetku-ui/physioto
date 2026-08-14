@@ -12,14 +12,6 @@ tags: ["NDIS support coordinator", "NDIS physiotherapy referral", "support coord
 
 # NDIS: A SUPPORT COORDINATOR'S GUIDE TO PHYSIO REFERRALS
 
-Referring an NDIS participant for physiotherapy involves more than a phone call. North Tasmania's home physiotherapist sets out what support coordinators need to know about referrals, documentation, and funding categories.
-
-Micheal Ghattas
-
-7/13/2026 · 7 min read
-
----
-
 ## What Support Coordinators Need to Know Before Referring for Home Physiotherapy
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

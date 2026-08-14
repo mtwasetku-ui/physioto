@@ -12,14 +12,6 @@ tags: ["NDIS physiotherapist", "choosing an NDIS physiotherapist", "NDIS physiot
 
 # HOW TO CHOOSE AN NDIS PHYSIOTHERAPIST: A CHECKLIST
 
-Choosing the right NDIS physiotherapist affects your goals, your budget, and your comfort. North Tasmania's home physiotherapist shares a practical checklist for participants and families making the decision.
-
-Micheal Ghattas
-
-7/11/2026 · 7 min read
-
----
-
 ## What to Look for When Choosing a Physiotherapist Under Your NDIS Plan
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

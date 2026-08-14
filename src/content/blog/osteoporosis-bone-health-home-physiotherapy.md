@@ -12,14 +12,6 @@ tags: ["osteoporosis", "bone health", "fracture prevention", "home physiotherapy
 
 # OSTEOPOROSIS & BONE HEALTH | HOME PHYSIOTHERAPY
 
-Osteoporosis affects 1 in 3 women and 1 in 5 men over 50 in Australia. North Tasmania's home physiotherapist explains how physiotherapy builds bone strength, reduces fracture risk, and keeps you moving safely.
-
-Micheal Ghattas
-
-3/6/2026 · 8 min read
-
----
-
 ## Physiotherapy for Osteoporosis: A Guide to Bone Health and Safe Movement for Older Tasmanians
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

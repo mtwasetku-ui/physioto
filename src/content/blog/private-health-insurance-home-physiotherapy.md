@@ -12,14 +12,6 @@ tags: ["private health insurance", "extras cover", "physiotherapy rebate", "fund
 
 # PRIVATE HEALTH INSURANCE | HOME PHYSIOTHERAPY
 
-Does your private health cover home physiotherapy visits? Physio to Home explains how extras cover works, what to check with your fund, and how to get the most from your entitlements in North Tasmania.
-
-Micheal Ghattas
-
-3/6/2026 · 5 min read
-
----
-
 ## Using Private Health Insurance for Home Physiotherapy in North Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

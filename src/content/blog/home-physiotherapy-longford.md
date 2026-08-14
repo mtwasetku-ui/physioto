@@ -12,14 +12,6 @@ tags: ["physiotherapy Longford", "home physiotherapy Longford", "mobile physioth
 
 # HOME PHYSIOTHERAPY LONGFORD
 
-Home physiotherapy visits in Longford and the Northern Midlands, Tasmania. Physio to Home brings AHPRA-registered in-home physio to Longford's historic community.
-
-Micheal Ghattas
-
-25/7/2026 · 5 min read
-
----
-
 ## Physiotherapy for One of Tasmania's Oldest Communities
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

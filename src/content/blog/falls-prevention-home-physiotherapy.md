@@ -11,14 +11,6 @@ tags: ["falls prevention", "home physiotherapy", "physiotherapy North Tasmania",
 
 # FALLS PREVENTION | HOME PHYSIOTHERAPY
 
-Falls are the #1 cause of injury hospitalisation in older Australians. North Tasmania's home physiotherapist explains how to prevent them — without leaving home.
-
-Micheal Ghattas
-
-2/25/2026 · 6 min read
-
----
-
 ## How to Prevent Falls at Home: A Guide for Older Tasmanians from a Home Physiotherapist
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

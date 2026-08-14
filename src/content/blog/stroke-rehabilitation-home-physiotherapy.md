@@ -12,14 +12,6 @@ tags: ["stroke rehabilitation", "stroke recovery", "neurological physiotherapy",
 
 # STROKE REHABILITATION | HOME PHYSIOTHERAPY
 
-Returning home after a stroke is just the beginning of recovery. North Tasmania's home physiotherapist explains what stroke rehabilitation involves — and why consistency at home is what drives the best outcomes.
-
-Micheal Ghattas
-
-3/6/2026 · 8 min read
-
----
-
 ## Stroke Rehabilitation at Home: A Guide for Survivors and Families in North Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience

@@ -12,14 +12,6 @@ tags: ["My Aged Care", "Home Care Package", "aged care physiotherapy", "funded p
 
 # MY AGED CARE | HOME PHYSIOTHERAPY FUNDING
 
-Did you know your Home Care Package can fund in-home physiotherapy? North Tasmania's home physiotherapist explains exactly how My Aged Care works — and how to use it for physio visits.
-
-Micheal Ghattas
-
-3/6/2026 · 7 min read
-
----
-
 ## How to Use My Aged Care to Fund Home Physiotherapy in Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
