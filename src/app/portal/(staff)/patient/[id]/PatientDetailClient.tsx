@@ -176,12 +176,22 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
     setAnswers({})
     setExistingDraftId(null)
     // Offer the physio's own most recent draft for this patient to continue,
-    // rather than always starting blank.
+    // rather than always starting blank. If that draft is already linked to
+    // a visit, carry the link over so continuing a draft doesn't silently
+    // drop it.
     fetch(`/api/notes?patientId=${patientId}&draftOnly=true`)
       .then((r) => r.json())
       .then((data) => {
         const mine = (data.notes || []).find((n: any) => n.title === authorEmail && n.draft)
-        if (mine) setExistingDraftId(mine.id)
+        if (mine) {
+          setExistingDraftId(mine.id)
+          // Cliniko only gives us the booking as a link
+          // (".../bookings/{id}") on the note, not a flat id — pull the id
+          // off the end of that URL.
+          const bookingSelf = mine.booking?.links?.self as string | undefined
+          const existingBookingId = bookingSelf?.split('/').filter(Boolean).pop()
+          if (existingBookingId) setBookingId(existingBookingId)
+        }
       })
       .catch(() => {})
   }, [patientId, templateName, authorEmail])
@@ -234,7 +244,7 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(
         existingDraftId
-          ? { noteId: existingDraftId, templateName, sections, draft, patientId }
+          ? { noteId: existingDraftId, templateName, sections, draft, patientId, bookingId: bookingId || undefined }
           : { patientId, templateName, sections, draft, bookingId: bookingId || undefined }
       ),
     })
@@ -278,7 +288,7 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
         )}
       </div>
 
-      {!existingDraftId && appointments.length > 0 && (
+      {appointments.length > 0 && (
         <div className="mb-4">
           <label className="text-xs font-medium text-muted-foreground block mb-1">Link to visit (optional)</label>
           <select
