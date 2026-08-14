@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Trash2, Plus, Search } from 'lucide-react'
+import { Trash2, Plus, Search, Mail, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 interface AllowedEmail {
@@ -37,6 +37,28 @@ export default function AdminClient({
   const [newEmail, setNewEmail] = useState('')
   const [newDisplayName, setNewDisplayName] = useState('')
   const [assignEmail, setAssignEmail] = useState('')
+
+  // Per-address invite status, keyed by email — 'sending' | 'sent' | error string.
+  const [inviteStatus, setInviteStatus] = useState<Record<string, 'sending' | 'sent' | string>>({})
+
+  async function sendInvite(email: string, displayName?: string | null) {
+    setInviteStatus((s) => ({ ...s, [email]: 'sending' }))
+    try {
+      const res = await fetch('/api/admin/emails/invite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, displayName: displayName || undefined }),
+      })
+      if (!res.ok) {
+        const body = await res.json().catch(() => null)
+        setInviteStatus((s) => ({ ...s, [email]: body?.error || 'Failed to send' }))
+        return
+      }
+      setInviteStatus((s) => ({ ...s, [email]: 'sent' }))
+    } catch {
+      setInviteStatus((s) => ({ ...s, [email]: 'Failed to send' }))
+    }
+  }
 
   // Patient search — replaces typing a raw Cliniko patient ID by hand.
   const [patientQuery, setPatientQuery] = useState('')
@@ -81,6 +103,7 @@ export default function AdminClient({
       setEmails((e) => [email, ...e.filter((x) => x.email !== email.email)])
       setNewEmail('')
       setNewDisplayName('')
+      sendInvite(email.email, email.display_name)
     }
   }
 
@@ -156,17 +179,39 @@ export default function AdminClient({
 
         <div className="bg-white border border-border rounded-lg divide-y divide-border">
           {emails.length === 0 && <div className="p-4 text-sm text-muted-foreground">No staff added yet.</div>}
-          {emails.map((e) => (
-            <div key={e.email} className="flex items-center justify-between px-4 py-3">
-              <div>
-                <div className="text-sm font-medium text-foreground">{e.email}</div>
-                {e.display_name && <div className="text-xs text-muted-foreground">{e.display_name}</div>}
+          {emails.map((e) => {
+            const status = inviteStatus[e.email]
+            return (
+              <div key={e.email} className="flex items-center justify-between px-4 py-3">
+                <div>
+                  <div className="text-sm font-medium text-foreground">{e.email}</div>
+                  {e.display_name && <div className="text-xs text-muted-foreground">{e.display_name}</div>}
+                  {status === 'sending' && <div className="text-xs text-muted-foreground mt-0.5">Sending invite…</div>}
+                  {status === 'sent' && (
+                    <div className="text-xs text-emerald-700 mt-0.5 flex items-center gap-1">
+                      <Check className="h-3 w-3" /> Invite sent
+                    </div>
+                  )}
+                  {status && status !== 'sending' && status !== 'sent' && (
+                    <div className="text-xs text-destructive mt-0.5">{status}</div>
+                  )}
+                </div>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => sendInvite(e.email, e.display_name)}
+                    disabled={status === 'sending'}
+                    className="text-xs text-primary hover:underline flex items-center gap-1 disabled:opacity-50"
+                  >
+                    <Mail className="h-3.5 w-3.5" />
+                    {status === 'sent' ? 'Resend' : 'Send invite'}
+                  </button>
+                  <button onClick={() => removeEmail(e.email)} className="text-muted-foreground hover:text-destructive">
+                    <Trash2 className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
-              <button onClick={() => removeEmail(e.email)} className="text-muted-foreground hover:text-destructive">
-                <Trash2 className="h-4 w-4" />
-              </button>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </section>
 
