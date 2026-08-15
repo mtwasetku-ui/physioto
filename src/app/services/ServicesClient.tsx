@@ -3,6 +3,7 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Calendar, Phone } from "lucide-react";
 
 // Map condition label → blog slug (null = no matching post, renders as plain text)
 const CONDITION_LINKS: Record<string, string | null> = {
@@ -342,30 +343,30 @@ export default function ServicesPage() {
             Book your appointment today and experience professional physiotherapy in the comfort of your own home. No GP referral needed.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
-            <button style={{
+            <Link href="/booking" style={{
               display: 'inline-flex', alignItems: 'center', gap: 9,
               background: '#10b981', color: '#fff', fontWeight: 700,
               border: 'none', borderRadius: 12, padding: '16px 32px', fontSize: 17,
               cursor: 'pointer', boxShadow: '0 8px 24px rgba(16,185,129,0.35)',
-              transition: 'background 0.15s, transform 0.15s'
+              transition: 'background 0.15s, transform 0.15s', textDecoration: 'none'
             }}
               onMouseEnter={e => { e.currentTarget.style.background = '#34d399'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
               onMouseLeave={e => { e.currentTarget.style.background = '#10b981'; e.currentTarget.style.transform = 'none'; }}
             >
-              📅 Book Your Appointment
-            </button>
-            <button style={{
+              <Calendar size={18} /> Book Your Appointment
+            </Link>
+            <a href="tel:1300433233" style={{
               display: 'inline-flex', alignItems: 'center', gap: 9,
               background: 'rgba(255,255,255,0.08)', color: '#fff',
               border: '1px solid rgba(255,255,255,0.18)', borderRadius: 12,
               padding: '16px 32px', fontSize: 17, cursor: 'pointer',
-              transition: 'background 0.15s'
+              transition: 'background 0.15s', textDecoration: 'none'
             }}
               onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.14)'}
               onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
             >
-              📞 1300 433 233
-            </button>
+              <Phone size={18} /> 1300 433 233
+            </a>
           </div>
         </div>
       </section>
