@@ -451,22 +451,6 @@ export async function searchPatients(query: string, limit = 8): Promise<ClinikoP
   return Array.from(merged.values()).slice(0, limit)
 }
 
-// ── Availability (so the booking form can't offer a slot Cliniko would reject) ──
-
-// Nested under business + practitioner + appointment type — this is the
-// one sub-resource that actually lives at that nested path (everything
-// else here uses the flat /practitioners/{id}/... form, per the comment
-// on listAppointmentTypesForPractice above).
-export async function getAvailableTimes(appointmentTypeId: string, fromDate: string, toDate: string) {
-  if (!BUSINESS_ID || !PRACTITIONER_ID) {
-    throw new Error('CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are not set')
-  }
-  const data = await clinikoFetch(
-    `/businesses/${BUSINESS_ID}/practitioners/${PRACTITIONER_ID}/appointment_types/${appointmentTypeId}/available_times?from=${fromDate}&to=${toDate}`
-  )
-  return data.available_times ?? []
-}
-
 // ── Appointments for a single patient (note-linking picker) ──────
 
 // Recent past (default 30 days) plus all upcoming, ascending by time, so
