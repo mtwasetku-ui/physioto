@@ -10,8 +10,12 @@ const CONDITION_LINKS: Record<string, string | null> = {
   'Lower back pain':          'lower-back-pain-home-treatment',
   'Neck pain & stiffness':    'neck-pain-cervicogenic-headache-home-physiotherapy',
   'Shoulder impingement':     'rotator-cuff-shoulder-rehabilitation',
-  'Hip & knee pain':          'knee-osteoarthritis-home-physiotherapy',
+  'Frozen shoulder':          'frozen-shoulder-adhesive-capsulitis-home-physiotherapy',
+  'Hip pain':                 'hip-osteoarthritis-home-physiotherapy',
+  'Knee pain':                'knee-osteoarthritis-home-physiotherapy',
   'Sciatica':                 'sciatica-lumbar-radiculopathy-home-physiotherapy',
+  'Plantar fasciitis & heel pain': 'plantar-fasciitis-heel-pain-home-physiotherapy',
+  "Tennis & golfer's elbow":  'tennis-elbow-golfers-elbow-home-physiotherapy',
   'Sports injuries':          null,
 
   // Post-surgery
@@ -69,7 +73,7 @@ const services = [
     photo: 'image/blog/neck-pain-cervicogenic-headache-home-physiotherapy.jpg',
     summary: 'Back, neck, hip, shoulder and joint pain treated with hands-on manual therapy and targeted exercise, adapted to your home environment.',
     detail: 'We assess and treat the full spectrum of musculoskeletal conditions — from acute injuries to long-standing chronic pain. Treatment is tailored to your home, using your furniture, floor space, and daily routines as part of the rehabilitation process.',
-    conditions: ['Lower back pain', 'Neck pain & stiffness', 'Shoulder impingement', 'Hip & knee pain', 'Sciatica', 'Sports injuries'],
+    conditions: ['Lower back pain', 'Neck pain & stiffness', 'Shoulder impingement', 'Frozen shoulder', 'Hip pain', 'Knee pain', 'Sciatica', 'Plantar fasciitis & heel pain', "Tennis & golfer's elbow", 'Sports injuries'],
   },
   {
     id: 'post-surgery',
