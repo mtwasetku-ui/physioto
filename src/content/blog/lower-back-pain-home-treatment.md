@@ -14,7 +14,7 @@ tags: ["lower back pain", "home treatment", "physiotherapy North Tasmania", "in-
 
 ## Lower Back Pain in Older Adults: What You Can Treat at Home and When to See a Physiotherapist
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -220,7 +220,7 @@ Book a home physiotherapy assessment for your back pain today →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal physiotherapy, chronic pain management, falls prevention, and post-surgical rehabilitation — all delivered in the home setting.
 

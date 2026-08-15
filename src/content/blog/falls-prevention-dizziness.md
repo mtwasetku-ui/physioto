@@ -13,7 +13,7 @@ tags: ["falls prevention", "dizziness", "vertigo", "BPPV", "physiotherapy North 
 
 ## When Is Dizziness a Fall Risk? What Older Tasmanians and Their Families Need to Know
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -269,7 +269,7 @@ Book a home dizziness and falls risk assessment today →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in vestibular physiotherapy, falls prevention, and aged care — all delivered in the home setting.
 

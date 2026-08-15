@@ -14,7 +14,7 @@ tags: ["physiotherapy Deloraine", "home physiotherapy Deloraine", "mobile physio
 
 ## Physiotherapy in the Meander Valley, Delivered to Your Door
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: July 2026
 
@@ -100,7 +100,7 @@ We aim to see new Deloraine patients within 1–2 weeks of enquiry. For urgent s
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 18 years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including the Meander Valley and Deloraine region.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including the Meander Valley and Deloraine region.
 
 ---
 

@@ -13,7 +13,7 @@ tags: ["falls prevention family", "elderly parent falls", "aged care Tasmania", 
 
 ## What Families Need to Know About Falls Risk in Ageing Parents
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -165,7 +165,7 @@ Book a home falls risk assessment for your parent today →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation for complex presentations.
 

@@ -14,7 +14,7 @@ tags: ["long COVID physiotherapy", "post-COVID fatigue", "long COVID Tasmania", 
 
 ## Post-COVID Syndrome: How Home Physiotherapy Helps Recovery
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -134,7 +134,7 @@ Book your home visit today →
 
 ## About the Author
 
-Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 Founder, Physio to Home — North Tasmania's home physiotherapy service.
 
 ---

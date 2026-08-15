@@ -13,7 +13,7 @@ tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home phys
 
 ## The Role of Footwear in Preventing Falls: What Older Tasmanians Need to Know
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -183,7 +183,7 @@ Book your home falls risk assessment today →
 
 ## About the Author — Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation.
 

@@ -14,7 +14,7 @@ tags: ["sciatica", "lumbar radiculopathy", "leg pain", "back pain", "home physio
 
 ## Managing Sciatica and Lumbar Radiculopathy at Home: A Guide from a North Tasmania Home Physiotherapist
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -171,7 +171,7 @@ Book your first home visit today →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in lumbar spine rehabilitation, chronic pain management, and home-based physiotherapy for complex musculoskeletal presentations.
 

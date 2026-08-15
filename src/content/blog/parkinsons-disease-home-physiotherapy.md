@@ -14,7 +14,7 @@ tags: ["Parkinson's disease", "neurological physiotherapy", "home physiotherapy"
 
 ## Physiotherapy for Parkinson's Disease at Home: A Guide for Tasmanians and Their Families
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -194,7 +194,7 @@ Book your first home visit today — we cover all of North Tasmania →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
 

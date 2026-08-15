@@ -14,7 +14,7 @@ tags: ["NDIS physiotherapy goals", "NDIS plan review", "writing NDIS goals", "ND
 
 ## Why the Way You Write Your Goals Affects Your Physiotherapy Funding
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: July 2026
 
@@ -129,7 +129,7 @@ Contact us today to discuss your situation — no obligation, no cost →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and disability-related physiotherapy delivered entirely in the home setting.
 

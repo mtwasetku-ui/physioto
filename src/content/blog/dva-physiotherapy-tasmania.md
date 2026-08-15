@@ -15,7 +15,7 @@ tags: ["DVA", "DVA physiotherapy", "veterans physiotherapy Tasmania", "Gold Card
 
 ## DVA-Funded Home Physiotherapy for Veterans in Tasmania
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, Tasmania | Last reviewed: July 2026
 
@@ -146,7 +146,7 @@ Contact us today — no obligation, no cost →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving veterans, older adults, and rural residents across Tasmania. He has experience working with clients managing chronic pain, musculoskeletal injuries, and age-related conditions in the home setting.
 

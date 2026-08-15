@@ -14,7 +14,7 @@ tags: ["osteoporosis", "bone health", "fracture prevention", "home physiotherapy
 
 ## Physiotherapy for Osteoporosis: A Guide to Bone Health and Safe Movement for Older Tasmanians
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -162,7 +162,7 @@ Book your first home visit today →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and bone health management delivered entirely in the home setting.
 

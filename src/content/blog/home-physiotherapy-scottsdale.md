@@ -14,7 +14,7 @@ tags: ["physiotherapy Scottsdale", "home physiotherapy Scottsdale", "mobile phys
 
 ## Bringing Physiotherapy to Tasmania's Northeast
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: July 2026
 
@@ -100,7 +100,7 @@ Typically within 1–2 weeks of enquiry. For urgent situations, contact us direc
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 18 years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including the northeast region.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including the northeast region.
 
 ---
 

@@ -14,7 +14,7 @@ tags: ["physiotherapy Launceston", "home physiotherapy Launceston", "mobile phys
 
 ## Physiotherapy at Your Door, Anywhere in Launceston
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, Launceston | Last reviewed: July 2026
 
@@ -36,7 +36,7 @@ For older adults, people recovering from surgery, and anyone managing a conditio
 
 Physio to Home is not a single-physiotherapist operation — it's a growing team of AHPRA-registered physiotherapists based in and around Launceston, each bringing their own clinical focus, from musculoskeletal and orthopaedic rehabilitation to neurological conditions, vestibular rehabilitation, and aged care. Wherever possible, we aim to match you with a physiotherapist who suits your specific needs and keep that same physiotherapist assigned to your ongoing care, so you're not re-explaining your history at every visit.
 
-Founder Micheal Ghattas, DPT, has 18 years of clinical experience across Egypt, Kuwait, and Australia, with a particular interest in cervicogenic dizziness, falls prevention, and aged care physiotherapy — a specialist combination not widely available elsewhere in the region.
+Founder Micheal Ghattas, DPT, has 15+ years of clinical experience across Egypt, Kuwait, and Australia, with a particular interest in cervicogenic dizziness, falls prevention, and aged care physiotherapy — a specialist combination not widely available elsewhere in the region.
 
 You can read more about the full team on our [team page](/team).
 
@@ -123,7 +123,7 @@ Ready to get started? Contact Physio to Home to book your initial home visit in 
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 18 years of clinical experience, supported by a growing team of physiotherapists serving Launceston and North Tasmania. The team specialises in aged care physiotherapy, falls prevention, neurological rehabilitation, vestibular rehabilitation, and post-surgical care — all delivered entirely in the home setting.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a growing team of physiotherapists serving Launceston and North Tasmania. The team specialises in aged care physiotherapy, falls prevention, neurological rehabilitation, vestibular rehabilitation, and post-surgical care — all delivered entirely in the home setting.
 
 ---
 

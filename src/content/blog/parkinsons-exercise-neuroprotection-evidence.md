@@ -14,7 +14,7 @@ tags: ["Parkinson's disease exercise", "neuroprotection Parkinson's", "exercise 
 
 ## Exercise as Disease Modification in Parkinson's Disease: What the Evidence Says and Why It Matters Clinically
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -153,7 +153,7 @@ In rural North Tasmania, home-based physiotherapy delivery is the most practical
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has a particular interest in neurological physiotherapy and the emerging evidence base for exercise as disease modification in Parkinson's disease.
 

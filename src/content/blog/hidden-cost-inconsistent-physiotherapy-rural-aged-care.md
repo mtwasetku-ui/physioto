@@ -14,7 +14,7 @@ tags: ["rural aged care", "physiotherapy consistency", "deconditioning older adu
 
 ## The Invisible Harm: What Inconsistent Physiotherapy Does to Older Adults in Rural Communities
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -132,7 +132,7 @@ For care coordinators and Home Care Package providers in North Tasmania, the pra
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has a clinical and advocacy interest in rural aged care physiotherapy quality and the role of home-based delivery in addressing the systemic consistency gap in rural community care.
 

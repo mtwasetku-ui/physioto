@@ -14,7 +14,7 @@ tags: ["physiotherapy vs surgery knee", "knee replacement decision", "knee arthr
 
 ## Physiotherapy vs Surgery for Knee Osteoarthritis: What Does the Evidence Actually Say?
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -133,7 +133,7 @@ Book your home assessment today →
 
 ## About the Author
 
-Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 Founder, Physio to Home — North Tasmania's home physiotherapy service.
 
 ---

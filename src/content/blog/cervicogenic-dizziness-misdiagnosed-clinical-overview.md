@@ -13,7 +13,7 @@ tags: ["cervicogenic dizziness", "dizziness diagnosis", "neck dizziness", "vesti
 
 ## Cervicogenic Dizziness: A Clinical Overview for Patients, Families, and Referring Clinicians
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -170,7 +170,7 @@ For GPs managing patients with chronic dizziness in North Tasmania, Physio to Ho
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving North Tasmania. He has specialist training in the assessment and treatment of cervicogenic dizziness and cervicogenic headache, and manages complex cervical presentations as a primary clinical focus.
 

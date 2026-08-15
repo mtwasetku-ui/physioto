@@ -13,7 +13,7 @@ tags: ["exercise with arthritis", "arthritis exercise safe", "how to exercise ar
 
 ## How to Exercise Safely With Arthritis: A Practical Guide
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -127,7 +127,7 @@ Book your home visit today →
 
 ## About the Author
 
-Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 Founder, Physio to Home — North Tasmania's home physiotherapy service.
 
 ---

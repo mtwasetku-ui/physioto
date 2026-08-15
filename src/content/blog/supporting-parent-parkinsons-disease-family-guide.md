@@ -14,7 +14,7 @@ tags: ["Parkinson's disease family guide", "caring for parent Parkinson's", "Par
 
 ## What Families Need to Know About Parkinson's Disease and Home Physiotherapy
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -162,7 +162,7 @@ Contact us today — for your parent, and for you →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
 

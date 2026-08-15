@@ -13,7 +13,7 @@ tags: ["falls prevention", "home physiotherapy", "physiotherapy North Tasmania",
 
 ## How to Prevent Falls at Home: A Guide for Older Tasmanians from a Home Physiotherapist
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -177,7 +177,7 @@ Contact us to book a falls risk assessment in your home →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and post-surgical rehabilitation in the home setting.
 

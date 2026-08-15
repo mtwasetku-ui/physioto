@@ -14,7 +14,7 @@ tags: ["plantar fasciitis", "heel pain", "foot pain physiotherapy", "plantar fas
 
 ## Plantar Fasciitis: Why Heel Pain Is So Stubborn — and How Physiotherapy Fixes It
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -126,7 +126,7 @@ Book your home visit today →
 
 ## About the Author
 
-Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 Founder, Physio to Home — North Tasmania's home physiotherapy service.
 
 ---

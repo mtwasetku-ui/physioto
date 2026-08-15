@@ -14,7 +14,7 @@ tags: ["knee osteoarthritis", "knee pain", "home physiotherapy", "physiotherapy 
 
 ## Managing Knee Osteoarthritis at Home: A Guide from a North Tasmania Home Physiotherapist
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -210,7 +210,7 @@ Book your first home visit today — and find out what moving with less pain fee
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
 

@@ -14,7 +14,7 @@ tags: ["physiotherapy George Town", "home physiotherapy George Town", "mobile ph
 
 ## In-Home Physiotherapy at the Mouth of the Tamar
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: July 2026
 
@@ -101,7 +101,7 @@ Typically within 1–2 weeks of enquiry. For urgent situations, such as a recent
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 18 years of clinical experience, supported by a team of physiotherapists serving North Tasmania, including George Town and the Tamar estuary area.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving North Tasmania, including George Town and the Tamar estuary area.
 
 ---
 

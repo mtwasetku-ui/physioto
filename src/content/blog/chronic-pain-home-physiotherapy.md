@@ -13,7 +13,7 @@ tags: ["chronic pain", "home physiotherapy", "physiotherapy North Tasmania", "in
 
 ## Managing Chronic Pain at Home: What to Expect from a Home Physiotherapy Visit?
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -183,7 +183,7 @@ Book your first home visit today — and find out what life with better pain man
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in chronic pain management, falls prevention, and post-surgical rehabilitation delivered entirely in the home setting.
 

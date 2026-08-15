@@ -13,7 +13,7 @@ tags: ["frozen shoulder", "adhesive capsulitis", "shoulder pain", "shoulder stif
 
 ## Frozen Shoulder: A Complete Guide to Adhesive Capsulitis and How Home Physiotherapy Helps
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
@@ -182,7 +182,7 @@ Book your first home visit today →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in shoulder rehabilitation, musculoskeletal physiotherapy, and home-based care for complex presentations.
 
