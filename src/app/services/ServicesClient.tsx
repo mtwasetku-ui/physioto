@@ -69,60 +69,52 @@ const CONDITION_LINKS: Record<string, string | null> = {
 
 const services = [
   {
-    id: 'musculoskeletal',
-    name: 'Musculoskeletal Pain',
-    photo: 'image/blog/neck-pain-cervicogenic-headache-home-physiotherapy.jpg',
-    summary: 'Back, neck, hip, shoulder and joint pain treated with hands-on manual therapy and targeted exercise, adapted to your home environment.',
-    detail: 'We assess and treat the full spectrum of musculoskeletal conditions — from acute injuries to long-standing chronic pain. Treatment is tailored to your home, using your furniture, floor space, and daily routines as part of the rehabilitation process.',
-    conditions: ['Lower back pain', 'Neck pain & stiffness', 'Shoulder impingement', 'Frozen shoulder', 'Hip pain', 'Knee pain', 'Sciatica', 'Plantar fasciitis & heel pain', "Tennis & golfer's elbow", 'Sports injuries'],
+    id: 'falls-prevention',
+    name: 'Falls Prevention & Balance',
+    photo: 'image/blog/falls-prevention-dizziness.jpg',
+    summary: 'A full balance, strength and home-hazard assessment carried out in the environment where falls actually happen — your own home.',
+    detail: 'Falls are a leading cause of injury in older Australians, but most are preventable — and the risk factors are often specific to a person\u2019s own home. We assess your balance, strength, gait, dizziness, and home hazards on-site, then build a program to address exactly what puts you at risk.',
+    conditions: ['Balance impairment', 'Dizziness & vertigo', 'Cervicogenic dizziness', 'Recurrent falls', 'Fear of falling', "Parkinson's disease", 'Post-stroke balance issues'],
   },
   {
     id: 'post-surgery',
     name: 'Post-Surgery Rehabilitation',
     photo: 'image/blog/post-surgery-knee-replacement.jpg',
-    summary: 'Expert recovery support following joint replacements, fractures, and orthopaedic surgery — progressing you safely toward full independence.',
+    summary: 'Recovery support for the weeks after surgery when getting to a clinic isn\u2019t realistic — delivered on your schedule, in your home.',
     detail: 'Recovering at home after surgery is most effective when guided by an experienced physiotherapist who can see your actual environment. We develop a progressive program that rebuilds strength, mobility, and confidence — right where you live.',
     conditions: ['Hip replacement', 'Knee replacement', 'Rotator cuff repair', 'Spinal surgery', 'Fracture recovery', 'ACL reconstruction'],
-  },
-  {
-    id: 'falls-prevention',
-    name: 'Falls Prevention',
-    photo: 'image/blog/falls-prevention-dizziness.jpg',
-    summary: 'Comprehensive balance and strength assessment in your own home, followed by a structured program designed to meaningfully reduce falls risk.',
-    detail: 'Falls are a leading cause of injury in older Australians — but most are preventable. We assess your balance, strength, gait, and home hazards, then design a personalised program to address your specific risk factors.',
-    conditions: ['Balance impairment', 'Dizziness & vertigo', 'Recurrent falls', 'Fear of falling', "Parkinson's disease", 'Post-stroke balance issues'],
-  },
-  {
-    id: 'neurological',
-    name: 'Neurological Rehabilitation',
-    photo: 'image/blog/stroke-rehabilitation-home-physiotherapy.jpg',
-    summary: "Specialised rehabilitation for stroke, Parkinson's disease, multiple sclerosis, and other neurological conditions — delivered at home.",
-    detail: 'Neurological rehabilitation requires consistency and a familiar environment. Treating you at home allows us to address the real functional challenges you face each day. We use evidence-based techniques to maximise your independence and quality of life.',
-    conditions: ['Stroke recovery', "Parkinson's disease", 'Multiple sclerosis', 'Acquired brain injury', 'Cervicogenic dizziness', 'Peripheral neuropathy'],
   },
   {
     id: 'aged-care',
     name: 'Aged Care & Mobility',
     photo: 'image/blog/parkinsons-disease-home-physiotherapy.jpg',
-    summary: 'Compassionate, patient-centred physiotherapy for older Australians — supporting independence, dignity, and quality of life at home.',
+    summary: 'Ongoing, compassionate physiotherapy for older Australians who want to stay independent at home for longer, not move into care sooner.',
     detail: 'We understand that maintaining independence is what matters most to older Australians and their families. Our aged care physiotherapy addresses mobility, strength, pain, and daily function — helping you or your loved one stay safely at home for longer.',
     conditions: ['Mobility decline', 'Osteoporosis', 'Osteoarthritis', 'General deconditioning', 'Aged care assessments', 'Home exercise programs'],
+  },
+  {
+    id: 'neurological',
+    name: 'Neurological Physiotherapy',
+    photo: 'image/blog/stroke-rehabilitation-home-physiotherapy.jpg',
+    summary: "Consistent, home-based rehabilitation for stroke, Parkinson's disease, MS and other neurological conditions where travel itself is a barrier.",
+    detail: 'Neurological rehabilitation requires consistency and a familiar environment. Treating you at home allows us to address the real functional challenges you face each day. We use evidence-based techniques to maximise your independence and quality of life.',
+    conditions: ['Stroke recovery', "Parkinson's disease", 'Multiple sclerosis', 'Acquired brain injury', 'Peripheral neuropathy'],
+  },
+  {
+    id: 'musculoskeletal',
+    name: 'Back, Neck & Joint Pain',
+    photo: 'image/blog/neck-pain-cervicogenic-headache-home-physiotherapy.jpg',
+    summary: 'Hands-on manual therapy and targeted exercise for everyday aches and injuries, fitted around your home and daily routine.',
+    detail: 'We assess and treat the full spectrum of musculoskeletal conditions — from acute injuries to long-standing pain. Treatment is tailored to your home, using your furniture, floor space, and daily routines as part of the rehabilitation process.',
+    conditions: ['Lower back pain', 'Neck pain & stiffness', 'Shoulder impingement', 'Frozen shoulder', 'Hip pain', 'Knee pain', 'Sciatica', 'Plantar fasciitis & heel pain', "Tennis & golfer's elbow", 'Sports injuries'],
   },
   {
     id: 'chronic-pain',
     name: 'Chronic Pain Management',
     photo: 'image/blog/chronic-pain-rural-tasmania.jpg',
-    summary: 'Evidence-based approaches to managing persistent pain, restoring function, and improving quality of life — without leaving home.',
+    summary: 'Evidence-based, pain-science-led care for persistent pain that hasn\u2019t responded to a quick fix — without adding travel to your load.',
     detail: 'Chronic pain is complex, but manageable. We combine hands-on treatment, graded exercise, education, and pain science to help you understand and gradually overcome persistent pain.',
-    conditions: ['Fibromyalgia', 'Chronic lower back pain', 'Complex regional pain', 'Persistent joint pain', 'Post-COVID fatigue', 'Pain sensitisation'],
-  },
-  {
-    id: 'ndis-funding',
-    name: 'NDIS & Funding Support',
-    photo: 'image/blog/ndis-home-physiotherapy-funding.jpg',
-    summary: 'Clear, practical guidance on accessing and funding home physiotherapy through the NDIS, My Aged Care, and other schemes.',
-    detail: 'Navigating funding shouldn\u2019t be a barrier to getting the physiotherapy you need. We work directly with participants, families, and support coordinators to make eligibility, goal-setting, and plan reviews straightforward.',
-    conditions: ['NDIS eligibility & funding', 'Choosing an NDIS physiotherapist', 'Functional capacity assessments', 'Writing NDIS goals & plan reviews', 'NDIS support coordinators', 'My Aged Care vs NDIS'],
+    conditions: ['Fibromyalgia', 'Complex regional pain', 'Persistent joint pain', 'Post-COVID fatigue', 'Pain sensitisation'],
   },
 ];
 
@@ -258,13 +250,22 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
       </div>
 
       <div style={{ padding: '18px 22px', background: '#fff' }}>
-        <button onClick={() => setOpen(o => !o)} style={{
+        <span style={{
           display: 'inline-flex', alignItems: 'center', gap: 6,
-          background: 'none', border: 'none', cursor: 'pointer',
-          color: '#059669', fontWeight: 700, fontSize: 16, padding: 0
+          background: '#ecfdf5', border: '1px solid #a7f3d0', borderRadius: 999,
+          padding: '4px 11px', fontSize: 12.5, fontWeight: 700, color: '#047857', marginBottom: 12
         }}>
-          {open ? 'Show less' : 'Learn more'} <ChevronDown open={open} />
-        </button>
+          <CheckCircle size={12} /> NDIS funding accepted
+        </span>
+        <div>
+          <button onClick={() => setOpen(o => !o)} style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            background: 'none', border: 'none', cursor: 'pointer',
+            color: '#059669', fontWeight: 700, fontSize: 16, padding: 0
+          }}>
+            {open ? 'Show less' : 'Learn more'} <ChevronDown open={open} />
+          </button>
+        </div>
         {open && (
           <div style={{ marginTop: 16, borderTop: '1px solid #f1f5f9', paddingTop: 16 }}>
             <p style={{ margin: '0 0 14px', color: '#475569', fontSize: 16, lineHeight: 1.65 }}>{service.detail}</p>
