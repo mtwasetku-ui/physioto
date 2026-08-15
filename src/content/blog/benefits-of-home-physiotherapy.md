@@ -13,11 +13,11 @@ tags: ["benefits of home physiotherapy", "in-home physiotherapy", "mobile physio
 
 ## Why Home Physiotherapy Works Better Than Most People Expect
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: March 2025
 
-When people first hear about home physiotherapy, they often assume it's a second-best option — something you settle for if you can't get to a clinic. After 18 years of working as a physiotherapist, the last several delivering care exclusively in people's homes, I want to address that assumption directly: it's wrong.
+When people first hear about home physiotherapy, they often assume it's a second-best option — something you settle for if you can't get to a clinic. After 15+ years of working as a physiotherapist, the last several delivering care exclusively in people's homes, I want to address that assumption directly: it's wrong.
 
 For most of the patients I treat — older adults managing falls risk, people recovering from hip or knee replacement, Tasmanians living with neurological conditions, people in rural and regional areas where clinic access is genuinely limited — home physiotherapy doesn't just match clinic-based care. In meaningful, measurable ways, it works better.
 
@@ -153,7 +153,7 @@ Yes — the full range of musculoskeletal, neurological, and aged care condition
 
 ## Book a Home Visit
 
-Same-week appointments are available across Launceston and surrounding North Tasmania. No GP referral required.
+Same-week appointments are available across Tasmania. No GP referral required.
 
 **Call:** 1300 433 233
 **Email:** info@physiotohome.com
@@ -162,7 +162,7 @@ Same-week appointments are available across Launceston and surrounding North Tas
 
 ## About the Author
 
-Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 Founder, Physio to Home — North Tasmania's home physiotherapy service.
 
 ---

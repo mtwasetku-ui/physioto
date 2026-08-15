@@ -14,7 +14,7 @@ tags: ["mobile physiotherapy", "home visits", "physiotherapy North Tasmania", "i
 
 ## Mobile Physiotherapy in North Tasmania: How to Book and What to Expect
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
 Physio to Home, North Tasmania | Last reviewed: February 2026
 
@@ -150,9 +150,9 @@ Understanding your condition is a core part of physiotherapy — not an optional
 
 ---
 
-## Our Service Area in North Tasmania
+## Our Service Area Across Tasmania
 
-Physio to Home currently provides mobile physiotherapy services across North Tasmania, including the following areas. If you are unsure whether your location is within our service area, please contact us — we will always do our best to accommodate.
+Physio to Home provides mobile physiotherapy services across the whole of Tasmania, including the following areas. If you are unsure whether your location is within our service area, please contact us — we will always do our best to accommodate.
 
 - Launceston and greater Launceston metropolitan area
 
@@ -165,6 +165,10 @@ Physio to Home currently provides mobile physiotherapy services across North Tas
 - Westbury, Longford, and the northern midlands
 
 - Beauty Point, Beaconsfield, and the upper Tamar Valley
+
+- Devonport, Burnie, and the North West Coast
+
+- Hobart and the greater southern region
 
 ### Not sure if we cover your area?
 
@@ -272,7 +276,7 @@ No referral required for private bookings. Funding check at no cost.
 
 ## About the Author — Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
 Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specializes in falls prevention, chronic pain management, post-surgical rehabilitation, and aged care physiotherapy — all delivered in the home setting.
 

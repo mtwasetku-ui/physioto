@@ -7,16 +7,16 @@ category: "Funding & Access"
 featured: false
 image: /image/blog/mobile-physiotherapy-home-visits.jpg
 
-tags: ["NDIS physiotherapist", "choosing an NDIS physiotherapist", "NDIS physiotherapy Tasmania", "disability physiotherapy", "in-home physio NDIS", "NDIS provider checklist", "Physio to Home", "North Tasmania", "allied health NDIS", "NDIS self-managed"]
+tags: ["NDIS physiotherapist", "choosing an NDIS physiotherapist", "NDIS physiotherapy Tasmania", "disability physiotherapy", "in-home physio NDIS", "NDIS provider checklist", "Physio to Home", "Tasmania", "allied health NDIS", "NDIS self-managed"]
 ---
 
 # HOW TO CHOOSE AN NDIS PHYSIOTHERAPIST: A CHECKLIST
 
 ## What to Look for When Choosing a Physiotherapist Under Your NDIS Plan
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 18 Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania | Last reviewed: July 2026
 
 NDIS participants — particularly those who are self-managed or plan-managed — have real choice over who delivers their physiotherapy. That's a significant advantage over more restrictive funding systems, but it also means the decision sits with you, your family, or your support coordinator. Getting it right matters: physiotherapy under the NDIS is usually an ongoing, long-term relationship, not a single appointment.
 
@@ -24,7 +24,7 @@ This guide sets out a practical checklist to help you choose a physiotherapist w
 
 ### Who this guide is for
 
-NDIS participants, families, carers, and support coordinators in North Tasmania who are choosing a physiotherapist for the first time, or reviewing whether their current provider is the right fit.
+NDIS participants, families, carers, and support coordinators across Tasmania who are choosing a physiotherapist for the first time, or reviewing whether their current provider is the right fit.
 
 ---
 
@@ -131,9 +131,9 @@ Pricing is set within NDIS price guide limits regardless of setting, though a mo
 
 ---
 
-## Ready to Find the Right NDIS Physiotherapist in North Tasmania?
+## Ready to Find the Right NDIS Physiotherapist in Tasmania?
 
-Physio to Home provides experienced, AHPRA-registered physiotherapy delivered entirely in the home, across North Tasmania. We work with NDIS participants, families, and support coordinators, and we're happy to have an initial conversation with no obligation before you decide.
+Physio to Home provides experienced, AHPRA-registered physiotherapy delivered entirely in the home, across Tasmania. We work with NDIS participants, families, and support coordinators, and we're happy to have an initial conversation with no obligation before you decide.
 
 Contact us today to discuss your situation — no obligation, no cost →
 
@@ -143,9 +143,9 @@ Contact us today to discuss your situation — no obligation, no cost →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 18 Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and disability-related physiotherapy delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in neurological rehabilitation, falls prevention, and disability-related physiotherapy delivered entirely in the home setting.
 
 ---
 
