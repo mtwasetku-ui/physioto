@@ -2,11 +2,13 @@ import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 
-// TEMP DIAGNOSTIC — safe to delete once CLINIKO_PRACTITIONER_ID is confirmed.
-// Cliniko's "Practitioner" and "User" are separate resources with separate
-// IDs (see https://docs.api.cliniko.com/openapi/practitioner). Settings →
-// Users gives you a User ID, not necessarily the Practitioner ID the API
-// needs. This calls GET /practitioners directly so we can see the real
+// Backs the practitioner picker on the admin Staff page (see
+// /api/admin/practitioner-link and AdminClient.tsx) — lets admin link each
+// physio's portal account to their real Cliniko practitioner id. Cliniko's
+// "Practitioner" and "User" are separate resources with separate IDs (see
+// https://docs.api.cliniko.com/openapi/practitioner). Settings → Users
+// gives you a User ID, not necessarily the Practitioner ID the API needs.
+// This calls GET /practitioners directly so we can see the real
 // practitioner id alongside the linked user, name-matched to confirm.
 export async function GET() {
   const session = await getServerSession(authOptions)
