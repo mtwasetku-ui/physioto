@@ -137,6 +137,41 @@ const fundingOptions: { emoji: string; label: string; desc: string; slug: string
 
 const badges = ['No GP Referral Required', 'AHPRA Registered', 'Same-Week Appointments', 'NDIS Welcome'];
 
+const faqs: { question: string; answer: string }[] = [
+  {
+    question: 'Do you come to apartments and retirement villages?',
+    answer: 'Yes. We treat clients in houses, units, apartments, retirement villages and residential aged care — wherever you call home.',
+  },
+  {
+    question: 'Do I need a GP referral to book?',
+    answer: "No GP referral is needed for private clients — you can book directly. If you're claiming through Medicare (Chronic Disease Management Plan), DVA, or an NDIS plan, your funding pathway may have its own referral or plan requirements, which we can help you check.",
+  },
+  {
+    question: 'Can I use my NDIS plan?',
+    answer: 'Yes, for self-managed and plan-managed NDIS participants. As an unregistered provider we\u2019re unable to see agency-managed participants.',
+  },
+  {
+    question: 'Can I use my Home Care Package or My Aged Care funding?',
+    answer: 'Yes, we accept My Aged Care and CHSP referrals, as well as Home Care Package funding for eligible clients.',
+  },
+  {
+    question: 'How soon can you visit?',
+    answer: 'We aim to offer same-week appointments in most cases. Call us and we\u2019ll let you know the soonest availability for your area.',
+  },
+  {
+    question: 'Do you treat Parkinson\u2019s disease and other neurological conditions?',
+    answer: 'Yes. We provide home-based neurological rehabilitation for stroke, Parkinson\u2019s disease, multiple sclerosis and other neurological conditions.',
+  },
+  {
+    question: 'Can you help after hospital discharge?',
+    answer: 'Yes. We regularly support clients transitioning home after surgery or a hospital stay, including joint replacements, fractures, and general deconditioning.',
+  },
+  {
+    question: 'What areas do you service?',
+    answer: 'We\u2019re based in Launceston and service Launceston and the surrounding area. Get in touch and we\u2019ll confirm whether we cover your suburb.',
+  },
+];
+
 function CheckCircle({ size = 14 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -172,6 +207,29 @@ function ConditionItem({ label }: { label: string }) {
         <span>{label}</span>
       )}
     </li>
+  );
+}
+
+function FaqItem({ faq, open, onToggle }: { faq: { question: string; answer: string }; open: boolean; onToggle: () => void }) {
+  return (
+    <div style={{ borderBottom: '1px solid #e2e8f0' }}>
+      <button
+        onClick={onToggle}
+        style={{
+          width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          gap: 16, background: 'none', border: 'none', cursor: 'pointer',
+          padding: '20px 4px', textAlign: 'left', color: '#0f172a', font: 'inherit'
+        }}
+      >
+        <span style={{ fontSize: 17, fontWeight: 700 }}>{faq.question}</span>
+        <span style={{ color: '#059669', flexShrink: 0 }}><ChevronDown open={open} /></span>
+      </button>
+      {open && (
+        <p style={{ margin: '0 0 20px', padding: '0 4px', color: '#475569', fontSize: 15.5, lineHeight: 1.7 }}>
+          {faq.answer}
+        </p>
+      )}
+    </div>
   );
 }
 
@@ -225,11 +283,22 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
 
 export default function ServicesPage() {
   const [visible, setVisible] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 50);
     return () => clearTimeout(t);
   }, []);
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  };
 
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom, #f0fdf9, #fff)', fontFamily: 'system-ui, sans-serif' }}>
@@ -330,6 +399,24 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <section style={{ maxWidth: 800, margin: '0 auto', padding: '80px 24px' }}>
+        <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 44 }}>
+          <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, margin: '0 auto 22px' }} />
+          <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(30px, 4vw, 42px)', color: '#0f172a', margin: '0 0 12px' }}>Frequently Asked Questions</h2>
+          <p style={{ color: '#475569', fontSize: 16, maxWidth: 440, margin: '0 auto' }}>Answers to the questions we hear most before a first visit.</p>
+        </div>
+        <div className={`fade-in ${visible ? 'in' : ''}`}>
+          {faqs.map((faq, i) => (
+            <FaqItem key={faq.question} faq={faq} open={openFaq === i} onToggle={() => setOpenFaq(openFaq === i ? null : i)} />
+          ))}
+        </div>
+      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* CTA */}
       <section className="dots-bg" style={{ background: 'linear-gradient(135deg, #064e3b, #022c22)', padding: '88px 24px', position: 'relative', overflow: 'hidden' }}>
