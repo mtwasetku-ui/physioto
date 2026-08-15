@@ -8,6 +8,7 @@ interface AllowedEmail {
   id: number
   email: string
   display_name: string | null
+  cliniko_practitioner_id: string | null
   created_at: string
 }
 interface Assignment {
@@ -40,6 +41,41 @@ export default function AdminClient({
 
   // Per-address invite status, keyed by email — 'sending' | 'sent' | error string.
   const [inviteStatus, setInviteStatus] = useState<Record<string, 'sending' | 'sent' | string>>({})
+
+  // Cliniko practitioner picker for the "who books under which name" link —
+  // fetched once on mount so every staff row can share the same list.
+  const [practitioners, setPractitioners] = useState<{ practitioner_id: string; name: string }[] | null>(null)
+  const [practitionersError, setPractitionersError] = useState<string | null>(null)
+  const [linkStatus, setLinkStatus] = useState<Record<string, 'saving' | 'saved' | string>>({})
+
+  useEffect(() => {
+    fetch('/api/admin/cliniko-practitioners')
+      .then(async (r) => {
+        const data = await r.json().catch(() => ({}))
+        if (!r.ok) {
+          setPractitionersError(data?.error || `Failed to load practitioners (HTTP ${r.status})`)
+          return
+        }
+        setPractitioners(data.practitioners || [])
+      })
+      .catch((e) => setPractitionersError(e?.message || 'Network error loading practitioners'))
+  }, [])
+
+  async function linkPractitioner(email: string, practitionerId: string) {
+    setLinkStatus((s) => ({ ...s, [email]: 'saving' }))
+    const res = await fetch('/api/admin/practitioner-link', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, practitionerId: practitionerId || null }),
+    })
+    if (res.ok) {
+      setEmails((es) => es.map((e) => (e.email === email ? { ...e, cliniko_practitioner_id: practitionerId || null } : e)))
+      setLinkStatus((s) => ({ ...s, [email]: 'saved' }))
+    } else {
+      const body = await res.json().catch(() => null)
+      setLinkStatus((s) => ({ ...s, [email]: body?.error || 'Failed to link' }))
+    }
+  }
 
   async function sendInvite(email: string, displayName?: string | null) {
     setInviteStatus((s) => ({ ...s, [email]: 'sending' }))
@@ -162,7 +198,8 @@ export default function AdminClient({
         <h2 className="serif text-xl text-foreground font-semibold mb-1">Staff allowed to sign in</h2>
         <p className="text-muted-foreground text-sm mb-4">
           Only these emails can request a magic sign-in link. Adding someone here does not give them access to any
-          patient — that&apos;s controlled separately below.
+          patient — that&apos;s controlled separately below. Linking a Cliniko practitioner lets that physio book
+          visits under their own name instead of Micheal&apos;s.
         </p>
 
         <div className="bg-white border border-border rounded-lg p-4 flex flex-col sm:flex-row gap-2 mb-4">
@@ -188,8 +225,8 @@ export default function AdminClient({
           {emails.map((e) => {
             const status = inviteStatus[e.email]
             return (
-              <div key={e.email} className="flex items-center justify-between px-4 py-3">
-                <div>
+              <div key={e.email} className="flex items-center justify-between px-4 py-3 gap-3">
+                <div className="min-w-0">
                   <div className="text-sm font-medium text-foreground">{e.email}</div>
                   {e.display_name && <div className="text-xs text-muted-foreground">{e.display_name}</div>}
                   {status === 'sending' && <div className="text-xs text-muted-foreground mt-0.5">Sending invite…</div>}
@@ -201,8 +238,38 @@ export default function AdminClient({
                   {status && status !== 'sending' && status !== 'sent' && (
                     <div className="text-xs text-destructive mt-0.5">{status}</div>
                   )}
+
+                  <div className="mt-1.5 flex items-center gap-1.5">
+                    <span className="text-xs text-muted-foreground">Books as:</span>
+                    {practitionersError ? (
+                      <span className="text-xs text-destructive">{practitionersError}</span>
+                    ) : (
+                      <select
+                        value={e.cliniko_practitioner_id ?? ''}
+                        onChange={(ev) => linkPractitioner(e.email, ev.target.value)}
+                        disabled={!practitioners}
+                        className="h-7 px-1.5 rounded border border-input bg-background text-xs disabled:opacity-50"
+                      >
+                        <option value="">Not linked — can&apos;t book visits</option>
+                        {practitioners?.map((p) => (
+                          <option key={p.practitioner_id} value={p.practitioner_id}>
+                            {p.name || `Practitioner ${p.practitioner_id}`}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                    {linkStatus[e.email] === 'saving' && (
+                      <span className="text-xs text-muted-foreground">Saving…</span>
+                    )}
+                    {linkStatus[e.email] === 'saved' && (
+                      <Check className="h-3 w-3 text-emerald-700" />
+                    )}
+                    {linkStatus[e.email] && !['saving', 'saved'].includes(linkStatus[e.email]) && (
+                      <span className="text-xs text-destructive">{linkStatus[e.email]}</span>
+                    )}
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 shrink-0">
                   <button
                     onClick={() => sendInvite(e.email, e.display_name)}
                     disabled={status === 'sending'}
