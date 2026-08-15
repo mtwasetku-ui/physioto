@@ -1,4 +1,5 @@
 "use client";
+import type React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -51,6 +52,14 @@ const CONDITION_LINKS: Record<string, string | null> = {
   'Persistent joint pain':    'how-to-exercise-safely-with-arthritis',
   'Post-COVID fatigue':       'post-covid-fatigue-deconditioning-home-physiotherapy',
   'Pain sensitisation':       'chronic-pain-home-physiotherapy',
+
+  // NDIS & funding
+  'NDIS eligibility & funding':        'ndis-home-physiotherapy-funding',
+  'Choosing an NDIS physiotherapist':  'how-to-choose-ndis-physiotherapist-checklist',
+  'Functional capacity assessments':   'ndis-functional-capacity-assessment-physiotherapy',
+  'Writing NDIS goals & plan reviews': 'writing-ndis-physiotherapy-goals-plan-review',
+  'NDIS support coordinators':         'ndis-support-coordinators-guide-home-physiotherapy-referrals',
+  'My Aged Care vs NDIS':              'my-aged-care-vs-ndis-physiotherapy-funding-comparison',
 };
 
 const services = [
@@ -102,15 +111,23 @@ const services = [
     detail: 'Chronic pain is complex, but manageable. We combine hands-on treatment, graded exercise, education, and pain science to help you understand and gradually overcome persistent pain.',
     conditions: ['Fibromyalgia', 'Chronic lower back pain', 'Complex regional pain', 'Persistent joint pain', 'Post-COVID fatigue', 'Pain sensitisation'],
   },
+  {
+    id: 'ndis-funding',
+    name: 'NDIS & Funding Support',
+    photo: 'image/blog/ndis-home-physiotherapy-funding.jpg',
+    summary: 'Clear, practical guidance on accessing and funding home physiotherapy through the NDIS, My Aged Care, and other schemes.',
+    detail: 'Navigating funding shouldn\u2019t be a barrier to getting the physiotherapy you need. We work directly with participants, families, and support coordinators to make eligibility, goal-setting, and plan reviews straightforward.',
+    conditions: ['NDIS eligibility & funding', 'Choosing an NDIS physiotherapist', 'Functional capacity assessments', 'Writing NDIS goals & plan reviews', 'NDIS support coordinators', 'My Aged Care vs NDIS'],
+  },
 ];
 
-const fundingOptions = [
-  { emoji: '💳', label: 'Private Health Insurance', desc: 'On-the-spot rebates with HICAPS' },
-  { emoji: '♿', label: 'NDIS', desc: 'Self & plan managed participants' },
-  { emoji: '🎖️', label: 'DVA', desc: "Department of Veterans' Affairs" },
-  { emoji: '🏥', label: 'Medicare', desc: 'Chronic Disease Management Plans' },
-  { emoji: '🤝', label: 'My Aged Care', desc: 'Home Care Package support' },
-  { emoji: '💰', label: 'Private Pay', desc: 'Direct billing available' },
+const fundingOptions: { emoji: string; label: string; desc: string; slug: string | null }[] = [
+  { emoji: '💳', label: 'Private Health Insurance', desc: 'On-the-spot rebates with HICAPS', slug: 'private-health-insurance-home-physiotherapy' },
+  { emoji: '♿', label: 'NDIS', desc: 'Self & plan managed participants', slug: 'ndis-home-physiotherapy-funding' },
+  { emoji: '🎖️', label: 'DVA', desc: "Department of Veterans' Affairs", slug: 'dva-physiotherapy-tasmania' },
+  { emoji: '🏥', label: 'Medicare', desc: 'Chronic Disease Management Plans', slug: 'medicare-gp-management-plan-physiotherapy-funding' },
+  { emoji: '🤝', label: 'My Aged Care', desc: 'Home Care Package support', slug: 'my-aged-care-home-physiotherapy-funding' },
+  { emoji: '💰', label: 'Private Pay', desc: 'Direct billing available', slug: null },
 ];
 
 const badges = ['No GP Referral Required', 'AHPRA Registered', 'Same-Week Appointments', 'NDIS Welcome'];
@@ -274,21 +291,37 @@ export default function ServicesPage() {
             <p style={{ color: '#475569', fontSize: 16, maxWidth: 440, margin: '0 auto' }}>We make accessing quality care as simple as possible.</p>
           </div>
           <div className="funding-grid">
-            {fundingOptions.map(({ emoji, label, desc }) => (
-              <div key={label} style={{
-                background: '#fff', borderRadius: 18, padding: '24px 16px',
+            {fundingOptions.map(({ emoji, label, desc, slug }) => {
+              const cardStyle: React.CSSProperties = {
+                display: 'block', background: '#fff', borderRadius: 18, padding: '24px 16px',
                 textAlign: 'center', border: '1px solid #d1fae5',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.05)', textDecoration: 'none',
                 transition: 'box-shadow 0.2s, transform 0.2s'
-              }}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 8px 22px rgba(5,150,105,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'none'; }}
-              >
-                <div style={{ fontSize: 34, marginBottom: 10 }}>{emoji}</div>
-                <p style={{ margin: '0 0 5px', fontWeight: 700, color: '#0f172a', fontSize: 14.5 }}>{label}</p>
-                <p style={{ margin: 0, color: '#64748b', fontSize: 13 }}>{desc}</p>
-              </div>
-            ))}
+              };
+              const handlers = {
+                onMouseEnter: (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.boxShadow = '0 8px 22px rgba(5,150,105,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)'; },
+                onMouseLeave: (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'none'; },
+              };
+              const content = (
+                <>
+                  <div style={{ fontSize: 34, marginBottom: 10 }}>{emoji}</div>
+                  <p style={{ margin: '0 0 5px', fontWeight: 700, color: '#0f172a', fontSize: 14.5 }}>{label}</p>
+                  <p style={{ margin: 0, color: '#64748b', fontSize: 13 }}>{desc}</p>
+                  {slug && (
+                    <p style={{ margin: '8px 0 0', color: '#059669', fontSize: 12.5, fontWeight: 700 }}>Learn more &rarr;</p>
+                  )}
+                </>
+              );
+              return slug ? (
+                <Link key={label} href={`/blog/${slug}`} style={cardStyle} {...handlers}>
+                  {content}
+                </Link>
+              ) : (
+                <div key={label} style={cardStyle} {...handlers}>
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
