@@ -160,7 +160,7 @@ const faqs: { question: string; answer: string }[] = [
   },
   {
     question: 'What areas do you service?',
-    answer: 'We\u2019re based in Launceston and service Launceston and the surrounding area. Get in touch and we\u2019ll confirm whether we cover your suburb.',
+    answer: 'We\u2019re based in Launceston and provide home physiotherapy Tasmania-wide. Get in touch and we\u2019ll confirm visit availability and timing for your area.',
   },
 ];
 
