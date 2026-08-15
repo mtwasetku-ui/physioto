@@ -90,6 +90,7 @@ type AuditAction =
   | 'attachment_upload'
   | 'attachment_view'
   | 'appointment_create'
+  | 'appointment_arrive'
   | 'admin_email_add'
   | 'admin_email_remove'
   | 'admin_assignment_add'
