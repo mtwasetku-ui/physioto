@@ -272,9 +272,13 @@ export async function getPatientInfo(patientId: string): Promise<ClinikoPatientI
 
 // Just this physio's next visit with this specific patient — not their
 // full calendar and not other physios' bookings with the same patient.
+//
+// individual_appointments has no nested /patients/{id}/individual_appointments
+// path (unlike treatment_notes and patient_attachments, which do) — Cliniko
+// 404s on that shape. Has to be the flat endpoint filtered by patient_id.
 export async function getNextAppointment(patientId: string) {
   const data = await clinikoFetch(
-    `/patients/${patientId}/individual_appointments?q[]=starts_at:>${new Date().toISOString()}&sort=starts_at&per_page=1`
+    `/individual_appointments?q[]=${encodeURIComponent(`patient_id:${patientId}`)}&q[]=${encodeURIComponent(`starts_at:>${new Date().toISOString()}`)}&sort=starts_at&per_page=1`
   )
   return data.individual_appointments?.[0] ?? null
 }
@@ -456,11 +460,14 @@ export async function searchPatients(query: string, limit = 8): Promise<ClinikoP
 // Recent past (default 30 days) plus all upcoming, ascending by time, so
 // the note form can offer "which visit was this note written for" without
 // pulling the patient's entire appointment history.
+//
+// Same nested-path issue as getNextAppointment above — individual_appointments
+// only exists at the flat endpoint, filtered by patient_id.
 export async function listAppointmentsForPatient(patientId: string, opts: { fromDaysAgo?: number; limit?: number } = {}) {
   const { fromDaysAgo = 30, limit = 20 } = opts
   const from = new Date(Date.now() - fromDaysAgo * 24 * 60 * 60 * 1000).toISOString()
   const data = await clinikoFetch(
-    `/patients/${patientId}/individual_appointments?q[]=starts_at:>${from}&sort=starts_at:asc&per_page=${limit}`
+    `/individual_appointments?q[]=${encodeURIComponent(`patient_id:${patientId}`)}&q[]=${encodeURIComponent(`starts_at:>${from}`)}&sort=starts_at:asc&per_page=${limit}`
   )
   return data.individual_appointments ?? []
 }
