@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { ClinikoPatientInfo } from '@/lib/cliniko'
+import { TIME_OPTIONS } from '@/lib/timeOptions'
 
 type Tab = 'note' | 'timeline' | 'attachments' | 'book'
 
@@ -131,7 +132,7 @@ export default function PatientDetailClient({
             ['note', 'New note', FileText],
             ['timeline', 'Visit history', Clock],
             ['attachments', 'Attachments', Paperclip],
-            ...(isAdmin ? ([['book', 'Book visit', Calendar]] as const) : []),
+            ['book', 'Book visit', Calendar],
           ] as const
         ).map(([id, label, Icon]) => (
           <button
@@ -152,7 +153,7 @@ export default function PatientDetailClient({
       {tab === 'note' && <NoteForm patientId={patientId} authorEmail={authorEmail} />}
       {tab === 'timeline' && <Timeline patientId={patientId} />}
       {tab === 'attachments' && <Attachments patientId={patientId} />}
-      {tab === 'book' && isAdmin && <BookVisit patientId={patientId} />}
+      {tab === 'book' && <BookVisit patientId={patientId} />}
     </div>
   )
 }
@@ -746,30 +747,13 @@ function Attachments({ patientId }: { patientId: string }) {
   )
 }
 
-// 7:00am–7:00pm in 15-minute increments, e.g. "05:00" -> "5:00 AM".
-// Booking is manual-entry only (no Cliniko available_times lookup — see
-// PR notes: that endpoint 404s whenever a type isn't individually
-// enabled for online bookings on this specific business, which isn't
-// worth chasing per-type in Cliniko's settings just to populate a slot
-// picker).
-const TIME_OPTIONS: { value: string; label: string }[] = (() => {
-  const opts: { value: string; label: string }[] = []
-  for (let minutes = 7 * 60; minutes <= 19 * 60; minutes += 15) {
-    const h24 = Math.floor(minutes / 60)
-    const m = minutes % 60
-    const value = `${String(h24).padStart(2, '0')}:${String(m).padStart(2, '0')}`
-    const h12 = h24 % 12 === 0 ? 12 : h24 % 12
-    const period = h24 < 12 ? 'AM' : 'PM'
-    opts.push({ value, label: `${h12}:${String(m).padStart(2, '0')} ${period}` })
-  }
-  return opts
-})()
-
-// Admin-only. Always books under Physio to Home + Micheal's own
-// practitioner record — see /api/appointments and lib/cliniko.ts. There's
-// no business/practitioner picker here on purpose, since this account has
-// a few businesses sharing one API key and this should never create a
-// booking under someone else's name or in a different business.
+// Books under the logged-in physio's own Cliniko practitioner record —
+// see /api/appointments and lib/cliniko.ts. There's no business/
+// practitioner picker here on purpose, since this account has a few
+// businesses sharing one API key and this should never create a booking
+// under someone else's name or in a different business; the practitioner
+// id is always resolved server-side from the session, never from a prop
+// here.
 function BookVisit({ patientId }: { patientId: string }) {
   const [types, setTypes] = useState<{ id: string; name: string; duration_in_minutes: number }[] | null>(null)
   const [appointmentTypeId, setAppointmentTypeId] = useState('')
@@ -839,8 +823,8 @@ function BookVisit({ patientId }: { patientId: string }) {
           <>Couldn&apos;t load appointment types: {fetchError}</>
         ) : (
           <>
-            No appointment types found for Physio to Home under your practitioner record in Cliniko. Check
-            CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are set correctly.
+            No appointment types found for Physio to Home under your Cliniko practitioner record. If you&apos;re
+            newly added, ask Micheal to double check the link on the Staff page.
           </>
         )}
       </div>
