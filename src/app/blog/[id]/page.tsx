@@ -96,7 +96,7 @@ function linkifyText(text: string, used: Set<string>, budget: { count: number })
       <Link
         key={`${keyword}-${index}`}
         href={href}
-        style={{ color: '#0891b2', textDecoration: 'underline', textDecorationColor: '#bae6fd', textUnderlineOffset: 3 }}
+        style={{ color: '#059669', textDecoration: 'underline', textDecorationColor: '#a7f3d0', textUnderlineOffset: 3 }}
       >
         {matched}
       </Link>
@@ -130,7 +130,7 @@ function renderInline(text: string, used: Set<string>, budget: { count: number }
           <Link
             key={`mdlink-${k++}`}
             href={m[2]}
-            style={{ color: '#0891b2', textDecoration: 'underline', textDecorationColor: '#bae6fd', textUnderlineOffset: 3 }}
+            style={{ color: '#059669', textDecoration: 'underline', textDecorationColor: '#a7f3d0', textUnderlineOffset: 3 }}
           >
             {m[1]}
           </Link>
@@ -141,7 +141,7 @@ function renderInline(text: string, used: Set<string>, budget: { count: number }
       const boldParts = token.split(/\*\*(.*?)\*\*/)
       boldParts.forEach((bp, j) => {
         if (j % 2 === 1) {
-          nodes.push(<strong key={`b-${k++}`} style={{ color: '#0f172a', fontWeight: 700 }}>{bp}</strong>)
+          nodes.push(<strong key={`b-${k++}`} style={{ color: '#065f46', fontWeight: 700 }}>{bp}</strong>)
         } else if (bp) {
           nodes.push(<React.Fragment key={`t-${k++}`}>{autoLink ? linkifyText(bp, used, budget) : bp}</React.Fragment>)
         }
@@ -183,7 +183,7 @@ function renderMarkdown(content: string, currentSlug: string) {
           marginTop: 52,
           marginBottom: 14,
           paddingBottom: 12,
-          borderBottom: '2px solid #e0f2fe',
+          borderBottom: '2px solid #d1fae5',
           lineHeight: 1.3,
         }}>
           {renderInline(line.slice(3), used, budget, false)}
@@ -200,7 +200,7 @@ function renderMarkdown(content: string, currentSlug: string) {
           fontFamily: "var(--font-playfair), Georgia, serif",
           fontSize: 'clamp(16px, 2.2vw, 19px)',
           fontWeight: 600,
-          color: '#0891b2',
+          color: '#059669',
           marginTop: 32,
           marginBottom: 8,
           lineHeight: 1.35,
@@ -216,9 +216,9 @@ function renderMarkdown(content: string, currentSlug: string) {
     if (line.trim() === '---') {
       elements.push(
         <div key={i} style={{ margin: '44px 0', display: 'flex', alignItems: 'center', gap: 14 }}>
-          <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, transparent, #bae6fd)' }} />
-          <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#0891b2', flexShrink: 0 }} />
-          <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, #bae6fd, transparent)' }} />
+          <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, transparent, #a7f3d0)' }} />
+          <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#059669', flexShrink: 0 }} />
+          <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, #a7f3d0, transparent)' }} />
         </div>
       )
       i++
@@ -230,11 +230,13 @@ function renderMarkdown(content: string, currentSlug: string) {
       elements.push(
         <p key={i} style={{
           fontWeight: 700,
-          color: '#0f172a',
+          color: '#065f46',
           fontSize: 15.5,
           marginBottom: 4,
           marginTop: 22,
           letterSpacing: '0.01em',
+          paddingLeft: 12,
+          borderLeft: '3px solid #a7f3d0',
         }}>
           {renderInline(line.slice(2, -2), used, budget)}
         </p>
@@ -269,7 +271,7 @@ function renderMarkdown(content: string, currentSlug: string) {
                 width: 6,
                 height: 6,
                 borderRadius: '50%',
-                background: '#0891b2',
+                background: '#059669',
                 flexShrink: 0,
               }} />
               <span>{renderInline(item, used, budget)}</span>
@@ -426,7 +428,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
 
             <div style={{ marginBottom: 14 }}>
               <span style={{
-                background: '#0891b2', color: '#fff',
+                background: '#059669', color: '#fff',
                 fontSize: 11, fontWeight: 700, letterSpacing: '0.08em',
                 textTransform: 'uppercase', padding: '4px 12px', borderRadius: 999,
               }}>
@@ -467,8 +469,8 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
         {/* Excerpt / lead */}
         {post.excerpt && (
           <div style={{
-            background: 'linear-gradient(135deg, #f0f9ff, #e0f2fe)',
-            borderLeft: '4px solid #0891b2',
+            background: 'linear-gradient(135deg, #f0fdf9, #d1fae5)',
+            borderLeft: '4px solid #059669',
             borderRadius: '0 12px 12px 0',
             padding: '18px 22px',
             marginBottom: 44,
@@ -476,7 +478,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
             <p style={{
               fontFamily: "var(--font-playfair), Georgia, serif",
               fontSize: 17,
-              color: '#0c4a6e',
+              color: '#065f46',
               lineHeight: 1.7,
               margin: 0,
               fontStyle: 'italic',
@@ -526,7 +528,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
       {relatedPosts.length > 0 && (
         <div style={{ background: '#f8fafc', borderTop: '1px solid #e2e8f0', padding: '64px 24px', marginTop: 64 }}>
           <div style={{ maxWidth: 740, margin: '0 auto' }}>
-            <div style={{ width: 40, height: 3, background: 'linear-gradient(90deg,#0891b2,#06b6d4)', borderRadius: 2, marginBottom: 16 }} />
+            <div style={{ width: 40, height: 3, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, marginBottom: 16 }} />
             <h2 style={{
               fontFamily: "var(--font-playfair), Georgia, serif",
               fontSize: 26, fontWeight: 700, color: '#0f172a', margin: '0 0 32px',
