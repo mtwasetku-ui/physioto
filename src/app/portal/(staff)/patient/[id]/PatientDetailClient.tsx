@@ -690,6 +690,25 @@ function Attachments({ patientId }: { patientId: string }) {
   )
 }
 
+// 7:00am–7:00pm in 15-minute increments, e.g. "05:00" -> "5:00 AM".
+// Booking is manual-entry only (no Cliniko available_times lookup — see
+// PR notes: that endpoint 404s whenever a type isn't individually
+// enabled for online bookings on this specific business, which isn't
+// worth chasing per-type in Cliniko's settings just to populate a slot
+// picker).
+const TIME_OPTIONS: { value: string; label: string }[] = (() => {
+  const opts: { value: string; label: string }[] = []
+  for (let minutes = 7 * 60; minutes <= 19 * 60; minutes += 15) {
+    const h24 = Math.floor(minutes / 60)
+    const m = minutes % 60
+    const value = `${String(h24).padStart(2, '0')}:${String(m).padStart(2, '0')}`
+    const h12 = h24 % 12 === 0 ? 12 : h24 % 12
+    const period = h24 < 12 ? 'AM' : 'PM'
+    opts.push({ value, label: `${h12}:${String(m).padStart(2, '0')} ${period}` })
+  }
+  return opts
+})()
+
 // Admin-only. Always books under Physio to Home + Micheal's own
 // practitioner record — see /api/appointments and lib/cliniko.ts. There's
 // no business/practitioner picker here on purpose, since this account has
@@ -704,15 +723,6 @@ function BookVisit({ patientId }: { patientId: string }) {
   const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
   const [error, setError] = useState<string | null>(null)
   const [fetchError, setFetchError] = useState<string | null>(null)
-
-  // Real open slots from Cliniko for the chosen type + date, so the form
-  // can't offer a time Cliniko would reject as a clash. If the endpoint
-  // errors or comes back empty (e.g. availability isn't configured in
-  // Cliniko for a home-visit type), manual entry is still there as a
-  // fallback rather than blocking booking entirely.
-  const [slots, setSlots] = useState<string[] | null>(null)
-  const [slotsError, setSlotsError] = useState<string | null>(null)
-  const [manualEntry, setManualEntry] = useState(false)
 
   useEffect(() => {
     fetch('/api/appointments')
@@ -732,37 +742,13 @@ function BookVisit({ patientId }: { patientId: string }) {
       })
   }, [])
 
-  useEffect(() => {
-    setTime('')
-    setSlots(null)
-    setSlotsError(null)
-    if (!appointmentTypeId || !date) return
-    fetch(`/api/appointments/availability?appointmentTypeId=${appointmentTypeId}&date=${date}`)
-      .then(async (r) => {
-        const data = await r.json().catch(() => ({}))
-        if (!r.ok) {
-          setSlotsError(data?.error || 'Could not load availability')
-          setSlots([])
-          return
-        }
-        const times = (data.slots || [])
-          .map((s: any) => s.appointment_start || s.starts_at || s)
-          .filter((s: any) => typeof s === 'string')
-        setSlots(times)
-      })
-      .catch(() => {
-        setSlotsError('Could not load availability')
-        setSlots([])
-      })
-  }, [appointmentTypeId, date])
-
   const selectedType = types?.find((t) => t.id === appointmentTypeId)
 
   async function book() {
     if (!appointmentTypeId || !date || !time || !selectedType) return
     setStatus('saving')
     setError(null)
-    const startsAt = manualEntry ? new Date(`${date}T${time}:00`).toISOString() : time
+    const startsAt = new Date(`${date}T${time}:00`).toISOString()
 
     const res = await fetch('/api/appointments', {
       method: 'POST',
@@ -835,57 +821,19 @@ function BookVisit({ patientId }: { patientId: string }) {
 
         {date && (
           <div>
-            <div className="flex items-center justify-between mb-1.5">
-              <label className="text-sm font-medium text-foreground">Time</label>
-              <button
-                type="button"
-                onClick={() => {
-                  setManualEntry((m) => !m)
-                  setTime('')
-                }}
-                className="text-xs text-primary hover:underline"
-              >
-                {manualEntry ? 'Pick from Cliniko availability' : 'Enter a time manually'}
-              </button>
-            </div>
-
-            {manualEntry ? (
-              <input
-                type="time"
-                className="w-full border border-input rounded-md px-3 py-2 text-sm"
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-              />
-            ) : slots === null ? (
-              <div className="text-sm text-muted-foreground">Checking Cliniko for open slots…</div>
-            ) : slotsError ? (
-              <div className="text-sm text-muted-foreground">
-                {slotsError} — <button type="button" className="text-primary hover:underline" onClick={() => setManualEntry(true)}>enter a time manually</button> instead.
-              </div>
-            ) : slots.length === 0 ? (
-              <div className="text-sm text-muted-foreground">
-                No open slots found for this day —{' '}
-                <button type="button" className="text-primary hover:underline" onClick={() => setManualEntry(true)}>
-                  enter a time manually
-                </button>{' '}
-                if you know it's actually free.
-              </div>
-            ) : (
-              <div className="flex flex-wrap gap-2">
-                {slots.map((s) => (
-                  <button
-                    type="button"
-                    key={s}
-                    onClick={() => setTime(s)}
-                    className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${
-                      time === s ? 'bg-primary text-primary-foreground border-primary' : 'border-input hover:bg-secondary'
-                    }`}
-                  >
-                    {new Date(s).toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit' })}
-                  </button>
-                ))}
-              </div>
-            )}
+            <label className="text-sm font-medium text-foreground block mb-1.5">Time</label>
+            <select
+              className="w-full border border-input rounded-md px-3 py-2 text-sm bg-white"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+            >
+              <option value="">Select a time</option>
+              {TIME_OPTIONS.map((t) => (
+                <option key={t.value} value={t.value}>
+                  {t.label}
+                </option>
+              ))}
+            </select>
           </div>
         )}
 
