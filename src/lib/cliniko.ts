@@ -464,3 +464,16 @@ export async function listAppointmentsForPatient(patientId: string, opts: { from
   )
   return data.individual_appointments ?? []
 }
+
+// ── Patient arrived ───────────────────────────────────────────────
+//
+// Cliniko models this as a plain boolean on the appointment itself
+// (`patient_arrived`), not a timestamp or a separate endpoint — see
+// https://docs.api.cliniko.com/openapi/individual-appointment. A normal
+// PATCH is enough; there's no dedicated "check in" action in the API.
+export async function markPatientArrived(appointmentId: string) {
+  return clinikoFetch(`/individual_appointments/${appointmentId}`, {
+    method: 'PATCH',
+    body: JSON.stringify({ patient_arrived: true }),
+  })
+}
