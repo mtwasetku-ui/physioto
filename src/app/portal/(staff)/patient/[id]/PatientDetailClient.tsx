@@ -207,6 +207,7 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
   const [error, setError] = useState<string | null>(null)
   const [saveError, setSaveError] = useState<string | null>(null)
   const [appointments, setAppointments] = useState<any[]>([])
+  const [appointmentsError, setAppointmentsError] = useState<string | null>(null)
   const [bookingId, setBookingId] = useState<string>('')
   const [arriving, setArriving] = useState(false)
   const [arriveError, setArriveError] = useState<string | null>(null)
@@ -220,18 +221,27 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
 
   useEffect(() => {
     setBookingId('')
+    setAppointmentsError(null)
     // Recent + upcoming visits for this patient, so the note can be
     // linked to the actual appointment it was written for.
     fetch(`/api/appointments/for-patient?patientId=${patientId}`)
-      .then((r) => r.json())
-      .then((data) => {
+      .then(async (r) => {
+        const data = await r.json().catch(() => ({}))
+        if (!r.ok) {
+          setAppointmentsError(data?.error || `Failed to load appointments (HTTP ${r.status})`)
+          setAppointments([])
+          return
+        }
         const list = data.appointments || []
         setAppointments(list)
         // Default to today's visit if there is one, otherwise leave unlinked.
         const today = list.find((a: any) => new Date(a.starts_at).toDateString() === new Date().toDateString())
         if (today) setBookingId(String(today.id))
       })
-      .catch(() => setAppointments([]))
+      .catch((e) => {
+        setAppointmentsError(e?.message || 'Network error loading appointments')
+        setAppointments([])
+      })
   }, [patientId])
 
   useEffect(() => {
@@ -369,6 +379,10 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
           </span>
         )}
       </div>
+
+      {appointmentsError && (
+        <div className="mb-4 text-xs text-destructive">Couldn&apos;t load visits to link: {appointmentsError}</div>
+      )}
 
       {appointments.length > 0 && (
         <div className="mb-4">
