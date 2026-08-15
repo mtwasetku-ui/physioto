@@ -17,7 +17,7 @@ export async function isEmailAllowed(email: string): Promise<boolean> {
 
 export async function listAllowedEmails() {
   const rows = await sql`
-    select id, email, display_name, created_at
+    select id, email, display_name, cliniko_practitioner_id, created_at
     from allowed_emails
     order by created_at desc
   `
@@ -29,13 +29,38 @@ export async function addAllowedEmail(email: string, displayName?: string) {
     insert into allowed_emails (email, display_name)
     values (${email.toLowerCase()}, ${displayName ?? null})
     on conflict (email) do update set display_name = excluded.display_name
-    returning id, email, display_name, created_at
+    returning id, email, display_name, cliniko_practitioner_id, created_at
   `
   return rows[0]
 }
 
 export async function removeAllowedEmail(email: string) {
   await sql`delete from allowed_emails where email = ${email.toLowerCase()}`
+}
+
+// Each physio's own Cliniko practitioner record, so bookings made from
+// the portal go under the physio who actually did the visit rather than
+// always under Micheal's. Resolved server-side from the logged-in
+// session's email — never accepted from the client — so nobody can book
+// under someone else's practitioner identity. null/not-yet-linked means
+// that physio's account hasn't been matched to a Cliniko practitioner
+// yet (admin does this once from the Staff page, using the real
+// Cliniko practitioner list at /api/admin/cliniko-practitioners).
+export async function getClinikoPractitionerIdForEmail(email: string): Promise<string | null> {
+  const rows = await sql`
+    select cliniko_practitioner_id from allowed_emails where email = ${email.toLowerCase()} limit 1
+  `
+  return (rows[0]?.cliniko_practitioner_id as string | null | undefined) ?? null
+}
+
+export async function setClinikoPractitionerId(email: string, practitionerId: string | null) {
+  const rows = await sql`
+    update allowed_emails
+    set cliniko_practitioner_id = ${practitionerId}
+    where email = ${email.toLowerCase()}
+    returning id, email, display_name, cliniko_practitioner_id, created_at
+  `
+  return rows[0] ?? null
 }
 
 // ── Patient assignments ─────────────────────────────────────────
@@ -90,11 +115,14 @@ type AuditAction =
   | 'attachment_upload'
   | 'attachment_view'
   | 'appointment_create'
+  | 'appointment_update'
+  | 'appointment_cancel'
   | 'appointment_arrive'
   | 'admin_email_add'
   | 'admin_email_remove'
   | 'admin_assignment_add'
   | 'admin_assignment_remove'
+  | 'admin_practitioner_link'
 
 export async function writeAuditLog(params: {
   actorEmail: string

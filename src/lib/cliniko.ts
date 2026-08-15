@@ -17,12 +17,13 @@ const USER_AGENT = process.env.CLINIKO_USER_AGENT || 'Physio to Home Staff Porta
 
 // This Cliniko account has more than one business (Physio to Home,
 // Summerdale Medical Centre, AlphaCare) sharing the one API key.
-// Booking from the portal is deliberately hardcoded to a single
-// business + practitioner (Micheal's own) via env vars, rather than
-// exposing a business/practitioner picker — contractors aren't meant to
-// be creating appointments under Micheal's name in other businesses.
+// Booking from the portal is hardcoded to the single Physio to Home
+// business via env var — practitioner is per-logged-in-physio instead
+// (see listAppointmentTypesForPractice / createIndividualAppointment
+// below), resolved server-side from each physio's linked Cliniko
+// practitioner ID so nobody can book under someone else's name or in
+// one of the other businesses on the account.
 const BUSINESS_ID = process.env.CLINIKO_BUSINESS_ID // Physio to Home's business id
-const PRACTITIONER_ID = process.env.CLINIKO_PRACTITIONER_ID // Micheal's own practitioner id
 
 function authHeader() {
   if (!API_KEY) throw new Error('CLINIKO_API_KEY is not set')
@@ -285,6 +286,60 @@ export async function getNextAppointment(patientId: string) {
   return data.individual_appointments?.[0] ?? null
 }
 
+// ── Diary (a physio's own upcoming appointments, across all patients) ──
+//
+// Pulls straight from Cliniko rather than this app's own patient_assignments
+// table — an assignment being added/removed doesn't retroactively change who
+// a Cliniko appointment is actually booked under, and the diary should
+// reflect Cliniko as source of truth for "what's on my schedule".
+//
+// individual_appointments already includes patient_name directly (no need
+// for a second lookup per appointment) — see
+// https://docs.api.cliniko.com/openapi/individual-appointment. The patient
+// link, if present, is parsed out so the diary can link through to that
+// patient's page.
+export interface DiaryAppointment {
+  id: string
+  startsAt: string
+  endsAt: string
+  patientId: string | null
+  patientName: string | null
+  patientArrived: boolean
+  didNotArrive: boolean
+  cancelledAt: string | null
+  notes: string | null
+}
+
+export function idFromLink(url?: string | null): string | null {
+  if (!url) return null
+  const match = url.match(/\/(\d+)(?:\?.*)?$/)
+  return match ? match[1] : null
+}
+
+export async function listUpcomingAppointmentsForPractitioner(
+  practitionerId: string,
+  opts: { limit?: number } = {}
+): Promise<DiaryAppointment[]> {
+  const { limit = 50 } = opts
+  const data = await clinikoFetch(
+    `/individual_appointments?q[]=${encodeURIComponent(`practitioner_id:=${practitionerId}`)}&q[]=${encodeURIComponent(`starts_at:>${new Date().toISOString()}`)}&sort=starts_at:asc&per_page=${limit}`
+  )
+  const appointments = (data.individual_appointments ?? []) as any[]
+  return appointments
+    .filter((a) => !a.cancelled_at) // cancelled visits don't belong on the diary
+    .map((a) => ({
+      id: String(a.id),
+      startsAt: a.starts_at,
+      endsAt: a.ends_at,
+      patientId: idFromLink(a.patient?.links?.self),
+      patientName: a.patient_name ?? null,
+      patientArrived: !!a.patient_arrived,
+      didNotArrive: !!a.did_not_arrive,
+      cancelledAt: a.cancelled_at ?? null,
+      notes: a.notes ?? null,
+    }))
+}
+
 // ── Attachments ──────────────────────────────────────────────────
 
 // The resource is "patient_attachments" throughout the real API, not
@@ -336,41 +391,50 @@ export interface ClinikoAppointmentType {
   duration_in_minutes: number
 }
 
-// Only the appointment types actually offered by Physio to Home for
-// Micheal's own practitioner record — not every type across every
-// business on the account.
-export async function listAppointmentTypesForPractice(): Promise<ClinikoAppointmentType[]> {
-  if (!PRACTITIONER_ID) {
-    throw new Error('CLINIKO_PRACTITIONER_ID is not set')
+// Appointment types for whichever practitioner is booking — every
+// physio has their own Cliniko practitioner record and their own set of
+// offered appointment types, so this is never hardcoded to Micheal.
+// practitionerId is always resolved server-side from the logged-in
+// physio's linked Cliniko practitioner ID (see lib/db.ts
+// getClinikoPractitionerIdForEmail) — never accepted raw from the client.
+export async function listAppointmentTypesForPractice(practitionerId: string): Promise<ClinikoAppointmentType[]> {
+  if (!practitionerId) {
+    throw new Error('practitionerId is required')
   }
   // Per Cliniko's API docs, appointment types are listed directly under the
   // practitioner — not nested under /businesses/{id}/practitioners/{id}.
   // That nested path only exists for a specific appointment type's
   // available_times/next_available_time sub-resources.
-  const data = await clinikoFetch(`/practitioners/${PRACTITIONER_ID}/appointment_types?per_page=100`)
+  const data = await clinikoFetch(`/practitioners/${practitionerId}/appointment_types?per_page=100`)
   return data.appointment_types ?? []
 }
 
-// business_id and practitioner_id are never accepted as input here —
-// they're always Physio to Home + Micheal, pulled from env, so this can
-// never accidentally book an appointment under someone else's name or
-// in one of the other businesses on the account.
+// business_id is never accepted as input — always Physio to Home, pulled
+// from env, so this can never accidentally book into one of the other
+// businesses on the account. practitioner_id *is* now a real input, but
+// only ever the server-resolved value for the logged-in physio's own
+// Cliniko practitioner record (see callers) — never taken raw from the
+// client, so nobody can book under someone else's name.
 export async function createIndividualAppointment(params: {
   patientId: string
+  practitionerId: string
   appointmentTypeId: string
   startsAt: string
   endsAt: string
   notes?: string
 }) {
-  if (!BUSINESS_ID || !PRACTITIONER_ID) {
-    throw new Error('CLINIKO_BUSINESS_ID / CLINIKO_PRACTITIONER_ID are not set')
+  if (!BUSINESS_ID) {
+    throw new Error('CLINIKO_BUSINESS_ID is not set')
   }
-  const { patientId, appointmentTypeId, startsAt, endsAt, notes } = params
+  const { patientId, practitionerId, appointmentTypeId, startsAt, endsAt, notes } = params
+  if (!practitionerId) {
+    throw new Error('practitionerId is required')
+  }
   return clinikoFetch('/individual_appointments', {
     method: 'POST',
     body: JSON.stringify({
       patient_id: patientId,
-      practitioner_id: PRACTITIONER_ID,
+      practitioner_id: practitionerId,
       business_id: BUSINESS_ID,
       appointment_type_id: appointmentTypeId,
       starts_at: startsAt,
@@ -379,6 +443,62 @@ export async function createIndividualAppointment(params: {
     }),
   })
 }
+
+// Fetch a single appointment — used to check who it actually belongs to
+// (via practitioner.links.self) before allowing an edit or cancellation,
+// so one physio's session can never touch another physio's booking. See
+// requireOwnAppointment in lib/appointmentAuth.ts, the shared gate used
+// by the update/cancel routes.
+export async function getIndividualAppointment(appointmentId: string) {
+  return clinikoFetch(`/individual_appointments/${appointmentId}`)
+}
+
+// Reschedule / edit an existing appointment. patient_id, practitioner_id
+// and business_id are deliberately never accepted here — those are set
+// once at booking time (see createIndividualAppointment) and this never
+// hands the client a way to move an appointment onto a different patient,
+// practitioner or business.
+export async function updateIndividualAppointment(
+  appointmentId: string,
+  params: { appointmentTypeId?: string; startsAt?: string; endsAt?: string; notes?: string }
+) {
+  const body: Record<string, any> = {}
+  if (params.appointmentTypeId) body.appointment_type_id = params.appointmentTypeId
+  if (params.startsAt) body.starts_at = params.startsAt
+  if (params.endsAt) body.ends_at = params.endsAt
+  if (params.notes !== undefined) body.notes = params.notes
+  return clinikoFetch(`/individual_appointments/${appointmentId}`, {
+    method: 'PATCH',
+    body: JSON.stringify(body),
+  })
+}
+
+// Cliniko's fixed set of cancellation reason codes — cancellation_reason
+// is a mandatory field on the cancel call, there's no free-text-only
+// option. See https://docs.api.cliniko.com/openapi/individual-appointment/cancelindividualappointment-patch
+export const CANCELLATION_REASONS = [
+  { code: 10, label: 'Feeling better' },
+  { code: 20, label: 'Condition worse' },
+  { code: 30, label: 'Sick' },
+  { code: 31, label: 'COVID-19 related' },
+  { code: 40, label: 'Away' },
+  { code: 60, label: 'Work' },
+  { code: 50, label: 'Other' },
+] as const
+
+// Real cancel endpoint, not a DELETE — Cliniko keeps the appointment
+// around (cancelled_at gets set) rather than deleting it, so history and
+// invoicing stay intact.
+export async function cancelIndividualAppointment(appointmentId: string, params: { reason: number; note?: string }) {
+  return clinikoFetch(`/individual_appointments/${appointmentId}/cancel`, {
+    method: 'PATCH',
+    body: JSON.stringify({
+      cancellation_reason: params.reason,
+      ...(params.note ? { cancellation_note: params.note } : {}),
+    }),
+  })
+}
+
 // with the admin key and streams them through. Cliniko exposes this via
 // the attachment's own `content.links.self`, which — confirmed against a
 // live account — doesn't return the file directly. It 303-redirects to a
