@@ -208,6 +208,8 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
   const [saveError, setSaveError] = useState<string | null>(null)
   const [appointments, setAppointments] = useState<any[]>([])
   const [bookingId, setBookingId] = useState<string>('')
+  const [arriving, setArriving] = useState(false)
+  const [arriveError, setArriveError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch('/api/templates')
@@ -327,6 +329,26 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
     }
   }
 
+  const selectedAppointment = appointments.find((a: any) => String(a.id) === bookingId)
+
+  async function markArrived() {
+    if (!bookingId) return
+    setArriving(true)
+    setArriveError(null)
+    const res = await fetch(`/api/appointments/${bookingId}/arrive`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ patientId }),
+    })
+    if (res.ok) {
+      setAppointments((prev) => prev.map((a: any) => (String(a.id) === bookingId ? { ...a, patient_arrived: true } : a)))
+    } else {
+      const body = await res.json().catch(() => null)
+      setArriveError(body?.error || `Failed to mark arrived (HTTP ${res.status})`)
+    }
+    setArriving(false)
+  }
+
   return (
     <div>
       <div className="flex items-center gap-3 mb-4">
@@ -351,25 +373,45 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
       {appointments.length > 0 && (
         <div className="mb-4">
           <label className="text-xs font-medium text-muted-foreground block mb-1">Link to visit (optional)</label>
-          <select
-            value={bookingId}
-            onChange={(e) => setBookingId(e.target.value)}
-            className="h-9 px-3 rounded-md border border-input bg-white text-sm max-w-sm"
-          >
-            <option value="">Not linked to a specific visit</option>
-            {appointments.map((a: any) => (
-              <option key={a.id} value={a.id}>
-                {new Date(a.starts_at).toLocaleString('en-AU', {
-                  weekday: 'short',
-                  day: 'numeric',
-                  month: 'short',
-                  hour: 'numeric',
-                  minute: '2-digit',
-                })}
-                {new Date(a.starts_at) > new Date() ? ' (upcoming)' : ''}
-              </option>
-            ))}
-          </select>
+          <div className="flex items-center gap-2">
+            <select
+              value={bookingId}
+              onChange={(e) => setBookingId(e.target.value)}
+              className="h-9 px-3 rounded-md border border-input bg-white text-sm max-w-sm"
+            >
+              <option value="">Not linked to a specific visit</option>
+              {appointments.map((a: any) => (
+                <option key={a.id} value={a.id}>
+                  {new Date(a.starts_at).toLocaleString('en-AU', {
+                    weekday: 'short',
+                    day: 'numeric',
+                    month: 'short',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                  })}
+                  {new Date(a.starts_at) > new Date() ? ' (upcoming)' : ''}
+                  {a.patient_arrived ? ' — arrived' : ''}
+                </option>
+              ))}
+            </select>
+
+            {bookingId &&
+              (selectedAppointment?.patient_arrived ? (
+                <span className="text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium whitespace-nowrap">
+                  Arrived ✓
+                </span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={markArrived}
+                  disabled={arriving}
+                  className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap disabled:opacity-50"
+                >
+                  {arriving ? 'Marking…' : 'Mark arrived'}
+                </button>
+              ))}
+          </div>
+          {arriveError && <p className="text-xs text-destructive mt-1">{arriveError}</p>}
         </div>
       )}
 
