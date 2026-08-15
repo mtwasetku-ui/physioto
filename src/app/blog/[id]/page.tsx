@@ -464,7 +464,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
       </div>
 
       {/* Article content */}
-      <div style={{ maxWidth: 740, margin: '0 auto', padding: '56px 24px 0' }}>
+      <div style={{ maxWidth: 820, margin: '0 auto', padding: '56px 24px 0' }}>
 
         {/* Excerpt / lead */}
         {post.excerpt && (
@@ -527,7 +527,7 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
         <div style={{ background: '#f8fafc', borderTop: '1px solid #e2e8f0', padding: '64px 24px', marginTop: 64 }}>
-          <div style={{ maxWidth: 740, margin: '0 auto' }}>
+          <div style={{ maxWidth: 820, margin: '0 auto' }}>
             <div style={{ width: 40, height: 3, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, marginBottom: 16 }} />
             <h2 style={{
               fontFamily: "var(--font-playfair), Georgia, serif",
