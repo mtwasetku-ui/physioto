@@ -1,5 +1,6 @@
 import { getServerSession } from 'next-auth'
 import { notFound, redirect } from 'next/navigation'
+import { Suspense } from 'react'
 import { authOptions } from '@/lib/auth'
 import { isPatientAssignedToEmail } from '@/lib/db'
 import { getPatientInfo, getNextAppointment } from '@/lib/cliniko'
@@ -25,13 +26,17 @@ export default async function PatientDetailPage({ params }: { params: { id: stri
   const isAdmin = email.toLowerCase() === (process.env.ADMIN_EMAIL || '').toLowerCase()
 
   return (
-    <PatientDetailClient
-      patientId={params.id}
-      patient={patient}
-      nextAppointment={nextAppointment}
-      authorEmail={email}
-      isAdmin={isAdmin}
-    />
+    // PatientDetailClient reads ?appointmentId= via useSearchParams (see
+    // the "Add treatment note" link from the calendar) — that hook wants
+    // a Suspense boundary around it.
+    <Suspense fallback={null}>
+      <PatientDetailClient
+        patientId={params.id}
+        patient={patient}
+        nextAppointment={nextAppointment}
+        authorEmail={email}
+        isAdmin={isAdmin}
+      />
+    </Suspense>
   )
 }
-
