@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import { Clock, User, CheckCircle2, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, Ban } from 'lucide-react'
+import { Clock, User, CheckCircle2, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, Ban, FilePlus2 } from 'lucide-react'
 import { TIME_OPTIONS } from '@/lib/timeOptions'
 
 interface DiaryAppointment {
@@ -268,6 +268,14 @@ function AppointmentRow({
           </span>
         ) : (
           <div className="flex items-center gap-2 shrink-0">
+            {appt.patientId && (
+              <Link
+                href={`/portal/patient/${appt.patientId}?appointmentId=${appt.id}`}
+                className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-medium whitespace-nowrap"
+              >
+                <FilePlus2 className="h-3.5 w-3.5" /> Add treatment note
+              </Link>
+            )}
             {appt.patientArrived ? (
               <span className="flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium">
                 <CheckCircle2 className="h-3.5 w-3.5" /> Arrived
