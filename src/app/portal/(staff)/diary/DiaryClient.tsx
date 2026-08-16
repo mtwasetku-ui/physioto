@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import { Clock, User, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react'
+import { Clock, User, CheckCircle2, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, Ban } from 'lucide-react'
 import { TIME_OPTIONS } from '@/lib/timeOptions'
 
 interface DiaryAppointment {
@@ -23,27 +23,23 @@ interface AppointmentType {
   duration_in_minutes: number
 }
 
-// Cliniko's fixed cancellation reason codes — mirrors lib/cliniko.ts
-// CANCELLATION_REASONS, duplicated here since this is a client component
-// and that file also touches server-only env vars.
-const CANCELLATION_REASONS = [
-  { code: 10, label: 'Feeling better' },
-  { code: 20, label: 'Condition worse' },
-  { code: 30, label: 'Sick' },
-  { code: 31, label: 'COVID-19 related' },
-  { code: 40, label: 'Away' },
-  { code: 60, label: 'Work' },
-  { code: 50, label: 'Other' },
-]
+function startOfWeek(d: Date) {
+  const day = d.getDay() // 0 = Sun
+  const diffToMonday = (day + 6) % 7
+  const monday = new Date(d)
+  monday.setHours(0, 0, 0, 0)
+  monday.setDate(d.getDate() - diffToMonday)
+  return monday
+}
 
-function dayLabel(iso: string) {
-  const d = new Date(iso)
-  const today = new Date()
-  const tomorrow = new Date(today)
-  tomorrow.setDate(today.getDate() + 1)
-  if (d.toDateString() === today.toDateString()) return 'Today'
-  if (d.toDateString() === tomorrow.toDateString()) return 'Tomorrow'
-  return d.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' })
+function addDays(d: Date, n: number) {
+  const copy = new Date(d)
+  copy.setDate(copy.getDate() + n)
+  return copy
+}
+
+function sameDay(a: Date, b: Date) {
+  return a.toDateString() === b.toDateString()
 }
 
 function toDateInput(iso: string) {
@@ -56,29 +52,36 @@ function toTimeInput(iso: string) {
 }
 
 export default function DiaryClient() {
+  const [weekStart, setWeekStart] = useState(() => startOfWeek(new Date()))
+  const [selected, setSelected] = useState(() => new Date())
   const [appointments, setAppointments] = useState<DiaryAppointment[] | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [arriving, setArriving] = useState<string | null>(null)
   const [types, setTypes] = useState<AppointmentType[] | null>(null)
 
+  const days = useMemo(() => Array.from({ length: 7 }, (_, i) => addDays(weekStart, i)), [weekStart])
+
   function load() {
-    fetch('/api/appointments/diary')
+    setError(null)
+    const from = weekStart.toISOString()
+    const to = addDays(weekStart, 7).toISOString()
+    fetch(`/api/appointments/diary?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`)
       .then(async (r) => {
         const data = await r.json().catch(() => ({}))
         if (!r.ok) {
-          setError(data?.error || `Failed to load diary (HTTP ${r.status})`)
+          setError(data?.error || `Failed to load calendar (HTTP ${r.status})`)
           setAppointments([])
           return
         }
         setAppointments(data.appointments || [])
       })
       .catch((e) => {
-        setError(e?.message || 'Network error loading diary')
+        setError(e?.message || 'Network error loading calendar')
         setAppointments([])
       })
   }
 
-  useEffect(load, [])
+  useEffect(load, [weekStart])
 
   // Appointment types for the reschedule form — same endpoint the
   // booking form uses, scoped to the logged-in physio's own practitioner.
@@ -103,86 +106,113 @@ export default function DiaryClient() {
     setArriving(null)
   }
 
-  function removeFromList(id: string) {
-    setAppointments((prev) => prev?.filter((a) => a.id !== id) ?? null)
-  }
-
   function replaceInList(id: string, updates: Partial<DiaryAppointment>) {
     setAppointments((prev) => prev?.map((a) => (a.id === id ? { ...a, ...updates } : a)) ?? null)
   }
 
+  const dayAppointments = (appointments ?? [])
+    .filter((a) => sameDay(new Date(a.startsAt), selected))
+    .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime())
+
+  const countsByDay = new Map<string, number>()
+  for (const a of appointments ?? []) {
+    const key = new Date(a.startsAt).toDateString()
+    countsByDay.set(key, (countsByDay.get(key) ?? 0) + 1)
+  }
+
   return (
     <div>
-      <h1 className="serif text-2xl text-foreground font-semibold mb-1">Your diary</h1>
-      <p className="text-muted-foreground text-sm mb-6">Your upcoming visits, across all patients.</p>
+      <h1 className="serif text-2xl text-foreground font-semibold mb-1">Your calendar</h1>
+      <p className="text-muted-foreground text-sm mb-6">Visits for your assigned patients only.</p>
+
+      <div className="flex items-center justify-between mb-3">
+        <button
+          type="button"
+          onClick={() => setWeekStart((w) => addDays(w, -7))}
+          className="h-8 w-8 rounded-md border border-input hover:bg-secondary flex items-center justify-center"
+          aria-label="Previous week"
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+        <div className="text-sm font-medium text-foreground">
+          {weekStart.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })}
+          {' – '}
+          {addDays(weekStart, 6).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}
+        </div>
+        <button
+          type="button"
+          onClick={() => setWeekStart((w) => addDays(w, 7))}
+          className="h-8 w-8 rounded-md border border-input hover:bg-secondary flex items-center justify-center"
+          aria-label="Next week"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
+      </div>
+
+      <div className="grid grid-cols-7 gap-1.5 mb-6">
+        {days.map((d) => {
+          const isSelected = sameDay(d, selected)
+          const isToday = sameDay(d, new Date())
+          const count = countsByDay.get(d.toDateString()) ?? 0
+          return (
+            <button
+              key={d.toISOString()}
+              type="button"
+              onClick={() => setSelected(d)}
+              className={`flex flex-col items-center gap-0.5 rounded-lg py-2 border transition-colors ${
+                isSelected
+                  ? 'bg-primary text-primary-foreground border-primary'
+                  : isToday
+                    ? 'border-primary text-foreground bg-white'
+                    : 'border-border bg-white text-foreground hover:bg-secondary'
+              }`}
+            >
+              <span className="text-[10px] uppercase tracking-wide opacity-80">
+                {d.toLocaleDateString('en-AU', { weekday: 'short' })}
+              </span>
+              <span className="text-sm font-semibold">{d.getDate()}</span>
+              <span
+                className={`h-1.5 w-1.5 rounded-full mt-0.5 ${
+                  count > 0 ? (isSelected ? 'bg-primary-foreground' : 'bg-primary') : 'bg-transparent'
+                }`}
+              />
+            </button>
+          )
+        })}
+      </div>
 
       {error && <div className="bg-white border border-border rounded-lg p-4 text-sm text-destructive mb-4">{error}</div>}
 
       {appointments === null && !error && <div className="text-muted-foreground text-sm">Loading…</div>}
 
-      {appointments?.length === 0 && !error && (
-        <div className="bg-white border border-border rounded-lg p-8 text-center text-muted-foreground">
-          No upcoming visits booked.
-        </div>
+      {appointments !== null && !error && (
+        <>
+          <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+            {sameDay(selected, new Date())
+              ? 'Today'
+              : selected.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' })}
+          </h2>
+
+          {dayAppointments.length === 0 ? (
+            <div className="bg-white border border-border rounded-lg p-8 text-center text-muted-foreground">
+              No visits this day.
+            </div>
+          ) : (
+            <div className="bg-white border border-border rounded-lg divide-y divide-border">
+              {dayAppointments.map((appt) => (
+                <AppointmentRow
+                  key={appt.id}
+                  appt={appt}
+                  types={types}
+                  onArrive={markArrived}
+                  arriving={arriving}
+                  onRescheduled={replaceInList}
+                />
+              ))}
+            </div>
+          )}
+        </>
       )}
-
-      {appointments && appointments.length > 0 && (
-        <Grouped
-          appointments={appointments}
-          types={types}
-          onArrive={markArrived}
-          arriving={arriving}
-          onCancelled={removeFromList}
-          onRescheduled={replaceInList}
-        />
-      )}
-    </div>
-  )
-}
-
-function Grouped({
-  appointments,
-  types,
-  onArrive,
-  arriving,
-  onCancelled,
-  onRescheduled,
-}: {
-  appointments: DiaryAppointment[]
-  types: AppointmentType[] | null
-  onArrive: (a: DiaryAppointment) => void
-  arriving: string | null
-  onCancelled: (id: string) => void
-  onRescheduled: (id: string, updates: Partial<DiaryAppointment>) => void
-}) {
-  const groups: { label: string; items: DiaryAppointment[] }[] = []
-  for (const appt of appointments) {
-    const label = dayLabel(appt.startsAt)
-    const group = groups.find((g) => g.label === label)
-    if (group) group.items.push(appt)
-    else groups.push({ label, items: [appt] })
-  }
-
-  return (
-    <div className="space-y-6">
-      {groups.map((g) => (
-        <div key={g.label}>
-          <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">{g.label}</h2>
-          <div className="bg-white border border-border rounded-lg divide-y divide-border">
-            {g.items.map((appt) => (
-              <AppointmentRow
-                key={appt.id}
-                appt={appt}
-                types={types}
-                onArrive={onArrive}
-                arriving={arriving}
-                onCancelled={onCancelled}
-                onRescheduled={onRescheduled}
-              />
-            ))}
-          </div>
-        </div>
-      ))}
     </div>
   )
 }
@@ -192,32 +222,36 @@ function AppointmentRow({
   types,
   onArrive,
   arriving,
-  onCancelled,
   onRescheduled,
 }: {
   appt: DiaryAppointment
   types: AppointmentType[] | null
   onArrive: (a: DiaryAppointment) => void
   arriving: string | null
-  onCancelled: (id: string) => void
   onRescheduled: (id: string, updates: Partial<DiaryAppointment>) => void
 }) {
-  const [expanded, setExpanded] = useState<'reschedule' | 'cancel' | null>(null)
+  const [expanded, setExpanded] = useState(false)
+  const cancelled = !!appt.cancelledAt
 
   return (
     <div>
       <div className="flex items-center justify-between px-5 py-4">
-        <div className="flex items-center gap-3 min-w-0">
+        <div className={`flex items-center gap-3 min-w-0 ${cancelled ? 'opacity-50' : ''}`}>
           <div className="h-9 w-9 rounded-full bg-secondary flex items-center justify-center shrink-0">
             <User className="h-4 w-4 text-primary" />
           </div>
           <div className="min-w-0">
             {appt.patientId ? (
-              <Link href={`/portal/patient/${appt.patientId}`} className="font-medium text-foreground hover:underline">
+              <Link
+                href={`/portal/patient/${appt.patientId}`}
+                className={`font-medium text-foreground hover:underline ${cancelled ? 'line-through' : ''}`}
+              >
                 {appt.patientName || `Patient ${appt.patientId}`}
               </Link>
             ) : (
-              <span className="font-medium text-foreground">{appt.patientName || 'Unknown patient'}</span>
+              <span className={`font-medium text-foreground ${cancelled ? 'line-through' : ''}`}>
+                {appt.patientName || 'Unknown patient'}
+              </span>
             )}
             <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
               <Clock className="h-3.5 w-3.5" />
@@ -228,59 +262,47 @@ function AppointmentRow({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
-          {appt.patientArrived ? (
-            <span className="flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium">
-              <CheckCircle2 className="h-3.5 w-3.5" /> Arrived
-            </span>
-          ) : (
+        {cancelled ? (
+          <span className="flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-secondary text-muted-foreground font-medium shrink-0">
+            <Ban className="h-3.5 w-3.5" /> Cancelled
+          </span>
+        ) : (
+          <div className="flex items-center gap-2 shrink-0">
+            {appt.patientArrived ? (
+              <span className="flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium">
+                <CheckCircle2 className="h-3.5 w-3.5" /> Arrived
+              </span>
+            ) : (
+              <button
+                type="button"
+                onClick={() => onArrive(appt)}
+                disabled={arriving === appt.id || !appt.patientId}
+                className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap disabled:opacity-50"
+              >
+                {arriving === appt.id ? 'Marking…' : 'Mark arrived'}
+              </button>
+            )}
+
             <button
               type="button"
-              onClick={() => onArrive(appt)}
-              disabled={arriving === appt.id || !appt.patientId}
-              className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap disabled:opacity-50"
+              onClick={() => setExpanded((e) => !e)}
+              className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap flex items-center gap-1"
             >
-              {arriving === appt.id ? 'Marking…' : 'Mark arrived'}
+              Reschedule {expanded ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
             </button>
-          )}
-
-          <button
-            type="button"
-            onClick={() => setExpanded(expanded === 'reschedule' ? null : 'reschedule')}
-            className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap flex items-center gap-1"
-          >
-            Reschedule {expanded === 'reschedule' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
-          </button>
-          <button
-            type="button"
-            onClick={() => setExpanded(expanded === 'cancel' ? null : 'cancel')}
-            className="text-xs px-2.5 py-1.5 rounded-md border border-input text-destructive hover:bg-destructive/5 whitespace-nowrap flex items-center gap-1"
-          >
-            Cancel {expanded === 'cancel' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
-          </button>
-        </div>
+          </div>
+        )}
       </div>
 
-      {expanded === 'reschedule' && (
+      {expanded && !cancelled && (
         <RescheduleForm
           appt={appt}
           types={types}
           onDone={(updates) => {
             onRescheduled(appt.id, updates)
-            setExpanded(null)
+            setExpanded(false)
           }}
-          onCancel={() => setExpanded(null)}
-        />
-      )}
-
-      {expanded === 'cancel' && (
-        <CancelForm
-          appt={appt}
-          onDone={() => {
-            onCancelled(appt.id)
-            setExpanded(null)
-          }}
-          onCancel={() => setExpanded(null)}
+          onCancel={() => setExpanded(false)}
         />
       )}
     </div>
@@ -305,7 +327,8 @@ function RescheduleForm({
   const [error, setError] = useState<string | null>(null)
 
   const selectedType = types?.find((t) => t.id === appointmentTypeId)
-  const durationMinutes = selectedType?.duration_in_minutes ?? Math.round((new Date(appt.endsAt).getTime() - new Date(appt.startsAt).getTime()) / 60000)
+  const durationMinutes =
+    selectedType?.duration_in_minutes ?? Math.round((new Date(appt.endsAt).getTime() - new Date(appt.startsAt).getTime()) / 60000)
 
   async function save() {
     setStatus('saving')
@@ -383,73 +406,6 @@ function RescheduleForm({
         </button>
         <button type="button" onClick={onCancel} className="h-9 px-3 text-sm text-muted-foreground hover:text-foreground">
           Cancel
-        </button>
-      </div>
-      {error && <p className="text-xs text-destructive mt-2">{error}</p>}
-    </div>
-  )
-}
-
-function CancelForm({ appt, onDone, onCancel }: { appt: DiaryAppointment; onDone: () => void; onCancel: () => void }) {
-  const [reason, setReason] = useState<number | ''>('')
-  const [note, setNote] = useState('')
-  const [status, setStatus] = useState<'idle' | 'saving' | 'error'>('idle')
-  const [error, setError] = useState<string | null>(null)
-
-  async function confirmCancel() {
-    if (!reason) return
-    setStatus('saving')
-    setError(null)
-    const res = await fetch(`/api/appointments/${appt.id}/cancel`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ reason, note: note || undefined }),
-    })
-    if (res.ok) {
-      onDone()
-    } else {
-      const body = await res.json().catch(() => null)
-      setError(body?.error || `Failed to cancel (HTTP ${res.status})`)
-      setStatus('error')
-    }
-  }
-
-  return (
-    <div className="px-5 pb-4 pt-1 bg-destructive/5 border-t border-border">
-      <div className="flex flex-wrap items-end gap-3 pt-3">
-        <div>
-          <label className="text-xs font-medium text-muted-foreground block mb-1">Reason</label>
-          <select
-            value={reason}
-            onChange={(e) => setReason(e.target.value ? Number(e.target.value) : '')}
-            className="h-9 px-2 rounded-md border border-input bg-white text-sm"
-          >
-            <option value="">Select a reason…</option>
-            {CANCELLATION_REASONS.map((r) => (
-              <option key={r.code} value={r.code}>
-                {r.label}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex-1 min-w-[160px]">
-          <label className="text-xs font-medium text-muted-foreground block mb-1">Note (optional)</label>
-          <input
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            className="h-9 w-full px-2 rounded-md border border-input bg-white text-sm"
-          />
-        </div>
-        <button
-          type="button"
-          onClick={confirmCancel}
-          disabled={!reason || status === 'saving'}
-          className="h-9 px-3 rounded-md bg-destructive text-destructive-foreground text-sm font-medium disabled:opacity-50"
-        >
-          {status === 'saving' ? 'Cancelling…' : 'Confirm cancel'}
-        </button>
-        <button type="button" onClick={onCancel} className="h-9 px-3 text-sm text-muted-foreground hover:text-foreground">
-          Back
         </button>
       </div>
       {error && <p className="text-xs text-destructive mt-2">{error}</p>}
