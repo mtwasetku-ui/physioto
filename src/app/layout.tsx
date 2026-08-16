@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Suspense } from 'react'
-import { Playfair_Display } from 'next/font/google'
+import { Playfair_Display, Bricolage_Grotesque, Instrument_Sans } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -14,6 +14,25 @@ const playfair = Playfair_Display({
   style: ['normal', 'italic'],
   display: 'swap',
   variable: '--font-playfair',
+})
+
+// New homepage look (Qwen redesign) — display + body pair used by
+// .font-display / .font-body in globals.css. Loaded via next/font
+// rather than a <link> tag so they're self-hosted and don't block
+// render, matching how Playfair is already handled above.
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-bricolage',
+})
+
+const instrumentSans = Instrument_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-instrument-sans',
 })
 
 const BASE_URL = 'https://www.physiotohome.com'
@@ -163,7 +182,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     : structuredData
 
   return (
-    <html lang="en" className={playfair.variable}>
+    <html lang="en" className={`${playfair.variable} ${bricolage.variable} ${instrumentSans.variable}`}>
       <head>
         <meta name="msvalidate.01" content="EB4FA79F25221C5C5EA86027899A0790" />
         <script

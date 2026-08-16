@@ -92,3 +92,142 @@
     transform: scale(1.05);
   }
 }
+
+/* ============================================================
+   Homepage vibrant theme (Qwen redesign) — colours + motion for
+   HomeClient.tsx. Defined outside @layer so these deliberately
+   win over the same-named classes above wherever both are used —
+   see .fade-up/.card-lift/.dots/.d1-d4 above for the old values.
+   ============================================================ */
+
+.font-display {
+  font-family: var(--font-bricolage), 'Trebuchet MS', sans-serif;
+}
+.font-body {
+  font-family: var(--font-instrument-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- scroll reveal (IntersectionObserver adds .in) ---------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.fade-up.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+.d4 { transition-delay: 0.32s; }
+.d5 { transition-delay: 0.4s; }
+
+/* ---------- Ken Burns breathing on imagery ---------- */
+.kenburns {
+  animation: kenburns 16s ease-in-out infinite alternate;
+}
+@keyframes kenburns {
+  from { transform: scale(1.02); }
+  to   { transform: scale(1.12) translateY(-1.5%); }
+}
+
+/* ---------- trust marquee ---------- */
+.marquee-track {
+  animation: marquee-x 30s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee-x {
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- sheen sweep on primary buttons ---------- */
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+.sheen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+.sheen:hover::after {
+  left: 170%;
+}
+
+/* ---------- hand-drawn underline ---------- */
+.scribble path {
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  animation: drawline 1s 0.55s cubic-bezier(0.65, 0, 0.25, 1) forwards;
+}
+@keyframes drawline {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ---------- outlined display numerals ---------- */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 86, 56, 0.65);
+}
+
+/* ---------- card lift ---------- */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -20px rgba(10, 35, 27, 0.35);
+}
+
+/* ---------- pulsing availability ring ---------- */
+.pulse-ring {
+  position: relative;
+}
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 2px solid rgba(78, 155, 114, 0.75);
+  animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse-ring {
+  0%        { transform: scale(0.7); opacity: 0.9; }
+  80%, 100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* ---------- ambient dot texture ---------- */
+.dots {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ---------- film grain overlay ---------- */
+.pth-grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns, .marquee-track, .pulse-ring::before { animation: none; }
+  .fade-up { opacity: 1; transform: none; transition: none; }
+}
