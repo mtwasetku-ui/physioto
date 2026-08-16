@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Send, FileDown } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { Phone, Mail, MapPin, Clock, Send, FileDown, Calendar as CalendarIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input, Label, Textarea } from '@/components/ui/form-elements'
 import { useToast } from '@/hooks/use-toast'
@@ -36,14 +36,23 @@ const TIME_OPTIONS = [
   'Late Afternoon (4pm – 6pm)',
 ]
 
+const inputCx = 'h-11 rounded-lg border-[#12241D]/15 bg-white focus-visible:ring-[#FF5638] focus-visible:ring-offset-0'
+const selectCx = 'w-full rounded-lg border border-[#12241D]/15 bg-white px-3 py-2 text-sm h-11 focus:outline-none focus:ring-2 focus:ring-[#FF5638]'
+
 export default function BookingClient() {
   const { toast } = useToast()
   const [loading, setLoading] = useState(false)
+  const [visible, setVisible] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     name: '', email: '', phone: '', service: '',
     preferredDate: '', preferredTime: '', notes: '',
   })
   const [errors, setErrors] = useState<Partial<FormData>>({})
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 50)
+    return () => clearTimeout(t)
+  }, [])
 
   const validateForm = () => {
     const e: Partial<FormData> = {}
@@ -83,151 +92,158 @@ export default function BookingClient() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="font-body min-h-screen overflow-x-hidden bg-[#FBF8F1] text-[#12241D]">
+      <div className="pth-grain" aria-hidden="true" />
 
-      {/* Hero */}
-      <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Physiotherapy That Comes to You</h1>
-          <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
-            Physio to Home brings professional physiotherapy directly to your door across Tasmania.
-            Whether you&apos;re recovering from surgery, managing a chronic condition, or looking to improve your strength
-            and balance — we assess and treat you in the comfort of your own home.
+      {/* HERO */}
+      <section className="dots relative overflow-hidden bg-[#0E2C22] py-24 text-white">
+        <div className="pointer-events-none absolute inset-0 text-white/5" />
+        <div className="absolute -top-20 right-[-40px] h-96 w-96 rounded-full bg-[#FF5638]/15 blur-3xl" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center lg:px-8">
+          <p className="fade-up in text-xs font-bold uppercase tracking-[0.24em] text-[#FFC53D]">Get Started Today</p>
+          <h1 className="fade-up d1 in font-display mt-3 text-4xl font-extrabold tracking-tight md:text-5xl">
+            Physiotherapy <span className="italic text-[#FFC53D]">that comes to you</span>
+          </h1>
+          <p className="fade-up d2 in mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+            Physio to Home brings professional physiotherapy directly to your door across Tasmania. Whether you&apos;re
+            recovering from surgery, managing a chronic condition, or looking to improve your strength and balance —
+            we assess and treat you in the comfort of your own home.
           </p>
-          <p className="text-emerald-100 max-w-3xl mx-auto mt-4">
-            With over 15 years of clinical experience, Micheal provides personalised, one-on-one care with no waiting
-            rooms and no travel stress. We accept My Aged Care, GP Management Plans, private health insurance,
+          <p className="fade-up d3 in mx-auto mt-4 max-w-2xl text-slate-400">
+            With over 15 years of clinical experience, our team provides personalised, one-on-one care with no waiting
+            rooms and no travel stress. We accept My Aged Care, GP Management Plans, private health insurance, NDIS,
             and private paying clients.
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Stats */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-            {[
-              { value: '15+', label: 'Years of experience' },
-              { value: '1-on-1', label: 'Personalised care' },
-              { value: 'Tasmania', label: 'State-wide service' },
-            ].map(({ value, label }) => (
-              <div key={label}>
-                <div className="text-3xl font-bold text-emerald-600">{value}</div>
-                <div className="text-sm text-gray-500 mt-1">{label}</div>
-              </div>
-            ))}
-          </div>
+      {/* STATS — overlapping card, matches homepage */}
+      <div className="relative z-20 mx-auto -mt-12 max-w-5xl px-6 lg:px-8">
+        <div className="fade-up in grid grid-cols-1 divide-y divide-[#12241D]/10 overflow-hidden rounded-2xl border border-[#12241D]/10 bg-white shadow-[0_24px_60px_-24px_rgba(10,35,27,0.35)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          {[
+            { value: '15+', label: 'Years of experience' },
+            { value: '1-on-1', label: 'Personalised care' },
+            { value: 'Tasmania', label: 'State-wide service' },
+          ].map(({ value, label }) => (
+            <div key={label} className="px-6 py-6 text-center transition-colors hover:bg-[#FBF8F1]">
+              <div className="font-display text-2xl font-extrabold tracking-tight text-[#FF5638]">{value}</div>
+              <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">{label}</div>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-        {/* How It Works */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">How It Works</h2>
-          <p className="text-gray-500 text-center mb-10">
+      {/* HOW IT WORKS */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <div className={`fade-up ${visible ? 'in' : ''} mb-14 text-center`}>
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#FF5638]">Simple process</p>
+          <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-[#12241D] md:text-4xl">How It Works</h2>
+          <p className="mx-auto mt-3 max-w-md text-slate-500">
             Getting started is straightforward. Here&apos;s what to expect from booking through to your first visit.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { step: '1', title: 'Submit a Request', desc: 'Fill in the booking form below with your details, preferred service, and a convenient time.' },
-              { step: '2', title: 'We Confirm', desc: "We'll call or email you within one business day to confirm your appointment and answer any questions." },
-              { step: '3', title: 'We Come to You', desc: 'Micheal visits you at home at the agreed time, bringing all necessary equipment.' },
-              { step: '4', title: 'Your Treatment Plan', desc: "After your initial assessment, you'll receive a personalised plan tailored to your goals and needs." },
-            ].map(({ step, title, desc }) => (
-              <div key={step} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                <div className="w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold mb-4">{step}</div>
-                <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
-                <p className="text-gray-600 text-sm">{desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
-
-        {/* NDIS Intake Form Download */}
-        <div className="mb-16">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <FileDown className="w-6 h-6 text-emerald-600" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1 text-lg">NDIS Client? Download Our Intake Form</h3>
-                <p className="text-gray-600 text-sm max-w-xl">
-                  If you&apos;re a self-managed or plan-managed NDIS participant, please download and complete our
-                  NDIS Client Intake Form ahead of your appointment. You can email
-                  it back in advance to Info@physiotohome.com.
-                </p>
-              </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { step: '1', title: 'Submit a Request', desc: 'Fill in the booking form below with your details, preferred service, and a convenient time.' },
+            { step: '2', title: 'We Confirm', desc: "We'll call or email you within one business day to confirm your appointment and answer any questions." },
+            { step: '3', title: 'We Come to You', desc: 'Your physiotherapist visits you at home at the agreed time, bringing all necessary equipment.' },
+            { step: '4', title: 'Your Treatment Plan', desc: "After your initial assessment, you'll receive a personalised plan tailored to your goals and needs." },
+          ].map(({ step, title, desc }, i) => (
+            <div key={step} className={`fade-up d${i + 1} ${visible ? 'in' : ''} card-lift rounded-2xl border border-[#12241D]/10 bg-white p-6 shadow-sm`}>
+              <div className="font-display mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#0E2C22] text-[#FFC53D] font-bold">{step}</div>
+              <h3 className="mb-2 font-bold text-[#12241D]">{title}</h3>
+              <p className="text-sm leading-relaxed text-slate-500">{desc}</p>
             </div>
-            <a
-              href="/ndis.pdf"
-              download
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-5 py-3 transition-colors flex-shrink-0"
-            >
-              <FileDown className="w-4 h-4 mr-2" />
-              Download NDIS Intake Form
-            </a>
-          </div>
+          ))}
         </div>
+      </section>
 
-        {/* Contact info + Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {/* NDIS INTAKE FORM */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className={`fade-up ${visible ? 'in' : ''} mb-16 flex flex-col items-start justify-between gap-6 rounded-2xl border border-[#12241D]/10 bg-[#F2EFE4] p-8 md:flex-row md:items-center`}>
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white text-[#0E2C22] shadow-sm">
+              <FileDown className="h-6 w-6" />
+            </div>
+            <div>
+              <h3 className="font-display mb-1 text-lg font-bold text-[#12241D]">NDIS Client? Download Our Intake Form</h3>
+              <p className="max-w-xl text-sm text-slate-600">
+                If you&apos;re a self-managed or plan-managed NDIS participant, please download and complete our
+                NDIS Client Intake Form ahead of your appointment. You can email it back in advance to
+                Info@physiotohome.com.
+              </p>
+            </div>
+          </div>
+          <a
+            href="/ndis.pdf"
+            download
+            className="sheen inline-flex flex-shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-[#FF5638] px-5 py-3 text-sm font-bold text-white shadow-lg shadow-[#FF5638]/30 transition-all hover:-translate-y-0.5 hover:bg-[#E8482B]"
+          >
+            <FileDown className="h-4 w-4" />
+            Download NDIS Intake Form
+          </a>
+        </div>
+      </div>
+
+      {/* CONTACT INFO + FORM */}
+      <div className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
 
           {/* Left — contact info */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
-            <div className="space-y-6 mb-10">
+          <div className={`fade-up ${visible ? 'in' : ''}`}>
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#FF5638]">Get in touch</p>
+            <h2 className="font-display mt-3 mb-8 text-3xl font-extrabold tracking-tight text-[#12241D]">Contact details</h2>
+            <div className="mb-10 space-y-6">
               {[
                 {
                   Icon: Phone,
                   title: 'Phone',
-                  content: <a href="tel:1300433233" className="text-gray-600 hover:text-emerald-600 transition-colors">1300 433 233</a>,
+                  content: <a href="tel:1300433233" className="text-slate-600 transition-colors hover:text-[#FF5638]">1300 433 233</a>,
                   sub: 'Mon–Fri: 8am – 6pm, Sat: 9am – 2pm',
                 },
                 {
                   Icon: Mail,
                   title: 'Email',
-                  content: <a href="mailto:info@physiotohome.com" className="text-gray-600 hover:text-emerald-600 transition-colors">info@physiotohome.com</a>,
+                  content: <a href="mailto:info@physiotohome.com" className="text-slate-600 transition-colors hover:text-[#FF5638]">info@physiotohome.com</a>,
                   sub: "We'll respond within 24 hours",
                 },
                 {
                   Icon: MapPin,
                   title: 'Location',
-                  content: <p className="text-gray-600">Tasmania</p>,
+                  content: <p className="text-slate-600">Tasmania</p>,
                   sub: 'Serving clients across the state',
                 },
                 {
                   Icon: Clock,
                   title: 'Availability',
-                  content: <p className="text-gray-600">Mon–Fri: 8am – 6pm</p>,
+                  content: <p className="text-slate-600">Mon–Fri: 8am – 6pm</p>,
                   sub: 'Saturday appointments available on request',
                 },
               ].map(({ Icon, title, content, sub }) => (
-                <div key={title} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6 text-emerald-600" />
+                <div key={title} className="group flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#F2EFE4] text-[#0E2C22] transition-all duration-300 group-hover:bg-[#FF5638] group-hover:text-white">
+                    <Icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{title}</h3>
+                    <h3 className="mb-1 font-bold text-[#12241D]">{title}</h3>
                     {content}
-                    <p className="text-sm text-gray-500 mt-1">{sub}</p>
+                    <p className="mt-1 text-sm text-slate-400">{sub}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">What to Expect</h3>
-              <ul className="space-y-3 text-gray-700">
+            <div className="rounded-2xl border border-[#12241D]/10 bg-[#0E2C22] p-8 text-white">
+              <h3 className="font-display mb-4 text-xl font-bold">What to Expect</h3>
+              <ul className="space-y-3">
                 {[
                   'We come to you — no travel required',
                   'Initial assessment at your first visit',
                   'Personalised treatment plan',
                   'My Aged Care & private health accepted',
                 ].map((item) => (
-                  <li key={item} className="flex items-start">
-                    <span className="text-emerald-600 mr-2">✓</span>
+                  <li key={item} className="flex items-start gap-2 text-slate-300">
+                    <span className="mt-0.5 text-[#FFC53D]">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -236,50 +252,50 @@ export default function BookingClient() {
           </div>
 
           {/* Right — form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Request an Appointment</h2>
+          <div className={`fade-up d1 ${visible ? 'in' : ''} card-lift rounded-2xl border border-[#12241D]/10 bg-white p-8 shadow-xl`}>
+            <h2 className="font-display mb-6 text-2xl font-bold text-[#12241D]">Request an Appointment</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
 
               <div>
                 <Label htmlFor="name">Full Name *</Label>
                 <Input id="name" name="name" type="text" value={formData.name} onChange={handleChange}
-                  placeholder="John Smith" className={errors.name ? 'border-red-500' : ''} />
-                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                  placeholder="John Smith" className={`${inputCx} ${errors.name ? 'border-red-500' : ''}`} />
+                {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
               </div>
 
               <div>
                 <Label htmlFor="email">Email Address *</Label>
                 <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange}
-                  placeholder="john@example.com" className={errors.email ? 'border-red-500' : ''} />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                  placeholder="john@example.com" className={`${inputCx} ${errors.email ? 'border-red-500' : ''}`} />
+                {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
               </div>
 
               <div>
                 <Label htmlFor="phone">Phone Number *</Label>
                 <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange}
-                  placeholder="0412 345 678" className={errors.phone ? 'border-red-500' : ''} />
-                {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                  placeholder="0412 345 678" className={`${inputCx} ${errors.phone ? 'border-red-500' : ''}`} />
+                {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
               </div>
 
               <div>
                 <Label htmlFor="service">Service Required *</Label>
                 <select id="service" name="service" value={formData.service} onChange={handleChange}
-                  className={`w-full rounded-md border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 ${errors.service ? 'border-red-500' : 'border-gray-300'}`}>
+                  className={`${selectCx} ${errors.service ? 'border-red-500' : ''}`}>
                   <option value="">Select a service...</option>
                   {SERVICES.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
-                {errors.service && <p className="text-red-500 text-sm mt-1">{errors.service}</p>}
+                {errors.service && <p className="mt-1 text-sm text-red-500">{errors.service}</p>}
               </div>
 
               <div>
                 <Label htmlFor="preferredDate">Preferred Date (Optional)</Label>
-                <Input id="preferredDate" name="preferredDate" type="date" value={formData.preferredDate} onChange={handleChange} />
+                <Input id="preferredDate" name="preferredDate" type="date" value={formData.preferredDate} onChange={handleChange} className={inputCx} />
               </div>
 
               <div>
                 <Label htmlFor="preferredTime">Preferred Time (Optional)</Label>
                 <select id="preferredTime" name="preferredTime" value={formData.preferredTime} onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                  className={selectCx}>
                   {TIME_OPTIONS.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
               </div>
@@ -287,14 +303,19 @@ export default function BookingClient() {
               <div>
                 <Label htmlFor="notes">Additional Notes (Optional)</Label>
                 <Textarea id="notes" name="notes" value={formData.notes} onChange={handleChange}
-                  placeholder="Tell us about your condition or anything else we should know..." rows={4} />
+                  placeholder="Tell us about your condition or anything else we should know..." rows={4}
+                  className="rounded-lg border-[#12241D]/15 bg-white focus-visible:ring-[#FF5638] focus-visible:ring-offset-0" />
               </div>
 
-              <Button type="submit" disabled={loading} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">
-                {loading ? 'Sending...' : <><span>Submit Booking Request</span><Send className="w-4 h-4 ml-2" /></>}
+              <Button
+                type="submit"
+                disabled={loading}
+                className="sheen w-full rounded-xl bg-[#FF5638] py-6 text-base font-bold text-white shadow-lg shadow-[#FF5638]/30 transition-all hover:-translate-y-0.5 hover:bg-[#E8482B]"
+              >
+                {loading ? 'Sending...' : <><span>Submit Booking Request</span><Send className="ml-2 h-4 w-4" /></>}
               </Button>
 
-              <p className="text-center text-sm text-gray-500">
+              <p className="text-center text-sm text-slate-500">
                 We&apos;ll confirm your appointment by phone or email within one business day.
               </p>
             </form>
