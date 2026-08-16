@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
-import { isPatientAssignedToEmail, writeAuditLog } from '@/lib/db'
+import { isPatientAssignedToEmail, writeAuditLog, getDisplayNamesForEmails } from '@/lib/db'
 import {
   createTreatmentNote,
   updateTreatmentNote,
@@ -33,7 +33,17 @@ export async function GET(req: Request) {
     if (searchParams.get('draftOnly') === 'true') {
       notes = notes.filter((n: any) => n.draft === true)
     }
-    return NextResponse.json({ notes })
+    // note.title holds the treating physio's email (see lib/cliniko.ts —
+    // it's kept out of the clinical content, and doubled as the key
+    // getMostRecentDraftForAuthor matches drafts on). Resolve it to a
+    // display name here, at the edge, so that matching logic elsewhere
+    // keeps using the raw email untouched — only the rendered label changes.
+    const names = await getDisplayNamesForEmails(notes.map((n: any) => n.title).filter(Boolean))
+    const withAuthorNames = notes.map((n: any) => ({
+      ...n,
+      authorDisplayName: names[String(n.title).toLowerCase()] || n.title,
+    }))
+    return NextResponse.json({ notes: withAuthorNames })
   } catch (e: any) {
     return NextResponse.json({ error: e.message || 'Failed to load notes' }, { status: 502 })
   }
