@@ -619,13 +619,32 @@ export async function listAppointmentsForPatient(patientId: string, opts: { from
 
 // ── Patient arrived ───────────────────────────────────────────────
 //
-// Cliniko models this as a plain boolean on the appointment itself
-// (`patient_arrived`), not a timestamp or a separate endpoint — see
-// https://docs.api.cliniko.com/openapi/individual-appointment. A normal
-// PATCH is enough; there's no dedicated "check in" action in the API.
+// `patient_arrived` on individual_appointments is READ-ONLY — it's a
+// value Cliniko computes and surfaces on the appointment, but the
+// PATCH /individual_appointments/{id} endpoint only accepts
+// appointment_type_id, business_id, ends_at, notes, patient_id,
+// patient_case_id, practitioner_id, repeat_rule, starts_at (confirmed
+// against https://docs.api.cliniko.com/openapi/individual-appointment —
+// "arrived" isn't in that writable list). Sending patient_arrived there
+// returns 200 and silently does nothing, which is why this used to look
+// like it worked but never showed as arrived in Cliniko.
+//
+// The actual write happens on the appointment's Attendee resource:
+// PATCH /attendees/{id} with { "arrived": true } — see
+// https://docs.api.cliniko.com/openapi/attendee. Every individual
+// appointment has exactly one attendee, reached via
+// GET /individual_appointments/{id}/attendees.
 export async function markPatientArrived(appointmentId: string) {
-  return clinikoFetch(`/individual_appointments/${appointmentId}`, {
+  const attendeesData = await clinikoFetch(`/individual_appointments/${appointmentId}/attendees`)
+  const attendee = attendeesData?.attendees?.[0]
+  if (!attendee?.id) {
+    throw new Error(`No attendee found for appointment ${appointmentId} — can't mark arrived`)
+  }
+  await clinikoFetch(`/attendees/${attendee.id}`, {
     method: 'PATCH',
-    body: JSON.stringify({ patient_arrived: true }),
+    body: JSON.stringify({ arrived: true }),
   })
+  // Re-fetch the appointment so the caller gets patient_arrived: true
+  // back (that field is read-only but now reflects the attendee update).
+  return getIndividualAppointment(appointmentId)
 }
