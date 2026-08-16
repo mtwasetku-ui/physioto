@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { ClinikoPatientInfo } from '@/lib/cliniko'
@@ -116,6 +117,12 @@ export default function PatientDetailClient({
   isAdmin: boolean
 }) {
   const [tab, setTab] = useState<Tab>('note')
+  // ?appointmentId=... — set by the "Add treatment note" button on the
+  // calendar, so a note started from there is pre-linked to that specific
+  // visit instead of falling back to NoteForm's own "today's appointment"
+  // guess.
+  const searchParams = useSearchParams()
+  const linkAppointmentId = searchParams.get('appointmentId')
 
   return (
     <div>
@@ -150,7 +157,7 @@ export default function PatientDetailClient({
         ))}
       </div>
 
-      {tab === 'note' && <NoteForm patientId={patientId} authorEmail={authorEmail} />}
+      {tab === 'note' && <NoteForm patientId={patientId} authorEmail={authorEmail} initialAppointmentId={linkAppointmentId} />}
       {tab === 'timeline' && <Timeline patientId={patientId} />}
       {tab === 'attachments' && <Attachments patientId={patientId} />}
       {tab === 'book' && <BookVisit patientId={patientId} />}
@@ -199,7 +206,15 @@ function InfoRow({ icon: Icon, label, value }: { icon: any; label: string; value
 
 // ── New note form ────────────────────────────────────────────────
 
-function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: string }) {
+function NoteForm({
+  patientId,
+  authorEmail,
+  initialAppointmentId,
+}: {
+  patientId: string
+  authorEmail: string
+  initialAppointmentId?: string | null
+}) {
   const [templates, setTemplates] = useState<Template[] | null>(null)
   const [templateName, setTemplateName] = useState<string>(TEMPLATE_NAMES[0])
   const [answers, setAnswers] = useState<Record<string, string | string[]>>({})
@@ -235,6 +250,12 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
         }
         const list = data.appointments || []
         setAppointments(list)
+        // Coming from "Add treatment note" on the calendar for a specific
+        // visit takes priority over the "today" guess below.
+        if (initialAppointmentId) {
+          setBookingId(initialAppointmentId)
+          return
+        }
         // Default to today's visit if there is one, otherwise leave unlinked.
         const today = list.find((a: any) => new Date(a.starts_at).toDateString() === new Date().toDateString())
         if (today) setBookingId(String(today.id))
@@ -243,7 +264,7 @@ function NoteForm({ patientId, authorEmail }: { patientId: string; authorEmail: 
         setAppointmentsError(e?.message || 'Network error loading appointments')
         setAppointments([])
       })
-  }, [patientId])
+  }, [patientId, initialAppointmentId])
 
   useEffect(() => {
     setAnswers({})
