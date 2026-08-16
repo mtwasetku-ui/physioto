@@ -63,6 +63,26 @@ export async function setClinikoPractitionerId(email: string, practitionerId: st
   return rows[0] ?? null
 }
 
+// Batch email -> display_name lookup, e.g. for labelling a treatment
+// note's stored authorEmail (see note.title in lib/cliniko.ts) with a
+// human name in the UI instead of the raw address. Emails with no
+// display_name set (or no allowed_emails row at all, e.g. a legacy
+// note authored before that physio was added) are simply absent from
+// the returned map — callers fall back to the email itself.
+export async function getDisplayNamesForEmails(emails: string[]): Promise<Record<string, string>> {
+  const unique = Array.from(new Set(emails.map((e) => e.toLowerCase()))).filter(Boolean)
+  if (unique.length === 0) return {}
+  const rows = await sql`
+    select email, display_name from allowed_emails
+    where email = any(${unique}) and display_name is not null
+  `
+  const map: Record<string, string> = {}
+  for (const row of rows as { email: string; display_name: string }[]) {
+    map[row.email] = row.display_name
+  }
+  return map
+}
+
 // ── Patient assignments ─────────────────────────────────────────
 
 export async function listAssignmentsForEmail(email: string) {
