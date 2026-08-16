@@ -216,8 +216,8 @@ export default function BookingClient() {
                 {
                   Icon: Clock,
                   title: 'Availability',
-                  content: <p className="text-slate-600">Mon–Fri: 8am – 6pm</p>,
-                  sub: 'Saturday appointments available on request',
+                  content: <p className="text-slate-600">Mon–Sat: 9am – 5pm</p>,
+                  sub: 'After hours appointment available on request',
                 },
               ].map(({ Icon, title, content, sub }) => (
                 <div key={title} className="group flex items-start gap-4">
