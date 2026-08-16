@@ -21,7 +21,7 @@ export default function StaffLayout({ children }: { children: React.ReactNode })
               className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
             >
               <CalendarDays className="h-4 w-4" />
-              Diary
+              Calendar
             </Link>
             <PortalSignOutButton />
           </div>
