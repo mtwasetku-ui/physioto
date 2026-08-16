@@ -5,10 +5,10 @@ import Image from 'next/image'
 import { Award, Heart, X } from 'lucide-react'
 import { teamMembers, type TeamMember } from '@/data/teamData'
 
-function TeamCard({ member, onOpen, delayClass }: { member: TeamMember; onOpen: (m: TeamMember) => void; delayClass: string }) {
+function TeamCard({ member, onOpen, delayClass, visible }: { member: TeamMember; onOpen: (m: TeamMember) => void; delayClass: string; visible: boolean }) {
   return (
     <div
-      className={`card-lift fade-up ${delayClass} group relative h-[420px] cursor-pointer overflow-hidden rounded-2xl`}
+      className={`card-lift fade-up ${delayClass} ${visible ? 'in' : ''} group relative h-[420px] cursor-pointer overflow-hidden rounded-2xl`}
       onClick={() => onOpen(member)}
     >
       {member.photo ? (
@@ -232,7 +232,7 @@ export default function TeamClient() {
         {sortedMembers.length > 0 ? (
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {sortedMembers.map((member, i) => (
-              <TeamCard key={member.id} member={member} onOpen={setExpanded} delayClass={DELAYS[i % DELAYS.length]} />
+              <TeamCard key={member.id} member={member} onOpen={setExpanded} delayClass={DELAYS[i % DELAYS.length]} visible={vis('team-grid')} />
             ))}
           </div>
         ) : (
