@@ -89,7 +89,7 @@ export default function ContactClient() {
             <h2 className="font-display mt-3 mb-8 text-3xl font-extrabold tracking-tight text-[#12241D]">Contact details</h2>
             <div className="mb-12 space-y-6">
               {[
-                { Icon: Phone, title: 'Phone', content: <a href="tel:1300433233" className="text-slate-600 transition-colors hover:text-[#FF5638]">1300 433 233</a>, sub: 'Mon–Fri: 8am – 6pm, Sat: 9am – 2pm' },
+                { Icon: Phone, title: 'Phone', content: <a href="tel:1300433233" className="text-slate-600 transition-colors hover:text-[#FF5638]">1300 433 233</a>, sub: 'Mon– Sat: 9am – 5pm' },
                 { Icon: Mail, title: 'Email', content: <a href="mailto:info@physiotohome.com" className="text-slate-600 transition-colors hover:text-[#FF5638]">info@physiotohome.com</a>, sub: "We'll respond within 24 hours" },
                 { Icon: MapPin, title: 'Service Area', content: <p className="text-slate-600">Across Tasmania</p>, sub: 'We come to you — home, aged care facility, or workplace' },
               ].map(({ Icon, title, content, sub }) => (
