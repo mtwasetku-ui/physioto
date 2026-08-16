@@ -151,12 +151,21 @@ export default function TeamClient() {
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
   useEffect(() => {
+    const sections = Object.values(sectionRefs.current).filter((r): r is HTMLElement => !!r)
+
+    // Safety net: if the observer never fires (layout shift mid-mount, slow
+    // hydration, etc.) force everything visible after a short delay instead
+    // of leaving cards permanently at opacity:0 (invisible but still clickable).
+    const fallback = setTimeout(() => {
+      setVisibleSections((p) => new Set([...Array.from(p), ...sections.map((s) => s.id)]))
+    }, 800)
+
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) setVisibleSections((p) => new Set(Array.from(p).concat(e.target.id))) }),
       { threshold: 0.1 }
     )
-    Object.values(sectionRefs.current).forEach((r) => { if (r) observer.observe(r) })
-    return () => observer.disconnect()
+    sections.forEach((r) => observer.observe(r))
+    return () => { observer.disconnect(); clearTimeout(fallback) }
   }, [])
 
   const setRef = (id: string) => (el: HTMLElement | null) => { sectionRefs.current[id] = el }
