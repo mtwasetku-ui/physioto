@@ -316,6 +316,40 @@ export function idFromLink(url?: string | null): string | null {
   return match ? match[1] : null
 }
 
+function mapIndividualAppointment(a: any): DiaryAppointment {
+  return {
+    id: String(a.id),
+    startsAt: a.starts_at,
+    endsAt: a.ends_at,
+    patientId: idFromLink(a.patient?.links?.self),
+    patientName: a.patient_name ?? null,
+    patientArrived: !!a.patient_arrived,
+    didNotArrive: !!a.did_not_arrive,
+    cancelledAt: a.cancelled_at ?? null,
+    notes: a.notes ?? null,
+  }
+}
+
+// Powers the calendar view — a specific [from, to) window rather than
+// just "everything upcoming", so prev/next week navigation can ask for
+// exactly the week it needs. Cancelled visits are left in (the calendar
+// still shows them, struck through) rather than silently dropped, since
+// on a specific day view "why is nothing here" is worse than seeing a
+// cancelled slot.
+export async function listAppointmentsForPractitionerInRange(
+  practitionerId: string,
+  fromISO: string,
+  toISO: string,
+  opts: { limit?: number } = {}
+): Promise<DiaryAppointment[]> {
+  const { limit = 100 } = opts
+  const data = await clinikoFetch(
+    `/individual_appointments?q[]=${encodeURIComponent(`practitioner_id:=${practitionerId}`)}&q[]=${encodeURIComponent(`starts_at:>=${fromISO}`)}&q[]=${encodeURIComponent(`starts_at:<${toISO}`)}&sort=starts_at:asc&per_page=${limit}`
+  )
+  const appointments = (data.individual_appointments ?? []) as any[]
+  return appointments.map(mapIndividualAppointment)
+}
+
 export async function listUpcomingAppointmentsForPractitioner(
   practitionerId: string,
   opts: { limit?: number } = {}
@@ -325,20 +359,9 @@ export async function listUpcomingAppointmentsForPractitioner(
     `/individual_appointments?q[]=${encodeURIComponent(`practitioner_id:=${practitionerId}`)}&q[]=${encodeURIComponent(`starts_at:>${new Date().toISOString()}`)}&sort=starts_at:asc&per_page=${limit}`
   )
   const appointments = (data.individual_appointments ?? []) as any[]
-  return appointments
-    .filter((a) => !a.cancelled_at) // cancelled visits don't belong on the diary
-    .map((a) => ({
-      id: String(a.id),
-      startsAt: a.starts_at,
-      endsAt: a.ends_at,
-      patientId: idFromLink(a.patient?.links?.self),
-      patientName: a.patient_name ?? null,
-      patientArrived: !!a.patient_arrived,
-      didNotArrive: !!a.did_not_arrive,
-      cancelledAt: a.cancelled_at ?? null,
-      notes: a.notes ?? null,
-    }))
+  return appointments.filter((a) => !a.cancelled_at).map(mapIndividualAppointment)
 }
+
 
 // ── Attachments ──────────────────────────────────────────────────
 
