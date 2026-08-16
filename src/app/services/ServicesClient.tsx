@@ -166,7 +166,7 @@ const faqs: { question: string; answer: string }[] = [
 
 function CheckCircle({ size = 14 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#4E9B72" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
     </svg>
   );
@@ -189,7 +189,7 @@ function ConditionItem({ label }: { label: string }) {
       {slug ? (
         <Link
           href={`/blog/${slug}`}
-          style={{ color: '#059669', textDecoration: 'none', fontWeight: 600 }}
+          style={{ color: '#FF5638', textDecoration: 'none', fontWeight: 600 }}
           onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
           onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
         >
@@ -214,7 +214,7 @@ function FaqItem({ faq, open, onToggle }: { faq: { question: string; answer: str
         }}
       >
         <span style={{ fontSize: 17, fontWeight: 700 }}>{faq.question}</span>
-        <span style={{ color: '#059669', flexShrink: 0 }}><ChevronDown open={open} /></span>
+        <span style={{ color: '#FF5638', flexShrink: 0 }}><ChevronDown open={open} /></span>
       </button>
       {open && (
         <p style={{ margin: '0 0 20px', padding: '0 4px', color: '#475569', fontSize: 15.5, lineHeight: 1.7 }}>
@@ -238,9 +238,9 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
     >
       <div style={{ position: 'relative', height: 280, overflow: 'hidden' }}>
         <Image src={`/${service.photo}`} alt={service.name} fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(4,30,20,0.9) 0%, rgba(4,30,20,0.5) 55%, rgba(4,30,20,0.12) 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,35,27,0.9) 0%, rgba(10,35,27,0.5) 55%, rgba(10,35,27,0.12) 100%)' }} />
         <div style={{ position: 'absolute', bottom: 20, left: 20, right: 20 }}>
-          <h3 style={{ margin: '0 0 10px', color: '#fff', fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 24, fontWeight: 600, lineHeight: 1.2 }}>
+          <h3 style={{ margin: '0 0 10px', color: '#fff', fontFamily: "var(--font-bricolage), 'Trebuchet MS', sans-serif", fontSize: 24, fontWeight: 600, lineHeight: 1.2 }}>
             {service.name}
           </h3>
           <p style={{ margin: 0, color: 'rgba(255,255,255,0.88)', fontSize: 16, lineHeight: 1.6 }}>
@@ -252,8 +252,8 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
       <div style={{ padding: '18px 22px', background: '#fff' }}>
         <span style={{
           display: 'inline-flex', alignItems: 'center', gap: 6,
-          background: '#ecfdf5', border: '1px solid #a7f3d0', borderRadius: 999,
-          padding: '4px 11px', fontSize: 12.5, fontWeight: 700, color: '#047857', marginBottom: 12
+          background: '#E7F2E7', border: '1px solid #4E9B72', borderRadius: 999,
+          padding: '4px 11px', fontSize: 12.5, fontWeight: 700, color: '#2E6B4A', marginBottom: 12
         }}>
           <CheckCircle size={12} /> NDIS funding accepted
         </span>
@@ -261,7 +261,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
           <button onClick={() => setOpen(o => !o)} style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
             background: 'none', border: 'none', cursor: 'pointer',
-            color: '#059669', fontWeight: 700, fontSize: 16, padding: 0
+            color: '#FF5638', fontWeight: 700, fontSize: 16, padding: 0
           }}>
             {open ? 'Show less' : 'Learn more'} <ChevronDown open={open} />
           </button>
@@ -269,7 +269,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
         {open && (
           <div style={{ marginTop: 16, borderTop: '1px solid #f1f5f9', paddingTop: 16 }}>
             <p style={{ margin: '0 0 14px', color: '#475569', fontSize: 16, lineHeight: 1.65 }}>{service.detail}</p>
-            <p style={{ margin: '0 0 10px', fontSize: 12.5, fontWeight: 800, color: '#059669', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Conditions we treat</p>
+            <p style={{ margin: '0 0 10px', fontSize: 12.5, fontWeight: 800, color: '#FF5638', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Conditions we treat</p>
             <ul style={{ margin: 0, padding: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 10px', listStyle: 'none' }}>
               {service.conditions.map(c => (
                 <ConditionItem key={c} label={c} />
@@ -302,7 +302,7 @@ export default function ServicesPage() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom, #f0fdf9, #fff)', fontFamily: 'system-ui, sans-serif' }}>
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom, #FBF8F1, #fff)', fontFamily: "var(--font-instrument-sans), system-ui, sans-serif" }}>
       <style>{`
         .dots-bg { background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 24px 24px; }
         .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
@@ -315,12 +315,12 @@ export default function ServicesPage() {
       `}</style>
 
       {/* HERO */}
-      <section className="dots-bg" style={{ background: 'linear-gradient(135deg, #064e3b, #022c22)', padding: '88px 24px 80px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -80, right: -40, width: 380, height: 380, background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <section className="dots-bg" style={{ background: 'linear-gradient(135deg, #0E2C22, #0A231B)', padding: '88px 24px 80px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -80, right: -40, width: 380, height: 380, background: 'radial-gradient(circle, rgba(255,86,56,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
-          <p style={{ color: '#6ee7b7', fontSize: 13, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 18px' }}>What We Offer</p>
-          <h1 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(42px, 6.5vw, 62px)', color: '#fff', margin: '0 0 20px', lineHeight: 1.15 }}>
-            Tasmania-Wide Physiotherapy Services <em style={{ color: '#6ee7b7', fontStyle: 'italic' }}>built around you</em>
+          <p style={{ color: '#FFC53D', fontSize: 13, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 18px' }}>What We Offer</p>
+          <h1 style={{ fontFamily: "var(--font-bricolage), 'Trebuchet MS', sans-serif", fontSize: 'clamp(42px, 6.5vw, 62px)', color: '#fff', margin: '0 0 20px', lineHeight: 1.15 }}>
+            Tasmania-Wide Physiotherapy Services <em style={{ color: '#FFC53D', fontStyle: 'italic' }}>built around you</em>
           </h1>
           <p style={{ color: '#cbd5e1', fontSize: 19, lineHeight: 1.7, maxWidth: 600, margin: '0 auto 32px' }}>
             Comprehensive in-home physiotherapy across Tasmania, based in Launceston — tailored to your condition, your home, and your goals.
@@ -329,8 +329,8 @@ export default function ServicesPage() {
             {badges.map(b => (
               <span key={b} style={{
                 display: 'inline-flex', alignItems: 'center', gap: 7,
-                background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(110,231,183,0.3)',
-                borderRadius: 999, padding: '7px 15px', fontSize: 14, color: '#d1fae5', fontWeight: 600
+                background: 'rgba(255,86,56,0.15)', border: '1px solid rgba(255,197,61,0.3)',
+                borderRadius: 999, padding: '7px 15px', fontSize: 14, color: '#F2EFE4', fontWeight: 600
               }}>
                 <CheckCircle size={13} />{b}
               </span>
@@ -342,8 +342,8 @@ export default function ServicesPage() {
       {/* SERVICES */}
       <section style={{ maxWidth: 1150, margin: '0 auto', padding: '80px 24px' }}>
         <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 56 }}>
-          <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, margin: '0 auto 22px' }} />
-          <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(32px, 4.5vw, 44px)', color: '#0f172a', margin: '0 0 12px' }}>Our Physiotherapy Services</h2>
+          <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#FF5638,#FF5638)', borderRadius: 2, margin: '0 auto 22px' }} />
+          <h2 style={{ fontFamily: "var(--font-bricolage), 'Trebuchet MS', sans-serif", fontSize: 'clamp(32px, 4.5vw, 44px)', color: '#0f172a', margin: '0 0 12px' }}>Our Physiotherapy Services</h2>
           <p style={{ color: '#475569', fontSize: 17, maxWidth: 520, margin: '0 auto', lineHeight: 1.65 }}>
             We treat a wide range of conditions. Click any service to learn more about how we can help.
           </p>
@@ -358,23 +358,23 @@ export default function ServicesPage() {
       </section>
 
       {/* FUNDING */}
-      <section style={{ background: '#ecfdf5', borderTop: '1px solid #d1fae5', padding: '72px 24px' }}>
+      <section style={{ background: '#F2EFE4', borderTop: '1px solid #F2EFE4', padding: '72px 24px' }}>
         <div style={{ maxWidth: 1150, margin: '0 auto' }}>
           <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 44, transitionDelay: '0.3s' }}>
-            <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, margin: '0 auto 22px' }} />
-            <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(30px, 4vw, 42px)', color: '#0f172a', margin: '0 0 12px' }}>Funding & Payment Options</h2>
+            <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#FF5638,#FF5638)', borderRadius: 2, margin: '0 auto 22px' }} />
+            <h2 style={{ fontFamily: "var(--font-bricolage), 'Trebuchet MS', sans-serif", fontSize: 'clamp(30px, 4vw, 42px)', color: '#0f172a', margin: '0 0 12px' }}>Funding & Payment Options</h2>
             <p style={{ color: '#475569', fontSize: 16, maxWidth: 440, margin: '0 auto' }}>We make accessing quality care as simple as possible.</p>
           </div>
           <div className="funding-grid">
             {fundingOptions.map(({ emoji, label, desc, slug }) => {
               const cardStyle: React.CSSProperties = {
                 display: 'block', background: '#fff', borderRadius: 18, padding: '24px 16px',
-                textAlign: 'center', border: '1px solid #d1fae5',
+                textAlign: 'center', border: '1px solid #F2EFE4',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)', textDecoration: 'none',
                 transition: 'box-shadow 0.2s, transform 0.2s'
               };
               const handlers = {
-                onMouseEnter: (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.boxShadow = '0 8px 22px rgba(5,150,105,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)'; },
+                onMouseEnter: (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.boxShadow = '0 8px 22px rgba(255,86,56,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)'; },
                 onMouseLeave: (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'none'; },
               };
               const content = (
@@ -383,7 +383,7 @@ export default function ServicesPage() {
                   <p style={{ margin: '0 0 5px', fontWeight: 700, color: '#0f172a', fontSize: 14.5 }}>{label}</p>
                   <p style={{ margin: 0, color: '#64748b', fontSize: 13 }}>{desc}</p>
                   {slug && (
-                    <p style={{ margin: '8px 0 0', color: '#059669', fontSize: 12.5, fontWeight: 700 }}>Learn more &rarr;</p>
+                    <p style={{ margin: '8px 0 0', color: '#FF5638', fontSize: 12.5, fontWeight: 700 }}>Learn more &rarr;</p>
                   )}
                 </>
               );
@@ -404,8 +404,8 @@ export default function ServicesPage() {
       {/* FAQ */}
       <section style={{ maxWidth: 800, margin: '0 auto', padding: '80px 24px' }}>
         <div className={`fade-in ${visible ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: 44 }}>
-          <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, margin: '0 auto 22px' }} />
-          <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(30px, 4vw, 42px)', color: '#0f172a', margin: '0 0 12px' }}>Frequently Asked Questions</h2>
+          <div style={{ width: 52, height: 4, background: 'linear-gradient(90deg,#FF5638,#FF5638)', borderRadius: 2, margin: '0 auto 22px' }} />
+          <h2 style={{ fontFamily: "var(--font-bricolage), 'Trebuchet MS', sans-serif", fontSize: 'clamp(30px, 4vw, 42px)', color: '#0f172a', margin: '0 0 12px' }}>Frequently Asked Questions</h2>
           <p style={{ color: '#475569', fontSize: 16, maxWidth: 440, margin: '0 auto' }}>Answers to the questions we hear most before a first visit.</p>
         </div>
         <div className={`fade-in ${visible ? 'in' : ''}`}>
@@ -420,12 +420,12 @@ export default function ServicesPage() {
       />
 
       {/* CTA */}
-      <section className="dots-bg" style={{ background: 'linear-gradient(135deg, #064e3b, #022c22)', padding: '88px 24px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -60, right: -30, width: 300, height: 300, background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <section className="dots-bg" style={{ background: 'linear-gradient(135deg, #0E2C22, #0A231B)', padding: '88px 24px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -60, right: -30, width: 300, height: 300, background: 'radial-gradient(circle, rgba(255,86,56,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 660, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
-          <p style={{ color: '#6ee7b7', fontSize: 13, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 16px' }}>Get Started Today</p>
-          <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: 'clamp(36px, 5.5vw, 52px)', color: '#fff', margin: '0 0 18px', lineHeight: 1.2 }}>
-            Ready to begin<br /><em style={{ color: '#6ee7b7' }}>your recovery?</em>
+          <p style={{ color: '#FFC53D', fontSize: 13, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 16px' }}>Get Started Today</p>
+          <h2 style={{ fontFamily: "var(--font-bricolage), 'Trebuchet MS', sans-serif", fontSize: 'clamp(36px, 5.5vw, 52px)', color: '#fff', margin: '0 0 18px', lineHeight: 1.2 }}>
+            Ready to begin<br /><em style={{ color: '#FFC53D' }}>your recovery?</em>
           </h2>
           <p style={{ color: '#cbd5e1', fontSize: 18, lineHeight: 1.7, marginBottom: 40 }}>
             Book your appointment today and experience professional physiotherapy in the comfort of your own home. No GP referral needed.
@@ -433,13 +433,13 @@ export default function ServicesPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
             <Link href="/booking" style={{
               display: 'inline-flex', alignItems: 'center', gap: 9,
-              background: '#10b981', color: '#fff', fontWeight: 700,
+              background: '#FF5638', color: '#fff', fontWeight: 700,
               border: 'none', borderRadius: 12, padding: '16px 32px', fontSize: 17,
-              cursor: 'pointer', boxShadow: '0 8px 24px rgba(16,185,129,0.35)',
+              cursor: 'pointer', boxShadow: '0 8px 24px rgba(255,86,56,0.35)',
               transition: 'background 0.15s, transform 0.15s', textDecoration: 'none'
             }}
-              onMouseEnter={e => { e.currentTarget.style.background = '#34d399'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#10b981'; e.currentTarget.style.transform = 'none'; }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#E8482B'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#FF5638'; e.currentTarget.style.transform = 'none'; }}
             >
               <Calendar size={18} /> Book Your Appointment
             </Link>
