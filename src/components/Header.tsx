@@ -34,7 +34,7 @@ export default function Header() {
               ringRadius={36}
               particleColor="#059669"
               motion="radial"
-              speed={0.4}
+              speed={0.15}
               className="pointer-events-none"
             />
             <Image
