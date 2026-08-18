@@ -160,6 +160,8 @@ export default function BookingClient() {
         preferredTime: '',
         notes: '',
       })
+
+      setErrors({})
     } catch {
       toast({
         title: 'Submission Failed',
@@ -206,7 +208,7 @@ export default function BookingClient() {
       content: (
         <a
           href="tel:1300433233"
-          className="font-medium text-slate-600 transition-colors hover:text-[#FF5638]"
+          className="font-medium text-slate-200 transition-colors hover:text-[#FF5638]"
         >
           1300 433 233
         </a>
@@ -219,7 +221,7 @@ export default function BookingClient() {
       content: (
         <a
           href="mailto:info@physiotohome.com"
-          className="font-medium text-slate-600 transition-colors hover:text-[#FF5638]"
+          className="font-medium text-slate-200 transition-colors hover:text-[#FF5638]"
         >
           info@physiotohome.com
         </a>
@@ -229,14 +231,18 @@ export default function BookingClient() {
     {
       Icon: MapPin,
       title: 'Location',
-      content: <p className="font-medium text-slate-600">Tasmania</p>,
+      content: (
+        <p className="font-medium text-slate-200">
+          Tasmania
+        </p>
+      ),
       sub: 'Serving clients across the state',
     },
     {
       Icon: Clock,
       title: 'Availability',
       content: (
-        <p className="font-medium text-slate-600">
+        <p className="font-medium text-slate-200">
           Mon–Sat: 9am – 5pm
         </p>
       ),
@@ -246,22 +252,10 @@ export default function BookingClient() {
 
   return (
     <div className="font-body min-h-screen overflow-x-hidden bg-[#FBF8F1] text-[#12241D]">
-      <div className="pth-grain" aria-hidden="true" />
-
       {/* =====================================================
-          HERO
+          HERO — SOLID GREEN
       ===================================================== */}
-      <section className="dots relative overflow-hidden bg-[#0E2C22] py-24 text-white md:py-32">
-        <div
-          className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#FFC53D]/10 blur-3xl"
-          aria-hidden="true"
-        />
-
-        <div
-          className="absolute -right-24 -top-20 h-96 w-96 rounded-full bg-[#FF5638]/15 blur-3xl"
-          aria-hidden="true"
-        />
-
+      <section className="relative overflow-hidden bg-[#0E2C22] py-24 text-white md:py-32">
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-8">
           <p
             className={`fade-up ${
@@ -287,9 +281,9 @@ export default function BookingClient() {
               visible ? 'in' : ''
             } mx-auto mt-7 max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg`}
           >
-            Professional physiotherapy delivered directly to your home
-            across Tasmania — personalised care without the stress of
-            travelling to a clinic.
+            Professional physiotherapy delivered directly to your
+            home across Tasmania — personalised care without the
+            stress of travelling to a clinic.
           </p>
 
           <div
@@ -369,7 +363,7 @@ export default function BookingClient() {
           } mb-14 text-center`}
         >
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#FF5638]">
-            Simple process
+            Simple Process
           </p>
 
           <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-[#12241D] md:text-4xl">
@@ -377,8 +371,8 @@ export default function BookingClient() {
           </h2>
 
           <p className="mx-auto mt-3 max-w-xl text-slate-500">
-            Getting started is simple. We take care of the details so
-            you can focus on getting better.
+            Getting started is simple. We take care of the details
+            so you can focus on getting better.
           </p>
         </div>
 
@@ -411,7 +405,7 @@ export default function BookingClient() {
       </section>
 
       {/* =====================================================
-          NDIS DOWNLOAD
+          NDIS
       ===================================================== */}
       <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
         <div
@@ -419,11 +413,6 @@ export default function BookingClient() {
             visible ? 'in' : ''
           } relative overflow-hidden rounded-2xl bg-[#0E2C22] p-8 text-white md:p-10`}
         >
-          <div
-            className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#FFC53D]/10 blur-2xl"
-            aria-hidden="true"
-          />
-
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div className="flex items-start gap-5">
               <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white text-[#0E2C22] shadow-sm">
@@ -469,7 +458,7 @@ export default function BookingClient() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-14 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#FF5638]">
-              Get started
+              Get Started
             </p>
 
             <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-[#12241D] md:text-4xl">
@@ -485,7 +474,7 @@ export default function BookingClient() {
 
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             {/* =================================================
-                CONTACT / WHAT TO EXPECT
+                CONTACT
             ================================================= */}
             <div
               className={`fade-up ${
@@ -494,7 +483,7 @@ export default function BookingClient() {
             >
               <div className="rounded-2xl bg-[#0E2C22] p-8 text-white shadow-[0_24px_48px_-20px_rgba(10,35,27,0.35)] md:p-10">
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#FFC53D]">
-                  Contact us
+                  Contact Us
                 </p>
 
                 <h3 className="font-display mt-3 text-2xl font-extrabold">
@@ -502,9 +491,9 @@ export default function BookingClient() {
                 </h3>
 
                 <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                  If you&apos;re unsure which service is right for you,
-                  simply get in touch. We&apos;re happy to discuss your
-                  needs before booking.
+                  If you&apos;re unsure which service is right for
+                  you, simply get in touch. We&apos;re happy to
+                  discuss your needs before booking.
                 </p>
 
                 <div className="mt-8 space-y-5">
@@ -523,9 +512,7 @@ export default function BookingClient() {
                             {title}
                           </h4>
 
-                          <div className="[&_a]:text-slate-200 [&_p]:text-slate-200">
-                            {content}
-                          </div>
+                          <div>{content}</div>
 
                           <p className="mt-1 text-xs text-slate-400">
                             {sub}
@@ -537,10 +524,12 @@ export default function BookingClient() {
                 </div>
               </div>
 
-              {/* WHAT TO EXPECT */}
+              {/* =================================================
+                  WHAT TO EXPECT
+              ================================================= */}
               <div className="card-lift mt-6 rounded-2xl border border-[#12241D]/10 bg-white p-8">
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#FF5638]">
-                  Your visit
+                  Your Visit
                 </p>
 
                 <h3 className="font-display mt-2 text-xl font-bold text-[#12241D]">
@@ -582,7 +571,7 @@ export default function BookingClient() {
             >
               <div className="mb-8">
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#FF5638]">
-                  Booking request
+                  Booking Request
                 </p>
 
                 <h3 className="font-display mt-2 text-2xl font-extrabold text-[#12241D]">
@@ -598,9 +587,11 @@ export default function BookingClient() {
                 onSubmit={handleSubmit}
                 className="space-y-5"
               >
-                {/* NAME */}
+                {/* FULL NAME */}
                 <div>
-                  <Label htmlFor="name">Full Name *</Label>
+                  <Label htmlFor="name">
+                    Full Name *
+                  </Label>
 
                   <Input
                     id="name"
@@ -610,7 +601,9 @@ export default function BookingClient() {
                     onChange={handleChange}
                     placeholder="John Smith"
                     className={`${inputCx} ${
-                      errors.name ? 'border-red-500' : ''
+                      errors.name
+                        ? 'border-red-500'
+                        : ''
                     }`}
                   />
 
@@ -635,7 +628,9 @@ export default function BookingClient() {
                     onChange={handleChange}
                     placeholder="john@example.com"
                     className={`${inputCx} ${
-                      errors.email ? 'border-red-500' : ''
+                      errors.email
+                        ? 'border-red-500'
+                        : ''
                     }`}
                   />
 
@@ -660,7 +655,9 @@ export default function BookingClient() {
                     onChange={handleChange}
                     placeholder="0412 345 678"
                     className={`${inputCx} ${
-                      errors.phone ? 'border-red-500' : ''
+                      errors.phone
+                        ? 'border-red-500'
+                        : ''
                     }`}
                   />
 
@@ -683,7 +680,9 @@ export default function BookingClient() {
                     value={formData.service}
                     onChange={handleChange}
                     className={`${selectCx} ${
-                      errors.service ? 'border-red-500' : ''
+                      errors.service
+                        ? 'border-red-500'
+                        : ''
                     }`}
                   >
                     <option value="">
@@ -775,18 +774,15 @@ export default function BookingClient() {
                     'Sending...'
                   ) : (
                     <>
-                      <span>
-                        Submit Booking Request
-                      </span>
-
+                      Submit Booking Request
                       <Send className="ml-2 h-4 w-4" />
                     </>
                   )}
                 </Button>
 
                 <p className="text-center text-xs leading-relaxed text-slate-400">
-                  We&apos;ll confirm your appointment by phone
-                  or email within one business day.
+                  We&apos;ll confirm your appointment by phone or
+                  email within one business day.
                 </p>
               </form>
             </div>
@@ -803,16 +799,6 @@ export default function BookingClient() {
             visible ? 'in' : ''
           } relative overflow-hidden rounded-2xl bg-[#0E2C22] p-10 text-center text-white md:p-14`}
         >
-          <div
-            className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-[#FF5638]/10 blur-3xl"
-            aria-hidden="true"
-          />
-
-          <div
-            className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-[#FFC53D]/10 blur-3xl"
-            aria-hidden="true"
-          />
-
           <div className="relative z-10">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#FFC53D]">
               Ready to get started?
