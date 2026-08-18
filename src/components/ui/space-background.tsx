@@ -30,6 +30,12 @@ interface SpaceBackgroundProps {
    * `fullPage` is false so the field actually fits its container.
    */
   ringRadius?: number
+  /**
+   * "orbit" (default) spirals particles inward while circling the center —
+   * the original effect. "radial" pulls them straight in from their spawn
+   * angle with no circular motion, like they're drifting toward the logo.
+   */
+  motion?: "orbit" | "radial"
 }
 
 // --- Utility: parse RGB/hex colors ---
@@ -71,6 +77,7 @@ export function SpaceBackground({
   className = "",
   fullPage = true,
   ringRadius = 120,
+  motion = "orbit",
 }: SpaceBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const animationRef = useRef<number | null>(null)
@@ -185,7 +192,7 @@ export function SpaceBackground({
 
     const moveParticle = (p: Particle) => {
       p.ring = Math.max(p.ring - 1, state.r)
-      p.random += p.move
+      if (motion === "orbit") p.random += p.move
       p.x = Math.cos(p.random + Math.PI) * p.ring
       p.y = Math.sin(p.random + Math.PI) * p.ring
     }
@@ -193,6 +200,9 @@ export function SpaceBackground({
     const resetParticle = (p: Particle) => {
       p.ring = Math.random() * state.r * 3
       p.radius = Math.random() * (fullPage ? 5 : 2)
+      // In radial mode angle never advances on its own, so give each
+      // respawn a fresh incoming direction instead of always the same line.
+      if (motion === "radial") p.random = Math.random() * 7
     }
 
     const disappear = (p: Particle) => {
@@ -230,7 +240,7 @@ export function SpaceBackground({
       window.removeEventListener("resize", handleResize)
       if (animationRef.current) cancelAnimationFrame(animationRef.current)
     }
-  }, [particleCount, resolvedColor, fullPage, ringRadius])
+  }, [particleCount, resolvedColor, fullPage, ringRadius, motion])
 
   return (
     <canvas
