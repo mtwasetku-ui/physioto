@@ -66,7 +66,7 @@ export default function ContactClient() {
       <div className="pth-grain" aria-hidden="true" />
 
       {/* HERO */}
-      <section className="dots relative overflow-hidden bg-[#0E2C22] py-24 text-white">
+      <section className="relative overflow-hidden bg-[#0E2C22] py-24 text-white">
         <div className="pointer-events-none absolute inset-0 text-white/5" />
         <div className="absolute -top-20 right-[-40px] h-96 w-96 rounded-full bg-[#FF5638]/15 blur-3xl" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center lg:px-8">
