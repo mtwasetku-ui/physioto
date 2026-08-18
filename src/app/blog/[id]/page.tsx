@@ -2,26 +2,58 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { Calendar, User, ArrowLeft, Tag, Clock } from 'lucide-react'
+import {
+  Calendar,
+  User,
+  ArrowLeft,
+  Tag,
+  Clock,
+  ArrowRight,
+} from 'lucide-react'
 import { getPostBySlug, getAllPosts } from '@/lib/blog'
 import { internalLinks } from '@/lib/internalLinks'
 import RelatedPostCard from './RelatedPostCard'
 import type { Metadata } from 'next'
 
-// Ceiling on how many auto-generated keyword links a single article can accumulate.
-// Without this, long articles can pick up 20+ links (every configured keyword that
-// happens to appear), which reads as spammy and dilutes anchor-text relevance.
 const MAX_AUTO_LINKS = 5
+
+const BRAND = {
+  forest: '#0A231B',
+  dark: '#0E2C22',
+  green: '#4E9B72',
+  sage: '#7FB69B',
+  paleGreen: '#E7F2E7',
+  cream: '#F2EFE4',
+  background: '#FBF8F1',
+  orange: '#FF5638',
+  orangeDark: '#E8482B',
+  yellow: '#FFC53D',
+  text: '#17251F',
+  muted: '#64736B',
+  border: '#DCE6DF',
+}
 
 export async function generateStaticParams() {
   const posts = getAllPosts()
-  return posts.map((post) => ({ id: post.slug }))
+
+  return posts.map((post) => ({
+    id: post.slug,
+  }))
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}): Promise<Metadata> {
   const { id } = await params
   const post = getPostBySlug(id)
-  if (!post) return { title: 'Post Not Found' }
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    }
+  }
 
   const BASE_URL = 'https://www.physiotohome.com'
   const url = `${BASE_URL}/blog/${post.slug}`
@@ -29,7 +61,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title: post.title,
     description: post.excerpt,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -38,8 +72,24 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       publishedTime: post.date,
       authors: [post.author],
       images: post.image
-        ? [{ url: post.image.startsWith('http') ? post.image : `${BASE_URL}${post.image}`, width: 1200, height: 630, alt: post.title }]
-        : [{ url: `${BASE_URL}/images/og-default.jpg`, width: 1200, height: 630, alt: post.title }],
+        ? [
+            {
+              url: post.image.startsWith('http')
+                ? post.image
+                : `${BASE_URL}${post.image}`,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : [
+            {
+              url: `${BASE_URL}/images/og-default.jpg`,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -50,14 +100,17 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 }
 
 /**
- * Replaces the first occurrence of each configured keyword in a text string
- * with an internal blog link. Tracks used keywords via the `used` Set so
- * each keyword links only once across the entire post, and stops entirely
- * once `budget.count` reaches MAX_AUTO_LINKS so a single article can't
- * accumulate an unbounded number of auto-inserted links.
+ * Automatically links configured internal keywords.
+ * Maximum of 5 generated links per article.
  */
-function linkifyText(text: string, used: Set<string>, budget: { count: number }): React.ReactNode {
-  const keywords = Object.keys(internalLinks).sort((a, b) => b.length - a.length)
+function linkifyText(
+  text: string,
+  used: Set<string>,
+  budget: { count: number }
+): React.ReactNode {
+  const keywords = Object.keys(internalLinks).sort(
+    (a, b) => b.length - a.length
+  )
 
   const segments: React.ReactNode[] = []
   let remaining = text
@@ -68,14 +121,25 @@ function linkifyText(text: string, used: Set<string>, budget: { count: number })
       break
     }
 
-    let earliest: { index: number; keyword: string } | null = null
+    let earliest: {
+      index: number
+      keyword: string
+    } | null = null
 
     for (const kw of keywords) {
       if (used.has(kw)) continue
-      const idx = remaining.toLowerCase().indexOf(kw.toLowerCase())
+
+      const idx = remaining
+        .toLowerCase()
+        .indexOf(kw.toLowerCase())
+
       if (idx === -1) continue
+
       if (!earliest || idx < earliest.index) {
-        earliest = { index: idx, keyword: kw }
+        earliest = {
+          index: idx,
+          keyword: kw,
+        }
       }
     }
 
@@ -85,9 +149,16 @@ function linkifyText(text: string, used: Set<string>, budget: { count: number })
     }
 
     const { index, keyword } = earliest
-    if (index > 0) segments.push(remaining.slice(0, index))
 
-    const matched = remaining.slice(index, index + keyword.length)
+    if (index > 0) {
+      segments.push(remaining.slice(0, index))
+    }
+
+    const matched = remaining.slice(
+      index,
+      index + keyword.length
+    )
+
     const href = internalLinks[keyword].startsWith('/')
       ? internalLinks[keyword]
       : `/blog/${internalLinks[keyword]}`
@@ -96,7 +167,13 @@ function linkifyText(text: string, used: Set<string>, budget: { count: number })
       <Link
         key={`${keyword}-${index}`}
         href={href}
-        style={{ color: '#059669', textDecoration: 'underline', textDecorationColor: '#a7f3d0', textUnderlineOffset: 3 }}
+        style={{
+          color: BRAND.green,
+          textDecoration: 'underline',
+          textDecorationColor: BRAND.sage,
+          textUnderlineOffset: 3,
+          fontWeight: 500,
+        }}
       >
         {matched}
       </Link>
@@ -104,6 +181,7 @@ function linkifyText(text: string, used: Set<string>, budget: { count: number })
 
     used.add(keyword)
     budget.count++
+
     remaining = remaining.slice(index + keyword.length)
   }
 
@@ -111,39 +189,66 @@ function linkifyText(text: string, used: Set<string>, budget: { count: number })
 }
 
 /**
- * Splits a line by **bold** markers and [text](url) markdown links,
- * then applies linkifyText to plain segments — unless autoLink is false
- * (used for headings, so keyword links don't land inside H2/H3 text).
+ * Renders markdown-style inline content.
  */
-function renderInline(text: string, used: Set<string>, budget: { count: number }, autoLink: boolean = true): React.ReactNode {
-  // Tokenise: split on [text](url) first, then handle **bold** within plain segments
+function renderInline(
+  text: string,
+  used: Set<string>,
+  budget: { count: number },
+  autoLink: boolean = true
+): React.ReactNode {
   const tokens = text.split(/(\[[^\]]+\]\([^)]+\))/)
+
   const nodes: React.ReactNode[] = []
   let k = 0
 
   tokens.forEach((token, ti) => {
     if (ti % 2 === 1) {
-      // Markdown link token [label](href)
-      const m = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+      const m = token.match(
+        /^\[([^\]]+)\]\(([^)]+)\)$/
+      )
+
       if (m) {
         nodes.push(
           <Link
             key={`mdlink-${k++}`}
             href={m[2]}
-            style={{ color: '#059669', textDecoration: 'underline', textDecorationColor: '#a7f3d0', textUnderlineOffset: 3 }}
+            style={{
+              color: BRAND.green,
+              textDecoration: 'underline',
+              textDecorationColor: BRAND.sage,
+              textUnderlineOffset: 3,
+              fontWeight: 500,
+            }}
           >
             {m[1]}
           </Link>
         )
       }
     } else {
-      // Plain text — handle **bold** then linkify (if autoLink is enabled)
       const boldParts = token.split(/\*\*(.*?)\*\*/)
+
       boldParts.forEach((bp, j) => {
         if (j % 2 === 1) {
-          nodes.push(<strong key={`b-${k++}`} style={{ color: '#065f46', fontWeight: 700 }}>{bp}</strong>)
+          nodes.push(
+            <strong
+              key={`b-${k++}`}
+              style={{
+                color: BRAND.forest,
+                fontWeight: 700,
+              }}
+            >
+              {bp}
+            </strong>
+          )
         } else if (bp) {
-          nodes.push(<React.Fragment key={`t-${k++}`}>{autoLink ? linkifyText(bp, used, budget) : bp}</React.Fragment>)
+          nodes.push(
+            <React.Fragment key={`t-${k++}`}>
+              {autoLink
+                ? linkifyText(bp, used, budget)
+                : bp}
+            </React.Fragment>
+          )
         }
       })
     }
@@ -152,164 +257,289 @@ function renderInline(text: string, used: Set<string>, budget: { count: number }
   return <>{nodes}</>
 }
 
-function renderMarkdown(content: string, currentSlug: string) {
+/**
+ * Converts the blog markdown content into styled React elements.
+ */
+function renderMarkdown(
+  content: string,
+  currentSlug: string
+) {
   const lines = content.split('\n')
   const elements: React.ReactNode[] = []
+
   const used = new Set<string>()
-  const budget = { count: 0 }
-  Object.entries(internalLinks).forEach(([kw, slug]) => {
-    if (slug === currentSlug || slug === `/blog/${currentSlug}`) used.add(kw)
-  })
+  const budget = {
+    count: 0,
+  }
+
+  Object.entries(internalLinks).forEach(
+    ([kw, slug]) => {
+      if (
+        slug === currentSlug ||
+        slug === `/blog/${currentSlug}`
+      ) {
+        used.add(kw)
+      }
+    }
+  )
 
   let i = 0
 
   while (i < lines.length) {
     const line = lines[i]
 
-    // H1 — skip, shown in hero
-    if (line.startsWith('# ') && !line.startsWith('## ')) {
+    /* H1 is already displayed in the hero */
+    if (
+      line.startsWith('# ') &&
+      !line.startsWith('## ')
+    ) {
       i++
       continue
     }
 
-    // H2
+    /* H2 */
     if (line.startsWith('## ')) {
       elements.push(
-        <h2 key={i} style={{
-          fontFamily: "var(--font-playfair), Georgia, serif",
-          fontSize: 'clamp(19px, 2.8vw, 24px)',
-          fontWeight: 700,
-          color: '#0f172a',
-          marginTop: 52,
-          marginBottom: 14,
-          paddingBottom: 12,
-          borderBottom: '2px solid #d1fae5',
-          lineHeight: 1.3,
-        }}>
-          {renderInline(line.slice(3), used, budget, false)}
+        <h2
+          key={i}
+          style={{
+            fontFamily:
+              'var(--font-bricolage), sans-serif',
+            fontSize: 'clamp(21px, 3vw, 30px)',
+            fontWeight: 700,
+            color: BRAND.forest,
+            marginTop: 56,
+            marginBottom: 18,
+            paddingBottom: 14,
+            borderBottom: `2px solid ${BRAND.paleGreen}`,
+            lineHeight: 1.25,
+          }}
+        >
+          {renderInline(
+            line.slice(3),
+            used,
+            budget,
+            false
+          )}
         </h2>
       )
+
       i++
       continue
     }
 
-    // H3
+    /* H3 */
     if (line.startsWith('### ')) {
       elements.push(
-        <h3 key={i} style={{
-          fontFamily: "var(--font-playfair), Georgia, serif",
-          fontSize: 'clamp(16px, 2.2vw, 19px)',
-          fontWeight: 600,
-          color: '#059669',
-          marginTop: 32,
-          marginBottom: 8,
-          lineHeight: 1.35,
-        }}>
-          {renderInline(line.slice(4), used, budget, false)}
+        <h3
+          key={i}
+          style={{
+            fontFamily:
+              'var(--font-bricolage), sans-serif',
+            fontSize: 'clamp(18px, 2.5vw, 22px)',
+            fontWeight: 650,
+            color: BRAND.green,
+            marginTop: 36,
+            marginBottom: 12,
+            lineHeight: 1.35,
+          }}
+        >
+          {renderInline(
+            line.slice(4),
+            used,
+            budget,
+            false
+          )}
         </h3>
       )
+
       i++
       continue
     }
 
-    // Horizontal rule — decorative divider
+    /* Horizontal rule */
     if (line.trim() === '---') {
       elements.push(
-        <div key={i} style={{ margin: '44px 0', display: 'flex', alignItems: 'center', gap: 14 }}>
-          <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, transparent, #a7f3d0)' }} />
-          <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#059669', flexShrink: 0 }} />
-          <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, #a7f3d0, transparent)' }} />
+        <div
+          key={i}
+          style={{
+            margin: '48px 0',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 14,
+          }}
+        >
+          <div
+            style={{
+              flex: 1,
+              height: 1,
+              background: `linear-gradient(90deg, transparent, ${BRAND.sage})`,
+            }}
+          />
+
+          <div
+            style={{
+              width: 7,
+              height: 7,
+              borderRadius: '50%',
+              background: BRAND.orange,
+              flexShrink: 0,
+            }}
+          />
+
+          <div
+            style={{
+              flex: 1,
+              height: 1,
+              background: `linear-gradient(90deg, ${BRAND.sage}, transparent)`,
+            }}
+          />
         </div>
       )
+
       i++
       continue
     }
 
-    // Standalone bold line (subheading)
-    if (line.startsWith('**') && line.endsWith('**') && line.length > 4 && !line.slice(2, -2).includes('**')) {
+    /* Standalone bold line */
+    if (
+      line.startsWith('**') &&
+      line.endsWith('**') &&
+      line.length > 4 &&
+      !line.slice(2, -2).includes('**')
+    ) {
       elements.push(
-        <p key={i} style={{
-          fontWeight: 700,
-          color: '#065f46',
-          fontSize: 15.5,
-          marginBottom: 4,
-          marginTop: 22,
-          letterSpacing: '0.01em',
-          paddingLeft: 12,
-          borderLeft: '3px solid #a7f3d0',
-        }}>
-          {renderInline(line.slice(2, -2), used, budget)}
+        <p
+          key={i}
+          style={{
+            fontWeight: 700,
+            color: BRAND.forest,
+            fontSize: 16,
+            marginBottom: 6,
+            marginTop: 24,
+            letterSpacing: '0.01em',
+            paddingLeft: 14,
+            borderLeft: `3px solid ${BRAND.sage}`,
+          }}
+        >
+          {renderInline(
+            line.slice(2, -2),
+            used,
+            budget
+          )}
         </p>
       )
+
       i++
       continue
     }
 
-    // Bullet list
+    /* Bullet list */
     if (line.startsWith('- ')) {
       const listItems: string[] = []
-      while (i < lines.length && lines[i].startsWith('- ')) {
+
+      while (
+        i < lines.length &&
+        lines[i].startsWith('- ')
+      ) {
         listItems.push(lines[i].slice(2))
         i++
       }
+
       elements.push(
-        <ul key={`list-${i}`} style={{ margin: '4px 0 28px', padding: 0, listStyle: 'none' }}>
+        <ul
+          key={`list-${i}`}
+          style={{
+            margin: '8px 0 30px',
+            padding: 0,
+            listStyle: 'none',
+          }}
+        >
           {listItems.map((item, j) => (
-            <li key={j} style={{
-              display: 'flex',
-              alignItems: 'flex-start',
-              gap: 12,
-              padding: '9px 12px',
-              background: j % 2 === 0 ? '#f8fafc' : '#fff',
-              borderRadius: 8,
-              fontSize: 16,
-              color: '#334155',
-              lineHeight: 1.65,
-            }}>
-              <span style={{
-                marginTop: 8,
-                width: 6,
-                height: 6,
-                borderRadius: '50%',
-                background: '#059669',
-                flexShrink: 0,
-              }} />
-              <span>{renderInline(item, used, budget)}</span>
+            <li
+              key={j}
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: 12,
+                padding: '10px 14px',
+                background:
+                  j % 2 === 0
+                    ? BRAND.paleGreen
+                    : '#FFFFFF',
+                borderRadius: 10,
+                fontSize: 16,
+                color: BRAND.text,
+                lineHeight: 1.65,
+                marginBottom: 4,
+              }}
+            >
+              <span
+                style={{
+                  marginTop: 9,
+                  width: 6,
+                  height: 6,
+                  borderRadius: '50%',
+                  background: BRAND.green,
+                  flexShrink: 0,
+                }}
+              />
+
+              <span>
+                {renderInline(
+                  item,
+                  used,
+                  budget
+                )}
+              </span>
             </li>
           ))}
         </ul>
       )
+
       continue
     }
 
-    // Blank line
+    /* Blank line */
     if (line.trim() === '') {
       i++
       continue
     }
 
-    // Body paragraph
+    /* Body paragraph */
     elements.push(
-      <p key={i} style={{
-        color: '#374151',
-        fontSize: 16.5,
-        lineHeight: 1.9,
-        marginBottom: 22,
-        fontFamily: 'Georgia, serif',
-      }}>
+      <p
+        key={i}
+        style={{
+          color: BRAND.text,
+          fontSize: 17,
+          lineHeight: 1.9,
+          marginBottom: 23,
+          fontFamily:
+            'var(--font-instrument-sans), system-ui, sans-serif',
+        }}
+      >
         {renderInline(line, used, budget)}
       </p>
     )
+
     i++
   }
 
   return elements
 }
 
-export default async function BlogPostDetail({ params }: { params: Promise<{ id: string }> }) {
+export default async function BlogPostDetail({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
   const { id } = await params
   const post = getPostBySlug(id)
-  if (!post) notFound()
+
+  if (!post) {
+    notFound()
+  }
 
   const relatedPosts = post.related_posts
     .slice(0, 2)
@@ -317,17 +547,26 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
     .filter(Boolean) as import('@/lib/blog').BlogPost[]
 
   const formatDate = (d: string) =>
-    new Date(d).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })
+    new Date(d).toLocaleDateString('en-AU', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
 
+  /* ============================================================
+     STRUCTURED DATA
+     ============================================================ */
 
-  // ── Structured Data ────────────────────────────────────────────────
   const BASE_URL = 'https://www.physiotohome.com'
+
   const postUrl = `${BASE_URL}/blog/${post.slug}`
+
   const imageUrl = post.image
-    ? (post.image.startsWith('http') ? post.image : `${BASE_URL}${post.image}`)
+    ? post.image.startsWith('http')
+      ? post.image
+      : `${BASE_URL}${post.image}`
     : `${BASE_URL}/images/og-default.jpg`
 
-  // Article schema (E-E-A-T signal for YMYL healthcare content)
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -352,196 +591,508 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ id:
       '@type': 'MedicalBusiness',
       name: 'Physio to Home',
       url: BASE_URL,
-      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/images/logo.png`,
+      },
     },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl,
+    },
     url: postUrl,
   }
 
-  // FAQPage schema — parse FAQ Q&A pairs from post content
-  // FAQPage schema — line-by-line parser (no ES2018 regex flags needed)
+  /* FAQ schema */
+
   let faqSchema: Record<string, unknown> | null = null
-  const faqHeading = /^## (?:Frequently Asked Questions|FAQ|Common Questions)/
+
+  const faqHeading =
+    /^## (?:Frequently Asked Questions|FAQ|Common Questions)/
+
   const lines = post.content.split('\n')
-  const faqStart = lines.findIndex((l) => faqHeading.test(l))
+
+  const faqStart = lines.findIndex((l) =>
+    faqHeading.test(l)
+  )
+
   if (faqStart !== -1) {
     const faqLines = lines.slice(faqStart + 1)
-    const entities: { '@type': string; name: string; acceptedAnswer: { '@type': string; text: string } }[] = []
+
+    const entities: {
+      '@type': string
+      name: string
+      acceptedAnswer: {
+        '@type': string
+        text: string
+      }
+    }[] = []
+
     let currentQ = ''
     let currentA: string[] = []
+
     for (const line of faqLines) {
-      if (line.startsWith('## ')) break // next top-level section
+      if (line.startsWith('## ')) {
+        break
+      }
+
       if (line.startsWith('### ')) {
-        if (currentQ && currentA.join(' ').trim()) {
-          entities.push({ '@type': 'Question', name: currentQ, acceptedAnswer: { '@type': 'Answer', text: currentA.join(' ').trim() } })
+        if (
+          currentQ &&
+          currentA.join(' ').trim()
+        ) {
+          entities.push({
+            '@type': 'Question',
+            name: currentQ,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: currentA.join(' ').trim(),
+            },
+          })
         }
+
         currentQ = line.slice(4).trim()
         currentA = []
-      } else if (currentQ && line.trim()) {
+      } else if (
+        currentQ &&
+        line.trim()
+      ) {
         currentA.push(line.trim())
       }
     }
-    if (currentQ && currentA.join(' ').trim()) {
-      entities.push({ '@type': 'Question', name: currentQ, acceptedAnswer: { '@type': 'Answer', text: currentA.join(' ').trim() } })
+
+    if (
+      currentQ &&
+      currentA.join(' ').trim()
+    ) {
+      entities.push({
+        '@type': 'Question',
+        name: currentQ,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: currentA.join(' ').trim(),
+        },
+      })
     }
+
     if (entities.length > 0) {
-      faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: entities }
+      faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: entities,
+      }
     }
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: '#fff', paddingBottom: 80 }}>
-      {/* Structured Data */}
+    <div
+      style={{
+        minHeight: '100vh',
+        background: BRAND.background,
+        paddingBottom: 80,
+      }}
+    >
+      {/* ========================================================
+          STRUCTURED DATA
+          ======================================================== */}
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
       />
+
       {faqSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
         />
       )}
-      {/* Hero */}
-      <div style={{ width: '100%', height: 'clamp(320px, 50vh, 520px)', position: 'relative', background: '#0f172a' }}>
+
+      {/* ========================================================
+          HERO
+          ======================================================== */}
+
+      <section
+        style={{
+          width: '100%',
+          height: 'clamp(360px, 52vh, 560px)',
+          position: 'relative',
+          background: BRAND.forest,
+          overflow: 'hidden',
+        }}
+      >
         {post.image && (
           <Image
             src={post.image}
             alt={post.title}
             fill
-            style={{ objectFit: 'cover', opacity: 0.35 }}
+            style={{
+              objectFit: 'cover',
+              opacity: 0.38,
+            }}
             priority
           />
         )}
-        {/* gradient */}
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.4) 60%, transparent 100%)' }} />
 
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'flex-end', paddingBottom: 48 }}>
-          <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px', width: '100%' }}>
-            <Link href="/blog" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              color: 'rgba(255,255,255,0.75)', fontSize: 13, fontWeight: 500,
-              textDecoration: 'none', marginBottom: 20,
-            }}>
-              <ArrowLeft size={14} /> Back to all posts
+        {/* Brand gradient */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: `
+              linear-gradient(
+                to top,
+                rgba(10,35,27,0.96) 0%,
+                rgba(10,35,27,0.72) 42%,
+                rgba(10,35,27,0.25) 78%,
+                rgba(10,35,27,0.08) 100%
+              )
+            `,
+          }}
+        />
+
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'flex-end',
+            paddingBottom: 52,
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 920,
+              margin: '0 auto',
+              padding: '0 24px',
+              width: '100%',
+            }}
+          >
+            {/* Back link */}
+            <Link
+              href="/blog"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 7,
+                color: 'rgba(255,255,255,0.82)',
+                fontSize: 13,
+                fontWeight: 600,
+                textDecoration: 'none',
+                marginBottom: 22,
+              }}
+            >
+              <ArrowLeft size={14} />
+              Back to all posts
             </Link>
 
-            <div style={{ marginBottom: 14 }}>
-              <span style={{
-                background: '#059669', color: '#fff',
-                fontSize: 11, fontWeight: 700, letterSpacing: '0.08em',
-                textTransform: 'uppercase', padding: '4px 12px', borderRadius: 999,
-              }}>
+            {/* Category */}
+            <div style={{ marginBottom: 16 }}>
+              <span
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  background: BRAND.orange,
+                  color: '#FFFFFF',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  padding: '6px 13px',
+                  borderRadius: 999,
+                }}
+              >
                 {post.category}
               </span>
             </div>
 
-            <h1 style={{
-              fontFamily: "var(--font-playfair), Georgia, serif",
-              fontSize: 'clamp(24px, 4.5vw, 44px)',
-              color: '#fff',
-              margin: '0 0 20px',
-              lineHeight: 1.2,
-              fontWeight: 700,
-              maxWidth: 760,
-            }}>
+            {/* Title */}
+            <h1
+              style={{
+                fontFamily:
+                  'var(--font-bricolage), sans-serif',
+                fontSize: 'clamp(28px, 5vw, 50px)',
+                color: '#FFFFFF',
+                margin: '0 0 22px',
+                lineHeight: 1.12,
+                fontWeight: 700,
+                maxWidth: 820,
+                letterSpacing: '-0.025em',
+              }}
+            >
               {post.title}
             </h1>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, alignItems: 'center' }}>
-              <Link href="/team" style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13, textDecoration: 'none' }}>
-                <User size={14} />{post.author}
+            {/* Meta */}
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: 20,
+                alignItems: 'center',
+              }}
+            >
+              <Link
+                href="/team"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 7,
+                  color: 'rgba(255,255,255,0.82)',
+                  fontSize: 13,
+                  textDecoration: 'none',
+                }}
+              >
+                <User size={14} />
+                {post.author}
               </Link>
-              <span style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
-                <Calendar size={14} />{formatDate(post.date)}
+
+              <span
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 7,
+                  color: 'rgba(255,255,255,0.82)',
+                  fontSize: 13,
+                }}
+              >
+                <Calendar size={14} />
+                {formatDate(post.date)}
               </span>
-              <span style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>
-                <Clock size={14} />{post.readingTime} min read
+
+              <span
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 7,
+                  color: 'rgba(255,255,255,0.82)',
+                  fontSize: 13,
+                }}
+              >
+                <Clock size={14} />
+                {post.readingTime} min read
               </span>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Article content */}
-      <div style={{ maxWidth: 820, margin: '0 auto', padding: '56px 24px 0' }}>
+      {/* ========================================================
+          ARTICLE CONTENT
+          ======================================================== */}
 
-        {/* Excerpt / lead */}
+      <main
+        style={{
+          maxWidth: 820,
+          margin: '0 auto',
+          padding: '56px 24px 0',
+        }}
+      >
+        {/* Lead / Excerpt */}
         {post.excerpt && (
-          <div style={{
-            background: 'linear-gradient(135deg, #f0fdf9, #d1fae5)',
-            borderLeft: '4px solid #059669',
-            borderRadius: '0 12px 12px 0',
-            padding: '18px 22px',
-            marginBottom: 44,
-          }}>
-            <p style={{
-              fontFamily: "var(--font-playfair), Georgia, serif",
-              fontSize: 17,
-              color: '#065f46',
-              lineHeight: 1.7,
-              margin: 0,
-              fontStyle: 'italic',
-            }}>
+          <div
+            style={{
+              background: BRAND.paleGreen,
+              borderLeft: `4px solid ${BRAND.green}`,
+              borderRadius: '0 14px 14px 0',
+              padding: '20px 24px',
+              marginBottom: 48,
+            }}
+          >
+            <p
+              style={{
+                fontFamily:
+                  'var(--font-playfair), Georgia, serif',
+                fontSize: 18,
+                color: BRAND.forest,
+                lineHeight: 1.7,
+                margin: 0,
+                fontStyle: 'italic',
+              }}
+            >
               {post.excerpt}
             </p>
           </div>
         )}
 
         {/* Body */}
-        <div>
-          {renderMarkdown(post.content, post.slug)}
-        </div>
+        <article>
+          {renderMarkdown(
+            post.content,
+            post.slug
+          )}
+        </article>
 
-        {/* Footer bar */}
-        <div style={{
-          marginTop: 60,
-          paddingTop: 24,
-          borderTop: '1px solid #e2e8f0',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 12,
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#64748b', fontSize: 13 }}>
-            <Tag size={15} />
-            <span style={{ fontWeight: 600 }}>{post.category}</span>
+        {/* ======================================================
+            ARTICLE FOOTER
+            ====================================================== */}
+
+        <div
+          style={{
+            marginTop: 64,
+            paddingTop: 26,
+            borderTop: `1px solid ${BRAND.border}`,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: 14,
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              color: BRAND.muted,
+              fontSize: 13,
+            }}
+          >
+            <Tag
+              size={15}
+              style={{
+                color: BRAND.green,
+              }}
+            />
+
+            <span
+              style={{
+                fontWeight: 600,
+              }}
+            >
+              {post.category}
+            </span>
           </div>
-          <Link href="/blog" style={{
-            display: 'inline-flex', alignItems: 'center', gap: 6,
-            padding: '9px 18px',
-            border: '1px solid #e2e8f0',
-            borderRadius: 10,
-            color: '#374151',
-            fontSize: 13,
-            fontWeight: 500,
-            textDecoration: 'none',
-            background: '#f8fafc',
-          }}>
-            <ArrowLeft size={13} /> Back to Blog
+
+          <Link
+            href="/blog"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 7,
+              padding: '10px 18px',
+              border: `1px solid ${BRAND.border}`,
+              borderRadius: 11,
+              color: BRAND.forest,
+              fontSize: 13,
+              fontWeight: 600,
+              textDecoration: 'none',
+              background: '#FFFFFF',
+            }}
+          >
+            <ArrowLeft size={13} />
+            Back to Blog
           </Link>
         </div>
-      </div>
+      </main>
 
-      {/* Related Posts */}
+      {/* ========================================================
+          RELATED ARTICLES
+          ======================================================== */}
+
       {relatedPosts.length > 0 && (
-        <div style={{ background: '#f8fafc', borderTop: '1px solid #e2e8f0', padding: '64px 24px', marginTop: 64 }}>
-          <div style={{ maxWidth: 820, margin: '0 auto' }}>
-            <div style={{ width: 40, height: 3, background: 'linear-gradient(90deg,#059669,#10b981)', borderRadius: 2, marginBottom: 16 }} />
-            <h2 style={{
-              fontFamily: "var(--font-playfair), Georgia, serif",
-              fontSize: 26, fontWeight: 700, color: '#0f172a', margin: '0 0 32px',
-            }}>
-              Related Articles
-            </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+        <section
+          style={{
+            background: BRAND.cream,
+            borderTop: `1px solid ${BRAND.border}`,
+            padding: '68px 24px',
+            marginTop: 68,
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 820,
+              margin: '0 auto',
+            }}
+          >
+            {/* Section divider */}
+            <div
+              style={{
+                width: 44,
+                height: 3,
+                background: BRAND.orange,
+                borderRadius: 999,
+                marginBottom: 16,
+              }}
+            />
+
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'flex-end',
+                justifyContent: 'space-between',
+                gap: 20,
+                marginBottom: 32,
+                flexWrap: 'wrap',
+              }}
+            >
+              <div>
+                <p
+                  style={{
+                    margin: '0 0 7px',
+                    color: BRAND.green,
+                    fontSize: 12,
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Continue Reading
+                </p>
+
+                <h2
+                  style={{
+                    fontFamily:
+                      'var(--font-bricolage), sans-serif',
+                    fontSize: 30,
+                    fontWeight: 700,
+                    color: BRAND.forest,
+                    margin: 0,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  Related Articles
+                </h2>
+              </div>
+
+              <Link
+                href="/blog"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  color: BRAND.orange,
+                  fontSize: 13,
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                }}
+              >
+                View all articles
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns:
+                  'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: 24,
+              }}
+            >
               {relatedPosts.map((related) => (
-                <RelatedPostCard key={related.slug} related={related} />
+                <RelatedPostCard
+                  key={related.slug}
+                  related={related}
+                />
               ))}
             </div>
           </div>
-        </div>
+        </section>
       )}
     </div>
   )
