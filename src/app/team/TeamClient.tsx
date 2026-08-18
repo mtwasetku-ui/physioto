@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Award, Heart, X } from 'lucide-react'
 import { teamMembers, type TeamMember } from '@/data/teamData'
+import { CoverflowCarousel, type CoverflowSlide } from '@/components/ui/coverflow-carousel'
 
 function TeamCard({ member, onOpen, delayClass, visible }: { member: TeamMember; onOpen: (m: TeamMember) => void; delayClass: string; visible: boolean }) {
   return (
@@ -145,6 +146,13 @@ function TeamModal({ member, onClose }: { member: TeamMember; onClose: () => voi
 const sortedMembers = [...teamMembers].sort((a, b) => a.order - b.order)
 const DELAYS = ['d1', 'd2', 'd3', 'd4', 'd5']
 
+const teamSlides: CoverflowSlide[] = sortedMembers.map((member) => ({
+  src: member.photo || '/team/placeholder.jpg',
+  alt: member.name,
+  title: member.name,
+  subtitle: member.title,
+}))
+
 export default function TeamClient() {
   const [expanded, setExpanded] = useState<TeamMember | null>(null)
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set())
@@ -230,11 +238,26 @@ export default function TeamClient() {
         </div>
 
         {sortedMembers.length > 0 ? (
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {sortedMembers.map((member, i) => (
-              <TeamCard key={member.id} member={member} onOpen={setExpanded} delayClass={DELAYS[i % DELAYS.length]} visible={vis('team-grid')} />
-            ))}
-          </div>
+          <>
+            <div className="hidden md:block">
+              <CoverflowCarousel
+                slides={teamSlides}
+                cardWidth="clamp(220px, 24vw, 320px)"
+                showCaption
+                showPagination
+                showNavigation
+                label="Our physiotherapists"
+                onSlideClick={(index) => setExpanded(sortedMembers[index])}
+              />
+              <p className="mt-6 text-center text-sm text-slate-500">Drag, use the arrows, or tap the centre card to read a full profile</p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:hidden">
+              {sortedMembers.map((member, i) => (
+                <TeamCard key={member.id} member={member} onOpen={setExpanded} delayClass={DELAYS[i % DELAYS.length]} visible={vis('team-grid')} />
+              ))}
+            </div>
+          </>
         ) : (
           <p className="text-center italic text-slate-400">Team profiles coming soon.</p>
         )}
