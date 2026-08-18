@@ -213,7 +213,7 @@ export default function BookingClient() {
           1300 433 233
         </a>
       ),
-      sub: 'Mon–Fri: 8am – 6pm, Sat: 9am – 2pm',
+      sub: 'Mon–Sat: 9am – 5pm',
     },
     {
       Icon: Mail,
