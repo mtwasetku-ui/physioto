@@ -27,20 +27,20 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-emerald-50/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href="/" className="relative flex h-20 w-48 items-center justify-center overflow-hidden">
+          <Link href="/" className="relative flex h-20 w-20 items-center justify-center overflow-hidden">
             <SpaceBackground
               fullPage={false}
-              particleCount={70}
-              ringRadius={16}
+              particleCount={90}
+              ringRadius={36}
               particleColor="#059669"
               className="pointer-events-none"
             />
             <Image
               src="/images/logo.png"
               alt="Physio to Home"
-              width={160}
-              height={60}
-              className="relative z-10 h-16 w-auto"
+              width={200}
+              height={200}
+              className="relative z-10 h-16 w-16"
               priority
             />
           </Link>
