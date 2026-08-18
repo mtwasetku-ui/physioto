@@ -50,9 +50,6 @@ const PB_URL = 'https://physio-pb.fly.dev'
 
 /* -------------------------------------------------------------------------- */
 /* Aggregate rating                                                           */
-/*                                                                            */
-/* Only adds AggregateRating when real featured testimonials with ratings     */
-/* are available. This avoids inventing review/rating numbers in schema.      */
 /* -------------------------------------------------------------------------- */
 
 async function getAggregateRating() {
@@ -136,30 +133,40 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_AU',
     url: BASE_URL,
-    title: 'Physio to Home — In-Home Physiotherapy Across Tasmania',
+
+    title:
+      'Physio to Home — In-Home Physiotherapy Across Tasmania',
+
     description:
       'Professional in-home physiotherapy across Tasmania from AHPRA-registered physiotherapists. Personalised care for pain, rehabilitation, mobility and neurological conditions in your home.',
+
     images: [
       {
         url: '/images/og-default.jpg',
         width: 1200,
         height: 630,
-        alt: 'Physio to Home — In-Home Physiotherapy Across Tasmania',
+        alt:
+          'Physio to Home — In-Home Physiotherapy Across Tasmania',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Physio to Home — In-Home Physiotherapy Across Tasmania',
+
+    title:
+      'Physio to Home — In-Home Physiotherapy Across Tasmania',
+
     description:
       'Professional in-home physiotherapy across Tasmania from AHPRA-registered physiotherapists.',
+
     images: ['/images/og-default.jpg'],
   },
 
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -171,7 +178,7 @@ export const metadata: Metadata = {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Structured data                                                            */
+/* Tasmania service area                                                      */
 /* -------------------------------------------------------------------------- */
 
 const TASMANIA = {
@@ -179,9 +186,26 @@ const TASMANIA = {
   name: 'Tasmania',
 }
 
+/*
+ * Important:
+ *
+ * "address" below = where the business is based.
+ *
+ * "areaServed" below = where Physio to Home provides services.
+ *
+ * These are intentionally different because Physio to Home is a
+ * mobile/home-visit physiotherapy service.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Structured data                                                             */
+/* -------------------------------------------------------------------------- */
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'MedicalBusiness',
+
+  '@id': `${BASE_URL}/#medicalbusiness`,
 
   name: 'Physio to Home',
 
@@ -190,77 +214,106 @@ const structuredData = {
 
   url: BASE_URL,
 
-  telephone: '1300433233',
+  telephone: '+61-1300-433-233',
 
   email: 'info@physiotohome.com',
 
   image: `${BASE_URL}/images/logo.png`,
+
+  logo: `${BASE_URL}/images/logo.png`,
 
   priceRange: '$$',
 
   medicalSpecialty: 'Physiotherapy',
 
   /* ---------------------------------------------------------------------- */
-  /* Service area                                                            */
-  /*                                                                        */
-  /* Tasmania is the overarching service area. Specific locations are       */
-  /* retained to support the actual geographic coverage described on site.  */
+  /* Actual business address                                                */
+  /* ---------------------------------------------------------------------- */
+
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '2/16 Hoblers Bridge Rd',
+    addressLocality: 'Newstead',
+    addressRegion: 'TAS',
+    postalCode: '7250',
+    addressCountry: 'AU',
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* Service area                                                           */
   /* ---------------------------------------------------------------------- */
 
   areaServed: [
     TASMANIA,
 
     /* Northern Tasmania */
+
     {
       '@type': 'City',
       name: 'Launceston',
       containedInPlace: TASMANIA,
     },
+
+    {
+      '@type': 'City',
+      name: 'Newstead',
+      containedInPlace: TASMANIA,
+    },
+
     {
       '@type': 'City',
       name: 'Longford',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Deloraine',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'George Town',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Scottsdale',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Exeter',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Beaconsfield',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Perth',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Evandale',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Hadspen',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Legana',
@@ -268,51 +321,61 @@ const structuredData = {
     },
 
     /* North West Tasmania */
+
     {
       '@type': 'City',
       name: 'Devonport',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Burnie',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Ulverstone',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Wynyard',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Penguin',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Somerset',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Smithton',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Sheffield',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Latrobe',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Port Sorell',
@@ -320,56 +383,67 @@ const structuredData = {
     },
 
     /* Hobart & Southern Tasmania */
+
     {
       '@type': 'City',
       name: 'Hobart',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Sandy Bay',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Glenorchy',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Moonah',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'New Town',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Kingston',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Huonville',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Sorell',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Richmond',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Clarence',
       containedInPlace: TASMANIA,
     },
+
     {
       '@type': 'City',
       name: 'Rosny Park',
@@ -378,29 +452,13 @@ const structuredData = {
   ],
 
   /* ---------------------------------------------------------------------- */
-  /* Actual business address                                                */
-  /*                                                                        */
-  /* Keep this if it is your genuine business address. This does NOT mean   */
-  /* that your service area is restricted to Launceston.                    */
+  /* Opening hours                                                          */
   /* ---------------------------------------------------------------------- */
-
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Launceston',
-    addressRegion: 'TAS',
-    postalCode: '7248',
-    addressCountry: 'AU',
-  },
-
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: -41.4332,
-    longitude: 147.1441,
-  },
 
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
+
       dayOfWeek: [
         'Monday',
         'Tuesday',
@@ -409,10 +467,15 @@ const structuredData = {
         'Friday',
         'Saturday',
       ],
+
       opens: '09:00',
       closes: '17:00',
     },
   ],
+
+  /* ---------------------------------------------------------------------- */
+  /* Social profiles                                                        */
+  /* ---------------------------------------------------------------------- */
 
   sameAs: [
     'https://www.facebook.com/profile.php?id=61565914211504',
@@ -444,32 +507,38 @@ export default async function RootLayout({
       className={`${playfair.variable} ${bricolage.variable} ${instrumentSans.variable}`}
     >
       <head>
+
         {/* Microsoft Bing Webmaster Tools */}
+
         <meta
           name="msvalidate.01"
           content="EB4FA79F25221C5C5EA86027899A0790"
         />
 
-        {/* Schema.org MedicalBusiness structured data */}
+        {/* Schema.org MedicalBusiness */}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(businessSchema),
           }}
         />
+
       </head>
 
       <body className="flex min-h-screen flex-col">
-        {/* ---------------------------------------------------------------- */}
-        {/* Google Analytics 4                                               */}
-        {/* ---------------------------------------------------------------- */}
+
+        {/* Google Analytics 4 */}
 
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
 
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script
+          id="ga4-init"
+          strategy="afterInteractive"
+        >
           {`
             window.dataLayer = window.dataLayer || [];
 
@@ -487,9 +556,7 @@ export default async function RootLayout({
           <GAPageViewTracker />
         </Suspense>
 
-        {/* ---------------------------------------------------------------- */}
-        {/* Site                                                               */}
-        {/* ---------------------------------------------------------------- */}
+        {/* Site */}
 
         <Header />
 
@@ -500,6 +567,7 @@ export default async function RootLayout({
         <Footer />
 
         <Toaster />
+
       </body>
     </html>
   )
