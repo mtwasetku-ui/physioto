@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { SpaceBackground } from '@/components/ui/space-background'
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -26,13 +27,20 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-emerald-50/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="relative flex h-20 w-48 items-center justify-center overflow-hidden">
+            <SpaceBackground
+              fullPage={false}
+              particleCount={70}
+              ringRadius={16}
+              particleColor="#059669"
+              className="pointer-events-none"
+            />
             <Image
               src="/images/logo.png"
               alt="Physio to Home"
               width={160}
               height={60}
-              className="h-16 w-auto"
+              className="relative z-10 h-16 w-auto"
               priority
             />
           </Link>
