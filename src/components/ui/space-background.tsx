@@ -36,6 +36,11 @@ interface SpaceBackgroundProps {
    * angle with no circular motion, like they're drifting toward the logo.
    */
   motion?: "orbit" | "radial"
+  /**
+   * Multiplier on how fast particles travel inward per frame. 1 (default)
+   * matches the original pace; lower values (e.g. 0.4) slow the drift down.
+   */
+  speed?: number
 }
 
 // --- Utility: parse RGB/hex colors ---
@@ -78,6 +83,7 @@ export function SpaceBackground({
   fullPage = true,
   ringRadius = 120,
   motion = "orbit",
+  speed = 1,
 }: SpaceBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const animationRef = useRef<number | null>(null)
@@ -191,7 +197,7 @@ export function SpaceBackground({
     for (let i = 0; i < particleCount; i++) createParticle()
 
     const moveParticle = (p: Particle) => {
-      p.ring = Math.max(p.ring - 1, state.r)
+      p.ring = Math.max(p.ring - speed, state.r)
       if (motion === "orbit") p.random += p.move
       p.x = Math.cos(p.random + Math.PI) * p.ring
       p.y = Math.sin(p.random + Math.PI) * p.ring
@@ -205,9 +211,16 @@ export function SpaceBackground({
       if (motion === "radial") p.random = Math.random() * 7
     }
 
+    // A particle keeps its full size for the whole flight in; it only
+    // shrinks away once it actually reaches the center, so dots read as
+    // "arriving and disappearing" rather than fading out mid-flight.
+    const hasArrived = (p: Particle) => p.ring <= state.r + 0.5
+
     const disappear = (p: Particle) => {
-      if (p.radius < 0.8) resetParticle(p)
-      p.radius *= 0.994
+      if (hasArrived(p)) {
+        p.radius *= 0.82
+        if (p.radius < 0.5) resetParticle(p)
+      }
     }
 
     const draw = (p: Particle) => {
@@ -240,7 +253,7 @@ export function SpaceBackground({
       window.removeEventListener("resize", handleResize)
       if (animationRef.current) cancelAnimationFrame(animationRef.current)
     }
-  }, [particleCount, resolvedColor, fullPage, ringRadius, motion])
+  }, [particleCount, resolvedColor, fullPage, ringRadius, motion, speed])
 
   return (
     <canvas
