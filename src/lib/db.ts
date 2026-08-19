@@ -127,6 +127,17 @@ export async function removeAssignment(id: number) {
   await sql`delete from patient_assignments where id = ${id}`
 }
 
+// Self-service removal from the portal itself — a physio removing a
+// patient from their own "My patients" list. Scoped to (email, patientId)
+// rather than an assignment id, since the practitioner never sees/knows
+// the numeric assignment id — only the admin UI does.
+export async function removeAssignmentForEmail(email: string, patientId: string) {
+  await sql`
+    delete from patient_assignments
+    where email = ${email.toLowerCase()} and cliniko_patient_id = ${patientId}
+  `
+}
+
 // ── Audit log ────────────────────────────────────────────────────
 
 type AuditAction =
@@ -143,6 +154,8 @@ type AuditAction =
   | 'admin_assignment_add'
   | 'admin_assignment_remove'
   | 'admin_practitioner_link'
+  | 'portal_assignment_add'
+  | 'portal_assignment_remove'
 
 export async function writeAuditLog(params: {
   actorEmail: string
