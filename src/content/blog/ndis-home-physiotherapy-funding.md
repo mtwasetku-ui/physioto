@@ -1,207 +1,269 @@
 ---
-title: "NDIS | Home Physiotherapy Funding"
-description: "NDIS can fund home physiotherapy visits across Tasmania. Physio to Home explains which support categories apply and what your first visit looks like."
+
+title: "NDIS Home Physiotherapy: Funding, Eligibility and What Physiotherapy Can Help With"
+description: "Can the NDIS fund physiotherapy at home? Learn how NDIS physiotherapy works, what therapy supports are for, what evidence may be required and how home physiotherapy can support independence."
 author: "Micheal Ghattas, Physiotherapist"
-date: "2026-03-06"
+date: "2026-08-19"
 category: "Funding & Access"
-featured: false
+featured: true
 image: /image/blog/ndis-home-physiotherapy-funding.jpg
+tags: ["NDIS physiotherapy", "NDIS home physiotherapy", "NDIS funding", "NDIS therapy supports", "physiotherapy Tasmania", "home physiotherapy Tasmania", "disability physiotherapy", "NDIS participants"]
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-tags: ["NDIS", "NDIS physiotherapy", "NDIS North Tasmania", "funded physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "disability support", "allied health"]
----
+# NDIS Home Physiotherapy: Funding, Eligibility and What Physiotherapy Can Help With
 
-# NDIS | HOME PHYSIOTHERAPY FUNDING
+If you are an NDIS participant, you may be able to use your NDIS funding for physiotherapy when the service is an appropriate disability-related support and meets the NDIS funding requirements.
 
-## How to Use Your NDIS Plan to Fund Home Physiotherapy in Tasmania
+Physiotherapy can help people work towards goals involving mobility, transfers, balance, physical independence, participation and everyday activities.
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
+But not every physiotherapy appointment is automatically an NDIS support.
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+The key question is **why you need physiotherapy and what functional outcome the therapy is intended to achieve**.
 
-The National Disability Insurance Scheme funds physiotherapy for participants whose disability affects their physical function, daily activities, or independence. For many NDIS participants in North Tasmania — particularly those with neurological conditions, chronic musculoskeletal impairments, acquired disabilities, or complex health needs — home-based physiotherapy is both clinically appropriate and practically essential.
+This guide explains how NDIS physiotherapy works, when home physiotherapy may be appropriate, what your physiotherapist may assess, and what information can help demonstrate the functional purpose of therapy.
 
-Physio to Home is currently completing the process of becoming a registered NDIS provider. We welcome enquiries from NDIS participants and their support coordinators, and we are happy to discuss how we can support you as our registration progresses.
+**Last reviewed: August 2026**
 
-This guide explains how NDIS physiotherapy funding works, which support categories apply, and exactly what a funded home physiotherapy visit involves.
+## Can the NDIS fund physiotherapy?
 
-### Who this guide is for
+Yes.
 
-This article is for NDIS participants in North Tasmania — and their families, carers, and support coordinators — who want to understand how physiotherapy can be funded through an NDIS plan and what to expect from home-based delivery.
+The NDIS lists physiotherapy among the therapy supports that it may fund where the relevant NDIS funding criteria are met.
 
----
+The NDIS describes therapy supports as supports that can help participants improve or maintain skills and independence in areas such as mobility, movement, personal care, community living and everyday functioning.
 
-## Does NDIS Fund Physiotherapy?
+However, being prescribed or recommended physiotherapy does not automatically mean that the NDIS will fund every physiotherapy service.
 
-Yes. Physiotherapy is a funded support under the NDIS for participants whose disability creates a need for physiotherapy services. This includes both assessment and ongoing treatment, as well as equipment recommendations, home modification assessments, and exercise programming.
+The support must meet the applicable NDIS requirements.
 
-Physiotherapy under the NDIS must be:
+## What is the difference between medical physiotherapy and NDIS physiotherapy?
 
-- **Reasonable** — appropriate and relevant to the participant's disability-related needs
-- **Necessary** — required to help the participant pursue their goals or maintain their function
-- **Related to the participant's disability** — not for general health conditions unrelated to the disability that are the responsibility of the health system
+This is one of the most important questions for participants and families.
 
-In practice, physiotherapy is funded for a broad range of NDIS participants, including those with acquired brain injury, stroke, spinal cord injury, neurological conditions including multiple sclerosis and Parkinson's disease, cerebral palsy, musculoskeletal conditions secondary to a primary disability, and complex chronic conditions affecting physical function.
+Physiotherapy is a health profession, but the NDIS does not fund health care simply because a person has a medical condition.
 
----
+The purpose of the physiotherapy matters.
 
-## Which NDIS Support Categories Fund Physiotherapy?
+For example, physiotherapy following surgery may be primarily related to treatment of a health condition and may therefore sit within the health system.
 
-Physiotherapy is funded primarily under two support categories in an NDIS plan:
+By contrast, physiotherapy may potentially be relevant to the NDIS when it addresses the ongoing functional impact of a participant's disability and helps them build, maintain or support independence and participation.
 
-### Capacity Building — Improved Daily Living (CB Daily Activity)
+The NDIS considers the individual circumstances and the purpose of the support.
 
-This is the most common support category for physiotherapy. Improved Daily Living funding is designed to help participants build skills and independence in their daily life. Physiotherapy under this category includes:
+## What can NDIS-funded physiotherapy help with?
 
-- Assessment of functional capacity and physical impairments
-- Exercise programming and rehabilitation to improve strength, balance, and mobility
-- Gait and movement retraining
-- Falls prevention programmes
-- Post-surgical or post-injury rehabilitation
-- Neurological rehabilitation including stroke and Parkinson's disease physiotherapy
-- Functional goals related to the participant's daily activities and independence
+Depending on your disability and goals, physiotherapy may address areas such as:
 
-### Capacity Building — Improved Health and Wellbeing (CB Health and Wellbeing)
+* Walking and mobility
+* Transfers
+* Balance
+* Strength
+* Physical endurance
+* Falls risk
+* Mobility around the home
+* Use of mobility equipment
+* Functional movement
+* Participation in community activities
+* Maintaining physical function
+* Reducing the impact of functional decline
+* Developing strategies for everyday activities
+* Training family members or support workers where clinically appropriate
 
-This category funds allied health support that helps participants manage their health and wellbeing. Physiotherapy under this category is appropriate where the goal is maintaining physical health and fitness in the context of the participant's disability, rather than specific rehabilitation.
+The specific goals should be individual to the participant.
 
-### Which category applies to you?
+A useful physiotherapy goal is not simply:
 
-In most cases, physiotherapy will be funded under Improved Daily Living. Your support coordinator or LAC (Local Area Coordinator) can confirm which category is applicable to your plan and whether the budget available is sufficient for the physiotherapy programme you need. If your plan does not currently include adequate funding for physiotherapy, this can be raised at your next plan review.
+> "Improve strength."
 
----
+A more meaningful functional goal might be:
 
-## Registered vs Unregistered NDIS Providers: What It Means for You
+> "Improve lower-limb strength and balance so I can safely transfer from my bed to my wheelchair with less assistance."
 
-NDIS participants can access supports from either registered or unregistered providers, depending on how their plan is managed:
+The second goal explains why the therapy matters in everyday life.
 
-**Plan-managed participants** can use both registered and unregistered NDIS providers. This gives the greatest flexibility in choosing supports.
+## Why home physiotherapy can be useful for NDIS participants
 
-**Self-managed participants** can use any provider, registered or unregistered, and manage their own invoicing and reimbursement.
+For many participants, the home is where their functional difficulties are most obvious.
 
-**Agency-managed (NDIA-managed) participants** can only use registered NDIS providers for most supports.
+A clinic assessment may show that someone can perform a particular movement in a controlled environment.
 
-Physio to Home is currently completing NDIS provider registration. Once registration is complete, we will be available to all NDIS participants regardless of their management type. In the interim, we are able to work with plan-managed and self-managed participants. Contact us to confirm the current status of our registration when you enquire.
+A home assessment can reveal what happens when that person:
 
----
+* Gets out of their own bed
+* Moves through a narrow hallway
+* Transfers from their usual chair
+* Uses their bathroom
+* Walks across their normal flooring
+* Manages stairs
+* Uses their mobility aid
+* Carries out everyday tasks
+* Interacts with their support workers
 
-## What Can NDIS-Funded Home Physiotherapy Be Used For?
+This can make home physiotherapy particularly useful when the participant's goals are focused on independence and daily function.
 
-NDIS-funded physiotherapy at Physio to Home is tailored entirely to the participant's disability-related needs and NDIS goals. Common reasons NDIS participants access home physiotherapy include:
+## What happens during an NDIS home physiotherapy assessment?
 
-**Neurological rehabilitation** — stroke recovery, traumatic brain injury, multiple sclerosis, Parkinson's disease, cerebral palsy. Physiotherapy addresses gait, balance, spasticity, transfers, and functional movement.
+Your first appointment is usually about understanding the participant rather than simply testing individual muscles.
 
-**Musculoskeletal conditions secondary to disability** — joint pain, contractures, deconditioning, and postural problems arising from the primary disability.
+A physiotherapist may assess:
 
-**Falls prevention** — particularly relevant for participants with neurological conditions, lower limb weakness, or sensory impairments.
+### 1. Your goals
 
-**Post-surgical rehabilitation** — following orthopaedic surgery where the surgical need is related to the participant's disability.
+What do you want to be able to do?
 
-**Functional capacity assessment** — a formal assessment of the participant's physical function that can inform NDIS plan reviews, equipment funding requests, and home modification applications.
+This might involve personal care, moving around your home, getting into the community, returning to work or study, exercising, or participating in social activities.
 
-**Home modification and equipment recommendations** — physiotherapists are qualified to assess the need for assistive technology and home modifications (grab rails, ramps, bathroom modifications) and provide supporting reports for NDIS funding applications.
+### 2. Your current functional ability
 
-**Exercise programme and capacity building** — a structured, progressive exercise programme delivered at home to build strength, endurance, and physical independence.
+Your physiotherapist may assess:
 
----
+* Walking
+* Transfers
+* Balance
+* Strength
+* Coordination
+* Endurance
+* Range of movement
+* Functional mobility
 
-## Functional Capacity Assessments for NDIS
+### 3. Your home environment
 
-A Functional Capacity Assessment (FCA) is a formal physiotherapy report that documents a participant's current functional abilities and limitations, the impact of their disability on daily activities, and recommendations for supports, equipment, and services. FCAs are commonly requested:
+Where appropriate, the physiotherapist may consider whether the physical environment creates barriers to independence.
 
-- When applying for an NDIS plan for the first time
-- At plan reviews when increased support is being sought
-- When requesting funding for assistive technology or home modifications
-- When the participant's functional needs have changed significantly
+### 4. Your current supports
 
-Physio to Home can provide Functional Capacity Assessments for NDIS participants across North Tasmania. Contact us to discuss the scope and cost of an FCA for your specific situation.
+This may include mobility equipment, support workers, family assistance or other services involved in your care.
 
----
+### 5. Your rehabilitation potential and ongoing needs
 
-## Home-Based NDIS Physiotherapy: Why It Matters in Rural Tasmania
+The physiotherapist considers what intervention is likely to be useful and what outcomes can reasonably be expected.
 
-For NDIS participants in rural and regional North Tasmania, home-based service delivery is not simply a preference — it is often the only way to access consistent, regular physiotherapy. For participants with limited transport, complex care needs, fatigue, or mobility difficulties that make travel burdensome, home visits provide:
+## Does NDIS physiotherapy have to be provided in a clinic?
 
-- **Consistency** — regular visits that do not depend on transport availability or carer capacity
-- **Functional relevance** — physiotherapy conducted in the environment where the participant actually lives and functions
-- **Reduced fatigue burden** — energy preserved for the session itself rather than the travel around it
-- **Environmental assessment** — the physiotherapist can observe and address the specific hazards and functional challenges of the participant's actual home
+No.
 
-NDIS fully supports home-based delivery for physiotherapy. There is no requirement for participants to attend a clinic.
+Therapy can be delivered in environments that are appropriate for the participant and the goals of the support.
 
----
+For someone whose goals involve moving safely around their home, practising transfers or becoming more independent with everyday activities, the home can be a clinically useful treatment environment.
 
-## What to Expect: Your First NDIS Home Physiotherapy Visit
+## What does "reasonable and necessary" mean?
 
-**1 Review of your NDIS plan and goals**
+NDIS supports must meet the relevant reasonable and necessary criteria.
 
-Micheal will begin by reviewing your current NDIS goals and support funding to ensure the physiotherapy programme is aligned with your plan objectives. If you have a Functional Capacity Assessment or previous physiotherapy reports, these are useful to have available.
+The NDIS states that supports need to relate to the participant's disability, help them work towards their goals and be likely to be effective and beneficial, among other criteria.
 
-**2 Clinical assessment in your home (20–25 minutes)**
+The NDIS also considers value for money and whether the support should more appropriately be provided by another system.
 
-A thorough assessment of your movement, strength, balance, functional transfers, and any specific impairments related to your disability. Because this takes place at home, it includes observing your actual daily environment — your furniture, your bathroom, your access routes.
+This is why a physiotherapy report should explain **the participant's functional needs and the reason the proposed therapy is required**, rather than simply stating that physiotherapy would be helpful.
 
-**3 Goal-setting (10 minutes)**
+## What evidence can a physiotherapist provide?
 
-Micheal will work with you to identify specific, meaningful goals for physiotherapy — framed in the language of your NDIS plan where possible (for example, "walk independently to the letterbox" or "transfer from bed to wheelchair without assistance").
+Depending on the participant's circumstances, physiotherapy evidence may include:
 
-**4 Initial treatment and programme planning (15–20 minutes)**
+* Functional assessment findings
+* Current mobility limitations
+* Balance or falls risk
+* Transfer ability
+* Strength and movement findings
+* Functional goals
+* Recommended intervention
+* Expected outcomes
+* Frequency and duration of therapy
+* Progress over time
+* Barriers to independence
+* The relationship between the disability and the functional limitation
 
-The first session includes initial hands-on treatment or supervised exercise, and the foundation of your home programme.
+Good clinical documentation connects the assessment to the participant's real-life goals.
 
-**5 Documentation**
+## What if the participant needs ongoing physiotherapy?
 
-Following the assessment, Micheal provides a written summary of findings and the proposed programme. This documentation can be shared with your support coordinator and used to support plan reviews if required.
+Ongoing therapy needs to remain clinically justified.
 
----
+The physiotherapist should be able to explain:
 
-## Frequently Asked Questions
+* What the therapy is trying to achieve
+* Why the participant requires professional physiotherapy
+* What progress has occurred
+* What functional outcomes are expected
+* Whether the therapy should continue
+* Whether another person could be trained to support the participant with aspects of the program
 
-### My NDIS plan does not currently include physiotherapy. Can I get it added?
+The appropriate therapy frequency is different for every participant.
 
-Yes, at your next plan review — or through an unscheduled review if your needs have changed significantly. To support a request for physiotherapy funding, it helps to have a letter from your GP or treating specialist documenting the clinical need, or a Functional Capacity Assessment from a physiotherapist. Contact Physio to Home and we can advise on what documentation would best support your case.
+There is no single number of physiotherapy sessions that is appropriate for every NDIS participant.
 
-### Can NDIS fund physiotherapy for a child with a disability?
+## Can physiotherapy be used to maintain function?
 
-Yes. NDIS funds physiotherapy for participants of all ages. For children, physiotherapy is often funded under Early Childhood Early Intervention (ECEI) pathways or under standard plan support categories depending on the child's age and plan type.
+The purpose of therapy can include helping a participant maintain functional ability and reduce decline where the relevant NDIS criteria are met.
 
-### Does NDIS cover the cost of a home environment assessment?
+This is particularly important for people with progressive or permanent disabilities.
 
-Yes. A home safety and functional environment assessment is within the scope of physiotherapy under the NDIS and can be funded under Improved Daily Living. The assessment may also generate recommendations for home modifications or assistive technology that can be funded separately through the NDIS Capital Supports budget.
+However, "maintenance" should not simply mean providing indefinite treatment without a clear functional rationale.
 
-### Can NDIS and Medicare be used together for physiotherapy?
+The physiotherapist should explain why the support is required, what it achieves and why the proposed model of support is appropriate.
 
-Generally, NDIS is the primary funder for disability-related physiotherapy for NDIS participants, and Medicare GP Management Plans are intended for health conditions outside the scope of the disability. In practice, the boundaries can be complex. Your support coordinator and GP can help determine the most appropriate funding pathway for your specific situation.
+## What does NDIS physiotherapy cost?
 
-### How do I find out if Physio to Home is currently registered as an NDIS provider?
+NDIS pricing arrangements change over time.
 
-Contact us directly and we will confirm the current status of our registration. We update participants and support coordinators as our registration progresses and can advise on whether we are able to work with your specific plan management type in the interim.
+The NDIS publishes current pricing arrangements and maximum price information, including therapy support pricing.
 
----
+From 1 July 2026, the NDIS pricing schedule applies to the current pricing period.
 
-## Ready to Access NDIS-Funded Home Physiotherapy in North Tasmania?
+Participants and providers should use the current NDIS pricing arrangements rather than relying on older online articles or historical price lists.
 
-Whether you are a participant, a support coordinator, or a family member navigating an NDIS plan — Physio to Home is here to help. We provide evidence-based, AHPRA-registered physiotherapy in your home across North Tasmania, and we are completing our NDIS provider registration to serve participants across all plan management types.
+Your physiotherapist should also explain:
 
-Contact us today to discuss your situation — no obligation, no cost →
+* The service fee
+* Travel charges, if applicable
+* Report-writing fees, if applicable
+* Cancellation policies
+* How services will be claimed
+* What is included in the appointment
 
----
+## Can support coordinators refer someone for home physiotherapy?
 
-## About the Author
+Yes, a participant may be connected with a physiotherapist through their support network, which can include family members, support coordinators, plan managers or other professionals.
 
-Micheal Ghattas, DPT
+However, the participant remains at the centre of the decision-making process.
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
+The physiotherapy program should be based on the participant's goals and functional needs.
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and disability-related physiotherapy delivered entirely in the home setting.
+## What should I ask a physiotherapist before booking?
 
----
+Ask:
 
-## References & Further Reading
+1. Are you AHPRA registered?
+2. Do you provide home visits in my area?
+3. Do you work with NDIS participants?
+4. Can you assess functional mobility in the home?
+5. What happens during the first appointment?
+6. How are goals documented?
+7. Do you provide progress reports when required?
+8. How are travel and report-writing fees handled?
+9. What are your cancellation terms?
+10. How do you communicate with support coordinators and other treating professionals?
 
-National Disability Insurance Agency (NDIA). NDIS Support Catalogue. Commonwealth of Australia, 2025. www.ndis.gov.au
+## NDIS physiotherapy in North Tasmania
 
-NDIS. Allied health supports and the NDIS. www.ndis.gov.au, 2025.
+Physio to Home provides mobile physiotherapy for NDIS participants across North Tasmania.
 
-Australian Physiotherapy Association. Physiotherapy and the NDIS: position statement. APA, 2024.
+Home-based physiotherapy can be particularly appropriate when a participant's goals involve mobility, transfers, balance, independence or participation in their usual home and community environments.
 
-Physio to Home NDIS registration: enquiries welcome at physiotohome.com.
+Our approach is focused on practical function rather than simply treating an isolated body part.
+
+## Important information for NDIS participants
+
+NDIS funding decisions are made by the NDIA under the NDIS Act, Rules and current guidelines.
+
+A physiotherapist can assess your needs and provide clinical evidence, but a recommendation from a health professional does not by itself guarantee that the NDIS will fund the requested support.
+
+NDIS rules and pricing arrangements can change. Always check the current NDIS information relevant to your plan.
+
+## About the author
+
+**Micheal Ghattas, DPT**
+AHPRA Registered Physiotherapist
+Physio to Home | North Tasmania
+
+Micheal provides home-based physiotherapy for people living with neurological, musculoskeletal, mobility and rehabilitation needs across North Tasmania.
