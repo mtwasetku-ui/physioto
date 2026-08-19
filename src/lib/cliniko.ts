@@ -252,6 +252,55 @@ export interface ClinikoPatientInfo {
   dateOfBirth: string | null
   phone: string | null
   address: string | null
+  address1: string | null
+  address2: string | null
+  city: string | null
+  state: string | null
+  postCode: string | null
+}
+
+export interface UpdatePatientParams {
+  firstName?: string
+  lastName?: string
+  dateOfBirth?: string | null
+  address1?: string | null
+  address2?: string | null
+  city?: string | null
+  state?: string | null
+  postCode?: string | null
+  phone?: string | null
+}
+
+export async function updatePatient(patientId: string, params: UpdatePatientParams) {
+  const body: Record<string, any> = {}
+  if (params.firstName !== undefined) body.first_name = params.firstName
+  if (params.lastName !== undefined) body.last_name = params.lastName
+  if (params.dateOfBirth !== undefined) body.date_of_birth = params.dateOfBirth
+  if (params.address1 !== undefined) body.address_1 = params.address1
+  if (params.address2 !== undefined) body.address_2 = params.address2
+  if (params.city !== undefined) body.city = params.city
+  if (params.state !== undefined) body.state = params.state
+  if (params.postCode !== undefined) body.post_code = params.postCode
+
+  // Cliniko stores phone numbers as a collection. Preserve the existing
+  // number type when updating a phone number rather than replacing the
+  // collection with an incompatible shape.
+  if (params.phone !== undefined) {
+    const current = await clinikoFetch(`/patients/${patientId}`)
+    const phones = current.patient_phone_numbers ?? []
+    if (phones.length) {
+      body.patient_phone_numbers = phones.map((p: any, i: number) =>
+        i === 0 ? { ...p, number: params.phone } : p
+      )
+    } else if (params.phone) {
+      body.patient_phone_numbers = [{ phone_type: 'Mobile', number: params.phone }]
+    }
+  }
+
+  return clinikoFetch(`/patients/${patientId}`, {
+    method: 'PATCH',
+    body: JSON.stringify(body),
+  })
 }
 
 export async function getPatientInfo(patientId: string): Promise<ClinikoPatientInfo> {
@@ -268,6 +317,11 @@ export async function getPatientInfo(patientId: string): Promise<ClinikoPatientI
     dateOfBirth: p.date_of_birth ?? null,
     phone,
     address: addressParts.length ? addressParts.join(', ') : null,
+    address1: p.address_1 ?? null,
+    address2: p.address_2 ?? null,
+    city: p.city ?? null,
+    state: p.state ?? null,
+    postCode: p.post_code ?? null,
   }
 }
 
