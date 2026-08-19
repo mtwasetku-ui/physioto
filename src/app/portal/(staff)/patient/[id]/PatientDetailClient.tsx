@@ -272,7 +272,7 @@ function EditPatientDialog({
         <div className="flex items-center justify-between border-b border-border px-5 py-4">
           <div>
             <h2 className="text-lg font-semibold">Edit patient details</h2>
-            <p className="text-xs text-muted-foreground mt-0.5">Changes are saved directly to Cliniko.</p>
+            <p className="text-xs text-muted-foreground mt-0.5">Changes are saved directly to the patient record.</p>
           </div>
           <button onClick={onClose} className="p-1 rounded hover:bg-muted" aria-label="Close">
             <X className="h-5 w-5" />
@@ -362,7 +362,7 @@ function NoteForm({
     fetch('/api/templates')
       .then((r) => r.json())
       .then((data) => setTemplates(data.templates))
-      .catch(() => setError('Could not load note templates from Cliniko.'))
+      .catch(() => setError('Could not load note templates.'))
   }, [])
 
   useEffect(() => {
@@ -423,15 +423,15 @@ function NoteForm({
   const template = templates?.find((t) => t.name === templateName)
 
   if (error) return <div className="text-destructive text-sm">{error}</div>
-  if (!templates) return <div className="text-muted-foreground text-sm">Loading templates from Cliniko…</div>
+  if (!templates) return <div className="text-muted-foreground text-sm">Loading templates…</div>
 
   if (!template) {
     return (
       <div className="bg-white border border-border rounded-lg p-6 text-sm">
         <p className="text-destructive font-medium mb-1">Template not found</p>
         <p className="text-muted-foreground">
-          No Cliniko treatment note template is named exactly &quot;{templateName}&quot;. Check the template name in
-          Cliniko matches exactly, including capitalisation.
+          No treatment note template is named exactly &quot;{templateName}&quot;. Check the template name
+          matches exactly, including capitalisation.
         </p>
       </div>
     )
@@ -584,7 +584,7 @@ function NoteForm({
       {unsupported.size > 0 && (
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4 text-xs text-amber-800">
           This template includes question type(s) not yet supported here ({Array.from(unsupported).join(', ')}).
-          Add those directly in Cliniko after saving.
+          Ask Micheal to add those after saving.
         </div>
       )}
 
@@ -626,7 +626,7 @@ function NoteForm({
       </div>
       {!existingDraftId ? null : (
         <p className="text-xs text-muted-foreground mt-2">
-          Saving as final locks this note permanently in Cliniko — nobody, including Micheal, can edit it again.
+          Saving as final locks this note permanently — nobody, including Micheal, can edit it again.
         </p>
       )}
     </div>
@@ -974,7 +974,7 @@ function BookVisit({ patientId }: { patientId: string }) {
           <>Couldn&apos;t load appointment types: {fetchError}</>
         ) : (
           <>
-            No appointment types found for Physio to Home under your Cliniko practitioner record. If you&apos;re
+            No appointment types found for Physio to Home under your practitioner record. If you&apos;re
             newly added, ask Micheal to double check the link on the Staff page.
           </>
         )}
