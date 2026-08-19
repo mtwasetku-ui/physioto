@@ -1,195 +1,380 @@
 ---
-title: "Cervicogenic Dizziness in Older Adults: Often Misdiagnosed"
-description: "Cervicogenic dizziness affects up to 20% of people with chronic dizziness and is routinely missed. Physio to Home explains the condition and treatment."
+
+title: "Cervicogenic Dizziness: Symptoms, Diagnosis and Physiotherapy Treatment"
+description: "Cervicogenic dizziness can cause dizziness or unsteadiness alongside neck pain. Learn how it is assessed, why other causes must be considered and how physiotherapy may help."
 author: "Micheal Ghattas, Physiotherapist"
-date: "2026-03-06"
-category: "Falls Prevention"
+date: "2026-08-19"
+category: "Conditions & Rehab"
 featured: false
 image: /image/blog/cervicogenic-dizziness-misdiagnosed-clinical-overview.jpg
-tags: ["cervicogenic dizziness", "dizziness diagnosis", "neck dizziness", "vestibular physiotherapy", "cervical vertigo", "dizziness older adults", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "cervical spine", "balance"]
----
 
-# CERVICOGENIC DIZZINESS IN OLDER ADULTS: OFTEN MISDIAGNOSED
+## tags: ["cervicogenic dizziness", "neck pain dizziness", "cervical dizziness", "dizziness physiotherapy", "vestibular physiotherapy", "home physiotherapy", "physiotherapy Tasmania", "balance problems"]
 
-## Cervicogenic Dizziness: A Clinical Overview for Patients, Families, and Referring Clinicians
+# Cervicogenic Dizziness: Symptoms, Diagnosis and Physiotherapy Treatment
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
+Dizziness together with neck pain can be confusing.
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Some people notice that they feel unsteady when they turn their head, look up, move their neck or remain in one position for a long time. Others describe a feeling of floating, imbalance or spatial disorientation rather than the room actually spinning.
 
-*This article is written for people experiencing chronic dizziness that has not been clearly explained, for their families, and for the GPs and other clinicians who are managing them. It draws on the current clinical literature on cervicogenic dizziness, the diagnostic criteria proposed by the Cervicogenic Headache International Study Group and related bodies, and the physiotherapy evidence base for its management. Cervicogenic dizziness is an area of specialist clinical focus at Physio to Home.*
+In some people, the neck may contribute to these symptoms. This is commonly referred to as **cervicogenic dizziness**.
 
----
+However, cervicogenic dizziness should not be assumed simply because someone has neck pain and dizziness.
 
-## The Problem of Unexplained Dizziness
+There are many possible causes of dizziness, including vestibular, neurological, cardiovascular and medication-related conditions. Cervicogenic dizziness is generally considered a **clinical diagnosis of exclusion**, which means other plausible causes need to be considered before symptoms are attributed to the cervical spine.
 
-Dizziness is one of the most common presenting complaints in general practice, particularly in adults over 65. It is also one of the most diagnostically challenging. The differential diagnosis for dizziness is broad — encompassing benign paroxysmal positional vertigo (BPPV), vestibular neuritis, Ménière's disease, orthostatic hypotension, cardiovascular causes, medication side effects, anxiety, central neurological conditions, and cervicogenic dizziness, among others.
+This guide explains what cervicogenic dizziness means, what symptoms may suggest it, how physiotherapists assess it and when medical or vestibular assessment may be more appropriate.
 
-In clinical practice, the workup for dizziness frequently identifies BPPV or concludes with an unspecified diagnosis of "dizziness" or "balance problems" when vestibular testing is unremarkable and cardiac and neurological causes have been excluded. What is often not systematically assessed is the cervical spine.
+**Last reviewed: August 2026**
 
-Cervicogenic dizziness — dizziness arising from dysfunction in the cervical spine, specifically from disrupted cervical proprioception and its interaction with the vestibular and visual systems — is estimated to account for somewhere between 5–20% of patients presenting with chronic dizziness, according to Brandt and Bronstein's widely cited analysis published in the *Journal of Neurology, Neurosurgery and Psychiatry* (2001). In clinical populations presenting with concurrent neck pain and dizziness, the prevalence is higher.
+## What is cervicogenic dizziness?
 
-This is not a rare condition. It is a commonly missed one.
+Cervicogenic dizziness is a term used when dizziness or unsteadiness appears to be associated with dysfunction of the neck and cervical sensorimotor system.
 
----
+The cervical spine contains sensory receptors that provide information to the brain about the position and movement of the head and neck.
 
-## The Anatomy of Cervicogenic Dizziness: Why the Neck Produces Dizziness
+This information interacts with information from the:
 
-To understand cervicogenic dizziness, it is necessary to understand the role of the cervical spine in the postural control system — and specifically in the maintenance of spatial orientation and gaze stability.
+* Inner ear
+* Eyes
+* Muscles and joints
+* Brain and nervous system
 
-### Cervical proprioception and the tonic neck reflex
+The brain combines these signals to help us maintain orientation and balance.
 
-The cervical spine is richly innervated with mechanoreceptors — particularly in the deep suboccipital muscles at the craniovertebral junction (the muscles that connect the skull to the upper two cervical vertebrae). These mechanoreceptors provide continuous proprioceptive input to the central nervous system about the position and movement of the head relative to the body.
+When the information from different systems does not match effectively, some people may experience dizziness or unsteadiness.
 
-This cervical proprioceptive input is integrated in the brainstem with input from the vestibular system (inner ear) and the visual system to produce the coordinated postural control and gaze stabilisation that allows us to move through the world without feeling dizzy. The three systems — cervical proprioception, vestibular, and visual — form what is sometimes called the sensory triad of balance.
+The exact mechanisms are complex, and cervicogenic dizziness remains a diagnosis that requires careful clinical reasoning rather than a single positive test.
 
-When cervical proprioceptive input is disrupted — through injury, degeneration, muscle dysfunction, or altered neural sensitivity in the upper cervical joints — the integration of the three systems becomes inaccurate. The brain receives conflicting or unreliable information about head position and movement, and the result is a sense of dizziness, unsteadiness, or spatial disorientation.
+## What does cervicogenic dizziness feel like?
 
-This is the fundamental mechanism of cervicogenic dizziness: not a problem with the inner ear, not a central neurological problem, but a disruption of the cervical proprioceptive signal that the postural control system depends on.
+People describe the symptoms differently.
 
-### The upper cervical spine as the primary source
+Common descriptions include:
 
-The clinical and anatomical evidence points to the upper cervical spine — C0–C3 — as the primary site of the dysfunction underlying cervicogenic dizziness. The C1 and C2 nerve roots have direct connections to the trigeminal cervical nucleus in the brainstem, and the suboccipital muscle group is among the most proprioceptively dense tissue in the body.
+* Feeling unsteady
+* Feeling light-headed or "off balance"
+* A sensation of floating
+* Spatial disorientation
+* Dizziness when moving the neck
+* Dizziness associated with neck pain or stiffness
+* Difficulty maintaining balance
+* Symptoms after a neck injury
+* Dizziness associated with particular head or neck positions
 
-Conditions that affect the upper cervical spine — including upper cervical facet joint dysfunction, whiplash-associated disorder, cervical osteoarthritis affecting C1–C2 and C2–C3, and muscular dysfunction secondary to chronic neck pain — all have the potential to disrupt cervical proprioception sufficiently to produce dizziness.
+Some people also have:
 
----
+* Neck pain
+* Headache
+* Reduced neck movement
+* Muscle tension
+* Difficulty concentrating
+* Increased fear of movement
 
-## The Clinical Presentation: How to Recognise Cervicogenic Dizziness
+True spinning vertigo can occur for many different reasons and should not automatically be attributed to the neck.
 
-The clinical presentation of cervicogenic dizziness has a characteristic pattern that distinguishes it from other causes of dizziness — though differentiation is not always straightforward and overlap with vestibular conditions is recognised in the literature.
+## Is cervicogenic dizziness a real diagnosis?
 
-### Key diagnostic features
+Yes, cervicogenic dizziness is recognised in clinical literature, but diagnosing it requires care.
 
-**Dizziness associated with neck movement or sustained neck postures.** The most consistent feature of cervicogenic dizziness is that symptoms are triggered or worsened by specific cervical movements — particularly rotation, extension, and sustained flexion (as in desk work or using a mobile phone). The dizziness follows the neck movement rather than preceding it. This distinguishes it from BPPV (triggered by head position relative to gravity) and from vestibular neuritis (constant dizziness unrelated to movement).
+There is currently no single blood test, scan or clinical test that definitively proves that dizziness is coming from the neck.
 
-**Concurrent neck pain or stiffness.** Most — though not all — people with cervicogenic dizziness have coexisting neck pain or restricted cervical range of motion. The dizziness and the neck pain share a common cervical source.
+This is why a thorough assessment is important.
 
-**Dizziness that is reproduced by sustained cervical rotation.** A clinical test known as the sustained rotation test — where the patient actively rotates and holds the cervical spine for 30 seconds — reliably provokes dizziness in people with a cervicogenic origin. This provocation test has reasonable sensitivity and specificity when combined with other clinical findings.
+A physiotherapist should consider whether the pattern of symptoms is compatible with a cervical contribution while also considering other possible causes.
 
-**Dizziness that is relieved by manual therapy to the cervical spine.** A clinically important — and diagnostically informative — feature of cervicogenic dizziness is its response to manual therapy. When a physiotherapist applies specific mobilisation to the dysfunctional cervical levels, both the neck pain and the dizziness typically reduce. This therapeutic response, sometimes called a "diagnostic treatment test," provides some of the strongest confirmatory evidence available in the absence of validated biomarkers.
+## Why can dizziness and neck problems occur together?
 
-**Absence of the specific features of inner ear pathology.** Cervicogenic dizziness is typically not accompanied by the intense rotational vertigo of BPPV, the positional nystagmus of inner ear disorders, fluctuating hearing loss, or tinnitus. Its character is more typically described as unsteadiness, fogginess, or a floating sensation — though presentation varies.
+The neck contributes sensory information used for head and body orientation.
 
-### The diagnostic challenge
+After a neck injury or in some people with persistent neck pain and movement dysfunction, this sensory information may become less reliable.
 
-Cervicogenic dizziness does not have a single validated diagnostic test. There is no imaging finding, no blood test, and no electronystagmography result that confirms it. It is a clinical diagnosis, made on the basis of the characteristic symptom pattern, the findings on physical examination of the cervical spine, the response to cervical provocation, and the exclusion of other causes.
+The brain also has to integrate information from the neck with information from the vestibular system and vision.
 
-This is why it is frequently missed. Clinicians looking for a positive finding on a dizziness workup — an abnormal caloric test, a positive Dix-Hallpike — may not find one. The negative findings are then interpreted as meaning there is nothing to explain the dizziness, rather than as pointing toward a cervicogenic source that was not examined.
+If these systems provide conflicting information, dizziness or imbalance may occur.
 
-The contribution of cervical assessment to the dizziness workup is not standard in many clinical settings. It should be.
+This does not mean that every person with neck pain has cervicogenic dizziness.
 
----
+It means that the relationship between neck movement, neck pain and dizziness can be clinically relevant.
 
-## Who Is Most at Risk: The Populations Most Commonly Affected
+## Cervicogenic dizziness after whiplash
 
-### Older adults with cervical spondylosis
+Cervicogenic dizziness is sometimes considered following whiplash-associated disorders.
 
-Age-related degenerative change in the cervical spine — particularly C1–C2 and C2–C3 — is one of the most common substrates for cervicogenic dizziness in older adults. As articular cartilage degenerates, osteophytes form at the facet joint margins, and joint mechanics change, the proprioceptive accuracy of the upper cervical mechanoreceptors is compromised. In a population where vestibular and visual contributions to balance are also declining with age, even modest cervical proprioceptive disruption can produce clinically significant dizziness and instability.
+A person may experience:
 
-### People with whiplash-associated disorder
+* Neck pain
+* Reduced neck movement
+* Headache
+* Dizziness
+* Unsteadiness
+* Difficulty with head movement
 
-Whiplash injury — typically from a rear-end motor vehicle collision — causes a complex pattern of soft tissue injury that specifically affects the upper cervical structures most involved in cervicogenic dizziness. The suboccipital muscles, upper cervical facet joint capsules, and cervical proprioceptors are all vulnerable to whiplash loading. Post-whiplash dizziness is a recognised clinical entity, and cervicogenic mechanisms are among the most important contributors.
+Following an injury, it is particularly important to assess the whole presentation rather than assuming that every symptom is caused by the cervical spine.
 
-A 2003 study by Treleaven, Jull and Sterling published in *Manual Therapy* demonstrated that people with whiplash-associated disorder had significantly impaired cervical proprioception — measured using head repositioning accuracy tests — compared to healthy controls and compared to people with idiopathic neck pain. This proprioceptive impairment correlated with dizziness and balance disturbance.
+Vestibular, neurological and other medical causes may coexist.
 
-### People with chronic neck pain of any cause
+## Cervicogenic dizziness and older adults
 
-Any condition that produces chronic upper cervical pain or dysfunction — including osteoarthritis, disc degeneration, and myofascial pain — can disrupt the proprioceptive mechanism. Cervicogenic dizziness is not exclusive to specific diagnoses; it is a consequence of cervical proprioceptive dysfunction regardless of its cause.
+Dizziness in older adults deserves particularly careful assessment.
 
----
+An older person may have several contributing factors at the same time, such as:
 
-## Assessment: What a Specialist Cervicogenic Dizziness Assessment Involves
+* Neck pain or stiffness
+* Vestibular dysfunction
+* Reduced vision
+* Medication effects
+* Orthostatic hypotension
+* Reduced lower-limb strength
+* Balance impairment
+* Neurological disease
+* Previous falls
 
-A comprehensive assessment for cervicogenic dizziness requires both cervical spine examination and vestibular screening — the two are not mutually exclusive and their overlap needs to be characterised.
+For this reason, treatment should be based on an individual assessment rather than simply treating the neck.
 
-At Physio to Home, a specialist cervicogenic dizziness assessment includes:
+## How is cervicogenic dizziness assessed?
 
-**Detailed symptom history.** The character, triggers, timing, and associated features of the dizziness are documented precisely. The relationship between dizziness and neck movement, posture, and pain is established.
+There is no single test that confirms cervicogenic dizziness.
 
-**Cervical range of motion assessment.** Active and passive range of motion is measured, with attention to which movements provoke or alter dizziness symptoms.
+A physiotherapy assessment may include:
 
-**Sustained rotation test and head-body dissociation tests.** Standardised provocative tests that assess whether cervical rotation produces dizziness and whether head and body rotation produce different symptomatic responses.
+### 1. Detailed history
 
-**Head repositioning accuracy (HRA) testing.** A validated assessment of cervical proprioceptive function in which the patient actively repositions their head to a neutral target after displacement. Impaired HRA accuracy — measured with a laser headpointer or digital inclinometer — is a reliable indicator of disrupted cervical proprioception and correlates with cervicogenic dizziness.
+Your physiotherapist will ask:
 
-**Upper cervical joint assessment.** Palpation and passive assessment of C0–C3 joint mobility and pain provocation, including the diagnostic treatment response to upper cervical mobilisation.
+* When did the dizziness begin?
+* What does the dizziness feel like?
+* Is it spinning, light-headedness or imbalance?
+* What movements trigger it?
+* Is it associated with neck pain?
+* Did it begin after an injury?
+* How long does each episode last?
+* Are there visual symptoms?
+* Are there hearing symptoms?
+* Have you experienced falls?
+* What medications are you taking?
+* Have you previously been assessed for vestibular or neurological causes?
 
-**Vestibular screening.** The Dix-Hallpike manoeuvre and other vestibular tests are performed to screen for coexisting BPPV or other vestibular pathology. Cervicogenic dizziness and vestibular conditions can coexist.
+The answers can be extremely important.
 
-**Neurological screen.** In older adults, central causes of dizziness must be screened for. Red flag features — new onset dizziness with headache, diplopia, dysphagia, facial numbness, or ataxia — warrant medical referral before physiotherapy assessment proceeds.
+### 2. Cervical examination
 
----
+Depending on the presentation, the physiotherapist may assess:
 
-## Treatment: What the Evidence Supports
+* Neck range of movement
+* Neck pain
+* Cervical muscle function
+* Joint movement
+* Posture
+* Head and neck coordination
+* Cervical sensorimotor control
 
-The physiotherapy management of cervicogenic dizziness has a growing evidence base centred on manual therapy directed at the cervical spine and cervical proprioceptive retraining exercises.
+### 3. Balance assessment
+
+Balance may be assessed in different positions and during different movements.
+
+This helps determine whether dizziness is associated with broader balance impairment.
+
+### 4. Vestibular screening
+
+Where appropriate, physiotherapists with appropriate training may screen for vestibular conditions.
+
+For example, positional testing may be used when benign paroxysmal positional vertigo (BPPV) is suspected.
+
+A person can have both a cervical problem and a vestibular problem, so finding one does not automatically exclude the other.
+
+### 5. Neurological and medical screening
+
+A physiotherapist should also consider whether symptoms suggest a condition requiring medical assessment.
+
+If the pattern is not appropriate for physiotherapy management, referral to a GP, emergency department, neurologist, ENT specialist or other appropriate clinician may be necessary.
+
+## What treatment can physiotherapy provide?
+
+Treatment depends on what the assessment finds.
+
+It may include a combination of:
+
+### Education
+
+Understanding what is happening can reduce fear and help you identify the movements and activities that influence symptoms.
+
+Your physiotherapist may explain:
+
+* The relationship between the neck and balance
+* Why symptoms may fluctuate
+* Which movements are safe
+* How to gradually return to normal activity
+
+### Cervical mobility exercises
+
+If reduced cervical movement is contributing to the presentation, your physiotherapist may prescribe gentle exercises to restore comfortable movement.
+
+These should be individualised.
+
+### Strength and endurance exercises
+
+Exercises may target the muscles responsible for supporting the neck, shoulders and upper body.
+
+The goal is not simply to make the neck stronger. It is to improve movement capacity and tolerance for everyday activity.
+
+### Sensorimotor exercises
+
+Some people benefit from exercises that retrain coordination between head movement, eye movement and cervical movement.
+
+These may include controlled head movements, gaze exercises and head-positioning tasks.
+
+### Balance rehabilitation
+
+If balance impairment is present, treatment may include balance and functional mobility exercises.
 
 ### Manual therapy
 
-Upper cervical joint mobilisation — specifically addressing the facet joints at C1–C2 and C2–C3 where proprioceptive mechanoreceptors are most densely concentrated — is the most consistently effective treatment for cervicogenic dizziness. A 2017 Cochrane Review update on manual therapy for neck disorders (Gross et al.) found that cervical mobilisation reduced pain and disability in chronic neck pain, with specific subgroup analyses supporting its effectiveness in patients with dizziness of cervicogenic origin.
+Manual therapy may be used as part of a broader treatment program when clinically appropriate.
 
-Reid and colleagues' clinical trial published in *Manual Therapy* (2014) compared cervical manual therapy to sham treatment in patients with cervicogenic dizziness and demonstrated significant reductions in dizziness frequency, intensity, and disability in the manual therapy group — with effects maintained at 12-month follow-up.
+Research suggests that manual therapy can reduce dizziness symptoms in some people with cervicogenic dizziness, particularly in the short term. However, the evidence is not strong enough to suggest that manual therapy is appropriate for every person with dizziness, and longer-term effects remain less certain.
 
-### Cervical proprioceptive retraining
+The aim should be to use hands-on treatment as one part of an active rehabilitation program rather than as the only intervention.
 
-Exercise approaches that specifically retrain cervical proprioception — including head repositioning exercises, gaze stability training, and eye-head coordination exercises — address the sensory processing deficit underlying cervicogenic dizziness. These exercises are analogous to vestibular rehabilitation exercises but targeted at the cervical proprioceptive system rather than the vestibular system.
+## What does the research say?
 
-The work of Treleaven, Jull and colleagues at the University of Queensland has established the evidence base for cervical sensorimotor training in dizziness associated with neck disorders, with published trials demonstrating improvements in proprioceptive accuracy, dizziness, and balance following structured retraining programmes.
+The research into cervicogenic dizziness is growing, but it is not as strong as the evidence for some more clearly defined conditions.
 
-### Combined approach
+A systematic review and meta-analysis of randomised controlled trials found moderate-quality evidence that manual therapy can reduce cervicogenic dizziness, neck symptoms and some balance symptoms. Evidence for combining manual therapy with exercise was promising but lower quality.
 
-The most effective clinical approach combines manual therapy to reduce the underlying cervical joint dysfunction with active proprioceptive retraining to address the sensorimotor deficits that persist after joint mobility is restored. Neither component alone produces the full therapeutic response available from the combination.
+A more recent systematic review published in 2025 also reported short-term reductions in dizziness intensity and improvements in cervical range of movement following manual therapy, while noting that longer-term effects remain uncertain.
 
----
+This is an important distinction.
 
-## A Note on Differential Diagnosis and When to Refer
+A good physiotherapy article should not promise that manual therapy "cures" cervicogenic dizziness.
 
-Cervicogenic dizziness is one diagnosis in a differential. Before attributing dizziness to a cervicogenic cause, the following should be appropriately excluded or managed:
+Instead, treatment should be selected according to the individual's presentation and response.
 
-- **BPPV** — typically presents with brief (seconds) intense rotational vertigo triggered by head position changes; responds to repositioning manoeuvres (Epley). This is a common coexisting diagnosis.
-- **Orthostatic hypotension** — dizziness on standing, particularly in older adults on antihypertensives. A simple lying-to-standing blood pressure check is often informative.
-- **Vestibular neuritis / labyrinthitis** — typically acute onset, severe rotational vertigo, often following a viral illness. Usually self-limiting.
-- **Central causes** — vertebrobasilar insufficiency, cerebellar pathology, brainstem lesions. Important to screen for in older adults, particularly with new-onset dizziness plus neurological symptoms.
+## When dizziness may not be coming from your neck
 
-Red flag features requiring urgent medical assessment: sudden onset severe "thunderclap" headache with dizziness, new onset diplopia or dysarthria, facial numbness, severe imbalance without a clear positional or cervical trigger, or any dizziness in the context of known cardiovascular risk factors that has not been medically reviewed.
+Dizziness has many possible causes.
 
----
+Examples include:
 
-## Cervicogenic Dizziness in North Tasmania: A Specialist Focus
+### BPPV
 
-Cervicogenic dizziness assessment and treatment is an area of specialist clinical focus at Physio to Home. Micheal Ghattas has specific training in the assessment and management of cervicogenic dizziness, including head repositioning accuracy testing, upper cervical manual therapy, and cervical sensorimotor retraining.
+Benign paroxysmal positional vertigo can cause brief episodes of spinning triggered by particular changes in head position.
 
-For people in North Tasmania experiencing chronic dizziness that has not been adequately explained — particularly where concurrent neck pain or stiffness is present — a home physiotherapy assessment offers a clinically appropriate and practically accessible pathway that does not require referral to a tertiary vestibular centre.
+It is common and has specific treatments.
 
-For GPs managing patients with chronic dizziness in North Tasmania, Physio to Home welcomes direct referrals for cervicogenic dizziness assessment and is happy to provide clinical communication regarding assessment findings and treatment response.
+### Orthostatic hypotension
 
----
+Some people feel dizzy or light-headed when standing because of a drop in blood pressure.
 
-## About the Author
+This can be particularly relevant in older adults and people taking certain medications.
 
-Micheal Ghattas, DPT
+### Vestibular disorders
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
+Problems affecting the inner ear can cause dizziness, vertigo, imbalance or changes in hearing.
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving North Tasmania. He has specialist training in the assessment and treatment of cervicogenic dizziness and cervicogenic headache, and manages complex cervical presentations as a primary clinical focus.
+### Migraine-associated dizziness
 
-Referrals and correspondence: physiotohome.com
+Migraine can be associated with dizziness or vertigo, sometimes even when headache is not prominent.
 
----
+### Neurological conditions
+
+Some neurological conditions can cause dizziness and balance problems.
+
+### Medication effects
+
+Some medications can contribute to dizziness, drowsiness or balance impairment.
+
+This is one reason a medication review may be important.
+
+## When should dizziness be medically assessed urgently?
+
+Do not assume new or severe dizziness is caused by your neck.
+
+Seek urgent medical assessment if dizziness occurs with symptoms such as:
+
+* New weakness or numbness
+* Difficulty speaking
+* New facial weakness
+* Double vision
+* Severe difficulty walking
+* Loss of coordination
+* Fainting
+* Chest pain
+* Severe or unusual headache
+* Sudden neurological changes
+* Other symptoms that feel significantly different from your usual presentation
+
+If you are unsure whether your dizziness is appropriate for physiotherapy, speak with your GP or another appropriate medical professional.
+
+## Can a physiotherapist diagnose cervicogenic dizziness?
+
+A physiotherapist can assess whether the presentation is compatible with a cervical contribution and can screen for features that require referral.
+
+However, because there is no definitive single test for cervicogenic dizziness, diagnosis requires clinical reasoning and consideration of other possible causes.
+
+A responsible assessment should never begin with the assumption:
+
+> "You have neck pain, therefore your dizziness is coming from your neck."
+
+The relationship needs to be established clinically.
+
+## How home physiotherapy can help
+
+Home assessment can be useful when dizziness and balance problems affect everyday activities.
+
+A physiotherapist can observe how you move through your actual environment, including:
+
+* Walking through hallways
+* Turning in confined spaces
+* Using stairs
+* Getting in and out of chairs
+* Moving between rooms
+* Performing everyday activities
+* Managing balance challenges in your own home
+
+This can provide information that is difficult to reproduce in a clinic.
+
+## Cervicogenic dizziness physiotherapy in North Tasmania
+
+Physio to Home provides home-based physiotherapy across North Tasmania.
+
+If you have ongoing dizziness together with neck pain or stiffness, a physiotherapy assessment may help determine whether a cervical component could be contributing to your symptoms and whether physiotherapy is appropriate.
+
+Where symptoms suggest another medical or vestibular cause, appropriate referral is an important part of safe care.
+
+## Frequently asked questions
+
+### Can neck problems really cause dizziness?
+
+The neck can contribute to dizziness or unsteadiness in some people, but dizziness should not automatically be attributed to the cervical spine.
+
+### Is cervicogenic dizziness the same as vertigo?
+
+No. Cervicogenic dizziness is often described as unsteadiness, light-headedness or spatial disorientation rather than classic spinning vertigo.
+
+### Can physiotherapy help cervicogenic dizziness?
+
+Research suggests that physiotherapy approaches, particularly manual therapy and appropriately selected exercise, can reduce symptoms in some people. The evidence varies and treatment should be individualised.
+
+### Do I need an MRI?
+
+Not necessarily. Imaging decisions depend on your individual symptoms and medical assessment. An MRI does not by itself diagnose cervicogenic dizziness.
+
+### Can BPPV and cervicogenic dizziness occur together?
+
+Yes. A person can have more than one contributor to dizziness, which is why assessment is important.
+
+## About the author
+
+**Micheal Ghattas, DPT**
+AHPRA Registered Physiotherapist
+Physio to Home | North Tasmania
+
+Micheal provides home-based physiotherapy for people experiencing musculoskeletal, neurological, mobility and balance problems across North Tasmania.
 
 ## References
 
-Brandt T & Bronstein AM. Cervical vertigo. *Journal of Neurology, Neurosurgery and Psychiatry*, 2001.
+De Vestel C, Vereeck L, Reid SA, et al. Systematic review and meta-analysis of the therapeutic management of patients with cervicogenic dizziness. *Journal of Manual & Manipulative Therapy*. 2022.
 
-Reid SA, et al. Manual therapy and exercise for cervicogenic dizziness: a randomised controlled trial. *Manual Therapy*, 2014.
+Reiley AS, Vickory FM, Funderburg SE, et al. How to diagnose cervicogenic dizziness. *Archives of Physiotherapy*. 2017.
 
-Treleaven J, Jull G & Sterling M. Dizziness and unsteadiness following whiplash injury: characteristic features and relationship with cervical joint position error. *Journal of Rehabilitation Medicine*, 2003.
-
-Jull G, et al. Cervical musculoskeletal impairment is common in elders with headache. *Manual Therapy*, 2007.
-
-Gross A, et al. Manipulation and mobilisation for neck pain contrasted against an inactive control or another active treatment. *Cochrane Database of Systematic Reviews*, 2015.
-
-Treleaven J. Sensorimotor disturbances in neck disorders affecting postural stability, head and eye movement control. *Manual Therapy*, 2008.
-
-Revel M, et al. Changes in cervicocephalic kinesthesia after a proprioceptive rehabilitation program in patients with neck pain. *Archives of Physical Medicine and Rehabilitation*, 1994.
+Recent systematic review evidence regarding manual therapy for cervicogenic dizziness should also be considered when reviewing treatment recommendations, particularly the distinction between short-term symptom improvement and longer-term outcomes.
