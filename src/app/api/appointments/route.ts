@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
-import { isPatientAssignedToEmail, getClinikoPractitionerIdForEmail, writeAuditLog } from '@/lib/db'
+import { addAssignment, getClinikoPractitionerIdForEmail, writeAuditLog } from '@/lib/db'
 import { listAppointmentTypesForPractice, createIndividualAppointment } from '@/lib/cliniko'
 
 // Booking is open to any signed-in physio whose account has been linked to
@@ -47,9 +47,16 @@ export async function GET() {
 // practitioner record. patientId, appointmentTypeId, startsAt and
 // durationMinutes are the only inputs accepted from the client —
 // practitioner/business are always resolved server-side (see
-// lib/cliniko.ts createIndividualAppointment).
+// lib/cliniko.ts createIndividualAppointment). patientLabel is optional,
+// cosmetic only (used to label the new assignment below) — never trusted
+// for anything else.
+//
+// Booking is open to any patient, not just ones already on this physio's
+// assigned list — a booking is itself evidence of a legitimate reason to
+// see that patient. On success we add (or refresh) the assignment so the
+// patient then shows up under "My patients" without a separate admin step.
 export async function POST(req: Request) {
-  const { patientId, appointmentTypeId, startsAt, durationMinutes, notes } = await req.json()
+  const { patientId, appointmentTypeId, startsAt, durationMinutes, notes, patientLabel } = await req.json()
   if (!patientId || !appointmentTypeId || !startsAt || !durationMinutes) {
     return NextResponse.json(
       { error: 'patientId, appointmentTypeId, startsAt and durationMinutes required' },
@@ -59,9 +66,6 @@ export async function POST(req: Request) {
 
   const auth = await requireLinkedPractitioner()
   if ('error' in auth) return auth.error
-
-  const assigned = await isPatientAssignedToEmail(auth.email!, patientId)
-  if (!assigned) return NextResponse.json({ error: 'Not assigned to this patient' }, { status: 403 })
 
   try {
     const endsAt = new Date(new Date(startsAt).getTime() + durationMinutes * 60_000).toISOString()
@@ -79,6 +83,15 @@ export async function POST(req: Request) {
       clinikoPatientId: patientId,
       detail: { appointmentTypeId, startsAt, practitionerId: auth.practitionerId },
     })
+
+    await addAssignment(auth.email!, patientId, patientLabel)
+    await writeAuditLog({
+      actorEmail: auth.email!,
+      action: 'portal_assignment_add',
+      clinikoPatientId: patientId,
+      detail: { via: 'booking' },
+    })
+
     return NextResponse.json({ appointment })
   } catch (e: any) {
     return NextResponse.json({ error: e.message || 'Failed to book appointment' }, { status: 502 })
