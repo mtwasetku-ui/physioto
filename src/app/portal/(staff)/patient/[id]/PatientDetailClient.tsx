@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock } from 'lucide-react'
+import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock, Pencil, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { ClinikoPatientInfo } from '@/lib/cliniko'
 import { TIME_OPTIONS } from '@/lib/timeOptions'
@@ -131,7 +131,7 @@ export default function PatientDetailClient({
       </h1>
       <p className="text-muted-foreground text-sm mb-6">Patient home visit</p>
 
-      <PatientInfoBlock patient={patient} nextAppointment={nextAppointment} />
+      <PatientInfoBlock patient={patient} nextAppointment={nextAppointment} patientId={patientId} />
 
       <div className="flex gap-1 border-b border-border mb-6 mt-8">
         {(
@@ -167,28 +167,46 @@ export default function PatientDetailClient({
 
 // ── Patient info block ──────────────────────────────────────────
 
-function PatientInfoBlock({ patient, nextAppointment }: { patient: ClinikoPatientInfo; nextAppointment: any }) {
+function PatientInfoBlock({
+  patient,
+  nextAppointment,
+  patientId,
+}: {
+  patient: ClinikoPatientInfo
+  nextAppointment: any
+  patientId: string
+}) {
+  const [editing, setEditing] = useState(false)
+
   return (
-    <div className="bg-white border border-border rounded-lg p-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <InfoRow icon={MapPin} label="Address" value={patient.address || 'Not on file'} />
-      <InfoRow icon={Phone} label="Phone" value={patient.phone || 'Not on file'} />
-      <InfoRow icon={Cake} label="Date of birth" value={patient.dateOfBirth || 'Not on file'} />
-      <InfoRow
-        icon={Calendar}
-        label="Your next visit"
-        value={
-          nextAppointment
-            ? new Date(nextAppointment.starts_at).toLocaleString('en-AU', {
-                weekday: 'short',
-                day: 'numeric',
-                month: 'short',
-                hour: 'numeric',
-                minute: '2-digit',
-              })
-            : 'None scheduled'
-        }
-      />
-    </div>
+    <>
+      <div className="bg-white border border-border rounded-lg p-5">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-sm font-semibold text-foreground">Patient details</h2>
+          <Button variant="outline" size="sm" onClick={() => setEditing(true)}>
+            <Pencil className="h-3.5 w-3.5 mr-1.5" /> Edit details
+          </Button>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <InfoRow icon={MapPin} label="Address" value={patient.address || 'Not on file'} />
+          <InfoRow icon={Phone} label="Phone" value={patient.phone || 'Not on file'} />
+          <InfoRow icon={Cake} label="Date of birth" value={patient.dateOfBirth || 'Not on file'} />
+          <InfoRow
+            icon={Calendar}
+            label="Your next visit"
+            value={
+              nextAppointment
+                ? new Date(nextAppointment.starts_at).toLocaleString('en-AU', {
+                    weekday: 'short', day: 'numeric', month: 'short',
+                    hour: 'numeric', minute: '2-digit',
+                  })
+                : 'None scheduled'
+            }
+          />
+        </div>
+      </div>
+      {editing && <EditPatientDialog patient={patient} patientId={patientId} onClose={() => setEditing(false)} />}
+    </>
   )
 }
 
@@ -201,6 +219,118 @@ function InfoRow({ icon: Icon, label, value }: { icon: any; label: string; value
         <div className="text-sm text-foreground font-medium">{value}</div>
       </div>
     </div>
+  )
+}
+
+function EditPatientDialog({
+  patient,
+  patientId,
+  onClose,
+}: {
+  patient: ClinikoPatientInfo
+  patientId: string
+  onClose: () => void
+}) {
+  const [form, setForm] = useState({
+    firstName: patient.firstName,
+    lastName: patient.lastName,
+    dateOfBirth: patient.dateOfBirth || '',
+    phone: patient.phone || '',
+    address1: patient.address1 || '',
+    address2: patient.address2 || '',
+    city: patient.city || '',
+    state: patient.state || '',
+    postCode: patient.postCode || '',
+  })
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const set = (key: string, value: string) => setForm((f) => ({ ...f, [key]: value }))
+
+  async function save() {
+    setSaving(true)
+    setError(null)
+    try {
+      const res = await fetch(`/api/portal/patients/${patientId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(data.error || 'Could not save patient details')
+      // Reload so the server fetches the latest Cliniko record.
+      window.location.reload()
+    } catch (e: any) {
+      setError(e?.message || 'Could not save patient details')
+      setSaving(false)
+    }
+  }
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+      <div className="w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg bg-white border border-border shadow-xl">
+        <div className="flex items-center justify-between border-b border-border px-5 py-4">
+          <div>
+            <h2 className="text-lg font-semibold">Edit patient details</h2>
+            <p className="text-xs text-muted-foreground mt-0.5">Changes are saved directly to Cliniko.</p>
+          </div>
+          <button onClick={onClose} className="p-1 rounded hover:bg-muted" aria-label="Close">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        <div className="p-5 space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Field label="First name" value={form.firstName} onChange={(v) => set('firstName', v)} />
+            <Field label="Last name" value={form.lastName} onChange={(v) => set('lastName', v)} />
+            <Field label="Date of birth" type="date" value={form.dateOfBirth} onChange={(v) => set('dateOfBirth', v)} />
+            <Field label="Phone" value={form.phone} onChange={(v) => set('phone', v)} />
+          </div>
+
+          <div>
+            <div className="text-sm font-medium mb-3">Address</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Field label="Address line 1" value={form.address1} onChange={(v) => set('address1', v)} />
+              <Field label="Address line 2" value={form.address2} onChange={(v) => set('address2', v)} />
+              <Field label="Suburb / city" value={form.city} onChange={(v) => set('city', v)} />
+              <Field label="State" value={form.state} onChange={(v) => set('state', v)} />
+              <Field label="Postcode" value={form.postCode} onChange={(v) => set('postCode', v)} />
+            </div>
+          </div>
+
+          {error && <div className="text-sm text-destructive bg-destructive/10 rounded p-3">{error}</div>}
+
+          <div className="flex justify-end gap-2 pt-2">
+            <Button variant="outline" onClick={onClose} disabled={saving}>Cancel</Button>
+            <Button onClick={save} disabled={saving}>{saving ? 'Saving…' : 'Save changes'}</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Field({
+  label,
+  value,
+  onChange,
+  type = 'text',
+}: {
+  label: string
+  value: string
+  onChange: (value: string) => void
+  type?: string
+}) {
+  return (
+    <label className="block">
+      <span className="text-xs text-muted-foreground">{label}</span>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/30"
+      />
+    </label>
   )
 }
 
