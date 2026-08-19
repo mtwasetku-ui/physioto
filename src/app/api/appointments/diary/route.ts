@@ -41,7 +41,7 @@ export async function GET(req: Request) {
   }
   if (!practitionerId) {
     return NextResponse.json(
-      { error: "Your account isn't linked to a Cliniko practitioner yet — ask Micheal to link it from the Staff page." },
+      { error: "Your account isn't linked to a practitioner record yet — ask Micheal to link it from the Staff page." },
       { status: 403 }
     )
   }
