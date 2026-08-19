@@ -1,7 +1,6 @@
 # Staff Portal — setup & architecture
 
-A login portal at `physiotohome.com/portal` so casual/contractor physios can log Cliniko
-treatment notes for their assigned patient(s) without a full Cliniko login. Built into the
+A login portal at `physiotohome.com/portal` so casual/contractor physios can search Cliniko and log treatment notes for patients without a full Cliniko login. Built into the
 same Next.js/Vercel app as the public site — see `physio-portal-summary.md` for the full
 decision history behind this design.
 
@@ -31,14 +30,16 @@ src/app/portal/layout.tsx                    session-only wrapper for all of /po
 src/app/portal/login/page.tsx                magic-link sign-in form
 src/app/portal/login/check-email/page.tsx    fallback "check your email" page
 src/app/portal/(staff)/layout.tsx            staff header/nav (login page doesn't inherit this)
-src/app/portal/(staff)/page.tsx              landing page — physio's assigned patients
-src/app/portal/(staff)/patient/[id]/page.tsx        patient detail (server) — assignment check + data fetch
+src/app/portal/(staff)/page.tsx              landing page — Cliniko patient search
+src/app/portal/(staff)/patient/[id]/page.tsx        patient detail (server) — authenticated staff access + data fetch
 src/app/portal/(staff)/patient/[id]/PatientDetailClient.tsx   info block, note form, timeline, attachments
 
 src/app/admin/layout.tsx                     admin chrome
 src/app/admin/page.tsx                       admin data loader
 src/app/admin/AdminClient.tsx                manage allowed emails + patient assignments together
 
+src/app/api/portal/patients/search/route.ts  GET — authenticated staff patient search
+src/components/portal/PatientSearch.tsx     Cliniko patient search UI
 src/components/portal/AuthProvider.tsx       NextAuth SessionProvider wrapper
 src/components/portal/PortalSignOutButton.tsx
 ```
