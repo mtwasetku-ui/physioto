@@ -160,7 +160,9 @@ export default function PatientDetailClient({
       {tab === 'note' && <NoteForm patientId={patientId} authorEmail={authorEmail} initialAppointmentId={linkAppointmentId} />}
       {tab === 'timeline' && <Timeline patientId={patientId} />}
       {tab === 'attachments' && <Attachments patientId={patientId} />}
-      {tab === 'book' && <BookVisit patientId={patientId} />}
+      {tab === 'book' && (
+        <BookVisit patientId={patientId} patientLabel={`${patient.firstName} ${patient.lastName}`.trim()} />
+      )}
     </div>
   )
 }
@@ -905,7 +907,7 @@ function Attachments({ patientId }: { patientId: string }) {
 // under someone else's name or in a different business; the practitioner
 // id is always resolved server-side from the session, never from a prop
 // here.
-function BookVisit({ patientId }: { patientId: string }) {
+function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabel?: string }) {
   const [types, setTypes] = useState<{ id: string; name: string; duration_in_minutes: number }[] | null>(null)
   const [appointmentTypeId, setAppointmentTypeId] = useState('')
   const [date, setDate] = useState('')
@@ -950,6 +952,7 @@ function BookVisit({ patientId }: { patientId: string }) {
         startsAt,
         durationMinutes: selectedType.duration_in_minutes,
         notes: notes || undefined,
+        patientLabel: patientLabel || undefined,
       }),
     })
 
