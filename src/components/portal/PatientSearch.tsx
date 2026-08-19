@@ -102,7 +102,7 @@ export default function PatientSearch() {
       )}
 
       <p className="text-xs text-muted-foreground mt-2">
-        Search Cliniko directly — no patient assignment is required.
+        You can open any patient this way, even ones not yet assigned to you.
       </p>
     </div>
   )
