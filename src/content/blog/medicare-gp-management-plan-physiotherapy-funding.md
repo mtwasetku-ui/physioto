@@ -1,173 +1,268 @@
 ---
-title: "Medicare GP Management Plan | Physiotherapy Funding"
-description: "Your GP can fund up to 5 home physiotherapy visits a year through Medicare. Physio to Home explains how the GP Management Plan works and how to get one."
+title: "NDIS Home Physiotherapy: Funding, Eligibility and What Physiotherapy Can Help With"
+description: "Can the NDIS fund physiotherapy at home? Learn how NDIS physiotherapy works, what therapy supports are for, what evidence may be required and how home physiotherapy can support independence."
 author: "Micheal Ghattas, Physiotherapist"
-date: "2026-03-08"
+date: "2026-08-19"
 category: "Funding & Access"
 featured: true
-image: /image/blog/medicare-gp-management-plan-physiotherapy-funding.jpg
-tags: ["Medicare", "GP Management Plan", "Team Care Arrangement", "funded physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "chronic disease management", "allied health"]
+image: /image/blog/ndis-home-physiotherapy-funding.jpg
+tags: ["NDIS physiotherapy", "NDIS home physiotherapy", "NDIS funding", "NDIS therapy supports", "physiotherapy Tasmania", "home physiotherapy Tasmania", "disability physiotherapy", "NDIS participants"]
 ---
 
-# MEDICARE GP MANAGEMENT PLAN | PHYSIOTHERAPY FUNDING
+# NDIS Home Physiotherapy: Funding, Eligibility and What Physiotherapy Can Help With
 
-## How to Use a Medicare GP Management Plan to Fund Home Physiotherapy in Tasmania
+If you are an NDIS participant, you may be able to use your NDIS funding for physiotherapy when the service is an appropriate disability-related support and meets the NDIS funding requirements.
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
+Physiotherapy can help people work towards goals involving mobility, transfers, balance, physical independence, participation and everyday activities.
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+But not every physiotherapy appointment is automatically an NDIS support.
 
-Most Australians know that Medicare covers GP visits and hospital care. Far fewer know that Medicare also subsidises allied health services — including physiotherapy — for people with chronic conditions, through a pathway called the GP Management Plan and Team Care Arrangement. For people in North Tasmania managing conditions like osteoarthritis, chronic back pain, stroke, Parkinson's disease, or post-surgical recovery, this can mean up to five partially funded home physiotherapy visits per year at significantly reduced cost.
+The key question is **why you need physiotherapy and what functional outcome the therapy is intended to achieve**.
 
-This guide explains exactly how the system works, who qualifies, what the process involves, and how to have the conversation with your GP.
+This guide explains how NDIS physiotherapy works, when home physiotherapy may be appropriate, what your physiotherapist may assess, and what information can help demonstrate the functional purpose of therapy.
 
-### Who this guide is for
+**Last reviewed: August 2026**
 
-This article is for people across North Tasmania who have a chronic health condition and want to understand whether Medicare can contribute to the cost of home physiotherapy. It is also useful for family members and carers who are helping an older person navigate the health system.
+## Can the NDIS fund physiotherapy?
 
----
+Yes.
 
-## What Is a GP Management Plan?
+The NDIS lists physiotherapy among the therapy supports that it may fund where the relevant NDIS funding criteria are met.
 
-A GP Management Plan (GPMP) — sometimes called an Enhanced Primary Care Plan or referred to alongside a Team Care Arrangement (TCA) — is a formal care plan written by your GP for patients who have a chronic medical condition that requires ongoing management.
+The NDIS describes therapy supports as supports that can help participants improve or maintain skills and independence in areas such as mobility, movement, personal care, community living and everyday functioning.
 
-The plan documents your health goals, the services you need, and the health professionals involved in your care. When a GP Management Plan is combined with a Team Care Arrangement — which brings in two or more allied health providers — it unlocks Medicare subsidies for a range of allied health services, including physiotherapy.
+However, being prescribed or recommended physiotherapy does not automatically mean that the NDIS will fund every physiotherapy service.
 
-Under a Team Care Arrangement, you are entitled to **up to five Medicare-subsidised allied health visits per year**, which can be directed entirely to physiotherapy or split across different allied health disciplines.
+The support must meet the applicable NDIS requirements.
 
----
+## What is the difference between medical physiotherapy and NDIS physiotherapy?
 
-## What Conditions Qualify?
+This is one of the most important questions for participants and families.
 
-To be eligible for a GP Management Plan, you must have a **chronic medical condition** — defined as one that has been present for at least six months or is likely to be present for at least six months. There is no approved list of specific conditions. If your GP determines that you have a chronic condition that would benefit from physiotherapy as part of a multidisciplinary care plan, you qualify.
+Physiotherapy is a health profession, but the NDIS does not fund health care simply because a person has a medical condition.
 
-Conditions for which GP Management Plans are commonly written to include physiotherapy include:
+The purpose of the physiotherapy matters.
 
-- Osteoarthritis of the hip, knee, or spine
-- Chronic low back or neck pain
-- Parkinson's disease
-- Stroke and neurological conditions
-- Chronic pain including fibromyalgia
-- Osteoporosis with mobility concerns
-- Post-surgical recovery from joint replacement
-- Diabetes with peripheral neuropathy or mobility complications
-- Cardiovascular conditions with deconditioning
-- Falls risk in older adults with contributing medical conditions
+For example, physiotherapy following surgery may be primarily related to treatment of a health condition and may therefore sit within the health system.
 
-If you have been living with any of these conditions — or another chronic health problem affecting your mobility or function — speak to your GP about whether a GP Management Plan and Team Care Arrangement is appropriate.
+By contrast, physiotherapy may potentially be relevant to the NDIS when it addresses the ongoing functional impact of a participant's disability and helps them build, maintain or support independence and participation.
 
----
+The NDIS considers the individual circumstances and the purpose of the support.
 
-## How Much Does Medicare Cover?
+## What can NDIS-funded physiotherapy help with?
 
-Under a Team Care Arrangement, the Medicare rebate for an allied health visit is currently **$58.30 per session** (indexed periodically — confirm the current rate with your GP or Medicare). If your physiotherapist charges more than the Medicare rebate, you pay the difference (the gap). If they charge at or below the rebate, you pay nothing out of pocket.
+Depending on your disability and goals, physiotherapy may address areas such as:
 
-Physio to Home charges a gap on top of the Medicare rebate. The exact amount depends on the type and duration of the visit. When you contact us, we confirm the gap cost before your first appointment so you can make an informed decision without any obligation.
+- Walking and mobility
+- Transfers
+- Balance
+- Strength
+- Physical endurance
+- Falls risk
+- Mobility around the home
+- Use of mobility equipment
+- Functional movement
+- Participation in community activities
+- Maintaining physical function
+- Reducing the impact of functional decline
+- Developing strategies for everyday activities
+- Training family members or support workers where clinically appropriate
 
-**Five sessions per year** is the maximum number of subsidised allied health visits under a Team Care Arrangement across all allied health disciplines combined. If you use physiotherapy for all five visits, no subsidised visits remain for other allied health services (such as podiatry or occupational therapy) until the following calendar year. Your GP can help you prioritise how to allocate your visits.
+The specific goals should be individual to the participant.
 
----
+A useful physiotherapy goal is not simply:
 
-## How to Get a GP Management Plan: Step by Step
+> "Improve strength."
 
-**Step 1 — Book a longer GP appointment**
+A more meaningful functional goal might be:
 
-Writing a GP Management Plan takes more time than a standard consultation. When you call to book, tell the receptionist that you want to discuss a GP Management Plan for chronic disease management and ask for a longer appointment — typically 30–45 minutes.
+> "Improve lower-limb strength and balance so I can safely transfer from my bed to my wheelchair with less assistance."
 
-**Step 2 — Have the conversation with your GP**
+The second goal explains why the therapy matters in everyday life.
 
-At your appointment, tell your GP that you are experiencing difficulties with your mobility, pain, or physical function and that you would like to discuss whether a GP Management Plan and Team Care Arrangement would be appropriate. You do not need to know all the terminology — simply explain what is affecting you and that you are interested in physiotherapy support.
+## Why home physiotherapy can be useful for NDIS participants
 
-A useful phrase: *"I've been having difficulty with [your condition] and I'd like to see a home physiotherapist. I was wondering whether a GP Management Plan and Team Care Arrangement would be appropriate so Medicare can contribute to the cost."*
+For many participants, the home is where their functional difficulties are most obvious.
 
-**Step 3 — Your GP writes the plan**
+A clinic assessment may show that someone can perform a particular movement in a controlled environment.
 
-If your GP agrees, they will write the GP Management Plan — documenting your chronic condition, your health goals, and the allied health services being included. This is billed to Medicare separately and does not cost you anything.
+A home assessment can reveal what happens when that person:
 
-**Step 4 — Receive your referral**
+- Gets out of their own bed
+- Moves through a narrow hallway
+- Transfers from their usual chair
+- Uses their bathroom
+- Walks across their normal flooring
+- Manages stairs
+- Uses their mobility aid
+- Carries out everyday tasks
+- Interacts with their support workers
 
-Your GP will give you a referral letter to take to your physiotherapist, or may send it directly. The referral specifies the number of visits and the condition being managed.
+This can make home physiotherapy particularly useful when the participant's goals are focused on independence and daily function.
 
-**Step 5 — Book with Physio to Home**
+## What happens during an NDIS home physiotherapy assessment?
 
-Contact Physio to Home with your referral and we will arrange your first home visit. We process the Medicare rebate directly, and you pay only the applicable gap on the day.
+Your first appointment is usually about understanding the participant rather than simply testing individual muscles.
 
----
+A physiotherapist may assess:
 
-## Can I Use a GP Management Plan for Home Visits?
+### 1. Your goals
 
-Yes. Medicare subsidies under a Team Care Arrangement apply to home visits as well as clinic visits. There is no requirement that physiotherapy be delivered in a clinic setting. This is particularly relevant for older Tasmanians and people with limited mobility for whom home visits are the only practical option.
+What do you want to be able to do?
 
----
+This might involve personal care, moving around your home, getting into the community, returning to work or study, exercising, or participating in social activities.
 
-## GP Management Plans and Other Funding Sources
+### 2. Your current functional ability
 
-A GP Management Plan does not exclude you from other funding sources — it can be used alongside them. Common combinations include:
+Your physiotherapist may assess:
 
-**GP Management Plan + Home Care Package.** Your five Medicare-subsidised visits can be used in addition to physiotherapy funded through your Home Care Package, effectively extending the number of funded visits you receive across the year.
+- Walking
+- Transfers
+- Balance
+- Strength
+- Coordination
+- Endurance
+- Range of movement
+- Functional mobility
 
-**GP Management Plan + Private Health Insurance.** Depending on your extras policy, private health insurance may cover a gap payment after the Medicare rebate has been applied. Check with your fund about whether they cover the gap on allied health visits under a GP Management Plan.
+### 3. Your home environment
 
-**GP Management Plan + NDIS.** Medicare GP Management Plans are generally not used alongside NDIS funding for the same service — NDIS is typically the primary funder for NDIS participants. Your support coordinator can advise on the appropriate arrangement for your plan.
+Where appropriate, the physiotherapist may consider whether the physical environment creates barriers to independence.
 
----
+### 4. Your current supports
 
-## Reviewing and Renewing Your Plan
+This may include mobility equipment, support workers, family assistance or other services involved in your care.
 
-A GP Management Plan should be reviewed at least annually — or sooner if your health needs change significantly. At each review, your GP can confirm that physiotherapy remains an appropriate part of your plan and reissue the Team Care Arrangement for the next 12 months of subsidised visits.
+### 5. Your rehabilitation potential and ongoing needs
 
-If your five subsidised visits are used before the end of the calendar year and you require further physiotherapy, additional visits can be funded privately, through a Home Care Package, or through private health insurance. Your physiotherapist can help you think through the most cost-effective pathway.
+The physiotherapist considers what intervention is likely to be useful and what outcomes can reasonably be expected.
 
----
+## Does NDIS physiotherapy have to be provided in a clinic?
 
-## Frequently Asked Questions
+No.
 
-### My GP hasn't mentioned a GP Management Plan. Why not?
+Therapy can be delivered in environments that are appropriate for the participant and the goals of the support.
 
-GPs see many patients and do not always initiate the conversation about GP Management Plans proactively. It is entirely appropriate for you to raise it yourself. Many patients who would clearly benefit from one simply have not asked. Use the language in Step 2 above and your GP will be able to assess your eligibility quickly.
+For someone whose goals involve moving safely around their home, practising transfers or becoming more independent with everyday activities, the home can be a clinically useful treatment environment.
 
-### Can a GP Management Plan be used for physiotherapy for an older parent living at home?
+## What does "reasonable and necessary" mean?
 
-Yes. If your parent has a chronic medical condition affecting their mobility or function, a GP Management Plan is appropriate regardless of age. In fact, older adults managing falls risk, arthritis, Parkinson's disease, or post-stroke recovery are among the most common and most appropriate recipients.
+NDIS supports must meet the relevant reasonable and necessary criteria.
 
-### Does the GP Management Plan cover the full cost of physiotherapy?
+The NDIS states that supports need to relate to the participant's disability, help them work towards their goals and be likely to be effective and beneficial, among other criteria.
 
-The Medicare rebate ($58.30 per session, current rate) is a contribution toward the cost — not necessarily the full cost. Your physiotherapist sets their own fees. Some charge at or below the rebate (bulk billing); others charge more and you pay the gap. Always confirm the fee and gap before your first visit.
+The NDIS also considers value for money and whether the support should more appropriately be provided by another system.
 
-### Can I choose which physiotherapist I see under a GP Management Plan?
+This is why a physiotherapy report should explain **the participant's functional needs and the reason the proposed therapy is required**, rather than simply stating that physiotherapy would be helpful.
 
-Yes. You can direct your referral to any registered physiotherapist of your choosing. If you would like home visits from Physio to Home, mention this to your GP when requesting the referral so it is written accordingly.
+## What evidence can a physiotherapist provide?
 
-### What if my GP refuses to write a GP Management Plan?
+Depending on the participant's circumstances, physiotherapy evidence may include:
 
-Your GP has clinical discretion about whether a GP Management Plan is appropriate for your situation. If you feel strongly that it is warranted and your GP disagrees, you are entitled to seek a second opinion from another GP. In some cases, further documentation of your condition and its impact on function — from a physiotherapist or specialist — can support the case for a plan.
+- Functional assessment findings
+- Current mobility limitations
+- Balance or falls risk
+- Transfer ability
+- Strength and movement findings
+- Functional goals
+- Recommended intervention
+- Expected outcomes
+- Frequency and duration of therapy
+- Progress over time
+- Barriers to independence
+- The relationship between the disability and the functional limitation
 
----
+Good clinical documentation connects the assessment to the participant's real-life goals.
 
-## Want to Use Your Medicare Entitlements for Home Physiotherapy?
+## What if the participant needs ongoing physiotherapy?
 
-If you think a GP Management Plan could help you access funded home physiotherapy in North Tasmania, the first step is a conversation with your GP. If you would like to discuss your situation with us first — to understand whether physiotherapy is appropriate for your condition and what a course of treatment would involve — contact Physio to Home for a no-obligation chat before your GP appointment.
+Ongoing therapy needs to remain clinically justified.
 
-Contact us today — we help you navigate your funding options at no cost →
+The physiotherapist should be able to explain:
 
----
+- What the therapy is trying to achieve
+- Why the participant requires professional physiotherapy
+- What progress has occurred
+- What functional outcomes are expected
+- Whether the therapy should continue
+- Whether another person could be trained to support the participant with aspects of the program
 
-## About the Author
+The appropriate therapy frequency is different for every participant.
 
-Micheal Ghattas, DPT
+There is no single number of physiotherapy sessions that is appropriate for every NDIS participant.
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
+## Can physiotherapy be used to maintain function?
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in aged care physiotherapy, chronic pain management, and post-surgical rehabilitation delivered entirely in the home setting.
+The purpose of therapy can include helping a participant maintain functional ability and reduce decline where the relevant NDIS criteria are met.
 
----
+This is particularly important for people with progressive or permanent disabilities.
 
-## References & Further Reading
+However, "maintenance" should not simply mean providing indefinite treatment without a clear functional rationale.
 
-Australian Government Department of Health and Aged Care. Chronic disease management — GP services. www.health.gov.au, 2025.
+The physiotherapist should explain why the support is required, what it achieves and why the proposed model of support is appropriate.
 
-Medicare Benefits Schedule. Allied health group services — Item 10950–10970. Commonwealth of Australia, 2025.
+## What does NDIS physiotherapy cost?
 
-Australian Physiotherapy Association. Accessing physiotherapy through Medicare. APA, 2024.
+NDIS pricing arrangements change over time.
 
-My Aged Care. Getting help at home. www.myagedcare.gov.au, 2025.
+The NDIS publishes current pricing arrangements and maximum price information, including therapy support pricing.
+
+From 1 July 2026, the NDIS pricing schedule applies to the current pricing period.
+
+Participants and providers should use the current NDIS pricing arrangements rather than relying on older online articles or historical price lists.
+
+Your physiotherapist should also explain:
+
+- The service fee
+- Travel charges, if applicable
+- Report-writing fees, if applicable
+- Cancellation policies
+- How services will be claimed
+- What is included in the appointment
+
+## Can support coordinators refer someone for home physiotherapy?
+
+Yes, a participant may be connected with a physiotherapist through their support network, which can include family members, support coordinators, plan managers or other professionals.
+
+However, the participant remains at the centre of the decision-making process.
+
+The physiotherapy program should be based on the participant's goals and functional needs.
+
+## What should I ask a physiotherapist before booking?
+
+Ask:
+
+1. Are you AHPRA registered?
+2. Do you provide home visits in my area?
+3. Do you work with NDIS participants?
+4. Can you assess functional mobility in the home?
+5. What happens during the first appointment?
+6. How are goals documented?
+7. Do you provide progress reports when required?
+8. How are travel and report-writing fees handled?
+9. What are your cancellation terms?
+10. How do you communicate with support coordinators and other treating professionals?
+
+## NDIS physiotherapy in North Tasmania
+
+Physio to Home provides mobile physiotherapy for NDIS participants across North Tasmania.
+
+Home-based physiotherapy can be particularly appropriate when a participant's goals involve mobility, transfers, balance, independence or participation in their usual home and community environments.
+
+Our approach is focused on practical function rather than simply treating an isolated body part.
+
+## Important information for NDIS participants
+
+NDIS funding decisions are made by the NDIA under the NDIS Act, Rules and current guidelines.
+
+A physiotherapist can assess your needs and provide clinical evidence, but a recommendation from a health professional does not by itself guarantee that the NDIS will fund the requested support.
+
+NDIS rules and pricing arrangements can change. Always check the current NDIS information relevant to your plan.
+
+## About the author
+
+**Micheal Ghattas, DPT**  
+AHPRA Registered Physiotherapist  
+Physio to Home | North Tasmania
+
+Micheal provides home-based physiotherapy for people living with neurological, musculoskeletal, mobility and rehabilitation needs across North Tasmania.
