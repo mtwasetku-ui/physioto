@@ -8,7 +8,7 @@ category: "Conditions & Rehab"
 featured: false
 image: /image/blog/cervicogenic-dizziness-misdiagnosed-clinical-overview.jpg
 
-## tags: ["cervicogenic dizziness", "neck pain dizziness", "cervical dizziness", "dizziness physiotherapy", "vestibular physiotherapy", "home physiotherapy", "physiotherapy Tasmania", "balance problems"]
+tags: ["cervicogenic dizziness", "neck pain dizziness", "cervical dizziness", "dizziness physiotherapy", "vestibular physiotherapy", "home physiotherapy", "physiotherapy Tasmania", "balance problems"]
 
 # Cervicogenic Dizziness: Symptoms, Diagnosis and Physiotherapy Treatment
 
