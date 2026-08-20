@@ -7,8 +7,8 @@ import { User, ChevronRight, X, Loader2 } from 'lucide-react'
 
 type Assignment = {
   id: number
-  cliniko_patient_id: string
-  patient_label: string | null
+  patientId: string
+  patientLabel: string | null
 }
 
 export default function MyPatientsList({ assignments }: { assignments: Assignment[] }) {
@@ -17,7 +17,7 @@ export default function MyPatientsList({ assignments }: { assignments: Assignmen
   const [error, setError] = useState<string | null>(null)
 
   async function remove(a: Assignment) {
-    const label = a.patient_label || 'this patient'
+    const label = a.patientLabel || 'this patient'
     if (!confirm(`Remove ${label} from your patient list? You can re-add them by booking a visit again.`)) return
 
     setRemovingId(a.id)
@@ -26,7 +26,7 @@ export default function MyPatientsList({ assignments }: { assignments: Assignmen
       const res = await fetch('/api/portal/assignments', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ clinikoPatientId: a.cliniko_patient_id }),
+        body: JSON.stringify({ patientId: a.patientId }),
       })
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
@@ -54,22 +54,22 @@ export default function MyPatientsList({ assignments }: { assignments: Assignmen
       <div className="bg-white border border-border rounded-lg divide-y divide-border overflow-hidden">
         {assignments.map((a) => (
           <div key={a.id} className="flex items-center justify-between px-5 py-4 hover:bg-secondary/50 transition-colors">
-            <Link href={`/portal/patient/${a.cliniko_patient_id}`} className="flex items-center gap-3 flex-1 min-w-0">
+            <Link href={`/portal/patient/${a.patientId}`} className="flex items-center gap-3 flex-1 min-w-0">
               <div className="h-9 w-9 rounded-full bg-secondary flex items-center justify-center shrink-0">
                 <User className="h-4 w-4 text-primary" />
               </div>
-              <div className="font-medium text-foreground truncate">{a.patient_label || 'Unnamed patient'}</div>
+              <div className="font-medium text-foreground truncate">{a.patientLabel || 'Unnamed patient'}</div>
             </Link>
             <div className="flex items-center gap-1 shrink-0">
               <button
                 onClick={() => remove(a)}
                 disabled={removingId === a.id}
-                aria-label={`Remove ${a.patient_label || 'patient'} from your list`}
+                aria-label={`Remove ${a.patientLabel || 'patient'} from your list`}
                 className="p-2 rounded text-muted-foreground hover:text-destructive hover:bg-destructive/10 disabled:opacity-50"
               >
                 {removingId === a.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <X className="h-4 w-4" />}
               </button>
-              <Link href={`/portal/patient/${a.cliniko_patient_id}`} aria-hidden className="p-2">
+              <Link href={`/portal/patient/${a.patientId}`} aria-hidden className="p-2">
                 <ChevronRight className="h-4 w-4 text-muted-foreground" />
               </Link>
             </div>
