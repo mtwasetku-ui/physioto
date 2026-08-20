@@ -349,7 +349,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="/portal/login"
+                href="/portal"
                 className="
                   text-[#718A7D]
                   transition-colors
