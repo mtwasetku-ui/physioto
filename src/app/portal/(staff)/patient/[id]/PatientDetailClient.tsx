@@ -54,10 +54,13 @@ function sanitizedHtmlNode(node: ChildNode, key: string): React.ReactNode {
   return <Tag key={key}>{children}</Tag>
 }
 
-// Renders a Cliniko paragraph-question answer as actual formatted text
-// rather than a raw HTML string. Falls back to plain stripped text if
-// parsing fails or (during server rendering) DOMParser isn't available.
-function ClinikoHtml({ html, className }: { html: string; className?: string }) {
+// Renders a paragraph-question answer as actual formatted text rather
+// than a raw HTML string. Falls back to plain stripped text if parsing
+// fails or (during server rendering) DOMParser isn't available.
+// Named generically (not e.g. "ClinikoHtml") because component names are
+// visible at runtime in React DevTools, and this file is practitioner-
+// facing (Final Agreement §4).
+function RichAnswerHtml({ html, className }: { html: string; className?: string }) {
   if (typeof window === 'undefined' || typeof DOMParser === 'undefined') {
     return <div className={className}>{stripHtmlTags(html)}</div>
   }
@@ -781,7 +784,7 @@ function Timeline({ patientId }: { patientId: string }) {
                         return (
                           <div key={`${s.name}::${q.name}`} className="mb-3 last:mb-0">
                             <div className="text-xs font-medium text-foreground mb-0.5">{q.name}</div>
-                            <ClinikoHtml
+                            <RichAnswerHtml
                               html={value}
                               className="text-sm text-muted-foreground leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0"
                             />
