@@ -26,12 +26,12 @@ const USER_AGENT = process.env.CLINIKO_USER_AGENT || 'Physio to Home Staff Porta
 const BUSINESS_ID = process.env.CLINIKO_BUSINESS_ID // Physio to Home's business id
 
 function authHeader() {
-  if (!API_KEY) throw new Error('CLINIKO_API_KEY is not set')
+  if (!API_KEY) throw new Error('Practice system is not configured (missing API key)')
   return 'Basic ' + Buffer.from(`${API_KEY}:`).toString('base64')
 }
 
 async function clinikoFetch(path: string, init: RequestInit = {}) {
-  if (!API_BASE) throw new Error('CLINIKO_API_BASE is not set')
+  if (!API_BASE) throw new Error('Practice system is not configured (missing API base URL)')
   const res = await fetch(`${API_BASE}${path}`, {
     ...init,
     headers: {
@@ -45,7 +45,11 @@ async function clinikoFetch(path: string, init: RequestInit = {}) {
   })
   if (!res.ok) {
     const body = await res.text().catch(() => '')
-    throw new Error(`Cliniko ${init.method || 'GET'} ${path} failed: ${res.status} ${body}`)
+    // This message reaches practitioners verbatim — most API routes return
+    // e.message straight through in their JSON error response so the real
+    // failure reason is visible in the UI. Keep it detailed, but never let
+    // it name the backend system (see Final Agreement §4).
+    throw new Error(`Practice system request failed: ${init.method || 'GET'} ${path} → ${res.status} ${body}`)
   }
   if (res.status === 204) return null
   return res.json()
@@ -117,7 +121,7 @@ export async function getTemplateByExactName(name: string): Promise<ClinikoTempl
   const match = templates.find((t) => t.name === name)
   if (!match) {
     throw new Error(
-      `No treatment note template named exactly "${name}" was found in Cliniko. Check the template name matches exactly (including capitalisation).`
+      `No treatment note template named exactly "${name}" was found. Check the template name matches exactly (including capitalisation).`
     )
   }
   return match
@@ -501,7 +505,7 @@ export async function createIndividualAppointment(params: {
   notes?: string
 }) {
   if (!BUSINESS_ID) {
-    throw new Error('CLINIKO_BUSINESS_ID is not set')
+    throw new Error('Practice system is not configured (missing business id)')
   }
   const { patientId, practitionerId, appointmentTypeId, startsAt, endsAt, notes } = params
   if (!practitionerId) {
@@ -587,7 +591,7 @@ export async function cancelIndividualAppointment(appointmentId: string, params:
 // presigned and doesn't want our Cliniko Authorization header on that
 // second hop — sending it along could make S3 reject the request outright.
 export async function fetchAttachmentBytes(attachmentId: string) {
-  if (!API_BASE) throw new Error('CLINIKO_API_BASE is not set')
+  if (!API_BASE) throw new Error('Practice system is not configured (missing API base URL)')
   const first = await fetch(`${API_BASE}/patient_attachments/${attachmentId}/content`, {
     headers: { Authorization: authHeader(), 'User-Agent': USER_AGENT },
     cache: 'no-store',
@@ -597,16 +601,16 @@ export async function fetchAttachmentBytes(attachmentId: string) {
   if (first.status >= 300 && first.status < 400) {
     const location = first.headers.get('location')
     if (!location) {
-      throw new Error(`Cliniko attachment download failed: ${first.status} redirect with no Location header`)
+      throw new Error(`Attachment download failed: ${first.status} redirect with no Location header`)
     }
     const final = await fetch(location, { cache: 'no-store' })
     if (!final.ok) {
-      throw new Error(`Cliniko attachment download failed: ${final.status} fetching the redirected file`)
+      throw new Error(`Attachment download failed: ${final.status} fetching the redirected file`)
     }
     return final
   }
 
-  if (!first.ok) throw new Error(`Cliniko attachment download failed: ${first.status}`)
+  if (!first.ok) throw new Error(`Attachment download failed: ${first.status}`)
   return first
 }
 
