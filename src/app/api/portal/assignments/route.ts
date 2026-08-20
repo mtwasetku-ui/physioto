@@ -15,16 +15,20 @@ export async function DELETE(req: Request) {
   const email = session?.user?.email
   if (!email) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { clinikoPatientId } = await req.json()
-  if (!clinikoPatientId) {
-    return NextResponse.json({ error: 'clinikoPatientId required' }, { status: 400 })
+  // Wire field is "patientId" (not "clinikoPatientId") — this is the one
+  // request body a practitioner would actually see in devtools, so it
+  // stays generic even though the DB/audit layer underneath still keys on
+  // the Cliniko patient id (Final Agreement §4).
+  const { patientId } = await req.json()
+  if (!patientId) {
+    return NextResponse.json({ error: 'patientId required' }, { status: 400 })
   }
 
-  await removeAssignmentForEmail(email, clinikoPatientId)
+  await removeAssignmentForEmail(email, patientId)
   await writeAuditLog({
     actorEmail: email,
     action: 'portal_assignment_remove',
-    clinikoPatientId,
+    clinikoPatientId: patientId,
   })
 
   return NextResponse.json({ ok: true })
