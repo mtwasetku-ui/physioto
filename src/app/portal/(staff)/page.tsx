@@ -12,7 +12,17 @@ export default async function PortalHomePage() {
   const email = session?.user?.email
   if (!email) redirect('/portal/login')
 
-  const assignments = await listAssignmentsForEmail(email)
+  const rawAssignments = await listAssignmentsForEmail(email)
+  // Reshape to generic field names before this reaches the client — the
+  // raw rows carry cliniko_patient_id, which would otherwise ship to the
+  // browser as-is via the RSC payload (Final Agreement §4: practitioner-
+  // facing surfaces, including anything visible in devtools, never name
+  // the backend system).
+  const assignments = (rawAssignments as any[]).map((a) => ({
+    id: a.id,
+    patientId: a.cliniko_patient_id,
+    patientLabel: a.patient_label,
+  }))
 
   return (
     <div>
@@ -22,7 +32,7 @@ export default async function PortalHomePage() {
         attachments and book visits.
       </p>
 
-      <MyPatientsList assignments={assignments as any} />
+      <MyPatientsList assignments={assignments} />
 
       <h2 className="serif text-lg text-foreground font-semibold mb-1">Find a patient</h2>
       <p className="text-muted-foreground text-sm mb-4">
