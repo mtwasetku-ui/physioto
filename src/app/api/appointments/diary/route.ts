@@ -33,9 +33,12 @@ export async function GET(req: Request) {
   try {
     practitionerId = await getClinikoPractitionerIdForEmail(email)
   } catch (e: any) {
+    // Full detail (including any DB/column specifics) goes to the server
+    // log only — the client-facing message stays generic so a practitioner
+    // never sees backend implementation detail (Final Agreement §4).
     console.error('[appointments/diary] failed to look up linked practitioner', e)
     return NextResponse.json(
-      { error: e.message || 'Failed to look up your linked practitioner (check cliniko_practitioner_id column exists)' },
+      { error: 'Failed to look up your linked practitioner record' },
       { status: 500 }
     )
   }
@@ -52,7 +55,7 @@ export async function GET(req: Request) {
     assignedPatientIds = new Set(assignments.map((a: any) => String(a.cliniko_patient_id)))
   } catch (e: any) {
     console.error('[appointments/diary] failed to load assignments', e)
-    return NextResponse.json({ error: e.message || 'Failed to load your assigned patients' }, { status: 500 })
+    return NextResponse.json({ error: 'Failed to load your assigned patients' }, { status: 500 })
   }
 
   // Default window: current week, Monday to the following Monday.
