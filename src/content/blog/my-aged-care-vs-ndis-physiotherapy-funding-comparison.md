@@ -1,5 +1,5 @@
 ---
-title: "My Aged Care vs NDIS — Which Funding Applies to You?"
+title: "My Aged Care or NDIS? How to Know Which Funds Your Physio"
 description: "My Aged Care and NDIS both fund physiotherapy, but they're entirely different systems. Physio to Home explains which applies to you and how to access both."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-08"

@@ -1,6 +1,6 @@
 ---
-title: "Falls Prevention | Footwear"
-description: "Up to 50% of falls in older adults involve the wrong footwear. Physio to Home's Micheal Ghattas reveals which shoes are risky — and what to wear instead."
+title: "The Shoes That Cause Falls — And What to Wear Instead"
+description: "Wrong footwear is behind up to 50% of falls in older adults. Physiotherapist Micheal Ghattas explains which shoes are risky and what to look for."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-02-27"
 category: "Falls Prevention"

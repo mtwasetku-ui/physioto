@@ -1,6 +1,6 @@
 ---
-title: "Hip Osteoarthritis | Home Physiotherapy"
-description: "Hip osteoarthritis is a leading cause of pain and disability in older Australians. Physio to Home explains why physiotherapy is the top non-surgical option."
+title: "Hip Osteoarthritis Pain? Physiotherapy Before Surgery"
+description: "Hip osteoarthritis is a leading cause of pain and disability in older Australians. Learn why physiotherapy is the top non-surgical treatment option."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-03-02"
 category: "Conditions & Rehab"

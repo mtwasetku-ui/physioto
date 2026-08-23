@@ -1,6 +1,6 @@
 ---
-title: "Medicare Physiotherapy for Chronic Conditions: How the GP Chronic Condition Management Plan Works"
-description: "Can Medicare help pay for physiotherapy? Learn how GP Chronic Condition Management Plans work, who may qualify for Medicare-subsidised physiotherapy and what the five-service annual limit means."
+title: "Medicare Physiotherapy: How GP Management Plans Work"
+description: "Can Medicare help pay for physiotherapy? How GP Chronic Condition Management Plans work, who qualifies, and what the five-service annual limit means."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-08-19"
 category: "Funding & Access"

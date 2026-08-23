@@ -1,6 +1,6 @@
 ---
-title: "Home Physiotherapy Hobart"
-description: "Hobart's home visit physiotherapy team. AHPRA-registered, in-home care across Hobart — steep streets and scarce parking are why we come to you."
+title: "Home Physiotherapy Hobart | Steep Streets, We Come to You"
+description: "AHPRA-registered physiotherapists bring care to your Hobart home — no parking, no steps, no travel. Book a home visit across greater Hobart today."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-07-26"
 category: "Local Areas"
