@@ -23,9 +23,14 @@ export async function POST(req: Request) {
   const { email, displayName } = await req.json()
   if (!email) return NextResponse.json({ error: 'email required' }, { status: 400 })
 
-  const record = await addAllowedEmail(email, displayName)
-  await writeAuditLog({ actorEmail: auth.email!, action: 'admin_email_add', detail: { email } })
-  return NextResponse.json({ email: record })
+  try {
+    const record = await addAllowedEmail(email, displayName)
+    await writeAuditLog({ actorEmail: auth.email!, action: 'admin_email_add', detail: { email } })
+    return NextResponse.json({ email: record })
+  } catch (err) {
+    console.error('[api:admin/emails:POST] failed', err)
+    return NextResponse.json({ error: 'Failed to save — the database did not confirm the write. Nothing was changed.' }, { status: 500 })
+  }
 }
 
 export async function DELETE(req: Request) {
@@ -35,7 +40,12 @@ export async function DELETE(req: Request) {
   const { email } = await req.json()
   if (!email) return NextResponse.json({ error: 'email required' }, { status: 400 })
 
-  await removeAllowedEmail(email)
-  await writeAuditLog({ actorEmail: auth.email!, action: 'admin_email_remove', detail: { email } })
-  return NextResponse.json({ ok: true })
+  try {
+    await removeAllowedEmail(email)
+    await writeAuditLog({ actorEmail: auth.email!, action: 'admin_email_remove', detail: { email } })
+    return NextResponse.json({ ok: true })
+  } catch (err) {
+    console.error('[api:admin/emails:DELETE] failed', err)
+    return NextResponse.json({ error: 'Failed to delete — the database did not confirm the removal. Nothing was changed.' }, { status: 500 })
+  }
 }
