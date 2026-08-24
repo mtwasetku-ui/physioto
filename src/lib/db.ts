@@ -6,6 +6,19 @@ import { neon } from '@neondatabase/serverless'
 // Postgres store to the project, so no env var changes needed.
 export const sql = neon(process.env.POSTGRES_URL!)
 
+// Logs which DB host/branch this serverless instance is actually talking
+// to, without leaking credentials. Call this from any write path we're
+// debugging so a Vercel function log line makes the target database
+// unambiguous — settles "which Neon branch/env is this hitting" for good.
+function dbIdentity() {
+  try {
+    const url = new URL(process.env.POSTGRES_URL!)
+    return `${url.hostname}${url.pathname}`
+  } catch {
+    return 'unknown'
+  }
+}
+
 // ── Allowed emails ──────────────────────────────────────────────
 
 export async function isEmailAllowed(email: string): Promise<boolean> {
@@ -21,6 +34,7 @@ export async function listAllowedEmails() {
     from allowed_emails
     order by created_at desc
   `
+  console.log(`[db:listAllowedEmails] db=${dbIdentity()} count=${rows.length}`)
   return rows
 }
 
@@ -31,12 +45,30 @@ export async function addAllowedEmail(email: string, displayName?: string) {
     on conflict (email) do update set display_name = excluded.display_name
     returning id, email, display_name, cliniko_practitioner_id, created_at
   `
+  console.log(`[db:addAllowedEmail] db=${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id}`)
+  if (rows.length === 0) {
+    // insert...on conflict do update should always return exactly one row;
+    // zero means the write did not actually happen even though no error
+    // was thrown. Surface this as a real failure instead of a false 200.
+    throw new Error(`addAllowedEmail: insert/upsert affected 0 rows for ${email} (db=${dbIdentity()})`)
+  }
   return rows[0]
 }
 
 export async function removeAllowedEmail(email: string) {
-  await sql`delete from allowed_emails where email = ${email.toLowerCase()}`
+  const rows = await sql`
+    delete from allowed_emails where email = ${email.toLowerCase()}
+    returning id
+  `
+  console.log(`[db:removeAllowedEmail] db=${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length}`)
+  if (rows.length === 0) {
+    // Nothing matched — either it was already gone, or this is the same
+    // silent-failure pattern as above. Either way the caller should know,
+    // rather than getting a blanket 200 as if the row was removed.
+    throw new Error(`removeAllowedEmail: delete affected 0 rows for ${email} (db=${dbIdentity()})`)
+  }
 }
+
 
 // Each physio's own Cliniko practitioner record, so bookings made from
 // the portal go under the physio who actually did the visit rather than
