@@ -140,6 +140,9 @@ export default function AdminClient({
       setNewEmail('')
       setNewDisplayName('')
       sendInvite(email.email, email.display_name)
+    } else {
+      const { error } = await res.json().catch(() => ({ error: 'Failed to save.' }))
+      alert(error || 'Failed to save.')
     }
   }
 
@@ -153,6 +156,9 @@ export default function AdminClient({
     if (res.ok) {
       setEmails((e) => e.filter((x) => x.email !== email))
       setAssignments((a) => a.filter((x) => x.email !== email))
+    } else {
+      const { error } = await res.json().catch(() => ({ error: 'Failed to delete.' }))
+      alert(error || 'Failed to delete.')
     }
   }
 
