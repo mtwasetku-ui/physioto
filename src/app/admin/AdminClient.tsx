@@ -185,6 +185,9 @@ export default function AdminClient({
       setPatientQuery('')
       setPatientResults(null)
       setManualPatientId('')
+    } else {
+      const { error } = await res.json().catch(() => ({ error: 'Failed to save.' }))
+      alert(error || 'Failed to save.')
     }
   }
 
@@ -194,7 +197,12 @@ export default function AdminClient({
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id }),
     })
-    if (res.ok) setAssignments((a) => a.filter((x) => x.id !== id))
+    if (res.ok) {
+      setAssignments((a) => a.filter((x) => x.id !== id))
+    } else {
+      const { error } = await res.json().catch(() => ({ error: 'Failed to delete.' }))
+      alert(error || 'Failed to delete.')
+    }
   }
 
   return (
