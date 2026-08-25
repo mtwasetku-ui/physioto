@@ -152,11 +152,19 @@ export async function addAssignment(email: string, patientId: string, patientLab
     on conflict (email, cliniko_patient_id) do update set patient_label = excluded.patient_label
     returning id, email, cliniko_patient_id, patient_label, created_at
   `
+  console.log(`[db:addAssignment] db=${dbIdentity()} email=${email.toLowerCase()} patientId=${patientId} affected=${rows.length} id=${rows[0]?.id}`)
+  if (rows.length === 0) {
+    throw new Error(`addAssignment: insert/upsert affected 0 rows for ${email}/${patientId} (db=${dbIdentity()})`)
+  }
   return rows[0]
 }
 
 export async function removeAssignment(id: number) {
-  await sql`delete from patient_assignments where id = ${id}`
+  const rows = await sql`delete from patient_assignments where id = ${id} returning id`
+  console.log(`[db:removeAssignment] db=${dbIdentity()} id=${id} affected=${rows.length}`)
+  if (rows.length === 0) {
+    throw new Error(`removeAssignment: delete affected 0 rows for id=${id} (db=${dbIdentity()})`)
+  }
 }
 
 // Self-service removal from the portal itself — a physio removing a
@@ -164,10 +172,15 @@ export async function removeAssignment(id: number) {
 // rather than an assignment id, since the practitioner never sees/knows
 // the numeric assignment id — only the admin UI does.
 export async function removeAssignmentForEmail(email: string, patientId: string) {
-  await sql`
+  const rows = await sql`
     delete from patient_assignments
     where email = ${email.toLowerCase()} and cliniko_patient_id = ${patientId}
+    returning id
   `
+  console.log(`[db:removeAssignmentForEmail] db=${dbIdentity()} email=${email.toLowerCase()} patientId=${patientId} affected=${rows.length}`)
+  if (rows.length === 0) {
+    throw new Error(`removeAssignmentForEmail: delete affected 0 rows for ${email}/${patientId} (db=${dbIdentity()})`)
+  }
 }
 
 // ── Audit log ────────────────────────────────────────────────────
