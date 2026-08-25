@@ -30,12 +30,22 @@ export async function isEmailAllowed(email: string): Promise<boolean> {
 
 export async function listAllowedEmails() {
   const rows = await sql`
-    select id, email, display_name, cliniko_practitioner_id, created_at
+    select id, email, display_name, cliniko_practitioner_id, last_seen_at, created_at
     from allowed_emails
     order by created_at desc
   `
   console.log(`[db:listAllowedEmails] db=${dbIdentity()} count=${rows.length}`)
   return rows
+}
+
+// Called from middleware on every /portal/* request. Cheap single-column
+// update, fire-and-forget from the caller's perspective — worth knowing
+// "last active" per practitioner without logging every single page view
+// to audit_log (that table is for accountable actions, not traffic).
+export async function touchLastSeen(email: string) {
+  await sql`
+    update allowed_emails set last_seen_at = now() where email = ${email.toLowerCase()}
+  `
 }
 
 export async function addAllowedEmail(email: string, displayName?: string) {
@@ -201,6 +211,7 @@ type AuditAction =
   | 'admin_practitioner_link'
   | 'portal_assignment_add'
   | 'portal_assignment_remove'
+  | 'portal_login'
 
 export async function writeAuditLog(params: {
   actorEmail: string
