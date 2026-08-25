@@ -14,8 +14,20 @@ import { neon } from '@neondatabase/serverless'
 // afterward, across multiple separate requests, same deployment, same
 // code. That's the anomaly under test here.
 const CONNECTION_MODE = process.env.DB_CONNECTION_MODE === 'direct' ? 'direct' : 'pooled'
-const connectionString =
-  CONNECTION_MODE === 'direct' ? process.env.POSTGRES_URL_NON_POOLING! : process.env.POSTGRES_URL!
+const rawConnectionString =
+  CONNECTION_MODE === 'direct' ? process.env.POSTGRES_URL_NON_POOLING : process.env.POSTGRES_URL
+
+if (!rawConnectionString) {
+  // Fail loudly at startup rather than having a missing/misnamed env var
+  // masquerade as a database consistency bug later.
+  throw new Error(`Missing database connection string for DB_CONNECTION_MODE=${CONNECTION_MODE}`)
+}
+
+// Re-bound with an explicit type: TS narrowing from the guard above doesn't
+// carry into dbIdentity() below since it's a separate function closing over
+// this — this makes the "definitely a string" fact visible there too.
+const connectionString: string = rawConnectionString
+
 export const sql = neon(connectionString)
 
 // Which connection string this instance is configured to use, without
@@ -30,27 +42,35 @@ function dbIdentity() {
   }
 }
 
-// What actually executed the query, from Postgres itself — not just what
-// connection string we intended to use. backend_pid + server_addr tell us
-// whether pooled and direct reads are even landing on the same backend
-// process; pg_is_in_recovery tells us if we somehow landed on a replica
-// (would explain read-after-write staleness immediately).
-async function pgIdentity(): Promise<string> {
-  try {
-    const rows = await sql`
-      select
-        pg_backend_pid() as pid,
-        pg_is_in_recovery() as in_recovery,
-        current_database() as db,
-        current_user as usr,
-        inet_server_addr()::text as addr,
-        inet_server_port() as port
-    `
-    const r = rows[0] as any
-    return `pid=${r.pid} in_recovery=${r.in_recovery} db=${r.db} user=${r.usr} addr=${r.addr} port=${r.port}`
-  } catch (err) {
-    return `pg identity query failed: ${err}`
+// Diagnostic columns appended to the SAME statement as the real
+// INSERT/DELETE/SELECT (via extra RETURNING/select-list expressions), not
+// a separate round-trip — a second query could land on a different pooled
+// backend and tell us nothing about which backend actually ran the write.
+// backend_pid + server_addr show whether pooled vs direct land on the same
+// Postgres process; pg_is_in_recovery catches "silently landed on a
+// replica" immediately.
+const PG_IDENTITY_FRAGMENT = sql.unsafe(`
+  pg_backend_pid() as _pg_pid,
+  pg_is_in_recovery() as _pg_in_recovery,
+  current_database() as _pg_db,
+  current_user as _pg_usr,
+  inet_server_addr()::text as _pg_addr,
+  inet_server_port() as _pg_port
+`)
+
+function formatPgIdentity(row: any): string {
+  if (!row) return 'no row returned'
+  return `pid=${row._pg_pid} in_recovery=${row._pg_in_recovery} db=${row._pg_db} user=${row._pg_usr} addr=${row._pg_addr} port=${row._pg_port}`
+}
+
+// Strips the _pg_* diagnostic columns before rows go anywhere near an API
+// response — they're for Vercel log lines only, never the client.
+function stripPgIdentity<T extends Record<string, any>>(row: T): Omit<T, `_pg_${string}`> {
+  const clean = { ...row }
+  for (const key of Object.keys(clean)) {
+    if (key.startsWith('_pg_')) delete (clean as any)[key]
   }
+  return clean
 }
 
 // ── Allowed emails ──────────────────────────────────────────────
@@ -64,12 +84,12 @@ export async function isEmailAllowed(email: string): Promise<boolean> {
 
 export async function listAllowedEmails() {
   const rows = await sql`
-    select id, email, display_name, cliniko_practitioner_id, last_seen_at, created_at
+    select id, email, display_name, cliniko_practitioner_id, last_seen_at, created_at, ${PG_IDENTITY_FRAGMENT}
     from allowed_emails
     order by created_at desc
   `
-  console.log(`[db:listAllowedEmails] ${dbIdentity()} count=${rows.length} pg=[${await pgIdentity()}]`)
-  return rows
+  console.log(`[db:listAllowedEmails] ${dbIdentity()} count=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  return rows.map(stripPgIdentity)
 }
 
 // Called from middleware on every /portal/* request. Cheap single-column
@@ -87,24 +107,24 @@ export async function addAllowedEmail(email: string, displayName?: string) {
     insert into allowed_emails (email, display_name)
     values (${email.toLowerCase()}, ${displayName ?? null})
     on conflict (email) do update set display_name = excluded.display_name
-    returning id, email, display_name, cliniko_practitioner_id, created_at
+    returning id, email, display_name, cliniko_practitioner_id, created_at, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:addAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id} pg=[${await pgIdentity()}]`)
+  console.log(`[db:addAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     // insert...on conflict do update should always return exactly one row;
     // zero means the write did not actually happen even though no error
     // was thrown. Surface this as a real failure instead of a false 200.
     throw new Error(`addAllowedEmail: insert/upsert affected 0 rows for ${email} (db=${dbIdentity()})`)
   }
-  return rows[0]
+  return stripPgIdentity(rows[0])
 }
 
 export async function removeAllowedEmail(email: string) {
   const rows = await sql`
     delete from allowed_emails where email = ${email.toLowerCase()}
-    returning id
+    returning id, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:removeAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} pg=[${await pgIdentity()}]`)
+  console.log(`[db:removeAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     // Nothing matched — either it was already gone, or this is the same
     // silent-failure pattern as above. Either way the caller should know,
@@ -173,11 +193,12 @@ export async function listAssignmentsForEmail(email: string) {
 
 export async function listAllAssignments() {
   const rows = await sql`
-    select id, email, cliniko_patient_id, patient_label, created_at
+    select id, email, cliniko_patient_id, patient_label, created_at, ${PG_IDENTITY_FRAGMENT}
     from patient_assignments
     order by email, created_at desc
   `
-  return rows
+  console.log(`[db:listAllAssignments] ${dbIdentity()} count=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  return rows.map(stripPgIdentity)
 }
 
 export async function isPatientAssignedToEmail(email: string, patientId: string): Promise<boolean> {
@@ -194,18 +215,18 @@ export async function addAssignment(email: string, patientId: string, patientLab
     insert into patient_assignments (email, cliniko_patient_id, patient_label)
     values (${email.toLowerCase()}, ${patientId}, ${patientLabel ?? null})
     on conflict (email, cliniko_patient_id) do update set patient_label = excluded.patient_label
-    returning id, email, cliniko_patient_id, patient_label, created_at
+    returning id, email, cliniko_patient_id, patient_label, created_at, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:addAssignment] db=${dbIdentity()} email=${email.toLowerCase()} patientId=${patientId} affected=${rows.length} id=${rows[0]?.id}`)
+  console.log(`[db:addAssignment] ${dbIdentity()} email=${email.toLowerCase()} patientId=${patientId} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     throw new Error(`addAssignment: insert/upsert affected 0 rows for ${email}/${patientId} (db=${dbIdentity()})`)
   }
-  return rows[0]
+  return stripPgIdentity(rows[0])
 }
 
 export async function removeAssignment(id: number) {
-  const rows = await sql`delete from patient_assignments where id = ${id} returning id`
-  console.log(`[db:removeAssignment] db=${dbIdentity()} id=${id} affected=${rows.length}`)
+  const rows = await sql`delete from patient_assignments where id = ${id} returning id, ${PG_IDENTITY_FRAGMENT}`
+  console.log(`[db:removeAssignment] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     throw new Error(`removeAssignment: delete affected 0 rows for id=${id} (db=${dbIdentity()})`)
   }
