@@ -8,6 +8,17 @@ create table if not exists allowed_emails (
   created_at    timestamptz not null default now()
 );
 
+-- Added after initial launch — was already live in production but missing
+-- from this file (schema drift). Included here so a fresh database matches
+-- what's actually deployed.
+alter table allowed_emails add column if not exists cliniko_practitioner_id text;
+
+-- Updated on every /portal/* page load (see middleware.ts) — "last active",
+-- distinct from a login event: a practitioner can stay signed in (JWT
+-- session) for days without hitting the Email provider's sign-in flow
+-- again, so this is the more useful "are they actually using it" signal.
+alter table allowed_emails add column if not exists last_seen_at timestamptz;
+
 create table if not exists patient_assignments (
   id            serial primary key,
   email         text not null references allowed_emails(email) on delete cascade,
