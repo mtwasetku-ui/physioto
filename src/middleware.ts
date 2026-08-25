@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import type { NextRequest, NextFetchEvent } from 'next/server'
 import { getToken } from 'next-auth/jwt'
+import { touchLastSeen } from '@/lib/db'
 
 // Protects /portal/* (any signed-in, allow-listed physio) and /admin/*
 // (Micheal only). Actual allow-list membership is already enforced at
@@ -18,7 +19,7 @@ function withNoStore(res: NextResponse) {
   return res
 }
 
-export async function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest, event: NextFetchEvent) {
   const { pathname } = req.nextUrl
 
   if (pathname.startsWith('/portal/login')) {
@@ -38,6 +39,13 @@ export async function middleware(req: NextRequest) {
     if (!adminEmail || token.email.toLowerCase() !== adminEmail) {
       return withNoStore(NextResponse.redirect(new URL('/portal', req.url)))
     }
+  }
+
+  if (pathname.startsWith('/portal')) {
+    // Background write via waitUntil — doesn't delay the actual page
+    // response. Deliberately not awaited/checked for failure here (a
+    // missed "last seen" update isn't worth failing the page load over).
+    event.waitUntil(touchLastSeen(token.email).catch((err) => console.error('[middleware] touchLastSeen failed', err)))
   }
 
   return withNoStore(NextResponse.next())
