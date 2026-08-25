@@ -9,7 +9,24 @@ interface AllowedEmail {
   email: string
   display_name: string | null
   cliniko_practitioner_id: string | null
+  last_seen_at: string | null
   created_at: string
+}
+
+// Compact "last active" label — enough resolution to be useful without
+// implying more precision than it has (this updates on any /portal page
+// view, not a discrete tracked event).
+function formatLastSeen(iso: string | null): string {
+  if (!iso) return 'Never'
+  const diffMs = Date.now() - new Date(iso).getTime()
+  const mins = Math.floor(diffMs / 60_000)
+  if (mins < 1) return 'Just now'
+  if (mins < 60) return `${mins}m ago`
+  const hours = Math.floor(mins / 60)
+  if (hours < 24) return `${hours}h ago`
+  const days = Math.floor(hours / 24)
+  if (days < 30) return `${days}d ago`
+  return new Date(iso).toLocaleDateString()
 }
 interface Assignment {
   id: number
@@ -243,6 +260,7 @@ export default function AdminClient({
                 <div className="min-w-0">
                   <div className="text-sm font-medium text-foreground">{e.email}</div>
                   {e.display_name && <div className="text-xs text-muted-foreground">{e.display_name}</div>}
+                  <div className="text-xs text-muted-foreground mt-0.5">Last active: {formatLastSeen(e.last_seen_at)}</div>
                   {status === 'sending' && <div className="text-xs text-muted-foreground mt-0.5">Sending invite…</div>}
                   {status === 'sent' && (
                     <div className="text-xs text-emerald-700 mt-0.5 flex items-center gap-1">
