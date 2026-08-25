@@ -22,14 +22,19 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'email and clinikoPatientId required' }, { status: 400 })
   }
 
-  const assignment = await addAssignment(email, clinikoPatientId, patientLabel)
-  await writeAuditLog({
-    actorEmail: auth.email!,
-    action: 'admin_assignment_add',
-    clinikoPatientId,
-    detail: { email },
-  })
-  return NextResponse.json({ assignment })
+  try {
+    const assignment = await addAssignment(email, clinikoPatientId, patientLabel)
+    await writeAuditLog({
+      actorEmail: auth.email!,
+      action: 'admin_assignment_add',
+      clinikoPatientId,
+      detail: { email },
+    })
+    return NextResponse.json({ assignment })
+  } catch (err) {
+    console.error('[api:admin/assignments:POST] failed', err)
+    return NextResponse.json({ error: 'Failed to save — the database did not confirm the write. Nothing was changed.' }, { status: 500 })
+  }
 }
 
 export async function DELETE(req: Request) {
@@ -39,7 +44,12 @@ export async function DELETE(req: Request) {
   const { id } = await req.json()
   if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
 
-  await removeAssignment(id)
-  await writeAuditLog({ actorEmail: auth.email!, action: 'admin_assignment_remove', detail: { id } })
-  return NextResponse.json({ ok: true })
+  try {
+    await removeAssignment(id)
+    await writeAuditLog({ actorEmail: auth.email!, action: 'admin_assignment_remove', detail: { id } })
+    return NextResponse.json({ ok: true })
+  } catch (err) {
+    console.error('[api:admin/assignments:DELETE] failed', err)
+    return NextResponse.json({ error: 'Failed to delete — the database did not confirm the removal. Nothing was changed.' }, { status: 500 })
+  }
 }
