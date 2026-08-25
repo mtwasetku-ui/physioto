@@ -1,7 +1,7 @@
 import type { NextAuthOptions } from 'next-auth'
 import EmailProvider from 'next-auth/providers/email'
 import { createTransport } from 'nodemailer'
-import { isEmailAllowed } from '@/lib/db'
+import { isEmailAllowed, writeAuditLog } from '@/lib/db'
 import { PostgresVerificationAdapter } from '@/lib/authAdapter'
 
 // Magic-link sign-in, gated to a hand-managed allow-list (see app/admin).
@@ -86,6 +86,16 @@ export const authOptions: NextAuthOptions = {
     },
     async session({ session }) {
       return session
+    },
+  },
+  events: {
+    // Fires once per actual authentication (magic link redeemed), not per
+    // page view — a JWT session can persist for days without this firing
+    // again. For "did they open the portal today" see last_seen_at on
+    // allowed_emails instead (updated by middleware on every /portal hit).
+    async signIn({ user }) {
+      if (!user.email) return
+      await writeAuditLog({ actorEmail: user.email, action: 'portal_login' })
     },
   },
 }
