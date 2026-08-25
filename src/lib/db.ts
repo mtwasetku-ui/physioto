@@ -1,21 +1,55 @@
 import { neon } from '@neondatabase/serverless'
 
-// @vercel/postgres is deprecated — Vercel migrated existing Postgres
-// databases to Neon and recommends their SDK directly for new setups.
-// POSTGRES_URL is still the env var Vercel populates when you connect a
-// Postgres store to the project, so no env var changes needed.
-export const sql = neon(process.env.POSTGRES_URL!)
+// ── DB connection: A/B toggle for the pooled-vs-direct diagnostic ──────
+//
+// Set DB_CONNECTION_MODE=direct in Vercel env vars to use
+// POSTGRES_URL_NON_POOLING; anything else (including unset) uses the
+// normal pooled POSTGRES_URL. This lets us flip between them for testing
+// without a code change/redeploy each time.
+//
+// Why this is being tested at all: Vercel runtime logs showed a write
+// confirmed committing via POSTGRES_URL (pooled) — affected=1, returning
+// the new row's id — while listAllowedEmails() on that same pooled
+// connection kept returning the pre-write row count for 20+ minutes
+// afterward, across multiple separate requests, same deployment, same
+// code. That's the anomaly under test here.
+const CONNECTION_MODE = process.env.DB_CONNECTION_MODE === 'direct' ? 'direct' : 'pooled'
+const connectionString =
+  CONNECTION_MODE === 'direct' ? process.env.POSTGRES_URL_NON_POOLING! : process.env.POSTGRES_URL!
+export const sql = neon(connectionString)
 
-// Logs which DB host/branch this serverless instance is actually talking
-// to, without leaking credentials. Call this from any write path we're
-// debugging so a Vercel function log line makes the target database
-// unambiguous — settles "which Neon branch/env is this hitting" for good.
+// Which connection string this instance is configured to use, without
+// leaking credentials — just enough to confirm pooled vs direct and which
+// Neon branch/database, from the URL alone.
 function dbIdentity() {
   try {
-    const url = new URL(process.env.POSTGRES_URL!)
-    return `${url.hostname}${url.pathname}`
+    const url = new URL(connectionString)
+    return `mode=${CONNECTION_MODE} ${url.hostname}${url.pathname}`
   } catch {
-    return 'unknown'
+    return `mode=${CONNECTION_MODE} unknown`
+  }
+}
+
+// What actually executed the query, from Postgres itself — not just what
+// connection string we intended to use. backend_pid + server_addr tell us
+// whether pooled and direct reads are even landing on the same backend
+// process; pg_is_in_recovery tells us if we somehow landed on a replica
+// (would explain read-after-write staleness immediately).
+async function pgIdentity(): Promise<string> {
+  try {
+    const rows = await sql`
+      select
+        pg_backend_pid() as pid,
+        pg_is_in_recovery() as in_recovery,
+        current_database() as db,
+        current_user as usr,
+        inet_server_addr()::text as addr,
+        inet_server_port() as port
+    `
+    const r = rows[0] as any
+    return `pid=${r.pid} in_recovery=${r.in_recovery} db=${r.db} user=${r.usr} addr=${r.addr} port=${r.port}`
+  } catch (err) {
+    return `pg identity query failed: ${err}`
   }
 }
 
@@ -34,7 +68,7 @@ export async function listAllowedEmails() {
     from allowed_emails
     order by created_at desc
   `
-  console.log(`[db:listAllowedEmails] db=${dbIdentity()} count=${rows.length}`)
+  console.log(`[db:listAllowedEmails] ${dbIdentity()} count=${rows.length} pg=[${await pgIdentity()}]`)
   return rows
 }
 
@@ -55,7 +89,7 @@ export async function addAllowedEmail(email: string, displayName?: string) {
     on conflict (email) do update set display_name = excluded.display_name
     returning id, email, display_name, cliniko_practitioner_id, created_at
   `
-  console.log(`[db:addAllowedEmail] db=${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id}`)
+  console.log(`[db:addAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id} pg=[${await pgIdentity()}]`)
   if (rows.length === 0) {
     // insert...on conflict do update should always return exactly one row;
     // zero means the write did not actually happen even though no error
@@ -70,7 +104,7 @@ export async function removeAllowedEmail(email: string) {
     delete from allowed_emails where email = ${email.toLowerCase()}
     returning id
   `
-  console.log(`[db:removeAllowedEmail] db=${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length}`)
+  console.log(`[db:removeAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} pg=[${await pgIdentity()}]`)
   if (rows.length === 0) {
     // Nothing matched — either it was already gone, or this is the same
     // silent-failure pattern as above. Either way the caller should know,
