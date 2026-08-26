@@ -124,6 +124,21 @@ export const metadata: Metadata = {
   creator: 'Physio to Home',
   publisher: 'Physio to Home',
 
+  // Favicon set for browser tabs, bookmarks, and Google Search results
+  // (Google requires a square image, multiple of 48px, not blocked by
+  // robots.txt — generated from public/images/logo.png). Site previously
+  // had no favicon configured at all, hence the generic globe icon
+  // showing up in search results instead of the logo.
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/icon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
+
   alternates: {
     canonical: BASE_URL,
   },
