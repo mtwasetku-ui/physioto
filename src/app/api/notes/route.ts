@@ -1,12 +1,14 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
-import { isPatientAssignedToEmail, writeAuditLog, getDisplayNamesForEmails } from '@/lib/db'
+import { isPatientAssignedToEmail, writeAuditLog, getDisplayNamesForEmails, getDisplayNamesForPractitionerIds } from '@/lib/db'
 import {
   createTreatmentNote,
   updateTreatmentNote,
   listTreatmentNotesForPatient,
   getTemplateByExactName,
+  getBooking,
+  idFromLink,
 } from '@/lib/cliniko'
 
 async function requireAssignedSession(patientId: string) {
@@ -39,11 +41,46 @@ export async function GET(req: Request) {
     // display name here, at the edge, so that matching logic elsewhere
     // keeps using the raw email untouched — only the rendered label changes.
     const names = await getDisplayNamesForEmails(notes.map((n: any) => n.title).filter(Boolean))
-    const withAuthorNames = notes.map((n: any) => ({
-      ...n,
-      authorDisplayName: names[String(n.title).toLowerCase()] || n.title,
-    }))
-    return NextResponse.json({ notes: withAuthorNames })
+
+    // Prefer the actual visit's date and treating practitioner (from the
+    // note's linked booking) over the note's own created_at/author — a
+    // note can be written up later, or by someone other than whoever saw
+    // the patient. Fetched per unique booking, not per note, and any
+    // booking that fails to load (e.g. archived) just falls back below.
+    const bookingIds: string[] = Array.from(
+      new Set(notes.map((n: any) => idFromLink(n.booking?.links?.self)).filter((id: string | null): id is string => !!id))
+    )
+    const bookingById = new Map<string, any>()
+    await Promise.all(
+      bookingIds.map(async (id) => {
+        try {
+          bookingById.set(id, await getBooking(id))
+        } catch {
+          // Leave unset — the note falls back to created_at/author below.
+        }
+      })
+    )
+    const practitionerIds = Array.from(
+      new Set(
+        Array.from(bookingById.values())
+          .map((b) => idFromLink(b?.practitioner?.links?.self))
+          .filter((id): id is string => !!id)
+      )
+    )
+    const practitionerNames = await getDisplayNamesForPractitionerIds(practitionerIds)
+
+    const enriched = notes.map((n: any) => {
+      const bookingId = idFromLink(n.booking?.links?.self)
+      const booking = bookingId ? bookingById.get(bookingId) : null
+      const practitionerId = booking ? idFromLink(booking.practitioner?.links?.self) : null
+      return {
+        ...n,
+        authorDisplayName: names[String(n.title).toLowerCase()] || n.title,
+        visitDate: booking?.starts_at || n.created_at,
+        visitPractitionerName: (practitionerId && practitionerNames[practitionerId]) || null,
+      }
+    })
+    return NextResponse.json({ notes: enriched })
   } catch (e: any) {
     return NextResponse.json({ error: e.message || 'Failed to load notes' }, { status: 502 })
   }
