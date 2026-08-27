@@ -259,6 +259,7 @@ type AuditAction =
   | 'appointment_update'
   | 'appointment_cancel'
   | 'appointment_arrive'
+  | 'appointment_unarrive'
   | 'admin_email_add'
   | 'admin_email_remove'
   | 'admin_assignment_add'
