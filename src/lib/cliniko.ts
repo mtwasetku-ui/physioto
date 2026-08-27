@@ -744,3 +744,25 @@ export async function markPatientArrived(appointmentId: string) {
 export async function unmarkPatientArrived(appointmentId: string) {
   return setPatientArrived(appointmentId, false)
 }
+
+// ── Patient did not arrive (DNA) ────────────────────────────────────
+//
+// Mirrors setPatientArrived above: `did_not_arrive` on individual_appointments
+// is likewise a read-only rollup of the attendee's own field, so this writes
+// { did_not_arrive } to the attendee record (not the appointment) and then
+// re-fetches the appointment for the caller. Symmetric with "arrived" in the
+// Cliniko UI (an appointment shows exactly one of Arrived / DNA / neither),
+// but that mutual exclusivity isn't enforced client-side here — Cliniko's
+// own API is the source of truth for whatever combination it accepts.
+export async function setPatientDidNotArrive(appointmentId: string, didNotArrive: boolean) {
+  const attendeesData = await clinikoFetch(`/individual_appointments/${appointmentId}/attendees`)
+  const attendee = attendeesData?.attendees?.[0]
+  if (!attendee?.id) {
+    throw new Error(`No attendee found for appointment ${appointmentId} — can't update did-not-arrive status`)
+  }
+  await clinikoFetch(`/attendees/${attendee.id}`, {
+    method: 'PATCH',
+    body: JSON.stringify({ did_not_arrive: didNotArrive }),
+  })
+  return getIndividualAppointment(appointmentId)
+}
