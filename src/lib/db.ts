@@ -179,6 +179,25 @@ export async function getDisplayNamesForEmails(emails: string[]): Promise<Record
   return map
 }
 
+// Batch cliniko_practitioner_id -> display_name lookup, for labelling a
+// visit with the practitioner who actually attended it (from the linked
+// appointment) rather than whoever authored the note. Same fallback shape
+// as getDisplayNamesForEmails — a practitioner id with no matching row
+// (or no display_name set) is just absent from the map.
+export async function getDisplayNamesForPractitionerIds(practitionerIds: string[]): Promise<Record<string, string>> {
+  const unique = Array.from(new Set(practitionerIds)).filter(Boolean)
+  if (unique.length === 0) return {}
+  const rows = await sql`
+    select cliniko_practitioner_id, display_name from allowed_emails
+    where cliniko_practitioner_id = any(${unique}) and display_name is not null
+  `
+  const map: Record<string, string> = {}
+  for (const row of rows as { cliniko_practitioner_id: string; display_name: string }[]) {
+    map[row.cliniko_practitioner_id] = row.display_name
+  }
+  return map
+}
+
 // ── Patient assignments ─────────────────────────────────────────
 
 export async function listAssignmentsForEmail(email: string) {
