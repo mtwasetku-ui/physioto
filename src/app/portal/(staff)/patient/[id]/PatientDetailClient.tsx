@@ -362,6 +362,8 @@ function NoteForm({
   const [bookingId, setBookingId] = useState<string>('')
   const [arriving, setArriving] = useState(false)
   const [arriveError, setArriveError] = useState<string | null>(null)
+  const [markingDna, setMarkingDna] = useState(false)
+  const [dnaError, setDnaError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch('/api/templates')
@@ -508,12 +510,36 @@ function NoteForm({
       body: JSON.stringify({ patientId, arrived }),
     })
     if (res.ok) {
-      setAppointments((prev) => prev.map((a: any) => (String(a.id) === bookingId ? { ...a, patient_arrived: arrived } : a)))
+      setAppointments((prev) =>
+        prev.map((a: any) => (String(a.id) === bookingId ? { ...a, patient_arrived: arrived, did_not_arrive: arrived ? false : a.did_not_arrive } : a))
+      )
     } else {
       const body = await res.json().catch(() => null)
       setArriveError(body?.error || `Failed to update arrival status (HTTP ${res.status})`)
     }
     setArriving(false)
+  }
+
+  async function setDidNotArrive(didNotArrive: boolean) {
+    if (!bookingId) return
+    setMarkingDna(true)
+    setDnaError(null)
+    const res = await fetch(`/api/appointments/${bookingId}/dna`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ patientId, didNotArrive }),
+    })
+    if (res.ok) {
+      setAppointments((prev) =>
+        prev.map((a: any) =>
+          String(a.id) === bookingId ? { ...a, did_not_arrive: didNotArrive, patient_arrived: didNotArrive ? false : a.patient_arrived } : a
+        )
+      )
+    } else {
+      const body = await res.json().catch(() => null)
+      setDnaError(body?.error || `Failed to update did-not-arrive status (HTTP ${res.status})`)
+    }
+    setMarkingDna(false)
   }
 
   return (
@@ -562,6 +588,7 @@ function NoteForm({
                   })}
                   {new Date(a.starts_at) > new Date() ? ' (upcoming)' : ''}
                   {a.patient_arrived ? ' — arrived' : ''}
+                  {a.did_not_arrive ? ' — did not arrive' : ''}
                 </option>
               ))}
             </select>
@@ -587,8 +614,31 @@ function NoteForm({
                   {arriving ? 'Marking…' : 'Mark arrived'}
                 </button>
               ))}
+
+            {bookingId &&
+              (selectedAppointment?.did_not_arrive ? (
+                <button
+                  type="button"
+                  onClick={() => setDidNotArrive(false)}
+                  disabled={markingDna}
+                  title="Undo did not arrive"
+                  className="flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-red-100 text-red-800 font-medium hover:bg-red-200 whitespace-nowrap disabled:opacity-50"
+                >
+                  {markingDna ? 'Undoing…' : 'Did not arrive ✓'}
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setDidNotArrive(true)}
+                  disabled={markingDna}
+                  className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap disabled:opacity-50"
+                >
+                  {markingDna ? 'Marking…' : 'Did not arrive'}
+                </button>
+              ))}
           </div>
           {arriveError && <p className="text-xs text-destructive mt-1">{arriveError}</p>}
+          {dnaError && <p className="text-xs text-destructive mt-1">{dnaError}</p>}
         </div>
       )}
 
