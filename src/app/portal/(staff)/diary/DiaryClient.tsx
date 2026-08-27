@@ -208,8 +208,9 @@ export default function DiaryClient() {
     const dayDelta = current.targetDayIndex - current.originDayIndex
 
     if (Math.abs(current.deltaPx) < CLICK_THRESHOLD_PX && dayDelta === 0) {
-      // Treated as a click, not a drag — go to the patient's page.
-      if (appt.patientId) router.push(`/portal/patient/${appt.patientId}`)
+      // Treated as a click, not a drag — go to the patient's page, with this
+      // visit pre-selected in the "Link to visit" dropdown there.
+      if (appt.patientId) router.push(`/portal/patient/${appt.patientId}?appointmentId=${appt.id}`)
       return
     }
 
@@ -360,7 +361,7 @@ export default function DiaryClient() {
                               onKeyDown={(e) => {
                                 if ((e.key === 'Enter' || e.key === ' ') && appt.patientId) {
                                   e.preventDefault()
-                                  router.push(`/portal/patient/${appt.patientId}`)
+                                  router.push(`/portal/patient/${appt.patientId}?appointmentId=${appt.id}`)
                                 }
                               }}
                               className={`absolute left-1 right-1 rounded-md px-1.5 py-1 text-left text-white text-[11px] leading-tight overflow-hidden shadow-sm select-none ${
