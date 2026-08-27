@@ -498,20 +498,20 @@ function NoteForm({
 
   const selectedAppointment = appointments.find((a: any) => String(a.id) === bookingId)
 
-  async function markArrived() {
+  async function setArrived(arrived: boolean) {
     if (!bookingId) return
     setArriving(true)
     setArriveError(null)
     const res = await fetch(`/api/appointments/${bookingId}/arrive`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ patientId }),
+      body: JSON.stringify({ patientId, arrived }),
     })
     if (res.ok) {
-      setAppointments((prev) => prev.map((a: any) => (String(a.id) === bookingId ? { ...a, patient_arrived: true } : a)))
+      setAppointments((prev) => prev.map((a: any) => (String(a.id) === bookingId ? { ...a, patient_arrived: arrived } : a)))
     } else {
       const body = await res.json().catch(() => null)
-      setArriveError(body?.error || `Failed to mark arrived (HTTP ${res.status})`)
+      setArriveError(body?.error || `Failed to update arrival status (HTTP ${res.status})`)
     }
     setArriving(false)
   }
@@ -568,13 +568,19 @@ function NoteForm({
 
             {bookingId &&
               (selectedAppointment?.patient_arrived ? (
-                <span className="text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium whitespace-nowrap">
-                  Arrived ✓
-                </span>
+                <button
+                  type="button"
+                  onClick={() => setArrived(false)}
+                  disabled={arriving}
+                  title="Mark not arrived"
+                  className="flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 whitespace-nowrap disabled:opacity-50"
+                >
+                  {arriving ? 'Undoing…' : 'Arrived ✓'}
+                </button>
               ) : (
                 <button
                   type="button"
-                  onClick={markArrived}
+                  onClick={() => setArrived(true)}
                   disabled={arriving}
                   className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap disabled:opacity-50"
                 >
@@ -910,15 +916,37 @@ function Attachments({ patientId }: { patientId: string }) {
 // under someone else's name or in a different business; the practitioner
 // id is always resolved server-side from the session, never from a prop
 // here.
+const MAX_REPEAT_APPOINTMENTS = 20
+
 function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabel?: string }) {
   const [types, setTypes] = useState<{ id: string; name: string; duration_in_minutes: number }[] | null>(null)
   const [appointmentTypeId, setAppointmentTypeId] = useState('')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
   const [notes, setNotes] = useState('')
+  const [repeat, setRepeat] = useState<'none' | 'weekly' | 'fortnightly' | 'monthly'>('none')
+  const [repeatCount, setRepeatCount] = useState(4)
+  const [repeatError, setRepeatError] = useState<string | null>(null)
   const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
   const [error, setError] = useState<string | null>(null)
   const [fetchError, setFetchError] = useState<string | null>(null)
+  const [savedCount, setSavedCount] = useState(1)
+
+  function updateRepeatCount(raw: string) {
+    const n = Number(raw)
+    if (!raw || Number.isNaN(n)) {
+      setRepeatCount(1)
+      setRepeatError(null)
+      return
+    }
+    if (n > MAX_REPEAT_APPOINTMENTS) {
+      setRepeatCount(MAX_REPEAT_APPOINTMENTS)
+      setRepeatError(`Maximum ${MAX_REPEAT_APPOINTMENTS} appointments.`)
+      return
+    }
+    setRepeatCount(n)
+    setRepeatError(null)
+  }
 
   useEffect(() => {
     fetch('/api/appointments')
@@ -942,6 +970,10 @@ function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabe
 
   async function book() {
     if (!appointmentTypeId || !date || !time || !selectedType) return
+    if (repeat !== 'none' && repeatCount > MAX_REPEAT_APPOINTMENTS) {
+      setRepeatError(`Maximum ${MAX_REPEAT_APPOINTMENTS} appointments.`)
+      return
+    }
     setStatus('saving')
     setError(null)
     const startsAt = new Date(`${date}T${time}:00`).toISOString()
@@ -956,16 +988,23 @@ function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabe
         durationMinutes: selectedType.duration_in_minutes,
         notes: notes || undefined,
         patientLabel: patientLabel || undefined,
+        ...(repeat !== 'none' ? { repeat, repeatCount } : {}),
       }),
     })
 
+    const body = await res.json().catch(() => null)
     if (res.ok) {
       setStatus('saved')
+      setSavedCount(body?.appointments?.length ?? 1)
+      if (body?.failures?.length) {
+        setError(`${body.failures.length} of ${repeatCount} in the series couldn't be booked — Cliniko rejected those dates.`)
+      }
       setDate('')
       setTime('')
       setNotes('')
+      setRepeat('none')
+      setRepeatCount(4)
     } else {
-      const body = await res.json().catch(() => null)
       setError(body?.error || `Booking failed (HTTP ${res.status})`)
       setStatus('error')
     }
@@ -1042,14 +1081,53 @@ function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabe
             onChange={(e) => setNotes(e.target.value)}
           />
         </div>
+
+        <div>
+          <label className="text-sm font-medium text-foreground block mb-1.5">Repeat</label>
+          <select
+            className="w-full border border-input rounded-md px-3 py-2 text-sm bg-white"
+            value={repeat}
+            onChange={(e) => setRepeat(e.target.value as typeof repeat)}
+          >
+            <option value="none">Does not repeat</option>
+            <option value="weekly">Weekly</option>
+            <option value="fortnightly">Fortnightly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+        </div>
+
+        {repeat !== 'none' && (
+          <div>
+            <label className="text-sm font-medium text-foreground block mb-1.5">Number of appointments</label>
+            <input
+              type="number"
+              min={2}
+              max={MAX_REPEAT_APPOINTMENTS}
+              className="w-full border border-input rounded-md px-3 py-2 text-sm"
+              value={repeatCount}
+              onChange={(e) => updateRepeatCount(e.target.value)}
+            />
+            <p className="text-xs text-muted-foreground mt-1">Including this one, up to {MAX_REPEAT_APPOINTMENTS}.</p>
+            {repeatError && <p className="text-xs text-destructive mt-1">{repeatError}</p>}
+          </div>
+        )}
       </div>
 
       <div className="flex items-center gap-3 mt-5">
-        <Button onClick={book} disabled={status === 'saving' || !date || !time}>
-          {status === 'saving' ? 'Booking…' : 'Book appointment'}
+        <Button onClick={book} disabled={status === 'saving' || !date || !time || !!repeatError}>
+          {status === 'saving'
+            ? 'Booking…'
+            : repeat !== 'none'
+              ? `Book ${repeatCount} appointments`
+              : 'Book appointment'}
         </Button>
-        {status === 'saved' && <span className="text-sm text-emerald-700 font-medium">Booked ✓</span>}
+        {status === 'saved' && (
+          <span className="text-sm text-emerald-700 font-medium">
+            {savedCount > 1 ? `Booked ${savedCount} appointments ✓` : 'Booked ✓'}
+          </span>
+        )}
         {status === 'error' && <span className="text-sm text-destructive font-medium">{error}</span>}
+        {status === 'saved' && error && <span className="text-sm text-amber-700 font-medium">{error}</span>}
       </div>
     </div>
   )
