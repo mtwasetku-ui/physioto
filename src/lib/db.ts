@@ -260,6 +260,8 @@ type AuditAction =
   | 'appointment_cancel'
   | 'appointment_arrive'
   | 'appointment_unarrive'
+  | 'appointment_dna'
+  | 'appointment_undo_dna'
   | 'admin_email_add'
   | 'admin_email_remove'
   | 'admin_assignment_add'
