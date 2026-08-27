@@ -242,6 +242,17 @@ export async function listTreatmentNotesForPatient(patientId: string) {
   return data.treatment_notes ?? []
 }
 
+// Generic "Booking" resource — a unified view over individual and group
+// appointments (starts_at/ends_at/practitioner all present either way),
+// reached via a note's own booking.links.self. Used so the visit timeline
+// can show the actual appointment date and treating practitioner instead
+// of the note's created_at and its author, which can differ (e.g. a note
+// written up the next day, or entered by someone other than the treating
+// physio).
+export async function getBooking(bookingId: string) {
+  return clinikoFetch(`/bookings/${bookingId}`)
+}
+
 export async function getMostRecentDraftForAuthor(patientId: string, authorEmail: string) {
   const notes = await listTreatmentNotesForPatient(patientId)
   return notes.find((n: any) => n.draft === true && n.title === authorEmail) ?? null
