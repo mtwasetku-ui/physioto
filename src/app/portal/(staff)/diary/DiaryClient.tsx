@@ -1,9 +1,8 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
-import Link from 'next/link'
-import { Clock, User, CheckCircle2, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, Ban, FilePlus2, X } from 'lucide-react'
-import { TIME_OPTIONS } from '@/lib/timeOptions'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface DiaryAppointment {
   id: string
@@ -16,12 +15,6 @@ interface DiaryAppointment {
   cancelledAt: string | null
   notes: string | null
   appointmentTypeColor: string | null
-}
-
-interface AppointmentType {
-  id: string
-  name: string
-  duration_in_minutes: number
 }
 
 // Fallback palette for appointment types that don't have a colour set in
@@ -38,8 +31,11 @@ function colorForAppointment(appt: DiaryAppointment) {
 }
 
 const HOUR_HEIGHT = 56 // px per hour in the grid
+const PX_PER_MIN = HOUR_HEIGHT / 60
 const DEFAULT_START_HOUR = 8
 const DEFAULT_END_HOUR = 18
+const SNAP_MINUTES = 15 // matches TIME_OPTIONS' granularity elsewhere in the app
+const CLICK_THRESHOLD_PX = 5 // movement below this counts as a click, not a drag
 
 function startOfWeek(d: Date) {
   const day = d.getDay() // 0 = Sun
@@ -60,15 +56,6 @@ function sameDay(a: Date, b: Date) {
   return a.toDateString() === b.toDateString()
 }
 
-function toDateInput(iso: string) {
-  return new Date(iso).toISOString().slice(0, 10)
-}
-
-function toTimeInput(iso: string) {
-  const d = new Date(iso)
-  return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
-}
-
 function formatHourLabel(h: number) {
   const d = new Date()
   d.setHours(h, 0, 0, 0)
@@ -80,13 +67,20 @@ function timeRangeLabel(appt: DiaryAppointment) {
   return `${fmt(appt.startsAt)} – ${fmt(appt.endsAt)}`
 }
 
+interface DragState {
+  id: string
+  startClientY: number
+  deltaPx: number
+}
+
 export default function DiaryClient() {
+  const router = useRouter()
   const [weekStart, setWeekStart] = useState(() => startOfWeek(new Date()))
   const [appointments, setAppointments] = useState<DiaryAppointment[] | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [arriving, setArriving] = useState<string | null>(null)
-  const [types, setTypes] = useState<AppointmentType[] | null>(null)
-  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [drag, setDrag] = useState<DragState | null>(null)
+  const [savingId, setSavingId] = useState<string | null>(null)
+  const dragRef = useRef<DragState | null>(null)
 
   const days = useMemo(() => Array.from({ length: 7 }, (_, i) => addDays(weekStart, i)), [weekStart])
 
@@ -112,39 +106,15 @@ export default function DiaryClient() {
 
   useEffect(load, [weekStart])
 
-  // Appointment types for the reschedule form — same endpoint the
-  // booking form uses, scoped to the logged-in physio's own practitioner.
-  useEffect(() => {
-    fetch('/api/appointments')
-      .then((r) => r.json())
-      .then((data) => setTypes(data.appointmentTypes || []))
-      .catch(() => setTypes([]))
-  }, [])
-
-  async function setArrived(appt: DiaryAppointment, arrived: boolean) {
-    if (!appt.patientId) return
-    setArriving(appt.id)
-    const res = await fetch(`/api/appointments/${appt.id}/arrive`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ patientId: appt.patientId, arrived }),
-    })
-    if (res.ok) {
-      setAppointments((prev) => prev?.map((a) => (a.id === appt.id ? { ...a, patientArrived: arrived } : a)) ?? null)
-    }
-    setArriving(null)
-  }
-
-  function replaceInList(id: string, updates: Partial<DiaryAppointment>) {
-    setAppointments((prev) => prev?.map((a) => (a.id === id ? { ...a, ...updates } : a)) ?? null)
-  }
-
   function appointmentsForDay(d: Date) {
     return (appointments ?? []).filter((a) => sameDay(new Date(a.startsAt), d))
   }
 
   // Grid hour bounds — default to a normal 8am–6pm working day, but widen
-  // to fit anything booked outside that window rather than clipping it.
+  // to fit anything booked (or dragged) outside that window rather than
+  // clipping it. Recomputes whenever appointments change, so a drag that
+  // moves a visit earlier/later than the current range expands the grid
+  // on the next render.
   const { startHour, endHour } = useMemo(() => {
     let minH = DEFAULT_START_HOUR
     let maxH = DEFAULT_END_HOUR
@@ -172,13 +142,75 @@ export default function DiaryClient() {
     return Math.max(22, (mins / 60) * HOUR_HEIGHT)
   }
 
-  const selected = (appointments ?? []).find((a) => a.id === selectedId) ?? null
+  function onPointerDown(e: React.PointerEvent<HTMLDivElement>, appt: DiaryAppointment) {
+    if (savingId) return
+    e.currentTarget.setPointerCapture(e.pointerId)
+    const next = { id: appt.id, startClientY: e.clientY, deltaPx: 0 }
+    dragRef.current = next
+    setDrag(next)
+  }
+
+  function onPointerMove(e: React.PointerEvent<HTMLDivElement>, appt: DiaryAppointment) {
+    if (!dragRef.current || dragRef.current.id !== appt.id) return
+    const next = { ...dragRef.current, deltaPx: e.clientY - dragRef.current.startClientY }
+    dragRef.current = next
+    setDrag(next)
+  }
+
+  async function onPointerUp(e: React.PointerEvent<HTMLDivElement>, appt: DiaryAppointment) {
+    const current = dragRef.current
+    dragRef.current = null
+    setDrag(null)
+    if (!current || current.id !== appt.id) return
+
+    if (Math.abs(current.deltaPx) < CLICK_THRESHOLD_PX) {
+      // Treated as a click, not a drag — go to the patient's page.
+      if (appt.patientId) router.push(`/portal/patient/${appt.patientId}`)
+      return
+    }
+
+    if (appt.cancelledAt) return // cancelled visits can be viewed but not dragged
+
+    const rawMinutes = current.deltaPx / PX_PER_MIN
+    const snappedMinutes = Math.round(rawMinutes / SNAP_MINUTES) * SNAP_MINUTES
+    if (snappedMinutes === 0) return
+
+    const durationMs = new Date(appt.endsAt).getTime() - new Date(appt.startsAt).getTime()
+    const newStartsAt = new Date(new Date(appt.startsAt).getTime() + snappedMinutes * 60_000).toISOString()
+    const newEndsAt = new Date(new Date(newStartsAt).getTime() + durationMs).toISOString()
+
+    const previous = appointments
+    setAppointments((prev) => prev?.map((a) => (a.id === appt.id ? { ...a, startsAt: newStartsAt, endsAt: newEndsAt } : a)) ?? null)
+    setSavingId(appt.id)
+    setError(null)
+
+    const res = await fetch(`/api/appointments/${appt.id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ startsAt: newStartsAt, durationMinutes: Math.round(durationMs / 60_000) }),
+    })
+
+    if (!res.ok) {
+      setAppointments(previous) // revert the optimistic move
+      const body = await res.json().catch(() => null)
+      setError(body?.error || `Failed to reschedule (HTTP ${res.status})`)
+    }
+    setSavingId(null)
+  }
+
+  function onPointerCancel() {
+    dragRef.current = null
+    setDrag(null)
+  }
+
   const columnTemplate = `56px repeat(7, minmax(130px, 1fr))`
 
   return (
     <div>
       <h1 className="serif text-2xl text-foreground font-semibold mb-1">Your calendar</h1>
-      <p className="text-muted-foreground text-sm mb-6">Visits for your assigned patients only.</p>
+      <p className="text-muted-foreground text-sm mb-6">
+        Visits for your assigned patients only. Drag a visit up or down to change its time, or click it to open the patient.
+      </p>
 
       <div className="flex items-center justify-between mb-3">
         <button
@@ -263,27 +295,45 @@ export default function DiaryClient() {
                           />
                         ))}
 
-                        {appointmentsForDay(d).map((appt) => (
-                          <button
-                            key={appt.id}
-                            type="button"
-                            onClick={() => setSelectedId(appt.id)}
-                            className={`absolute left-1 right-1 rounded-md px-1.5 py-1 text-left text-white text-[11px] leading-tight overflow-hidden shadow-sm hover:brightness-95 ${
-                              selectedId === appt.id ? 'ring-2 ring-offset-1 ring-primary' : ''
-                            }`}
-                            style={{
-                              top: topFor(appt.startsAt),
-                              height: heightFor(appt.startsAt, appt.endsAt),
-                              backgroundColor: appt.cancelledAt ? '#9ca3af' : colorForAppointment(appt),
-                              opacity: appt.cancelledAt ? 0.7 : 1,
-                            }}
-                          >
-                            <div className={`font-semibold truncate ${appt.cancelledAt ? 'line-through' : ''}`}>
-                              {appt.patientName || 'Unknown patient'}
+                        {appointmentsForDay(d).map((appt) => {
+                          const isDragging = drag?.id === appt.id
+                          const blockHeight = heightFor(appt.startsAt, appt.endsAt)
+                          const naturalTop = topFor(appt.startsAt)
+                          const rawTop = isDragging ? naturalTop + drag!.deltaPx : naturalTop
+                          const top = Math.min(Math.max(rawTop, 0), Math.max(0, gridHeight - blockHeight))
+                          return (
+                            <div
+                              key={appt.id}
+                              onPointerDown={(e) => onPointerDown(e, appt)}
+                              onPointerMove={(e) => onPointerMove(e, appt)}
+                              onPointerUp={(e) => onPointerUp(e, appt)}
+                              onPointerCancel={onPointerCancel}
+                              role="button"
+                              tabIndex={0}
+                              onKeyDown={(e) => {
+                                if ((e.key === 'Enter' || e.key === ' ') && appt.patientId) {
+                                  e.preventDefault()
+                                  router.push(`/portal/patient/${appt.patientId}`)
+                                }
+                              }}
+                              className={`absolute left-1 right-1 rounded-md px-1.5 py-1 text-left text-white text-[11px] leading-tight overflow-hidden shadow-sm select-none ${
+                                appt.cancelledAt ? 'cursor-pointer' : isDragging ? 'cursor-grabbing z-10 shadow-md' : 'cursor-grab hover:brightness-95'
+                              } ${savingId === appt.id ? 'opacity-60' : ''}`}
+                              style={{
+                                top,
+                                height: blockHeight,
+                                backgroundColor: appt.cancelledAt ? '#9ca3af' : colorForAppointment(appt),
+                                opacity: appt.cancelledAt ? 0.7 : savingId === appt.id ? 0.6 : 1,
+                                touchAction: 'none',
+                              }}
+                            >
+                              <div className={`font-semibold truncate ${appt.cancelledAt ? 'line-through' : ''}`}>
+                                {appt.patientName || 'Unknown patient'}
+                              </div>
+                              <div className="opacity-90 truncate">{timeRangeLabel(appt)}</div>
                             </div>
-                            <div className="opacity-90 truncate">{timeRangeLabel(appt)}</div>
-                          </button>
-                        ))}
+                          )
+                        })}
                       </div>
                     )
                   })}
@@ -293,237 +343,6 @@ export default function DiaryClient() {
           </div>
         </div>
       )}
-
-      {selected && (
-        <SelectedAppointmentPanel
-          key={selected.id}
-          appt={selected}
-          types={types}
-          arriving={arriving}
-          onArrive={setArrived}
-          onRescheduled={replaceInList}
-          onClose={() => setSelectedId(null)}
-        />
-      )}
-    </div>
-  )
-}
-
-function SelectedAppointmentPanel({
-  appt,
-  types,
-  onArrive,
-  arriving,
-  onRescheduled,
-  onClose,
-}: {
-  appt: DiaryAppointment
-  types: AppointmentType[] | null
-  onArrive: (a: DiaryAppointment, arrived: boolean) => void
-  arriving: string | null
-  onRescheduled: (id: string, updates: Partial<DiaryAppointment>) => void
-  onClose: () => void
-}) {
-  const [rescheduling, setRescheduling] = useState(false)
-  const cancelled = !!appt.cancelledAt
-
-  return (
-    <div className="mt-4 bg-white border border-border rounded-lg">
-      <div className="flex items-center justify-between px-5 py-4">
-        <div className={`flex items-center gap-3 min-w-0 ${cancelled ? 'opacity-50' : ''}`}>
-          <div className="h-9 w-9 rounded-full bg-secondary flex items-center justify-center shrink-0">
-            <User className="h-4 w-4 text-primary" />
-          </div>
-          <div className="min-w-0">
-            {appt.patientId ? (
-              <Link
-                href={`/portal/patient/${appt.patientId}`}
-                className={`font-medium text-foreground hover:underline ${cancelled ? 'line-through' : ''}`}
-              >
-                {appt.patientName || `Patient ${appt.patientId}`}
-              </Link>
-            ) : (
-              <span className={`font-medium text-foreground ${cancelled ? 'line-through' : ''}`}>
-                {appt.patientName || 'Unknown patient'}
-              </span>
-            )}
-            <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
-              <Clock className="h-3.5 w-3.5" />
-              {timeRangeLabel(appt)}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 shrink-0">
-          {cancelled ? (
-            <span className="flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-secondary text-muted-foreground font-medium">
-              <Ban className="h-3.5 w-3.5" /> Cancelled
-            </span>
-          ) : (
-            <>
-              {appt.patientId && (
-                <Link
-                  href={`/portal/patient/${appt.patientId}?appointmentId=${appt.id}`}
-                  className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-medium whitespace-nowrap"
-                >
-                  <FilePlus2 className="h-3.5 w-3.5" /> Add treatment note
-                </Link>
-              )}
-              {appt.patientArrived ? (
-                <button
-                  type="button"
-                  onClick={() => onArrive(appt, false)}
-                  disabled={arriving === appt.id}
-                  title="Mark not arrived"
-                  className="flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium hover:bg-emerald-200 disabled:opacity-50"
-                >
-                  <CheckCircle2 className="h-3.5 w-3.5" /> {arriving === appt.id ? 'Undoing…' : 'Arrived'}
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => onArrive(appt, true)}
-                  disabled={arriving === appt.id || !appt.patientId}
-                  className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap disabled:opacity-50"
-                >
-                  {arriving === appt.id ? 'Marking…' : 'Mark arrived'}
-                </button>
-              )}
-              <button
-                type="button"
-                onClick={() => setRescheduling((e) => !e)}
-                className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap flex items-center gap-1"
-              >
-                Reschedule {rescheduling ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
-              </button>
-            </>
-          )}
-          <button
-            type="button"
-            onClick={onClose}
-            className="h-7 w-7 rounded-md hover:bg-secondary flex items-center justify-center text-muted-foreground"
-            aria-label="Close"
-          >
-            <X className="h-4 w-4" />
-          </button>
-        </div>
-      </div>
-
-      {rescheduling && !cancelled && (
-        <RescheduleForm
-          appt={appt}
-          types={types}
-          onDone={(updates) => {
-            onRescheduled(appt.id, updates)
-            setRescheduling(false)
-          }}
-          onCancel={() => setRescheduling(false)}
-        />
-      )}
-    </div>
-  )
-}
-
-function RescheduleForm({
-  appt,
-  types,
-  onDone,
-  onCancel,
-}: {
-  appt: DiaryAppointment
-  types: AppointmentType[] | null
-  onDone: (updates: Partial<DiaryAppointment>) => void
-  onCancel: () => void
-}) {
-  const [date, setDate] = useState(toDateInput(appt.startsAt))
-  const [time, setTime] = useState(toTimeInput(appt.startsAt))
-  const [appointmentTypeId, setAppointmentTypeId] = useState('')
-  const [status, setStatus] = useState<'idle' | 'saving' | 'error'>('idle')
-  const [error, setError] = useState<string | null>(null)
-
-  const selectedType = types?.find((t) => t.id === appointmentTypeId)
-  const durationMinutes =
-    selectedType?.duration_in_minutes ?? Math.round((new Date(appt.endsAt).getTime() - new Date(appt.startsAt).getTime()) / 60000)
-
-  async function save() {
-    setStatus('saving')
-    setError(null)
-    const startsAt = new Date(`${date}T${time}:00`).toISOString()
-    const res = await fetch(`/api/appointments/${appt.id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        startsAt,
-        durationMinutes,
-        ...(appointmentTypeId ? { appointmentTypeId } : {}),
-      }),
-    })
-    if (res.ok) {
-      const endsAt = new Date(new Date(startsAt).getTime() + durationMinutes * 60000).toISOString()
-      onDone({ startsAt, endsAt })
-    } else {
-      const body = await res.json().catch(() => null)
-      setError(body?.error || `Failed to reschedule (HTTP ${res.status})`)
-      setStatus('error')
-    }
-  }
-
-  return (
-    <div className="px-5 pb-4 pt-1 bg-secondary/30 border-t border-border">
-      <div className="flex flex-wrap items-end gap-3 pt-3">
-        <div>
-          <label className="text-xs font-medium text-muted-foreground block mb-1">Date</label>
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            className="h-9 px-2 rounded-md border border-input bg-white text-sm"
-          />
-        </div>
-        <div>
-          <label className="text-xs font-medium text-muted-foreground block mb-1">Time</label>
-          <select
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-            className="h-9 px-2 rounded-md border border-input bg-white text-sm"
-          >
-            {TIME_OPTIONS.map((t) => (
-              <option key={t.value} value={t.value}>
-                {t.label}
-              </option>
-            ))}
-          </select>
-        </div>
-        {types && types.length > 0 && (
-          <div>
-            <label className="text-xs font-medium text-muted-foreground block mb-1">Appointment type</label>
-            <select
-              value={appointmentTypeId}
-              onChange={(e) => setAppointmentTypeId(e.target.value)}
-              className="h-9 px-2 rounded-md border border-input bg-white text-sm"
-            >
-              <option value="">Keep current type</option>
-              {types.map((t) => (
-                <option key={t.id} value={t.id}>
-                  {t.name} ({t.duration_in_minutes} min)
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-        <button
-          type="button"
-          onClick={save}
-          disabled={status === 'saving'}
-          className="h-9 px-3 rounded-md bg-primary text-primary-foreground text-sm font-medium disabled:opacity-50"
-        >
-          {status === 'saving' ? 'Saving…' : 'Save'}
-        </button>
-        <button type="button" onClick={onCancel} className="h-9 px-3 text-sm text-muted-foreground hover:text-foreground">
-          Cancel
-        </button>
-      </div>
-      {error && <p className="text-xs text-destructive mt-2">{error}</p>}
     </div>
   )
 }
