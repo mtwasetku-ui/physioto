@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { getClinikoPractitionerIdForEmail, listAssignmentsForEmail } from '@/lib/db'
-import { listAppointmentsForPractitionerInRange } from '@/lib/cliniko'
+import { listAppointmentsForPractitionerInRange, listAppointmentTypesForPractice } from '@/lib/cliniko'
 
 // GET /api/appointments/diary?from=ISO&to=ISO — the logged-in physio's own
 // calendar for that window. Two layers of scoping, both server-side, both
@@ -80,7 +80,24 @@ export async function GET(req: Request) {
   try {
     const appointments = await listAppointmentsForPractitionerInRange(practitionerId, from, to)
     const visible = appointments.filter((a) => a.patientId && assignedPatientIds.has(a.patientId))
-    return NextResponse.json({ appointments: visible, from, to })
+
+    // Appointment-type colour is only used for the week-grid display — a
+    // failure to load it should never break the calendar itself, so this
+    // is best-effort and falls back to no colour (frontend picks one).
+    let colorByTypeId = new Map<string, string | null>()
+    try {
+      const types = await listAppointmentTypesForPractice(practitionerId)
+      colorByTypeId = new Map(types.map((t) => [t.id, t.color]))
+    } catch (e) {
+      console.error('[appointments/diary] failed to load appointment type colours', e)
+    }
+
+    const withColor = visible.map((a) => ({
+      ...a,
+      appointmentTypeColor: a.appointmentTypeId ? colorByTypeId.get(a.appointmentTypeId) ?? null : null,
+    }))
+
+    return NextResponse.json({ appointments: withColor, from, to })
   } catch (e: any) {
     return NextResponse.json({ error: e.message || 'Failed to load calendar' }, { status: 502 })
   }
