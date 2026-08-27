@@ -366,6 +366,7 @@ export interface DiaryAppointment {
   didNotArrive: boolean
   cancelledAt: string | null
   notes: string | null
+  appointmentTypeId: string | null
 }
 
 export function idFromLink(url?: string | null): string | null {
@@ -385,6 +386,7 @@ function mapIndividualAppointment(a: any): DiaryAppointment {
     didNotArrive: !!a.did_not_arrive,
     cancelledAt: a.cancelled_at ?? null,
     notes: a.notes ?? null,
+    appointmentTypeId: idFromLink(a.appointment_type?.links?.self),
   }
 }
 
@@ -470,6 +472,7 @@ export interface ClinikoAppointmentType {
   id: string
   name: string
   duration_in_minutes: number
+  color: string | null
 }
 
 // Appointment types for whichever practitioner is booking — every
@@ -488,6 +491,31 @@ export async function listAppointmentTypesForPractice(practitionerId: string): P
   // available_times/next_available_time sub-resources.
   const data = await clinikoFetch(`/practitioners/${practitionerId}/appointment_types?per_page=100`)
   return data.appointment_types ?? []
+}
+
+// ── Recurring bookings ────────────────────────────────────────────
+//
+// Cliniko's own API does have a `repeat_rule` field on individual_appointments
+// (number_of_repeats / repeat_type / repeating_interval), but the exact
+// accepted repeat_type strings aren't confirmed against a live sandbox, so
+// rather than risk a silently-wrong series we build the series ourselves
+// client-side-of-Cliniko: one createIndividualAppointment call per
+// occurrence, same as a normal single booking. Simpler to reason about and
+// matches how the rest of this file treats unconfirmed Cliniko behaviour.
+export const MAX_REPEAT_APPOINTMENTS = 20
+export type RepeatFrequency = 'weekly' | 'fortnightly' | 'monthly'
+
+export function buildRepeatDates(startsAt: string, count: number, frequency: RepeatFrequency): string[] {
+  const dates: string[] = []
+  const base = new Date(startsAt)
+  for (let i = 0; i < count; i++) {
+    const d = new Date(base)
+    if (frequency === 'weekly') d.setDate(d.getDate() + 7 * i)
+    else if (frequency === 'fortnightly') d.setDate(d.getDate() + 14 * i)
+    else if (frequency === 'monthly') d.setMonth(d.getMonth() + i)
+    dates.push(d.toISOString())
+  }
+  return dates
 }
 
 // business_id is never accepted as input — always Physio to Home, pulled
@@ -692,17 +720,27 @@ export async function listAppointmentsForPatient(patientId: string, opts: { from
 // https://docs.api.cliniko.com/openapi/attendee. Every individual
 // appointment has exactly one attendee, reached via
 // GET /individual_appointments/{id}/attendees.
-export async function markPatientArrived(appointmentId: string) {
+export async function setPatientArrived(appointmentId: string, arrived: boolean) {
   const attendeesData = await clinikoFetch(`/individual_appointments/${appointmentId}/attendees`)
   const attendee = attendeesData?.attendees?.[0]
   if (!attendee?.id) {
-    throw new Error(`No attendee found for appointment ${appointmentId} — can't mark arrived`)
+    throw new Error(`No attendee found for appointment ${appointmentId} — can't update arrival status`)
   }
   await clinikoFetch(`/attendees/${attendee.id}`, {
     method: 'PATCH',
-    body: JSON.stringify({ arrived: true }),
+    body: JSON.stringify({ arrived }),
   })
-  // Re-fetch the appointment so the caller gets patient_arrived: true
-  // back (that field is read-only but now reflects the attendee update).
+  // Re-fetch the appointment so the caller gets patient_arrived back in
+  // sync (that field is read-only but now reflects the attendee update).
   return getIndividualAppointment(appointmentId)
+}
+
+// Kept as a thin wrapper — this is the existing call sites' name for
+// setPatientArrived(id, true).
+export async function markPatientArrived(appointmentId: string) {
+  return setPatientArrived(appointmentId, true)
+}
+
+export async function unmarkPatientArrived(appointmentId: string) {
+  return setPatientArrived(appointmentId, false)
 }
