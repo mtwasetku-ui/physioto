@@ -805,9 +805,15 @@ function Timeline({ patientId }: { patientId: string }) {
               <div className="flex items-center justify-between mb-3">
                 <div>
                   <span className="text-sm font-medium text-foreground">
-                    {new Date(note.created_at).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    {new Date(note.visitDate || note.created_at).toLocaleDateString('en-AU', {
+                      day: 'numeric',
+                      month: 'long',
+                      year: 'numeric',
+                    })}
                   </span>
-                  <span className="text-xs text-muted-foreground ml-2">{note.authorDisplayName || note.title}</span>
+                  <span className="text-xs text-muted-foreground ml-2">
+                    {note.visitPractitionerName || note.authorDisplayName || note.title}
+                  </span>
                 </div>
                 {note.draft && (
                   <span className="text-xs px-2 py-1 rounded-full bg-amber-100 text-amber-800 font-medium">Draft</span>
