@@ -70,7 +70,20 @@ function timeRangeLabel(appt: DiaryAppointment) {
 interface DragState {
   id: string
   startClientY: number
-  deltaPx: number
+  startClientX: number
+  deltaPx: number // vertical movement, in px
+  originDayIndex: number
+  targetDayIndex: number
+  offsetX: number // px to visually translate towards the target day column
+}
+
+// Shifts an ISO datetime by whole days (calendar-aware, so DST transitions
+// don't skew the time-of-day) and then by a number of minutes.
+function shiftDateTime(iso: string, dayDelta: number, minuteDelta: number) {
+  const d = new Date(iso)
+  d.setDate(d.getDate() + dayDelta)
+  d.setMinutes(d.getMinutes() + minuteDelta)
+  return d.toISOString()
 }
 
 export default function DiaryClient() {
@@ -81,6 +94,7 @@ export default function DiaryClient() {
   const [drag, setDrag] = useState<DragState | null>(null)
   const [savingId, setSavingId] = useState<string | null>(null)
   const dragRef = useRef<DragState | null>(null)
+  const dayColRefs = useRef<Array<HTMLDivElement | null>>([])
 
   const days = useMemo(() => Array.from({ length: 7 }, (_, i) => addDays(weekStart, i)), [weekStart])
 
@@ -142,17 +156,45 @@ export default function DiaryClient() {
     return Math.max(22, (mins / 60) * HOUR_HEIGHT)
   }
 
-  function onPointerDown(e: React.PointerEvent<HTMLDivElement>, appt: DiaryAppointment) {
+  function onPointerDown(e: React.PointerEvent<HTMLDivElement>, appt: DiaryAppointment, dayIndex: number) {
     if (savingId) return
     e.currentTarget.setPointerCapture(e.pointerId)
-    const next = { id: appt.id, startClientY: e.clientY, deltaPx: 0 }
+    const next: DragState = {
+      id: appt.id,
+      startClientY: e.clientY,
+      startClientX: e.clientX,
+      deltaPx: 0,
+      originDayIndex: dayIndex,
+      targetDayIndex: dayIndex,
+      offsetX: 0,
+    }
     dragRef.current = next
     setDrag(next)
   }
 
   function onPointerMove(e: React.PointerEvent<HTMLDivElement>, appt: DiaryAppointment) {
     if (!dragRef.current || dragRef.current.id !== appt.id) return
-    const next = { ...dragRef.current, deltaPx: e.clientY - dragRef.current.startClientY }
+    const deltaPx = e.clientY - dragRef.current.startClientY
+
+    // Figure out which day column the pointer is currently over.
+    let targetDayIndex = dragRef.current.originDayIndex
+    for (let i = 0; i < dayColRefs.current.length; i++) {
+      const el = dayColRefs.current[i]
+      if (!el) continue
+      const rect = el.getBoundingClientRect()
+      if (e.clientX >= rect.left && e.clientX < rect.right) {
+        targetDayIndex = i
+        break
+      }
+    }
+
+    // Translate visually from the origin column to wherever the target
+    // column actually sits on screen (columns can vary slightly in width).
+    const originEl = dayColRefs.current[dragRef.current.originDayIndex]
+    const targetEl = dayColRefs.current[targetDayIndex]
+    const offsetX = originEl && targetEl ? targetEl.getBoundingClientRect().left - originEl.getBoundingClientRect().left : 0
+
+    const next = { ...dragRef.current, deltaPx, targetDayIndex, offsetX }
     dragRef.current = next
     setDrag(next)
   }
@@ -163,7 +205,9 @@ export default function DiaryClient() {
     setDrag(null)
     if (!current || current.id !== appt.id) return
 
-    if (Math.abs(current.deltaPx) < CLICK_THRESHOLD_PX) {
+    const dayDelta = current.targetDayIndex - current.originDayIndex
+
+    if (Math.abs(current.deltaPx) < CLICK_THRESHOLD_PX && dayDelta === 0) {
       // Treated as a click, not a drag — go to the patient's page.
       if (appt.patientId) router.push(`/portal/patient/${appt.patientId}`)
       return
@@ -173,10 +217,10 @@ export default function DiaryClient() {
 
     const rawMinutes = current.deltaPx / PX_PER_MIN
     const snappedMinutes = Math.round(rawMinutes / SNAP_MINUTES) * SNAP_MINUTES
-    if (snappedMinutes === 0) return
+    if (snappedMinutes === 0 && dayDelta === 0) return
 
     const durationMs = new Date(appt.endsAt).getTime() - new Date(appt.startsAt).getTime()
-    const newStartsAt = new Date(new Date(appt.startsAt).getTime() + snappedMinutes * 60_000).toISOString()
+    const newStartsAt = shiftDateTime(appt.startsAt, dayDelta, snappedMinutes)
     const newEndsAt = new Date(new Date(newStartsAt).getTime() + durationMs).toISOString()
 
     const previous = appointments
@@ -209,7 +253,7 @@ export default function DiaryClient() {
     <div>
       <h1 className="serif text-2xl text-foreground font-semibold mb-1">Your calendar</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        Visits for your assigned patients only. Drag a visit up or down to change its time, or click it to open the patient.
+        Visits for your assigned patients only. Drag a visit to change its time or move it to another day, or click it to open the patient.
       </p>
 
       <div className="flex items-center justify-between mb-3">
@@ -280,11 +324,14 @@ export default function DiaryClient() {
                   </div>
 
                   {/* Day columns */}
-                  {days.map((d) => {
+                  {days.map((d, dayIndex) => {
                     const isToday = sameDay(d, new Date())
                     return (
                       <div
                         key={d.toISOString()}
+                        ref={(el) => {
+                          dayColRefs.current[dayIndex] = el
+                        }}
                         className={`relative border-l border-border ${isToday ? 'bg-amber-50/40' : ''}`}
                       >
                         {hours.map((h) => (
@@ -304,7 +351,7 @@ export default function DiaryClient() {
                           return (
                             <div
                               key={appt.id}
-                              onPointerDown={(e) => onPointerDown(e, appt)}
+                              onPointerDown={(e) => onPointerDown(e, appt, dayIndex)}
                               onPointerMove={(e) => onPointerMove(e, appt)}
                               onPointerUp={(e) => onPointerUp(e, appt)}
                               onPointerCancel={onPointerCancel}
@@ -322,6 +369,7 @@ export default function DiaryClient() {
                               style={{
                                 top,
                                 height: blockHeight,
+                                transform: isDragging && drag!.offsetX ? `translateX(${drag!.offsetX}px)` : undefined,
                                 backgroundColor: appt.cancelledAt ? '#9ca3af' : colorForAppointment(appt),
                                 opacity: appt.cancelledAt ? 0.7 : savingId === appt.id ? 0.6 : 1,
                                 touchAction: 'none',
