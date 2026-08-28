@@ -403,10 +403,10 @@ function mapIndividualAppointment(a: any): DiaryAppointment {
 
 // Powers the calendar view — a specific [from, to) window rather than
 // just "everything upcoming", so prev/next week navigation can ask for
-// exactly the week it needs. Cancelled visits are left in (the calendar
-// still shows them, struck through) rather than silently dropped, since
-// on a specific day view "why is nothing here" is worse than seeing a
-// cancelled slot.
+// exactly the week it needs. Cancelled visits are dropped rather than
+// shown struck-through — cancelling from the patient page (or here) is
+// meant to actually free up the slot visually, not leave a greyed-out
+// placeholder sitting on it.
 export async function listAppointmentsForPractitionerInRange(
   practitionerId: string,
   fromISO: string,
@@ -418,7 +418,7 @@ export async function listAppointmentsForPractitionerInRange(
     `/individual_appointments?q[]=${encodeURIComponent(`practitioner_id:=${practitionerId}`)}&q[]=${encodeURIComponent(`starts_at:>=${fromISO}`)}&q[]=${encodeURIComponent(`starts_at:<${toISO}`)}&sort=starts_at:asc&per_page=${limit}`
   )
   const appointments = (data.individual_appointments ?? []) as any[]
-  return appointments.map(mapIndividualAppointment)
+  return appointments.filter((a) => !a.cancelled_at).map(mapIndividualAppointment)
 }
 
 export async function listUpcomingAppointmentsForPractitioner(
