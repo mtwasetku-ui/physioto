@@ -313,3 +313,90 @@ export async function listAuditLogForPatient(patientId: string, limit = 100) {
   `
   return rows
 }
+
+// ── Appointment series ──────────────────────────────────────────
+//
+// Cliniko has no series concept — a repeat booking is just N independent
+// individual_appointments (see lib/cliniko.ts buildRepeatDates). This is
+// the only record of which appointments were booked together, so that
+// cancelling one occurrence can later offer "cancel the rest of the
+// series too".
+
+export async function createAppointmentSeries(params: {
+  email: string
+  patientId: string
+  frequency: string
+  members: { clinikoAppointmentId: string; startsAt: string }[]
+}): Promise<string> {
+  const { email, patientId, frequency, members } = params
+  const rows = await sql`
+    insert into appointment_series (email, cliniko_patient_id, frequency)
+    values (${email.toLowerCase()}, ${patientId}, ${frequency})
+    returning id
+  `
+  const seriesId = rows[0].id as string
+  for (const m of members) {
+    await sql`
+      insert into appointment_series_members (series_id, cliniko_appointment_id, starts_at)
+      values (${seriesId}, ${m.clinikoAppointmentId}, ${m.startsAt})
+      on conflict (cliniko_appointment_id) do nothing
+    `
+  }
+  return seriesId
+}
+
+// Which series (if any) a single Cliniko appointment belongs to — used
+// when deciding whether "cancel the rest of the series" is even an
+// option for a given appointment.
+export async function getSeriesForAppointment(
+  clinikoAppointmentId: string
+): Promise<{ seriesId: string; frequency: string } | null> {
+  const rows = await sql`
+    select s.id as series_id, s.frequency
+    from appointment_series_members m
+    join appointment_series s on s.id = m.series_id
+    where m.cliniko_appointment_id = ${clinikoAppointmentId}
+    limit 1
+  `
+  if (rows.length === 0) return null
+  return { seriesId: rows[0].series_id as string, frequency: rows[0].frequency as string }
+}
+
+// Batch version of the above, for annotating a whole appointment list
+// (e.g. the patient page's upcoming-appointments view) without one query
+// per row.
+export async function getSeriesIdsForAppointments(
+  clinikoAppointmentIds: string[]
+): Promise<Record<string, string>> {
+  const unique = Array.from(new Set(clinikoAppointmentIds)).filter(Boolean)
+  if (unique.length === 0) return {}
+  const rows = await sql`
+    select cliniko_appointment_id, series_id
+    from appointment_series_members
+    where cliniko_appointment_id = any(${unique})
+  `
+  const map: Record<string, string> = {}
+  for (const row of rows as { cliniko_appointment_id: string; series_id: string }[]) {
+    map[row.cliniko_appointment_id] = row.series_id
+  }
+  return map
+}
+
+// Every member of a series starting at or after `fromISO` — used when
+// cancelling "this and all future occurrences" so past/already-happened
+// visits in the same series are left untouched.
+export async function listFutureSeriesMembers(
+  seriesId: string,
+  fromISO: string
+): Promise<{ clinikoAppointmentId: string; startsAt: string }[]> {
+  const rows = await sql`
+    select cliniko_appointment_id, starts_at
+    from appointment_series_members
+    where series_id = ${seriesId} and starts_at >= ${fromISO}
+    order by starts_at asc
+  `
+  return (rows as { cliniko_appointment_id: string; starts_at: string }[]).map((r) => ({
+    clinikoAppointmentId: r.cliniko_appointment_id,
+    startsAt: r.starts_at,
+  }))
+}
