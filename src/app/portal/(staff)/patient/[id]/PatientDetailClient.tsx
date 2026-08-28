@@ -170,11 +170,21 @@ export default function PatientDetailClient({
         ))}
       </div>
 
-      {tab === 'note' && <NoteForm patientId={patientId} authorEmail={authorEmail} initialAppointmentId={linkAppointmentId} />}
+      {tab === 'note' && (
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-6 items-start">
+          <NoteForm patientId={patientId} authorEmail={authorEmail} initialAppointmentId={linkAppointmentId} />
+          <div className="lg:sticky lg:top-4">
+            <NoteHistoryPanel patientId={patientId} />
+          </div>
+        </div>
+      )}
       {tab === 'timeline' && <Timeline patientId={patientId} />}
       {tab === 'attachments' && <Attachments patientId={patientId} />}
       {tab === 'book' && (
-        <BookVisit patientId={patientId} patientLabel={`${patient.firstName} ${patient.lastName}`.trim()} />
+        <>
+          <UpcomingAppointments patientId={patientId} />
+          <BookVisit patientId={patientId} patientLabel={`${patient.firstName} ${patient.lastName}`.trim()} />
+        </>
       )}
     </div>
   )
@@ -822,73 +832,135 @@ function Timeline({ patientId }: { patientId: string }) {
         {notes.map((note) => (
           <div key={note.id} className="relative">
             <div className="absolute -left-6 top-1.5 h-3 w-3 rounded-full bg-primary border-2 border-white shadow" />
-            <div className="bg-white border border-border rounded-lg p-5">
-              <div className="flex items-center justify-between mb-3">
-                <div>
-                  <span className="text-sm font-medium text-foreground">
-                    {new Date(note.visitDate || note.created_at).toLocaleDateString('en-AU', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric',
-                    })}
-                  </span>
-                  <span className="text-xs text-muted-foreground ml-2">
-                    {note.visitPractitionerName || note.authorDisplayName || note.title}
-                  </span>
-                </div>
-                {note.draft && (
-                  <span className="text-xs px-2 py-1 rounded-full bg-amber-100 text-amber-800 font-medium">Draft</span>
-                )}
-              </div>
-              {(note.content?.sections || []).map((s: any) => {
-                // Only show questions that actually have content — an
-                // empty section full of "—" placeholders is exactly the
-                // "summary" look we're moving away from here.
-                const answered = s.questions
-                  .map((q: any) => {
-                    const isMultiChoice = Array.isArray(q.answers)
-                    const value = isMultiChoice
-                      ? q.answers.filter((a: any) => a.selected).map((a: any) => a.value)
-                      : q.answer
-                    const hasValue = isMultiChoice ? value.length > 0 : !!(value && String(value).trim())
-                    return { q, value, hasValue }
-                  })
-                  .filter(({ hasValue }: any) => hasValue)
-
-                if (answered.length === 0) return null
-
-                return (
-                  <div key={s.name} className="mb-4 last:mb-0">
-                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
-                      {s.name}
-                    </div>
-                    {answered.map(({ q, value }: any) => {
-                      if (q.type === 'paragraph') {
-                        return (
-                          <div key={`${s.name}::${q.name}`} className="mb-3 last:mb-0">
-                            <div className="text-xs font-medium text-foreground mb-0.5">{q.name}</div>
-                            <RichAnswerHtml
-                              html={value}
-                              className="text-sm text-muted-foreground leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0"
-                            />
-                          </div>
-                        )
-                      }
-                      const display = Array.isArray(value) ? value.join(', ') : value
-                      return (
-                        <div key={`${s.name}::${q.name}`} className="text-sm mb-1">
-                          <span className="text-foreground font-medium">{q.name}: </span>
-                          <span className="text-muted-foreground">{display}</span>
-                        </div>
-                      )
-                    })}
-                  </div>
-                )
-              })}
-            </div>
+            <NoteCard note={note} />
           </div>
         ))}
       </div>
+    </div>
+  )
+}
+
+// A single note's date/author/draft-badge header plus its answered
+// questions — shared between the full visit timeline and the compact
+// "previous notes" panel shown next to the note form (see
+// NoteHistoryPanel below). `compact` tightens padding/text size for the
+// narrower sidebar without changing what's shown.
+function NoteCard({ note, compact }: { note: any; compact?: boolean }) {
+  return (
+    <div className={`bg-white border border-border rounded-lg ${compact ? 'p-3' : 'p-5'}`}>
+      <div className="flex items-center justify-between mb-3 gap-2">
+        <div className="min-w-0">
+          <span className={`font-medium text-foreground ${compact ? 'text-xs' : 'text-sm'}`}>
+            {new Date(note.visitDate || note.created_at).toLocaleDateString('en-AU', {
+              day: 'numeric',
+              month: 'long',
+              year: compact ? undefined : 'numeric',
+            })}
+          </span>
+          <span className={`text-muted-foreground ml-2 ${compact ? 'text-xs' : 'text-xs'}`}>
+            {note.visitPractitionerName || note.authorDisplayName || note.title}
+          </span>
+        </div>
+        {note.draft && (
+          <span className="text-xs px-2 py-1 rounded-full bg-amber-100 text-amber-800 font-medium flex-shrink-0">
+            Draft
+          </span>
+        )}
+      </div>
+      {(note.content?.sections || []).map((s: any) => {
+        // Only show questions that actually have content — an empty
+        // section full of "—" placeholders is exactly the "summary" look
+        // we're moving away from here.
+        const answered = s.questions
+          .map((q: any) => {
+            const isMultiChoice = Array.isArray(q.answers)
+            const value = isMultiChoice
+              ? q.answers.filter((a: any) => a.selected).map((a: any) => a.value)
+              : q.answer
+            const hasValue = isMultiChoice ? value.length > 0 : !!(value && String(value).trim())
+            return { q, value, hasValue }
+          })
+          .filter(({ hasValue }: any) => hasValue)
+
+        if (answered.length === 0) return null
+
+        return (
+          <div key={s.name} className="mb-4 last:mb-0">
+            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">{s.name}</div>
+            {answered.map(({ q, value }: any) => {
+              if (q.type === 'paragraph') {
+                return (
+                  <div key={`${s.name}::${q.name}`} className="mb-3 last:mb-0">
+                    <div className="text-xs font-medium text-foreground mb-0.5">{q.name}</div>
+                    <RichAnswerHtml
+                      html={value}
+                      className={`text-muted-foreground leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0 ${compact ? 'text-xs' : 'text-sm'}`}
+                    />
+                  </div>
+                )
+              }
+              const display = Array.isArray(value) ? value.join(', ') : value
+              return (
+                <div key={`${s.name}::${q.name}`} className={`mb-1 ${compact ? 'text-xs' : 'text-sm'}`}>
+                  <span className="text-foreground font-medium">{q.name}: </span>
+                  <span className="text-muted-foreground">{display}</span>
+                </div>
+              )
+            })}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+// Previous notes for this patient, shown alongside the note form so a
+// physio can glance back at recent visits while writing today's — the
+// same idea as Cliniko's own "Previous notes" side panel. Reuses the
+// same /api/notes data as the full Visit history tab, just rendered
+// smaller and narrower.
+function NoteHistoryPanel({ patientId }: { patientId: string }) {
+  const [notes, setNotes] = useState<any[] | null>(null)
+  const [filter, setFilter] = useState('')
+
+  useEffect(() => {
+    setNotes(null)
+    fetch(`/api/notes?patientId=${patientId}`)
+      .then((r) => r.json())
+      .then((data) => setNotes(data.notes || []))
+      .catch(() => setNotes([]))
+  }, [patientId])
+
+  if (!notes) return <div className="text-muted-foreground text-sm">Loading previous notes…</div>
+
+  const term = filter.trim().toLowerCase()
+  const filtered = term
+    ? notes.filter((n: any) => JSON.stringify(n.content?.sections || []).toLowerCase().includes(term))
+    : notes
+
+  return (
+    <div>
+      <h2 className="text-sm font-semibold text-foreground mb-3">Previous notes</h2>
+      {notes.length > 0 && (
+        <input
+          type="text"
+          placeholder="Filter treatment notes…"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          className="w-full h-9 px-3 mb-3 rounded-md border border-input bg-white text-sm"
+        />
+      )}
+      {notes.length === 0 ? (
+        <p className="text-sm text-muted-foreground">No previous notes yet.</p>
+      ) : filtered.length === 0 ? (
+        <p className="text-sm text-muted-foreground">No notes match &quot;{filter}&quot;.</p>
+      ) : (
+        <div className="space-y-3">
+          {filtered.map((note: any) => (
+            <NoteCard key={note.id} note={note} compact />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -981,6 +1053,213 @@ function Attachments({ patientId }: { patientId: string }) {
             </a>
           ))}
         </div>
+      )}
+    </div>
+  )
+}
+
+// Mirrors lib/cliniko.ts CANCELLATION_REASONS — kept as a separate copy
+// rather than an import because cliniko.ts is server-only (it reads the
+// Cliniko API key at module scope) and must never end up in the client
+// bundle. Cliniko requires one of these codes on every cancellation;
+// there's no free-text-only option.
+const CLIENT_CANCELLATION_REASONS = [
+  { code: 10, label: 'Feeling better' },
+  { code: 20, label: 'Condition worse' },
+  { code: 30, label: 'Sick' },
+  { code: 31, label: 'COVID-19 related' },
+  { code: 40, label: 'Away' },
+  { code: 60, label: 'Work' },
+  { code: 50, label: 'Other' },
+] as const
+
+// Patient's upcoming visits, each with a "Cancel visit" action. Cliniko
+// doesn't support actually deleting an appointment through this endpoint
+// — cancelling sets cancelled_at (and requires a reason code) rather than
+// removing the record, which keeps history and invoicing intact. That's
+// the closest available action to "delete" and is what /api/appointments/
+// [id]/cancel already does server-side.
+function UpcomingAppointments({ patientId }: { patientId: string }) {
+  const [appointments, setAppointments] = useState<any[] | null>(null)
+  const [loadError, setLoadError] = useState<string | null>(null)
+  const [cancelingId, setCancelingId] = useState<string | null>(null)
+  const [reason, setReason] = useState<number | ''>('')
+  const [cancelNote, setCancelNote] = useState('')
+  const [scope, setScope] = useState<'occurrence' | 'series'>('occurrence')
+  const [cancelError, setCancelError] = useState<string | null>(null)
+  const [cancelling, setCancelling] = useState(false)
+
+  useEffect(() => {
+    setAppointments(null)
+    setLoadError(null)
+    fetch(`/api/appointments/for-patient?patientId=${patientId}`)
+      .then(async (r) => {
+        const data = await r.json().catch(() => ({}))
+        if (!r.ok) {
+          setLoadError(data?.error || `Failed to load appointments (HTTP ${r.status})`)
+          setAppointments([])
+          return
+        }
+        setAppointments(data.appointments || [])
+      })
+      .catch((e) => {
+        setLoadError(e?.message || 'Network error loading appointments')
+        setAppointments([])
+      })
+  }, [patientId])
+
+  function startCancel(id: string) {
+    setCancelingId(id)
+    setReason('')
+    setCancelNote('')
+    setScope('occurrence')
+    setCancelError(null)
+  }
+
+  async function confirmCancel(id: string) {
+    if (!reason) {
+      setCancelError('Select a reason first.')
+      return
+    }
+    setCancelling(true)
+    setCancelError(null)
+    const res = await fetch(`/api/appointments/${id}/cancel`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ reason, note: cancelNote || undefined, scope }),
+    })
+    const body = await res.json().catch(() => null)
+    if (res.ok) {
+      // A series cancel can knock out more than just the one clicked —
+      // mark everything the API actually cancelled, not just `id`.
+      const cancelledIds: string[] = body?.cancelledIds || [id]
+      setAppointments((prev) =>
+        (prev || []).map((a: any) =>
+          cancelledIds.includes(String(a.id)) ? { ...a, cancelled_at: new Date().toISOString() } : a
+        )
+      )
+      setCancelingId(null)
+      if (body?.failures?.length) {
+        setCancelError(
+          `Cancelled, but ${body.failures.length} other occurrence(s) in the series couldn't be cancelled — you may need to cancel those individually.`
+        )
+      }
+    } else {
+      setCancelError(body?.error || `Failed to cancel (HTTP ${res.status})`)
+    }
+    setCancelling(false)
+  }
+
+  if (appointments === null) {
+    return <div className="text-muted-foreground text-sm mb-5">Loading upcoming appointments…</div>
+  }
+
+  if (loadError) {
+    return <div className="text-destructive text-sm mb-5">Couldn&apos;t load appointments: {loadError}</div>
+  }
+
+  const upcoming = appointments
+    .filter((a: any) => !a.cancelled_at && new Date(a.starts_at) > new Date())
+    .sort((a: any, b: any) => new Date(a.starts_at).getTime() - new Date(b.starts_at).getTime())
+
+  return (
+    <div className="bg-white border border-border rounded-lg p-5 max-w-md mb-5">
+      <h2 className="text-sm font-semibold text-foreground mb-3">Upcoming appointments</h2>
+      {upcoming.length === 0 ? (
+        <p className="text-sm text-muted-foreground">No upcoming appointments.</p>
+      ) : (
+        <ul className="space-y-3">
+          {upcoming.map((a: any) => {
+            const id = String(a.id)
+            return (
+              <li key={id} className="border border-border rounded-md p-3">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-sm font-medium text-foreground">
+                      {new Date(a.starts_at).toLocaleString('en-AU', {
+                        weekday: 'short',
+                        day: 'numeric',
+                        month: 'short',
+                        hour: 'numeric',
+                        minute: '2-digit',
+                      })}
+                    </div>
+                    {a.notes && <p className="text-xs text-muted-foreground mt-0.5">{a.notes}</p>}
+                  </div>
+                  {cancelingId !== id && (
+                    <button
+                      type="button"
+                      onClick={() => startCancel(id)}
+                      className="text-xs px-2.5 py-1.5 rounded-md border border-input text-destructive hover:bg-red-50 whitespace-nowrap"
+                    >
+                      Cancel visit
+                    </button>
+                  )}
+                </div>
+
+                {cancelingId === id && (
+                  <div className="mt-3 pt-3 border-t border-border space-y-2">
+                    {a.seriesId && (
+                      <div className="space-y-1.5 mb-1">
+                        <label className="flex items-center gap-2 text-sm text-foreground">
+                          <input
+                            type="radio"
+                            name={`cancel-scope-${id}`}
+                            checked={scope === 'occurrence'}
+                            onChange={() => setScope('occurrence')}
+                          />
+                          Just this appointment
+                        </label>
+                        <label className="flex items-center gap-2 text-sm text-foreground">
+                          <input
+                            type="radio"
+                            name={`cancel-scope-${id}`}
+                            checked={scope === 'series'}
+                            onChange={() => setScope('series')}
+                          />
+                          This and all future appointments in the series
+                        </label>
+                      </div>
+                    )}
+                    <select
+                      value={reason}
+                      onChange={(e) => setReason(Number(e.target.value))}
+                      className="w-full h-9 px-2 rounded-md border border-input bg-white text-sm"
+                    >
+                      <option value="">Reason for cancelling…</option>
+                      {CLIENT_CANCELLATION_REASONS.map((r) => (
+                        <option key={r.code} value={r.code}>
+                          {r.label}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="text"
+                      placeholder="Note (optional)"
+                      value={cancelNote}
+                      onChange={(e) => setCancelNote(e.target.value)}
+                      className="w-full h-9 px-2 rounded-md border border-input text-sm"
+                    />
+                    {cancelError && <p className="text-xs text-destructive">{cancelError}</p>}
+                    <div className="flex items-center gap-2">
+                      <Button size="sm" onClick={() => confirmCancel(id)} disabled={cancelling}>
+                        {cancelling ? 'Cancelling…' : scope === 'series' ? 'Confirm — cancel series' : 'Confirm cancellation'}
+                      </Button>
+                      <button
+                        type="button"
+                        onClick={() => setCancelingId(null)}
+                        disabled={cancelling}
+                        className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
+                      >
+                        Back
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </li>
+            )
+          })}
+        </ul>
       )}
     </div>
   )
