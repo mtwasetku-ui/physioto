@@ -29,6 +29,16 @@ function stripHtmlTags(html: string): string {
     .trim()
 }
 
+// Turns the plain text typed into a "paragraph" textarea into the HTML
+// Cliniko expects for that field type. Escape first so the physio's own
+// text (e.g. "10 x 2 <-> alternate sides") can't be misread as markup,
+// then convert line breaks to real <br> tags — a bare "\n" has no effect
+// once the string is rendered as HTML, which is what was causing entries
+// to come out as one squashed line.
+function plainTextToParagraphHtml(text: string): string {
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>')
+}
+
 function sanitizedHtmlNode(node: ChildNode, key: string): React.ReactNode {
   if (node.nodeType === Node.TEXT_NODE) return node.textContent
   if (node.nodeType !== Node.ELEMENT_NODE) return null
@@ -462,10 +472,21 @@ function NoteForm({
         if (questions.length === 0) return null // section was only a body chart
         return {
           name: s.name,
-          answers: questions.map((q) => ({
-            questionName: q.name,
-            value: answers[questionKey(s.name, q)] ?? (q.type === 'checkboxes' ? [] : ''),
-          })),
+          answers: questions.map((q) => {
+            const raw = answers[questionKey(s.name, q)] ?? (q.type === 'checkboxes' ? [] : '')
+            return {
+              questionName: q.name,
+              // Cliniko stores/renders "paragraph" answers as HTML — its own
+              // editor wraps each line in real markup. Our plain <textarea>
+              // only gives back literal "\n" characters, which aren't markup
+              // and collapse to nothing once rendered as HTML, squashing
+              // every line into one run-on blob. Escape first (so a typed
+              // "<" or ">" isn't misread as a tag), then turn line breaks
+              // into real <br> tags so the spacing survives in Cliniko, PDF
+              // exports, and this portal's own note view.
+              value: q.type === 'paragraph' ? plainTextToParagraphHtml((raw as string) || '') : raw,
+            }
+          }),
         }
       })
       .filter((s): s is { name: string; answers: any[] } => s !== null)
