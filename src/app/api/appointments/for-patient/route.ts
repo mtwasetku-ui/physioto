@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
-import { isPatientAssignedToEmail } from '@/lib/db'
+import { isPatientAssignedToEmail, getSeriesIdsForAppointments } from '@/lib/db'
 import { listAppointmentsForPatient } from '@/lib/cliniko'
 
 // GET /api/appointments/for-patient?patientId=X — recent + upcoming
@@ -22,7 +22,15 @@ export async function GET(req: Request) {
 
   try {
     const appointments = await listAppointmentsForPatient(patientId)
-    return NextResponse.json({ appointments })
+    // Flag which ones belong to a repeat series — the patient page uses
+    // this to offer "cancel this and future occurrences" only where
+    // there's actually a series to cancel.
+    const seriesByAppointmentId = await getSeriesIdsForAppointments(appointments.map((a: any) => String(a.id)))
+    const withSeries = appointments.map((a: any) => ({
+      ...a,
+      seriesId: seriesByAppointmentId[String(a.id)] ?? null,
+    }))
+    return NextResponse.json({ appointments: withSeries })
   } catch (e: any) {
     return NextResponse.json({ error: e.message || 'Failed to load appointments' }, { status: 502 })
   }
