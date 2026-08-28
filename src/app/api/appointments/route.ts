@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
-import { addAssignment, getClinikoPractitionerIdForEmail, writeAuditLog } from '@/lib/db'
+import { addAssignment, getClinikoPractitionerIdForEmail, writeAuditLog, createAppointmentSeries } from '@/lib/db'
 import {
   listAppointmentTypesForPractice,
   createIndividualAppointment,
@@ -128,6 +128,25 @@ export async function POST(req: Request) {
 
   if (appointments.length === 0) {
     return NextResponse.json({ error: failures[0]?.error || 'Failed to book appointment' }, { status: 502 })
+  }
+
+  // Only worth recording as a "series" if more than one occurrence
+  // actually landed — a single appointment (repeat requested but every
+  // other date failed) has nothing to cancel-as-a-series later. Best
+  // effort: a failure here shouldn't undo bookings that already
+  // succeeded, it just means "cancel the rest of the series" won't be
+  // offered for these later.
+  if (repeat && repeat !== 'none' && appointments.length > 1) {
+    try {
+      await createAppointmentSeries({
+        email: auth.email!,
+        patientId,
+        frequency: repeat,
+        members: appointments.map((a: any) => ({ clinikoAppointmentId: String(a.id), startsAt: a.starts_at })),
+      })
+    } catch (e) {
+      console.error('[appointments] failed to record series membership', e)
+    }
   }
 
   await addAssignment(auth.email!, patientId, patientLabel)
