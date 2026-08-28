@@ -171,7 +171,7 @@ export default function PatientDetailClient({
       </div>
 
       {tab === 'note' && (
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
           <NoteForm patientId={patientId} authorEmail={authorEmail} initialAppointmentId={linkAppointmentId} />
           <div className="lg:sticky lg:top-4">
             <NoteHistoryPanel patientId={patientId} />
@@ -919,17 +919,27 @@ function NoteCard({ note, compact }: { note: any; compact?: boolean }) {
 // same idea as Cliniko's own "Previous notes" side panel. Reuses the
 // same /api/notes data as the full Visit history tab, just rendered
 // smaller and narrower.
+const NOTE_HISTORY_PAGE_SIZE = 5
+
 function NoteHistoryPanel({ patientId }: { patientId: string }) {
   const [notes, setNotes] = useState<any[] | null>(null)
   const [filter, setFilter] = useState('')
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
     setNotes(null)
+    setPage(1)
     fetch(`/api/notes?patientId=${patientId}`)
       .then((r) => r.json())
       .then((data) => setNotes(data.notes || []))
       .catch(() => setNotes([]))
   }, [patientId])
+
+  // Filtering changes which notes are in scope, so jump back to page 1
+  // rather than risk landing on a page number that no longer exists.
+  useEffect(() => {
+    setPage(1)
+  }, [filter])
 
   if (!notes) return <div className="text-muted-foreground text-sm">Loading previous notes…</div>
 
@@ -937,6 +947,11 @@ function NoteHistoryPanel({ patientId }: { patientId: string }) {
   const filtered = term
     ? notes.filter((n: any) => JSON.stringify(n.content?.sections || []).toLowerCase().includes(term))
     : notes
+
+  const pageCount = Math.max(1, Math.ceil(filtered.length / NOTE_HISTORY_PAGE_SIZE))
+  const currentPage = Math.min(page, pageCount)
+  const pageStart = (currentPage - 1) * NOTE_HISTORY_PAGE_SIZE
+  const paged = filtered.slice(pageStart, pageStart + NOTE_HISTORY_PAGE_SIZE)
 
   return (
     <div>
@@ -955,11 +970,36 @@ function NoteHistoryPanel({ patientId }: { patientId: string }) {
       ) : filtered.length === 0 ? (
         <p className="text-sm text-muted-foreground">No notes match &quot;{filter}&quot;.</p>
       ) : (
-        <div className="space-y-3">
-          {filtered.map((note: any) => (
-            <NoteCard key={note.id} note={note} compact />
-          ))}
-        </div>
+        <>
+          <div className="space-y-3">
+            {paged.map((note: any) => (
+              <NoteCard key={note.id} note={note} compact />
+            ))}
+          </div>
+          {pageCount > 1 && (
+            <div className="flex items-center justify-between mt-4 pt-3 border-t border-border">
+              <button
+                type="button"
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                className="text-sm font-medium text-primary disabled:text-muted-foreground disabled:cursor-not-allowed"
+              >
+                Previous
+              </button>
+              <span className="text-xs text-muted-foreground">
+                Page {currentPage} of {pageCount}
+              </span>
+              <button
+                type="button"
+                onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
+                disabled={currentPage === pageCount}
+                className="text-sm font-medium text-primary disabled:text-muted-foreground disabled:cursor-not-allowed"
+              >
+                Next
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   )
