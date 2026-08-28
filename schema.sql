@@ -41,3 +41,31 @@ create table if not exists audit_log (
 
 create index if not exists idx_audit_log_patient on audit_log(cliniko_patient_id);
 create index if not exists idx_audit_log_actor on audit_log(actor_email);
+
+-- Needed for gen_random_uuid() below.
+create extension if not exists pgcrypto;
+
+-- A "series" is a set of Cliniko appointments created together from one
+-- repeat booking (see /api/appointments POST — repeat/repeatCount).
+-- Cliniko itself has no concept of a series; each occurrence is created
+-- as an independent individual_appointment. This table is the only place
+-- that remembers which appointments belong together, so that cancelling
+-- one occurrence can offer "cancel this and all future ones in the
+-- series" as well as "just this one".
+create table if not exists appointment_series (
+  id                  uuid primary key default gen_random_uuid(),
+  email               text not null references allowed_emails(email) on delete cascade,
+  cliniko_patient_id  text not null,
+  frequency           text not null, -- 'weekly' | 'fortnightly' | 'monthly'
+  created_at          timestamptz not null default now()
+);
+
+create table if not exists appointment_series_members (
+  id                      serial primary key,
+  series_id               uuid not null references appointment_series(id) on delete cascade,
+  cliniko_appointment_id  text not null unique,
+  starts_at               timestamptz not null,
+  created_at              timestamptz not null default now()
+);
+
+create index if not exists idx_series_members_series on appointment_series_members(series_id);
