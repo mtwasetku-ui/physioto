@@ -850,14 +850,14 @@ function NoteCard({ note, compact }: { note: any; compact?: boolean }) {
     <div className={`bg-white border border-border rounded-lg ${compact ? 'p-3' : 'p-5'}`}>
       <div className="flex items-center justify-between mb-3 gap-2">
         <div className="min-w-0">
-          <span className={`font-medium text-foreground ${compact ? 'text-xs' : 'text-sm'}`}>
+          <span className={`font-medium text-foreground ${compact ? 'text-sm' : 'text-base'}`}>
             {new Date(note.visitDate || note.created_at).toLocaleDateString('en-AU', {
               day: 'numeric',
               month: 'long',
               year: compact ? undefined : 'numeric',
             })}
           </span>
-          <span className={`text-muted-foreground ml-2 ${compact ? 'text-xs' : 'text-xs'}`}>
+          <span className={`font-semibold text-primary ml-2 ${compact ? 'text-sm' : 'text-sm'}`}>
             {note.visitPractitionerName || note.authorDisplayName || note.title}
           </span>
         </div>
@@ -886,22 +886,22 @@ function NoteCard({ note, compact }: { note: any; compact?: boolean }) {
 
         return (
           <div key={s.name} className="mb-4 last:mb-0">
-            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">{s.name}</div>
+            <div className={`font-bold text-primary uppercase tracking-wide mb-2 ${compact ? 'text-xs' : 'text-sm'}`}>{s.name}</div>
             {answered.map(({ q, value }: any) => {
               if (q.type === 'paragraph') {
                 return (
                   <div key={`${s.name}::${q.name}`} className="mb-3 last:mb-0">
-                    <div className="text-xs font-medium text-foreground mb-0.5">{q.name}</div>
+                    <div className={`font-medium text-foreground mb-0.5 ${compact ? 'text-xs' : 'text-sm'}`}>{q.name}</div>
                     <RichAnswerHtml
                       html={value}
-                      className={`text-muted-foreground leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0 ${compact ? 'text-xs' : 'text-sm'}`}
+                      className={`text-muted-foreground leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0 ${compact ? 'text-sm' : 'text-base'}`}
                     />
                   </div>
                 )
               }
               const display = Array.isArray(value) ? value.join(', ') : value
               return (
-                <div key={`${s.name}::${q.name}`} className={`mb-1 ${compact ? 'text-xs' : 'text-sm'}`}>
+                <div key={`${s.name}::${q.name}`} className={`mb-1 ${compact ? 'text-sm' : 'text-base'}`}>
                   <span className="text-foreground font-medium">{q.name}: </span>
                   <span className="text-muted-foreground">{display}</span>
                 </div>
@@ -955,14 +955,14 @@ function NoteHistoryPanel({ patientId }: { patientId: string }) {
 
   return (
     <div>
-      <h2 className="text-sm font-semibold text-foreground mb-3">Previous notes</h2>
+      <h2 className="text-base font-semibold text-foreground mb-3">Previous notes</h2>
       {notes.length > 0 && (
         <input
           type="text"
           placeholder="Filter treatment notes…"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="w-full h-9 px-3 mb-3 rounded-md border border-input bg-white text-sm"
+          className="w-full h-10 px-3 mb-3 rounded-md border border-input bg-white text-base"
         />
       )}
       {notes.length === 0 ? (
