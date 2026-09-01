@@ -644,7 +644,7 @@ function NoteForm({
       </div>
 
       {appointmentsError && (
-        <div className="mb-4 text-xs text-destructive">Couldn&apos;t load visits to link: {appointmentsError}</div>
+        <div className="mb-4 text-xs text-muted-foreground">Couldn&apos;t load visits to link, please book a visit first.</div>
       )}
 
       {appointments.length > 0 && (
@@ -1170,7 +1170,10 @@ const CLIENT_CANCELLATION_REASONS = [
 // [id]/cancel already does server-side.
 function UpcomingAppointments({ patientId }: { patientId: string }) {
   const [appointments, setAppointments] = useState<any[] | null>(null)
-  const [loadError, setLoadError] = useState<string | null>(null)
+  // Not surfaced in the UI: an unassigned/unloadable state just falls
+  // through to "No upcoming appointments." below rather than showing
+  // a scary error box for something the patient/staff can't act on.
+  const [, setLoadError] = useState<string | null>(null)
   const [cancelingId, setCancelingId] = useState<string | null>(null)
   const [reason, setReason] = useState<number | ''>('')
   const [cancelNote, setCancelNote] = useState('')
@@ -1241,10 +1244,6 @@ function UpcomingAppointments({ patientId }: { patientId: string }) {
 
   if (appointments === null) {
     return <div className="text-muted-foreground text-sm mb-5">Loading upcoming appointments…</div>
-  }
-
-  if (loadError) {
-    return <div className="text-destructive text-sm mb-5">Couldn&apos;t load appointments: {loadError}</div>
   }
 
   const upcoming = appointments
