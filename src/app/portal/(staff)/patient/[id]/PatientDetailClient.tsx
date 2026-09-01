@@ -1180,6 +1180,37 @@ function UpcomingAppointments({ patientId }: { patientId: string }) {
   const [scope, setScope] = useState<'occurrence' | 'series'>('occurrence')
   const [cancelError, setCancelError] = useState<string | null>(null)
   const [cancelling, setCancelling] = useState(false)
+  // Appointment note — Cliniko's own `notes` field on the booking itself,
+  // not a treatment/clinical note. Visible in Cliniko's diary, not part of
+  // the patient's clinical record.
+  const [editingNoteId, setEditingNoteId] = useState<string | null>(null)
+  const [noteDraft, setNoteDraft] = useState('')
+  const [noteSaving, setNoteSaving] = useState(false)
+  const [noteError, setNoteError] = useState<string | null>(null)
+
+  function startEditNote(id: string, current: string) {
+    setEditingNoteId(id)
+    setNoteDraft(current)
+    setNoteError(null)
+  }
+
+  async function saveNote(id: string) {
+    setNoteSaving(true)
+    setNoteError(null)
+    const res = await fetch(`/api/appointments/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ notes: noteDraft }),
+    })
+    if (res.ok) {
+      setAppointments((prev) => (prev || []).map((a: any) => (String(a.id) === id ? { ...a, notes: noteDraft } : a)))
+      setEditingNoteId(null)
+    } else {
+      const body = await res.json().catch(() => null)
+      setNoteError(body?.error || `Failed to save note (HTTP ${res.status})`)
+    }
+    setNoteSaving(false)
+  }
 
   useEffect(() => {
     setAppointments(null)
@@ -1272,18 +1303,58 @@ function UpcomingAppointments({ patientId }: { patientId: string }) {
                         minute: '2-digit',
                       })}
                     </div>
-                    {a.notes && <p className="text-xs text-muted-foreground mt-0.5">{a.notes}</p>}
+                    {editingNoteId !== id && a.notes && (
+                      <p className="text-xs text-muted-foreground mt-0.5">{a.notes}</p>
+                    )}
                   </div>
-                  {cancelingId !== id && (
-                    <button
-                      type="button"
-                      onClick={() => startCancel(id)}
-                      className="text-xs px-2.5 py-1.5 rounded-md border border-input text-destructive hover:bg-red-50 whitespace-nowrap"
-                    >
-                      Cancel visit
-                    </button>
+                  {cancelingId !== id && editingNoteId !== id && (
+                    <div className="flex items-center gap-2 shrink-0">
+                      <button
+                        type="button"
+                        onClick={() => startEditNote(id, a.notes || '')}
+                        className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary whitespace-nowrap"
+                      >
+                        {a.notes ? 'Edit note' : 'Add note'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => startCancel(id)}
+                        className="text-xs px-2.5 py-1.5 rounded-md border border-input text-destructive hover:bg-red-50 whitespace-nowrap"
+                      >
+                        Cancel visit
+                      </button>
+                    </div>
                   )}
                 </div>
+
+                {editingNoteId === id && (
+                  <div className="mt-3 pt-3 border-t border-border space-y-2">
+                    <label className="text-xs font-medium text-muted-foreground block">
+                      Appointment note — visible on the booking in Cliniko, not the treatment record
+                    </label>
+                    <textarea
+                      value={noteDraft}
+                      onChange={(e) => setNoteDraft(e.target.value)}
+                      rows={3}
+                      placeholder="e.g. Patient asked to be reminded to bring their referral letter"
+                      className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
+                    />
+                    {noteError && <p className="text-xs text-destructive">{noteError}</p>}
+                    <div className="flex items-center gap-2">
+                      <Button size="sm" onClick={() => saveNote(id)} disabled={noteSaving}>
+                        {noteSaving ? 'Saving…' : 'Save note'}
+                      </Button>
+                      <button
+                        type="button"
+                        onClick={() => setEditingNoteId(null)}
+                        disabled={noteSaving}
+                        className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                )}
 
                 {cancelingId === id && (
                   <div className="mt-3 pt-3 border-t border-border space-y-2">
