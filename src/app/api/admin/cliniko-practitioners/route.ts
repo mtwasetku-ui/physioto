@@ -34,12 +34,21 @@ export async function GET() {
         'User-Agent': userAgent,
       },
     })
-    const data = await res.json()
+    // Cliniko's practitioner ids are ~19-digit numbers, well past
+    // Number.MAX_SAFE_INTEGER (~9e15). A plain res.json()/JSON.parse silently
+    // rounds them (e.g. 2029549485620733908 -> 2029549485620734000), which
+    // then can never match the exact id string stored in our database — the
+    // "Books as" picker looks unlinked even when the saved id is correct.
+    // Quote long integer "id" values in the raw text before parsing so they
+    // come through as exact strings instead of lossy numbers.
+    const rawText = await res.text()
+    const safeText = rawText.replace(/"id":(\d{16,})/g, '"id":"$1"')
+    const data = JSON.parse(safeText)
     if (!res.ok) {
       return NextResponse.json({ error: `Cliniko GET /practitioners failed: ${res.status}`, data }, { status: 502 })
     }
     const practitioners = (data.practitioners ?? []).map((p: any) => ({
-      practitioner_id: p.id,
+      practitioner_id: String(p.id),
       name: `${p.first_name ?? ''} ${p.last_name ?? ''}`.trim(),
       linked_user_url: p.user?.links?.self ?? null,
     }))
