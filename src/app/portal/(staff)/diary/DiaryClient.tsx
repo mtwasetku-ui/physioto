@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, StickyNote } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 interface DiaryAppointment {
   id: string
@@ -93,6 +94,13 @@ export default function DiaryClient() {
   const [error, setError] = useState<string | null>(null)
   const [drag, setDrag] = useState<DragState | null>(null)
   const [savingId, setSavingId] = useState<string | null>(null)
+  // Appointment note — Cliniko's own `notes` field on the booking itself,
+  // not a treatment/clinical note. Edited here via a small modal so a drag
+  // gesture on the block doesn't get mistaken for opening it.
+  const [noteModalId, setNoteModalId] = useState<string | null>(null)
+  const [noteDraft, setNoteDraft] = useState('')
+  const [noteSaving, setNoteSaving] = useState(false)
+  const [noteError, setNoteError] = useState<string | null>(null)
   const dragRef = useRef<DragState | null>(null)
   const dayColRefs = useRef<Array<HTMLDivElement | null>>([])
 
@@ -248,6 +256,35 @@ export default function DiaryClient() {
     setDrag(null)
   }
 
+  function openNoteModal(e: React.PointerEvent | React.MouseEvent, appt: DiaryAppointment) {
+    e.stopPropagation()
+    e.preventDefault()
+    dragRef.current = null
+    setDrag(null)
+    setNoteModalId(appt.id)
+    setNoteDraft(appt.notes || '')
+    setNoteError(null)
+  }
+
+  async function saveNote() {
+    if (!noteModalId) return
+    setNoteSaving(true)
+    setNoteError(null)
+    const res = await fetch(`/api/appointments/${noteModalId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ notes: noteDraft }),
+    })
+    if (res.ok) {
+      setAppointments((prev) => prev?.map((a) => (a.id === noteModalId ? { ...a, notes: noteDraft } : a)) ?? null)
+      setNoteModalId(null)
+    } else {
+      const body = await res.json().catch(() => null)
+      setNoteError(body?.error || `Failed to save note (HTTP ${res.status})`)
+    }
+    setNoteSaving(false)
+  }
+
   const columnTemplate = `56px repeat(7, minmax(130px, 1fr))`
 
   return (
@@ -376,8 +413,19 @@ export default function DiaryClient() {
                                 touchAction: 'none',
                               }}
                             >
-                              <div className={`font-semibold truncate ${appt.cancelledAt ? 'line-through' : ''}`}>
-                                {appt.patientName || 'Unknown patient'}
+                              <div className="flex items-start justify-between gap-1">
+                                <div className={`font-semibold truncate ${appt.cancelledAt ? 'line-through' : ''}`}>
+                                  {appt.patientName || 'Unknown patient'}
+                                </div>
+                                <button
+                                  type="button"
+                                  title={appt.notes ? 'Edit appointment note' : 'Add appointment note'}
+                                  onPointerDown={(e) => openNoteModal(e, appt)}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className={`shrink-0 rounded p-0.5 hover:bg-black/20 ${appt.notes ? 'opacity-100' : 'opacity-50'}`}
+                                >
+                                  <StickyNote size={11} />
+                                </button>
                               </div>
                               <div className="opacity-90 truncate">{timeRangeLabel(appt)}</div>
                             </div>
@@ -388,6 +436,42 @@ export default function DiaryClient() {
                   })}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {noteModalId && (
+        <div
+          className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4"
+          onClick={() => !noteSaving && setNoteModalId(null)}
+        >
+          <div className="bg-white rounded-lg p-5 max-w-sm w-full shadow-lg" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-sm font-semibold text-foreground mb-1">Appointment note</h3>
+            <p className="text-xs text-muted-foreground mb-3">
+              Visible on the booking in Cliniko — not part of the patient's treatment record.
+            </p>
+            <textarea
+              value={noteDraft}
+              onChange={(e) => setNoteDraft(e.target.value)}
+              rows={4}
+              autoFocus
+              placeholder="e.g. Patient asked to be reminded to bring their referral letter"
+              className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
+            />
+            {noteError && <p className="text-xs text-destructive mt-1">{noteError}</p>}
+            <div className="flex items-center gap-2 mt-3">
+              <Button size="sm" onClick={saveNote} disabled={noteSaving}>
+                {noteSaving ? 'Saving…' : 'Save note'}
+              </Button>
+              <button
+                type="button"
+                onClick={() => setNoteModalId(null)}
+                disabled={noteSaving}
+                className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
+              >
+                Cancel
+              </button>
             </div>
           </div>
         </div>
