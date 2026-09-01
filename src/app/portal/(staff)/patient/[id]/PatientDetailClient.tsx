@@ -39,6 +39,43 @@ function plainTextToParagraphHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>')
 }
 
+// Reverses plainTextToParagraphHtml, for loading a saved draft's paragraph
+// answers back into an editable plain-text textarea. <br> tags (and any
+// </p><p> paragraph breaks Cliniko's own editor may have produced) become
+// newlines first, then any remaining tags are stripped and the HTML
+// entities we escaped on save are unescaped.
+function paragraphHtmlToPlainText(html: string): string {
+  return html
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>\s*<p>/gi, '\n')
+    .replace(/<[^>]*>/g, '')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+}
+
+// Rebuilds the NoteForm `answers` state (keyed the same way the form
+// itself keys them — see questionKey) from a note as Cliniko returns it,
+// so continuing a draft restores what was already typed instead of
+// opening the form blank next to a read-only "Draft" copy.
+function answersFromNoteContent(note: any): Record<string, string | string[]> {
+  const answers: Record<string, string | string[]> = {}
+  for (const s of note?.content?.sections || []) {
+    for (const q of s.questions || []) {
+      const key = `${s.name}::${q.name}`
+      if (q.type === 'radiobuttons' || q.type === 'checkboxes') {
+        const selected = (q.answers || []).filter((a: any) => a.selected).map((a: any) => a.value)
+        answers[key] = q.type === 'checkboxes' ? selected : selected[0] ?? ''
+      } else if (q.type === 'paragraph') {
+        answers[key] = paragraphHtmlToPlainText(q.answer || '')
+      } else {
+        answers[key] = q.answer || ''
+      }
+    }
+  }
+  return answers
+}
+
 function sanitizedHtmlNode(node: ChildNode, key: string): React.ReactNode {
   if (node.nodeType === Node.TEXT_NODE) return node.textContent
   if (node.nodeType !== Node.ELEMENT_NODE) return null
@@ -429,23 +466,35 @@ function NoteForm({
     // Offer the physio's own most recent draft for this patient to continue,
     // rather than always starting blank. If that draft is already linked to
     // a visit, carry the link over so continuing a draft doesn't silently
-    // drop it.
+    // drop it. Also restore the answers already typed into it — otherwise
+    // the form re-opens blank (with existingDraftId quietly set), so
+    // "continuing" a draft looks like the draft can't be edited at all.
     fetch(`/api/notes?patientId=${patientId}&draftOnly=true`)
       .then((r) => r.json())
       .then((data) => {
         const mine = (data.notes || []).find((n: any) => n.title === authorEmail && n.draft)
         if (mine) {
           setExistingDraftId(mine.id)
+          setAnswers(answersFromNoteContent(mine))
           // Cliniko only gives us the booking as a link
           // (".../bookings/{id}") on the note, not a flat id — pull the id
           // off the end of that URL.
           const bookingSelf = mine.booking?.links?.self as string | undefined
           const existingBookingId = bookingSelf?.split('/').filter(Boolean).pop()
           if (existingBookingId) setBookingId(existingBookingId)
+          // The draft may have been started on a different template than
+          // whatever the dropdown currently shows — switch to match so the
+          // restored answers actually line up with the sections rendered.
+          const templateSelf = mine.treatment_note_template?.links?.self as string | undefined
+          const draftTemplateId = templateSelf?.split('/').filter(Boolean).pop()
+          if (draftTemplateId) {
+            const draftTemplate = templates?.find((t) => String(t.id) === draftTemplateId)
+            if (draftTemplate && draftTemplate.name !== templateName) setTemplateName(draftTemplate.name)
+          }
         }
       })
       .catch(() => {})
-  }, [patientId, templateName, authorEmail])
+  }, [patientId, templateName, authorEmail, templates])
 
   const template = templates?.find((t) => t.name === templateName)
 
