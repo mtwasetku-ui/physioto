@@ -289,6 +289,10 @@ type AuditAction =
   | 'portal_assignment_add'
   | 'portal_assignment_remove'
   | 'portal_login'
+  | 'sms_request_create'
+  | 'sms_request_mark_sent'
+  | 'sms_request_reply'
+  | 'sms_request_close'
 
 export async function writeAuditLog(params: {
   actorEmail: string
@@ -399,4 +403,127 @@ export async function listFutureSeriesMembers(
     clinikoAppointmentId: r.cliniko_appointment_id,
     startsAt: r.starts_at,
   }))
+}
+
+// ── SMS requests ─────────────────────────────────────────────────
+//
+// There's no real SMS provider wired up (Cliniko's API can't send SMS —
+// only its own UI can). This is a manual relay instead: a practitioner
+// asks for a text to go out, Micheal sees it on the admin queue and
+// sends it from his own phone, then pastes the patient's reply back in
+// so it shows up for the practitioner. Low-volume by design.
+
+export type SmsRequestStatus = 'pending' | 'sent' | 'replied' | 'closed'
+
+export interface SmsRequestRow {
+  id: number
+  cliniko_patient_id: string
+  appointment_id: string | null
+  requested_by_email: string
+  patient_name: string | null
+  patient_phone: string | null
+  message: string
+  status: SmsRequestStatus
+  reply_body: string | null
+  created_at: string
+  sent_at: string | null
+  replied_at: string | null
+  closed_at: string | null
+}
+
+export async function createSmsRequest(params: {
+  clinikoPatientId: string
+  appointmentId?: string | null
+  requestedByEmail: string
+  patientName?: string | null
+  patientPhone?: string | null
+  message: string
+}): Promise<SmsRequestRow> {
+  const rows = await sql`
+    insert into sms_requests
+      (cliniko_patient_id, appointment_id, requested_by_email, patient_name, patient_phone, message)
+    values (
+      ${params.clinikoPatientId},
+      ${params.appointmentId ?? null},
+      ${params.requestedByEmail.toLowerCase()},
+      ${params.patientName ?? null},
+      ${params.patientPhone ?? null},
+      ${params.message}
+    )
+    returning *, ${PG_IDENTITY_FRAGMENT}
+  `
+  console.log(`[db:createSmsRequest] ${dbIdentity()} patientId=${params.clinikoPatientId} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
+  if (rows.length === 0) {
+    throw new Error(`createSmsRequest: insert affected 0 rows for patient ${params.clinikoPatientId} (db=${dbIdentity()})`)
+  }
+  return stripPgIdentity(rows[0]) as SmsRequestRow
+}
+
+// Practitioner-facing: their own requests for one patient, newest first.
+export async function listSmsRequestsForPatient(patientId: string): Promise<SmsRequestRow[]> {
+  const rows = await sql`
+    select * from sms_requests
+    where cliniko_patient_id = ${patientId}
+    order by created_at desc
+  `
+  return rows as SmsRequestRow[]
+}
+
+// Admin queue: anything not yet closed, oldest first so the longest-
+// waiting request is handled first.
+export async function listOpenSmsRequests(): Promise<SmsRequestRow[]> {
+  const rows = await sql`
+    select *, ${PG_IDENTITY_FRAGMENT} from sms_requests
+    where status != 'closed'
+    order by created_at asc
+  `
+  return rows.map(stripPgIdentity) as SmsRequestRow[]
+}
+
+// A short tail of recently closed requests, for context on the admin
+// page without it growing forever.
+export async function listRecentlyClosedSmsRequests(limit = 15): Promise<SmsRequestRow[]> {
+  const rows = await sql`
+    select * from sms_requests
+    where status = 'closed'
+    order by closed_at desc
+    limit ${limit}
+  `
+  return rows as SmsRequestRow[]
+}
+
+export async function markSmsRequestSent(id: number): Promise<SmsRequestRow> {
+  const rows = await sql`
+    update sms_requests
+    set status = 'sent', sent_at = now()
+    where id = ${id}
+    returning *, ${PG_IDENTITY_FRAGMENT}
+  `
+  console.log(`[db:markSmsRequestSent] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  if (rows.length === 0) throw new Error(`markSmsRequestSent: update affected 0 rows for id=${id} (db=${dbIdentity()})`)
+  return stripPgIdentity(rows[0]) as SmsRequestRow
+}
+
+export async function addSmsReply(id: number, replyBody: string): Promise<SmsRequestRow> {
+  const rows = await sql`
+    update sms_requests
+    set status = 'replied', reply_body = ${replyBody}, replied_at = now()
+    where id = ${id}
+    returning *, ${PG_IDENTITY_FRAGMENT}
+  `
+  console.log(`[db:addSmsReply] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  if (rows.length === 0) throw new Error(`addSmsReply: update affected 0 rows for id=${id} (db=${dbIdentity()})`)
+  return stripPgIdentity(rows[0]) as SmsRequestRow
+}
+
+export async function closeSmsRequest(id: number): Promise<SmsRequestRow> {
+  const rows = await sql`
+    update sms_requests
+    set status = 'closed', closed_at = now()
+    where id = ${id}
+    returning *, ${PG_IDENTITY_FRAGMENT}
+  `
+  console.log(`[db:closeSmsRequest] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  if (rows.length === 0) throw new Error(`closeSmsRequest: update affected 0 rows for id=${id} (db=${dbIdentity()})`)
+  return stripPgIdentity(rows[0]) as SmsRequestRow
 }
