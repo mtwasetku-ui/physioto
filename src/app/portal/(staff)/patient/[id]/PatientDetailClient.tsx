@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock, Pencil, X } from 'lucide-react'
+import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock, Pencil, X, StickyNote } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { ClinikoPatientInfo } from '@/lib/cliniko'
 import { TIME_OPTIONS } from '@/lib/timeOptions'
@@ -719,6 +719,16 @@ function NoteForm({
           </div>
           {arriveError && <p className="text-xs text-destructive mt-1">{arriveError}</p>}
           {dnaError && <p className="text-xs text-destructive mt-1">{dnaError}</p>}
+
+          {bookingId && selectedAppointment?.notes && (
+            <div className="mt-2 flex items-start gap-1.5 text-xs text-muted-foreground bg-secondary/50 rounded-md px-2.5 py-2 max-w-sm">
+              <StickyNote size={13} className="mt-0.5 shrink-0" />
+              <span>
+                <span className="font-medium text-foreground">Appointment note: </span>
+                {selectedAppointment.notes}
+              </span>
+            </div>
+          )}
         </div>
       )}
 
