@@ -1677,14 +1677,14 @@ interface SmsRequestItem {
 }
 
 const SMS_STATUS_LABEL: Record<SmsRequestItem['status'], string> = {
-  pending: 'Waiting to be sent',
+  pending: 'Sent — awaiting reply',
   sent: 'Sent — awaiting reply',
   replied: 'Patient replied',
   closed: 'Closed',
 }
 
 const SMS_STATUS_STYLE: Record<SmsRequestItem['status'], string> = {
-  pending: 'bg-amber-100 text-amber-800',
+  pending: 'bg-blue-100 text-blue-800',
   sent: 'bg-blue-100 text-blue-800',
   replied: 'bg-emerald-100 text-emerald-800',
   closed: 'bg-gray-100 text-gray-600',
@@ -1730,7 +1730,7 @@ function SmsPanel({ patientId }: { patientId: string }) {
       </div>
 
       <div className="mb-6">
-        <label className="text-xs font-medium text-muted-foreground block mb-1">Request a text to this patient</label>
+        <label className="text-xs font-medium text-muted-foreground block mb-1">Text this patient</label>
         <textarea
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
@@ -1740,7 +1740,7 @@ function SmsPanel({ patientId }: { patientId: string }) {
         />
         {error && <p className="text-xs text-destructive mt-1">{error}</p>}
         <Button size="sm" className="mt-2" onClick={submit} disabled={sending || !draft.trim()}>
-          {sending ? 'Sending request…' : 'Send request'}
+          {sending ? 'Sending…' : 'Send'}
         </Button>
       </div>
 
