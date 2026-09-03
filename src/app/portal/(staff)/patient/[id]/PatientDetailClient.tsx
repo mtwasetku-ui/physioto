@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock, Pencil, X, StickyNote } from 'lucide-react'
+import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock, Pencil, X, StickyNote, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { ClinikoPatientInfo } from '@/lib/cliniko'
 import { TIME_OPTIONS } from '@/lib/timeOptions'
 
-type Tab = 'note' | 'timeline' | 'attachments' | 'book'
+type Tab = 'note' | 'timeline' | 'attachments' | 'book' | 'messages'
 
 // ── Safe HTML rendering for "paragraph" question answers ─────────
 //
@@ -190,6 +190,7 @@ export default function PatientDetailClient({
             ['timeline', 'Visit history', Clock],
             ['attachments', 'Attachments', Paperclip],
             ['book', 'Book visit', Calendar],
+            ['messages', 'Messages', MessageSquare],
           ] as const
         ).map(([id, label, Icon]) => (
           <button
@@ -223,6 +224,7 @@ export default function PatientDetailClient({
           <BookVisit patientId={patientId} patientLabel={`${patient.firstName} ${patient.lastName}`.trim()} />
         </>
       )}
+      {tab === 'messages' && <SmsPanel patientId={patientId} />}
     </div>
   )
 }
@@ -1654,6 +1656,122 @@ function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabe
         {status === 'error' && <span className="text-sm text-destructive font-medium">{error}</span>}
         {status === 'saved' && error && <span className="text-sm text-amber-700 font-medium">{error}</span>}
       </div>
+    </div>
+  )
+}
+
+// ── SMS panel ────────────────────────────────────────────────────
+//
+// Not a real send/receive integration — Cliniko's API can't send SMS,
+// and a full third-party provider isn't worth wiring up for how rarely
+// this gets used. Instead this is a manual relay: request goes to
+// Micheal's admin queue, he texts the patient from his own phone, and
+// pastes the reply back in here.
+
+interface SmsRequestItem {
+  id: number
+  message: string
+  status: 'pending' | 'sent' | 'replied' | 'closed'
+  reply_body: string | null
+  created_at: string
+}
+
+const SMS_STATUS_LABEL: Record<SmsRequestItem['status'], string> = {
+  pending: 'Waiting to be sent',
+  sent: 'Sent — awaiting reply',
+  replied: 'Patient replied',
+  closed: 'Closed',
+}
+
+const SMS_STATUS_STYLE: Record<SmsRequestItem['status'], string> = {
+  pending: 'bg-amber-100 text-amber-800',
+  sent: 'bg-blue-100 text-blue-800',
+  replied: 'bg-emerald-100 text-emerald-800',
+  closed: 'bg-gray-100 text-gray-600',
+}
+
+function SmsPanel({ patientId }: { patientId: string }) {
+  const [requests, setRequests] = useState<SmsRequestItem[] | null>(null)
+  const [draft, setDraft] = useState('')
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetch(`/api/sms-requests?patientId=${patientId}`)
+      .then((r) => r.json())
+      .then((data) => setRequests(data.requests || []))
+      .catch(() => setRequests([]))
+  }, [patientId])
+
+  async function submit() {
+    if (!draft.trim()) return
+    setSending(true)
+    setError(null)
+    const res = await fetch('/api/sms-requests', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ patientId, message: draft.trim() }),
+    })
+    if (res.ok) {
+      const { request } = await res.json()
+      setRequests((prev) => [request, ...(prev || [])])
+      setDraft('')
+    } else {
+      const body = await res.json().catch(() => null)
+      setError(body?.error || `Failed to send request (HTTP ${res.status})`)
+    }
+    setSending(false)
+  }
+
+  return (
+    <div className="max-w-xl">
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-5 text-xs text-amber-800">
+        This doesn't send an SMS directly. Micheal sends it from his own phone and pastes the patient's reply back
+        here.
+      </div>
+
+      <div className="mb-6">
+        <label className="text-xs font-medium text-muted-foreground block mb-1">Request a text to this patient</label>
+        <textarea
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          rows={3}
+          placeholder="What should the message say?"
+          className="w-full px-3 py-2 rounded-md border border-input text-sm"
+        />
+        {error && <p className="text-xs text-destructive mt-1">{error}</p>}
+        <Button size="sm" className="mt-2" onClick={submit} disabled={sending || !draft.trim()}>
+          {sending ? 'Sending request…' : 'Send request'}
+        </Button>
+      </div>
+
+      {requests === null ? (
+        <p className="text-sm text-muted-foreground">Loading…</p>
+      ) : requests.length === 0 ? (
+        <p className="text-sm text-muted-foreground">No messages yet.</p>
+      ) : (
+        <div className="space-y-3">
+          {requests.map((r) => (
+            <div key={r.id} className="border border-border rounded-lg p-3">
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-xs text-muted-foreground">
+                  {new Date(r.created_at).toLocaleString('en-AU', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' })}
+                </span>
+                <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${SMS_STATUS_STYLE[r.status]}`}>
+                  {SMS_STATUS_LABEL[r.status]}
+                </span>
+              </div>
+              <p className="text-sm text-foreground">{r.message}</p>
+              {r.reply_body && (
+                <div className="mt-2 pt-2 border-t border-border">
+                  <p className="text-xs font-medium text-muted-foreground mb-0.5">Reply:</p>
+                  <p className="text-sm text-foreground">{r.reply_body}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
