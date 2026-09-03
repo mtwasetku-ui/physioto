@@ -1726,8 +1726,7 @@ function SmsPanel({ patientId }: { patientId: string }) {
   return (
     <div className="max-w-xl">
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-5 text-xs text-amber-800">
-        This doesn't send an SMS directly. Micheal sends it from his own phone and pastes the patient's reply back
-        here.
+        Messages here go out shortly after you submit them, and replies appear in this thread once received.
       </div>
 
       <div className="mb-6">
