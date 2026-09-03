@@ -14,6 +14,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               Portal Admin
             </Link>
             <div className="flex items-center gap-4">
+              <Link href="/admin/sms" className="text-sm text-muted-foreground hover:text-foreground">
+                SMS requests
+              </Link>
               <Link href="/portal" className="text-sm text-muted-foreground hover:text-foreground">
                 Back to portal
               </Link>
