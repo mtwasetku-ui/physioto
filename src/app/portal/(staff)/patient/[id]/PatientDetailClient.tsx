@@ -1451,6 +1451,16 @@ function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabe
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
   const [notes, setNotes] = useState('')
+  // Optional travel time either side of the visit — created as local
+  // travel blocks (see /api/travel-blocks) once the booking itself
+  // succeeds, never sent to Cliniko. Both default to 0/off so booking a
+  // normal visit isn't slowed down by a decision most patients don't need;
+  // for a repeat series, the same before/after minutes are applied to
+  // every occurrence, since travel to the same address is usually the same
+  // each time.
+  const [travelBeforeMin, setTravelBeforeMin] = useState(0)
+  const [travelAfterMin, setTravelAfterMin] = useState(0)
+  const [travelWarning, setTravelWarning] = useState<string | null>(null)
   const [repeat, setRepeat] = useState<'none' | 'weekly' | 'fortnightly' | 'monthly'>('none')
   const [repeatCount, setRepeatCount] = useState(4)
   const [repeatError, setRepeatError] = useState<string | null>(null)
@@ -1503,6 +1513,7 @@ function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabe
     }
     setStatus('saving')
     setError(null)
+    setTravelWarning(null)
     const startsAt = new Date(`${date}T${time}:00`).toISOString()
 
     const res = await fetch('/api/appointments', {
@@ -1526,9 +1537,56 @@ function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabe
       if (body?.failures?.length) {
         setError(`${body.failures.length} of ${repeatCount} in the series couldn't be booked — Cliniko rejected those dates.`)
       }
+
+      // Travel time is entirely best-effort here: the visit itself is
+      // already booked by this point, so a travel-block failure shouldn't
+      // read as a booking failure — just a separate warning underneath.
+      if ((travelBeforeMin > 0 || travelAfterMin > 0) && body?.appointments?.length) {
+        const label = patientLabel || 'visit'
+        const travelCalls = body.appointments.flatMap((a: any) => {
+          const calls: Promise<Response>[] = []
+          if (travelBeforeMin > 0) {
+            calls.push(
+              fetch('/api/travel-blocks', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  startsAt: new Date(new Date(a.starts_at).getTime() - travelBeforeMin * 60_000).toISOString(),
+                  endsAt: a.starts_at,
+                  label: `Travel to ${label}`,
+                  linkedAppointmentId: a.id,
+                }),
+              })
+            )
+          }
+          if (travelAfterMin > 0) {
+            calls.push(
+              fetch('/api/travel-blocks', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  startsAt: a.ends_at,
+                  endsAt: new Date(new Date(a.ends_at).getTime() + travelAfterMin * 60_000).toISOString(),
+                  label: `Travel from ${label}`,
+                  linkedAppointmentId: a.id,
+                }),
+              })
+            )
+          }
+          return calls
+        })
+        const results = await Promise.all(travelCalls)
+        const failedCount = results.filter((r) => !r.ok).length
+        if (failedCount > 0) {
+          setTravelWarning(`Visit booked, but ${failedCount} travel-time block${failedCount > 1 ? 's' : ''} couldn't be added.`)
+        }
+      }
+
       setDate('')
       setTime('')
       setNotes('')
+      setTravelBeforeMin(0)
+      setTravelAfterMin(0)
       setRepeat('none')
       setRepeatCount(4)
     } else {
@@ -1610,6 +1668,19 @@ function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabe
         </div>
 
         <div>
+          <label className="text-sm font-medium text-foreground block mb-1.5">
+            Travel time <span className="font-normal text-muted-foreground">(optional)</span>
+          </label>
+          <div className="flex items-center gap-3">
+            <TravelStepper label="Before" minutes={travelBeforeMin} onChange={setTravelBeforeMin} />
+            <TravelStepper label="After" minutes={travelAfterMin} onChange={setTravelAfterMin} />
+          </div>
+          {repeat !== 'none' && (travelBeforeMin > 0 || travelAfterMin > 0) && (
+            <p className="text-xs text-muted-foreground mt-1.5">Applied to every appointment in the series.</p>
+          )}
+        </div>
+
+        <div>
           <label className="text-sm font-medium text-foreground block mb-1.5">Repeat</label>
           <select
             className="w-full border border-input rounded-md px-3 py-2 text-sm bg-white"
@@ -1656,6 +1727,37 @@ function BookVisit({ patientId, patientLabel }: { patientId: string; patientLabe
         {status === 'error' && <span className="text-sm text-destructive font-medium">{error}</span>}
         {status === 'saved' && error && <span className="text-sm text-amber-700 font-medium">{error}</span>}
       </div>
+      {status === 'saved' && travelWarning && <p className="text-sm text-amber-700 font-medium mt-2">{travelWarning}</p>}
+    </div>
+  )
+}
+
+// A compact +/- stepper in 5-minute increments, used for the optional
+// travel-time fields above. Plain number input would work too, but +/-
+// buttons make "0 = off" obvious and are easier to nudge on mobile than
+// typing into a tiny input.
+function TravelStepper({ label, minutes, onChange }: { label: string; minutes: number; onChange: (m: number) => void }) {
+  return (
+    <div className="flex items-center gap-1.5 border border-input rounded-md px-2 py-1.5">
+      <span className="text-xs text-muted-foreground w-10">{label}</span>
+      <button
+        type="button"
+        onClick={() => onChange(Math.max(0, minutes - 5))}
+        disabled={minutes === 0}
+        className="h-6 w-6 rounded border border-input text-sm leading-none flex items-center justify-center hover:bg-secondary disabled:opacity-40"
+        aria-label={`Decrease ${label.toLowerCase()} travel time`}
+      >
+        −
+      </button>
+      <span className="text-sm text-foreground w-12 text-center tabular-nums">{minutes > 0 ? `${minutes} min` : 'None'}</span>
+      <button
+        type="button"
+        onClick={() => onChange(Math.min(120, minutes + 5))}
+        className="h-6 w-6 rounded border border-input text-sm leading-none flex items-center justify-center hover:bg-secondary"
+        aria-label={`Increase ${label.toLowerCase()} travel time`}
+      >
+        +
+      </button>
     </div>
   )
 }
