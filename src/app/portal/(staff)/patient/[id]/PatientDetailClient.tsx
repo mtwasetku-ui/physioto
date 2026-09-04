@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock, Pencil, X, StickyNote, MessageSquare } from 'lucide-react'
+import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock, Pencil, X, StickyNote, MessageSquare, Copy } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { ClinikoPatientInfo } from '@/lib/cliniko'
 import { TIME_OPTIONS } from '@/lib/timeOptions'
@@ -423,6 +423,7 @@ function NoteForm({
   const [arriveError, setArriveError] = useState<string | null>(null)
   const [markingDna, setMarkingDna] = useState(false)
   const [dnaError, setDnaError] = useState<string | null>(null)
+  const [previousNote, setPreviousNote] = useState<any | null>(null)
 
   useEffect(() => {
     fetch('/api/templates')
@@ -497,6 +498,24 @@ function NoteForm({
       })
       .catch(() => {})
   }, [patientId, templateName, authorEmail, templates])
+
+  useEffect(() => {
+    // The most recent OTHER note for this patient — offered as a
+    // "copy from last visit" shortcut on each field (Treatment, Plan,
+    // etc.) so a physio isn't retyping an exercise list that hasn't
+    // changed since last time. Excludes whichever note this form is
+    // itself currently continuing, so it's never offering to copy a
+    // draft into itself.
+    fetch(`/api/notes?patientId=${patientId}`)
+      .then((r) => r.json())
+      .then((data) => {
+        const notes = (data.notes || []).filter((n: any) => n.id !== existingDraftId)
+        setPreviousNote(notes[0] || null)
+      })
+      .catch(() => setPreviousNote(null))
+  }, [patientId, existingDraftId])
+
+  const previousAnswers = previousNote ? answersFromNoteContent(previousNote) : {}
 
   const template = templates?.find((t) => t.name === templateName)
 
@@ -756,6 +775,7 @@ function NoteForm({
                       key={key}
                       question={q}
                       value={answers[key]}
+                      previousValue={previousAnswers[key]}
                       onChange={(v) => setAnswers((a) => ({ ...a, [key]: v }))}
                     />
                   )
@@ -786,33 +806,72 @@ function NoteForm({
   )
 }
 
+// Small "copy from last visit" affordance shown next to a field's label
+// when the previous note had something here worth reusing — e.g. a
+// Treatment or Plan that's mostly unchanged visit to visit. Hidden once
+// the current value already matches, so it doesn't linger after use.
+function CopyPreviousButton({ onCopy, preview }: { onCopy: () => void; preview: string }) {
+  return (
+    <button
+      type="button"
+      onClick={onCopy}
+      title={`Copy from last visit: ${preview}`}
+      className="flex items-center gap-1 text-xs text-primary hover:underline shrink-0 whitespace-nowrap"
+    >
+      <Copy size={12} /> Copy last visit
+    </button>
+  )
+}
+
 function QuestionField({
   question,
   value,
+  previousValue,
   onChange,
 }: {
   question: Question
   value: string | string[] | undefined
+  previousValue?: string | string[]
   onChange: (v: string | string[]) => void
 }) {
-  if (question.type === 'paragraph') {
+  if (question.type === 'paragraph' || question.type === 'text') {
+    const prevText = typeof previousValue === 'string' ? previousValue : ''
+    const currentText = (value as string) || ''
+    const showCopy = !!prevText && prevText !== currentText
     return (
       <div>
-        <label className="text-sm font-medium text-foreground block mb-1.5">{question.name}</label>
-        <textarea
-          value={(value as string) || ''}
-          onChange={(e) => onChange(e.target.value)}
-          rows={4}
-          className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        />
+        <div className="flex items-center justify-between gap-2 mb-1.5">
+          <label className="text-sm font-medium text-foreground">{question.name}</label>
+          {showCopy && <CopyPreviousButton onCopy={() => onChange(prevText)} preview={prevText} />}
+        </div>
+        {question.type === 'paragraph' ? (
+          <textarea
+            value={currentText}
+            onChange={(e) => onChange(e.target.value)}
+            rows={4}
+            className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          />
+        ) : (
+          <input
+            type="text"
+            value={currentText}
+            onChange={(e) => onChange(e.target.value)}
+            className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          />
+        )}
       </div>
     )
   }
 
   if (question.type === 'radiobuttons') {
+    const prevOpt = typeof previousValue === 'string' ? previousValue : ''
+    const showCopy = !!prevOpt && prevOpt !== value
     return (
       <div>
-        <label className="text-sm font-medium text-foreground block mb-1.5">{question.name}</label>
+        <div className="flex items-center justify-between gap-2 mb-1.5">
+          <label className="text-sm font-medium text-foreground">{question.name}</label>
+          {showCopy && <CopyPreviousButton onCopy={() => onChange(prevOpt)} preview={prevOpt} />}
+        </div>
         <div className="flex flex-wrap gap-2">
           {(question.answers || []).map((a) => a.value).map((opt) => (
             <button
@@ -833,9 +892,18 @@ function QuestionField({
 
   if (question.type === 'checkboxes') {
     const selected = (value as string[]) || []
+    const prevSelected = Array.isArray(previousValue) ? previousValue : []
+    const showCopy =
+      prevSelected.length > 0 &&
+      (prevSelected.length !== selected.length || prevSelected.some((v) => !selected.includes(v)))
     return (
       <div>
-        <label className="text-sm font-medium text-foreground block mb-1.5">{question.name}</label>
+        <div className="flex items-center justify-between gap-2 mb-1.5">
+          <label className="text-sm font-medium text-foreground">{question.name}</label>
+          {showCopy && (
+            <CopyPreviousButton onCopy={() => onChange(prevSelected)} preview={prevSelected.join(', ')} />
+          )}
+        </div>
         <div className="flex flex-wrap gap-2">
           {(question.answers || []).map((a) => a.value).map((opt) => {
             const active = selected.includes(opt)
@@ -857,7 +925,7 @@ function QuestionField({
     )
   }
 
-  // 'text' and any unrecognised-but-simple types fall back to a single-line input
+  // Any unrecognised-but-simple type falls back to a single-line input
   return (
     <div>
       <label className="text-sm font-medium text-foreground block mb-1.5">{question.name}</label>
