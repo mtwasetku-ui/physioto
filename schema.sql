@@ -1,71 +1,87 @@
--- Physio to Home — Staff Portal schema
--- Run against Vercel Postgres. Safe to re-run (IF NOT EXISTS guards).
+// ── Travel blocks ────────────────────────────────────────────────
+//
+// Local-only diary markers (see schema.sql) — never touch Cliniko. Every
+// function here is scoped by email so a physio can only see/move/delete
+// their own travel time, mirroring the assignment-based scoping used for
+// appointments elsewhere in this file.
 
-create table if not exists allowed_emails (
-  id            serial primary key,
-  email         text not null unique,
-  display_name  text,
-  created_at    timestamptz not null default now()
-);
+export interface TravelBlockRow {
+  id: string
+  email: string
+  starts_at: string
+  ends_at: string
+  label: string
+  linked_appointment_id: string | null
+  created_at: string
+  updated_at: string
+}
 
--- Added after initial launch — was already live in production but missing
--- from this file (schema drift). Included here so a fresh database matches
--- what's actually deployed.
-alter table allowed_emails add column if not exists cliniko_practitioner_id text;
+export async function listTravelBlocksForEmailInRange(
+  email: string,
+  fromISO: string,
+  toISO: string
+): Promise<TravelBlockRow[]> {
+  const rows = await sql`
+    select * from travel_blocks
+    where email = ${email.toLowerCase()} and starts_at < ${toISO} and ends_at > ${fromISO}
+    order by starts_at asc
+  `
+  return rows as TravelBlockRow[]
+}
 
--- Updated on every /portal/* page load (see middleware.ts) — "last active",
--- distinct from a login event: a practitioner can stay signed in (JWT
--- session) for days without hitting the Email provider's sign-in flow
--- again, so this is the more useful "are they actually using it" signal.
-alter table allowed_emails add column if not exists last_seen_at timestamptz;
+export async function createTravelBlock(params: {
+  email: string
+  startsAt: string
+  endsAt: string
+  label?: string
+  linkedAppointmentId?: string | null
+}): Promise<TravelBlockRow> {
+  const rows = await sql`
+    insert into travel_blocks (email, starts_at, ends_at, label, linked_appointment_id)
+    values (
+      ${params.email.toLowerCase()},
+      ${params.startsAt},
+      ${params.endsAt},
+      ${params.label?.trim() || 'Travel'},
+      ${params.linkedAppointmentId ?? null}
+    )
+    returning *, ${PG_IDENTITY_FRAGMENT}
+  `
+  console.log(`[db:createTravelBlock] ${dbIdentity()} email=${params.email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
+  if (rows.length === 0) {
+    throw new Error(`createTravelBlock: insert affected 0 rows for ${params.email} (db=${dbIdentity()})`)
+  }
+  return stripPgIdentity(rows[0]) as TravelBlockRow
+}
 
-create table if not exists patient_assignments (
-  id            serial primary key,
-  email         text not null references allowed_emails(email) on delete cascade,
-  cliniko_patient_id text not null,
-  patient_label text, -- e.g. "Jane Smith" — cached label so the admin UI doesn't need a live Cliniko call to render the list
-  created_at    timestamptz not null default now(),
-  unique (email, cliniko_patient_id)
-);
+// Ownership is enforced with `where email = ...` on the update/delete
+// itself (not a separate select-then-check) — a travel block belonging to
+// someone else simply doesn't match and the update affects 0 rows, which
+// the caller reports as a 404 rather than distinguishing "not found" from
+// "not yours" (no reason to leak the difference).
+export async function updateTravelBlock(
+  id: string,
+  email: string,
+  params: { startsAt?: string; endsAt?: string; label?: string }
+): Promise<TravelBlockRow | null> {
+  const rows = await sql`
+    update travel_blocks
+    set
+      starts_at = coalesce(${params.startsAt ?? null}, starts_at),
+      ends_at = coalesce(${params.endsAt ?? null}, ends_at),
+      label = coalesce(${params.label?.trim() || null}, label),
+      updated_at = now()
+    where id = ${id} and email = ${email.toLowerCase()}
+    returning *
+  `
+  return (rows[0] as TravelBlockRow | undefined) ?? null
+}
 
-create index if not exists idx_patient_assignments_email on patient_assignments(email);
-
-create table if not exists audit_log (
-  id              serial primary key,
-  actor_email     text not null,
-  action          text not null, -- 'note_create' | 'note_update' | 'attachment_upload' | 'attachment_view' | 'admin_email_add' | 'admin_email_remove' | 'admin_assignment_add' | 'admin_assignment_remove'
-  cliniko_patient_id text,
-  detail          jsonb,
-  created_at      timestamptz not null default now()
-);
-
-create index if not exists idx_audit_log_patient on audit_log(cliniko_patient_id);
-create index if not exists idx_audit_log_actor on audit_log(actor_email);
-
--- Needed for gen_random_uuid() below.
-create extension if not exists pgcrypto;
-
--- A "series" is a set of Cliniko appointments created together from one
--- repeat booking (see /api/appointments POST — repeat/repeatCount).
--- Cliniko itself has no concept of a series; each occurrence is created
--- as an independent individual_appointment. This table is the only place
--- that remembers which appointments belong together, so that cancelling
--- one occurrence can offer "cancel this and all future ones in the
--- series" as well as "just this one".
-create table if not exists appointment_series (
-  id                  uuid primary key default gen_random_uuid(),
-  email               text not null references allowed_emails(email) on delete cascade,
-  cliniko_patient_id  text not null,
-  frequency           text not null, -- 'weekly' | 'fortnightly' | 'monthly'
-  created_at          timestamptz not null default now()
-);
-
-create table if not exists appointment_series_members (
-  id                      serial primary key,
-  series_id               uuid not null references appointment_series(id) on delete cascade,
-  cliniko_appointment_id  text not null unique,
-  starts_at               timestamptz not null,
-  created_at              timestamptz not null default now()
-);
-
-create index if not exists idx_series_members_series on appointment_series_members(series_id);
+export async function deleteTravelBlock(id: string, email: string): Promise<boolean> {
+  const rows = await sql`
+    delete from travel_blocks
+    where id = ${id} and email = ${email.toLowerCase()}
+    returning id
+  `
+  return rows.length > 0
+}
