@@ -2,8 +2,9 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { ChevronLeft, ChevronRight, StickyNote, Car, X, GripHorizontal } from 'lucide-react'
+import { ChevronLeft, ChevronRight, StickyNote, Car, X, GripHorizontal, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { TIME_OPTIONS } from '@/lib/timeOptions'
 
 interface DiaryAppointment {
   id: string
@@ -59,6 +60,15 @@ const MIN_TRAVEL_MINUTES = 5
 const DEFAULT_TRAVEL_MINUTES = 15
 const CLICK_THRESHOLD_PX = 5 // movement below this counts as a click, not a drag
 
+// Touch drags require a brief hold before they arm, so an ordinary swipe
+// to scroll the page doesn't get mistaken for "move this visit". Mouse
+// input skips this entirely (arms immediately, as before) — the jitter
+// problem is a touchscreen-specific one.
+const LONG_PRESS_MS = 260
+const PRE_ARM_CANCEL_PX = 10 // finger movement past this before the hold fires reads as "scrolling", not "holding"
+
+const TRAVEL_DURATION_OPTIONS = [5, 10, 15, 20, 30, 45, 60]
+
 function startOfWeek(d: Date) {
   const day = d.getDay() // 0 = Sun
   const diffToMonday = (day + 6) % 7
@@ -99,6 +109,16 @@ function durationMinutesBetween(startsAt: string, endsAt: string) {
   return Math.round((new Date(endsAt).getTime() - new Date(startsAt).getTime()) / 60_000)
 }
 
+// "HH:mm" snapped to the nearest 15 minutes, for pre-filling the add-travel
+// time dropdown (which only offers 15-minute steps, matching TIME_OPTIONS).
+function nearestQuarterHour(d: Date) {
+  const snapped = Math.round(d.getMinutes() / 15) * 15
+  const copy = new Date(d)
+  copy.setMinutes(0, 0, 0)
+  copy.setMinutes(snapped)
+  return `${String(copy.getHours()).padStart(2, '0')}:${String(copy.getMinutes()).padStart(2, '0')}`
+}
+
 // Move/resize gestures share one state shape. `mode` distinguishes them:
 // - 'move': dragging the block body — can change start time and/or day.
 // - 'resize': dragging the bottom-edge handle — changes duration only,
@@ -115,13 +135,19 @@ interface DragState {
   offsetX: number // px to visually translate towards the target day column
 }
 
-// A travel block being drawn from scratch by click-dragging empty grid
-// space. Tracked in local (pre-snap) pixels within the day column; snapped
-// down to real start/duration only once the gesture ends.
-interface DraftState {
+// A touch-only holding pattern: pointerdown starts this timer instead of
+// arming a drag immediately. If the timer fires with minimal movement, we
+// arm the real drag (see armDrag). If the finger moves too much first, or
+// lifts before the timer fires, we treat it as a scroll/tap instead.
+interface PendingLongPress {
+  pointerId: number
+  el: HTMLDivElement
+  block: Block
   dayIndex: number
-  startTopPx: number
-  currentTopPx: number
+  mode: DragState['mode']
+  startClientX: number
+  startClientY: number
+  timer: ReturnType<typeof setTimeout>
 }
 
 // Shifts an ISO datetime by whole days (calendar-aware, so DST transitions
@@ -153,10 +179,18 @@ export default function DiaryClient() {
   const [travelLabelDraft, setTravelLabelDraft] = useState('')
   const [travelSaving, setTravelSaving] = useState(false)
   const [travelError, setTravelError] = useState<string | null>(null)
-  // Click-drag-to-create a new travel block on empty grid space.
-  const [draft, setDraft] = useState<DraftState | null>(null)
+  // Add-travel dialog — a form, not a drag gesture, so it works the same
+  // (and just as precisely) on a phone as on a desktop. Opened either by
+  // tapping empty grid space (prefills the tapped day/time) or the "+"
+  // button in a day's header (prefills a sensible default).
+  const [addTravelDay, setAddTravelDay] = useState<Date | null>(null)
+  const [addTravelStart, setAddTravelStart] = useState('09:00')
+  const [addTravelDuration, setAddTravelDuration] = useState(DEFAULT_TRAVEL_MINUTES)
+  const [addTravelLabel, setAddTravelLabel] = useState('')
+  const [addTravelSaving, setAddTravelSaving] = useState(false)
+  const [addTravelError, setAddTravelError] = useState<string | null>(null)
   const dragRef = useRef<DragState | null>(null)
-  const draftRef = useRef<DraftState | null>(null)
+  const pendingRef = useRef<PendingLongPress | null>(null)
   const dayColRefs = useRef<Array<HTMLDivElement | null>>([])
 
   const days = useMemo(() => Array.from({ length: 7 }, (_, i) => addDays(weekStart, i)), [weekStart])
@@ -230,24 +264,27 @@ export default function DiaryClient() {
     return Math.max(22, (mins / 60) * HOUR_HEIGHT)
   }
 
-  // Converts a pixel offset within a day column back into a snapped
-  // minutes-from-startHour value — shared by the empty-space draft-create
-  // gesture and (indirectly) by the move/resize snapping below.
   function pxToSnappedMinutes(px: number, snap: number) {
-    const rawMinutes = (px / PX_PER_MIN) 
+    const rawMinutes = px / PX_PER_MIN
     return Math.round(rawMinutes / snap) * snap
   }
 
-  function onPointerDown(e: React.PointerEvent<HTMLDivElement>, block: Block, dayIndex: number, mode: DragState['mode'] = 'move') {
-    if (savingId) return
-    e.stopPropagation()
-    e.currentTarget.setPointerCapture(e.pointerId)
+  // Actually arms a drag: sets the live drag state and takes pointer
+  // capture. Called immediately for mouse input, or after the long-press
+  // timer fires for touch input (see onPointerDown/onTouchHoldFire).
+  function armDrag(el: HTMLDivElement, pointerId: number, block: Block, dayIndex: number, mode: DragState['mode'], startClientX: number, startClientY: number) {
+    try {
+      el.setPointerCapture(pointerId)
+    } catch {
+      // Capture can fail if the pointer was already released — harmless,
+      // the drag just won't track outside the element in that edge case.
+    }
     const next: DragState = {
       kind: block.kind,
       id: block.data.id,
       mode,
-      startClientY: e.clientY,
-      startClientX: e.clientX,
+      startClientY,
+      startClientX,
       deltaPx: 0,
       originDayIndex: dayIndex,
       targetDayIndex: dayIndex,
@@ -257,7 +294,49 @@ export default function DiaryClient() {
     setDrag(next)
   }
 
+  function onPointerDown(e: React.PointerEvent<HTMLDivElement>, block: Block, dayIndex: number, mode: DragState['mode'] = 'move') {
+    if (savingId) return
+    e.stopPropagation()
+    const el = e.currentTarget
+    const pointerId = e.pointerId
+    const startClientX = e.clientX
+    const startClientY = e.clientY
+
+    // Mouse (and the dedicated resize handle, which is a small deliberate
+    // target either way) arm instantly, matching desktop drag conventions.
+    if (mode === 'resize' || e.pointerType === 'mouse') {
+      armDrag(el, pointerId, block, dayIndex, mode, startClientX, startClientY)
+      return
+    }
+
+    // Touch: wait for a brief hold before committing to a drag. If the
+    // finger is actually trying to scroll the page, it'll move past
+    // PRE_ARM_CANCEL_PX well before LONG_PRESS_MS and we bail out below
+    // without ever calling setPointerCapture — so native scrolling isn't
+    // interrupted for that gesture.
+    if (pendingRef.current) {
+      clearTimeout(pendingRef.current.timer)
+      pendingRef.current = null
+    }
+    const timer = setTimeout(() => {
+      pendingRef.current = null
+      armDrag(el, pointerId, block, dayIndex, mode, startClientX, startClientY)
+    }, LONG_PRESS_MS)
+    pendingRef.current = { pointerId, el, block, dayIndex, mode, startClientX, startClientY, timer }
+  }
+
   function onPointerMove(e: React.PointerEvent<HTMLDivElement>, block: Block) {
+    if (pendingRef.current && pendingRef.current.block.data.id === block.data.id) {
+      const dx = e.clientX - pendingRef.current.startClientX
+      const dy = e.clientY - pendingRef.current.startClientY
+      if (Math.hypot(dx, dy) > PRE_ARM_CANCEL_PX) {
+        // Reads as a scroll attempt, not a hold-to-drag — let it go.
+        clearTimeout(pendingRef.current.timer)
+        pendingRef.current = null
+      }
+      return // not armed yet either way
+    }
+
     if (!dragRef.current || dragRef.current.id !== block.data.id) return
     const deltaPx = e.clientY - dragRef.current.startClientY
 
@@ -293,6 +372,16 @@ export default function DiaryClient() {
   }
 
   async function onPointerUp(e: React.PointerEvent<HTMLDivElement>, block: Block) {
+    // Finger lifted before the hold timer fired — a tap, not a drag.
+    if (pendingRef.current && pendingRef.current.block.data.id === block.data.id) {
+      clearTimeout(pendingRef.current.timer)
+      pendingRef.current = null
+      if (block.kind === 'appointment' && block.data.patientId) {
+        router.push(`/portal/patient/${block.data.patientId}?appointmentId=${block.data.id}`)
+      }
+      return
+    }
+
     const current = dragRef.current
     dragRef.current = null
     setDrag(null)
@@ -306,7 +395,8 @@ export default function DiaryClient() {
     const dayDelta = current.targetDayIndex - current.originDayIndex
 
     if (Math.abs(current.deltaPx) < CLICK_THRESHOLD_PX && dayDelta === 0) {
-      // Treated as a click, not a drag.
+      // Treated as a click, not a drag (mouse case — touch taps are
+      // handled by the pendingRef branch above).
       if (block.kind === 'appointment' && block.data.patientId) {
         router.push(`/portal/patient/${block.data.patientId}?appointmentId=${block.data.id}`)
       }
@@ -386,9 +476,15 @@ export default function DiaryClient() {
     setSavingId(null)
   }
 
-  function onPointerCancel() {
-    dragRef.current = null
-    setDrag(null)
+  function onPointerCancel(block: Block) {
+    if (pendingRef.current && pendingRef.current.block.data.id === block.data.id) {
+      clearTimeout(pendingRef.current.timer)
+      pendingRef.current = null
+    }
+    if (dragRef.current && dragRef.current.id === block.data.id) {
+      dragRef.current = null
+      setDrag(null)
+    }
   }
 
   function openNoteModal(e: React.PointerEvent | React.MouseEvent, appt: DiaryAppointment) {
@@ -464,8 +560,9 @@ export default function DiaryClient() {
 
   // Quick action from an appointment: drop a default-length travel block
   // right before it (to travel *to* the visit) or right after (to travel
-  // *away* from it), pre-linked so it's obviously related. Duration and
-  // time are both still freely adjustable afterwards via drag/resize.
+  // *away* from it), pre-linked so it's obviously related. This is a plain
+  // tap — no drag involved — so it works identically on mobile and desktop.
+  // Duration and time are both still freely adjustable afterwards.
   async function addTravelAdjacent(e: React.MouseEvent, appt: DiaryAppointment, side: 'before' | 'after') {
     e.stopPropagation()
     e.preventDefault()
@@ -487,57 +584,52 @@ export default function DiaryClient() {
     }
   }
 
-  // Click-drag on empty grid space (not on a block) sketches out a new
-  // travel block. A plain click with no real movement is ignored so this
-  // doesn't fire on every stray tap on the grid background.
-  function onGridPointerDown(e: React.PointerEvent<HTMLDivElement>, dayIndex: number) {
-    if (e.target !== e.currentTarget) return // let block-level handlers own their own pointer events
-    if (savingId || dragRef.current) return
-    const rect = e.currentTarget.getBoundingClientRect()
-    const startTopPx = e.clientY - rect.top
-    e.currentTarget.setPointerCapture(e.pointerId)
-    const next: DraftState = { dayIndex, startTopPx, currentTopPx: startTopPx }
-    draftRef.current = next
-    setDraft(next)
+  // Opens the add-travel dialog for a given day, defaulting the start
+  // time to whatever was tapped (or 9am, from the day header's + button).
+  function openAddTravelModal(day: Date, prefillTime?: Date) {
+    setAddTravelDay(day)
+    setAddTravelStart(prefillTime ? nearestQuarterHour(prefillTime) : '09:00')
+    setAddTravelDuration(DEFAULT_TRAVEL_MINUTES)
+    setAddTravelLabel('')
+    setAddTravelError(null)
   }
 
-  function onGridPointerMove(e: React.PointerEvent<HTMLDivElement>, dayIndex: number) {
-    if (!draftRef.current || draftRef.current.dayIndex !== dayIndex) return
+  // A real tap on empty grid space (not a drag — plain onClick, which the
+  // browser only fires when the gesture wasn't consumed as a scroll)
+  // opens the add-travel dialog prefilled with the tapped time.
+  function onGridClick(e: React.MouseEvent<HTMLDivElement>, day: Date) {
+    if (e.target !== e.currentTarget) return // a block owns clicks on itself
+    if (savingId) return
     const rect = e.currentTarget.getBoundingClientRect()
-    const next = { ...draftRef.current, currentTopPx: e.clientY - rect.top }
-    draftRef.current = next
-    setDraft(next)
-  }
-
-  async function onGridPointerUp(e: React.PointerEvent<HTMLDivElement>, dayIndex: number, day: Date) {
-    const current = draftRef.current
-    draftRef.current = null
-    setDraft(null)
-    if (!current || current.dayIndex !== dayIndex) return
-
-    const top = Math.min(current.startTopPx, current.currentTopPx)
-    const bottom = Math.max(current.startTopPx, current.currentTopPx)
-    const draggedMinutes = pxToSnappedMinutes(bottom - top, TRAVEL_SNAP_MINUTES)
-    const startMinutesFromGridStart = pxToSnappedMinutes(top, TRAVEL_SNAP_MINUTES)
-    const durationMinutes = Math.max(MIN_TRAVEL_MINUTES, draggedMinutes || DEFAULT_TRAVEL_MINUTES)
-
+    const topPx = e.clientY - rect.top
+    const minutesFromGridStart = pxToSnappedMinutes(topPx, SNAP_MINUTES)
     const dayStart = new Date(day)
     dayStart.setHours(startHour, 0, 0, 0)
-    const startsAt = addMinutes(dayStart, startMinutesFromGridStart).toISOString()
-    const endsAt = addMinutes(new Date(startsAt), durationMinutes).toISOString()
+    openAddTravelModal(day, addMinutes(dayStart, minutesFromGridStart))
+  }
 
-    setError(null)
+  async function saveAddTravel() {
+    if (!addTravelDay) return
+    const [h, m] = addTravelStart.split(':').map(Number)
+    const startsAt = new Date(addTravelDay)
+    startsAt.setHours(h, m, 0, 0)
+    const endsAt = addMinutes(startsAt, addTravelDuration)
+
+    setAddTravelSaving(true)
+    setAddTravelError(null)
     const res = await fetch('/api/travel-blocks', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ startsAt, endsAt, label: 'Travel' }),
+      body: JSON.stringify({ startsAt: startsAt.toISOString(), endsAt: endsAt.toISOString(), label: addTravelLabel || 'Travel' }),
     })
     const body = await res.json().catch(() => null)
     if (res.ok && body?.travelBlock) {
       setTravelBlocks((prev) => [...(prev ?? []), body.travelBlock])
+      setAddTravelDay(null)
     } else {
-      setError(body?.error || `Failed to add travel time (HTTP ${res.status})`)
+      setAddTravelError(body?.error || `Failed to add travel time (HTTP ${res.status})`)
     }
+    setAddTravelSaving(false)
   }
 
   const columnTemplate = `56px repeat(7, minmax(130px, 1fr))`
@@ -546,9 +638,9 @@ export default function DiaryClient() {
     <div>
       <h1 className="serif text-2xl text-foreground font-semibold mb-1">Your calendar</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        Visits for your assigned patients only. Drag a visit to change its time or move it to another day, or click it to open the
-        patient. Click and drag on empty space — or use the <Car size={12} className="inline -mt-0.5" /> button on a visit — to block
-        out travel time; drag its bottom edge to resize.
+        Visits for your assigned patients only. Press and hold a visit to move it, or tap it to open the patient. Tap empty space —
+        or the <Plus size={12} className="inline -mt-0.5" /> above a day, or the <Car size={12} className="inline -mt-0.5" /> on a
+        visit — to block out travel time; drag its bottom edge to resize.
       </p>
 
       <div className="flex items-center justify-between mb-3">
@@ -593,12 +685,20 @@ export default function DiaryClient() {
                   return (
                     <div
                       key={d.toISOString()}
-                      className={`text-center py-2 border-l border-border ${isToday ? 'bg-amber-50' : ''}`}
+                      className={`flex items-center justify-center gap-1 py-2 border-l border-border ${isToday ? 'bg-amber-50' : ''}`}
                     >
-                      <div className="text-xs font-semibold text-foreground">
+                      <div className="text-xs font-semibold text-foreground text-center">
                         {d.toLocaleDateString('en-AU', { weekday: 'short' })}, {d.getDate()}{' '}
                         {d.toLocaleDateString('en-AU', { month: 'short' })}
                       </div>
+                      <button
+                        type="button"
+                        title="Add travel time"
+                        onClick={() => openAddTravelModal(d)}
+                        className="h-4 w-4 rounded hover:bg-secondary flex items-center justify-center text-muted-foreground"
+                      >
+                        <Plus size={11} />
+                      </button>
                     </div>
                   )
                 })}
@@ -623,24 +723,14 @@ export default function DiaryClient() {
                   {/* Day columns */}
                   {days.map((d, dayIndex) => {
                     const isToday = sameDay(d, new Date())
-                    const isDrafting = draft?.dayIndex === dayIndex
-                    const draftTop = isDrafting ? Math.min(draft!.startTopPx, draft!.currentTopPx) : 0
-                    const draftHeight = isDrafting ? Math.max(4, Math.abs(draft!.currentTopPx - draft!.startTopPx)) : 0
                     return (
                       <div
                         key={d.toISOString()}
                         ref={(el) => {
                           dayColRefs.current[dayIndex] = el
                         }}
-                        onPointerDown={(e) => onGridPointerDown(e, dayIndex)}
-                        onPointerMove={(e) => onGridPointerMove(e, dayIndex)}
-                        onPointerUp={(e) => onGridPointerUp(e, dayIndex, d)}
-                        onPointerCancel={() => {
-                          draftRef.current = null
-                          setDraft(null)
-                        }}
-                        className={`relative border-l border-border cursor-crosshair ${isToday ? 'bg-amber-50/40' : ''}`}
-                        style={{ touchAction: 'none' }}
+                        onClick={(e) => onGridClick(e, d)}
+                        className={`relative border-l border-border cursor-pointer ${isToday ? 'bg-amber-50/40' : ''}`}
                       >
                         {hours.map((h) => (
                           <div
@@ -649,13 +739,6 @@ export default function DiaryClient() {
                             style={{ top: (h - startHour) * HOUR_HEIGHT }}
                           />
                         ))}
-
-                        {isDrafting && (
-                          <div
-                            className="absolute left-1 right-1 rounded-md border-2 border-dashed border-slate-400 bg-slate-200/50 pointer-events-none"
-                            style={{ top: draftTop, height: draftHeight }}
-                          />
-                        )}
 
                         {appointmentsForDay(d).map((appt) => {
                           const block: Block = { kind: 'appointment', data: appt }
@@ -670,7 +753,7 @@ export default function DiaryClient() {
                               onPointerDown={(e) => onPointerDown(e, block, dayIndex)}
                               onPointerMove={(e) => onPointerMove(e, block)}
                               onPointerUp={(e) => onPointerUp(e, block)}
-                              onPointerCancel={onPointerCancel}
+                              onPointerCancel={() => onPointerCancel(block)}
                               role="button"
                               tabIndex={0}
                               onKeyDown={(e) => {
@@ -688,7 +771,9 @@ export default function DiaryClient() {
                                 transform: isDragging && drag!.offsetX ? `translateX(${drag!.offsetX}px)` : undefined,
                                 backgroundColor: appt.cancelledAt ? '#9ca3af' : colorForAppointment(appt),
                                 opacity: appt.cancelledAt ? 0.7 : savingId === appt.id ? 0.6 : 1,
-                                touchAction: 'none',
+                                // Allow normal vertical scrolling through this block until a
+                                // drag actually arms — only then do we take over the gesture.
+                                touchAction: isDragging ? 'none' : 'pan-y',
                               }}
                             >
                               <div className="flex items-start justify-between gap-1">
@@ -697,15 +782,26 @@ export default function DiaryClient() {
                                 </div>
                                 <div className="flex items-center gap-0.5 shrink-0">
                                   {!appt.cancelledAt && (
-                                    <button
-                                      type="button"
-                                      title="Add travel time before this visit"
-                                      onPointerDown={(e) => e.stopPropagation()}
-                                      onClick={(e) => addTravelAdjacent(e, appt, 'before')}
-                                      className="opacity-0 group-hover:opacity-100 rounded p-0.5 hover:bg-black/20"
-                                    >
-                                      <Car size={11} />
-                                    </button>
+                                    <>
+                                      <button
+                                        type="button"
+                                        title="Add travel time before this visit"
+                                        onPointerDown={(e) => e.stopPropagation()}
+                                        onClick={(e) => addTravelAdjacent(e, appt, 'before')}
+                                        className="opacity-0 group-hover:opacity-100 rounded p-0.5 hover:bg-black/20"
+                                      >
+                                        <Car size={11} />
+                                      </button>
+                                      <button
+                                        type="button"
+                                        title="Add travel time after this visit"
+                                        onPointerDown={(e) => e.stopPropagation()}
+                                        onClick={(e) => addTravelAdjacent(e, appt, 'after')}
+                                        className="opacity-0 group-hover:opacity-100 rounded p-0.5 hover:bg-black/20 rotate-180"
+                                      >
+                                        <Car size={11} />
+                                      </button>
+                                    </>
                                   )}
                                   <button
                                     type="button"
@@ -738,7 +834,7 @@ export default function DiaryClient() {
                               onPointerDown={(e) => onPointerDown(e, block, dayIndex)}
                               onPointerMove={(e) => onPointerMove(e, block)}
                               onPointerUp={(e) => onPointerUp(e, block)}
-                              onPointerCancel={onPointerCancel}
+                              onPointerCancel={() => onPointerCancel(block)}
                               role="button"
                               tabIndex={0}
                               className={`group absolute left-1 right-1 rounded-md px-1.5 py-1 text-left text-slate-700 text-[11px] leading-tight overflow-hidden select-none border border-dashed border-slate-400 ${
@@ -752,7 +848,7 @@ export default function DiaryClient() {
                                 backgroundImage:
                                   'repeating-linear-gradient(135deg, rgba(100,116,139,0.15) 0px, rgba(100,116,139,0.15) 4px, transparent 4px, transparent 9px)',
                                 opacity: savingId === tb.id ? 0.6 : 1,
-                                touchAction: 'none',
+                                touchAction: isDragging ? 'none' : 'pan-y',
                               }}
                             >
                               <div className="flex items-start justify-between gap-1">
@@ -777,13 +873,15 @@ export default function DiaryClient() {
                               >
                                 {timeRangeLabel(tb.startsAt, tb.endsAt)}
                               </div>
-                              {/* Resize handle — drag to adjust duration only. */}
+                              {/* Resize handle — drag to adjust duration only. Kept as an
+                                  instant-arm target (no long-press) since it's small and
+                                  deliberately grabbed, not something a scroll swipe crosses. */}
                               <div
                                 onPointerDown={(e) => onPointerDown(e, block, dayIndex, 'resize')}
                                 onPointerMove={(e) => onPointerMove(e, block)}
                                 onPointerUp={(e) => onPointerUp(e, block)}
-                                onPointerCancel={onPointerCancel}
-                                className="absolute left-0 right-0 bottom-0 h-2.5 flex items-center justify-center cursor-ns-resize opacity-0 group-hover:opacity-70"
+                                onPointerCancel={() => onPointerCancel(block)}
+                                className="absolute left-0 right-0 bottom-0 h-3.5 flex items-center justify-center cursor-ns-resize opacity-0 group-hover:opacity-70"
                                 style={{ touchAction: 'none' }}
                               >
                                 <GripHorizontal size={12} />
@@ -863,6 +961,72 @@ export default function DiaryClient() {
                 type="button"
                 onClick={() => setTravelModalId(null)}
                 disabled={travelSaving}
+                className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {addTravelDay && (
+        <div
+          className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4"
+          onClick={() => !addTravelSaving && setAddTravelDay(null)}
+        >
+          <div className="bg-white rounded-lg p-5 max-w-sm w-full shadow-lg" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-sm font-semibold text-foreground mb-1">Add travel time</h3>
+            <p className="text-xs text-muted-foreground mb-3">
+              {addTravelDay.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'short' })} — a personal block on
+              your own diary, not sent to Cliniko.
+            </p>
+            <div className="grid grid-cols-2 gap-2 mb-2">
+              <div>
+                <label className="block text-xs text-muted-foreground mb-1">Start time</label>
+                <select
+                  value={addTravelStart}
+                  onChange={(e) => setAddTravelStart(e.target.value)}
+                  className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
+                >
+                  {TIME_OPTIONS.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs text-muted-foreground mb-1">Duration</label>
+                <select
+                  value={addTravelDuration}
+                  onChange={(e) => setAddTravelDuration(Number(e.target.value))}
+                  className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
+                >
+                  {TRAVEL_DURATION_OPTIONS.map((mins) => (
+                    <option key={mins} value={mins}>
+                      {mins} min
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <label className="block text-xs text-muted-foreground mb-1">Label (optional)</label>
+            <input
+              value={addTravelLabel}
+              onChange={(e) => setAddTravelLabel(e.target.value)}
+              placeholder="Travel"
+              className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
+            />
+            {addTravelError && <p className="text-xs text-destructive mt-1">{addTravelError}</p>}
+            <div className="flex items-center gap-2 mt-3">
+              <Button size="sm" onClick={saveAddTravel} disabled={addTravelSaving}>
+                {addTravelSaving ? 'Adding…' : 'Add travel time'}
+              </Button>
+              <button
+                type="button"
+                onClick={() => setAddTravelDay(null)}
+                disabled={addTravelSaving}
                 className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
               >
                 Cancel
