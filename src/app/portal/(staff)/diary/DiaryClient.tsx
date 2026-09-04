@@ -929,7 +929,7 @@ export default function DiaryClient() {
                                   title="Remove travel time"
                                   onPointerDown={(e) => e.stopPropagation()}
                                   onClick={(e) => deleteTravelBlock(e, tb.id)}
-                                  className="opacity-0 group-hover:opacity-100 shrink-0 rounded p-0.5 hover:bg-black/10"
+                                  className="opacity-70 md:opacity-0 md:group-hover:opacity-100 shrink-0 rounded p-0.5 hover:bg-black/10"
                                 >
                                   <X size={11} />
                                 </button>
@@ -1013,7 +1013,7 @@ export default function DiaryClient() {
             <p className="text-xs text-muted-foreground mb-3">
               Personal blocks on your own diary either side of {travelPopupAppt.patientName || 'this visit'} — not sent to Cliniko.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2">
               <DiaryTravelStepper label="Before" minutes={travelPopupBeforeMin} onChange={setTravelPopupBeforeMin} />
               <DiaryTravelStepper label="After" minutes={travelPopupAfterMin} onChange={setTravelPopupAfterMin} />
             </div>
