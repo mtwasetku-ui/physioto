@@ -17,6 +17,7 @@ interface DiaryAppointment {
   cancelledAt: string | null
   notes: string | null
   appointmentTypeColor: string | null
+  hasFinalNote: boolean
 }
 
 // A practitioner's own local travel-time marker — never a Cliniko
@@ -42,7 +43,14 @@ type Block =
 // within a session, rather than everything defaulting to one flat blue.
 const FALLBACK_COLORS = ['#2563eb', '#7c3aed', '#0891b2', '#059669', '#d97706', '#db2777']
 
+// Green once the visit's note is finalised — lets a physio see at a
+// glance, from the diary alone, which visits still need paperwork done.
+// Takes priority over the appointment-type colour precisely so it's
+// visible regardless of what type of visit it was.
+const FINAL_NOTE_COLOR = '#16a34a'
+
 function colorForAppointment(appt: DiaryAppointment) {
+  if (appt.hasFinalNote) return FINAL_NOTE_COLOR
   if (appt.appointmentTypeColor) return appt.appointmentTypeColor
   const key = appt.patientId || appt.id
   let hash = 0
