@@ -904,6 +904,10 @@ export default function DiaryClient() {
                           const naturalTop = topFor(tb.startsAt)
                           const rawTop = isDragging && drag!.mode === 'move' ? naturalTop + drag!.deltaPx : naturalTop
                           const top = Math.min(Math.max(rawTop, 0), Math.max(0, gridHeight - blockHeight))
+                          // Derived from the live block height (not tb.startsAt/endsAt)
+                          // so the minute count updates in real time while resizing,
+                          // rather than jumping only once the drag is released and saved.
+                          const liveMinutes = Math.round(blockHeight / PX_PER_MIN)
                           return (
                             <div
                               key={tb.id}
@@ -930,7 +934,9 @@ export default function DiaryClient() {
                               <div className="flex items-start justify-between gap-1">
                                 <div className="font-semibold truncate flex items-center gap-1">
                                   <Car size={11} className="shrink-0" />
-                                  <span className="truncate">{tb.label}</span>
+                                  <span className="truncate">
+                                    {tb.label} <span className="font-normal opacity-80">({liveMinutes} min)</span>
+                                  </span>
                                 </div>
                                 <button
                                   type="button"
