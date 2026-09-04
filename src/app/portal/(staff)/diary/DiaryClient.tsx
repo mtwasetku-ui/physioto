@@ -904,10 +904,19 @@ export default function DiaryClient() {
                           const naturalTop = topFor(tb.startsAt)
                           const rawTop = isDragging && drag!.mode === 'move' ? naturalTop + drag!.deltaPx : naturalTop
                           const top = Math.min(Math.max(rawTop, 0), Math.max(0, gridHeight - blockHeight))
-                          // Derived from the live block height (not tb.startsAt/endsAt)
-                          // so the minute count updates in real time while resizing,
-                          // rather than jumping only once the drag is released and saved.
-                          const liveMinutes = Math.round(blockHeight / PX_PER_MIN)
+                          // The actual duration, not the rendered pixel height —
+                          // heightFor() floors short blocks to 22px just so
+                          // they stay visible/tappable, which would otherwise
+                          // make e.g. a real 5-minute block read as ~24 min.
+                          // While actively resizing, apply the same live delta
+                          // (and floor) handleResizeEnd will save, so the
+                          // number tracks the drag in real time.
+                          const staticMinutes = durationMinutesBetween(tb.startsAt, tb.endsAt)
+                          const resizeDeltaMinutes =
+                            isDragging && drag!.mode === 'resize'
+                              ? Math.round(drag!.deltaPx / PX_PER_MIN / TRAVEL_SNAP_MINUTES) * TRAVEL_SNAP_MINUTES
+                              : 0
+                          const liveMinutes = Math.max(MIN_TRAVEL_MINUTES, staticMinutes + resizeDeltaMinutes)
                           return (
                             <div
                               key={tb.id}
