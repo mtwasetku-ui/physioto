@@ -242,6 +242,39 @@ export async function listTreatmentNotesForPatient(patientId: string) {
   return data.treatment_notes ?? []
 }
 
+// Which bookings (appointments) already have a finalised note attached —
+// powers the diary's "turn green once the note is done" colouring. There's
+// no bulk endpoint for this (treatment_notes only list per-patient), and
+// individual_appointments' own `treatment_note_status` field is undocumented
+// and not worth trusting for something a physio relies on at a glance — so
+// this instead reuses the same `draft` flag and booking.links.self the rest
+// of the app already treats as the source of truth for "is this note done".
+// Only called with the patients actually visible in the diary window, and
+// only their most recent 100 notes each (matches listTreatmentNotesForPatient) —
+// plenty for a week's worth of appointments.
+export async function listFinalizedNoteBookingIds(patientIds: string[]): Promise<Set<string>> {
+  const uniqueIds = Array.from(new Set(patientIds))
+  const perPatient = await Promise.all(
+    uniqueIds.map(async (patientId) => {
+      try {
+        const notes = await listTreatmentNotesForPatient(patientId)
+        return notes
+          .filter((n: any) => n.draft === false)
+          .map((n: any) => idFromLink(n.booking?.links?.self))
+          .filter((id: string | null): id is string => !!id)
+      } catch (e) {
+        // Best-effort, same reasoning as the appointment-type colour lookup
+        // above — a lookup failure for one patient shouldn't break the
+        // whole diary, it just means that patient's visits fall back to
+        // their normal colour instead of turning green.
+        console.error('[listFinalizedNoteBookingIds] failed for patient', patientId, e)
+        return []
+      }
+    })
+  )
+  return new Set(perPatient.flat())
+}
+
 // Generic "Booking" resource — a unified view over individual and group
 // appointments (starts_at/ends_at/practitioner all present either way),
 // reached via a note's own booking.links.self. Used so the visit timeline
