@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { ChevronLeft, ChevronRight, StickyNote, Car, X, GripHorizontal, Plus } from 'lucide-react'
+import { ChevronLeft, ChevronRight, StickyNote, Car, X, GripHorizontal } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { TIME_OPTIONS } from '@/lib/timeOptions'
 
@@ -179,6 +179,20 @@ export default function DiaryClient() {
   const [travelLabelDraft, setTravelLabelDraft] = useState('')
   const [travelSaving, setTravelSaving] = useState(false)
   const [travelError, setTravelError] = useState<string | null>(null)
+  // Per-visit travel popup — the single entry point for setting travel
+  // time on a booked appointment (before AND after, both in 5-min steps),
+  // opened from the one car icon on the block. Mirrors whatever travel
+  // blocks are already linked to this appointment (from a previous save
+  // here, or from the booking form's travel steppers) so re-opening it
+  // shows the current before/after minutes rather than always starting
+  // from zero — this doubles as the edit UI, not just "add".
+  const [travelPopupAppt, setTravelPopupAppt] = useState<DiaryAppointment | null>(null)
+  const [travelPopupBeforeId, setTravelPopupBeforeId] = useState<string | null>(null)
+  const [travelPopupAfterId, setTravelPopupAfterId] = useState<string | null>(null)
+  const [travelPopupBeforeMin, setTravelPopupBeforeMin] = useState(0)
+  const [travelPopupAfterMin, setTravelPopupAfterMin] = useState(0)
+  const [travelPopupSaving, setTravelPopupSaving] = useState(false)
+  const [travelPopupError, setTravelPopupError] = useState<string | null>(null)
   // Add-travel dialog — a form, not a drag gesture, so it works the same
   // (and just as precisely) on a phone as on a desktop. Opened either by
   // tapping empty grid space (prefills the tapped day/time) or the "+"
@@ -230,6 +244,10 @@ export default function DiaryClient() {
 
   function travelBlocksForDay(d: Date) {
     return (travelBlocks ?? []).filter((t) => sameDay(new Date(t.startsAt), d))
+  }
+
+  function hasLinkedTravel(appointmentId: string) {
+    return (travelBlocks ?? []).some((t) => t.linkedAppointmentId === appointmentId)
   }
 
   // Grid hour bounds — default to a normal 8am–6pm working day, but widen
@@ -558,30 +576,97 @@ export default function DiaryClient() {
     }
   }
 
-  // Quick action from an appointment: drop a default-length travel block
-  // right before it (to travel *to* the visit) or right after (to travel
-  // *away* from it), pre-linked so it's obviously related. This is a plain
-  // tap — no drag involved — so it works identically on mobile and desktop.
-  // Duration and time are both still freely adjustable afterwards.
-  async function addTravelAdjacent(e: React.MouseEvent, appt: DiaryAppointment, side: 'before' | 'after') {
+  // Opens the single travel popup for a visit. Looks for travel blocks
+  // already linked to this appointment — one ending exactly when it
+  // starts (the "before" leg) and/or one starting exactly when it ends
+  // (the "after" leg) — and pre-fills their current minutes so this
+  // works as both "add" and "edit".
+  function openTravelPopup(e: React.PointerEvent | React.MouseEvent, appt: DiaryAppointment) {
     e.stopPropagation()
     e.preventDefault()
-    const startsAt = side === 'before' ? addMinutes(new Date(appt.startsAt), -DEFAULT_TRAVEL_MINUTES).toISOString() : appt.endsAt
-    const endsAt = side === 'before' ? appt.startsAt : addMinutes(new Date(appt.endsAt), DEFAULT_TRAVEL_MINUTES).toISOString()
-    const label = side === 'before' ? `Travel to ${appt.patientName || 'visit'}` : `Travel from ${appt.patientName || 'visit'}`
+    dragRef.current = null
+    setDrag(null)
 
-    setError(null)
-    const res = await fetch('/api/travel-blocks', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ startsAt, endsAt, label, linkedAppointmentId: appt.id }),
-    })
-    const body = await res.json().catch(() => null)
-    if (res.ok && body?.travelBlock) {
-      setTravelBlocks((prev) => [...(prev ?? []), body.travelBlock])
-    } else {
-      setError(body?.error || `Failed to add travel time (HTTP ${res.status})`)
+    const before = (travelBlocks ?? []).find((t) => t.linkedAppointmentId === appt.id && t.endsAt === appt.startsAt)
+    const after = (travelBlocks ?? []).find((t) => t.linkedAppointmentId === appt.id && t.startsAt === appt.endsAt)
+
+    setTravelPopupAppt(appt)
+    setTravelPopupBeforeId(before?.id ?? null)
+    setTravelPopupAfterId(after?.id ?? null)
+    setTravelPopupBeforeMin(before ? durationMinutesBetween(before.startsAt, before.endsAt) : 0)
+    setTravelPopupAfterMin(after ? durationMinutesBetween(after.startsAt, after.endsAt) : 0)
+    setTravelPopupError(null)
+  }
+
+  // Reconciles the popup's before/after minutes against whatever travel
+  // blocks already exist for this visit: creates a new one where there
+  // wasn't one and minutes > 0, updates one whose duration changed,
+  // deletes one that's been set back to 0. The visit's own start/end time
+  // never moves — only the linked travel block(s) do.
+  async function saveTravelPopup() {
+    if (!travelPopupAppt) return
+    const appt = travelPopupAppt
+    setTravelPopupSaving(true)
+    setTravelPopupError(null)
+
+    async function reconcile(side: 'before' | 'after', existingId: string | null, minutes: number): Promise<TravelBlock | 'deleted' | null> {
+      if (minutes <= 0) {
+        if (existingId) {
+          const res = await fetch(`/api/travel-blocks/${existingId}`, { method: 'DELETE' })
+          if (!res.ok) throw new Error(`Failed to remove travel time (HTTP ${res.status})`)
+          return 'deleted'
+        }
+        return null // nothing wanted, nothing existed — no-op
+      }
+      const label = side === 'before' ? `Travel to ${appt.patientName || 'visit'}` : `Travel from ${appt.patientName || 'visit'}`
+      // The visit's own time is the fixed anchor either side: "before"
+      // always ends exactly when the visit starts, "after" always starts
+      // exactly when the visit ends — only the other end moves with `minutes`.
+      const startsAt = side === 'before' ? addMinutes(new Date(appt.startsAt), -minutes).toISOString() : appt.endsAt
+      if (existingId) {
+        const res = await fetch(`/api/travel-blocks/${existingId}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ startsAt, durationMinutes: minutes }),
+        })
+        const data = await res.json().catch(() => null)
+        if (!res.ok) throw new Error(data?.error || `Failed to update travel time (HTTP ${res.status})`)
+        return data.travelBlock as TravelBlock
+      }
+      const endsAt = side === 'before' ? appt.startsAt : addMinutes(new Date(appt.endsAt), minutes).toISOString()
+      const res = await fetch('/api/travel-blocks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ startsAt, endsAt, label, linkedAppointmentId: appt.id }),
+      })
+      const data = await res.json().catch(() => null)
+      if (!res.ok) throw new Error(data?.error || `Failed to add travel time (HTTP ${res.status})`)
+      return data.travelBlock as TravelBlock
     }
+
+    try {
+      const [beforeResult, afterResult] = await Promise.all([
+        reconcile('before', travelPopupBeforeId, travelPopupBeforeMin),
+        reconcile('after', travelPopupAfterId, travelPopupAfterMin),
+      ])
+      setTravelBlocks((prev) => {
+        let next = prev ?? []
+        for (const [existingId, result] of [
+          [travelPopupBeforeId, beforeResult],
+          [travelPopupAfterId, afterResult],
+        ] as const) {
+          if (result === 'deleted' && existingId) next = next.filter((t) => t.id !== existingId)
+          else if (result && result !== 'deleted') {
+            next = existingId ? next.map((t) => (t.id === existingId ? result : t)) : [...next, result]
+          }
+        }
+        return next
+      })
+      setTravelPopupAppt(null)
+    } catch (e: any) {
+      setTravelPopupError(e?.message || 'Failed to save travel time')
+    }
+    setTravelPopupSaving(false)
   }
 
   // Opens the add-travel dialog for a given day, defaulting the start
@@ -638,9 +723,9 @@ export default function DiaryClient() {
     <div>
       <h1 className="serif text-2xl text-foreground font-semibold mb-1">Your calendar</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        Visits for your assigned patients only. Press and hold a visit to move it, or tap it to open the patient. Tap empty space —
-        or the <Plus size={12} className="inline -mt-0.5" /> above a day, or the <Car size={12} className="inline -mt-0.5" /> on a
-        visit — to block out travel time; drag its bottom edge to resize.
+        Visits for your assigned patients only. Press and hold a visit to move it, or tap it to open the patient. Tap the{' '}
+        <Car size={12} className="inline -mt-0.5" /> on a visit to set travel time before and after it, or tap empty space to block
+        out unlinked travel time; drag its bottom edge to resize.
       </p>
 
       <div className="flex items-center justify-between mb-3">
@@ -691,14 +776,6 @@ export default function DiaryClient() {
                         {d.toLocaleDateString('en-AU', { weekday: 'short' })}, {d.getDate()}{' '}
                         {d.toLocaleDateString('en-AU', { month: 'short' })}
                       </div>
-                      <button
-                        type="button"
-                        title="Add travel time"
-                        onClick={() => openAddTravelModal(d)}
-                        className="h-4 w-4 rounded hover:bg-secondary flex items-center justify-center text-muted-foreground"
-                      >
-                        <Plus size={11} />
-                      </button>
                     </div>
                   )
                 })}
@@ -780,37 +857,28 @@ export default function DiaryClient() {
                                 <div className={`font-semibold truncate ${appt.cancelledAt ? 'line-through' : ''}`}>
                                   {appt.patientName || 'Unknown patient'}
                                 </div>
-                                <div className="flex items-center gap-0.5 shrink-0">
+                                <div className="flex items-center gap-1 shrink-0">
                                   {!appt.cancelledAt && (
-                                    <>
-                                      <button
-                                        type="button"
-                                        title="Add travel time before this visit"
-                                        onPointerDown={(e) => e.stopPropagation()}
-                                        onClick={(e) => addTravelAdjacent(e, appt, 'before')}
-                                        className="opacity-0 group-hover:opacity-100 rounded p-0.5 hover:bg-black/20"
-                                      >
-                                        <Car size={11} />
-                                      </button>
-                                      <button
-                                        type="button"
-                                        title="Add travel time after this visit"
-                                        onPointerDown={(e) => e.stopPropagation()}
-                                        onClick={(e) => addTravelAdjacent(e, appt, 'after')}
-                                        className="opacity-0 group-hover:opacity-100 rounded p-0.5 hover:bg-black/20 rotate-180"
-                                      >
-                                        <Car size={11} />
-                                      </button>
-                                    </>
+                                    <button
+                                      type="button"
+                                      title="Set travel time for this visit"
+                                      onPointerDown={(e) => openTravelPopup(e, appt)}
+                                      onClick={(e) => e.stopPropagation()}
+                                      className={`shrink-0 rounded-full p-1 ${
+                                        hasLinkedTravel(appt.id) ? 'bg-black/35 hover:bg-black/45' : 'bg-black/20 hover:bg-black/30'
+                                      }`}
+                                    >
+                                      <Car size={12} />
+                                    </button>
                                   )}
                                   <button
                                     type="button"
                                     title={appt.notes ? 'Edit appointment note' : 'Add appointment note'}
                                     onPointerDown={(e) => openNoteModal(e, appt)}
                                     onClick={(e) => e.stopPropagation()}
-                                    className={`shrink-0 rounded p-0.5 hover:bg-black/20 ${appt.notes ? 'opacity-100' : 'opacity-50'}`}
+                                    className={`shrink-0 rounded-full p-1 ${appt.notes ? 'bg-black/35 hover:bg-black/45' : 'bg-black/20 hover:bg-black/30'}`}
                                   >
-                                    <StickyNote size={11} />
+                                    <StickyNote size={12} />
                                   </button>
                                 </div>
                               </div>
@@ -935,6 +1003,38 @@ export default function DiaryClient() {
         </div>
       )}
 
+      {travelPopupAppt && (
+        <div
+          className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4"
+          onClick={() => !travelPopupSaving && setTravelPopupAppt(null)}
+        >
+          <div className="bg-white rounded-lg p-5 max-w-sm w-full shadow-lg" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-sm font-semibold text-foreground mb-1">Travel time for this visit</h3>
+            <p className="text-xs text-muted-foreground mb-3">
+              Personal blocks on your own diary either side of {travelPopupAppt.patientName || 'this visit'} — not sent to Cliniko.
+            </p>
+            <div className="flex items-center gap-3">
+              <DiaryTravelStepper label="Before" minutes={travelPopupBeforeMin} onChange={setTravelPopupBeforeMin} />
+              <DiaryTravelStepper label="After" minutes={travelPopupAfterMin} onChange={setTravelPopupAfterMin} />
+            </div>
+            {travelPopupError && <p className="text-xs text-destructive mt-2">{travelPopupError}</p>}
+            <div className="flex items-center gap-2 mt-3">
+              <Button size="sm" onClick={saveTravelPopup} disabled={travelPopupSaving}>
+                {travelPopupSaving ? 'Saving…' : 'Save'}
+              </Button>
+              <button
+                type="button"
+                onClick={() => setTravelPopupAppt(null)}
+                disabled={travelPopupSaving}
+                className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {travelModalId && (
         <div
           className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4"
@@ -1035,6 +1135,35 @@ export default function DiaryClient() {
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+// A compact +/- stepper in 5-minute increments — matches the one on the
+// booking form (PatientDetailClient) so travel time looks and behaves the
+// same whether it's set at booking time or from the diary afterwards.
+function DiaryTravelStepper({ label, minutes, onChange }: { label: string; minutes: number; onChange: (m: number) => void }) {
+  return (
+    <div className="flex items-center gap-1.5 border border-input rounded-md px-2 py-1.5">
+      <span className="text-xs text-muted-foreground w-10">{label}</span>
+      <button
+        type="button"
+        onClick={() => onChange(Math.max(0, minutes - TRAVEL_SNAP_MINUTES))}
+        disabled={minutes === 0}
+        className="h-6 w-6 rounded border border-input text-sm leading-none flex items-center justify-center hover:bg-secondary disabled:opacity-40"
+        aria-label={`Decrease ${label.toLowerCase()} travel time`}
+      >
+        −
+      </button>
+      <span className="text-sm text-foreground w-12 text-center tabular-nums">{minutes > 0 ? `${minutes} min` : 'None'}</span>
+      <button
+        type="button"
+        onClick={() => onChange(Math.min(120, minutes + TRAVEL_SNAP_MINUTES))}
+        className="h-6 w-6 rounded border border-input text-sm leading-none flex items-center justify-center hover:bg-secondary"
+        aria-label={`Increase ${label.toLowerCase()} travel time`}
+      >
+        +
+      </button>
     </div>
   )
 }
