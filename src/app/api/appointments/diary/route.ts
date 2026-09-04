@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { getClinikoPractitionerIdForEmail, listAssignmentsForEmail } from '@/lib/db'
-import { listAppointmentsForPractitionerInRange, listAppointmentTypesForPractice } from '@/lib/cliniko'
+import { listAppointmentsForPractitionerInRange, listAppointmentTypesForPractice, listFinalizedNoteBookingIds } from '@/lib/cliniko'
 
 // GET /api/appointments/diary?from=ISO&to=ISO — the logged-in physio's own
 // calendar for that window. Two layers of scoping, both server-side, both
@@ -92,9 +92,23 @@ export async function GET(req: Request) {
       console.error('[appointments/diary] failed to load appointment type colours', e)
     }
 
+    // Which of these visits already have a finalised note — turns the
+    // appointment green on the diary so a physio can see at a glance which
+    // ones still need paperwork. Best-effort: a failure here shouldn't take
+    // the calendar down, it just means nothing turns green this load.
+    let finalizedBookingIds = new Set<string>()
+    try {
+      finalizedBookingIds = await listFinalizedNoteBookingIds(
+        visible.map((a) => a.patientId).filter((id): id is string => !!id)
+      )
+    } catch (e) {
+      console.error('[appointments/diary] failed to load finalised note status', e)
+    }
+
     const withColor = visible.map((a) => ({
       ...a,
       appointmentTypeColor: a.appointmentTypeId ? colorByTypeId.get(a.appointmentTypeId) ?? null : null,
+      hasFinalNote: finalizedBookingIds.has(a.id),
     }))
 
     return NextResponse.json({ appointments: withColor, from, to })
