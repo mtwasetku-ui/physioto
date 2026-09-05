@@ -126,4 +126,19 @@ Through Physio To Home, Shweta is committed to providing compassionate, high-qua
   photo: '/team/shweta.jpg',
   order: 9,
 },
+  {
+  id: '10',
+  name: 'Mindy Hu',
+  title: 'Physiotherapist',
+  qualifications: 'AHPRA Registered Physiotherapist', // update if you want her degree listed, e.g. BPhty/DPT
+  "AHPRA registration number": 'PHY0004083869',
+  specialties: 'Holistic Rehabilitation, Paediatric-Informed Care, Mobility & Functional Training, Evidence-Based Practice',
+  bio: `Mindy is a qualified physiotherapist with a background in both physiotherapy and occupational therapy. Before becoming a physiotherapist, she worked as a paediatric occupational therapist, supporting children with a range of developmental and functional needs. This experience has shaped the way she communicates, builds rapport, adapts treatment to individual needs, and considers the person as a whole.
+
+Mindy also has experience as a research assistant, which has developed her interest in evidence-based practice and applying research to clinical care. She takes a holistic and patient-centred approach to physiotherapy, with a focus on helping people improve their mobility, strength and confidence in everyday activities. She believes rehabilitation should be meaningful and functional, working with each person to develop practical goals that support their independence and participation in daily life.
+
+Outside of work, Mindy enjoys ballet, cooking, knitting and crochet, bushwalking with her partner, and spending time in the garden with her cat.`,
+  photo: '/team/mindy.jpg', // update to actual filename once uploaded
+  order: 6,
+},
 ]
