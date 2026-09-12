@@ -83,13 +83,52 @@ export async function isEmailAllowed(email: string): Promise<boolean> {
 }
 
 export async function listAllowedEmails() {
+  // password_hash itself is never selected here — only whether one is set —
+  // since this feeds the admin UI (via the API route) and a hash has no
+  // business leaving the server for a page that just needs to show status.
   const rows = await sql`
-    select id, email, display_name, cliniko_practitioner_id, last_seen_at, created_at, ${PG_IDENTITY_FRAGMENT}
+    select id, email, display_name, cliniko_practitioner_id, last_seen_at, created_at,
+      (password_hash is not null) as has_password,
+      ${PG_IDENTITY_FRAGMENT}
     from allowed_emails
     order by created_at desc
   `
   console.log(`[db:listAllowedEmails] ${dbIdentity()} count=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   return rows.map(stripPgIdentity)
+}
+
+// ── Password auth (replaces magic-link) ─────────────────────────────
+//
+// Credentials sign-in checks both of these: the row must exist (the
+// allow-list gate, same as before) AND password_hash must be set and
+// match. A row with no password_hash yet (freshly added, not invited)
+// simply can't sign in — same as the old flow where an allow-listed but
+// never-invited email could request a magic link but nothing had happened
+// for them yet.
+
+export async function getAllowedEmailAuth(
+  email: string
+): Promise<{ email: string; password_hash: string | null; display_name: string | null } | null> {
+  const rows = await sql`
+    select email, password_hash, display_name from allowed_emails
+    where email = ${email.toLowerCase()} limit 1
+  `
+  return (rows[0] as { email: string; password_hash: string | null; display_name: string | null } | undefined) ?? null
+}
+
+export async function setPasswordHash(email: string, passwordHash: string): Promise<void> {
+  const rows = await sql`
+    update allowed_emails
+    set password_hash = ${passwordHash}
+    where email = ${email.toLowerCase()}
+    returning id
+  `
+  if (rows.length === 0) {
+    // Setting a password only makes sense for an already allow-listed
+    // email — same "no silent no-op" stance as the other write helpers
+    // in this file.
+    throw new Error(`setPasswordHash: no allowed_emails row for ${email}`)
+  }
 }
 
 // Called from middleware on every /portal/* request. Cheap single-column
@@ -286,6 +325,7 @@ type AuditAction =
   | 'travel_block_delete'
   | 'admin_email_add'
   | 'admin_email_remove'
+  | 'admin_password_reset'
   | 'admin_assignment_add'
   | 'admin_assignment_remove'
   | 'admin_practitioner_link'
