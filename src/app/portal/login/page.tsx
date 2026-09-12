@@ -10,17 +10,22 @@ function LoginForm() {
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/portal'
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [password, setPassword] = useState('')
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setStatus('sending')
-    const res = await signIn('email', { email, callbackUrl, redirect: false })
+    setStatus('submitting')
+    const res = await signIn('credentials', { email, password, callbackUrl, redirect: false })
     if (res?.error) {
       setStatus('error')
-    } else {
-      setStatus('sent')
+      return
     }
+    if (res?.url) {
+      window.location.href = res.url
+      return
+    }
+    setStatus('idle')
   }
 
   return (
@@ -30,43 +35,51 @@ function LoginForm() {
           <Image src="/images/logo.png" alt="Physio to Home" width={56} height={56} />
           <h1 className="serif text-2xl text-primary font-semibold mt-4">Staff Portal</h1>
           <p className="text-muted-foreground text-sm mt-1 text-center">
-            Sign in with your work email to log treatment notes
+            Sign in with your work email and password to log treatment notes
           </p>
         </div>
 
-        {status === 'sent' ? (
-          <div className="bg-secondary border border-border rounded-lg p-6 text-center">
-            <p className="text-secondary-foreground font-medium">Check your email</p>
-            <p className="text-muted-foreground text-sm mt-2">
-              We sent a sign-in link to <span className="font-medium">{email}</span>. It expires in 15 minutes.
-            </p>
+        <form onSubmit={handleSubmit} className="bg-white border border-border rounded-lg p-6 space-y-4">
+          <div>
+            <label htmlFor="email" className="text-sm font-medium text-foreground block mb-1.5">
+              Work email
+            </label>
+            <input
+              id="email"
+              type="email"
+              required
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@physiotohome.com"
+              className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            />
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="bg-white border border-border rounded-lg p-6 space-y-4">
-            <div>
-              <label htmlFor="email" className="text-sm font-medium text-foreground block mb-1.5">
-                Work email
-              </label>
-              <input
-                id="email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@physiotohome.com"
-                className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              />
-            </div>
-            {status === 'error' && (
-              <p className="text-destructive text-sm">
-                That email isn&apos;t on the staff list yet. Contact Micheal to be added.
-              </p>
-            )}
-            <Button type="submit" className="w-full" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending link…' : 'Send sign-in link'}
-            </Button>
-          </form>
-        )}
+          <div>
+            <label htmlFor="password" className="text-sm font-medium text-foreground block mb-1.5">
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              required
+              autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+              className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            />
+          </div>
+          {status === 'error' && (
+            <p className="text-destructive text-sm">
+              That email/password combination isn&apos;t recognised. Contact Micheal if you need access or a
+              password reset.
+            </p>
+          )}
+          <Button type="submit" className="w-full" disabled={status === 'submitting'}>
+            {status === 'submitting' ? 'Signing in…' : 'Sign in'}
+          </Button>
+        </form>
       </div>
     </div>
   )
