@@ -105,21 +105,51 @@ export async function listAllowedEmails() {
 // simply can't sign in — same as the old flow where an allow-listed but
 // never-invited email could request a magic link but nothing had happened
 // for them yet.
+//
+// must_change_password forces a one-time trip to /portal/account before
+// the rest of the portal is reachable — set true whenever admin
+// sets/resets a password (they know the temp password, so it needs
+// rotating), cleared the moment the practitioner sets their own via
+// self-service change-password.
 
 export async function getAllowedEmailAuth(
   email: string
-): Promise<{ email: string; password_hash: string | null; display_name: string | null } | null> {
+): Promise<{
+  email: string
+  password_hash: string | null
+  display_name: string | null
+  must_change_password: boolean
+} | null> {
   const rows = await sql`
-    select email, password_hash, display_name from allowed_emails
+    select email, password_hash, display_name, must_change_password from allowed_emails
     where email = ${email.toLowerCase()} limit 1
   `
-  return (rows[0] as { email: string; password_hash: string | null; display_name: string | null } | undefined) ?? null
+  return (
+    (rows[0] as
+      | { email: string; password_hash: string | null; display_name: string | null; must_change_password: boolean }
+      | undefined) ?? null
+  )
 }
 
-export async function setPasswordHash(email: string, passwordHash: string): Promise<void> {
+// Dedicated light read for middleware — called on (almost) every /portal
+// and /admin request, so kept to the one column actually needed rather
+// than reusing getAllowedEmailAuth (which also pulls password_hash, no
+// business leaving the DB layer more often than it has to).
+export async function getMustChangePassword(email: string): Promise<boolean> {
+  const rows = await sql`
+    select must_change_password from allowed_emails where email = ${email.toLowerCase()} limit 1
+  `
+  return (rows[0]?.must_change_password as boolean | undefined) ?? false
+}
+
+export async function setPasswordHash(
+  email: string,
+  passwordHash: string,
+  mustChangePassword: boolean
+): Promise<void> {
   const rows = await sql`
     update allowed_emails
-    set password_hash = ${passwordHash}
+    set password_hash = ${passwordHash}, must_change_password = ${mustChangePassword}
     where email = ${email.toLowerCase()}
     returning id
   `
@@ -332,6 +362,7 @@ type AuditAction =
   | 'portal_assignment_add'
   | 'portal_assignment_remove'
   | 'portal_login'
+  | 'portal_password_change'
   | 'sms_request_create'
   | 'sms_request_mark_sent'
   | 'sms_request_reply'
