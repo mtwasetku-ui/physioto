@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest, NextFetchEvent } from 'next/server'
 import { getToken } from 'next-auth/jwt'
-import { touchLastSeen } from '@/lib/db'
+import { touchLastSeen, getMustChangePassword } from '@/lib/db'
 
 // Protects /portal/* (any signed-in, allow-listed physio) and /admin/*
 // (Micheal only). Actual allow-list membership is already enforced at
@@ -32,6 +32,23 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     const loginUrl = new URL('/portal/login', req.url)
     loginUrl.searchParams.set('callbackUrl', pathname)
     return withNoStore(NextResponse.redirect(loginUrl))
+  }
+
+  // A forced password change (set whenever admin sends/resets one — see
+  // /api/admin/emails/invite) takes precedence over everything else in
+  // this tree, including the admin gate below: /portal/account is the
+  // only place they're allowed until it's done. Checked fresh from the DB
+  // on every request rather than embedded in the JWT, since the JWT isn't
+  // re-issued mid-session and would otherwise keep forcing the redirect
+  // for days after they'd already changed it.
+  if (!pathname.startsWith('/portal/account')) {
+    const mustChangePassword = await getMustChangePassword(token.email).catch((err) => {
+      console.error('[middleware] getMustChangePassword failed', err)
+      return false // fail open on a DB blip rather than locking everyone out
+    })
+    if (mustChangePassword) {
+      return withNoStore(NextResponse.redirect(new URL('/portal/account?forced=1', req.url)))
+    }
   }
 
   if (pathname.startsWith('/admin')) {
