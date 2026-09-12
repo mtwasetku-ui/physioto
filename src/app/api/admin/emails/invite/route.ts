@@ -50,13 +50,13 @@ export async function POST(req: Request) {
 
   try {
     const passwordHash = await bcrypt.hash(tempPassword, 10)
-    await setPasswordHash(email, passwordHash)
+    await setPasswordHash(email, passwordHash, true)
 
     await sendMail({
       to: email,
       subject: `Your Physio to Home Staff Portal login`,
-      text: `${greeting}\n\nMicheal has set you up with access to the Physio to Home Staff Portal, where you can log treatment notes and view your assigned patients.\n\nSign in here: ${loginUrl}\n\nEmail: ${email}\nTemporary password: ${tempPassword}\n\nYou can keep using this password, or ask Micheal to reset it any time.`,
-      html: `<p>${greeting}</p><p>Micheal has set you up with access to the Physio to Home Staff Portal, where you can log treatment notes and view your assigned patients.</p><p><a href="${loginUrl}">Sign in here</a></p><p>Email: ${email}<br/>Temporary password: <strong>${tempPassword}</strong></p><p>You can keep using this password, or ask Micheal to reset it any time.</p>`,
+      text: `${greeting}\n\nMicheal has set you up with access to the Physio to Home Staff Portal, where you can log treatment notes and view your assigned patients.\n\nSign in here: ${loginUrl}\n\nEmail: ${email}\nTemporary password: ${tempPassword}\n\nYou'll be asked to set your own password the first time you sign in.`,
+      html: `<p>${greeting}</p><p>Micheal has set you up with access to the Physio to Home Staff Portal, where you can log treatment notes and view your assigned patients.</p><p><a href="${loginUrl}">Sign in here</a></p><p>Email: ${email}<br/>Temporary password: <strong>${tempPassword}</strong></p><p>You'll be asked to set your own password the first time you sign in.</p>`,
     })
     await writeAuditLog({ actorEmail: auth.email!, action: 'admin_password_reset', clinikoPatientId: undefined, detail: { email } })
     return NextResponse.json({ ok: true })
