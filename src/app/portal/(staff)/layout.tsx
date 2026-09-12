@@ -23,6 +23,12 @@ export default function StaffLayout({ children }: { children: React.ReactNode })
               <CalendarDays className="h-4 w-4" />
               Calendar
             </Link>
+            <Link
+              href="/portal/account"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground"
+            >
+              Change password
+            </Link>
             <PortalSignOutButton />
           </div>
         </div>
