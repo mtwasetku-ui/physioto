@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
+import { randomBytes } from 'crypto'
+import bcrypt from 'bcryptjs'
 import { authOptions } from '@/lib/auth'
-import { writeAuditLog } from '@/lib/db'
+import { setPasswordHash, writeAuditLog } from '@/lib/db'
 import { sendMail } from '@/lib/mail'
 
 async function requireAdmin() {
@@ -14,16 +16,26 @@ async function requireAdmin() {
   return { email }
 }
 
-// POST /api/admin/emails/invite — sends an actual email to a staff address
-// that's already on the allow-list, pointing them to /portal/login.
+// Generates a random, easy-to-read temporary password — avoids visually
+// ambiguous characters (0/O, 1/l/I) since this often gets read off a phone
+// screen or retyped from an email.
+function generateTempPassword(): string {
+  const alphabet = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789'
+  const bytes = randomBytes(12)
+  let out = ''
+  for (let i = 0; i < 12; i++) {
+    out += alphabet[bytes[i] % alphabet.length]
+  }
+  return out
+}
+
+// POST /api/admin/emails/invite — sets (or resets) a staff member's portal
+// password and emails it to them, since this replaces the old magic-link
+// flow where nothing needed to be generated up front.
 //
-// Deliberately NOT the NextAuth magic link itself — that's generated only
-// when someone submits their own email on the login form (it's short-lived,
-// 15 minutes, and tied to that specific sign-in attempt). Sending a
-// "one-time link" from here that then sits unused in an inbox for days
-// would just expire before they click it. Instead this sends a plain
-// pointer to the login page; they get their own live magic link the
-// moment they actually go there and ask for one.
+// The email must already be on the allow-list (added via /api/admin/emails)
+// — setPasswordHash throws if it isn't, same "no silent no-op" behaviour as
+// the rest of db.ts.
 export async function POST(req: Request) {
   const auth = await requireAdmin()
   if ('error' in auth) return auth.error
@@ -34,17 +46,21 @@ export async function POST(req: Request) {
   const siteUrl = process.env.NEXTAUTH_URL || 'https://www.physiotohome.com'
   const loginUrl = `${siteUrl.replace(/\/$/, '')}/portal/login`
   const greeting = displayName ? `Hi ${displayName},` : 'Hi,'
+  const tempPassword = generateTempPassword()
 
   try {
+    const passwordHash = await bcrypt.hash(tempPassword, 10)
+    await setPasswordHash(email, passwordHash)
+
     await sendMail({
       to: email,
-      subject: `You're invited to the Physio to Home Staff Portal`,
-      text: `${greeting}\n\nMicheal has set you up with access to the Physio to Home Staff Portal, where you can log treatment notes and view your assigned patients.\n\nSign in here: ${loginUrl}\n\nEnter this email address (${email}) and you'll be sent a one-time sign-in link — no password needed.`,
-      html: `<p>${greeting}</p><p>Micheal has set you up with access to the Physio to Home Staff Portal, where you can log treatment notes and view your assigned patients.</p><p><a href="${loginUrl}">Sign in here</a></p><p>Enter this email address (${email}) and you'll be sent a one-time sign-in link — no password needed.</p>`,
+      subject: `Your Physio to Home Staff Portal login`,
+      text: `${greeting}\n\nMicheal has set you up with access to the Physio to Home Staff Portal, where you can log treatment notes and view your assigned patients.\n\nSign in here: ${loginUrl}\n\nEmail: ${email}\nTemporary password: ${tempPassword}\n\nYou can keep using this password, or ask Micheal to reset it any time.`,
+      html: `<p>${greeting}</p><p>Micheal has set you up with access to the Physio to Home Staff Portal, where you can log treatment notes and view your assigned patients.</p><p><a href="${loginUrl}">Sign in here</a></p><p>Email: ${email}<br/>Temporary password: <strong>${tempPassword}</strong></p><p>You can keep using this password, or ask Micheal to reset it any time.</p>`,
     })
-    await writeAuditLog({ actorEmail: auth.email!, action: 'admin_email_add', clinikoPatientId: undefined, detail: { email, invite_sent: true } })
+    await writeAuditLog({ actorEmail: auth.email!, action: 'admin_password_reset', clinikoPatientId: undefined, detail: { email } })
     return NextResponse.json({ ok: true })
   } catch (e: any) {
-    return NextResponse.json({ error: e.message || 'Failed to send invite email' }, { status: 502 })
+    return NextResponse.json({ error: e.message || 'Failed to set password / send email' }, { status: 502 })
   }
 }
