@@ -11,6 +11,7 @@ interface AllowedEmail {
   cliniko_practitioner_id: string | null
   last_seen_at: string | null
   created_at: string
+  has_password?: boolean
 }
 
 // Compact "last active" label — enough resolution to be useful without
@@ -228,9 +229,10 @@ export default function AdminClient({
       <section>
         <h2 className="serif text-xl text-foreground font-semibold mb-1">Staff allowed to sign in</h2>
         <p className="text-muted-foreground text-sm mb-4">
-          Only these emails can request a magic sign-in link. Adding someone here does not give them access to any
-          patient — that&apos;s controlled separately below. Linking a Cliniko practitioner lets that physio book
-          visits under their own name instead of Micheal&apos;s.
+          Only these emails can sign in, and only once a password has been set for them (use &quot;Send
+          password&quot; below). Adding someone here does not give them access to any patient — that&apos;s
+          controlled separately below. Linking a Cliniko practitioner lets that physio book visits under their own
+          name instead of Micheal&apos;s.
         </p>
 
         <div className="bg-white border border-border rounded-lg p-4 flex flex-col sm:flex-row gap-2 mb-4">
@@ -261,10 +263,13 @@ export default function AdminClient({
                   <div className="text-sm font-medium text-foreground">{e.email}</div>
                   {e.display_name && <div className="text-xs text-muted-foreground">{e.display_name}</div>}
                   <div className="text-xs text-muted-foreground mt-0.5">Last active: {formatLastSeen(e.last_seen_at)}</div>
-                  {status === 'sending' && <div className="text-xs text-muted-foreground mt-0.5">Sending invite…</div>}
+                  <div className="text-xs text-muted-foreground mt-0.5">
+                    {e.has_password ? 'Password set' : 'No password set yet — can\u2019t sign in'}
+                  </div>
+                  {status === 'sending' && <div className="text-xs text-muted-foreground mt-0.5">Sending password…</div>}
                   {status === 'sent' && (
                     <div className="text-xs text-emerald-700 mt-0.5 flex items-center gap-1">
-                      <Check className="h-3 w-3" /> Invite sent
+                      <Check className="h-3 w-3" /> Password sent
                     </div>
                   )}
                   {status && status !== 'sending' && status !== 'sent' && (
@@ -308,7 +313,7 @@ export default function AdminClient({
                     className="text-xs text-primary hover:underline flex items-center gap-1 disabled:opacity-50"
                   >
                     <Mail className="h-3.5 w-3.5" />
-                    {status === 'sent' ? 'Resend' : 'Send invite'}
+                    {e.has_password ? 'Reset password' : 'Send password'}
                   </button>
                   <button onClick={() => removeEmail(e.email)} className="text-muted-foreground hover:text-destructive">
                     <Trash2 className="h-4 w-4" />
