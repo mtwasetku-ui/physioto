@@ -803,10 +803,13 @@ export default function DiaryClient() {
   return (
     <div>
       <h1 className="serif text-2xl text-foreground font-semibold mb-1">Your calendar</h1>
-      <p className="text-muted-foreground text-sm mb-6">
+      <p className="text-muted-foreground text-sm mb-6 hidden sm:block">
         Visits for your assigned patients only. Press and hold a visit to move it, or tap it to open the patient. Tap the{' '}
         <Car size={12} className="inline -mt-0.5" /> on a visit to set travel time before and after it, or tap empty space to block
         out unlinked travel time; drag its bottom edge to resize.
+      </p>
+      <p className="text-muted-foreground text-xs mb-4 sm:hidden">
+        Your assigned visits. Hold to move, tap to open, drag the bottom edge to resize.
       </p>
 
       <div className="flex items-center justify-between mb-3">
