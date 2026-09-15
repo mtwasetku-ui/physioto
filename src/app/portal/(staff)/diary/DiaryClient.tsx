@@ -77,6 +77,19 @@ const PRE_ARM_CANCEL_PX = 10 // finger movement past this before the hold fires 
 
 const TRAVEL_DURATION_OPTIONS = [5, 10, 15, 20, 30, 45, 60]
 
+// Mirrors lib/cliniko.ts CANCELLATION_REASONS / the same copy used on the
+// patient page — kept duplicated rather than imported since cliniko.ts is
+// server-only. Cliniko requires one of these codes on every cancellation.
+const CLIENT_CANCELLATION_REASONS = [
+  { code: 10, label: 'Feeling better' },
+  { code: 20, label: 'Condition worse' },
+  { code: 30, label: 'Sick' },
+  { code: 31, label: 'COVID-19 related' },
+  { code: 40, label: 'Away' },
+  { code: 60, label: 'Work' },
+  { code: 50, label: 'Other' },
+] as const
+
 function startOfWeek(d: Date) {
   const day = d.getDay() // 0 = Sun
   const diffToMonday = (day + 6) % 7
@@ -182,6 +195,18 @@ export default function DiaryClient() {
   const [noteDraft, setNoteDraft] = useState('')
   const [noteSaving, setNoteSaving] = useState(false)
   const [noteError, setNoteError] = useState<string | null>(null)
+  // "Cancel visit" lives inside the same appointment-note modal, behind a
+  // confirm step — Cliniko requires a reason code on every cancellation
+  // (see CLIENT_CANCELLATION_REASONS below), so this can't be a single
+  // tap. Series-level cancellation isn't offered here (unlike the patient
+  // page) since the diary's /api/appointments/diary response doesn't
+  // carry seriesId; cancelling a whole series still works from the
+  // patient's own appointment list.
+  const [cancelingAppt, setCancelingAppt] = useState(false)
+  const [cancelReason, setCancelReason] = useState<number | ''>('')
+  const [cancelNote, setCancelNote] = useState('')
+  const [cancelSaving, setCancelSaving] = useState(false)
+  const [cancelError, setCancelError] = useState<string | null>(null)
   // Same pattern, for renaming a travel block's label.
   const [travelModalId, setTravelModalId] = useState<string | null>(null)
   const [travelLabelDraft, setTravelLabelDraft] = useState('')
@@ -216,6 +241,25 @@ export default function DiaryClient() {
   const dayColRefs = useRef<Array<HTMLDivElement | null>>([])
 
   const days = useMemo(() => Array.from({ length: 7 }, (_, i) => addDays(weekStart, i)), [weekStart])
+
+  // Once a drag is actually armed, stop the page from scrolling underneath
+  // the finger — belt-and-braces alongside the touchAction style below.
+  // Two mobile-specific gotchas make the style alone unreliable on its
+  // own: (1) iOS Safari decides a gesture's touch-action at the initial
+  // touchstart and can ignore a value that only changes after the long-press
+  // timer fires (i.e. after the finger is already down), and (2) React
+  // attaches touch listeners as passive by default, so an e.preventDefault()
+  // inside the synthetic onPointerMove handler can silently do nothing.
+  // A native, explicitly non-passive document-level touchmove listener
+  // sidesteps both: it always runs, and always blocks the scroll while
+  // dragRef is set, regardless of when the CSS caught up.
+  useEffect(() => {
+    function blockScrollWhileDragging(e: TouchEvent) {
+      if (dragRef.current) e.preventDefault()
+    }
+    document.addEventListener('touchmove', blockScrollWhileDragging, { passive: false })
+    return () => document.removeEventListener('touchmove', blockScrollWhileDragging)
+  }, [])
 
   function load() {
     setError(null)
@@ -521,6 +565,35 @@ export default function DiaryClient() {
     setNoteModalId(appt.id)
     setNoteDraft(appt.notes || '')
     setNoteError(null)
+    setCancelingAppt(false)
+    setCancelReason('')
+    setCancelNote('')
+    setCancelError(null)
+  }
+
+  async function confirmCancelAppt() {
+    if (!noteModalId) return
+    if (!cancelReason) {
+      setCancelError('Select a reason first.')
+      return
+    }
+    setCancelSaving(true)
+    setCancelError(null)
+    const res = await fetch(`/api/appointments/${noteModalId}/cancel`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ reason: cancelReason, note: cancelNote || undefined }),
+    })
+    if (res.ok) {
+      setAppointments((prev) =>
+        prev?.map((a) => (a.id === noteModalId ? { ...a, cancelledAt: new Date().toISOString() } : a)) ?? null
+      )
+      setNoteModalId(null)
+    } else {
+      const body = await res.json().catch(() => null)
+      setCancelError(body?.error || `Failed to cancel (HTTP ${res.status})`)
+    }
+    setCancelSaving(false)
   }
 
   async function saveNote() {
@@ -996,32 +1069,86 @@ export default function DiaryClient() {
           onClick={() => !noteSaving && setNoteModalId(null)}
         >
           <div className="bg-white rounded-lg p-5 max-w-sm w-full shadow-lg" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-sm font-semibold text-foreground mb-1">Appointment note</h3>
-            <p className="text-xs text-muted-foreground mb-3">
-              Visible on the booking in Cliniko — not part of the patient's treatment record.
-            </p>
-            <textarea
-              value={noteDraft}
-              onChange={(e) => setNoteDraft(e.target.value)}
-              rows={4}
-              autoFocus
-              placeholder="e.g. Patient asked to be reminded to bring their referral letter"
-              className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
-            />
-            {noteError && <p className="text-xs text-destructive mt-1">{noteError}</p>}
-            <div className="flex items-center gap-2 mt-3">
-              <Button size="sm" onClick={saveNote} disabled={noteSaving}>
-                {noteSaving ? 'Saving…' : 'Save note'}
-              </Button>
-              <button
-                type="button"
-                onClick={() => setNoteModalId(null)}
-                disabled={noteSaving}
-                className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
-              >
-                Cancel
-              </button>
-            </div>
+            {!cancelingAppt ? (
+              <>
+                <h3 className="text-sm font-semibold text-foreground mb-1">Appointment note</h3>
+                <p className="text-xs text-muted-foreground mb-3">
+                  Visible on the booking in Cliniko — not part of the patient's treatment record.
+                </p>
+                <textarea
+                  value={noteDraft}
+                  onChange={(e) => setNoteDraft(e.target.value)}
+                  rows={4}
+                  autoFocus
+                  placeholder="e.g. Patient asked to be reminded to bring their referral letter"
+                  className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
+                />
+                {noteError && <p className="text-xs text-destructive mt-1">{noteError}</p>}
+                <div className="flex items-center justify-between gap-2 mt-3">
+                  <div className="flex items-center gap-2">
+                    <Button size="sm" onClick={saveNote} disabled={noteSaving}>
+                      {noteSaving ? 'Saving…' : 'Save note'}
+                    </Button>
+                    <button
+                      type="button"
+                      onClick={() => setNoteModalId(null)}
+                      disabled={noteSaving}
+                      className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
+                    >
+                      Close
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setCancelingAppt(true)}
+                    className="text-xs px-2.5 py-1.5 rounded-md border border-input text-destructive hover:bg-red-50 whitespace-nowrap"
+                  >
+                    Cancel visit
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <h3 className="text-sm font-semibold text-foreground mb-1">Cancel this visit?</h3>
+                <p className="text-xs text-muted-foreground mb-3">
+                  This cancels the appointment in Cliniko. It stays in history — it isn't deleted.
+                </p>
+                <select
+                  value={cancelReason}
+                  onChange={(e) => setCancelReason(Number(e.target.value))}
+                  className="w-full h-9 px-2 rounded-md border border-input bg-white text-sm mb-2"
+                  autoFocus
+                >
+                  <option value="">Reason for cancelling…</option>
+                  {CLIENT_CANCELLATION_REASONS.map((r) => (
+                    <option key={r.code} value={r.code}>
+                      {r.label}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  type="text"
+                  placeholder="Note (optional)"
+                  value={cancelNote}
+                  onChange={(e) => setCancelNote(e.target.value)}
+                  className="w-full h-9 px-2 rounded-md border border-input text-sm"
+                />
+                {cancelError && <p className="text-xs text-destructive mt-1">{cancelError}</p>}
+                <div className="flex items-center gap-2 mt-3">
+                  <Button size="sm" onClick={confirmCancelAppt} disabled={cancelSaving}>
+                    {cancelSaving ? 'Cancelling…' : 'Confirm cancellation'}
+                  </Button>
+                  <button
+                    type="button"
+                    onClick={() => setCancelingAppt(false)}
+                    disabled={cancelSaving}
+                    className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
+                  >
+                    Back
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
