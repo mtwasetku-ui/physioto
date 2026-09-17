@@ -290,7 +290,7 @@ export default function ContactClient() {
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Link
-              href="/booking"
+              href="/booking#appointment"
               className="inline-flex items-center gap-2 rounded-xl bg-[#FF5638] px-6 py-4 font-bold text-white shadow-lg shadow-[#FF5638]/25 transition-all hover:-translate-y-0.5 hover:bg-[#E8482B]"
             >
               <Calendar className="h-5 w-5" />
@@ -908,7 +908,7 @@ export default function ContactClient() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/booking"
+              href="/booking#appointment"
               className="inline-flex items-center gap-2 rounded-xl bg-[#FF5638] px-7 py-4 font-bold text-white shadow-lg shadow-[#FF5638]/25 transition-all hover:-translate-y-0.5 hover:bg-[#E8482B]"
             >
               <Calendar className="h-5 w-5" />
