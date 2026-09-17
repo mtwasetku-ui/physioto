@@ -313,7 +313,7 @@ export default function HomeClient() {
                 vis('hero') ? 'in' : ''
               } mt-10 flex flex-col gap-3 sm:flex-row`}
             >
-              <Link href="/booking">
+              <Link href="/booking#appointment">
                 <button className="sheen inline-flex items-center gap-2 rounded-xl bg-[#FF5638] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#FF5638]/40 transition-all hover:-translate-y-0.5 hover:bg-[#E8482B]">
                   <Calendar className="h-4 w-4" />
                   Book an Appointment
@@ -910,7 +910,7 @@ export default function HomeClient() {
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link href="/booking">
+            <Link href="/booking#appointment">
               <button className="sheen inline-flex items-center gap-2 rounded-xl bg-[#FF5638] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#FF5638]/40 transition-all hover:-translate-y-0.5 hover:bg-[#E8482B]">
                 <Calendar className="h-4 w-4" />
                 Book Your Appointment
