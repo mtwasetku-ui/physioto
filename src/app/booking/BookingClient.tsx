@@ -453,7 +453,7 @@ export default function BookingClient() {
       ===================================================== */}
       <section
         id="appointment"
-        className="relative bg-[#F2EFE4] py-24"
+        className="relative scroll-mt-28 bg-[#F2EFE4] py-24"
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-14 text-center">
