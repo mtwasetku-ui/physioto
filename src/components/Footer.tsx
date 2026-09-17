@@ -66,7 +66,7 @@ export default function Footer() {
             </p>
 
             <Link
-              href="/booking"
+              href="/booking#appointment"
               className="
                 inline-flex
                 items-center

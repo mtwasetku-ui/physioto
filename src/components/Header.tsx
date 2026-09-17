@@ -77,7 +77,7 @@ export default function Header() {
               </span>
             </a>
 
-            <Link href="/booking">
+            <Link href="/booking#appointment">
               <Button
                 className="
                   rounded-xl
@@ -170,7 +170,7 @@ export default function Header() {
                 </a>
 
                 <Link
-                  href="/booking"
+                  href="/booking#appointment"
                   onClick={() => setIsMenuOpen(false)}
                   className="block px-1"
                 >
