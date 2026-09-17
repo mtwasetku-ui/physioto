@@ -1,5 +1,4 @@
 ---
-
 title: "Dizziness With Neck Pain? Cervicogenic Dizziness Explained"
 description: "Cervicogenic dizziness can cause dizziness or unsteadiness alongside neck pain. Learn how it is assessed, why other causes must be considered and how physiotherapy may help."
 author: "Micheal Ghattas, Physiotherapist"
@@ -7,8 +6,8 @@ date: "2026-08-19"
 category: "Conditions & Rehab"
 featured: false
 image: /image/blog/cervicogenic-dizziness-misdiagnosed-clinical-overview.jpg
-
 tags: ["cervicogenic dizziness", "neck pain dizziness", "cervical dizziness", "dizziness physiotherapy", "vestibular physiotherapy", "home physiotherapy", "physiotherapy Tasmania", "balance problems"]
+---
 
 # Cervicogenic Dizziness: Symptoms, Diagnosis and Physiotherapy Treatment
 
