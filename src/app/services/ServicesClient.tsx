@@ -1059,7 +1059,7 @@ export default function ServicesPage() {
               marginBottom: 28,
             }}
           >
-            <PrimaryButton href="/booking">
+            <PrimaryButton href="/booking#appointment">
               <Calendar size={18} />
               Book a Home Visit
             </PrimaryButton>
@@ -2037,7 +2037,7 @@ export default function ServicesPage() {
               justifyContent: "center",
             }}
           >
-            <PrimaryButton href="/booking">
+            <PrimaryButton href="/booking#appointment">
               <Calendar size={18} />
               Book a Home Visit
             </PrimaryButton>
