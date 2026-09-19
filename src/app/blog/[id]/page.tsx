@@ -357,6 +357,63 @@ function renderMarkdown(
       continue
     }
 
+    /* Image: ![alt](url) */
+    const imageMatch = line
+      .trim()
+      .match(/^!\[([^\]]*)\]\(([^)]+)\)$/)
+
+    if (imageMatch) {
+      const [, alt, src] = imageMatch
+
+      elements.push(
+        <figure
+          key={i}
+          style={{
+            margin: '32px 0',
+          }}
+        >
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              borderRadius: 16,
+              overflow: 'hidden',
+              background: BRAND.paleGreen,
+            }}
+          >
+            <Image
+              src={src}
+              alt={alt || 'Blog illustration'}
+              width={1600}
+              height={1000}
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </div>
+
+          {alt && (
+            <figcaption
+              style={{
+                marginTop: 10,
+                fontSize: 13,
+                color: BRAND.muted,
+                textAlign: 'center',
+                fontStyle: 'italic',
+              }}
+            >
+              {alt}
+            </figcaption>
+          )}
+        </figure>
+      )
+
+      i++
+      continue
+    }
+
     /* Horizontal rule */
     if (line.trim() === '---') {
       elements.push(
