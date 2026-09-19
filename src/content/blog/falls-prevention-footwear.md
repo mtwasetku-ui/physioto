@@ -2,10 +2,10 @@
 title: "The Shoes That Cause Falls — And What to Wear Instead"
 description: "Wrong footwear is behind up to 50% of falls in older adults. Physiotherapist Micheal Ghattas explains which shoes are risky and what to look for."
 author: "Micheal Ghattas, Physiotherapist"
-date: "2026-02-27"
+date: "2026-09-19"
 category: "Falls Prevention"
 featured: false
-image: /image/blog/falls-prevention-footwear.jpg
+image: https://res.cloudinary.com/diiacrthz/image/upload/v1789824163/shoes-_types_pqeazk.jpg
 tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "balance"]
 ---
 
@@ -15,7 +15,7 @@ tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home phys
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: February 2026
+Physio to Home, North Tasmania | Last reviewed: September 2026
 
 Part of the Physio to Home Falls Prevention Series
 
@@ -58,6 +58,8 @@ Walking in socks — even non-slip socks — on smooth floors is one of the most
 ## Common Footwear Types: A Physiotherapist's Verdict
 
 Here is an honest clinical assessment of the most common footwear choices among older adults — both indoors and outdoors.
+
+![Common types of footwear compared for fall risk](https://res.cloudinary.com/diiacrthz/image/upload/v1789824163/shoes-_types_pqeazk.jpg)
 
 ### Backless Slippers — HIGH RISK — avoid for everyday indoor use
 
