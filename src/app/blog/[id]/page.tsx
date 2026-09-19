@@ -189,6 +189,41 @@ function linkifyText(
 }
 
 /**
+ * Converts any Australian 1300/1800-style phone number
+ * (formatted like "1300 433 233") found in plain text into
+ * a tap-to-call tel: link. Non-matching segments are returned
+ * as plain strings so callers can process them further.
+ */
+function linkifyPhoneNumbers(
+  text: string,
+  keyPrefix: string
+): React.ReactNode[] {
+  const parts = text.split(/(\d{4} \d{3} \d{3})/)
+
+  return parts.map((part, pi) => {
+    if (/^\d{4} \d{3} \d{3}$/.test(part)) {
+      return (
+        <a
+          key={`${keyPrefix}-tel-${pi}`}
+          href={`tel:${part.replace(/\s+/g, '')}`}
+          style={{
+            color: BRAND.green,
+            textDecoration: 'underline',
+            textDecorationColor: BRAND.sage,
+            textUnderlineOffset: 3,
+            fontWeight: 500,
+          }}
+        >
+          {part}
+        </a>
+      )
+    }
+
+    return part
+  })
+}
+
+/**
  * Renders markdown-style inline content.
  */
 function renderInline(
@@ -230,23 +265,33 @@ function renderInline(
 
       boldParts.forEach((bp, j) => {
         if (j % 2 === 1) {
+          const key = `b-${k++}`
           nodes.push(
             <strong
-              key={`b-${k++}`}
+              key={key}
               style={{
                 color: BRAND.forest,
                 fontWeight: 700,
               }}
             >
-              {bp}
+              {linkifyPhoneNumbers(bp, key)}
             </strong>
           )
         } else if (bp) {
+          const key = `t-${k++}`
           nodes.push(
-            <React.Fragment key={`t-${k++}`}>
-              {autoLink
-                ? linkifyText(bp, used, budget)
-                : bp}
+            <React.Fragment key={key}>
+              {linkifyPhoneNumbers(bp, key).map((seg, si) =>
+                typeof seg === 'string' ? (
+                  <React.Fragment key={`${key}-seg-${si}`}>
+                    {autoLink
+                      ? linkifyText(seg, used, budget)
+                      : seg}
+                  </React.Fragment>
+                ) : (
+                  seg
+                )
+              )}
             </React.Fragment>
           )
         }
@@ -256,6 +301,7 @@ function renderInline(
 
   return <>{nodes}</>
 }
+
 
 /**
  * Converts the blog markdown content into styled React elements.
