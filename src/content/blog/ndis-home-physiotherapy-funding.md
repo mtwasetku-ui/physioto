@@ -1,5 +1,4 @@
 ---
-
 title: "NDIS Home Physiotherapy: Funding, Eligibility and What Physiotherapy Can Help With"
 description: "Can the NDIS fund physiotherapy at home? Learn how NDIS physiotherapy works, what therapy supports are for, what evidence may be required and how home physiotherapy can support independence."
 author: "Micheal Ghattas, Physiotherapist"
@@ -8,7 +7,7 @@ category: "Funding & Access"
 featured: true
 image: /image/blog/ndis-home-physiotherapy-funding.jpg
 tags: ["NDIS physiotherapy", "NDIS home physiotherapy", "NDIS funding", "NDIS therapy supports", "physiotherapy Tasmania", "home physiotherapy Tasmania", "disability physiotherapy", "NDIS participants"]
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 # NDIS Home Physiotherapy: Funding, Eligibility and What Physiotherapy Can Help With
 
