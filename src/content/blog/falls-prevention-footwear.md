@@ -5,7 +5,7 @@ author: "Micheal Ghattas, Physiotherapist"
 date: "2026-09-19"
 category: "Falls Prevention"
 featured: false
-image: https://res.cloudinary.com/diiacrthz/image/upload/v1789824163/shoes-_types_pqeazk.jpg
+image: /image/blog/falls-prevention-footwear.jpg
 tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "balance"]
 ---
 
