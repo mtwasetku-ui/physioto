@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 Disallow: /api/
-Disallow: /_next/
+Disallow: /portal/
 
 Sitemap: https://www.physiotohome.com/sitemap.xml
 
