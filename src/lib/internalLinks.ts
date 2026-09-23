@@ -17,6 +17,9 @@ export const internalLinks: Record<string, string> = {
   'North West Coast':                  'home-physiotherapy-devonport-burnie',
   'Devonport':                         'home-physiotherapy-devonport-burnie',
   'Burnie':                            'home-physiotherapy-devonport-burnie',
+  'physiotherapist Launceston':        'home-physiotherapy-launceston',
+  'physio Launceston':                 'home-physiotherapy-launceston',
+  'Launceston':                        'home-physiotherapy-launceston',
 
   // Falls & balance
   'falls prevention exercises':        'falls-prevention-balance-exercises',
@@ -73,8 +76,14 @@ export const internalLinks: Record<string, string> = {
   'aged care physiotherapy':           'hidden-cost-inconsistent-physiotherapy-rural-aged-care',
 
   // General / home physio
+  'physiotherapy for elderly at home': 'benefits-of-home-physiotherapy',
+  'home care physiotherapy service':   'benefits-of-home-physiotherapy',
+  'home care package physiotherapy':   'my-aged-care-home-physiotherapy-funding',
+  'physiotherapy home visits':         'mobile-physiotherapy-home-visits',
+  'physiotherapy in home care':        'benefits-of-home-physiotherapy',
   'home physiotherapy':                'benefits-of-home-physiotherapy',
   'home-based physiotherapy':          'benefits-of-home-physiotherapy',
+  'physiotherapy at home':             'benefits-of-home-physiotherapy',
   'mobile physiotherapy':              'mobile-physiotherapy-home-visits',
   'home physio vs clinic':             'home-physiotherapy-vs-clinic-physiotherapy-comparison',
   'rural Tasmania':                    'rural-tasmania-physiotherapy-access-analysis',
