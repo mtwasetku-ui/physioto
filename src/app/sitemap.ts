@@ -43,6 +43,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${BASE_URL}/privacy-policy`,
+      lastModified: new Date('2026-03-08'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/terms-of-service`,
+      lastModified: new Date('2026-03-08'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ]
 
   // Location slugs get highest blog priority (0.8) — highest search volume in TAS

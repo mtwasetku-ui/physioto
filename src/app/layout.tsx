@@ -499,6 +499,38 @@ const structuredData = {
 }
 
 /* -------------------------------------------------------------------------- */
+/* WebSite + Organization (separate schema.org types some crawlers/audits    */
+/* check for explicitly, distinct from the MedicalBusiness listing above)   */
+/* -------------------------------------------------------------------------- */
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${BASE_URL}/#website`,
+  name: 'Physio to Home',
+  url: BASE_URL,
+  inLanguage: 'en-AU',
+  publisher: {
+    '@id': `${BASE_URL}/#medicalbusiness`,
+  },
+}
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${BASE_URL}/#organization`,
+  name: 'Physio to Home',
+  url: BASE_URL,
+  logo: `${BASE_URL}/images/logo.png`,
+  email: 'info@physiotohome.com',
+  telephone: '+61-1300-433-233',
+  sameAs: [
+    'https://www.facebook.com/profile.php?id=61565914211504',
+    'https://www.linkedin.com/company/physio-to-home/',
+  ],
+}
+
+/* -------------------------------------------------------------------------- */
 /* Root layout                                                                */
 /* -------------------------------------------------------------------------- */
 
@@ -536,6 +568,24 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(businessSchema),
+          }}
+        />
+
+        {/* Schema.org WebSite */}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+
+        {/* Schema.org Organization */}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
           }}
         />
 

@@ -56,6 +56,15 @@ export const servicesMetadata: Metadata = {
       'Back, neck and joint pain, post-surgery rehabilitation, falls prevention, neurological rehabilitation, aged care and chronic pain care delivered in your home across Tasmania.',
 
     url: `${BASE_URL}/services`,
+
+    images: [
+      {
+        url: '/images/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Physio to Home — In-Home Physiotherapy Across Tasmania',
+      },
+    ],
   },
 }
 
@@ -80,6 +89,15 @@ export const bookingMetadata: Metadata = {
       'Book your home physiotherapy appointment with Physio to Home. Same-week appointments are available across Tasmania.',
 
     url: `${BASE_URL}/booking`,
+
+    images: [
+      {
+        url: '/images/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Physio to Home — In-Home Physiotherapy Across Tasmania',
+      },
+    ],
   },
 }
 
@@ -104,6 +122,15 @@ export const contactMetadata: Metadata = {
       'Call 1300 433 233 or send us a message to discuss your physiotherapy needs. Home physiotherapy available across Tasmania.',
 
     url: `${BASE_URL}/contact`,
+
+    images: [
+      {
+        url: '/images/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Physio to Home — In-Home Physiotherapy Across Tasmania',
+      },
+    ],
   },
 }
 
@@ -128,6 +155,15 @@ export const teamMetadata: Metadata = {
       'Meet our AHPRA-registered physiotherapists providing experienced, personalised home physiotherapy across Tasmania.',
 
     url: `${BASE_URL}/team`,
+
+    images: [
+      {
+        url: '/images/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Physio to Home — In-Home Physiotherapy Across Tasmania',
+      },
+    ],
   },
 }
 
@@ -152,5 +188,14 @@ export const blogMetadata: Metadata = {
       'Practical physiotherapy advice and health guides covering pain, rehabilitation, mobility, falls prevention, aged care and neurological conditions.',
 
     url: `${BASE_URL}/blog`,
+
+    images: [
+      {
+        url: '/images/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Physio to Home — In-Home Physiotherapy Across Tasmania',
+      },
+    ],
   },
 }
