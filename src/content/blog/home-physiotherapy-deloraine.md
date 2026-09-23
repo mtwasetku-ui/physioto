@@ -50,7 +50,7 @@ Presentations we commonly manage in Deloraine include **lower back pain**, hip a
 
 ## Towns and Localities We Cover
 
-From our Deloraine service, our team also regularly visits Chudleigh, Mole Creek, Westbury, Exton, Reedy Marsh, Red Hills, and surrounding Meander Valley localities. If your address is nearby and you're unsure whether it's within range, [contact us](/booking) and we'll confirm.
+From our Deloraine service, our team also regularly visits Chudleigh, Mole Creek, Westbury, Exton, Reedy Marsh, Red Hills, and surrounding Meander Valley localities. If your address is nearby and you're unsure whether it's within range, [get in touch](/booking) and we'll confirm.
 
 ---
 

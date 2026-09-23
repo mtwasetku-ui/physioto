@@ -50,7 +50,7 @@ Common presentations across the valley include **lower back pain**, hip and knee
 
 ## Communities We Cover
 
-Our West Tamar service covers Exeter, Beaconsfield, Beauty Point, Legana, Rosevears, Gravelly Beach, and surrounding localities along the Tamar River. Not sure if your address is included? [Contact us](/booking) and we'll confirm.
+Our West Tamar service covers Exeter, Beaconsfield, Beauty Point, Legana, Rosevears, Gravelly Beach, and surrounding localities along the Tamar River. Not sure if your address is included? [Get in touch](/booking) and we'll confirm.
 
 ---
 

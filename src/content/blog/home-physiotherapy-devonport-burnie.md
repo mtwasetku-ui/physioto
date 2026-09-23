@@ -50,7 +50,7 @@ Presentations we commonly manage on the North West Coast include **lower back pa
 
 ## Towns and Localities We Cover
 
-From Devonport and Burnie, our team also regularly visits Ulverstone, Wynyard, Penguin, Somerset, Smithton, Sheffield, Latrobe, and Port Sorell. If your address is nearby and you're unsure whether it's within range, [contact us](/booking) and we'll confirm.
+From Devonport and Burnie, our team also regularly visits Ulverstone, Wynyard, Penguin, Somerset, Smithton, Sheffield, Latrobe, and Port Sorell. If your address is nearby and you're unsure whether it's within range, [get in touch](/booking) and we'll confirm.
 
 ---
 
@@ -72,7 +72,7 @@ From Devonport and Burnie, our team also regularly visits Ulverstone, Wynyard, P
 
 ### How far will a physiotherapist travel along the coast?
 
-Our North West Coast service covers Devonport, Burnie and the towns between and around them, including Ulverstone, Wynyard and Latrobe. If you're further out — Smithton or Sheffield, for example — [contact us](/booking) and we'll assess coverage for your address.
+Our North West Coast service covers Devonport, Burnie and the towns between and around them, including Ulverstone, Wynyard and Latrobe. If you're further out — Smithton or Sheffield, for example — [get in touch](/booking) and we'll assess coverage for your address.
 
 ### Can home physiotherapy work for someone living on a farm property?
 

@@ -50,7 +50,7 @@ Common presentations include **lower back pain**, hip and knee **osteoarthritis*
 
 ## Towns We Cover Near Longford
 
-Alongside Longford itself, our team regularly visits Cressy, Perth, Evandale, Carrick, and Bishopsbourne. If you're in one of the smaller surrounding localities, [contact us](/booking) and we'll confirm whether you're in range.
+Alongside Longford itself, our team regularly visits Cressy, Perth, Evandale, Carrick, and Bishopsbourne. If you're in one of the smaller surrounding localities, [get in touch](/booking) and we'll confirm whether you're in range.
 
 ---
 

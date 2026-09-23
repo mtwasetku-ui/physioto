@@ -55,7 +55,7 @@ Not sure if your condition suits home-based physiotherapy? [Get in touch](/booki
 
 Across greater Hobart, our team provides home visits including Sandy Bay, Glenorchy, Moonah, New Town, Kingston, Clarence, Rosny Park, Sorell, Richmond, and Huonville and the Huon Valley.
 
-Not sure if your address is in range? [Contact us](/booking) and we'll confirm.
+Not sure if your address is in range? [Get in touch](/booking) and we'll confirm.
 
 ---
 
