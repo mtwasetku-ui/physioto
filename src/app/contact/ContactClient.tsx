@@ -20,13 +20,12 @@ import { Button } from '@/components/ui/button'
 import { Input, Label, Textarea } from '@/components/ui/form-elements'
 import { useToast } from '@/hooks/use-toast'
 
-const FORMSPREE_URL = 'https://formspree.io/f/xgoneqlg'
-
 interface FormData {
   name: string
   email: string
   phone: string
   message: string
+  honeypot: string
 }
 
 const inputCx =
@@ -151,6 +150,7 @@ export default function ContactClient() {
     email: '',
     phone: '',
     message: '',
+    honeypot: '',
   })
 
   const [errors, setErrors] = useState<Partial<FormData>>({})
@@ -213,11 +213,10 @@ export default function ContactClient() {
     setLoading(true)
 
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Accept: 'application/json',
         },
         body: JSON.stringify(formData),
       })
@@ -237,6 +236,7 @@ export default function ContactClient() {
         email: '',
         phone: '',
         message: '',
+        honeypot: '',
       })
     } catch {
       toast({
@@ -416,6 +416,25 @@ export default function ContactClient() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Honeypot field — hidden from real visitors, catches basic bots.
+                  Not shown to users, excluded from validation. */}
+              <input
+                type="text"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+                style={{
+                  position: 'absolute',
+                  left: '-9999px',
+                  width: '1px',
+                  height: '1px',
+                  opacity: 0,
+                }}
+                aria-hidden="true"
+              />
+
               <div>
                 <Label htmlFor="name">Full Name *</Label>
 
