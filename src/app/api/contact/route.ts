@@ -1,9 +1,7 @@
 // src/app/api/contact/route.ts
 import { NextResponse } from "next/server";
 import { sql } from "@/lib/db";
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendMail } from "@/lib/mail";
 
 export async function POST(req: Request) {
   const { name, email, phone, message, honeypot } = await req.json();
@@ -21,11 +19,11 @@ export async function POST(req: Request) {
     values (${name}, ${email}, ${phone}, ${message})
   `;
 
-  await resend.emails.send({
-    from: "Website <noreply@physiotohome.com>",
+  await sendMail({
     to: "info@physiotohome.com",
     subject: `New enquiry from ${name}`,
     text: `${name}\n${email}\n${phone}\n\n${message}`,
+    html: `<p><strong>${name}</strong><br>${email}<br>${phone}</p><p>${message}</p>`,
   });
 
   return NextResponse.json({ ok: true });
