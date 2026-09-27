@@ -15,8 +15,6 @@ import { Button } from '@/components/ui/button'
 import { Input, Label, Textarea } from '@/components/ui/form-elements'
 import { useToast } from '@/hooks/use-toast'
 
-const FORMSPREE_URL = 'https://formspree.io/f/xgoneqlg'
-
 interface FormData {
   name: string
   email: string
@@ -25,6 +23,7 @@ interface FormData {
   preferredDate: string
   preferredTime: string
   notes: string
+  honeypot: string
 }
 
 const SERVICES = [
@@ -65,6 +64,7 @@ export default function BookingClient() {
     preferredDate: '',
     preferredTime: '',
     notes: '',
+    honeypot: '',
   })
 
   const [errors, setErrors] = useState<Partial<FormData>>({})
@@ -129,16 +129,12 @@ export default function BookingClient() {
     setLoading(true)
 
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch('/api/booking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Accept: 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          _subject: 'New Booking Request — Physio to Home',
-        }),
+        body: JSON.stringify(formData),
       })
 
       if (!res.ok) {
@@ -159,6 +155,7 @@ export default function BookingClient() {
         preferredDate: '',
         preferredTime: '',
         notes: '',
+        honeypot: '',
       })
 
       setErrors({})
@@ -587,6 +584,25 @@ export default function BookingClient() {
                 onSubmit={handleSubmit}
                 className="space-y-5"
               >
+                {/* Honeypot field — hidden from real visitors, catches basic bots.
+                    Not shown to users, excluded from validation. */}
+                <input
+                  type="text"
+                  name="honeypot"
+                  value={formData.honeypot}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  style={{
+                    position: 'absolute',
+                    left: '-9999px',
+                    width: '1px',
+                    height: '1px',
+                    opacity: 0,
+                  }}
+                  aria-hidden="true"
+                />
+
                 {/* FULL NAME */}
                 <div>
                   <Label htmlFor="name">
