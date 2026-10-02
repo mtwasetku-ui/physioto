@@ -987,7 +987,7 @@ function NoteCard({ note, compact }: { note: any; compact?: boolean }) {
             })}
           </span>
           <span className={`font-semibold text-primary ml-2 ${compact ? 'text-sm' : 'text-sm'}`}>
-            {note.visitPractitionerName || note.authorDisplayName || note.title}
+            {note.authorDisplayName || note.visitPractitionerName || note.title}
           </span>
         </div>
         {note.draft && (
