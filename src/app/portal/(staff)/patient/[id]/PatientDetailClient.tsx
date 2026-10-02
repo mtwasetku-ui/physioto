@@ -475,7 +475,7 @@ function NoteForm({
     fetch(`/api/notes?patientId=${patientId}&draftOnly=true`)
       .then((r) => r.json())
       .then((data) => {
-        const mine = (data.notes || []).find((n: any) => n.title === authorEmail && n.draft)
+        const mine = (data.notes || []).find((n: any) => n.isMine && n.draft)
         if (mine) {
           setExistingDraftId(mine.id)
           setAnswers(answersFromNoteContent(mine))
