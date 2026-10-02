@@ -69,6 +69,10 @@ export async function GET(req: Request) {
     )
     const practitionerNames = await getDisplayNamesForPractitionerIds(practitionerIds)
 
+    // Titles are now the physio's name for new notes, but older notes still
+    // carry the email — so "is this my draft?" accepts either.
+    const myNames = await getDisplayNamesForEmails([auth.email!])
+    const myName = myNames[auth.email!.toLowerCase()]
     const enriched = notes.map((n: any) => {
       const bookingId = idFromLink(n.booking?.links?.self)
       const booking = bookingId ? bookingById.get(bookingId) : null
@@ -76,6 +80,9 @@ export async function GET(req: Request) {
       return {
         ...n,
         authorDisplayName: names[String(n.title).toLowerCase()] || n.title,
+        isMine:
+          String(n.title).toLowerCase() === auth.email!.toLowerCase() ||
+          (!!myName && n.title === myName),
         visitDate: booking?.starts_at || n.created_at,
         visitPractitionerName: (practitionerId && practitionerNames[practitionerId]) || null,
       }
@@ -99,12 +106,14 @@ export async function POST(req: Request) {
 
   try {
     const template = await getTemplateByExactName(templateName)
+    const authorNames = await getDisplayNamesForEmails([auth.email!])
     const note = await createTreatmentNote({
       patientId,
       template,
       sections,
       draft: !!draft,
       authorEmail: auth.email!,
+      authorName: authorNames[auth.email!.toLowerCase()],
       bookingId,
     })
     await writeAuditLog({
