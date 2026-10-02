@@ -196,15 +196,16 @@ export async function createTreatmentNote(params: {
   sections: NoteSectionInput[]
   draft: boolean
   authorEmail: string
+  authorName?: string
   bookingId?: string
 }) {
-  const { patientId, template, sections, draft, authorEmail, bookingId } = params
+  const { patientId, template, sections, draft, authorEmail, authorName, bookingId } = params
   return clinikoFetch('/treatment_notes', {
     method: 'POST',
     body: JSON.stringify({
       patient_id: patientId,
       treatment_note_template_id: template.id,
-      title: authorEmail, // treating physio identity, kept out of clinical content
+      title: authorName || authorEmail, // treating physio's name (email if no display name set), kept out of clinical content
       draft,
       ...(bookingId ? { booking_id: bookingId } : {}),
       content: buildNoteContent(template, sections),
