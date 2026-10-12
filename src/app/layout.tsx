@@ -12,6 +12,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/toaster'
 import GAPageViewTracker from '@/components/GAPageViewTracker'
+import ClarityScript from '@/components/ClarityScript'
 
 /* -------------------------------------------------------------------------- */
 /* Fonts                                                                      */
@@ -46,7 +47,6 @@ const instrumentSans = Instrument_Sans({
 
 const BASE_URL = 'https://www.physiotohome.com'
 const GA_ID = 'G-78YHHCX8JE'
-const CLARITY_ID = 'ywkn1ehp6k'
 const PB_URL = 'https://physio-pb.fly.dev'
 
 /* -------------------------------------------------------------------------- */
@@ -618,20 +618,9 @@ export default async function RootLayout({
           `}
         </Script>
 
-        {/* Microsoft Clarity */}
+        {/* Microsoft Clarity (public pages only — skips /portal and /admin) */}
 
-        <Script
-          id="microsoft-clarity"
-          strategy="afterInteractive"
-        >
-          {`
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "${CLARITY_ID}");
-          `}
-        </Script>
+        <ClarityScript />
 
         <Suspense fallback={null}>
           <GAPageViewTracker />
