@@ -11,6 +11,9 @@
 // questions inside content.sections[].questions[], and the exact field
 // names in the S3 presigned-POST response.
 
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+
 const API_BASE = process.env.CLINIKO_API_BASE // e.g. https://api.au4.cliniko.com/v1
 const API_KEY = process.env.CLINIKO_API_KEY
 const USER_AGENT = process.env.CLINIKO_USER_AGENT || 'Physio to Home Staff Portal (info@physiotohome.com)'
@@ -25,9 +28,39 @@ const USER_AGENT = process.env.CLINIKO_USER_AGENT || 'Physio to Home Staff Porta
 // one of the other businesses on the account.
 const BUSINESS_ID = process.env.CLINIKO_BUSINESS_ID // Physio to Home's business id
 
-function authHeader() {
-  if (!API_KEY) throw new Error('Practice system is not configured (missing API key)')
-  return 'Basic ' + Buffer.from(`${API_KEY}:`).toString('base64')
+function authHeader(key: string | undefined = API_KEY) {
+  if (!key) throw new Error('Practice system is not configured (missing API key)')
+  return 'Basic ' + Buffer.from(`${key}:`).toString('base64')
+}
+
+// ── Per-practitioner API keys (optional) ────────────────────────────
+//
+// A physio with a personal key uses it for every call they trigger, which
+// gives them their own rate-limit allowance. Everyone without one keeps using
+// the shared key above, exactly as before. The logged-in physio is read from
+// the session here, so none of the API routes had to change.
+//
+// Keys live in Vercel environment variables (mark them Sensitive), one per
+// physio, named CLINIKO_KEY_ + their sign-in email in capitals with every
+// character that isn't a letter or number replaced by "_". For example
+// mindy@physiotohome.com  ->  CLINIKO_KEY_MINDY_PHYSIOTOHOME_COM
+// Add the variable, then redeploy for it to take effect. Delete it to send
+// that physio back to the shared key.
+function personalKeyEnvName(email: string) {
+  return 'CLINIKO_KEY_' + email.toUpperCase().replace(/[^A-Z0-9]/g, '_')
+}
+
+async function resolvePersonalKey(): Promise<string | null> {
+  try {
+    const session = await getServerSession(authOptions)
+    const email = session?.user?.email
+    if (!email) return null
+    return process.env[personalKeyEnvName(email)]?.trim() || null
+  } catch (e) {
+    // No request context etc. — never block clinical work over it.
+    console.error('[cliniko] personal key lookup failed, using shared key', (e as Error)?.message)
+    return null
+  }
 }
 
 // Cliniko rate-limits per API key. Because every call in this portal shares
@@ -40,11 +73,13 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 async function clinikoFetch(path: string, init: RequestInit = {}) {
   if (!API_BASE) throw new Error('Practice system is not configured (missing API base URL)')
+  const personalKey = await resolvePersonalKey()
+  let activeKey: string | undefined = personalKey ?? API_KEY
   for (let attempt = 0; ; attempt++) {
     const res = await fetch(`${API_BASE}${path}`, {
       ...init,
       headers: {
-        Authorization: authHeader(),
+        Authorization: authHeader(activeKey),
         'User-Agent': USER_AGENT,
         Accept: 'application/json',
         ...(init.body ? { 'Content-Type': 'application/json' } : {}),
@@ -52,6 +87,14 @@ async function clinikoFetch(path: string, init: RequestInit = {}) {
       },
       cache: 'no-store',
     })
+
+    // A personal key that has been revoked/rotated in Cliniko shouldn't lock
+    // the physio out mid-clinic — fall back to the shared key and log it.
+    if (res.status === 401 && personalKey && activeKey === personalKey) {
+      console.error('[cliniko] personal key rejected (401) — falling back to shared key')
+      activeKey = API_KEY
+      continue
+    }
 
     if (res.status === 429 && attempt < MAX_RATE_LIMIT_RETRIES) {
       const retryAfter = Number(res.headers.get('retry-after'))
@@ -722,7 +765,7 @@ export async function cancelIndividualAppointment(appointmentId: string, params:
 export async function fetchAttachmentBytes(attachmentId: string) {
   if (!API_BASE) throw new Error('Practice system is not configured (missing API base URL)')
   const first = await fetch(`${API_BASE}/patient_attachments/${attachmentId}/content`, {
-    headers: { Authorization: authHeader(), 'User-Agent': USER_AGENT },
+    headers: { Authorization: authHeader((await resolvePersonalKey()) ?? API_KEY), 'User-Agent': USER_AGENT },
     cache: 'no-store',
     redirect: 'manual',
   })
