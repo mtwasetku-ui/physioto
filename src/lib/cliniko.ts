@@ -30,29 +30,52 @@ function authHeader() {
   return 'Basic ' + Buffer.from(`${API_KEY}:`).toString('base64')
 }
 
+// Cliniko rate-limits per API key. Because every call in this portal shares
+// one key, a busy moment for the whole team can trip a 429 on whichever
+// request happens to land next. A 429 means the request was REJECTED, not
+// processed, so retrying is safe even for POST/PATCH (no duplicate notes).
+// Waits are capped so a retry loop can't outlive the serverless timeout.
+const MAX_RATE_LIMIT_RETRIES = 2
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
 async function clinikoFetch(path: string, init: RequestInit = {}) {
   if (!API_BASE) throw new Error('Practice system is not configured (missing API base URL)')
-  const res = await fetch(`${API_BASE}${path}`, {
-    ...init,
-    headers: {
-      Authorization: authHeader(),
-      'User-Agent': USER_AGENT,
-      Accept: 'application/json',
-      ...(init.body ? { 'Content-Type': 'application/json' } : {}),
-      ...init.headers,
-    },
-    cache: 'no-store',
-  })
-  if (!res.ok) {
-    const body = await res.text().catch(() => '')
-    // This message reaches practitioners verbatim — most API routes return
-    // e.message straight through in their JSON error response so the real
-    // failure reason is visible in the UI. Keep it detailed, but never let
-    // it name the backend system (see Final Agreement §4).
-    throw new Error(`Practice system request failed: ${init.method || 'GET'} ${path} → ${res.status} ${body}`)
+  for (let attempt = 0; ; attempt++) {
+    const res = await fetch(`${API_BASE}${path}`, {
+      ...init,
+      headers: {
+        Authorization: authHeader(),
+        'User-Agent': USER_AGENT,
+        Accept: 'application/json',
+        ...(init.body ? { 'Content-Type': 'application/json' } : {}),
+        ...init.headers,
+      },
+      cache: 'no-store',
+    })
+
+    if (res.status === 429 && attempt < MAX_RATE_LIMIT_RETRIES) {
+      const retryAfter = Number(res.headers.get('retry-after'))
+      const baseMs = Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter, 5) * 1000 : 1500 * 2 ** attempt
+      await sleep(baseMs + Math.random() * 250) // jitter so parallel callers don't retry in lockstep
+      continue
+    }
+
+    if (!res.ok) {
+      const body = await res.text().catch(() => '')
+      // This message reaches practitioners verbatim — most API routes return
+      // e.message straight through in their JSON error response so the real
+      // failure reason is visible in the UI. Keep it detailed, but never let
+      // it name the backend system (see Final Agreement §4).
+      if (res.status === 429) {
+        throw new Error(
+          `The practice system is busy right now — nothing was saved. Wait a minute and try again. (${init.method || 'GET'} ${path} → 429)`
+        )
+      }
+      throw new Error(`Practice system request failed: ${init.method || 'GET'} ${path} → ${res.status} ${body}`)
+    }
+    if (res.status === 204) return null
+    return res.json()
   }
-  if (res.status === 204) return null
-  return res.json()
 }
 
 // ── Treatment note templates ────────────────────────────────────
@@ -108,17 +131,50 @@ export function unsupportedQuestionTypes(template: ClinikoTemplate): string[] {
   return Array.from(found)
 }
 
-// Fetched live every time the note form loads — never cached — so editing
-// a template in Cliniko (renaming a section, adding a question) shows up
-// in the portal immediately with no redeploy.
-export async function listTreatmentNoteTemplates(): Promise<ClinikoTemplate[]> {
-  const data = await clinikoFetch('/treatment_note_templates?per_page=100')
-  return data.treatment_note_templates ?? []
+// Cached in memory for a few minutes (per server instance) instead of being
+// fetched on every note form load AND every note save. Templates rarely
+// change, and this was the call that tripped the rate limit on Save as final.
+// Editing a template in Cliniko still shows up in the portal within
+// TEMPLATE_TTL_MS with no redeploy, and getTemplateByExactName() below
+// force-refreshes if a template name isn't found, so a brand-new template
+// works immediately. If a refresh fails (e.g. rate-limited) the last good
+// copy is served rather than blocking the save.
+const TEMPLATE_TTL_MS = 5 * 60 * 1000
+let templateCache: { at: number; data: ClinikoTemplate[] } | null = null
+let templateInflight: Promise<ClinikoTemplate[]> | null = null
+
+export async function listTreatmentNoteTemplates(opts: { forceRefresh?: boolean } = {}): Promise<ClinikoTemplate[]> {
+  const fresh = templateCache && Date.now() - templateCache.at < TEMPLATE_TTL_MS
+  if (fresh && !opts.forceRefresh) return templateCache!.data
+
+  // Share one in-flight request between concurrent callers.
+  if (!templateInflight) {
+    templateInflight = clinikoFetch('/treatment_note_templates?per_page=100')
+      .then((data) => {
+        const templates: ClinikoTemplate[] = data.treatment_note_templates ?? []
+        templateCache = { at: Date.now(), data: templates }
+        return templates
+      })
+      .finally(() => {
+        templateInflight = null
+      })
+  }
+  try {
+    return await templateInflight
+  } catch (e) {
+    if (templateCache) return templateCache.data // stale beats failing a save
+    throw e
+  }
 }
 
 export async function getTemplateByExactName(name: string): Promise<ClinikoTemplate> {
-  const templates = await listTreatmentNoteTemplates()
-  const match = templates.find((t) => t.name === name)
+  let match = (await listTreatmentNoteTemplates()).find((t) => t.name === name)
+  // Not found: the template may be new (or renamed) in Cliniko since the cache
+  // was filled. Refresh once — but not if the cache is only seconds old, so a
+  // typo'd name can't hammer the API.
+  if (!match && templateCache && Date.now() - templateCache.at > 15_000) {
+    match = (await listTreatmentNoteTemplates({ forceRefresh: true })).find((t) => t.name === name)
+  }
   if (!match) {
     throw new Error(
       `No treatment note template named exactly "${name}" was found. Check the template name matches exactly (including capitalisation).`
