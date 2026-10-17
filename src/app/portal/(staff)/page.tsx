@@ -24,23 +24,19 @@ export default async function PortalHomePage() {
     patientLabel: a.patient_label,
   }))
 
+  const count = assignments.length
+
   return (
-    <div>
-      <h1 className="serif text-2xl text-foreground font-semibold mb-1">My patients</h1>
-      <p className="text-muted-foreground text-sm mb-6">
-        Patients assigned to you. Open one to view their details, write treatment notes, view
-        attachments and book visits.
-      </p>
-
-      <MyPatientsList assignments={assignments} />
-
-      <h2 className="serif text-lg text-foreground font-semibold mb-1">Find a patient</h2>
-      <p className="text-muted-foreground text-sm mb-4">
-        Search by name to open any patient&apos;s record — for example a new referral that hasn&apos;t
-        been assigned to you yet. Booking a visit for them adds them to your patient list above.
+    <div className="max-w-3xl">
+      <h1 className="serif text-3xl text-foreground">My patients</h1>
+      <p className="mb-6 mt-1 text-sm text-muted-foreground">
+        {count === 0 ? 'No patients assigned yet' : `${count} ${count === 1 ? 'patient' : 'patients'} assigned to you`}
       </p>
 
       <PatientSearch />
+
+      <MyPatientsList assignments={assignments} />
     </div>
   )
 }
+
