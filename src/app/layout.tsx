@@ -10,6 +10,7 @@ import {
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PublicChrome from '@/components/PublicChrome'
 import { Toaster } from '@/components/ui/toaster'
 import GAPageViewTracker from '@/components/GAPageViewTracker'
 import ClarityScript from '@/components/ClarityScript'
@@ -628,13 +629,19 @@ export default async function RootLayout({
 
         {/* Site */}
 
-        <Header />
+        {/* Marketing header/footer are public-site only; /portal and /admin render their own shell */}
+
+        <PublicChrome>
+          <Header />
+        </PublicChrome>
 
         <main className="flex-grow">
           {children}
         </main>
 
-        <Footer />
+        <PublicChrome>
+          <Footer />
+        </PublicChrome>
 
         <Toaster />
 
@@ -642,3 +649,4 @@ export default async function RootLayout({
     </html>
   )
 }
+
