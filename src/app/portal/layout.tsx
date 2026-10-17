@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import AuthProvider from '@/components/portal/AuthProvider'
+import '@/app/portal-theme.css'
 
 // Staff-only area — never indexed. Also blocked in robots.txt as a
 // second layer, but the noindex tag is what actually keeps it out of
@@ -12,12 +13,14 @@ export const metadata: Metadata = {
 }
 
 // Applies to everything under /portal, including /portal/login — just the
-// session context, no visible chrome. The staff header/nav lives one level
-// down in the (staff) route group so the login page doesn't inherit it.
+// session context and the portal theme (see app/portal-theme.css), no visible
+// chrome. The staff shell lives one level down in the (staff) route group so
+// the login page doesn't inherit it.
 export default function PortalRootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-muted/40">
+    <div className="portal-theme min-h-screen bg-background text-foreground">
       <AuthProvider>{children}</AuthProvider>
     </div>
   )
 }
+
