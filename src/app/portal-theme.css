@@ -1,0 +1,96 @@
+/* ============================================================
+   PORTAL THEME — staff portal (/portal) and admin (/admin)
+
+   Everything here is scoped to `.portal-theme`, which is applied in
+   app/portal/layout.tsx and app/admin/layout.tsx. The public site keeps
+   the tokens from globals.css untouched.
+
+   The portal screens are built on the shared semantic tokens
+   (bg-background, text-primary, bg-secondary, border-border…), so
+   overriding the tokens here re-skins every portal screen at once,
+   including PatientDetailClient and DiaryClient.
+   ============================================================ */
+
+.portal-theme {
+  /* Portal-only brand tokens */
+  --portal-ink: #0b2a20;      /* sidebar, top bar, login panel */
+  --portal-signal: #ee9a3f;   /* the logo's amber — active-page marker only */
+
+  /* Semantic tokens (HSL channels, as globals.css) */
+  --background: 141 14% 94%;              /* mist — the work surface */
+  --foreground: 156 38% 10%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 156 38% 10%;
+
+  --primary: 154 54% 24%;                 /* pine */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 144 21% 90%;               /* tint for avatars, hovered rows */
+  --secondary-foreground: 156 45% 16%;
+
+  --muted: 140 12% 91%;
+  --muted-foreground: 152 9% 37%;         /* 5:1 on mist, 6:1 on white */
+
+  --accent: 144 21% 90%;
+  --accent-foreground: 156 45% 16%;
+
+  --destructive: 0 68% 46%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 142 16% 85%;                  /* dividers and card edges */
+  --input: 146 13% 62%;                   /* form fields need a firmer edge */
+  --ring: 154 54% 24%;
+
+  --radius: 0.625rem;
+
+  font-family:
+    var(--font-instrument-sans),
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  font-variant-numeric: tabular-nums;   /* times, dates of birth, durations */
+}
+
+/* The public site runs at 118% root size for its marketing layout; the
+   portal is a dense working tool, so bring it back toward 16px.
+   (Specificity beats the mobile rule in globals.css.) */
+html:has(.portal-theme) {
+  font-size: 106%;
+}
+
+/* Overscroll and any gap below the content should match the work surface. */
+html:has(.portal-theme) body {
+  background: hsl(141 14% 94%);
+}
+
+/* Portal headings use the `serif` utility (Playfair, a marketing face).
+   Swap to the display grotesque without touching the screens. */
+.portal-theme .serif {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+/* Links and buttons without their own ring get a visible keyboard focus.
+   :where() keeps specificity at zero so Tailwind's focus utilities win
+   wherever a component already styles its own focus. */
+:where(.portal-theme) :where(a, button, summary):focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* On the dark sidebar/top bar the ring must be light. */
+:where(.portal-theme) :where(.portal-on-ink) :where(a, button):focus-visible {
+  outline-color: #fff;
+}
+
+/* Selection */
+.portal-theme ::selection {
+  background: hsl(144 21% 82%);
+  color: var(--portal-ink);
+}
+
