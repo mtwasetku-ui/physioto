@@ -151,7 +151,7 @@ function visibleQuestions(section: Section): Question[] {
   return section.questions.filter((q) => !DROPPED_QUESTION_TYPES.includes(q.type))
 }
 
-const TEMPLATE_NAMES = ['Initial Consultation', 'Standard Consultation']
+const TEMPLATE_NAMES = ['Initial Consultation', 'Standard Consultation', 'Communication']
 
 export default function PatientDetailClient({
   patientId,
