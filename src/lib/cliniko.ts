@@ -226,6 +226,51 @@ export async function getTemplateByExactName(name: string): Promise<ClinikoTempl
   return match
 }
 
+// ── Short-lived server cache (per serverless instance, best effort) ──
+//
+// The portal asks for the same patient's notes / bookings many times in a
+// row (several panels, several effects), and every one of those used to be a
+// separate Cliniko request. This collapses repeats. Concurrent identical
+// requests share one in-flight call. It is only a per-instance optimisation:
+// a cold instance simply fetches again, so nothing depends on it for
+// correctness. Callers have already passed the assignment check before they
+// get here, and the cached data is the same whichever API key fetched it.
+const TTL_MAX_ENTRIES = 500
+const ttlCache = new Map<string, { at: number; data: any }>()
+const ttlInflight = new Map<string, Promise<any>>()
+
+async function cached<T>(key: string, ttlMs: number, load: () => Promise<T>): Promise<T> {
+  const hit = ttlCache.get(key)
+  if (hit && Date.now() - hit.at < ttlMs) return hit.data as T
+  let p = ttlInflight.get(key) as Promise<T> | undefined
+  if (!p) {
+    p = load()
+      .then((data) => {
+        ttlCache.set(key, { at: Date.now(), data })
+        // Keep memory bounded: drop the oldest entries (Map keeps insertion order).
+        while (ttlCache.size > TTL_MAX_ENTRIES) {
+          const oldest = ttlCache.keys().next().value
+          if (oldest === undefined) break
+          ttlCache.delete(oldest)
+        }
+        return data
+      })
+      .finally(() => {
+        ttlInflight.delete(key)
+      })
+    ttlInflight.set(key, p)
+  }
+  return p
+}
+
+const NOTES_TTL_MS = 30 * 1000
+const BOOKING_TTL_MS = 10 * 60 * 1000
+
+// Call after anything that creates or changes a patient's notes.
+export function invalidatePatientNotes(patientId: string) {
+  ttlCache.delete(`notes:${patientId}`)
+}
+
 // ── Treatment notes ─────────────────────────────────────────────
 
 export interface NoteAnswer {
@@ -333,13 +378,19 @@ export async function updateTreatmentNote(params: {
   })
 }
 
-export async function listTreatmentNotesForPatient(patientId: string) {
-  // Cliniko's sort syntax is "field:direction" (e.g. "created_at:desc"),
-  // not the Rails/JSON:API leading-minus convention. The old "-created_at"
-  // form is rejected by the API, which made this call fail silently
-  // (the UI just showed "No visit notes yet").
-  const data = await clinikoFetch(`/patients/${patientId}/treatment_notes?per_page=100&sort=created_at:desc`)
-  return data.treatment_notes ?? []
+// `fresh: true` skips the short cache. Use it wherever a stale answer could
+// cause a wrong action (e.g. "does this physio already have a draft?", which
+// decides between creating a new note and continuing one).
+export async function listTreatmentNotesForPatient(patientId: string, opts: { fresh?: boolean } = {}) {
+  if (opts.fresh) ttlCache.delete(`notes:${patientId}`)
+  return cached(`notes:${patientId}`, NOTES_TTL_MS, async () => {
+    // Cliniko's sort syntax is "field:direction" (e.g. "created_at:desc"),
+    // not the Rails/JSON:API leading-minus convention. The old "-created_at"
+    // form is rejected by the API, which made this call fail silently
+    // (the UI just showed "No visit notes yet").
+    const data = await clinikoFetch(`/patients/${patientId}/treatment_notes?per_page=100&sort=created_at:desc`)
+    return (data.treatment_notes ?? []) as any[]
+  })
 }
 
 // Which bookings (appointments) already have a finalised note attached —
@@ -383,11 +434,17 @@ export async function listFinalizedNoteBookingIds(patientIds: string[]): Promise
 // written up the next day, or entered by someone other than the treating
 // physio).
 export async function getBooking(bookingId: string) {
-  return clinikoFetch(`/bookings/${bookingId}`)
+  // Past visits almost never change, so this is safe to hold for a while.
+  return cached(`booking:${bookingId}`, BOOKING_TTL_MS, () => clinikoFetch(`/bookings/${bookingId}`))
+}
+
+// Call after a visit is rescheduled or cancelled so its date isn't stale.
+export function invalidateBooking(bookingId: string) {
+  ttlCache.delete(`booking:${bookingId}`)
 }
 
 export async function getMostRecentDraftForAuthor(patientId: string, authorEmail: string) {
-  const notes = await listTreatmentNotesForPatient(patientId)
+  const notes = await listTreatmentNotesForPatient(patientId, { fresh: true })
   return notes.find((n: any) => n.draft === true && n.title === authorEmail) ?? null
 }
 
@@ -720,6 +777,7 @@ export async function updateIndividualAppointment(
   if (params.startsAt) body.starts_at = params.startsAt
   if (params.endsAt) body.ends_at = params.endsAt
   if (params.notes !== undefined) body.notes = params.notes
+  invalidateBooking(appointmentId)
   return clinikoFetch(`/individual_appointments/${appointmentId}`, {
     method: 'PATCH',
     body: JSON.stringify(body),
@@ -743,6 +801,7 @@ export const CANCELLATION_REASONS = [
 // around (cancelled_at gets set) rather than deleting it, so history and
 // invoicing stay intact.
 export async function cancelIndividualAppointment(appointmentId: string, params: { reason: number; note?: string }) {
+  invalidateBooking(appointmentId)
   return clinikoFetch(`/individual_appointments/${appointmentId}/cancel`, {
     method: 'PATCH',
     body: JSON.stringify({
