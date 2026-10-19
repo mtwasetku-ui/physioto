@@ -9,6 +9,7 @@ import {
   getTemplateByExactName,
   getBooking,
   idFromLink,
+  invalidatePatientNotes,
 } from '@/lib/cliniko'
 
 async function requireAssignedSession(patientId: string) {
@@ -31,8 +32,11 @@ export async function GET(req: Request) {
   if ('error' in auth) return auth.error
 
   try {
-    let notes = await listTreatmentNotesForPatient(patientId)
-    if (searchParams.get('draftOnly') === 'true') {
+    // The draft check decides whether the form creates a new note or continues
+    // one, so it always reads fresh; the full timeline can use the short cache.
+    const draftOnly = searchParams.get('draftOnly') === 'true'
+    let notes = await listTreatmentNotesForPatient(patientId, { fresh: draftOnly })
+    if (draftOnly) {
       notes = notes.filter((n: any) => n.draft === true)
     }
     // note.title holds the treating physio's email (see lib/cliniko.ts —
@@ -122,6 +126,7 @@ export async function POST(req: Request) {
       clinikoPatientId: patientId,
       detail: { draft: !!draft, templateName },
     })
+    invalidatePatientNotes(patientId)
     return NextResponse.json({ note })
   } catch (e: any) {
     return NextResponse.json({ error: e.message || 'Failed to save note' }, { status: 502 })
@@ -149,6 +154,7 @@ export async function PATCH(req: Request) {
       clinikoPatientId: patientId,
       detail: { noteId, draft: !!draft, templateName },
     })
+    invalidatePatientNotes(patientId)
     return NextResponse.json({ note })
   } catch (e: any) {
     return NextResponse.json({ error: e.message || 'Failed to update note' }, { status: 502 })
