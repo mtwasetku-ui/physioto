@@ -6,6 +6,7 @@ import { Calendar, MapPin, Phone, Cake, Paperclip, Upload, FileText, Clock, Penc
 import { Button } from '@/components/ui/button'
 import type { ClinikoPatientInfo } from '@/lib/cliniko'
 import { TIME_OPTIONS } from '@/lib/timeOptions'
+import { cachedJson, clearCachedJson } from '@/lib/clientFetchCache'
 
 type Tab = 'note' | 'timeline' | 'attachments' | 'book' | 'messages'
 
@@ -151,7 +152,7 @@ function visibleQuestions(section: Section): Question[] {
   return section.questions.filter((q) => !DROPPED_QUESTION_TYPES.includes(q.type))
 }
 
-const TEMPLATE_NAMES = ['Initial Consultation', 'Standard Consultation', 'Communication']
+const TEMPLATE_NAMES = ['Initial Consultation', 'Standard Consultation']
 
 export default function PatientDetailClient({
   patientId,
@@ -472,8 +473,7 @@ function NoteForm({
     // drop it. Also restore the answers already typed into it — otherwise
     // the form re-opens blank (with existingDraftId quietly set), so
     // "continuing" a draft looks like the draft can't be edited at all.
-    fetch(`/api/notes?patientId=${patientId}&draftOnly=true`)
-      .then((r) => r.json())
+    cachedJson(`/api/notes?patientId=${patientId}&draftOnly=true`)
       .then((data) => {
         const mine = (data.notes || []).find((n: any) => n.isMine && n.draft)
         if (mine) {
@@ -506,8 +506,7 @@ function NoteForm({
     // changed since last time. Excludes whichever note this form is
     // itself currently continuing, so it's never offering to copy a
     // draft into itself.
-    fetch(`/api/notes?patientId=${patientId}`)
-      .then((r) => r.json())
+    cachedJson(`/api/notes?patientId=${patientId}`)
       .then((data) => {
         const notes = (data.notes || []).filter((n: any) => n.id !== existingDraftId)
         setPreviousNote(notes[0] || null)
@@ -583,6 +582,7 @@ function NoteForm({
 
     if (res.ok) {
       const data = await res.json()
+      clearCachedJson('/api/notes') // notes changed — next read must be fresh
       setStatus('saved')
       if (draft) setExistingDraftId(data.note?.id ?? existingDraftId)
       else {
@@ -945,8 +945,7 @@ function Timeline({ patientId }: { patientId: string }) {
   const [notes, setNotes] = useState<any[] | null>(null)
 
   useEffect(() => {
-    fetch(`/api/notes?patientId=${patientId}`)
-      .then((r) => r.json())
+    cachedJson(`/api/notes?patientId=${patientId}`)
       .then((data) => setNotes(data.notes || []))
       .catch(() => setNotes([]))
   }, [patientId])
@@ -1058,8 +1057,7 @@ function NoteHistoryPanel({ patientId }: { patientId: string }) {
   useEffect(() => {
     setNotes(null)
     setPage(1)
-    fetch(`/api/notes?patientId=${patientId}`)
-      .then((r) => r.json())
+    cachedJson(`/api/notes?patientId=${patientId}`)
       .then((data) => setNotes(data.notes || []))
       .catch(() => setNotes([]))
   }, [patientId])
