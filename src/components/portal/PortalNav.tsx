@@ -7,16 +7,17 @@ import { cn } from '@/lib/utils'
 
 const items = [
   {
-    href: '/portal',
-    label: 'Patients',
-    icon: Users,
-    isActive: (p: string) => p === '/portal' || p.startsWith('/portal/patient'),
-  },
-  {
     href: '/portal/diary',
     label: 'Calendar',
     icon: CalendarDays,
-    isActive: (p: string) => p.startsWith('/portal/diary'),
+    isActive: (p: string) => p === '/portal' || p.startsWith('/portal/diary'),
+  },
+  {
+    href: '/portal/patients',
+    label: 'Patients',
+    icon: Users,
+    // Also highlights while viewing an individual patient (/portal/patient/…)
+    isActive: (p: string) => p.startsWith('/portal/patient'),
   },
   {
     href: '/portal/account',
