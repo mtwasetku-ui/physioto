@@ -98,8 +98,15 @@ export async function GET(req: Request) {
     // the calendar down, it just means nothing turns green this load.
     let finalizedBookingIds = new Set<string>()
     try {
+      // A visit that hasn't started yet can't have a finalised note, so only
+      // look up patients whose appointments are already under way or past.
+      // Browsing to a future week then costs no note lookups at all.
+      const now = Date.now()
       finalizedBookingIds = await listFinalizedNoteBookingIds(
-        visible.map((a) => a.patientId).filter((id): id is string => !!id)
+        visible
+          .filter((a) => new Date(a.startsAt).getTime() <= now)
+          .map((a) => a.patientId)
+          .filter((id): id is string => !!id)
       )
     } catch (e) {
       console.error('[appointments/diary] failed to load finalised note status', e)
