@@ -13,7 +13,7 @@ const items = [
     isActive: (p: string) => p === '/portal' || p.startsWith('/portal/diary'),
   },
   {
-    href: '/portal/patients',
+    href: '/portal/patient',
     label: 'Patients',
     icon: Users,
     // Also highlights while viewing an individual patient (/portal/patient/…)
@@ -96,4 +96,3 @@ export function TabBar() {
     </nav>
   )
 }
-
