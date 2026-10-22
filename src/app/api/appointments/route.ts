@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { debugLog } from '@/lib/debug'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { addAssignment, getClinikoPractitionerIdForEmail, writeAuditLog, createAppointmentSeries } from '@/lib/db'
@@ -41,7 +42,7 @@ export async function GET() {
 
   try {
     const appointmentTypes = await listAppointmentTypesForPractice(auth.practitionerId!)
-    console.log('[appointments] loaded types', { count: appointmentTypes.length, practitionerId: auth.practitionerId })
+    debugLog('[appointments] loaded types', { count: appointmentTypes.length, practitionerId: auth.practitionerId })
     return NextResponse.json({ appointmentTypes })
   } catch (e: any) {
     console.error('[appointments] failed to load types', e)
