@@ -1,8 +1,7 @@
 # Staff Portal — setup & architecture
 
 A login portal at `physiotohome.com/portal` so casual/contractor physios can search Cliniko and log treatment notes for patients without a full Cliniko login. Built into the
-same Next.js/Vercel app as the public site — see `physio-portal-summary.md` for the full
-decision history behind this design.
+same Next.js/Vercel app as the public site.
 
 ## What's here
 
