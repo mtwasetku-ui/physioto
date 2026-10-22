@@ -1,4 +1,5 @@
 import { neon } from '@neondatabase/serverless'
+import { debugLog } from './debug'
 
 // ── DB connection: A/B toggle for the pooled-vs-direct diagnostic ──────
 //
@@ -93,7 +94,7 @@ export async function listAllowedEmails() {
     from allowed_emails
     order by created_at desc
   `
-  console.log(`[db:listAllowedEmails] ${dbIdentity()} count=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:listAllowedEmails] ${dbIdentity()} count=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   return rows.map(stripPgIdentity)
 }
 
@@ -178,7 +179,7 @@ export async function addAllowedEmail(email: string, displayName?: string) {
     on conflict (email) do update set display_name = excluded.display_name
     returning id, email, display_name, cliniko_practitioner_id, created_at, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:addAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:addAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     // insert...on conflict do update should always return exactly one row;
     // zero means the write did not actually happen even though no error
@@ -193,7 +194,7 @@ export async function removeAllowedEmail(email: string) {
     delete from allowed_emails where email = ${email.toLowerCase()}
     returning id, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:removeAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:removeAllowedEmail] ${dbIdentity()} email=${email.toLowerCase()} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     // Nothing matched — either it was already gone, or this is the same
     // silent-failure pattern as above. Either way the caller should know,
@@ -285,7 +286,7 @@ export async function listAllAssignments() {
     from patient_assignments
     order by email, created_at desc
   `
-  console.log(`[db:listAllAssignments] ${dbIdentity()} count=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:listAllAssignments] ${dbIdentity()} count=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   return rows.map(stripPgIdentity)
 }
 
@@ -305,7 +306,7 @@ export async function addAssignment(email: string, patientId: string, patientLab
     on conflict (email, cliniko_patient_id) do update set patient_label = excluded.patient_label
     returning id, email, cliniko_patient_id, patient_label, created_at, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:addAssignment] ${dbIdentity()} email=${email.toLowerCase()} patientId=${patientId} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:addAssignment] ${dbIdentity()} email=${email.toLowerCase()} patientId=${patientId} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     throw new Error(`addAssignment: insert/upsert affected 0 rows for ${email}/${patientId} (db=${dbIdentity()})`)
   }
@@ -314,7 +315,7 @@ export async function addAssignment(email: string, patientId: string, patientLab
 
 export async function removeAssignment(id: number) {
   const rows = await sql`delete from patient_assignments where id = ${id} returning id, ${PG_IDENTITY_FRAGMENT}`
-  console.log(`[db:removeAssignment] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:removeAssignment] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     throw new Error(`removeAssignment: delete affected 0 rows for id=${id} (db=${dbIdentity()})`)
   }
@@ -330,7 +331,7 @@ export async function removeAssignmentForEmail(email: string, patientId: string)
     where email = ${email.toLowerCase()} and cliniko_patient_id = ${patientId}
     returning id
   `
-  console.log(`[db:removeAssignmentForEmail] db=${dbIdentity()} email=${email.toLowerCase()} patientId=${patientId} affected=${rows.length}`)
+  debugLog(`[db:removeAssignmentForEmail] db=${dbIdentity()} email=${email.toLowerCase()} patientId=${patientId} affected=${rows.length}`)
   if (rows.length === 0) {
     throw new Error(`removeAssignmentForEmail: delete affected 0 rows for ${email}/${patientId} (db=${dbIdentity()})`)
   }
@@ -528,7 +529,7 @@ export async function createTravelBlock(params: {
     )
     returning *, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:createTravelBlock] ${dbIdentity()} email=${params.email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:createTravelBlock] ${dbIdentity()} email=${params.email.toLowerCase()} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     throw new Error(`createTravelBlock: insert affected 0 rows for ${params.email} (db=${dbIdentity()})`)
   }
@@ -614,7 +615,7 @@ export async function createSmsRequest(params: {
     )
     returning *, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:createSmsRequest] ${dbIdentity()} patientId=${params.clinikoPatientId} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:createSmsRequest] ${dbIdentity()} patientId=${params.clinikoPatientId} affected=${rows.length} id=${rows[0]?.id} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) {
     throw new Error(`createSmsRequest: insert affected 0 rows for patient ${params.clinikoPatientId} (db=${dbIdentity()})`)
   }
@@ -661,7 +662,7 @@ export async function markSmsRequestSent(id: number): Promise<SmsRequestRow> {
     where id = ${id}
     returning *, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:markSmsRequestSent] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:markSmsRequestSent] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) throw new Error(`markSmsRequestSent: update affected 0 rows for id=${id} (db=${dbIdentity()})`)
   return stripPgIdentity(rows[0]) as SmsRequestRow
 }
@@ -673,7 +674,7 @@ export async function addSmsReply(id: number, replyBody: string): Promise<SmsReq
     where id = ${id}
     returning *, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:addSmsReply] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:addSmsReply] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) throw new Error(`addSmsReply: update affected 0 rows for id=${id} (db=${dbIdentity()})`)
   return stripPgIdentity(rows[0]) as SmsRequestRow
 }
@@ -685,7 +686,7 @@ export async function closeSmsRequest(id: number): Promise<SmsRequestRow> {
     where id = ${id}
     returning *, ${PG_IDENTITY_FRAGMENT}
   `
-  console.log(`[db:closeSmsRequest] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
+  debugLog(`[db:closeSmsRequest] ${dbIdentity()} id=${id} affected=${rows.length} pg=[${formatPgIdentity(rows[0])}]`)
   if (rows.length === 0) throw new Error(`closeSmsRequest: update affected 0 rows for id=${id} (db=${dbIdentity()})`)
   return stripPgIdentity(rows[0]) as SmsRequestRow
 }
