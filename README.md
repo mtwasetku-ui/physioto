@@ -1,69 +1,41 @@
-# Physio to Home — Next.js + TypeScript
+# Physio to Home
 
-Migrated from Vite + React (JSX) to **Next.js 14 + TypeScript**.
+Next.js 14 (App Router) + TypeScript + Tailwind app for physiotohome.com. One codebase holds:
 
-## What Changed
+- **Public site** — home, services, team, blog, booking, contact, privacy policy, terms.
+- **Staff portal (`/portal`) and admin (`/admin`)** — lets practitioners search Cliniko, log treatment notes, manage attachments, appointments and travel blocks, and handle SMS requests. See [README.portal.md](./README.portal.md) for setup and architecture.
 
-| Before | After |
-|--------|-------|
-| Vite + React | Next.js 14 (App Router) |
-| JavaScript (.jsx) | TypeScript (.tsx) |
-| `react-router-dom` | Next.js `<Link>` + `useRouter` |
-| `react-helmet` | Next.js `metadata` exports |
-| `BrowserRouter` | Next.js file-based routing |
-| `src/pages/` folder | `src/app/` folder (App Router) |
-
-## Route Mapping
-
-| Old Route | New File |
-|-----------|----------|
-| `/` | `src/app/page.tsx` |
-| `/services` | `src/app/services/page.tsx` |
-| `/team` | `src/app/team/page.tsx` |
-| `/blog` | `src/app/blog/page.tsx` |
-| `/blog/:id` | `src/app/blog/[id]/page.tsx` |
-| `/booking` | `src/app/booking/page.tsx` |
-| `/contact` | `src/app/contact/page.tsx` |
-
-## Getting Started
+## Getting started
 
 ```bash
 npm install
+cp .env.example .env.local   # fill in values, or: vercel env pull .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open http://localhost:3000. The database connection string is required at startup (`src/lib/db.ts` throws if it's missing).
 
-## Project Structure
+## Where things live
 
 ```
-src/
-├── app/
-│   ├── layout.tsx          # Root layout (Header + Footer)
-│   ├── globals.css
-│   ├── page.tsx            # Home
-│   ├── services/page.tsx
-│   ├── team/page.tsx
-│   ├── blog/
-│   │   ├── page.tsx
-│   │   └── [id]/page.tsx
-│   ├── booking/page.tsx
-│   └── contact/page.tsx
-├── components/
-│   ├── Header.tsx
-│   ├── Footer.tsx
-│   └── ui/
-│       ├── button.tsx
-│       ├── form-elements.tsx
-│       └── toaster.tsx
-├── hooks/
-│   └── use-toast.ts
-└── lib/
-    ├── pocketbaseClient.ts
-    └── utils.ts
+src/app/            routes (public pages, /portal, /admin, /api)
+src/components/     shared UI; components/portal for portal-specific UI
+src/lib/            db.ts (Neon), auth.ts (NextAuth), cliniko.ts, mail.ts, debug.ts
+src/content/blog/   blog posts as markdown
+migrations/         SQL migrations, applied manually after schema.sql
+public/             static assets, intake forms, robots.txt, llms.txt
 ```
 
-## Notes
-- All content and PocketBase collections are unchanged
-- `'use client'` directive added to interactive components
-- Server Components used where possible
+## Data sources
+
+- **Neon Postgres** — staff allow-list, patient assignments, travel blocks, SMS requests, booking/contact submissions, auth tokens.
+- **Cliniko** — patients, notes, attachments and appointments, accessed server-side only.
+- **PocketBase** (`physio-pb.fly.dev`) — homepage services and testimonials, loaded client-side by `HomeClient.tsx`.
+
+## Diagnostics
+
+Verbose database and email logging is off by default. Set `DEBUG_LOGS=1` in Vercel environment variables to turn it on temporarily; it can log staff emails and Cliniko patient IDs, so switch it off again afterwards.
+
+## Deployment
+
+Deployed on Vercel. Set the same variables as `.env.example` in the project's Environment Variables.
