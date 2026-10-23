@@ -71,9 +71,18 @@ async function resolvePersonalKey(): Promise<string | null> {
 const MAX_RATE_LIMIT_RETRIES = 2
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-async function clinikoFetch(path: string, init: RequestInit = {}) {
+// opts.useSharedKey — skip the personal key for this call (used for the
+//   ownership check below, which must read the note regardless of who wrote it).
+// opts.allowSharedKeyOnForbidden — called when a personal key gets a 403. Return
+//   true ONLY if retrying with the shared key is known to be safe; the default
+//   (absent) is to surface the 403 unchanged, so no other route is affected.
+async function clinikoFetch(
+  path: string,
+  init: RequestInit = {},
+  opts: { useSharedKey?: boolean; allowSharedKeyOnForbidden?: () => Promise<boolean> } = {}
+) {
   if (!API_BASE) throw new Error('Practice system is not configured (missing API base URL)')
-  const personalKey = await resolvePersonalKey()
+  const personalKey = opts.useSharedKey ? null : await resolvePersonalKey()
   let activeKey: string | undefined = personalKey ?? API_KEY
   for (let attempt = 0; ; attempt++) {
     const res = await fetch(`${API_BASE}${path}`, {
@@ -94,6 +103,24 @@ async function clinikoFetch(path: string, init: RequestInit = {}) {
       console.error('[cliniko] personal key rejected (401) — falling back to shared key')
       activeKey = API_KEY
       continue
+    }
+
+    // A 403 means the key is valid but Cliniko won't let that user touch this
+    // record (typically a note first written under the shared key). A 403 is a
+    // rejection, so a retry can't double-write — but the shared key has wider
+    // access, so only do it when the caller has verified it's appropriate.
+    if (res.status === 403 && personalKey && activeKey === personalKey && opts.allowSharedKeyOnForbidden) {
+      let allowed = false
+      try {
+        allowed = await opts.allowSharedKeyOnForbidden()
+      } catch (e) {
+        console.error('[cliniko] ownership check failed, not retrying with shared key', (e as Error)?.message)
+      }
+      if (allowed) {
+        console.error(`[cliniko] personal key forbidden (403) on ${init.method || 'GET'} ${path} — ownership verified, retrying with shared key`)
+        activeKey = API_KEY
+        continue
+      }
     }
 
     if (res.status === 429 && attempt < MAX_RATE_LIMIT_RETRIES) {
@@ -366,16 +393,39 @@ export async function updateTreatmentNote(params: {
   sections: NoteSectionInput[]
   draft: boolean
   bookingId?: string
+  // The signed-in physio. Used only to decide whether a 403 on their personal
+  // key may be retried with the shared key (see below).
+  authorEmail?: string
+  authorName?: string
 }) {
-  const { noteId, template, sections, draft, bookingId } = params
-  return clinikoFetch(`/treatment_notes/${noteId}`, {
-    method: 'PATCH',
-    body: JSON.stringify({
-      draft,
-      ...(bookingId ? { booking_id: bookingId } : {}),
-      content: buildNoteContent(template, sections),
-    }),
-  })
+  const { noteId, template, sections, draft, bookingId, authorEmail, authorName } = params
+
+  // Notes created before a physio had a personal key were written under the
+  // shared key, so Cliniko can 403 that physio's own key on them. Retry with the
+  // shared key only if the note is STILL A DRAFT and its title (the author's
+  // email or display name — see createTreatmentNote) is the signed-in physio.
+  // Anyone else's note, or a finalised note, keeps the 403.
+  const isOwnDraft = async () => {
+    if (!authorEmail) return false
+    const note = await clinikoFetch(`/treatment_notes/${noteId}`, {}, { useSharedKey: true })
+    if (!note || note.draft !== true) return false
+    const title = String(note.title ?? '').trim().toLowerCase()
+    if (!title) return false
+    return title === authorEmail.trim().toLowerCase() || (!!authorName && title === authorName.trim().toLowerCase())
+  }
+
+  return clinikoFetch(
+    `/treatment_notes/${noteId}`,
+    {
+      method: 'PATCH',
+      body: JSON.stringify({
+        draft,
+        ...(bookingId ? { booking_id: bookingId } : {}),
+        content: buildNoteContent(template, sections),
+      }),
+    },
+    { allowSharedKeyOnForbidden: isOwnDraft }
+  )
 }
 
 // `fresh: true` skips the short cache. Use it wherever a stale answer could
