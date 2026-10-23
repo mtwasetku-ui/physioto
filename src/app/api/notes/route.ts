@@ -156,6 +156,7 @@ export async function PATCH(req: Request) {
       bookingId,
       authorEmail: auth.email!,
       authorName: authorNames[auth.email!.toLowerCase()],
+      patientId,
     })
     await writeAuditLog({
       actorEmail: auth.email!,
