@@ -799,7 +799,7 @@ function NoteForm({
       </div>
       {!existingDraftId ? null : (
         <p className="text-xs text-muted-foreground mt-2">
-          Saving as final locks this note permanently — nobody, including Micheal, can edit it again.
+          Saving as final locks this note permanently — nobody can edit it again.
         </p>
       )}
     </div>
