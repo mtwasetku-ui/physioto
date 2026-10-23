@@ -147,7 +147,16 @@ export async function PATCH(req: Request) {
 
   try {
     const template = await getTemplateByExactName(templateName)
-    const note = await updateTreatmentNote({ noteId, template, sections, draft: !!draft, bookingId })
+    const authorNames = await getDisplayNamesForEmails([auth.email!])
+    const note = await updateTreatmentNote({
+      noteId,
+      template,
+      sections,
+      draft: !!draft,
+      bookingId,
+      authorEmail: auth.email!,
+      authorName: authorNames[auth.email!.toLowerCase()],
+    })
     await writeAuditLog({
       actorEmail: auth.email!,
       action: 'note_update',
