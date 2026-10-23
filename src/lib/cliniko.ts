@@ -84,6 +84,9 @@ async function clinikoFetch(
   if (!API_BASE) throw new Error('Practice system is not configured (missing API base URL)')
   const personalKey = opts.useSharedKey ? null : await resolvePersonalKey()
   let activeKey: string | undefined = personalKey ?? API_KEY
+  // Set once we've switched to the shared key, so neither fallback can fire
+  // twice (a plain key comparison would loop if the two keys were identical).
+  let fellBackToShared = false
   for (let attempt = 0; ; attempt++) {
     const res = await fetch(`${API_BASE}${path}`, {
       ...init,
@@ -99,9 +102,10 @@ async function clinikoFetch(
 
     // A personal key that has been revoked/rotated in Cliniko shouldn't lock
     // the physio out mid-clinic — fall back to the shared key and log it.
-    if (res.status === 401 && personalKey && activeKey === personalKey) {
+    if (res.status === 401 && personalKey && !fellBackToShared) {
       console.error('[cliniko] personal key rejected (401) — falling back to shared key')
       activeKey = API_KEY
+      fellBackToShared = true
       continue
     }
 
@@ -109,7 +113,7 @@ async function clinikoFetch(
     // record (typically a note first written under the shared key). A 403 is a
     // rejection, so a retry can't double-write — but the shared key has wider
     // access, so only do it when the caller has verified it's appropriate.
-    if (res.status === 403 && personalKey && activeKey === personalKey && opts.allowSharedKeyOnForbidden) {
+    if (res.status === 403 && personalKey && !fellBackToShared && opts.allowSharedKeyOnForbidden) {
       let allowed = false
       try {
         allowed = await opts.allowSharedKeyOnForbidden()
@@ -119,6 +123,7 @@ async function clinikoFetch(
       if (allowed) {
         console.error(`[cliniko] personal key forbidden (403) on ${init.method || 'GET'} ${path} — ownership verified, retrying with shared key`)
         activeKey = API_KEY
+        fellBackToShared = true
         continue
       }
     }
@@ -397,18 +402,24 @@ export async function updateTreatmentNote(params: {
   // key may be retried with the shared key (see below).
   authorEmail?: string
   authorName?: string
+  // The patient the route authorised the physio for. The note must belong to
+  // this patient, otherwise a request could pair an assigned patient's id with
+  // the physio's draft for someone else.
+  patientId?: string
 }) {
-  const { noteId, template, sections, draft, bookingId, authorEmail, authorName } = params
+  const { noteId, template, sections, draft, bookingId, authorEmail, authorName, patientId } = params
 
   // Notes created before a physio had a personal key were written under the
   // shared key, so Cliniko can 403 that physio's own key on them. Retry with the
-  // shared key only if the note is STILL A DRAFT and its title (the author's
+  // shared key only if the note is STILL A DRAFT, belongs to the requested
+  // patient, and its title (the author's
   // email or display name — see createTreatmentNote) is the signed-in physio.
   // Anyone else's note, or a finalised note, keeps the 403.
   const isOwnDraft = async () => {
-    if (!authorEmail) return false
+    if (!authorEmail || !patientId) return false
     const note = await clinikoFetch(`/treatment_notes/${noteId}`, {}, { useSharedKey: true })
     if (!note || note.draft !== true) return false
+    if (idFromLink(note.patient?.links?.self) !== String(patientId)) return false
     const title = String(note.title ?? '').trim().toLowerCase()
     if (!title) return false
     return title === authorEmail.trim().toLowerCase() || (!!authorName && title === authorName.trim().toLowerCase())
