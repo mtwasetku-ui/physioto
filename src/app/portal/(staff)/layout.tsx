@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
+import { countUnreadDashboardPosts } from '@/lib/db'
 import PortalSignOutButton from '@/components/portal/PortalSignOutButton'
 import { RailNav, TabBar } from '@/components/portal/PortalNav'
 
@@ -16,6 +17,18 @@ export default async function StaffLayout({ children }: { children: React.ReactN
   const email = session?.user?.email ?? ''
   const name = session?.user?.name || email
 
+  // Unread dashboard posts for the nav badge. A failure here (e.g. the
+  // migration hasn't been run yet) must never take the portal down — just
+  // show no badge.
+  let unread = 0
+  if (email) {
+    try {
+      unread = await countUnreadDashboardPosts(email)
+    } catch (err) {
+      console.error('[layout:portal/(staff)] countUnreadDashboardPosts failed', err)
+    }
+  }
+
   return (
     <div className="min-h-screen">
       {/* Desktop sidebar */}
@@ -29,7 +42,7 @@ export default async function StaffLayout({ children }: { children: React.ReactN
         </Link>
 
         <div className="px-3">
-          <RailNav />
+          <RailNav unread={unread} />
         </div>
 
         <div className="mt-auto border-t border-white/10 p-4">
@@ -54,8 +67,7 @@ export default async function StaffLayout({ children }: { children: React.ReactN
         </main>
       </div>
 
-      <TabBar />
+      <TabBar unread={unread} />
     </div>
   )
 }
-
