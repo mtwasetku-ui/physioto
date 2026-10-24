@@ -690,3 +690,159 @@ export async function closeSmsRequest(id: number): Promise<SmsRequestRow> {
   if (rows.length === 0) throw new Error(`closeSmsRequest: update affected 0 rows for id=${id} (db=${dbIdentity()})`)
   return stripPgIdentity(rows[0]) as SmsRequestRow
 }
+
+// ── Dashboard posts ─────────────────────────────────────────────
+//
+// Staff-facing notices shown at /portal/dashboard (table: announcements,
+// see migrations/004_add_dashboard_posts.sql). Local-only — never touches
+// Cliniko, so loading the dashboard, the nav badge and the calendar banner
+// add zero Cliniko API calls.
+//
+// "Live" = not archived, publish_at has passed, and not past expires_at.
+// "Unread" for a person = live and published after their
+// allowed_emails.dashboard_last_seen_at (NULL = never opened, all unread).
+
+export interface DashboardPostRow {
+  id: string
+  title: string
+  body: string
+  author_email: string
+  author_name: string | null
+  pinned: boolean
+  publish_at: string
+  expires_at: string | null
+  archived: boolean
+  created_at: string
+  updated_at: string
+  is_unread: boolean
+}
+
+// Staff view: live posts only, pinned first then newest first.
+export async function listLiveDashboardPosts(email: string): Promise<DashboardPostRow[]> {
+  const rows = await sql`
+    select p.id::text as id, p.title, p.body, p.author_email, a.display_name as author_name,
+      p.pinned, p.publish_at, p.expires_at, p.archived, p.created_at, p.updated_at,
+      (p.publish_at > coalesce(me.dashboard_last_seen_at, 'epoch'::timestamptz)) as is_unread
+    from announcements p
+    left join allowed_emails a on a.email = p.author_email
+    left join allowed_emails me on me.email = ${email.toLowerCase()}
+    where p.archived = false
+      and p.publish_at <= now()
+      and (p.expires_at is null or p.expires_at > now())
+    order by p.pinned desc, p.publish_at desc
+    limit 100
+  `
+  return rows as DashboardPostRow[]
+}
+
+// Admin view: everything not archived, including scheduled and expired
+// posts (the UI labels them), so they can be edited or archived.
+export async function listManageableDashboardPosts(email: string): Promise<DashboardPostRow[]> {
+  const rows = await sql`
+    select p.id::text as id, p.title, p.body, p.author_email, a.display_name as author_name,
+      p.pinned, p.publish_at, p.expires_at, p.archived, p.created_at, p.updated_at,
+      (p.publish_at > coalesce(me.dashboard_last_seen_at, 'epoch'::timestamptz)
+        and p.publish_at <= now()
+        and (p.expires_at is null or p.expires_at > now())) as is_unread
+    from announcements p
+    left join allowed_emails a on a.email = p.author_email
+    left join allowed_emails me on me.email = ${email.toLowerCase()}
+    where p.archived = false
+    order by p.pinned desc, p.publish_at desc
+    limit 200
+  `
+  return rows as DashboardPostRow[]
+}
+
+// Nav badge. Light single-row query.
+export async function countUnreadDashboardPosts(email: string): Promise<number> {
+  const rows = await sql`
+    select count(*)::int as n
+    from announcements p
+    left join allowed_emails me on me.email = ${email.toLowerCase()}
+    where p.archived = false
+      and p.publish_at <= now()
+      and (p.expires_at is null or p.expires_at > now())
+      and p.publish_at > coalesce(me.dashboard_last_seen_at, 'epoch'::timestamptz)
+  `
+  return (rows[0]?.n as number | undefined) ?? 0
+}
+
+// Banner above the calendar: unread posts that are pinned.
+export async function listUnreadPinnedDashboardPosts(
+  email: string
+): Promise<Pick<DashboardPostRow, 'id' | 'title'>[]> {
+  const rows = await sql`
+    select p.id::text as id, p.title
+    from announcements p
+    left join allowed_emails me on me.email = ${email.toLowerCase()}
+    where p.archived = false
+      and p.pinned = true
+      and p.publish_at <= now()
+      and (p.expires_at is null or p.expires_at > now())
+      and p.publish_at > coalesce(me.dashboard_last_seen_at, 'epoch'::timestamptz)
+    order by p.publish_at desc
+    limit 3
+  `
+  return rows as Pick<DashboardPostRow, 'id' | 'title'>[]
+}
+
+export async function markDashboardSeen(email: string): Promise<void> {
+  await sql`
+    update allowed_emails set dashboard_last_seen_at = now() where email = ${email.toLowerCase()}
+  `
+}
+
+export async function createDashboardPost(params: {
+  authorEmail: string
+  title: string
+  body: string
+  pinned: boolean
+  publishAt: string | null
+  expiresAt: string | null
+}): Promise<{ id: string }> {
+  const rows = await sql`
+    insert into announcements (title, body, author_email, pinned, publish_at, expires_at)
+    values (
+      ${params.title},
+      ${params.body},
+      ${params.authorEmail.toLowerCase()},
+      ${params.pinned},
+      coalesce(${params.publishAt}::timestamptz, now()),
+      ${params.expiresAt}::timestamptz
+    )
+    returning id::text as id
+  `
+  if (rows.length === 0) throw new Error('createDashboardPost: insert affected 0 rows')
+  return { id: rows[0].id as string }
+}
+
+// Only the fields present in `params` change. expiresAt: null clears the
+// expiry (undefined leaves it alone).
+export async function updateDashboardPost(
+  id: string,
+  params: {
+    title?: string
+    body?: string
+    pinned?: boolean
+    publishAt?: string | null
+    expiresAt?: string | null
+    archived?: boolean
+  }
+): Promise<boolean> {
+  const hasExpiry = params.expiresAt !== undefined
+  const rows = await sql`
+    update announcements
+    set
+      title = coalesce(${params.title ?? null}, title),
+      body = coalesce(${params.body ?? null}, body),
+      pinned = coalesce(${params.pinned ?? null}, pinned),
+      publish_at = coalesce(${params.publishAt ?? null}::timestamptz, publish_at),
+      expires_at = case when ${hasExpiry} then ${params.expiresAt ?? null}::timestamptz else expires_at end,
+      archived = coalesce(${params.archived ?? null}, archived),
+      updated_at = now()
+    where id = ${id}::bigint
+    returning id
+  `
+  return rows.length > 0
+}
