@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Users, CalendarDays, KeyRound } from 'lucide-react'
+import { Users, CalendarDays, KeyRound, LayoutDashboard } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const items = [
@@ -20,6 +20,13 @@ const items = [
     isActive: (p: string) => p.startsWith('/portal/patient'),
   },
   {
+    href: '/portal/dashboard',
+    label: 'Dashboard',
+    icon: LayoutDashboard,
+    isActive: (p: string) => p.startsWith('/portal/dashboard'),
+    badge: true,
+  },
+  {
     href: '/portal/account',
     label: 'Password',
     icon: KeyRound,
@@ -27,13 +34,19 @@ const items = [
   },
 ]
 
+function badgeText(n: number) {
+  return n > 9 ? '9+' : String(n)
+}
+
 // Desktop: vertical list in the sidebar.
-export function RailNav() {
+// `unread` = number of dashboard posts they haven't seen yet (0 hides the badge).
+export function RailNav({ unread = 0 }: { unread?: number }) {
   const pathname = usePathname() ?? ''
   return (
     <nav aria-label="Portal" className="portal-on-ink flex flex-col gap-1">
-      {items.map(({ href, label, icon: Icon, isActive }) => {
+      {items.map(({ href, label, icon: Icon, isActive, badge }) => {
         const active = isActive(pathname)
+        const showBadge = !!badge && unread > 0
         return (
           <Link
             key={href}
@@ -52,6 +65,12 @@ export function RailNav() {
             )}
             <Icon className="h-[18px] w-[18px]" aria-hidden />
             {label}
+            {showBadge && (
+              <span className="ml-auto inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-white px-1.5 text-xs font-semibold text-[var(--portal-ink)]">
+                {badgeText(unread)}
+                <span className="sr-only"> new</span>
+              </span>
+            )}
           </Link>
         )
       })}
@@ -60,16 +79,17 @@ export function RailNav() {
 }
 
 // Mobile: thumb-reach tab bar fixed to the bottom of the screen.
-export function TabBar() {
+export function TabBar({ unread = 0 }: { unread?: number }) {
   const pathname = usePathname() ?? ''
   return (
     <nav
       aria-label="Portal"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden"
     >
-      <ul className="grid grid-cols-3">
-        {items.map(({ href, label, icon: Icon, isActive }) => {
+      <ul className="grid grid-cols-4">
+        {items.map(({ href, label, icon: Icon, isActive, badge }) => {
           const active = isActive(pathname)
+          const showBadge = !!badge && unread > 0
           return (
             <li key={href}>
               <Link
@@ -86,7 +106,15 @@ export function TabBar() {
                     className="absolute left-1/2 top-0 h-[3px] w-10 -translate-x-1/2 rounded-b-full bg-[var(--portal-signal)]"
                   />
                 )}
-                <Icon className="h-5 w-5" aria-hidden />
+                <span className="relative">
+                  <Icon className="h-5 w-5" aria-hidden />
+                  {showBadge && (
+                    <span className="absolute -right-2.5 -top-2 inline-flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-primary px-1 text-[10px] font-semibold text-primary-foreground">
+                      {badgeText(unread)}
+                      <span className="sr-only"> new</span>
+                    </span>
+                  )}
+                </span>
                 {label}
               </Link>
             </li>
