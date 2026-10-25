@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
-import { listLiveDashboardPosts, listManageableDashboardPosts } from '@/lib/db'
-import type { DashboardPostRow } from '@/lib/db'
+import { listLiveDashboardPosts, listManageableDashboardPosts, listDashboardReplies } from '@/lib/db'
+import type { DashboardPostRow, DashboardReplyRow } from '@/lib/db'
 import { isAdminEmail } from '@/lib/isAdmin'
 import DashboardClient from './DashboardClient'
 
@@ -23,5 +23,22 @@ export default async function DashboardPage() {
     loadError = true
   }
 
-  return <DashboardClient posts={posts} isAdmin={isAdmin} loadError={loadError} />
+  // Replies are separate so a problem there (e.g. migration 005 not run yet)
+  // never hides the posts themselves.
+  let replies: DashboardReplyRow[] = []
+  try {
+    replies = await listDashboardReplies(isAdmin ? 'manageable' : 'live')
+  } catch (err) {
+    console.error('[page:portal/dashboard] failed to load replies', err)
+  }
+
+  return (
+    <DashboardClient
+      posts={posts}
+      replies={replies}
+      currentEmail={email.toLowerCase()}
+      isAdmin={isAdmin}
+      loadError={loadError}
+    />
+  )
 }

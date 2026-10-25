@@ -73,3 +73,14 @@ export function parsePostFields(
 
   return { ok: true, fields }
 }
+
+export const REPLY_MAX = 1000
+
+export function parseReplyBody(
+  input: any
+): { ok: true; body: string } | { ok: false; error: string } {
+  const body = input && typeof input.body === 'string' ? input.body.trim() : ''
+  if (!body) return { ok: false, error: 'Write something to reply' }
+  if (body.length > REPLY_MAX) return { ok: false, error: `Replies must be ${REPLY_MAX} characters or fewer` }
+  return { ok: true, body }
+}
