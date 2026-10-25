@@ -846,3 +846,85 @@ export async function updateDashboardPost(
   `
   return rows.length > 0
 }
+
+// ── Dashboard replies ───────────────────────────────────────────
+//
+// Replies on dashboard posts (table: announcement_replies, see
+// migrations/005_add_dashboard_replies.sql). Visible to everyone who can see
+// the post. Replies don't affect the unread badge or the calendar banner.
+
+export interface DashboardReplyRow {
+  id: string
+  post_id: string
+  author_email: string
+  author_name: string | null
+  body: string
+  created_at: string
+}
+
+// Replies for the posts a person can currently see. scope mirrors the post
+// lists: 'live' = staff view, 'manageable' = admin view (all non-archived).
+export async function listDashboardReplies(scope: 'live' | 'manageable'): Promise<DashboardReplyRow[]> {
+  if (scope === 'manageable') {
+    const rows = await sql`
+      select r.id::text as id, r.post_id::text as post_id, r.author_email,
+        a.display_name as author_name, r.body, r.created_at
+      from announcement_replies r
+      join announcements p on p.id = r.post_id
+      left join allowed_emails a on a.email = r.author_email
+      where p.archived = false
+      order by r.created_at asc
+      limit 2000
+    `
+    return rows as DashboardReplyRow[]
+  }
+  const rows = await sql`
+    select r.id::text as id, r.post_id::text as post_id, r.author_email,
+      a.display_name as author_name, r.body, r.created_at
+    from announcement_replies r
+    join announcements p on p.id = r.post_id
+    left join allowed_emails a on a.email = r.author_email
+    where p.archived = false
+      and p.publish_at <= now()
+      and (p.expires_at is null or p.expires_at > now())
+    order by r.created_at asc
+    limit 2000
+  `
+  return rows as DashboardReplyRow[]
+}
+
+// Returns null when the post isn't open for replies (missing, archived,
+// scheduled or expired) — the insert only happens for a live post.
+export async function createDashboardReply(params: {
+  postId: string
+  authorEmail: string
+  body: string
+}): Promise<{ id: string } | null> {
+  const rows = await sql`
+    insert into announcement_replies (post_id, author_email, body)
+    select p.id, ${params.authorEmail.toLowerCase()}, ${params.body}
+    from announcements p
+    where p.id = ${params.postId}::bigint
+      and p.archived = false
+      and p.publish_at <= now()
+      and (p.expires_at is null or p.expires_at > now())
+    returning id::text as id
+  `
+  return rows.length > 0 ? { id: rows[0].id as string } : null
+}
+
+// A reply can be deleted by its author, or by the admin. Returns false if it
+// doesn't exist or the requester isn't allowed to delete it.
+export async function deleteDashboardReply(
+  id: string,
+  requesterEmail: string,
+  isAdmin: boolean
+): Promise<boolean> {
+  const rows = await sql`
+    delete from announcement_replies
+    where id = ${id}::bigint
+      and (author_email = ${requesterEmail.toLowerCase()} or ${isAdmin})
+    returning id
+  `
+  return rows.length > 0
+}
