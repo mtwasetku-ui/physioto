@@ -1,10 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Pin, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import type { DashboardPostRow } from '@/lib/db'
+import type { DashboardPostRow, DashboardReplyRow } from '@/lib/db'
+import { When, PostBody } from './dashboardText'
+import ReplyThread from './ReplyThread'
 
 const TITLE_MAX = 120
 const BODY_MAX = 5000
@@ -25,40 +27,6 @@ function fromLocalInput(value: string): string | null {
   if (!value) return null
   const d = new Date(value)
   return Number.isNaN(d.getTime()) ? null : d.toISOString()
-}
-
-// Server renders in UTC, the browser in local time — suppress the harmless
-// text mismatch rather than flash a wrong time.
-function When({ iso }: { iso: string }) {
-  const d = new Date(iso)
-  return (
-    <time dateTime={iso} suppressHydrationWarning>
-      {d.toLocaleString('en-AU', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit' })}
-    </time>
-  )
-}
-
-// Plain text with clickable http(s) links. Built as React nodes — never
-// injected as HTML.
-function PostBody({ text }: { text: string }) {
-  const parts = text.split(/(https?:\/\/[^\s<]+)/g)
-  return (
-    <p className="whitespace-pre-wrap break-words text-sm leading-relaxed text-foreground">
-      {parts.map((part, i) => {
-        if (!/^https?:\/\//.test(part)) return part
-        const trimmed = part.replace(/[.,;:!?)\]]+$/, '')
-        const trailing = part.slice(trimmed.length)
-        return (
-          <span key={i}>
-            <a href={trimmed} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">
-              {trimmed}
-            </a>
-            {trailing}
-          </span>
-        )
-      })}
-    </p>
-  )
 }
 
 function statusOf(post: DashboardPostRow): 'live' | 'scheduled' | 'expired' {
@@ -182,14 +150,27 @@ function PostForm({
 
 export default function DashboardClient({
   posts,
+  replies,
+  currentEmail,
   isAdmin,
   loadError,
 }: {
   posts: DashboardPostRow[]
+  replies: DashboardReplyRow[]
+  currentEmail: string
   isAdmin: boolean
   loadError: boolean
 }) {
   const router = useRouter()
+  const repliesByPost = useMemo(() => {
+    const map = new Map<string, DashboardReplyRow[]>()
+    for (const r of replies) {
+      const list = map.get(r.post_id)
+      if (list) list.push(r)
+      else map.set(r.post_id, [r])
+    }
+    return map
+  }, [replies])
   // Captured once on first render so "New" tags stay put for this visit even
   // after we mark the dashboard as seen and refresh.
   const [newIds] = useState(() => new Set(posts.filter((p) => p.is_unread).map((p) => p.id)))
@@ -323,6 +304,16 @@ export default function DashboardClient({
                 )}
               </p>
               <PostBody text={post.body} />
+
+              <div className="mt-4">
+                <ReplyThread
+                  postId={post.id}
+                  replies={repliesByPost.get(post.id) ?? []}
+                  currentEmail={currentEmail}
+                  isAdmin={isAdmin}
+                  canReply={status === 'live'}
+                />
+              </div>
 
               {isAdmin && (
                 <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-3">
