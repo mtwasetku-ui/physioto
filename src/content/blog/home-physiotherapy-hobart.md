@@ -1,120 +1,174 @@
 ---
-title: "Home Physiotherapy Hobart | Steep Streets, We Come to You"
-description: "AHPRA-registered physiotherapists bring care to your Hobart home — no parking, no steps, no travel. Book a home visit across greater Hobart today."
+title: "Home Visit Physiotherapy Hobart | Physio To Home"
+description: "Looking for a home visit physiotherapist in Hobart? Explore Physio To Home's mobile physiotherapy services, client supports and local availability."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-07-26"
 category: "Local Areas"
 featured: false
 image: /image/blog/mobile-physiotherapy-home-visits.jpg
 
-tags: ["physiotherapy Hobart", "home physiotherapy Hobart", "mobile physiotherapist Hobart", "in-home physio Hobart", "home care physiotherapy Tasmania", "Physio to Home", "Hobart physio", "aged care physio Hobart"]
+tags: ["home physiotherapy Hobart", "physiotherapist Hobart", "home visit physiotherapist Hobart", "mobile physio Hobart", "NDIS physiotherapist Hobart", "aged care physiotherapy Hobart", "home rehabilitation Hobart", "Physio to Home"]
 ---
 
-# HOME PHYSIOTHERAPY HOBART
+# Home Visit Physiotherapy in Hobart
 
-## Physiotherapy at Your Door, Anywhere in Hobart
+## A physiotherapist comes to your home
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
+Looking for a **physiotherapist in Hobart who comes to you?** Physio To Home provides mobile, in-home physiotherapy for people who find travelling to a clinic difficult, need rehabilitation in their own environment, or would simply benefit from treatment at home.
 
-Physio to Home, Tasmania-Wide | Last reviewed: July 2026
+Our AHPRA-registered physiotherapists provide assessment, treatment and rehabilitation in the place where you live. Home visits can help older people maintain mobility, people recovering after surgery or a hospital stay, NDIS participants working towards functional goals, and people managing pain, balance or neurological conditions.
 
-Hobart is Tasmania's capital and, by a wide margin, its largest city — home to close to 40% of the state's population, spread along the Derwent's eastern and western shores in the shadow of kunanyi/Mount Wellington. It's also one of the hillier capital cities in the country: suburbs like South Hobart, West Hobart, Mount Nelson and parts of Sandy Bay are built on genuine slopes, with steep driveways, tight on-street parking and front steps that turn a routine physiotherapy appointment into a small expedition — especially for anyone managing pain, balance problems, or recovery from surgery.
+We offer **same-week appointments**, and **same-day visits may be possible for urgent cases**. Appointment options depend on your Hobart address, the type of care required and clinician availability. Contact us to confirm the earliest suitable visit.
 
-Physio to Home removes that barrier entirely. One of our AHPRA-registered physiotherapists comes to you, wherever you are across greater Hobart, and treats you in the home you actually live in — steps, slopes and all.
 
----
-
-## Why Home Visits Make Sense in Hobart
-
-A clinic appointment shows a physiotherapist a snapshot: how you move on flat, carpeted floor, under fluorescent light, for twenty minutes. It doesn't show them the steep path to your front door, the step up into a hillside cottage, or the two flights of stairs between the bedroom and kitchen that are common across Hobart's older housing stock. A home visit shows the real picture, and lets us build a plan around the environment you actually navigate every day.
-
-Hobart also has an older population than any other Australian capital, and a large proportion of older residents living independently at home. For that group especially, avoiding an unnecessary trip out — in traffic, in a Hobart winter, up and down hills — isn't a small convenience. It's often what keeps a treatment plan on track.
+**Call 1300 433 233** or [send an enquiry](/contact) to discuss a home visit in Hobart.
 
 ---
 
-## Who We See in Hobart
+## Home physiotherapy across Hobart and surrounding areas
 
-- **Older adults** across the Hobart hills and eastern shore managing osteoarthritis, osteoporosis, falls risk, or general deconditioning
-- **Post-surgical patients** recovering from hip or knee replacement, shoulder surgery, or spinal procedures, particularly in the weeks after discharge from Royal Hobart Hospital when driving is restricted
-- **People with neurological conditions**, including Parkinson's disease and stroke survivors in the community phase of recovery
-- **People with chronic pain**, including back pain, neck pain, arthritis and fibromyalgia
-- **NDIS participants** across greater Hobart seeking physiotherapy as part of a support plan
-- **My Aged Care recipients** with a Home Care Package or CHSP support that includes allied health
+Physio To Home provides home-visit physiotherapy in Hobart and surrounding parts of southern Tasmania. Our service is mobile, so your physiotherapist comes to your home rather than asking you to travel to a clinic.
+
+Hobart's hills, steps, sloping driveways and varied home layouts can make getting to appointments difficult, particularly when you are recovering from surgery, living with pain or experiencing reduced balance and mobility. A home visit also lets your physiotherapist see the spaces and activities that matter in your everyday routine.
+
+**Not sure whether we visit your suburb?** Contact us with your suburb or postcode. We will check whether a clinician can attend your address and confirm availability before an appointment is arranged. Service availability can vary across greater Hobart and surrounding communities.
+
+## Who can benefit from a home visit?
+
+Home physiotherapy may be suitable for:
+
+- **Older people** who want to maintain independence, improve walking or build strength and balance.
+- **People at risk of falls** or who feel unsteady when standing, walking, using stairs or getting in and out of a chair.
+- **People returning home from hospital** who need help rebuilding strength, mobility and confidence.
+- **People recovering after surgery**, including hip or knee replacement and other orthopaedic procedures.
+- **NDIS participants** who need disability-related physiotherapy to work towards goals involving mobility, transfers, balance or everyday function.
+- **People living with neurological conditions**, including Parkinson's disease or the effects of stroke.
+- **People managing persistent pain**, including back, neck, shoulder, hip or knee pain and arthritis.
+- **Families, carers and support coordinators** arranging physiotherapy for someone who needs treatment at home.
+
+You do not need to know exactly which treatment is required before contacting us. Tell us what has changed, what the person is finding difficult and what they would like to achieve. We can discuss whether a physiotherapy home visit is appropriate.
+
+## What can a Hobart home physiotherapist help with?
+
+Your physiotherapist will assess your needs and agree on goals with you. Depending on the assessment, treatment may include:
+
+### Aged-care physiotherapy, strength and falls prevention
+
+For older people, treatment may focus on leg strength, balance, walking, transfers and confidence with daily activities. Your physiotherapist can observe how you move around your own home and tailor exercises to your abilities, goals and environment.
+
+### Rehabilitation after hospital or surgery
+
+Returning home after a hospital stay or operation can be challenging. Home-based rehabilitation may help you rebuild strength, movement and confidence while practising activities that are important to you. Your physiotherapist will consider your recovery stage and any relevant medical or post-operative instructions.
+
+### Back, neck and joint pain
+
+Physiotherapy may help with lower back pain, sciatica, neck pain, shoulder problems, hip and knee osteoarthritis and other musculoskeletal conditions. Treatment may include movement and strength exercises, advice and a plan to help you manage symptoms during everyday activities.
+
+### Neurological physiotherapy
+
+People living with Parkinson's disease, stroke-related disability and other neurological conditions may benefit from treatment addressing balance, walking, transfers, strength and functional movement. The program is tailored to the person's abilities and goals.
+
+### Dizziness and balance difficulties
+
+Dizziness and balance problems can affect confidence and increase the risk of falls. Assessment helps identify relevant movement and balance issues and whether physiotherapy, including vestibular rehabilitation where appropriate, may help.
+
+Explore our [physiotherapy services](/services) for more information about the conditions and rehabilitation needs we support.
+
+## What happens during a home physiotherapy appointment?
+
+We aim to make the process straightforward for clients, families and care coordinators.
+
+1. **Make an enquiry.** Call 1300 433 233 or use our [contact page](/contact). Tell us the Hobart suburb, who needs treatment and the main reason for the visit.
+2. **We discuss your needs.** Our team may ask about mobility, recent surgery or hospital discharge, relevant health conditions, access to the home and any referral or funding arrangements.
+3. **We confirm location and availability.** We check whether a physiotherapist can attend your address and discuss the earliest suitable appointment. Same-week appointments are available, and same-day visits may be possible for urgent cases.
+4. **Your physiotherapist visits your home.** They assess the person's movement and functional needs, discuss goals and recommend an individual treatment plan.
+5. **You work towards practical goals.** Follow-up visits and exercises are guided by clinical need, progress and the person's goals.
+
+A booking enquiry is not a confirmed appointment. Our team will confirm the appointment details with you.
+
+## NDIS physiotherapy in Hobart
+
+Physio To Home works with **NDIS participants who are self-managed or plan-managed** and need physiotherapy related to their disability support needs.
+
+Physiotherapy may be relevant to NDIS goals involving walking, balance, transfers, strength, mobility, independence and participation in everyday activities. The purpose of the support must meet the participant's plan and applicable NDIS funding requirements. Not every health or rehabilitation service is automatically funded by the NDIS.
+
+**NDIS funding arrangements:** Physio To Home is not a registered NDIS provider. We can discuss physiotherapy enquiries for **self-managed and plan-managed participants**. We do not offer services as a registered provider for NDIA-managed funding.
+
+If you are a participant, family member, support coordinator or plan manager, contact us to discuss the person's goals, plan management type, location and the information needed before treatment begins.
+
+Read our guide: [NDIS home physiotherapy — funding, eligibility and what physiotherapy can help with](/blog/ndis-home-physiotherapy-funding).
+
+## My Aged Care, Support at Home and CHSP
+
+Home physiotherapy may also be relevant for older people receiving aged-care support. Depending on an individual's assessment, approved services and provider arrangements, physiotherapy may be available through **Support at Home** or the **Commonwealth Home Support Programme (CHSP)**.
+
+If you receive aged-care support, speak with your aged-care provider about whether physiotherapy is included in your approved services and whether they can arrange visits with an external physiotherapist. We can discuss service arrangements with clients, families and care coordinators before treatment starts.
+
+For more detail, read our guide to [My Aged Care home physiotherapy funding, including Support at Home and CHSP](/blog/my-aged-care-home-physiotherapy-funding).
+
+## Other ways to access physiotherapy
+
+Depending on your circumstances, other payment or funding options may include:
+
+- **Private appointments:** You can contact us directly to discuss fees and availability. A GP referral is not generally required for a standard private physiotherapy appointment.
+- **Medicare:** People with an eligible chronic condition may be able to access a rebate for a limited number of allied health services under a GP Management Plan or the relevant Medicare arrangements. A GP referral and eligibility requirements apply.
+- **DVA:** Veterans can contact us to discuss referral, approval and service arrangements for their circumstances.
+- **Private health insurance:** Rebates depend on your policy, level of cover and insurer's rules. Contact your fund to confirm whether a home visit is covered and ask us about our current claiming arrangements.
+
+If you are unsure which option applies, tell us how the appointment is expected to be funded when you enquire. We can explain what information we need, but funding eligibility and approval are determined by the relevant scheme or provider.
+
+## Meet our physiotherapy team
+
+Physio To Home has a team of AHPRA-registered physiotherapists with experience across musculoskeletal, orthopaedic, neurological, aged-care and rehabilitation needs. We consider the person's clinical needs, goals and location when discussing which practitioner may be suitable.
+
+You can [meet our physiotherapists](/team) and read about their experience. If you are enquiring on behalf of a family member or client, you are welcome to discuss their needs with our team.
+
+## Frequently asked questions about Hobart home physiotherapy
+
+### Do you provide home visit physiotherapy in Hobart?
+
+Yes. Physio To Home provides mobile physiotherapy home visits in Hobart and surrounding parts of southern Tasmania. Contact us with your suburb or postcode so we can check service availability for your address.
+
+### How quickly can I get an appointment?
+
+We offer **same-week appointments**. For urgent cases, a **same-day appointment may be possible**, depending on clinician availability, your location and the type of support required. Call 1300 433 233 so we can discuss the earliest suitable option.
+
+### Do you provide NDIS physiotherapy in Hobart?
+
+We accept enquiries from NDIS participants who are **self-managed or plan-managed**. Physio To Home is not a registered NDIS provider, so we do not provide services under NDIA-managed funding. NDIS funding must be available for the relevant disability-related support and align with the participant's plan.
+
+### Can a support coordinator or family member arrange a visit?
+
+Yes. A family member, carer or support coordinator can contact us to discuss an enquiry on behalf of a participant or client. We will explain what details are needed and confirm the next steps with the participant or their authorised representative.
+
+### Do you visit people who have just come home from hospital?
+
+Home physiotherapy may be suitable after a hospital stay or operation, depending on the person's condition, medical instructions and rehabilitation needs. When you enquire, let us know the reason for admission or surgery, the discharge date if relevant, and any precautions or referral information.
+
+### Do I need a GP referral?
+
+A referral is not generally required for a standard private physiotherapy appointment. Medicare, DVA and some aged-care or other funded arrangements may have specific referral, assessment or approval requirements.
+
+### What should I have ready when I call?
+
+It helps to have the person's suburb or postcode, a short description of their mobility or rehabilitation needs, any relevant discharge or referral information, and the intended funding arrangement (if known). You do not need to have every document ready just to make an initial enquiry.
 
 ---
 
-## Conditions We Treat
+## Enquire about a Hobart home physiotherapy visit
 
-Home physiotherapy at Physio to Home covers musculoskeletal, neurological, and age-related conditions, including **lower back pain**, **sciatica**, **neck pain** and cervicogenic headache, hip and knee **osteoarthritis**, **rotator cuff** injuries, post-surgical rehabilitation, falls prevention, **Parkinson's disease** physiotherapy, **stroke rehabilitation**, **chronic pain** management, and dizziness and vestibular conditions — including **cervicogenic dizziness**, an area of specialist focus at Physio to Home.
+If you or someone you support needs physiotherapy at home, contact Physio To Home. Tell us where the person lives and what support they need. We will discuss whether we can provide a visit and the earliest suitable appointment.
 
-Not sure if your condition suits home-based physiotherapy? [Get in touch](/booking) and we'll talk it through before you commit to anything.
+<box-placeholder />
 
----
+**Phone:** 1300 433 233
 
-## Suburbs We Cover
+**Online:** [Contact our team](/contact) or [make a booking enquiry](/booking)
 
-Across greater Hobart, our team provides home visits including Sandy Bay, Glenorchy, Moonah, New Town, Kingston, Clarence, Rosny Park, Sorell, Richmond, and Huonville and the Huon Valley.
+**For care coordinators and support coordinators:** You can contact us to discuss the client's location, goals, funding arrangements and referral information.
 
-Not sure if your address is in range? [Get in touch](/booking) and we'll confirm.
-
----
-
-## Funding Your Physiotherapy
-
-Home physiotherapy in Hobart can be accessed through several pathways:
-
-**Medicare GP Management Plan** — up to five partially subsidised visits per year for people with a chronic condition; your GP writes the plan, you pay the gap.
-
-**My Aged Care — Home Care Package** — physiotherapy is a covered allied health service at every package level.
-
-**My Aged Care — CHSP** — entry-level allied health support for older Australians without a full package.
-
-**NDIS** — physiotherapy funded under Improved Daily Living or Improved Health and Wellbeing categories for eligible participants.
-
-**Private health insurance** — most extras policies cover physiotherapy home visits; we process HICAPS claims on the spot.
-
-**Private self-funding** — direct payment, no insurance or subsidy required.
-
-Not sure which applies to you? [Book an appointment](/booking) and we'll check your eligibility first, at no cost and no obligation.
+**Same-week appointments are available. Same-day visits may be possible for urgent cases, subject to availability.**
 
 ---
 
-## Frequently Asked Questions
-
-### How soon can I get a home visit in Hobart?
-
-We're actively growing our presence across greater Hobart. Turnaround can vary a little more by suburb than in our Launceston base, so the best next step is to [contact us directly](/booking) and we'll confirm current availability in your area.
-
-### Do I need a referral?
-
-No referral is needed for a private booking. If you're funding your visits through a Medicare GP Management Plan, a My Aged Care package, or NDIS, a referral or care plan may form part of that process — but you can contact us directly either way.
-
-### Will I see the same physiotherapist each time?
-
-In most cases, yes. We aim to keep you with the same assigned physiotherapist across your care so you build a genuine therapeutic relationship and don't have to repeat your history at every visit.
-
-### Is home physiotherapy as effective as clinic-based care, even in a hilly city like Hobart?
-
-Yes — and Hobart's terrain is actually part of the case for it. Research supports home-based physiotherapy as equivalent in outcomes to clinic-based care, and treatment informed by the actual steps, slopes and layout of your home tends to translate into daily life more directly than a generic clinic program.
-
----
-
-## Book a Home Physiotherapy Visit in Hobart
-
-Ready to get started? Contact Physio to Home to book your initial home visit in Hobart, or to talk through your situation first.
-
-📞 1300 433 233
-🌐 [physiotohome.com](https://www.physiotohome.com)
-📍 Hobart & greater Hobart, Tasmania
-
-[Book your home physiotherapy visit today →](/booking)
-
----
-
-## About the Practice
-
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with over 15 years of clinical experience, supported by a growing team of physiotherapists serving all of Tasmania — from our roots in Launceston to Hobart, the North West Coast, and everywhere between. The team specialises in aged care physiotherapy, falls prevention, neurological rehabilitation, vestibular rehabilitation, and post-surgical care — all delivered entirely in the home setting.
-
----
-
-*This page is intended for general information and service description. It does not replace individualised professional advice. If you are experiencing pain or a health concern, please consult a qualified health professional.*
+*This page provides general information about physiotherapy services and funding pathways. Individual treatment recommendations are made following assessment. Funding eligibility, approval and provider arrangements are determined by the relevant scheme, plan manager or aged-care provider.*
