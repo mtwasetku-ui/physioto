@@ -1,176 +1,284 @@
 ---
 title: "My Aged Care | Home Physiotherapy Funding"
-description: "Did you know your Home Care Package can fund in-home physiotherapy? Physio to Home explains exactly how My Aged Care works for physio visits."
+description: "Can My Aged Care fund home physiotherapy in Tasmania? Physio to Home explains Support at Home and CHSP, costs, and how to get started."
 author: "Micheal Ghattas, Physiotherapist"
-date: "2026-03-08"
+date: "2026-11-13"
 category: "Funding & Access"
 featured: true
 image: /image/blog/my-aged-care-home-physiotherapy-funding.jpg
 
-tags: ["My Aged Care", "Home Care Package", "aged care physiotherapy", "funded physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "CHSP"]
+tags: ["My Aged Care", "Support at Home", "CHSP", "aged care physiotherapy", "funded physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults"]
 ---
 
 # MY AGED CARE | HOME PHYSIOTHERAPY FUNDING
 
-## How to Use My Aged Care to Fund Home Physiotherapy in Tasmania
+## Can My Aged Care Fund Home Physiotherapy in Tasmania?
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
+By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
-One of the most common things we hear from older Tasmanians is that they had no idea their aged care funding could cover home physiotherapy visits. Many people receiving Home Care Packages are spending their funding on cleaning and personal care — important services — while a physiotherapy programme that could dramatically improve their mobility, reduce their falls risk, or support their recovery from surgery goes unfunded and unaccessed.
+Yes. Eligible older Australians may be able to access physiotherapy at home through government-funded aged care programs, including **Support at Home** and the **Commonwealth Home Support Programme (CHSP)**.
 
-This guide explains exactly how the My Aged Care system works, which programmes cover physiotherapy, and what steps to take to get physiotherapy added to your care plan — whether you are new to the system or already receiving support.
+These programs can help older people improve their mobility, manage pain, reduce their risk of falls and remain independent in their own homes.
+
+For people living in Tasmania, home physiotherapy can be particularly helpful when travelling to a clinic is difficult because of mobility problems, health conditions, transport limitations or the need for assistance.
+
+At Physio To Home, we provide mobile physiotherapy services across Tasmania, helping older people work towards practical goals in their own homes.
 
 ### Who this guide is for
 
-This article is for older Australians in North Tasmania — and their families and carers — who are currently receiving or considering applying for aged care support through My Aged Care, and who want to understand how physiotherapy fits into that funding.
+This article is for older Australians in Tasmania, and their families and carers, who are receiving or considering aged care support through My Aged Care and want to understand how physiotherapy fits into that funding.
 
 ---
 
-## What Is My Aged Care?
+## How Can My Aged Care Help With Physiotherapy?
 
-My Aged Care is the Australian Government's entry point to the aged care system. It is the website, phone service, and assessment pathway through which older Australians access government-funded aged care support — including home care services, residential care, and short-term care programmes.
+My Aged Care is the Australian Government's entry point for accessing government-funded aged care services.
 
-My Aged Care is not a single programme. It is the gateway to several different funding streams, the most relevant of which for home physiotherapy are:
+Depending on your circumstances and assessment, you may be eligible for physiotherapy through one of two main programs:
 
-- The **Commonwealth Home Support Programme (CHSP)** — entry-level support for older Australians who need some help to live independently at home
-- **Home Care Packages (HCP)** — more comprehensive, coordinated support for people with higher or more complex needs, delivered at four funding levels
+- **Support at Home:** For older people who need ongoing or more coordinated support to remain living independently at home.
+- **Commonwealth Home Support Programme (CHSP):** For older people who need entry-level assistance, including eligible allied health and therapy services.
 
-Both programmes can cover physiotherapy. Which one applies to you depends on your level of assessed need.
+Both programs can support access to physiotherapy, although eligibility, funding arrangements and service availability differ.
+
+You can start by contacting [My Aged Care](https://www.myagedcare.gov.au/) or calling 1800 200 422.
 
 ---
 
-## The Commonwealth Home Support Programme (CHSP)
+## 1. Support at Home Physiotherapy
 
-The CHSP provides entry-level support to help older Australians remain living independently at home. It is designed for people who need some assistance but do not yet require the more intensive support of a Home Care Package.
+The Support at Home program commenced on 1 November 2025, replacing the previous Home Care Packages Program and Short-Term Restorative Care Programme.
 
-### Who is eligible?
+It helps older Australians access coordinated care and services so they can continue living independently at home.
 
-To access CHSP services, you must be aged 65 or over (50 or over for Aboriginal and Torres Strait Islander people) and have been assessed as needing entry-level support. An assessment is arranged through My Aged Care.
+Physiotherapy is included as a clinical support service under Support at Home.
+
+### What physiotherapy can be funded?
+
+Depending on your assessed needs and approved support plan, physiotherapy may help with:
+
+- Improving walking ability and general mobility.
+- Improving balance and reducing falls risk.
+- Managing arthritis and other musculoskeletal conditions.
+- Recovering after surgery or hospital admission.
+- Improving strength and physical function.
+- Managing neurological conditions.
+- Maintaining independence with everyday activities.
+
+The aim is to provide treatment that addresses your assessed needs and helps you achieve meaningful improvements in daily life.
+
+### Does Support at Home cover physiotherapy costs?
+
+**Yes. Physiotherapy is classified as a clinical support, which has a 0% participant contribution under Support at Home.**
+
+This means participants do not pay an additional contribution towards the cost of approved physiotherapy services.
+
+However, there is an important distinction: the physiotherapy service still uses funding from the participant's allocated Support at Home budget. The government funds the full price of clinical supports, but the service is not unlimited or outside the funding arrangements.
+
+The physiotherapy must be consistent with the person's assessed needs and approved services. Your Support at Home provider can explain how the service will be arranged and how it affects your available budget.
+
+### Can I choose my own physiotherapist?
+
+You can discuss your preferred physiotherapist with your registered Support at Home provider.
+
+Ask whether the provider can arrange services through your chosen physiotherapist or an external physiotherapy provider. This depends on the provider's service arrangements and applicable program requirements.
+
+---
+
+## 2. CHSP Physiotherapy (Commonwealth Home Support Programme)
+
+The Commonwealth Home Support Programme (CHSP) provides entry-level support to older Australians who need some assistance to remain independent at home.
+
+Eligible services include allied health and therapy, which can include physiotherapy.
+
+CHSP may be suitable for older people who need help with specific physical problems but do not require the more comprehensive support available through Support at Home.
+
+### What can CHSP physiotherapy help with?
+
+Depending on your assessed needs and available services, physiotherapy may help with:
+
+- Falls prevention and balance training.
+- Walking and mobility difficulties.
+- Muscle weakness and reduced strength.
+- Joint pain and arthritis.
+- Recovery after illness or hospital admission.
+- Improving confidence with everyday activities.
 
 ### Does CHSP cover physiotherapy?
 
-Yes. Allied health services — including physiotherapy — are a covered category under CHSP. The service is typically subsidised, meaning you pay a co-contribution rather than the full cost. The availability of CHSP-funded physiotherapy varies by region, and in rural areas of North Tasmania, home-based delivery is the most practical option.
+CHSP may subsidise eligible physiotherapy services. However, availability and any contribution payable depend on the provider and the services offered in your area.
 
-### How to access CHSP physiotherapy
+Ask your My Aged Care assessor or service provider whether physiotherapy is included in your approved support and whether any contribution applies.
 
-Contact My Aged Care on 1800 200 422 or visit myagedcare.gov.au to register and request an assessment. An Aged Care Assessment Team (ACAT) or Regional Assessment Service (RAS) will conduct a brief assessment — either by phone or in person — to determine your eligibility and the level of support appropriate to your needs. Once approved, you will be connected with a service provider for the specific support categories you are assessed for.
+### Is CHSP being replaced by Support at Home?
 
----
+No immediate transition should be assumed.
 
-## Home Care Packages (HCP)
+On 21 August 2026, the Australian Government announced that CHSP funding would be extended for another two years, until **30 June 2029**.
 
-Home Care Packages are designed for older Australians with more complex or ongoing care needs. Unlike CHSP, which funds individual services, a Home Care Package is a coordinated care plan with a dedicated budget that you and your care coordinator manage together.
+CHSP continues to operate as a separate program while the Government consults on its longer-term design.
 
-### The four package levels
-
-**Level 1** — Basic care needs. Annual funding approximately $11,000.
-
-**Level 2** — Low-level care needs. Annual funding approximately $19,000.
-
-**Level 3** — Intermediate care needs. Annual funding approximately $41,000.
-
-**Level 4** — High-level care needs. Annual funding approximately $63,000.
-
-These figures are approximate and are indexed periodically by the Australian Government. Your package coordinator will advise on the current amounts applicable to your level.
-
-### Does a Home Care Package cover physiotherapy?
-
-Yes. Physiotherapy is a covered allied health service under all Home Care Package levels. The number of sessions that can be funded depends on your package level and the other services included in your care plan. At higher package levels, regular ongoing physiotherapy — fortnightly or even weekly — is fully feasible within the budget.
-
-### How physiotherapy fits into your care plan
-
-Your Home Care Package is managed through a care coordinator — either employed by your package provider or, under the new Support at Home programme being implemented from July 2025, through a revised coordination model. The care coordinator works with you to allocate your package budget across the services you need.
-
-To add physiotherapy to your care plan, you simply request it from your care coordinator. You do not need a GP referral to add allied health to a Home Care Package, although a GP Management Plan can provide additional Medicare-funded sessions on top of your package. Your coordinator will arrange the service and manage the invoicing against your package budget.
-
-If your current care coordinator is not familiar with physiotherapy as a funded service, or suggests it is not covered, this is incorrect — physiotherapy is explicitly listed as a covered allied health service under Home Care Packages. Contact Physio to Home and we can assist you with the conversation.
+You can read the [official CHSP extension announcement](https://www.health.gov.au/news/commonwealth-home-support-program-chsp-extended-to-30-june-2029).
 
 ---
 
-## The Support at Home Programme: What Is Changing in 2025
+## Support at Home vs CHSP: What's the Difference?
 
-The Australian Government is implementing a new Support at Home programme to replace both CHSP and Home Care Packages, with a transition underway from July 2025. The new programme maintains allied health — including physiotherapy — as a covered service category. If you are currently receiving a Home Care Package, you will transition to the new programme gradually. Your access to physiotherapy will not be reduced as a result of this change.
+| Feature | Support at Home | CHSP |
+|---|---|---|
+| Main purpose | Coordinated ongoing or short-term support | Entry-level support |
+| Physiotherapy | Yes, as a clinical support | Yes, where available and approved |
+| Participant contribution for physiotherapy | 0% | Provider/service-specific contribution arrangements |
+| Assessment | Aged care assessment | Aged care assessment |
+| Funding | Individualised funding and approved services | Government-funded services delivered through CHSP providers |
+| Current program status | Operating since November 2025 | Extended until 30 June 2029 |
 
-If you are new to the aged care system, you will be assessed under the new Support at Home framework. The assessment and access process through My Aged Care remains the starting point regardless of which programme applies.
-
----
-
-## How Much Does Home Physiotherapy Cost With My Aged Care?
-
-Under a Home Care Package, physiotherapy is funded directly from your package budget at the agreed rate with the provider. There is no out-of-pocket cost beyond any care plan management fees that apply under your specific package arrangement.
-
-Under CHSP, a co-contribution is typically required — a subsidised fee that varies by region and provider.
-
-Physio to Home works with Home Care Package clients and CHSP clients across North Tasmania. When you contact us, we confirm your specific funding arrangement before booking and ensure you understand the cost implications before committing to any visits. There are no surprises.
+The most suitable program depends on your care needs, assessment outcome and the services available in your area.
 
 ---
 
-## What Can Physiotherapy Be Used For Under My Aged Care?
+## What Conditions Can Home Physiotherapy Help With?
 
-Under both CHSP and Home Care Packages, physiotherapy can be used for any clinically appropriate purpose relevant to your health and independence. Common reasons older Tasmanians use package-funded physiotherapy include:
+Physiotherapy can help older people manage a range of conditions that affect movement, strength, balance and independence.
 
-- Falls prevention assessment and exercise programme
-- Balance and mobility rehabilitation
-- Post-surgical rehabilitation following hip or knee replacement
-- Chronic pain management including arthritis, back pain, and neck pain
-- Stroke or neurological rehabilitation in the community
-- Parkinson's disease physiotherapy and gait retraining
-- General deconditioning and strength work to maintain independence
-- Home environment assessment for falls and safety hazards
+### Falls and balance problems
 
-If you are unsure whether your specific needs are appropriate for physiotherapy under your package, contact Physio to Home — we are happy to advise at no cost.
+Falls can have a significant impact on an older person's confidence and independence.
+
+A physiotherapist can assess balance, walking ability and lower limb strength, then develop an individualised exercise program to help reduce falls risk.
+
+### Arthritis and joint pain
+
+Arthritis can make everyday activities such as walking, standing and getting out of a chair more difficult.
+
+Physiotherapy may include strengthening exercises, mobility work, education and strategies to help manage symptoms.
+
+### Reduced mobility and muscle weakness
+
+Ageing, illness and inactivity can contribute to reduced strength and mobility.
+
+A physiotherapist can develop a gradual exercise program to improve physical capacity and make everyday tasks easier.
+
+### Recovery after surgery or hospital admission
+
+After surgery or a hospital stay, some older people need help rebuilding strength, balance and confidence.
+
+Home physiotherapy can support rehabilitation in a familiar environment, with exercises tailored to the person's recovery goals.
+
+### Neurological conditions
+
+People living with conditions such as Parkinson's disease or stroke-related movement difficulties may benefit from physiotherapy to improve mobility, balance and functional independence.
 
 ---
 
-## Steps to Access Home Physiotherapy Through My Aged Care
+## Steps to Arrange Physiotherapy Through My Aged Care
+
+If you or a family member needs home physiotherapy, these steps can help you get started.
 
 **Step 1 — Contact My Aged Care**
-Call 1800 200 422 or visit myagedcare.gov.au. Register if you have not already done so. Request an aged care assessment.
+Visit [www.myagedcare.gov.au](https://www.myagedcare.gov.au/) or call 1800 200 422. You can ask about an aged care assessment and the programs available for your circumstances.
 
-**Step 2 — Undergo an assessment**
-An assessor will contact you to determine your needs and eligibility. Be honest about your functional difficulties — the assessment determines your funding level, and underreporting your needs can result in a lower level of support than you require.
+**Step 2 — Complete an aged care assessment**
+An aged care assessor will discuss your health, mobility, daily activities and support needs. Be specific about any difficulties with walking, balance, pain, falls or physical function.
 
-**Step 3 — Receive your approval and package assignment**
-Once approved, you will be assigned to a funding level (for CHSP or HCP) and placed on a waiting list if a package is not immediately available. Wait times for Home Care Packages have reduced significantly in recent years following government investment, but can still be several months for higher-level packages.
+**Step 3 — Ask for physiotherapy by name**
+If physiotherapy would help, make sure you mention it during your assessment. Explain what you are struggling with and what you would like to achieve.
 
-**Step 4 — Choose a package provider**
-You have the right to choose your Home Care Package provider. This is the organisation that manages your budget and coordinates your services. Some providers have a broader allied health network than others — it is worth asking whether they have an established relationship with local physiotherapy providers before committing.
+For example:
 
-**Step 5 — Request physiotherapy on your care plan**
-Contact your care coordinator and request that physiotherapy be included in your care plan. Mention Physio to Home by name if you would like us to be your provider. We can liaise directly with your care coordinator to arrange the service agreement and scheduling.
+- "I want to improve my balance so I can walk to the shops safely."
+- "I need help strengthening my legs so I can get out of my chair independently."
+- "I want to improve my walking after my recent hospital admission."
+- "I am worried about falling when walking around my home."
 
-**Step 6 — Begin your home physiotherapy**
-Your physiotherapist will contact you to arrange the first visit, conduct an initial assessment, and develop your personalised programme.
+Linking physiotherapy to a practical goal can help the assessor understand why it is important to your independence.
+
+**Step 4 — Discuss service arrangements with your provider**
+Once approved, speak with your aged care provider about arranging physiotherapy. Ask whether they can provide home visits directly or work with an external physiotherapy provider in your area.
+
+**Step 5 — Arrange your home physiotherapy visits**
+Once the service and funding arrangements are confirmed, your physiotherapist can discuss your goals, assess your mobility and develop a treatment plan.
+
+---
+
+## What If I Am Waiting for Government-Funded Physiotherapy?
+
+Waiting times can vary depending on your assessment priority, funding availability, location and provider capacity.
+
+If you need physiotherapy sooner, you may consider arranging private home physiotherapy while waiting.
+
+Private treatment is generally paid for by the patient and should not be assumed to be reimbursed through My Aged Care.
+
+You can also contact your aged care provider to ask about available services, cancellations or alternative providers in your area.
+
+---
+
+## Home Physiotherapy Across Tasmania
+
+Physio To Home provides mobile physiotherapy services for people who find it difficult to attend a traditional clinic.
+
+We understand that travelling to appointments can be challenging, particularly for older people experiencing pain, reduced mobility, balance difficulties or other health concerns.
+
+Our physiotherapists provide treatment in the comfort of your own home, allowing exercises and rehabilitation to be tailored to your everyday environment.
+
+Our services cover areas across Tasmania, including:
+
+- **Northern Tasmania:** Launceston, George Town, Longford, Deloraine and surrounding areas.
+- **North-West Tasmania:** Devonport, Burnie and surrounding communities.
+- **Southern Tasmania:** Hobart and surrounding areas.
+- **Regional Tasmania:** Selected regional locations, subject to availability.
+
+You can learn more about our [home physiotherapy services across Tasmania](/services).
+
+### Can Physio To Home work with aged care providers?
+
+We can discuss physiotherapy referrals and service arrangements with aged care providers, care coordinators, support coordinators and families.
+
+Where provider arrangements and program requirements permit, we can discuss delivering home physiotherapy for eligible clients.
+
+Please contact us to discuss your location, referral requirements and funding arrangements before commencing treatment.
 
 ---
 
 ## Frequently Asked Questions
 
-### I am already receiving a Home Care Package but physiotherapy is not in my plan. Can I add it?
+### Can I get physiotherapy at home through My Aged Care?
 
-Yes, at any time. You can request a care plan review with your coordinator to add, change, or remove services at any point. If you feel physiotherapy would benefit your health and independence, raise it at your next scheduled review — or contact your coordinator to request an unscheduled review if your needs have changed.
+Yes. Eligible older Australians may access home physiotherapy through Support at Home or CHSP, depending on their assessment, approved services and local provider availability.
 
-### My package provider says I have used my budget. Can I still get physiotherapy?
+### Is physiotherapy free under Support at Home?
 
-If your package budget is fully allocated to other services, you may need to review your care plan to reallocate funds. A care plan review can identify whether existing services are still meeting your needs at the right frequency, or whether adjustments would free up budget for physiotherapy. Your coordinator is obligated to help you manage this.
+There is a 0% participant contribution for approved clinical supports, including physiotherapy. However, the service still uses the participant's allocated Support at Home funding.
 
-### I am on the waiting list for a Home Care Package. Can I access physiotherapy in the meantime?
+### Can I use my Home Care Package for physiotherapy?
 
-Possibly, through CHSP — depending on your assessed needs and regional availability. Alternatively, a Medicare GP Management Plan may provide up to five subsidised physiotherapy sessions per year while you wait. Contact Physio to Home and we will help identify the most appropriate pathway for your situation.
+Home Care Packages were replaced by Support at Home on 1 November 2025. Former Home Care Package participants transitioned to the new arrangements. Physiotherapy remains an eligible clinical support, subject to the person's approved services and funding.
 
-### Does My Aged Care cover physiotherapy for conditions other than falls?
+### Can I choose my own physiotherapist?
 
-Yes. Home Care Package funding covers physiotherapy for any condition relevant to your health, function, and independence. There is no restricted list of approved conditions.
+You can ask your Support at Home or CHSP provider whether they can arrange services with your preferred physiotherapist. This depends on the provider's arrangements and program requirements.
+
+### Can I arrange private physiotherapy while waiting for My Aged Care funding?
+
+Yes. You can arrange private physiotherapy independently, but you will generally need to pay the private fees yourself. Check any funding arrangements with your provider before starting treatment.
 
 ---
 
-## Ready to Use Your Aged Care Funding for Home Physiotherapy?
+## Arrange Home Physiotherapy With Physio To Home
 
-If you are receiving a Home Care Package or CHSP support in Tasmania and want to include physiotherapy in your care plan, Physio to Home can help. We work directly with care coordinators to arrange funded home visits across Launceston and throughout the rest of the state.
+If you or a family member needs help with mobility, balance, strength or recovery, home physiotherapy may be a convenient option.
 
-Contact us today — we will check your funding eligibility at no cost and no obligation →
+Physio To Home provides mobile physiotherapy across Tasmania, helping older people work towards better mobility and independence in their own homes.
+
+**Contact Physio To Home**
+
+- Phone: 1300 433 233
+- Email: info@physiotohome.com
+- Website: https://www.physiotohome.com/
+
+Contact us to discuss your location, physiotherapy needs and possible aged care service arrangements →
 
 ---
 
@@ -178,18 +286,18 @@ Contact us today — we will check your funding eligibility at no cost and no ob
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
+AHPRA Registered Physiotherapist | Doctor of Physical Therapy
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in aged care physiotherapy, falls prevention, and post-surgical rehabilitation delivered entirely in the home setting.
+Micheal Ghattas is an AHPRA-registered physiotherapist and the founder of Physio To Home. He has clinical experience supporting people with musculoskeletal conditions, mobility difficulties, rehabilitation and physical function.
+
+His approach focuses on helping people improve movement, maintain independence and achieve practical goals through individualised physiotherapy.
 
 ---
 
 ## References & Further Reading
 
-Australian Government Department of Health and Aged Care. Home Care Packages Program. www.health.gov.au, 2025.
+My Aged Care. Getting started with aged care. www.myagedcare.gov.au
 
-My Aged Care. Getting started with aged care. www.myagedcare.gov.au, 2025.
+Australian Government Department of Health and Aged Care. Commonwealth Home Support Program (CHSP) extended to 30 June 2029. www.health.gov.au
 
-Australian Physiotherapy Association. Physiotherapy in aged care: position statement. APA, 2023.
-
-Aged Care Quality and Safety Commission. Your rights as a home care recipient. Commonwealth of Australia, 2025.
+*This article provides general information about Australian aged care programs. Eligibility, funding, service availability and provider arrangements are determined by the relevant aged care assessment and program requirements. Contact My Aged Care or your provider for advice about your individual circumstances.*
