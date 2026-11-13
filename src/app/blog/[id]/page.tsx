@@ -409,18 +409,50 @@ function renderMarkdown(
       continue
     }
 
-    /* Markdown table */
+    /* Markdown table (allow blank lines between rows) */
+    let separatorIndex = i + 1
+    while (
+      separatorIndex < lines.length &&
+      lines[separatorIndex].trim() === ''
+    ) {
+      separatorIndex++
+    }
+
     if (
       line.includes('|') &&
-      i + 1 < lines.length &&
-      lines[i + 1].includes('|') &&
-      isTableSeparator(lines[i + 1])
+      separatorIndex < lines.length &&
+      lines[separatorIndex].includes('|') &&
+      isTableSeparator(lines[separatorIndex])
     ) {
       const headers = splitTableRow(line)
-      i += 2
+      i = separatorIndex + 1
 
       const rows: string[][] = []
-      while (i < lines.length && lines[i].includes('|') && lines[i].trim() !== '') {
+      while (i < lines.length) {
+        // Blank lines are permitted inside Markdown tables. Only skip them
+        // when the next non-empty line is another table row.
+        if (lines[i].trim() === '') {
+          let nextRowIndex = i + 1
+          while (
+            nextRowIndex < lines.length &&
+            lines[nextRowIndex].trim() === ''
+          ) {
+            nextRowIndex++
+          }
+
+          if (
+            nextRowIndex < lines.length &&
+            lines[nextRowIndex].includes('|')
+          ) {
+            i = nextRowIndex
+            continue
+          }
+
+          break
+        }
+
+        if (!lines[i].includes('|')) break
+
         rows.push(splitTableRow(lines[i]))
         i++
       }
