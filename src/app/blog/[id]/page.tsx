@@ -330,8 +330,8 @@ function renderMarkdown(
   )
 
   const splitTableRow = (row: string) =>
-    row.trim().replace(/^\\|/, '').replace(/\\|$/, '').split('|').map((cell) => cell.trim())
-
+   row.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((cell) => cell.trim())
+  
   const isTableSeparator = (row: string) =>
     splitTableRow(row).every((cell) => /^:?-{3,}:?$/.test(cell))
 
