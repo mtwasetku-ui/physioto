@@ -269,10 +269,10 @@ export default function HomeClient() {
                 vis('hero') ? 'in' : ''
               } font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-white md:text-6xl lg:text-[4.4rem]`}
             >
-              Tasmania-wide physiotherapy
+              Physiotherapy in the
 
               <span className="relative mt-2 block italic text-[#FFC53D]">
-                in your home.
+                comfort of your own home.
                 <Scribble />
               </span>
             </h1>
@@ -282,14 +282,14 @@ export default function HomeClient() {
                 vis('hero') ? 'in' : ''
               } mt-8 max-w-2xl text-lg font-light leading-relaxed text-slate-200 md:text-xl`}
             >
-              Our team of{' '}
+              Physio to Home provides mobile, home visit physiotherapy
+              across Tasmania. Our team of{' '}
               <strong className="font-semibold text-white">
                 AHPRA-registered physiotherapists
               </strong>{' '}
-              brings expert, hands-on care directly to your door across
-              Tasmania. We provide personalised assessment, treatment and
-              rehabilitation in the comfort of your home, aged care facility
-              or workplace.
+              delivers personalised assessment, treatment and rehabilitation
+              for older adults, private clients and NDIS participants in your
+              home, aged care facility or workplace.
             </p>
 
             <div
