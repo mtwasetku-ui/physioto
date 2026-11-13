@@ -126,23 +126,14 @@ You can read the [official CHSP extension announcement](https://www.health.gov.a
 
 ## Support at Home vs CHSP: What's the Difference?
 
-### Support at Home
-
-- **Main purpose:** Coordinated ongoing or short-term support.
-- **Physiotherapy:** Yes, as a clinical support.
-- **Participant contribution for physiotherapy:** 0%.
-- **Assessment:** Aged care assessment.
-- **Funding:** Individualised funding and approved services.
-- **Current program status:** Operating since November 2025.
-
-### CHSP
-
-- **Main purpose:** Entry-level support.
-- **Physiotherapy:** Yes, where available and approved.
-- **Participant contribution for physiotherapy:** Provider/service-specific contribution arrangements.
-- **Assessment:** Aged care assessment.
-- **Funding:** Government-funded services delivered through CHSP providers.
-- **Current program status:** Extended until 30 June 2029.
+| Feature | Support at Home | CHSP |
+|---|---|---|
+| Main purpose | Coordinated ongoing or short-term support | Entry-level support |
+| Physiotherapy | Yes, as a clinical support | Yes, where available and approved |
+| Participant contribution for physiotherapy | 0% | Provider/service-specific contribution arrangements |
+| Assessment | Aged care assessment | Aged care assessment |
+| Funding | Individualised funding and approved services | Government-funded services delivered through CHSP providers |
+| Current program status | Operating since November 2025 | Extended until 30 June 2029 |
 
 The most suitable program depends on your care needs, assessment outcome and the services available in your area.
 
