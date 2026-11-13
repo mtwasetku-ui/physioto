@@ -701,11 +701,11 @@ function renderMarkdown(
     }
 
     /* Unordered Markdown lists: support -, * and + markers */
-    if (/^\\s*[-*+]\\s+/.test(line)) {
+    if (/^\s*[-*+]\s+/.test(line)) {
       const listItems: string[] = []
 
-      while (i < lines.length && /^\\s*[-*+]\\s+/.test(lines[i])) {
-        listItems.push(lines[i].replace(/^\\s*[-*+]\\s+/, ''))
+      while (i < lines.length && /^\s*[-*+]\s+/.test(lines[i])) {
+        listItems.push(lines[i].replace(/^\s*[-*+]\s+/, ''))
         i++
       }
 
