@@ -329,6 +329,12 @@ function renderMarkdown(
     }
   )
 
+  const splitTableRow = (row: string) =>
+    row.trim().replace(/^\\|/, '').replace(/\\|$/, '').split('|').map((cell) => cell.trim())
+
+  const isTableSeparator = (row: string) =>
+    splitTableRow(row).every((cell) => /^:?-{3,}:?$/.test(cell))
+
   let i = 0
 
   while (i < lines.length) {
@@ -400,6 +406,96 @@ function renderMarkdown(
       )
 
       i++
+      continue
+    }
+
+    /* Markdown table */
+    if (
+      line.includes('|') &&
+      i + 1 < lines.length &&
+      lines[i + 1].includes('|') &&
+      isTableSeparator(lines[i + 1])
+    ) {
+      const headers = splitTableRow(line)
+      i += 2
+
+      const rows: string[][] = []
+      while (i < lines.length && lines[i].includes('|') && lines[i].trim() !== '') {
+        rows.push(splitTableRow(lines[i]))
+        i++
+      }
+
+      elements.push(
+        <div
+          key={`table-${i}`}
+          role="region"
+          aria-label="Scrollable article table"
+          tabIndex={0}
+          style={{
+            width: '100%',
+            overflowX: 'auto',
+            margin: '28px 0 36px',
+            border: `1px solid ${BRAND.border}`,
+            borderRadius: 14,
+            background: '#FFFFFF',
+            WebkitOverflowScrolling: 'touch',
+          }}
+        >
+          <table
+            style={{
+              width: '100%',
+              minWidth: 520,
+              borderCollapse: 'collapse',
+              fontSize: 15,
+              lineHeight: 1.6,
+              color: BRAND.text,
+            }}
+          >
+            <thead>
+              <tr>
+                {headers.map((header, j) => (
+                  <th
+                    key={j}
+                    scope="col"
+                    style={{
+                      padding: '14px 16px',
+                      background: BRAND.dark,
+                      color: '#FFFFFF',
+                      fontWeight: 700,
+                      textAlign: 'left',
+                      borderRight: '1px solid rgba(255,255,255,0.16)',
+                      whiteSpace: 'normal',
+                    }}
+                  >
+                    {renderInline(header, used, budget, false)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, rowIndex) => (
+                <tr key={rowIndex}>
+                  {headers.map((_, columnIndex) => (
+                    <td
+                      key={columnIndex}
+                      style={{
+                        padding: '13px 16px',
+                        verticalAlign: 'top',
+                        background: rowIndex % 2 === 0 ? BRAND.paleGreen : '#FFFFFF',
+                        borderTop: `1px solid ${BRAND.border}`,
+                        borderRight: `1px solid ${BRAND.border}`,
+                      }}
+                    >
+                      {renderInline(row[columnIndex] ?? '', used, budget)}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+
       continue
     }
 
