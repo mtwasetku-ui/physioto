@@ -665,15 +665,47 @@ function renderMarkdown(
       continue
     }
 
-    /* Bullet list */
-    if (line.startsWith('- ')) {
+    /* Blockquotes: render consecutive Markdown quote lines as one styled quote */
+    if (line.startsWith('>')) {
+      const quoteLines: string[] = []
+
+      while (i < lines.length && lines[i].startsWith('>')) {
+        quoteLines.push(lines[i].replace(/^> ?/, '').trim())
+        i++
+      }
+
+      elements.push(
+        <blockquote
+          key={`quote-${i}`}
+          style={{
+            margin: '24px 0 32px',
+            padding: '18px 22px',
+            borderLeft: `4px solid ${BRAND.orange}`,
+            borderRadius: '0 12px 12px 0',
+            background: BRAND.cream,
+            color: BRAND.forest,
+            fontSize: 17,
+            lineHeight: 1.8,
+            fontStyle: 'italic',
+          }}
+        >
+          {quoteLines.map((quoteLine, j) => (
+            <p key={j} style={{ margin: j === quoteLines.length - 1 ? 0 : '0 0 10px' }}>
+              {renderInline(quoteLine, used, budget)}
+            </p>
+          ))}
+        </blockquote>
+      )
+
+      continue
+    }
+
+    /* Unordered Markdown lists: support -, * and + markers */
+    if (/^\\s*[-*+]\\s+/.test(line)) {
       const listItems: string[] = []
 
-      while (
-        i < lines.length &&
-        lines[i].startsWith('- ')
-      ) {
-        listItems.push(lines[i].slice(2))
+      while (i < lines.length && /^\\s*[-*+]\\s+/.test(lines[i])) {
+        listItems.push(lines[i].replace(/^\\s*[-*+]\\s+/, ''))
         i++
       }
 
@@ -694,10 +726,7 @@ function renderMarkdown(
                 alignItems: 'flex-start',
                 gap: 12,
                 padding: '10px 14px',
-                background:
-                  j % 2 === 0
-                    ? BRAND.paleGreen
-                    : '#FFFFFF',
+                background: j % 2 === 0 ? BRAND.paleGreen : '#FFFFFF',
                 borderRadius: 10,
                 fontSize: 16,
                 color: BRAND.text,
@@ -706,6 +735,7 @@ function renderMarkdown(
               }}
             >
               <span
+                aria-hidden="true"
                 style={{
                   marginTop: 9,
                   width: 6,
@@ -715,14 +745,7 @@ function renderMarkdown(
                   flexShrink: 0,
                 }}
               />
-
-              <span>
-                {renderInline(
-                  item,
-                  used,
-                  budget
-                )}
-              </span>
+              <span>{renderInline(item, used, budget)}</span>
             </li>
           ))}
         </ul>
