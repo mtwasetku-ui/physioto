@@ -7,20 +7,20 @@ const BASE_URL = 'https://www.physiotohome.com'
 /* -------------------------------------------------------------------------- */
 
 export const homeMetadata: Metadata = {
-  title: 'Home Physiotherapy Tasmania — In-Home Care Statewide',
+  title: 'Home Visit Physiotherapy Tasmania | Physio To Home',
 
   description:
-    'Physio to Home provides professional in-home physiotherapy across Tasmania. AHPRA-registered physiotherapists deliver personalised care for back, neck and joint pain, rehabilitation, mobility, falls prevention and neurological conditions. Call 1300 433 233.',
+    'Physio to Home provides home visit physiotherapy across Tasmania. AHPRA-registered physios support older adults, private clients and NDIS participants with pain, mobility and rehabilitation.',
 
   alternates: {
     canonical: BASE_URL,
   },
 
   openGraph: {
-    title: 'Home Physiotherapy Tasmania — In-Home Care Statewide',
+    title: 'Home Visit Physiotherapy Tasmania | Physio To Home',
 
     description:
-      'Professional physiotherapy delivered to your home anywhere in Tasmania. Personalised care from AHPRA-registered physiotherapists, with same-week appointments available.',
+      'Mobile physiotherapy delivered to your home across Tasmania. Personalised care for older adults, private clients and NDIS participants from AHPRA-registered physiotherapists.',
 
     url: BASE_URL,
 
