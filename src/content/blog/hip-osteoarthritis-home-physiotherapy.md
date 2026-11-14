@@ -1,196 +1,268 @@
 ---
-title: "Hip Osteoarthritis Pain? Physiotherapy Before Surgery"
-description: "Hip osteoarthritis is a leading cause of pain and disability in older Australians. Learn why physiotherapy is the top non-surgical treatment option."
+title: "Hip Osteoarthritis Physio at Home in Tasmania"
+description: "What the latest Cochrane evidence says about exercise for hip osteoarthritis, five safe home exercises, red flags and funding options in Tasmania."
 author: "Micheal Ghattas, Physiotherapist"
-date: "2026-03-02"
+date: "2026-11-14"
 category: "Conditions & Rehab"
 featured: false
 image: /image/blog/hip-osteoarthritis-home-physiotherapy.jpg
 
-tags: ["hip osteoarthritis", "hip pain", "hip arthritis", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "arthritis", "joint pain"]
+tags: ["hip osteoarthritis", "hip pain", "hip arthritis", "hip osteoarthritis exercises", "physiotherapy before hip replacement", "home physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "arthritis", "joint pain"]
 ---
 
 # HIP OSTEOARTHRITIS | HOME PHYSIOTHERAPY
 
-## Managing Hip Osteoarthritis at Home: A Guide from a North Tasmania Home Physiotherapist
+## Hip Osteoarthritis Physiotherapy at Home: What the Latest Evidence Says
 
-By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
+By Micheal Ghattas | AHPRA Registered Physiotherapist
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
-Hip osteoarthritis is one of the most common and most disabling conditions in older adults in Australia. It affects over a million Australians, causes progressive pain and restriction in one of the body's most fundamental joints, and is one of the leading drivers of hip replacement surgery. It is also — and this is the part that surprises many people — one of the conditions most responsive to physiotherapy.
+**Quick answer:** Australian guidelines recommend exercise-based physiotherapy as a core treatment for hip osteoarthritis (OA), alongside education and weight management where relevant. The most recent Cochrane review (July 2026) found the average benefit is real but modest: about 7 points less pain on a 100-point scale compared with no treatment. Some people improve a lot and others little, and exercise does not cure hip OA. It is low cost, unlikely to cause harm, and builds the strength and confidence that help with stairs, getting in and out of a car, and walking.
 
-The research is unambiguous: exercise-based physiotherapy produces clinically meaningful reductions in hip pain and meaningful improvements in function across virtually all patients with hip OA, regardless of severity. The persistent belief that rest is safest and exercise is harmful is not supported by the evidence. It is, in fact, directly contradicted by it.
+**Key points**
 
-This guide explains what hip osteoarthritis is, what physiotherapy does about it, and how home-based delivery works in practice for people in North Tasmania.
+- Hip OA affects the whole joint, and pain does not always match what an X-ray shows.
+- The RACGP guideline recommends land-based exercise for all people with hip OA, whatever their age, X-ray severity or pain level. The evidence for the size of the benefit is limited, so goals should be realistic.
+- A good programme combines hip and leg strengthening (2-3 days a week), regular walking, practice of everyday movements, and education.
+- Some symptoms need urgent medical attention rather than exercise (listed below).
+- Physiotherapy cannot promise to avoid surgery. One trial suggests it may delay hip replacement, and surgery is worth discussing if pain and function remain unacceptable despite good non-surgical care.
+- In Tasmania, home physiotherapy may be funded through Support at Home, Medicare, DVA, the NDIS or private health cover.
 
 ### Who this guide is for
 
-This article is for people in North Tasmania living with hip osteoarthritis — or caring for someone who is — who want to understand how physiotherapy can help and what home-based treatment involves. It is particularly relevant for older adults in rural areas where getting to a clinic consistently is impractical.
+This article is for people in Tasmania living with hip osteoarthritis, or caring for someone who is, who want to understand what the research says about physiotherapy and what home-based treatment involves. It is particularly relevant for older adults in rural areas where getting to a clinic consistently is impractical.
 
 ---
 
-## What Is Hip Osteoarthritis — and What Is Happening in the Joint?
+## What Is Hip Osteoarthritis?
 
-The hip is a ball-and-socket joint — the rounded head of the femur (thigh bone) sits within the acetabulum (socket) of the pelvis. The articulating surfaces of both the ball and socket are covered in articular cartilage, which provides a smooth, low-friction surface for movement and absorbs compressive load during weight-bearing activities.
+Hip osteoarthritis is a long-term condition of the hip joint. The cartilage that cushions the ball-and-socket joint gradually thins, the bone underneath changes, and the surrounding muscles, ligaments and joint lining are affected. Researchers now describe OA as a disease of the whole joint rather than simple "wear and tear". It becomes more common with age and is the most common reason for hip replacement surgery in Australia.
 
-In hip osteoarthritis, this cartilage undergoes progressive degeneration — thinning, softening, and eventually wearing away — along with changes to the underlying bone (subchondral sclerosis, osteophyte formation) and the surrounding soft tissues. The result is a joint with less cushioning, altered mechanics, and — in most cases — pain, stiffness, and reduced range of motion.
-
-### Important things to understand about hip OA
-
-**Pain does not reliably reflect the degree of structural change.** Many people with significant cartilage loss on X-ray have manageable symptoms, while others with mild imaging changes have severe pain. Hip OA pain is influenced by muscle strength, activity levels, sleep quality, mood, and the sensitivity of the nervous system — not just the structural state of the joint. This is why treating the whole person, not just the X-ray, is essential.
-
-**Exercise does not accelerate joint damage.** This is the most important and most misunderstood principle in OA management. The muscles surrounding the hip are its primary shock absorbers and stabilisers. Strong muscles mean less force transmitted to the joint with every step. Appropriately graded exercise — the kind physiotherapy provides — reduces joint load rather than increasing it.
-
-**Hip OA pain is often felt in unexpected places.** Many people with hip OA experience pain primarily in the groin, the inner thigh, or the front of the hip — not the outer hip or buttock as many expect. Others feel referred pain down the thigh toward the knee. This can lead to confusion about the source and delay appropriate management.
+Two things often surprise people. First, pain and X-rays do not line up neatly: some people with marked changes on X-ray have mild symptoms, and others with mild changes have significant pain. Second, symptoms are influenced by more than the joint itself, including muscle strength, activity levels, sleep, mood and how sensitive the nervous system has become. That is why treatment looks at the whole person, not only the scan.
 
 ---
 
-## Recognising Hip Osteoarthritis: Signs and Symptoms
+## What Are the Symptoms of Hip Osteoarthritis?
 
-Hip OA typically presents with:
+- Pain in the groin, inner thigh or front of the hip, sometimes spreading to the buttock, thigh or knee
+- Pain that builds with walking, standing or stairs and eases with rest
+- Stiffness after rest or first thing in the morning, usually settling within about 30 minutes
+- Less movement, especially bending the hip and turning the leg inwards
+- A limp, particularly after being on your feet
+- Difficulty with socks and shoes, getting out of a car or low chairs, or climbing stairs
+- Aching that can disturb sleep in more advanced OA
 
-- Groin, inner thigh, or anterior hip pain that is worse with weight-bearing activity and eases with rest
-- Morning stiffness that improves after 15–30 minutes of movement
-- Reduced range of motion — particularly internal rotation and flexion
-- A limp that develops as the condition progresses, particularly after prolonged activity
-- Difficulty with functional tasks including putting on shoes and socks, getting in and out of a car, climbing stairs, and rising from low chairs
-- In some cases, a deep, aching night pain that disrupts sleep
+Not all hip pain is OA. Pain on the outer side of the hip, for example, is often tendon-related (gluteal tendinopathy) rather than joint-related, and back problems can refer pain into the hip. That is why a proper assessment matters.
 
-If you are experiencing these symptoms and have not had a formal assessment, your GP can confirm the diagnosis — typically with clinical examination and X-ray.
-
----
-
-## What the Evidence Says About Physiotherapy for Hip OA
-
-The 2019 OARSI guidelines — the most widely referenced clinical guidelines for OA management globally — place exercise as a core recommended treatment for hip osteoarthritis in all patients, regardless of severity or age. This recommendation is backed by high-quality evidence from multiple systematic reviews and randomised controlled trials.
-
-Key findings relevant to physiotherapy management of hip OA include:
-
-- Land-based exercise produces clinically meaningful reductions in pain and improvements in function. The effect size is comparable to non-steroidal anti-inflammatory drugs — without the gastrointestinal and cardiovascular risks associated with long-term NSAID use in older adults.
-
-- Hip-specific strengthening — targeting the hip abductors, extensors, and external rotators — is the most effective exercise approach, producing superior outcomes to general exercise alone.
-
-- Manual therapy directed at the hip joint — including joint mobilisation and traction techniques — produces significant short-term reductions in pain and improvements in range of motion, particularly when combined with exercise.
-
-- Patient education about the nature of OA and the importance of exercise is independently associated with improved outcomes.
+**How is it diagnosed?** Usually by a GP or physiotherapist, based on your history and an examination of how the hip moves and functions. An X-ray may be used to confirm the diagnosis or to rule out other problems. You do not need to wait for imaging before starting gentle activity, but any new or changing hip pain is worth having checked.
 
 ---
 
-## How Physiotherapy Manages Hip Osteoarthritis
+## When to Get Urgent Medical Advice
 
-### Hip Strengthening
+**Call 000 or go to an emergency department if you have:**
 
-The primary muscular stabilisers of the hip — the gluteus medius, gluteus maximus, and deep external rotators — are almost universally weak in people with hip OA. This weakness is both a consequence of reduced activity due to pain, and a driver of increased joint load with every step. A structured strengthening programme targeting these muscles is the foundation of hip OA physiotherapy.
+- Sudden, severe hip pain after a fall or injury, especially if you cannot put weight on the leg or the leg looks shorter or turned outwards
+- Hip pain with fever, chills, or a hot, red, swollen joint
+- Loss of bladder or bowel control, or numbness between your legs
 
-At Physio to Home, hip strengthening exercises are prescribed using the equipment and space available in your actual home — your chair, your kitchen bench for support, your bed for lying exercises. No gym required. Exercises progress systematically from low-load movements to more demanding functional tasks as strength improves.
+**See your GP promptly if you have:**
 
-### Gait Retraining
+- Constant pain at rest, or severe night pain that is not easing
+- Unexplained weight loss or a history of cancer
+- New weakness or numbness in the leg
+- New groin pain while taking long-term steroid medicines
 
-Hip OA causes characteristic changes to the walking pattern — reduced stride length, reduced walking speed, increased lateral trunk sway, and a Trendelenburg gait (the pelvis drops on the unsupported side with each step). These compensatory patterns reduce immediate pain but create secondary loading problems in the knee, back, and opposite hip. A home physiotherapist observes your actual gait on your own flooring and retrains these patterns in the environment where they occur every day.
-
-### Manual Therapy
-
-Hip joint mobilisation — hands-on techniques that move the femoral head within the acetabulum — reduces pain and improves range of motion in hip OA. Specific longitudinal traction and distraction techniques are particularly effective for the hip, where joint stiffness and reduced joint space contribute significantly to pain and limited movement. Manual therapy is used in combination with exercise and is not a substitute for it.
-
-### Functional Goal-Setting and Activity Modification
-
-Rather than focusing exclusively on pain reduction, physiotherapy for hip OA works toward the functional goals that matter most to you — getting in and out of a car comfortably, walking to the letterbox without a limp, managing the stairs without holding the rail. These are the outcomes that determine quality of life, and they are the most meaningful way to measure progress.
-
-Activity modification — identifying which activities are currently loading the hip beyond its tolerance and adjusting them temporarily — is a practical strategy that reduces pain during the rehabilitation phase without requiring complete rest.
-
-### Aquatic Exercise and Hydrotherapy
-
-Water-based exercise is particularly well-suited to hip OA because the buoyancy of water reduces joint load while allowing meaningful strengthening and range of motion work. If hydrotherapy is accessible to you in the Launceston area, a home physiotherapist can design a programme to complement your land-based sessions.
+Exercise is not the right first step for these. Get them assessed first.
 
 ---
 
-## Practical Exercises You Can Start Today
+## Does Physiotherapy Help Hip Osteoarthritis? What the Research Shows
 
-The following exercises are appropriate for most people with hip osteoarthritis. If your pain is currently severe or you are post-surgical, consult a physiotherapist before starting.
+### What the guidelines say
 
-**Clamshell.** Lying on your side with hips and knees bent to approximately 45 degrees, keep your feet together and lift your top knee toward the ceiling like a clamshell opening. Hold 2–3 seconds and lower slowly. Repeat 15 times each side. This targets the gluteus medius — one of the most important and most commonly weak muscles in hip OA.
+The Royal Australian College of General Practitioners (RACGP) guideline strongly recommends land-based exercise for all people with hip OA, whatever their age, X-ray severity, function or pain level. It also strongly recommends education and, for people who are overweight, weight loss of at least 5-7.5% of body weight [3]. The international OARSI (2019) and ACR/Arthritis Foundation (2019) guidelines also place exercise among core treatments [4, 5].
 
-**Bridging.** Lying on your back with knees bent and feet flat on the floor, squeeze your glutes and lift your hips toward the ceiling. Hold 3 seconds and lower slowly. Repeat 15 times. This strengthens the gluteus maximus and hamstrings.
+### What the latest research shows
 
-**Sit-to-stand.** From a firm chair, stand up and sit back down slowly, controlling the descent. Repeat 10–15 times. Use armrests to assist if needed initially. This is one of the most functionally important exercises for hip OA.
+The most recent Cochrane review (Hall et al., July 2026) pooled 18 trials with 1,368 people with hip OA [1]. Its main findings:
 
-**Standing hip abduction.** Standing at the kitchen bench for support, lift one leg out to the side to approximately 30 degrees, hold 2–3 seconds, and lower slowly. Repeat 15 times each side. This directly targets the gluteus medius.
+- Compared with no treatment or usual care, exercise probably reduces pain by about 7 points on a 100-point scale. Experts commonly regard around 12 points as the smallest change people notice in daily life, although that threshold comes largely from knee and mixed OA studies.
+- Compared with a placebo or attention-control treatment, exercise may have little to no effect on pain, but may improve physical function.
+- Quality of life showed little or no improvement.
+- Most trials were small and unblinded, which can make exercise look more effective than it is. No single type of exercise came out on top, and trials ranged from 2 to 52 weeks.
 
-**Hip flexor stretch.** In a half-kneeling position (one knee on the floor, one foot forward), gently shift your weight forward until you feel a stretch at the front of the hip of the kneeling leg. Hold 30 seconds. This addresses the hip flexor tightness that commonly accompanies hip OA.
+An earlier 2014 review pooled the trials differently and reported a similar but slightly more favourable picture [2]. The 2026 authors stress that the review does not overturn the recommendation for exercise: it is low cost, has broad health benefits and is unlikely to cause harm. What it does suggest is that we should be honest that the average benefit may be modest [1].
 
-These exercises should be done daily. Mild discomfort during exercise is expected — pain that is significantly worse than baseline or takes more than 30 minutes to settle after exercise is a signal to reduce the load and consult your physiotherapist.
+### What this means for you
 
----
+Averages hide individuals. Some people notice a clear difference in pain and function, and others do not. Sensible goals are practical ones: getting up from a chair more easily, managing steps, walking further, feeling steadier and more confident. Pain relief is a welcome bonus rather than a promise.
 
-## When Is Hip Replacement Surgery Appropriate?
-
-Physiotherapy is effective for hip OA at all stages — but for some people with advanced disease, surgery becomes the right choice. Hip replacement is appropriate when:
-
-- Pain is severe, persistent, and significantly limiting daily function and quality of life
-- A genuine trial of conservative management — including a structured physiotherapy programme — has been completed without adequate relief
-- Imaging confirms significant joint space loss consistent with the reported symptoms
-
-The evidence strongly supports physiotherapy before surgery. People who complete a structured prehabilitation programme before hip replacement recover faster, regain function sooner, and spend fewer days in hospital. If surgery is on your horizon, starting physiotherapy now — not after — is the evidence-based approach. See our dedicated guide: Hip Replacement Recovery Week by Week.
+If you have had a fair trial of a well-prescribed, progressive programme and are not noticeably better, that is a reason to review the plan with your physiotherapist and GP. It is not a reason to stop being active. Other options, such as pain medicines, injections or a surgical opinion, can be discussed with your GP.
 
 ---
 
-## Funding Home Physiotherapy for Hip OA in North Tasmania
+## Does Exercise Make Hip Osteoarthritis Worse?
 
-**Medicare GP Management Plan** — Up to five subsidised visits per year for people with a chronic condition. Hip osteoarthritis qualifies. Ask your GP.
+There is no good evidence that appropriately graded exercise speeds up joint damage. In trials, the adverse events reported were mainly short-term increases in pain [2], and the 2026 review describes exercise as unlikely to cause harm [1]. Temporary muscle soreness or a flare of the usual ache is common when starting. What matters is gradual progression and monitoring how you respond (see the exercise section below).
 
-**My Aged Care — Home Care Package** — Physiotherapy is covered under all package levels. Contact your care coordinator.
+The muscles around the hip help control and absorb forces through the joint, which is why strengthening is the backbone of most programmes. Resting completely is not recommended.
 
-**NDIS** — Physiotherapy for eligible participants under Improved Daily Living or Improved Health and Wellbeing.
+---
 
-**Private health insurance** — Most extras policies cover physiotherapy including home visits.
+## What Does Physiotherapy for Hip Osteoarthritis Involve?
 
-**Private self-funding** — Direct payment for home visits.
+**Assessment and goal-setting.** Your history, hip movement, strength, balance, walking and standing-up tests, and the 2-3 everyday goals that matter most to you.
+
+**Strengthening.** Progressive exercises for the hip, thigh and calf muscles. Because no single exercise type has been shown to be best, programmes are matched to your goals, preferences and what you will realistically keep doing.
+
+**Walking and general activity.** Building fitness and endurance gradually.
+
+**Practising everyday movements.** Sit-to-stand, steps, car transfers and balance, in the places you actually do them.
+
+**Education and pacing.** Understanding what OA is, what a flare means, and how to adjust activity without stopping it.
+
+**Walking aids.** A walking stick held in the hand opposite the sore hip can reduce load on the joint. Correct height and use matter.
+
+**Hands-on techniques.** Joint mobilisation and soft-tissue work may give short-term relief for some people. The evidence is limited, so they are an add-on to exercise, not a replacement for it.
+
+**Weight, sleep and medicines.** We support weight-management goals and can liaise with your GP, who can discuss pain medicines and injections, including their benefits and risks for older adults.
+
+---
+
+## Five Hip-Friendly Exercises to Start With
+
+These suit many people with mild to moderate hip OA. They are general examples, not a personal programme. Do not start them if you have recently had hip surgery or a fracture (follow your surgeon's instructions), if your pain is severe or unexplained, or if you have any of the urgent symptoms above. If your balance is unsteady, do standing exercises beside a sturdy bench with someone nearby.
+
+**How much:** aim for 2-3 non-consecutive days a week. Start with 1-2 sets of 8-10 repetitions and build towards 2-3 sets of 10-12 as it becomes comfortable. The last few repetitions should feel moderately hard. Gentle movement and walking can be done daily.
+
+**How to judge pain:** some discomfort is expected. A common clinical guide is to stay at or below about 4 out of 10, with the pain settling within 24 hours and not worse the next morning. If it is, reduce the range, repetitions or sets.
+
+**Sit-to-stand.** From a firm chair, feet hip-width apart, lean slightly forward, stand up, then sit back down slowly over 3-4 seconds. Easier: a higher seat or use your hands. Harder: a lower seat, slower lowering, or hold a light weight.
+
+**Glute bridge.** Lie on your back (a bed is fine) with knees bent and feet flat. Squeeze your buttocks and lift your hips until your body forms a line from shoulders to knees. Hold 2-3 seconds, lower slowly. Easier: a smaller lift. Harder: a resistance band above the knees, or one leg at a time.
+
+**Standing hip abduction.** Holding the kitchen bench, stand tall and move one leg out to the side about 20-30 degrees, toes pointing forward, without leaning. Lift and lower over about 2 seconds each. Harder: an ankle weight or band.
+
+**Standing hip extension.** Holding the bench, move one leg straight back, squeezing your buttock, keeping your trunk upright and avoiding arching your back.
+
+**Supported hip flexor stretch.** Holding the bench, stand with one foot forward and tuck your pelvis under. Gently shift your weight forward until you feel a stretch at the front of the hip of the back leg. Hold 20-30 seconds, 2-3 times each side. This avoids kneeling on the floor.
+
+**Walking.** The Australian 24-hour movement guidelines suggest older adults aim for 30 minutes or more of moderate- to vigorous-intensity activity on most days, muscle-strengthening on 2 or more days a week, and balance and mobility activities on 3 or more days a week [9]. Build up gradually from short walks you can manage comfortably (even 10 minutes once or twice a day is a start), and use a stick if your physiotherapist recommends one.
+
+---
+
+## Can Physiotherapy Help You Avoid or Prepare for Hip Replacement?
+
+Hip replacement is an effective operation for people with severe hip OA. The RACGP guideline suggests considering referral to an orthopaedic surgeon, in discussion with the person, when pain and functional difficulty remain substantial despite high-quality non-surgical management [3].
+
+**Could exercise delay surgery?** In one Norwegian randomised trial of 109 people with hip OA, those who did a supervised exercise programme plus education were less likely to have had a hip replacement over the following six years than those who had education alone (22 people in the exercise group and 31 in the education-only group had a replacement), and they waited longer (median 5.4 versus 3.5 years) [6]. That is encouraging, but it is a single trial, and the 2026 Cochrane review is more cautious about exercise overall. Treat it as promising, not proven.
+
+**What about exercise before surgery?** Reviews are mixed. A 2023 meta-analysis of 22 trials of home-based prehabilitation found no clear effect on pain or function after hip replacement and no significant reduction in hospital stay for hip replacement, and it was unclear whether improvements before surgery carry through to recovery [7]. Reasons to stay active anyway: you go into surgery stronger, you know the exercises you will need afterwards, and prehabilitation has not been shown to cause harm.
+
+If you do have surgery, see our guide to recovery after hip replacement.
+
+---
+
+## Why Have Hip Physiotherapy at Home?
+
+There is no strong evidence that exercise delivered at home gets better results than the same programme in a clinic. The advantages are practical:
+
+- **Real-world assessment.** We see the chair you actually sit in, your bed height, steps, bathroom and car, and can adjust them or practise with you.
+- **Falls and safety.** We can check your home for hazards while we work on balance and strength.
+- **Access.** No travel is needed, which matters if you are in pain, no longer driving, or live rurally.
+- **Family and carers.** They can see the exercises and help you stay consistent.
+
+Some people prefer a gym, hydrotherapy or group class, and that is fine. The RACGP guideline lists aquatic exercise as an option depending on preference and local facilities [3]. Learn more about the benefits of home physiotherapy on our blog.
+
+---
+
+## What Happens at a First Home Visit?
+
+We talk through your symptoms, medical history and goals, examine your hip and whole-body movement, strength and balance, and use simple measures such as a timed sit-to-stand or walking test. We then look at how you manage in your home, agree on 2-3 goals, and teach you a short starting programme. With your consent, we can update your GP. Visit frequency depends on your goals and funding. Many people start with regular visits and taper as they become confident to continue independently.
+
+---
+
+## Funding Home Physiotherapy for Hip OA in Tasmania
+
+Funding rules change, so we check your current eligibility when you book.
+
+**Support at Home (My Aged Care)** - Since 1 November 2025, Support at Home has replaced the Home Care Packages Program. Physiotherapy falls under clinical supports, which are fully government-funded with no participant co-contribution, drawn from your approved budget. You need a My Aged Care assessment and approval. Existing Home Care Package recipients were moved across automatically [10].
+
+**Commonwealth Home Support Programme (CHSP)** - Continues for now for eligible older people who enter through My Aged Care. It is scheduled to transition to Support at Home no earlier than 1 July 2027.
+
+**Medicare (GP Chronic Condition Management Plan)** - Since 1 July 2025, a single plan has replaced the old GP Management Plan and Team Care Arrangements. If your GP prepares one for you, you may claim up to five individual allied health services per calendar year, shared across all allied health professions [8]. Existing plans can still be used until 30 June 2027. Your GP decides whether you are eligible.
+
+**Department of Veterans' Affairs (DVA)** - Eligible veterans may have physiotherapy funded. Contact us to check your entitlements.
+
+**NDIS** - Participants may use plan funding for physiotherapy where it supports their goals.
+
+**Private health insurance** - Many extras policies cover physiotherapy. Whether home visits are covered, and the limits, vary by fund.
+
+**Private self-funding** - Direct payment for home visits.
 
 ---
 
 ## Frequently Asked Questions
 
-### My X-ray shows bone-on-bone hip OA. Is physiotherapy still worthwhile?
+### What is the best exercise for hip osteoarthritis?
 
-Yes. The relationship between radiological severity and pain levels is weak — many people with advanced imaging findings have manageable symptoms, and physiotherapy can produce meaningful improvements regardless of X-ray grade. The muscles surrounding your hip are not visible on X-ray, and strengthening them is one of the most effective things you can do to reduce pain and improve function, even with significant joint damage.
+No single exercise or exercise type has been shown to be best [1]. The best programme is one that is matched to your goals, progresses gradually, strengthens the hip and leg muscles, and is something you will keep doing.
 
-### Will exercise make my hip OA worse?
+### My X-ray shows "bone on bone" changes. Is physiotherapy still worthwhile?
 
-No. Appropriately graded exercise does not accelerate cartilage loss. The muscles surrounding the hip are its primary shock absorbers — stronger muscles mean less force transmitted to the joint, not more. The key phrase is "appropriately graded" — physiotherapy provides a programme calibrated to your current capacity that loads the hip without provoking excessive pain.
+The RACGP guideline recommends exercise whatever the X-ray severity [3], and X-ray appearance is a poor predictor of how much pain or disability a person has. Most trials, however, included people with mild to moderate OA, so the size of the benefit in severe disease is less certain. Strength and function still matter, including before surgery. If pain and function remain unacceptable despite good non-surgical care, discuss a surgical opinion with your GP.
 
-### How long will it take to see results?
+### How long until I notice a difference?
 
-Most people with hip OA notice meaningful improvements in pain and function within 6–8 weeks of a consistent exercise programme. Strengthening exercises need to be done daily — not just during physiotherapy visits — and progress is reviewed and advanced regularly. Your physiotherapist will give you a clear sense of realistic expectations at your first visit.
+It varies. Trial programmes ranged from a few weeks to a year [1]. Clinicians commonly review progress at around 6-12 weeks of consistent, progressive exercise. Some people improve sooner, and some do not improve much, which is worth discussing rather than pushing on regardless.
+
+### Is walking good for hip osteoarthritis?
+
+For most people, yes. Walking is a practical way to build fitness and is part of most programmes. Build up gradually, use a stick if advised, and treat a short-lived increase in ache as normal but a lasting flare as a signal to scale back.
+
+### Do I need a referral or an X-ray before seeing a physiotherapist?
+
+In Australia you can see a physiotherapist privately without a referral, and you do not need an X-ray to start. A GP plan is needed for Medicare-subsidised visits, and My Aged Care approval is needed for Support at Home or CHSP funding. A GP review is sensible for new or changing hip pain to rule out other causes.
+
+### Can physiotherapy cure hip osteoarthritis or regrow cartilage?
+
+No. Physiotherapy aims to reduce symptoms where possible, improve strength and function, and help you stay active. It does not reverse the structural changes in the joint.
 
 ---
 
-## Ready to Start Managing Your Hip OA at Home?
+## Ready to Talk to a Physiotherapist About Your Hip?
 
-Living with hip osteoarthritis in rural North Tasmania does not mean accepting pain and restricted function. Physio to Home brings AHPRA-registered, evidence-based treatment directly to your door — wherever you are in the region.
-
-Book your first home visit today →
+Physio to Home provides in-home physiotherapy for older adults across Tasmania, including Launceston, Hobart, the North West and rural areas. [Book your first home visit today →](/booking) or call [1300 433 233](tel:1300433233).
 
 ---
 
 ## About the Author
 
-Micheal Ghattas, DPT
+Micheal Ghattas
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
+AHPRA Registered Physiotherapist
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults across Tasmania. He works in musculoskeletal rehabilitation, falls prevention, and aged care physiotherapy delivered in the home setting. You can verify his registration at ahpra.gov.au.
+
+---
+
+## Important Information
+
+This article is general information and is not a substitute for individual assessment, diagnosis or medical advice. Individual results vary, and all exercise carries some risk. If you are unsure whether an exercise is suitable for you, get advice from your GP or physiotherapist first.
 
 ---
 
 ## References & Further Reading
 
-Kolasinski SL, et al. 2019 ACR/AF Guideline for the Management of Osteoarthritis of the Hand, Hip, and Knee. *Arthritis & Rheumatology*, 2020.
-
-Fransen M, et al. Exercise for osteoarthritis of the hip. *Cochrane Database of Systematic Reviews*, 2014.
-
-Australian Institute of Health and Welfare (AIHW). Osteoarthritis. Cat. no. PHE 232. Canberra: AIHW, 2020.
-
-Bennell KL & Hinman RS. A review of the clinical evidence for exercise in osteoarthritis of the hip and knee. *Journal of Science and Medicine in Sport*, 2011.
-
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+1. Hall M, Lawford BJ, Hinman RS, et al. Exercise for osteoarthritis of the hip. *Cochrane Database of Systematic Reviews*, 2026;(7):CD007912. doi:10.1002/14651858.CD007912.pub3
+2. Fransen M, McConnell S, Hernandez-Molina G, Reichenbach S. Exercise for osteoarthritis of the hip. *Cochrane Database of Systematic Reviews*, 2014;(4):CD007912. doi:10.1002/14651858.CD007912.pub2
+3. Royal Australian College of General Practitioners. *Guideline for the management of knee and hip osteoarthritis*. 2nd ed. East Melbourne: RACGP, 2018.
+4. Bannuru RR, Osani MC, Vaysbrot EE, et al. OARSI guidelines for the non-surgical management of knee, hip, and polyarticular osteoarthritis. *Osteoarthritis and Cartilage*, 2019;27(11):1578-1589.
+5. Kolasinski SL, Neogi T, Hochberg MC, et al. 2019 American College of Rheumatology/Arthritis Foundation Guideline for the Management of Osteoarthritis of the Hand, Hip, and Knee. *Arthritis & Rheumatology*, 2020;72(2):220-233.
+6. Svege I, Nordsletten L, Fernandes L, Risberg MA. Exercise therapy may postpone total hip replacement surgery in patients with hip osteoarthritis: a long-term follow-up of a randomised trial. *Annals of the Rheumatic Diseases*, 2015;74(1):164-169. doi:10.1136/annrheumdis-2013-203628
+7. De Klerk TC, Dounavi DM, et al. Effects of home-based prehabilitation on pre- and postoperative outcomes following total hip and knee arthroplasty: a systematic review and meta-analysis. *Bone & Joint Open*, 2023;4(5):315-328.
+8. Services Australia. MBS billing rules for chronic condition individual allied health professional items. www.servicesaustralia.gov.au
+9. Australian Government Department of Health, Disability and Ageing. 24-hour movement guidelines for all Australians: recommendations for older adults (65 years and over). www.health.gov.au/topics/physical-activity/24-hour-movement-guidelines-for-all-australians
+10. My Aged Care. Support at Home. Commonwealth of Australia. www.myagedcare.gov.au/supportathome
