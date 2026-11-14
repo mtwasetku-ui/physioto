@@ -5,7 +5,7 @@ author: "Micheal Ghattas, Physiotherapist"
 date: "2026-11-14"
 category: "Funding & Access"
 featured: false
-image: /image/blog/ndis-home-physiotherapy-funding.jpg
+image: "https://res.cloudinary.com/diiacrthz/image/upload/v1794651294/functional_capacity_vmyapo.jpg"
 
 tags: ["NDIS functional capacity assessment", "NDIS FCA physiotherapist", "NDIS FCA occupational therapist", "NDIS plan review", "NDIS physiotherapy", "functional capacity assessment Tasmania", "functional capacity assessment Launceston", "NDIS report", "Physio to Home", "Tasmania", "disability support", "allied health assessment"]
 ---
