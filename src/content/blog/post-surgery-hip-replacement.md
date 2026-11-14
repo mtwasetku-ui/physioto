@@ -1,240 +1,229 @@
 ---
-title: "Post-Surgery Recovery | Hip Replacement"
-description: "Had a hip replacement in Tasmania? Micheal Ghattas explains recovery week by week — Day 1 at home to 6 months — precautions, exercises, and funding."
+title: "Hip Replacement Recovery Week by Week in Tasmania"
+description: "Hip replacement recovery in Tasmania, from day one at home to 6 months: what to expect, exercises, warning signs and how to fund home physio."
 author: "Micheal Ghattas, Physiotherapist"
-date: "2026-06-27"
+date: "2026-11-14"
 category: "Post-Surgery Recovery"
-featured: true
+featured: false
 image: /image/blog/post-surgery-hip-replacement.jpg
 
-tags: ["post-surgery recovery", "hip replacement", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "rehabilitation", "total hip arthroplasty"]
+tags: ["hip replacement recovery", "hip replacement physiotherapy Tasmania", "post-surgery rehabilitation", "total hip replacement exercises", "hip precautions", "home physiotherapy Tasmania", "physiotherapy at home Launceston", "physiotherapy at home Hobart", "falls prevention", "Physio to Home", "Tasmania"]
 ---
 
-# POST-SURGERY RECOVERY | HIP REPLACEMENT
+# HIP REPLACEMENT RECOVERY WEEK BY WEEK: A HOME PHYSIOTHERAPIST'S GUIDE FOR TASMANIANS
 
-## Hip Replacement Recovery Week by Week: A Home Physiotherapist's Guide for Tasmanians
+## Hip Replacement Recovery in Tasmania: What to Expect, Week by Week
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: February 2026
+Physio to Home, Launceston and all of Tasmania | Last updated: November 2026
 
-Hip replacement surgery — technically called total hip arthroplasty — is one of the most commonly performed orthopaedic procedures in Australia, with over 60,000 operations performed each year. The surgery itself is well-established and highly successful. But how well and how quickly you recover depends enormously on what happens in the weeks and months afterward.
+A total hip replacement is one of the most common joint operations in Australia, and for most people it brings real relief from pain. The national joint replacement registry has now recorded [one million hip replacements](https://aoa.org.au/newsitem/2025/09/30/aoanjrr-milestone---one-million-hip-replacements-recorded) since it began in 1999. But the surgery is only half of the result. The other half is what happens in the first days, weeks and months afterwards.
 
-For patients in rural and regional North Tasmania, getting to an outpatient clinic for post-operative physiotherapy can be a real challenge — particularly in those early weeks when driving is not permitted and mobility is limited. This is where home-based physiotherapy makes a critical difference.
+This guide walks you through that recovery, from the day you come home to six months and beyond. It is written by a physiotherapist who treats people recovering from hip replacement in their own homes across Tasmania, so it covers the practical things that matter once you leave hospital: how to move safely, which exercises to do, what is normal, what is not, and how to fund your physiotherapy.
 
-This guide walks you through what to expect at each stage of hip replacement recovery — week by week — and explains how a home physiotherapist supports you through each phase, right in your own home.
-
-### Important medical disclaimer
-
-This guide provides general information about hip replacement recovery and is not a substitute for advice from your surgeon or treating physiotherapist. Recovery timelines vary based on surgical approach (posterior, anterior, or lateral), your age, overall health, and fitness before surgery. Always follow the specific precautions given by your surgical team.
+> **Important:** This guide is general information, not personal medical advice. Your surgeon's instructions depend on your surgical approach, your implant and your health, and they always take priority. If anything here differs from what your surgeon has told you, follow your surgeon and ask us to help you apply it at home.
 
 ### Who this guide is for
 
-This article is for people in North Tasmania who are preparing for or recovering from a total hip replacement, and their family members and carers. It is particularly relevant for those in rural areas where attending a clinic in the early post-operative weeks is not practical.
+People in Tasmania who are having or recovering from a hip replacement, and their families and carers, whether you live in Hobart, Launceston, the north-west or a regional town.
 
 ---
 
-## Before Surgery: Prehabilitation Matters More Than You Think
+## The Short Version
 
-The best time to start your hip replacement recovery is before your operation. Research consistently shows that patients who do targeted strengthening and mobility work in the weeks leading up to surgery — called prehabilitation or 'prehab' — recover faster, regain function sooner, and spend fewer days in hospital.
+Timelines vary between people, but a typical recovery looks like this:
 
-A pre-operative home physiotherapy visit from Physio to Home can help you:
+- **Days 1 to 7:** Get home safely, walk short distances with your walking aid, manage pain and swelling, keep your circulation moving, and learn the warning signs below.
+- **Weeks 2 to 3:** Become independent around the house, including showering, dressing and stairs if you need them.
+- **Weeks 4 to 6:** Walk outdoors, reduce your walking aid when you are cleared to, and start building strength and balance.
+- **Weeks 6 to 12:** Strengthen the hip, walk further, and return to driving if your surgeon clears you.
+- **3 to 6 months:** Return to the activities you enjoy and settle into a long-term exercise routine.
+- **Up to 12 months:** Strength, stamina and confidence keep improving.
 
-- Strengthen the muscles around your hip, knee, and core that will be critical during recovery
+---
 
-- Practise the exercises you will need to do immediately after surgery so they feel familiar
+## When to Get Urgent Help
 
-- Make your home safer and more recovery-ready — moving furniture, sourcing equipment like a shower stool or raised toilet seat
+> **Call 000** for chest pain, sudden shortness of breath or coughing up blood.
+>
+> **Contact your surgeon or go to an emergency department the same day** if you have any of the following:
+>
+> - Sudden severe hip pain, being unable to put weight through the leg, or the leg looking shorter or turned out (possible dislocation)
+> - Pain, swelling, warmth or redness in one calf (possible blood clot)
+> - A temperature of 38°C or higher, increasing redness around the wound, discharge or a wound that opens (possible infection)
+>
+> Do not wait for your next appointment.
 
-- Learn the hip precautions specific to your surgical approach so you understand them before the stress of hospital discharge
+---
 
-If you are on a waiting list for hip replacement surgery in Tasmania, contact us now to arrange a prehab visit. It is one of the most valuable investments you can make in your recovery.
+## Before Surgery: Prehabilitation
+
+If you have a surgery date, the weeks before it are a real opportunity. Researchers have reviewed [prehabilitation before hip replacement](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9228426/) in the medical literature. In practice, arriving stronger, better informed and with a home that is ready makes the first week much easier.
+
+**Get stronger.** Ask your surgeon or physiotherapist which exercises are suitable for you. Simple leg and hip strengthening, and keeping up your walking, are common starting points.
+
+**Practise the skills you will need.** Rehearse using your walking aid, getting out of bed, standing from a chair with armrests, and getting in and out of a car.
+
+**Get your home ready.**
+- Remove loose rugs and clear walkways
+- Add night lights between the bedroom and bathroom
+- Move everyday items to waist height so you don't need to bend or reach
+- Prepare and freeze some meals
+- Arrange help with transport, shopping and pets for the first few weeks
+
+**Ask your surgeon:**
+- Which surgical approach will you use, and which precautions do I need to follow?
+- For how long, and how much weight can I put on the leg?
+- What walking aid will I need?
+- What is the plan for blood-thinning medication?
+- When is my first follow-up, and when can I expect to drive?
+
+We can visit you at home before surgery to set up your equipment, practise your exercises and make a plan for discharge week.
 
 ---
 
 ## Hip Replacement Recovery: Week by Week
 
-The timeline below reflects typical recovery for a standard total hip replacement. Your surgeon's specific instructions always take priority over general timelines.
+### Week 1, Days 1 to 7: Getting Home Safely
 
-### Week 1 — Days 1 to 7
+The first week is about moving safely, controlling pain and swelling, and keeping your circulation moving.
 
-**Hospital discharge and getting home safely**
+- **Walk little and often.** Short walks around the house every hour or two while you are awake are better than one long walk.
+- **Keep your calves moving.** Ankle pumps (pointing your toes up and down) done regularly through the day help circulation.
+- **Practise standing up and sitting down.** Use a firm chair with armrests, and lead with the strong leg when you sit.
+- **Manage swelling.** Ice wrapped in a cloth for 15 to 20 minutes at a time can help. Bruising and swelling that tracks down the thigh is common.
+- **Stay ahead of pain.** Take medication as prescribed, and ask your pharmacist about constipation, which is common with some pain relief.
+- **Ask which sleeping positions are allowed.** This depends on your surgeon's instructions.
 
-**Goals for this phase**
+Expect to feel tired and sore. These feelings should ease a little each day. If they get worse instead of better, call your surgeon.
 
-- Move safely around your home with your walking aid (frame or crutches)
-- Manage pain and swelling with medication and ice
-- Perform gentle ankle and leg exercises to prevent blood clots
-- Understand and strictly follow your hip precautions
+### Weeks 2 to 3, Days 8 to 21: Building Confidence at Home
 
-**Physiotherapy focus**
+- Walk further indoors, and try short walks outside if the ground is flat and safe
+- Practise showering and dressing with your equipment
+- Use stairs safely: the stronger leg goes up first and the operated leg goes down first
+- Start standing exercises such as small knee bends and gentle leg movements, chosen by your physiotherapist to suit your precautions
+- Work on walking evenly, with equal steps, rather than rushing off your aid
+- Pace yourself. Tiredness and low mood are common at this stage, so rest between activities and let someone know if you are struggling
 
-- Ankle pumps and heel slides — begin within 24 hours of surgery
-- Sitting to standing practice with correct technique
-- Short supervised walks inside the home — building from a few metres to room-to-room
-- Hip precaution education: avoiding bending the hip past 90 degrees, crossing legs, or rotating the foot inward (varies by surgical approach)
+This is also a good time to review your home for hazards, such as cords, steps, slippery floors and poor lighting.
 
-**Watch for these warning signs in Week 1**
+### Weeks 4 to 6, Days 22 to 42: Gaining Independence
 
-Contact your surgeon immediately if you experience: sudden increase in pain, redness, warmth or significant swelling in the calf (possible DVT), wound discharge or signs of infection, fever above 38°C, or sudden shortness of breath.
+- Increase your outdoor walking, and practise on gently uneven ground
+- Move to a single stick or crutch only when your surgeon or physiotherapist says you are ready
+- Build strength with exercises such as bridges, sit-to-stand without using your hands, and low step-ups
+- Start simple balance work, for example standing with your feet in line next to a bench
+- Practise getting in and out of a car as a passenger
 
----
+Many people have a surgical review around the six-week mark. Write your questions down beforehand, and ask about precautions, driving and which activities you can return to.
 
-### Weeks 2 to 3 — Days 8 to 21
+### Weeks 6 to 12: The Strengthening Phase
 
-**Building confidence at home**
+This is where much of your long-term function is built.
 
-**Goals for this phase**
+- Progress your strength work with higher step-ups, wall squats and resistance bands, guided by your physiotherapist
+- Walk for longer, and practise balance without holding on
+- Try swimming or hydrotherapy once your wound is fully healed and your surgeon has agreed
+- **Driving:** Many surgeons clear people somewhere between about four and eight weeks, but the decision is your surgeon's. You generally need to be off pain medication that affects driving, able to get in and out of the car comfortably, and able to brake firmly in an emergency. Check your insurer's requirements too.
+- **Work:** Desk-based work is often possible sooner than physical work. Ask your surgeon what is right for your job.
 
-- Walk independently inside the home with walking aid for increasing distances
-- Manage daily activities such as showering, dressing, and light meal preparation
-- Begin sleeping more comfortably with appropriate pillow positioning
-- Reduce pain medication as directed by your GP
+### 3 to 6 Months: Returning to the Things You Love
 
-**Physiotherapy focus**
-
-- Standing hip exercises: hip abduction, hip extension, mini squats at the bench
-- Gait retraining — correcting limping patterns that develop to compensate for pain
-- Stair practice if your home has stairs: step-to pattern, leading with the operated leg going down
-- Home environment review: identifying trip hazards, adjusting furniture heights, confirming bathroom safety
-
-**Why home physio is especially valuable in weeks 2 and 3**
-
-This is when most patients are discharged from hospital follow-up but are not yet able to drive to a clinic. A home visit fills this critical gap — ensuring your exercise programme is progressing correctly and that your home environment is supporting rather than hindering your recovery.
-
----
-
-### Weeks 4 to 6 — Days 22 to 42
-
-**Increasing independence and outdoor mobility**
-
-**Goals for this phase**
-
-- Walk outdoors on flat ground for gradually increasing distances
-- Manage most daily living tasks independently
-- Progress from a walking frame to a single crutch or walking stick if cleared by your surgeon
-- Attend your 6-week surgical follow-up appointment
-
-**Physiotherapy focus**
-
-- Progressive lower limb strengthening: wall squats, step-ups onto a low step, bridging
-- Balance and proprioception exercises: single-leg stance with support, weight shifting
-- Walking programme: structured outdoor walks building from 5 to 20 minutes
-- Functional practice: getting in and out of a car correctly, navigating uneven surfaces
+- Gradually return to golf, swimming, cycling, bowls, gardening or dancing. Ask your surgeon before taking up high-impact activities
+- Keep up a regular strength and balance routine, which also lowers your risk of falls
+- Expect gains to continue for up to 12 months
+- Follow your surgeon's recommended schedule for long-term reviews
 
 ---
 
-### Weeks 6 to 12 — The Strengthening Phase
+## Hip Precautions: What They Are and Why They Differ
 
-**Rebuilding strength and returning to normal life**
+Hip precautions are restrictions on certain hip positions, designed to protect the new joint while the surrounding tissues heal. Traditionally, after a posterior approach, people have been told to avoid bending the hip past 90 degrees, crossing their legs and twisting the leg inwards. Many surgeons now use fewer restrictions, and some use none, depending on the approach and the person.
 
-**Goals for this phase**
-
-- Return to driving (typically 6–8 weeks post-op, confirmed by surgeon)
-- Walk without a walking aid on flat, familiar surfaces
-- Return to light household tasks including shopping and gardening
-- Significantly reduce or cease regular pain medication
-
-**Physiotherapy focus**
-
-- Progressive resistance exercises targeting hip abductors, extensors, and quadriceps
-- Balance training without upper limb support
-- Functional strength: carrying light loads, low-level community walking
-- Hydrotherapy if accessible — water-based exercise is excellent at this stage for reducing joint load while building strength
-
-**A note on rural access from Week 6 onward**
-
-Once you are cleared to drive, some patients transition to clinic-based physiotherapy. However, many of our North Tasmania patients in areas like Scottsdale, Ringarooma, and the Tamar Valley continue with home visits throughout this phase due to distance. Home physiotherapy remains just as effective and can be funded through My Aged Care, Medicare, and private health insurance.
-
----
-
-### 3 to 6 Months — Full Recovery
-
-**Return to activities and long-term joint health**
-
-**Goals for this phase**
-
-- Walk without any aid on all surfaces including uneven ground
-- Return to recreational activities such as golf, swimming, cycling, and bowls
-- Sleep comfortably in most positions
-- Experience dramatically less hip pain than before surgery
-
-**Physiotherapy focus**
-
-- Sport and activity-specific training based on your goals
-- Falls prevention programme — hip replacement patients have an elevated fall risk and benefit from a formal balance programme
-- Long-term home exercise programme for ongoing joint health and muscle maintenance
-- Annual check-in physiotherapy visit to review strength, balance, and activity levels
-
----
-
-## Hip Precautions: What They Are and Why They Matter
-
-Hip precautions are movement restrictions designed to protect your new joint while the surrounding soft tissues heal and the implant stabilises. The specific precautions you receive depend on your surgeon's technique and your implant type. The most common restrictions for a posterior approach include:
-
-- Do not bend your hip past 90 degrees — avoid low chairs, toilet seats, and bending to pick things up from the floor
-
-- Do not cross your legs at the knees or ankles
-
-- Do not rotate your foot inward (pigeon-toed position)
-
-For an anterior approach hip replacement, precautions are often less restrictive, but your surgeon will specify what applies to you.
-
-A home physiotherapist plays a vital role in helping you apply these precautions to your actual home — your specific toilet height, your bed, your car, your shower. Generic clinic advice cannot account for your individual environment. This is one of the clearest advantages of home-based physiotherapy for post-surgical patients.
+Because practice varies, do not rely on what a friend was told. Ask your surgeon for your precautions in writing, and ask how long they last.
 
 ### Equipment that makes a real difference at home
 
-Before you leave hospital, ensure you have: a raised toilet seat (adds 5–10cm to toilet height), a long-handled reacher or grabber, a long-handled shoe horn, a shower stool or chair, and non-slip bath mat. Your home physiotherapist can advise on where to source these in North Tasmania or help arrange them through your My Aged Care package if applicable.
+- A raised toilet seat
+- A long-handled reacher, shoe horn and sock aid
+- A shower chair or stool and a non-slip mat
+- A firm chair with armrests at a comfortable height
+
+If you need grab rails or larger modifications, our occupational therapy team can assess your home.
 
 ---
 
-## Why Home Physiotherapy After Hip Replacement Is the Right Choice for Rural Tasmanians
+## Why Home Physiotherapy Suits Hip Replacement Recovery
 
-The evidence for early, consistent physiotherapy after hip replacement is unambiguous — patients who receive regular physiotherapy in the first 12 weeks post-operatively regain function significantly faster and have better outcomes at one year. The challenge for rural Tasmanians is accessing that physiotherapy consistently.
+- **No travel in the early weeks.** You don't need to organise transport or sit in a car for long periods while you are sore and tired.
+- **We see your real environment.** We can practise on your actual stairs, bed, bathroom and kitchen, which is exactly where you need the skills.
+- **Family and carers can join in.** They can learn how to help safely.
+- **One physiotherapist throughout.** Continuity means your programme is adjusted as you progress.
+- **The evidence supports it.** A [systematic review](https://www.pubmed.gov/24287215/) found that physiotherapist-directed exercise, delivered in either an outpatient or home setting, improved strength, walking speed and cadence after hip replacement.
 
-Home-based physiotherapy solves this directly. For patients in North Tasmania, it means:
+We visit across Tasmania, including [Hobart](https://www.physiotohome.com/blog/home-physiotherapy-hobart), [Launceston](https://www.physiotohome.com/blog/home-physiotherapy-launceston), the [Tamar Valley, Exeter and Beaconsfield](https://www.physiotohome.com/blog/home-physiotherapy-tamar-valley-exeter-beaconsfield), [George Town](https://www.physiotohome.com/blog/home-physiotherapy-george-town), [Longford](https://www.physiotohome.com/blog/home-physiotherapy-longford), [Deloraine](https://www.physiotohome.com/blog/home-physiotherapy-deloraine), [Scottsdale](https://www.physiotohome.com/blog/home-physiotherapy-scottsdale), and [Devonport and Burnie](https://www.physiotohome.com/blog/home-physiotherapy-devonport-burnie). If you live elsewhere, contact us and we will confirm availability.
 
-- No reliance on family members to drive to Launceston for clinic appointments in the first 6 weeks when driving is prohibited
+---
 
-- Physiotherapy tailored to your actual home environment — your stairs, your bathroom, your specific furniture
+## How Home Physiotherapy Is Funded
 
-- No risk of fatigue or pain flares from long car journeys in the early post-operative weeks
+Your options depend on your situation. Ask us before you book, and we will explain what applies to you.
 
-- Consistent care from the same physiotherapist across the full recovery arc, rather than seeing different clinicians each visit
-
-- Visits timed to your energy levels and recovery — not fixed clinic appointment slots
+- **Medicare.** If your GP agrees you are eligible and prepares a GP Chronic Condition Management Plan, you can claim [up to five Medicare-supported allied health services per calendar year](https://www.servicesaustralia.gov.au/allied-health-referrals-for-chronic-disease-health-care-plans), including physiotherapy. Medicare rebates may not cover the whole fee, so ask us about any gap. Existing GP Management Plans and Team Care Arrangements can still be used until 30 June 2027.
+- **Department of Veterans' Affairs (DVA).** If you hold a DVA card, ask your GP about a referral and check that your condition is covered by your card.
+- **My Aged Care.** If you have been approved for aged care services, physiotherapy may be available through programs such as the Commonwealth Home Support Programme. Aged care funding is changing, so check with My Aged Care or your provider what applies to you.
+- **Private health insurance.** Many extras policies include physiotherapy. Check your rebate and annual limit with your fund.
+- **Private.** You can also book as a private client without a referral.
 
 ---
 
 ## Frequently Asked Questions
 
-### How long does full recovery from a hip replacement take?
+### How long does full recovery take?
 
-Most patients are walking without a walking aid by 6–12 weeks and return to most daily activities by 3 months. Full recovery — including return to recreational sport and activities — typically takes 6–12 months. The speed of recovery is strongly influenced by pre-operative fitness, age, surgical approach, and the quality and consistency of post-operative physiotherapy.
+Most people are walking comfortably within about 6 to 12 weeks, and continue to improve for up to 12 months. Your timeline depends on your age, fitness, general health and the details of your surgery.
 
-### When can I drive again after a hip replacement?
+### When can I drive again?
 
-Most surgeons clear patients to drive at 6–8 weeks post-operatively, provided the surgery was on the right hip (which controls the accelerator and brake) and you are no longer taking strong opioid pain medications. Left hip replacements may be cleared for driving earlier. Always confirm with your surgeon before getting behind the wheel.
+Many surgeons clear people between about four and eight weeks, but the decision is yours and your surgeon's. You should be off pain medication that affects driving, comfortable getting in and out of the car, and able to brake hard in an emergency. Which hip was replaced and whether your car is manual or automatic can also matter.
 
-### Is home physiotherapy after hip replacement covered by Medicare or My Aged Care?
+### When can I stop using my walking aid?
 
-Yes, in most cases. If your GP sets up a GP Management Plan, you are entitled to up to five Medicare-rebated sessions per year. If you receive a Home Care Package through My Aged Care, physiotherapy is a covered service and the number of sessions depends on your package level. Private health extras cover is also applicable for most policies. Contact Physio to Home and we will check your specific entitlements before your first visit.
+When your surgeon or physiotherapist agrees you are ready. The signs are walking evenly without limping, good strength in the leg and steady balance. Dropping the aid too early can lead to a limp that becomes a habit.
 
-### What happens if I do not do physiotherapy after my hip replacement?
+### Is swelling and bruising normal?
 
-Skipping or inadequately completing post-operative physiotherapy significantly increases the risk of poor outcomes — including persistent weakness, limping, reduced range of motion, falls, and slower return to daily activities. In some cases, inadequate rehabilitation contributes to hip dislocation risk in the early post-operative period. Physiotherapy is not optional after hip replacement — it is a clinical necessity.
+Yes. Swelling and bruising that moves down the thigh and sometimes into the foot is common and can last for weeks. Swelling with pain, warmth or redness in one calf is different, and needs urgent attention.
 
-### Can I do my hip replacement physiotherapy entirely at home in North Tasmania?
+### Can I climb stairs?
 
-Yes. The full post-operative rehabilitation programme — from the first day home through to 6-month strength maintenance — can be delivered entirely in your home. Physio to Home covers North Tasmania including Launceston, George Town, Scottsdale, Ringarooma, and surrounding rural areas. Contact us to confirm service availability in your specific location.
+Yes, as soon as you are cleared and feel safe. Use a rail, lead with your stronger leg going up, and lead with the operated leg going down.
+
+### What happens if I skip physiotherapy?
+
+Not everyone needs the same amount of supervised rehabilitation, but exercise is what rebuilds your strength. Without guidance, people are more likely to be left with weakness, a limp, stiffness and a higher risk of falls, and recovery can be slower.
+
+### Is home physiotherapy covered by Medicare or My Aged Care?
+
+It can be. See the funding section above, and ask us about your own situation before you book.
+
+### Can I do all my rehabilitation at home in Tasmania?
+
+Yes. We visit participants across Tasmania, and we can do your whole rehabilitation at home, from your first week to your return to activity.
 
 ---
 
-## Recovering from Hip Replacement in North Tasmania?
+## Ready to Start Your Recovery in Tasmania?
 
-Whether you are on the waiting list for surgery and want to start prehab now, or you have just come home from hospital and need physiotherapy this week — Physio to Home is here. We provide AHPRA-registered, evidence-based hip replacement rehabilitation in your own home, funded through Medicare, My Aged Care, NDIS, and private health insurance.
+Whether you are a few weeks from surgery or just home from hospital, we can help you move safely and recover with confidence.
 
-Book your first home visit today — we cover all of North Tasmania →
+- **Call:** [1300 433 233](tel:1300433233) (Monday to Saturday, 9am to 5pm)
+- **Email:** [info@physiotohome.com](mailto:info@physiotohome.com)
+- **Online:** [Book a home visit](https://www.physiotohome.com/booking#appointment)
+
+Surgeons, GPs, discharge planners and families are welcome to refer a patient. Contact us to arrange a pre-surgery visit or a visit in your first week at home.
 
 ---
 
@@ -242,16 +231,16 @@ Book your first home visit today — we cover all of North Tasmania →
 
 Micheal Ghattas, DPT
 
-AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
+AHPRA Registered Physiotherapist (registration PHY0002634794) | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in post-surgical rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults, people with disability and rural residents across Tasmania. He specialises in post-surgical rehabilitation, neurological rehabilitation, falls prevention and disability-related physiotherapy delivered in the home.
 
 ---
 
 ## References & Further Reading
 
-Australian Orthopaedic Association National Joint Replacement Registry (AOANJRR). Annual Report 2023. AOA, 2023.
-
-Moyer R, et al. Preoperative exercise reduces postoperative pain and weakness after total hip arthroplasty. *Osteoarthritis and Cartilage*, 2017.
-
-Coulter CL, et al. Physiotherapy after total hip replacement: a systematic review. *Physiotherapy*, 2019.
+1. Australian Orthopaedic Association. [AOANJRR milestone: one million hip replacements recorded](https://aoa.org.au/newsitem/2025/09/30/aoanjrr-milestone---one-million-hip-replacements-recorded). 30 September 2025.
+2. Coulter CL, Scarvell JM, Neeman TM, Smith PN. [Physiotherapist-directed rehabilitation exercises in the outpatient or home setting improve strength, gait speed and cadence after elective total hip replacement: a systematic review](https://www.pubmed.gov/24287215/). Journal of Physiotherapy, 2013.
+3. [Effect of Prehabilitation in Form of Exercise and/or Education in Patients Undergoing Total Hip Arthroplasty on Postoperative Outcomes: A Systematic Review](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9228426/).
+4. Services Australia. [Services available under a GP chronic condition management plan](https://www.servicesaustralia.gov.au/allied-health-referrals-for-chronic-disease-health-care-plans).
+5. Australian Physiotherapy Association. [Changes to Medicare chronic disease management](https://australian.physio/advocacy/changes-medicare-chronic-disease-management).
