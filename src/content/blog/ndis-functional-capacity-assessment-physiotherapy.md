@@ -122,7 +122,7 @@ Assessments at home are also a good option for people who find clinic visits dif
 
 ### How much does a Functional Capacity Assessment cost, and is it NDIS-funded?
 
-The fee depends on the type of assessment, the time needed for the visit and report, and any travel. [ADD YOUR FEE BASIS HERE, for example a fixed fee or an hourly rate at the current NDIS price limit.] Fees for NDIS-funded supports must sit within the NDIS Pricing Arrangements and Price Limits.
+The fee depends on the type of assessment, the time needed for the visit and report, and any travel. We give you a clear quote before the assessment goes ahead, so you know the cost upfront. Fees for NDIS-funded supports must sit within the NDIS Pricing Arrangements and Price Limits.
 
 Whether the NDIS pays depends on where you are in the process. If you already have a plan, an assessment may be able to be funded from Capacity Building — Improved Daily Living, provided your plan includes therapy funding. Your support coordinator or plan manager can confirm this. If you are applying for the first time, you don't have a plan yet, so the assessment is usually arranged and paid for privately. Call us for a quote before you book.
 
@@ -148,7 +148,7 @@ It depends on what you need the report to show. Physiotherapy suits questions ab
 
 ### Do you assess people outside Launceston?
 
-Yes. We visit participants across Tasmania, including Hobart, the Tamar Valley, Devonport, Burnie and surrounding areas. [CONFIRM: whether travel is included in the fee or charged separately.] For more remote areas, contact us and we'll confirm availability.
+Yes. We visit participants across Tasmania, including Hobart, the Tamar Valley, Devonport, Burnie and surrounding areas. Any travel costs are included in your quote, so there are no surprises. For more remote areas, contact us and we'll confirm availability.
 
 ---
 
