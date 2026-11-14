@@ -5,7 +5,7 @@ author: "Micheal Ghattas, Physiotherapist"
 date: "2026-11-13"
 category: "Local Areas"
 featured: false
-image: /image/blog/rural-tasmania-physiotherapy-access-analysis.jpg
+image: "https://res.cloudinary.com/diiacrthz/image/upload/v1794652015/physio_arrive_tzawvz.jpg"
 tags: ["physiotherapist Devonport", "physio Devonport", "physio Burnie", "physiotherapy Burnie", "home visit physiotherapy Tasmania", "mobile physiotherapy North West Coast", "Physio To Home"]
 ---
 
