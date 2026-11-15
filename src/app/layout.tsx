@@ -497,6 +497,7 @@ const structuredData = {
   sameAs: [
     'https://www.facebook.com/profile.php?id=61565914211504',
     'https://www.linkedin.com/company/physio-to-home/',
+    'https://share.google/jButFOivFvvt3EKM',
   ],
 }
 
@@ -529,6 +530,7 @@ const organizationSchema = {
   sameAs: [
     'https://www.facebook.com/profile.php?id=61565914211504',
     'https://www.linkedin.com/company/physio-to-home/',
+    'https://share.google/jButFOivFvvt3EKM',
   ],
 }
 
