@@ -206,12 +206,10 @@ const TASMANIA = {
 /*
  * Important:
  *
- * "address" below = where the business is based.
- *
- * "areaServed" below = where Physio to Home provides services.
- *
- * These are intentionally different because Physio to Home is a
- * mobile/home-visit physiotherapy service.
+ * Physio to Home is a mobile/home-visit physiotherapy service.
+ * The public street address is intentionally omitted because patients
+ * are not served at the business address.
+ * "areaServed" identifies the locations where services are provided.
  */
 
 /* -------------------------------------------------------------------------- */
@@ -242,19 +240,6 @@ const structuredData = {
   priceRange: '$$',
 
   medicalSpecialty: 'Physiotherapy',
-
-  /* ---------------------------------------------------------------------- */
-  /* Actual business address                                                */
-  /* ---------------------------------------------------------------------- */
-
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '2/16 Hoblers Bridge Rd',
-    addressLocality: 'Newstead',
-    addressRegion: 'TAS',
-    postalCode: '7250',
-    addressCountry: 'AU',
-  },
 
   /* ---------------------------------------------------------------------- */
   /* Service area                                                           */
