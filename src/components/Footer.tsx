@@ -60,9 +60,9 @@ export default function Footer() {
             </Link>
 
             <p className="max-w-sm text-sm leading-relaxed text-[#C4D3CB]">
-              Providing professional physiotherapy services in the comfort
-              of your home in Launceston and across Tasmania for over 15
-              years. Your health, our priority.
+              Providing professional home-visit physiotherapy across
+              Tasmania, delivering personalised care in the comfort of your
+              own home. Your health, our priority.
             </p>
 
             <Link
@@ -176,7 +176,7 @@ export default function Footer() {
                   </p>
 
                   <p className="text-sm leading-relaxed text-[#C4D3CB]">
-                    Based in Launceston, serving all of Tasmania
+                    Mobile physiotherapy visits across Tasmania
                   </p>
                 </div>
               </li>
