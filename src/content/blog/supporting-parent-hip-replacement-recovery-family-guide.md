@@ -127,7 +127,7 @@ Contact us before discharge if you can — a phone call before your parent comes
 
 **My Aged Care — Support at Home or CHSP** — Physiotherapy may be funded under Support at Home where it is included in your parent's approved clinical supports. CHSP remains a separate program for eligible older people. Contact their provider or care coordinator to discuss available arrangements.
 
-**Medicare GP Management Plan** — Up to five subsidised visits per year. Your parent's GP can write the plan before or shortly after discharge.
+**Medicare GP Chronic Condition Management Plan** — If your parent has a chronic condition and complex care needs, their GP may prepare a plan and refer them for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements may continue until 30 June 2027.
 
 **Private health insurance** — Most extras policies cover physiotherapy including home visits.
 
