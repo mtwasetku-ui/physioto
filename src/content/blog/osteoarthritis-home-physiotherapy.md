@@ -132,7 +132,7 @@ Mobile physiotherapy addresses this directly. A Physio to Home visit brings all 
 
 ### Funding options for arthritis physiotherapy in North Tasmania
 
-**Medicare GP Management Plan:** If your GP has documented arthritis as a chronic condition, you may be eligible for up to five Medicare-rebated physiotherapy sessions per year under a Team Care Arrangement.
+**Medicare:** If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 
 **My Aged Care:** Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where included in your approved services. CHSP remains a separate program for eligible older people. Speak with your provider or care coordinator.
 
