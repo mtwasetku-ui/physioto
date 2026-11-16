@@ -258,12 +258,6 @@ const structuredData = {
 
     {
       '@type': 'City',
-      name: 'Newstead',
-      containedInPlace: TASMANIA,
-    },
-
-    {
-      '@type': 'City',
       name: 'Longford',
       containedInPlace: TASMANIA,
     },

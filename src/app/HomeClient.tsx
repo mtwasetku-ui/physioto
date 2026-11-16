@@ -94,14 +94,14 @@ const fallbackServices = [
 const stats = [
   { value: '15+', label: 'Years of Experience' },
   { value: 'TAS', label: 'Tasmania-Wide Service' },
-  { value: 'Same-week', label: 'Appointments' },
+  { value: 'Mobile', label: 'Home Visits' },
   { value: 'AHPRA', label: 'Registered Team' },
 ]
 
 const trustBadges = [
-  'No GP Referral Required',
+  'Private Clients Can Self-Refer',
   'AHPRA Registered Team',
-  'Specialist Physiotherapists',
+  'Experienced Physiotherapists',
   'Private Health Rebates',
   'NDIS (Self & Plan Managed)',
   'DVA Welcome',
@@ -259,7 +259,7 @@ export default function HomeClient() {
         <div className="absolute right-8 top-28 z-10 hidden items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm lg:flex">
           <span className="pulse-ring inline-block h-2.5 w-2.5 rounded-full bg-[#4E9B72]" />
           <span className="text-xs font-bold uppercase tracking-[0.18em] text-white/90">
-            Same-week visits available
+            Ask About Appointment Availability
           </span>
         </div>
 

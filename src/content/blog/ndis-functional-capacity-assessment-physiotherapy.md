@@ -16,13 +16,13 @@ tags: ["NDIS functional capacity assessment", "NDIS FCA physiotherapist", "NDIS 
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, Launceston and all of Tasmania | Last updated: November 2026
+Physio to Home | Tasmania-wide home visits | Last updated: November 2026
 
 A Functional Capacity Assessment (FCA) is a formal written report from an allied health professional, most often a physiotherapist or occupational therapist. It documents how a person's disability affects their function and independence in daily life. For NDIS participants, an FCA is one of the most useful pieces of evidence the National Disability Insurance Agency (NDIA) can consider when it assesses an application, reviews a plan, or decides on equipment and home modifications.
 
 If you've been told your plan review needs "more evidence," or a support coordinator has suggested a Functional Capacity Assessment, this guide explains what the assessment involves, who can complete one, how it is funded, and how to prepare.
 
-Physio to Home is based in Launceston and carries out assessments in participants' homes across Tasmania, from Hobart and the south to the Tamar Valley, Devonport, Burnie and the north-west.
+Physio to Home provides mobile physiotherapy assessments in participants' homes across Tasmania. Contact us with your location to confirm availability.
 
 ### Who this guide is for
 
