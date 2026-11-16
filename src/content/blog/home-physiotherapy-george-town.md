@@ -55,7 +55,7 @@ Alongside George Town itself, our service extends to Low Head, Bell Bay, Clarenc
 
 ## Funding Your Care
 
-**Medicare GP Management Plan** — up to five partially subsidised visits per year for a chronic condition.
+**Medicare GP Chronic Condition Management Plan** — eligible people may access up to five individual allied health services per calendar year. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
 
 **My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we liaise with your care coordinator about available arrangements.
 
