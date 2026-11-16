@@ -6,7 +6,7 @@ date: "2025-03-01"
 image: /image/blog/benefits-of-home-physiotherapy.jpg
 category: "Physiotherapy Tips"
 featured: true
-tags: ["benefits of home physiotherapy", "in-home physiotherapy", "mobile physiotherapy Tasmania", "home physio Launceston", "physiotherapy at home", "Physio to Home", "home care physiotherapy", "aged care physiotherapy", "NDIS physiotherapy", "North Tasmania"]
+tags: ["benefits of home physiotherapy", "in-home physiotherapy", "mobile physiotherapy Tasmania", "home physio Launceston", "physiotherapy at home", "Physio to Home", "home care physiotherapy", "aged care physiotherapy", "NDIS physiotherapy", "Tasmania"]
 ---
 
 # THE BENEFITS OF HOME PHYSIOTHERAPY
@@ -15,7 +15,7 @@ tags: ["benefits of home physiotherapy", "in-home physiotherapy", "mobile physio
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2025
+Physio to Home | Last reviewed: November 2026
 
 When people first hear about home physiotherapy, they often assume it's a second-best option — something you settle for if you can't get to a clinic. After 15+ years of working as a physiotherapist, the last several delivering care exclusively in people's homes, I want to address that assumption directly: it's wrong.
 
@@ -119,7 +119,7 @@ One of the most important practical points: home physiotherapy is covered by the
 
 **Medicare** — through a Chronic Disease Management Plan (GP Management Plan), providing up to 5 allied health sessions per calendar year with a Medicare rebate.
 
-**My Aged Care** — Home Care Packages at all levels (1–4) can fund home physiotherapy. Commonwealth Home Support Programme (CHSP) funding also covers home physiotherapy for eligible older Australians.
+**My Aged Care** — Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where it is included in the person's approved services. The Commonwealth Home Support Programme (CHSP) continues separately for eligible older Australians.
 
 **NDIS** — physiotherapy is funded under Improved Daily Living supports for eligible NDIS participants. Both plan-managed and self-managed participants can access home physiotherapy.
 
