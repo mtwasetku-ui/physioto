@@ -7,16 +7,16 @@ category: "Funding & Access"
 featured: false
 image: /image/blog/private-health-insurance-home-physiotherapy.jpg
 
-tags: ["private health insurance", "extras cover", "physiotherapy rebate", "funded physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "health insurance physio"]
+tags: ["private health insurance", "extras cover", "physiotherapy rebate", "funded physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "health insurance physio"]
 ---
 
 # PRIVATE HEALTH INSURANCE | HOME PHYSIOTHERAPY
 
-## Using Private Health Insurance for Home Physiotherapy in North Tasmania
+## Using Private Health Insurance for Home Physiotherapy in Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 If you have private health insurance with extras cover, there is a very good chance it includes physiotherapy — and in most cases, that cover extends to home visits as well as clinic-based treatment. Many Australians with extras policies do not claim the physiotherapy benefits they are entitled to, simply because they are not sure what is covered or how to use it.
 
@@ -24,7 +24,7 @@ This guide explains how private health extras cover works for physiotherapy, wha
 
 ### Who this guide is for
 
-This article is for people in North Tasmania who have private health insurance and are wondering whether it covers home physiotherapy visits from Physio to Home. It is also useful for anyone trying to understand how to layer different funding sources together.
+This article is for people in Tasmania who have private health insurance and are wondering whether it covers home physiotherapy visits from Physio to Home. It is also useful for anyone trying to understand how to layer different funding sources together.
 
 ---
 
@@ -92,7 +92,7 @@ Contact Physio to Home before your first visit and we will give you a clear brea
 
 Private health insurance can be used alongside other funding sources to extend the number of visits you can access or reduce your out-of-pocket costs.
 
-**Private health + Medicare GP Management Plan.** In some circumstances, private health insurance can contribute a rebate on top of the Medicare rebate under a GP Management Plan. The rules around this are complex and fund-specific — ask your fund whether they cover the gap remaining after a Medicare rebate is applied.
+**Private health + Medicare.** You generally cannot claim a private health insurance benefit for the same service for which you receive a Medicare benefit. Check the current rules with Medicare and your health fund before combining funding arrangements.
 
 **Private health + aged care funding.** If you receive Support at Home, physiotherapy may be funded as a clinical support where it is included in your approved services. CHSP may also provide allied health support for eligible people. Private health insurance would not typically pay for the same service already funded through another program; check your fund and provider before claiming.
 
@@ -104,7 +104,7 @@ Private health insurance can be used alongside other funding sources to extend t
 
 Private health insurance is one of several funding options for home physiotherapy — but it is not the only one, and many of our patients access funded visits through other pathways. Alternatives include:
 
-- **Medicare GP Management Plan** — up to five subsidised visits per year for people with a chronic medical condition (see our separate guide)
+- **Medicare GP Chronic Condition Management Plan** — up to five eligible individual allied health services per calendar year, shared across eligible professions (see our separate guide). Eligible legacy GP Management Plans and Team Care Arrangements may continue until 30 June 2027.
 - **My Aged Care — Support at Home or CHSP** — possible funding for eligible older Australians, subject to approved services and program arrangements (see our separate guide)
 - **NDIS** — funded physiotherapy for eligible participants with a disability (see our separate guide)
 - **Private self-funding** — paying directly for home visits without insurance or government subsidy
@@ -147,7 +147,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in home-based physiotherapy for older adults, post-surgical rehabilitation, and chronic pain management across North Tasmania.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in home-based physiotherapy for older adults, post-surgical rehabilitation, and chronic pain management across Tasmania.
 
 ---
 

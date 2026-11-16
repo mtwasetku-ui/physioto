@@ -1,6 +1,6 @@
 "use client";
 
-const LAST_UPDATED = "8 March 2026";
+const LAST_UPDATED = "16 November 2026";
 const COMPANY = "Physio to Home";
 const EMAIL = "info@physiotohome.com";
 const PHONE = "1300 433 233";
@@ -45,7 +45,7 @@ Our services include (but are not limited to) musculoskeletal physiotherapy, pos
 
 **Payment:** Payment is due at the time of service unless a prior billing arrangement has been made. We accept payment via EFTPOS, credit card, bank transfer, and Medicare/DVA/NDIS/private health insurance claims where applicable.
 
-**Funding bodies:** We process claims on your behalf for Medicare (Chronic Disease Management Plans), DVA, NDIS, My Aged Care, and registered private health insurers. It is your responsibility to ensure you hold valid entitlements and to provide accurate information. Any gap payments remain your responsibility.
+**Funding bodies:** We process claims where applicable for Medicare (GP Chronic Condition Management Plans, including eligible legacy GP Management Plans and Team Care Arrangements), DVA, NDIS, My Aged Care and registered private health insurers. Eligibility, referrals, approved services and any gap payments depend on the relevant program rules and your individual circumstances. It is your responsibility to ensure you hold valid entitlements and to provide accurate information. Any gap payments remain your responsibility.
 
 **Debt collection:** Unpaid accounts may be referred to a debt collection agency. You will be responsible for any reasonable costs incurred in recovering outstanding amounts.`,
   },

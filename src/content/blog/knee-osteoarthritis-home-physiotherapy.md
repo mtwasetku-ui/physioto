@@ -7,16 +7,16 @@ category: "Conditions & Rehab"
 featured: false
 image: /image/blog/knee-osteoarthritis-home-physiotherapy.jpg
 
-tags: ["knee osteoarthritis", "knee pain", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "arthritis", "joint pain"]
+tags: ["knee osteoarthritis", "knee pain", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "arthritis", "joint pain"]
 ---
 
 # KNEE OSTEOARTHRITIS | HOME PHYSIOTHERAPY
 
-## Managing Knee Osteoarthritis at Home: A Guide from a North Tasmania Home Physiotherapist
+## Managing Knee Osteoarthritis at Home: A Guide from a Tasmania Home Physiotherapist
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 Knee osteoarthritis is one of the most common conditions seen in home physiotherapy — and one of the most misunderstood. Many people living with knee OA believe that rest is the safest approach, that exercise will wear out their joints faster, or that nothing short of surgery will make a meaningful difference. None of these things are true.
 
@@ -26,7 +26,7 @@ This guide explains what knee osteoarthritis actually is, what the research says
 
 ### Who this guide is for
 
-This article is for people in North Tasmania living with knee osteoarthritis — or caring for someone who is — who want to understand what physiotherapy can realistically achieve and how home-based delivery works. It is particularly relevant for those in rural areas around Launceston, George Town, Scottsdale, and the Tamar Valley where regular clinic attendance is difficult.
+This article is for people in Tasmania living with knee osteoarthritis — or caring for someone who is — who want to understand what physiotherapy can realistically achieve and how home-based delivery works. It is particularly relevant for those in rural areas around Launceston, George Town, Scottsdale, and the Tamar Valley where regular clinic attendance is difficult.
 
 ---
 
@@ -152,11 +152,11 @@ Surgery should not be the first option, and research consistently shows that peo
 
 ---
 
-## Funding Your Home Physiotherapy in North Tasmania
+## Funding Your Home Physiotherapy in Tasmania
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-If your GP determines that physiotherapy is clinically necessary for your knee osteoarthritis, they can write a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year. A small gap payment may apply.
+If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year, shared across eligible professions. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027. A gap payment may apply.
 
 ### My Aged Care — Support at Home and CHSP
 
@@ -200,7 +200,7 @@ Yes, absolutely. In fact, the combination of physiotherapy and modest weight red
 
 ## Ready to Start Managing Your Knee OA at Home?
 
-Living with knee osteoarthritis in rural North Tasmania does not mean living without proper physiotherapy care. Physio to Home brings AHPRA-registered, evidence-based treatment directly to your door — whether you are in Launceston, George Town, Scottsdale, or anywhere across the North Tasmania region.
+Living with knee osteoarthritis in rural Tasmania does not mean living without proper physiotherapy care. Physio to Home brings AHPRA-registered, evidence-based treatment directly to your door — whether you are in Launceston, George Town, Scottsdale, or anywhere across the Tasmania region.
 
 Book your first home visit today — and find out what moving with less pain feels like →
 
@@ -212,7 +212,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
 
 ---
 

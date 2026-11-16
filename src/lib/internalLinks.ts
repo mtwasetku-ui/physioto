@@ -81,6 +81,7 @@ export const internalLinks: Record<string, string> = {
   'DVA':                                'dva-physiotherapy-tasmania',
   'Support at Home physiotherapy':     'my-aged-care-home-physiotherapy-funding',
   'My Aged Care':                      'my-aged-care-home-physiotherapy-funding',
+  'GP Chronic Condition Management Plan':   'medicare-gp-management-plan-physiotherapy-funding',
   'GP Management Plan':                'medicare-gp-management-plan-physiotherapy-funding',
   'private health insurance':          'private-health-insurance-home-physiotherapy',
   'aged care physiotherapy':           'hidden-cost-inconsistent-physiotherapy-rural-aged-care',
