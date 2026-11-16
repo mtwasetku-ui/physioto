@@ -144,9 +144,9 @@ You will leave the first visit with a clear, manageable daily programme — incl
 
 If your GP determines that physiotherapy is clinically necessary for your Parkinson's disease management, they can write a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year.
 
-### My Aged Care — Home Care Package
+### My Aged Care — Support at Home and CHSP
 
-If you are aged 65 or over and receive a Home Care Package through My Aged Care, physiotherapy is a covered allied health service. For people with Parkinson's disease, physiotherapy is a clinically essential component of a well-designed care plan. Speak to your care coordinator about including regular physiotherapy in your package.
+Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where included in your approved services. CHSP remains a separate program for eligible older people. Discuss your options with your provider or care coordinator.
 
 ### NDIS
 
