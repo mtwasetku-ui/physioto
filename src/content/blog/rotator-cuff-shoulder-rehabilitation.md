@@ -164,9 +164,9 @@ If you have been told you need surgery for a rotator cuff tear without a structu
 
 ## Funding Your Home Physiotherapy in North Tasmania
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-A GP Management Plan (also called a Team Care Arrangement) entitles you to up to five Medicare-rebated physiotherapy sessions per year. Your GP can include physiotherapy if they determine it is clinically necessary for your shoulder condition.
+If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year, shared across eligible professions. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 
 ### My Aged Care — Support at Home and CHSP
 
