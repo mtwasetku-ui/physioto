@@ -165,7 +165,7 @@ Effective falls-preventive footwear does not need to be expensive. Many excellen
 
 ### Can footwear be funded through My Aged Care or NDIS?
 
-Prescribed footwear and orthotic devices can be covered under some Home Care Package budgets and NDIS plans, particularly when there is a clinical recommendation from a physiotherapist or podiatrist. Standard retail footwear is generally not covered, but a podiatry assessment and prescription may be. Speak with your care coordinator or contact Physio to Home for guidance on what may be claimable in your specific situation.
+Prescribed footwear and orthotic devices may be funded through an aged-care or disability support plan where they meet the program's rules and are included in the person's approved supports. Standard retail footwear is generally not covered. A clinical recommendation from a physiotherapist or podiatrist may help support a request, but funding is not automatic. Check with your Support at Home provider, CHSP service or NDIS plan manager about the applicable arrangements.
 
 ### Should I wear shoes indoors all the time?
 
