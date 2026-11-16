@@ -160,7 +160,7 @@ export default function PortalDemo() {
                     <span className="text-xs font-bold text-[#55733e]">3 recent updates</span>
                   </div>
                   <div className="grid gap-3 lg:grid-cols-3">
-                    {announcements.map((item, index) => <article key={item.title} className={"overflow-hidden rounded-2xl border bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md "+(index===0?"border-[#ff5638]":"border-[#e6e8df")}>
+                    {announcements.map((item, index) => <article key={item.title} className={"overflow-hidden rounded-2xl border bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md "+(index===0?"border-[#ff5638]":"border-[#e6e8df]")}>
                       <div className={"flex h-20 items-center justify-center "+(item.tone==='orange'?'bg-[#fff0dc]':item.tone==='green'?'bg-[#dff1e5]':'bg-[#dcecff]')}>
                         {item.icon==='calendar'?<CalendarDays size={36} className="text-[#176044]"/>:item.icon==='heart'?<HeartPulse size={38} className="text-[#176044]"/>:<Users size={38} className="text-[#145078]"/>}
                       </div>
