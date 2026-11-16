@@ -29,6 +29,7 @@ export default function PortalDemo() {
   const [drag, setDrag] = useState<{ id: string; startClientX: number; startClientY: number; deltaPx: number; originDay: number; targetDay: number; offsetX: number } | null>(null)
   const dragRef = useRef<typeof drag>(null)
   const suppressClickRef = useRef(false)
+  const pendingTouchRef = useRef<{ id: string; timer: ReturnType<typeof setTimeout> } | null>(null)
   const dayColRefs = useRef<Array<HTMLDivElement | null>>([])
   const [search, setSearch] = useState('')
   const [selected, setSelected] = useState<(typeof patients)[number] | null>(null)
@@ -42,16 +43,39 @@ export default function PortalDemo() {
 
   // Match the live diary's pointer-delta drag model and quarter-hour snapping.
   const PX_PER_MIN = 64 / 60
-  function beginAppointmentDrag(e: React.PointerEvent<HTMLDivElement>, appointment: typeof demoAppointments[number]) {
-    e.stopPropagation()
-    suppressClickRef.current = false
-    if (e.pointerType !== 'mouse') return
-    try { e.currentTarget.setPointerCapture(e.pointerId) } catch {}
-    const next = { id: appointment.name, startClientX: e.clientX, startClientY: e.clientY, deltaPx: 0, originDay: appointment.day, targetDay: appointment.day, offsetX: 0 }
+  function armAppointmentDrag(el: HTMLDivElement, pointerId: number, x: number, y: number, appointment: typeof demoAppointments[number]) {
+    try { el.setPointerCapture(pointerId) } catch {}
+    const next = { id: appointment.name, startClientX: x, startClientY: y, deltaPx: 0, originDay: appointment.day, targetDay: appointment.day, offsetX: 0 }
     dragRef.current = next
     setDrag(next)
   }
+  function beginAppointmentDrag(e: React.PointerEvent<HTMLDivElement>, appointment: typeof demoAppointments[number]) {
+    e.stopPropagation()
+    suppressClickRef.current = false
+    if (e.pointerType === 'mouse') {
+      armAppointmentDrag(e.currentTarget, e.pointerId, e.clientX, e.clientY, appointment)
+      return
+    }
+    if (pendingTouchRef.current) clearTimeout(pendingTouchRef.current.timer)
+    const el = e.currentTarget
+    const pointerId = e.pointerId
+    const x = e.clientX
+    const y = e.clientY
+    const timer = setTimeout(() => {
+      pendingTouchRef.current = null
+      armAppointmentDrag(el, pointerId, x, y, appointment)
+    }, 260)
+    pendingTouchRef.current = { id: appointment.name, timer }
+  }
   function moveAppointmentDrag(e: React.PointerEvent<HTMLDivElement>, appointment: typeof demoAppointments[number]) {
+    const pending = pendingTouchRef.current
+    if (pending?.id === appointment.name) {
+      if (Math.hypot(e.clientX - (dragRef.current?.startClientX ?? e.clientX), e.clientY - (dragRef.current?.startClientY ?? e.clientY)) > 10) {
+        clearTimeout(pending.timer)
+        pendingTouchRef.current = null
+      }
+      return
+    }
     const current = dragRef.current
     if (!current || current.id !== appointment.name) return
     let targetDay = current.originDay
@@ -69,6 +93,11 @@ export default function PortalDemo() {
     setDrag(next)
   }
   function finishAppointmentDrag(e: React.PointerEvent<HTMLDivElement>, appointment: typeof demoAppointments[number]) {
+    if (pendingTouchRef.current?.id === appointment.name) {
+      clearTimeout(pendingTouchRef.current.timer)
+      pendingTouchRef.current = null
+      return
+    }
     const current = dragRef.current
     if (!current || current.id !== appointment.name) return
     let targetDay = current.originDay
@@ -93,6 +122,7 @@ export default function PortalDemo() {
     notify('Moved sample visit to ' + ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][targetDay] + ' at ' + time + '.')
   }
   function cancelAppointmentDrag(appointment: typeof demoAppointments[number]) {
+    if (pendingTouchRef.current?.id === appointment.name) { clearTimeout(pendingTouchRef.current.timer); pendingTouchRef.current = null }
     if (dragRef.current?.id === appointment.name) { dragRef.current = null; setDrag(null) }
   }
 
