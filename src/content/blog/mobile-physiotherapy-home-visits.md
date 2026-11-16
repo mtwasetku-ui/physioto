@@ -104,7 +104,7 @@ Booking is straightforward. Here is exactly what the process looks like from fir
 
 ### Step 1 Contact Physio to Home
 
-Call or email us to make initial contact. You do not need a GP referral to book a private physiotherapy appointment, though a referral is required for Medicare-rebated sessions under a GP Management Plan. During this first contact, briefly describe your condition or concern, your location across Tasmania, and any funding arrangements you have in place.
+Call or email us to make initial contact. You do not need a GP referral to book a private physiotherapy appointment, Medicare-funded sessions under a GP Chronic Condition Management Plan have specific referral and eligibility requirements. During this first contact, briefly describe your condition or concern, your location across Tasmania, and any funding arrangements you have in place.
 
 ### Step 2 Eligibility and funding check (at no cost)
 
@@ -242,7 +242,7 @@ No — you do not need a referral to book a private physiotherapy appointment. Y
 
 ### How is mobile physiotherapy different from what a clinic offers?
 
-The clinical skills and treatment techniques are identical — Micheal is the same physiotherapist whether he sees you at home or in a clinic. The difference is context. At home, the assessment happens in the environment where your condition affects you most. Exercises are designed for your actual space. Home hazards and daily routines are observed directly. For most of our patients — particularly older adults and those in rural areas — this contextual advantage produces better outcomes than an equivalent program delivered in a clinic.
+Your physiotherapist can assess how your condition affects movement and daily activities in your home environment. This can help identify practical barriers, home hazards and opportunities to adapt exercises to your space and routines. Home visits are not automatically better than clinic-based care; the most suitable setting depends on your clinical needs, goals and the equipment or facilities required.
 
 ### What areas across Tasmania do you service?
 
@@ -264,7 +264,7 @@ Mobile physiotherapy is available for adults of all ages. While our practice has
 
 ## Ready to Book Your First Mobile Physiotherapy Visit?
 
-Physio to Home provides AHPRA-registered mobile physiotherapy across Tasmania — in your home, at a time that suits you, funded through Medicare, My Aged Care, NDIS, and private health insurance.
+Physio to Home provides AHPRA-registered mobile physiotherapy across Tasmania, subject to location and appointment availability. Funding pathways may include eligible Medicare arrangements, My Aged Care, NDIS and private health insurance, depending on individual requirements.
 
 Whether you are managing chronic pain, recovering from surgery, concerned about falls, or simply want physiotherapy on your terms — we are here to help.
 
