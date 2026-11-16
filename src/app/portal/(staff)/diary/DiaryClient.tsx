@@ -183,6 +183,8 @@ function shiftDateTime(iso: string, dayDelta: number, minuteDelta: number) {
 export default function DiaryClient() {
   const router = useRouter()
   const [weekStart, setWeekStart] = useState(() => startOfWeek(new Date()))
+  const [calendarView, setCalendarView] = useState<'week' | 'day'>('week')
+  const [activeDay, setActiveDay] = useState(() => new Date())
   const [appointments, setAppointments] = useState<DiaryAppointment[] | null>(null)
   const [travelBlocks, setTravelBlocks] = useState<TravelBlock[] | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -397,8 +399,7 @@ export default function DiaryClient() {
 
   function onPointerMove(e: React.PointerEvent<HTMLDivElement>, block: Block) {
     if (pendingRef.current && pendingRef.current.block.data.id === block.data.id) {
-      const dx = e.clientX - pendingRef.current.startClientX
-      const dy = e.clientY - pendingRef.current.startClientY
+      const dx = e.clientX - pendingRef.current.startClientX      const dy = e.clientY - pendingRef.current.startClientY
       if (Math.hypot(dx, dy) > PRE_ARM_CANCEL_PX) {
         // Reads as a scroll attempt, not a hold-to-drag — let it go.
         clearTimeout(pendingRef.current.timer)
@@ -797,8 +798,15 @@ export default function DiaryClient() {
     }
     setAddTravelSaving(false)
   }
-
-  const columnTemplate = `56px repeat(7, minmax(130px, 1fr))`
+  const visibleDays = calendarView === 'week' ? days : [activeDay]
+  const columnTemplate = `56px repeat(${visibleDays.length}, minmax(130px, 1fr))`
+  const visibleDateLabel = calendarView === 'week'
+    ? `${weekStart.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })} – ${addDays(weekStart, 6).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}`
+    : activeDay.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+  function moveCalendarPeriod(direction: -1 | 1) {
+    if (calendarView === 'week') setWeekStart((w) => addDays(w, direction * 7))
+    else setActiveDay((d) => addDays(d, direction))
+  }
 
   return (
     <div>
@@ -812,28 +820,30 @@ export default function DiaryClient() {
         Your assigned visits. Hold to move, tap to open, drag the bottom edge to resize.
       </p>
 
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+        <div className="inline-flex rounded-lg border border-input bg-muted/40 p-1" role="group" aria-label="Diary view">
+          <button type="button" onClick={() => setCalendarView('day')} aria-pressed={calendarView === 'day'} className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${calendarView === 'day' ? 'bg-white text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>Day</button>
+          <button type="button" onClick={() => setCalendarView('week')} aria-pressed={calendarView === 'week'} className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${calendarView === 'week' ? 'bg-white text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>Week</button>
+        </div>
+        <div className="flex items-center gap-3">
         <button
           type="button"
-          onClick={() => setWeekStart((w) => addDays(w, -7))}
+          onClick={() => moveCalendarPeriod(-1)}
           className="h-8 w-8 rounded-md border border-input hover:bg-secondary flex items-center justify-center"
           aria-label="Previous week"
         >
           <ChevronLeft className="h-4 w-4" />
         </button>
-        <div className="text-sm font-medium text-foreground">
-          {weekStart.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })}
-          {' – '}
-          {addDays(weekStart, 6).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}
-        </div>
+        <div className="text-sm font-medium text-foreground text-center">{visibleDateLabel}</div>
         <button
           type="button"
-          onClick={() => setWeekStart((w) => addDays(w, 7))}
+          onClick={() => moveCalendarPeriod(1)}
           className="h-8 w-8 rounded-md border border-input hover:bg-secondary flex items-center justify-center"
-          aria-label="Next week"
+          aria-label={calendarView === 'week' ? 'Next week' : 'Next day'}
         >
           <ChevronRight className="h-4 w-4" />
         </button>
+        </div>
       </div>
 
       {error && <div className="bg-white border border-border rounded-lg p-4 text-sm text-destructive mb-4">{error}</div>}
@@ -845,11 +855,11 @@ export default function DiaryClient() {
       {appointments !== null && travelBlocks !== null && !error && (
         <div className="bg-white border border-border rounded-lg overflow-hidden">
           <div className="overflow-x-auto">
-            <div style={{ minWidth: 56 + 7 * 130 }}>
+            <div style={{ minWidth: 56 + visibleDays.length * 130 }}>
               {/* Header row: day names + dates */}
               <div className="grid border-b border-border" style={{ gridTemplateColumns: columnTemplate }}>
                 <div />
-                {days.map((d) => {
+                {visibleDays.map((d) => {
                   const isToday = sameDay(d, new Date())
                   return (
                     <div
@@ -882,7 +892,8 @@ export default function DiaryClient() {
                   </div>
 
                   {/* Day columns */}
-                  {days.map((d, dayIndex) => {
+                  {visibleDays.map((d) => {
+                    const dayIndex = days.findIndex((weekDay) => sameDay(weekDay, d))
                     const isToday = sameDay(d, new Date())
                     return (
                       <div
@@ -1198,125 +1209,3 @@ export default function DiaryClient() {
             <p className="text-xs text-muted-foreground mb-3">
               A personal block on your own diary — not sent to Cliniko or visible to patients.
             </p>
-            <input
-              value={travelLabelDraft}
-              onChange={(e) => setTravelLabelDraft(e.target.value)}
-              autoFocus
-              placeholder="e.g. Travel to Jane Smith"
-              className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
-            />
-            {travelError && <p className="text-xs text-destructive mt-1">{travelError}</p>}
-            <div className="flex items-center gap-2 mt-3">
-              <Button size="sm" onClick={saveTravelLabel} disabled={travelSaving}>
-                {travelSaving ? 'Saving…' : 'Save'}
-              </Button>
-              <button
-                type="button"
-                onClick={() => setTravelModalId(null)}
-                disabled={travelSaving}
-                className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {addTravelDay && (
-        <div
-          className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4"
-          onClick={() => !addTravelSaving && setAddTravelDay(null)}
-        >
-          <div className="bg-white rounded-lg p-5 max-w-sm w-full shadow-lg" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-sm font-semibold text-foreground mb-1">Add travel time</h3>
-            <p className="text-xs text-muted-foreground mb-3">
-              {addTravelDay.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'short' })} — a personal block on
-              your own diary, not sent to Cliniko.
-            </p>
-            <div className="grid grid-cols-2 gap-2 mb-2">
-              <div>
-                <label className="block text-xs text-muted-foreground mb-1">Start time</label>
-                <select
-                  value={addTravelStart}
-                  onChange={(e) => setAddTravelStart(e.target.value)}
-                  className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
-                >
-                  {TIME_OPTIONS.map((opt) => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs text-muted-foreground mb-1">Duration</label>
-                <select
-                  value={addTravelDuration}
-                  onChange={(e) => setAddTravelDuration(Number(e.target.value))}
-                  className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
-                >
-                  {TRAVEL_DURATION_OPTIONS.map((mins) => (
-                    <option key={mins} value={mins}>
-                      {mins} min
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-            <label className="block text-xs text-muted-foreground mb-1">Label (optional)</label>
-            <input
-              value={addTravelLabel}
-              onChange={(e) => setAddTravelLabel(e.target.value)}
-              placeholder="Travel"
-              className="w-full px-2 py-1.5 rounded-md border border-input text-sm"
-            />
-            {addTravelError && <p className="text-xs text-destructive mt-1">{addTravelError}</p>}
-            <div className="flex items-center gap-2 mt-3">
-              <Button size="sm" onClick={saveAddTravel} disabled={addTravelSaving}>
-                {addTravelSaving ? 'Adding…' : 'Add travel time'}
-              </Button>
-              <button
-                type="button"
-                onClick={() => setAddTravelDay(null)}
-                disabled={addTravelSaving}
-                className="text-xs px-2.5 py-1.5 rounded-md border border-input hover:bg-secondary disabled:opacity-50"
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  )
-}
-
-// A compact +/- stepper in 5-minute increments — matches the one on the
-// booking form (PatientDetailClient) so travel time looks and behaves the
-// same whether it's set at booking time or from the diary afterwards.
-function DiaryTravelStepper({ label, minutes, onChange }: { label: string; minutes: number; onChange: (m: number) => void }) {
-  return (
-    <div className="flex items-center gap-1.5 border border-input rounded-md px-2 py-1.5">
-      <span className="text-xs text-muted-foreground w-10">{label}</span>
-      <button
-        type="button"
-        onClick={() => onChange(Math.max(0, minutes - TRAVEL_SNAP_MINUTES))}
-        disabled={minutes === 0}
-        className="h-6 w-6 rounded border border-input text-sm leading-none flex items-center justify-center hover:bg-secondary disabled:opacity-40"
-        aria-label={`Decrease ${label.toLowerCase()} travel time`}
-      >
-        −
-      </button>
-      <span className="text-sm text-foreground w-12 text-center tabular-nums">{minutes > 0 ? `${minutes} min` : 'None'}</span>
-      <button
-        type="button"
-        onClick={() => onChange(Math.min(120, minutes + TRAVEL_SNAP_MINUTES))}
-        className="h-6 w-6 rounded border border-input text-sm leading-none flex items-center justify-center hover:bg-secondary"
-        aria-label={`Increase ${label.toLowerCase()} travel time`}
-      >
-        +
-      </button>
-    </div>
-  )
-}
