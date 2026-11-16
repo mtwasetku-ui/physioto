@@ -138,9 +138,9 @@ Carer involvement in stroke rehabilitation is strongly associated with better ou
 
 ## Funding Your Home Physiotherapy in North Tasmania
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-A GP Management Plan (also called a Team Care Arrangement) entitles you to up to five Medicare-rebated physiotherapy sessions per year. For stroke survivors, physiotherapy is a clinically appropriate inclusion in almost all cases. Speak to your GP about establishing or renewing a plan.
+If you have a chronic condition and complex care needs after a stroke, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year, shared across eligible professions. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027. Your GP will determine whether you meet the criteria and whether physiotherapy is appropriate.
 
 ### My Aged Care — Support at Home and CHSP
 
@@ -148,7 +148,7 @@ Support at Home replaced the Home Care Packages Program on 1 November 2025. Phys
 
 ### NDIS
 
-If you have an NDIS plan, physiotherapy for stroke rehabilitation is typically funded under the Improved Daily Living or Improved Health and Wellbeing support categories. Home-based delivery is fully supported under NDIS. Physio to Home is currently completing NDIS provider registration and welcomes enquiries from participants and their support coordinators.
+If you have an NDIS plan, physiotherapy for stroke rehabilitation is typically funded under the Improved Daily Living or Improved Health and Wellbeing support categories. Home-based delivery is fully supported under NDIS. Physio to Home can discuss enquiries from self-managed and plan-managed NDIS participants. Funding must be available in the participant's plan and the physiotherapy must meet the applicable NDIS funding requirements.
 
 ### Private Health Insurance
 
