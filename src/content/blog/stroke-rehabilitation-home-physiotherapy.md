@@ -7,26 +7,26 @@ category: "Conditions & Rehab"
 featured: true
 image: /image/blog/stroke-rehabilitation-home-physiotherapy.jpg
 
-tags: ["stroke rehabilitation", "stroke recovery", "neurological physiotherapy", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "hemiplegia", "neuroplasticity"]
+tags: ["stroke rehabilitation", "stroke recovery", "neurological physiotherapy", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "hemiplegia", "neuroplasticity"]
 ---
 
 # STROKE REHABILITATION | HOME PHYSIOTHERAPY
 
-## Stroke Rehabilitation at Home: A Guide for Survivors and Families in North Tasmania
+## Stroke Rehabilitation at Home: A Guide for Survivors and Families in Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 A stroke changes everything — often in a matter of minutes. For many survivors, the most disorienting part is not the hospital stay but what comes after: returning home with reduced strength, altered movement, and a body that does not respond the way it used to. The rehabilitation that happens in those weeks, months, and years after discharge is what determines how much function is recovered and how independently someone is able to live.
 
 The single most important principle in stroke rehabilitation is this: the brain can recover, but it requires repetitive, task-specific practice to do so. Neuroplasticity — the brain's capacity to reorganise and form new neural pathways — is real, robust, and present throughout life. But it requires consistent stimulus. Which means that access to regular, skilled physiotherapy in the home environment is not a luxury for stroke survivors — it is a clinical necessity.
 
-For people recovering from stroke in rural and regional North Tasmania, home physiotherapy removes the most significant barrier to the consistency of practice that drives recovery.
+For people recovering from stroke in rural and regional Tasmania, home physiotherapy removes the most significant barrier to the consistency of practice that drives recovery.
 
 ### Who this guide is for
 
-This article is for stroke survivors in North Tasmania and their families and carers. It is particularly relevant for those in rural areas — including Launceston, George Town, Scottsdale, Ringarooma, and the Tamar Valley — who face practical barriers to clinic attendance, and for people in the community phase of recovery who feel their rehabilitation has plateaued or been discontinued prematurely.
+This article is for stroke survivors in Tasmania and their families and carers. It is particularly relevant for those in rural areas — including Launceston, George Town, Scottsdale, Ringarooma, and the Tamar Valley — who face practical barriers to clinic attendance, and for people in the community phase of recovery who feel their rehabilitation has plateaued or been discontinued prematurely.
 
 ### Important medical disclaimer
 
@@ -136,7 +136,7 @@ Carer involvement in stroke rehabilitation is strongly associated with better ou
 
 ---
 
-## Funding Your Home Physiotherapy in North Tasmania
+## Funding Your Home Physiotherapy in Tasmania
 
 ### Medicare — GP Chronic Condition Management Plan
 
@@ -182,11 +182,11 @@ Yes, in the overwhelming majority of cases. Exercise after stroke — including 
 
 ---
 
-## Ready to Start Stroke Rehabilitation at Home in North Tasmania?
+## Ready to Start Stroke Rehabilitation at Home in Tasmania?
 
-Whether you are recently discharged and looking for community physiotherapy to begin, or you had a stroke months or years ago and want to explore what further recovery is possible — Physio to Home is here. We provide AHPRA-registered, evidence-based stroke rehabilitation in your own home across North Tasmania, funded through Medicare, My Aged Care, NDIS, and private health insurance.
+Whether you are recently discharged and looking for community physiotherapy to begin, or you had a stroke months or years ago and want to explore what further recovery is possible — Physio to Home is here. We provide AHPRA-registered, evidence-based stroke rehabilitation in your own home across Tasmania, funded through Medicare, My Aged Care, NDIS, and private health insurance.
 
-Book your first home visit today — we cover all of North Tasmania →
+Book your first home visit today — we cover all of Tasmania →
 
 ---
 
@@ -196,7 +196,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and post-surgical care delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in neurological rehabilitation, falls prevention, and post-surgical care delivered entirely in the home setting.
 
 ---
 
