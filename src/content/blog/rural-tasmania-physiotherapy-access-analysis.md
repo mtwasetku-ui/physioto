@@ -92,7 +92,7 @@ The implication is direct: if home-based delivery is clinically equivalent or su
 
 If the evidence supports home-based physiotherapy and the need in rural Tasmania is clear, what prevents it from scaling? Several structural barriers are identifiable:
 
-**Funding model misalignment.** Medicare Benefits Schedule rebates for physiotherapy do not differentiate between clinic-based and home-based delivery, but the operational costs of home-based delivery — travel time, vehicle costs, reduced session throughput — make it economically challenging to sustain without supplementary funding. My Aged Care Home Care Packages and NDIS provide funding that is compatible with home delivery, but uptake among eligible rural clients remains incomplete due to awareness gaps and care coordination fragmentation.
+**Funding model misalignment.** Medicare Benefits Schedule rebates for physiotherapy do not differentiate between clinic-based and home-based delivery, but the operational costs of home-based delivery — travel time, vehicle costs, reduced session throughput — make it economically challenging to sustain without supplementary funding. My Aged Care pathways, including Support at Home and CHSP where eligible, and the NDIS may support home-based physiotherapy. Access depends on assessment, approved supports and care coordination; awareness and service availability can still be barriers for rural clients.
 
 **Workforce distribution incentives.** Current workforce incentive programmes for rural health professionals focus heavily on GP and medical workforce rather than allied health. The Rural Health Multidisciplinary Training (RHMT) programme and the Rural Health Workforce Strategy contain allied health components, but their impact on physiotherapy distribution in communities like those in rural North Tasmania has been limited.
 
@@ -108,7 +108,7 @@ The access problem in rural Tasmania is not intractable. Evidence from comparabl
 
 **Allied health-specific rural incentive programmes** that provide meaningful financial incentives for physiotherapists to establish home-visiting practices in rural and regional areas — modelled on the More Allied Health Services (MAHS) programme that existed in modified forms in earlier primary health care iterations.
 
-**Home-based delivery as a funded default in My Aged Care for rural clients.** The current Home Care Package system funds home-based physiotherapy but does not actively direct rural clients toward it. A rural-specific care planning standard that defaults to home delivery for clients in Modified Monash categories 3–7 would improve access without additional cost to the funding envelope.
+**Home-based delivery in My Aged Care for rural clients.** Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where included in a person's approved services; CHSP remains a separate program. A rural-specific care-planning approach that considers home delivery for clients in Modified Monash categories 3–7 could help address transport and access barriers.
 
 **GP referral support infrastructure.** A maintained, publicly accessible directory of home-visiting allied health providers, indexed by service area and condition type, would significantly reduce the referral opacity that currently prevents appropriate clinical pathways from functioning.
 
