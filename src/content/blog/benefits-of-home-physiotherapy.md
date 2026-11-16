@@ -173,6 +173,4 @@ Tousignant M, et al. Systematic review of the effectiveness of home physiotherap
 
 Buhagiar MA, et al. Effect of inpatient rehabilitation vs a monitored home-based program on mobility in patients with total knee arthroplasty. *JAMA*, 2017.
 
-Evidence should be interpreted in the context of the person's risk factors, preferences and current clinical guidelines. A home hazard assessment may be useful for selected people at increased risk of falls, particularly when delivered as part of an individualised falls-prevention approach.
-
 Langhorne P, et al. Early supported discharge services for inpatient stroke care. *Cochrane Database of Systematic Reviews*, 2017.
