@@ -804,8 +804,13 @@ export default function DiaryClient() {
     ? `${weekStart.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })} – ${addDays(weekStart, 6).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}`
     : activeDay.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
   function moveCalendarPeriod(direction: -1 | 1) {
-    if (calendarView === 'week') setWeekStart((w) => addDays(w, direction * 7))
-    else setActiveDay((d) => addDays(d, direction))
+    if (calendarView === 'week') {
+      setWeekStart((w) => addDays(w, direction * 7))
+    } else {
+      const nextDay = addDays(activeDay, direction)
+      setActiveDay(nextDay)
+      setWeekStart(startOfWeek(nextDay))
+    }
   }
 
   return (
