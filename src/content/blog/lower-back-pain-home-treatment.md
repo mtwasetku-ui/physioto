@@ -7,7 +7,7 @@ category: "Pain Management"
 featured: true
 image: /image/blog/lower-back-pain-home-treatment.jpg
 
-tags: ["lower back pain", "home treatment", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "chronic pain", "musculoskeletal"]
+tags: ["lower back pain", "home treatment", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "chronic pain", "musculoskeletal"]
 ---
 
 # LOWER BACK PAIN | HOME TREATMENT
@@ -16,15 +16,15 @@ tags: ["lower back pain", "home treatment", "physiotherapy North Tasmania", "in-
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: February 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 Lower back pain is the most common musculoskeletal complaint in Australia and one of the leading reasons older adults seek medical care. The good news: the vast majority of lower back pain episodes — even severe ones — are not caused by serious pathology and can be managed effectively at home with the right approach.
 
-The harder question is knowing which back pain can wait and which needs professional assessment sooner rather than later. This guide answers that question directly, gives you practical home management strategies, and explains when a home visit from a physiotherapist in North Tasmania is the right next step.
+The harder question is knowing which back pain can wait and which needs professional assessment sooner rather than later. This guide answers that question directly, gives you practical home management strategies, and explains when a home visit from a physiotherapist in Tasmania is the right next step.
 
 ### Who this guide is for
 
-This article is written for older Tasmanians experiencing lower back pain who want honest, evidence-based guidance on what to do at home — and when to seek professional help. It is particularly relevant for people in rural North Tasmania where getting to a clinic quickly is not always straightforward.
+This article is written for older Tasmanians experiencing lower back pain who want honest, evidence-based guidance on what to do at home — and when to seek professional help. It is particularly relevant for people in rural Tasmania where getting to a clinic quickly is not always straightforward.
 
 ---
 
@@ -140,7 +140,7 @@ Here is what a home physiotherapy assessment from Physio to Home provides that s
 - Pain education specific to your presentation
 - Communication with your GP and care team as needed
 
-For older adults in North Tasmania, a home physiotherapy visit also means your assessment happens in the environment where your pain most affects you — your specific chair, your bed height, your bathroom, your garden. The clinical picture is richer, and the advice is more relevant.
+For older adults in Tasmania, a home physiotherapy visit also means your assessment happens in the environment where your pain most affects you — your specific chair, your bed height, your bathroom, your garden. The clinical picture is richer, and the advice is more relevant.
 
 ---
 
@@ -166,9 +166,9 @@ Back pain in older adults often occurs against a backdrop of reduced general fit
 
 ---
 
-## Accessing Home Physiotherapy for Back Pain in North Tasmania
+## Accessing Home Physiotherapy for Back Pain in Tasmania
 
-If your back pain warrants professional assessment — and especially if it is recurring or has persisted beyond 2 weeks — home physiotherapy is accessible and often funded for eligible patients in North Tasmania.
+If your back pain warrants professional assessment — and especially if it is recurring or has persisted beyond 2 weeks — home physiotherapy is accessible and often funded for eligible patients in Tasmania.
 
 - **Medicare:** If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 
@@ -180,7 +180,7 @@ If your back pain warrants professional assessment — and especially if it is r
 
 ### Not sure if you are eligible for funded home physio?
 
-Contact Physio to Home before you book and we will check your eligibility at no cost. Many patients in rural North Tasmania are surprised to discover their visits are significantly subsidised or fully covered.
+Contact Physio to Home before you book and we will check your eligibility at no cost. Many patients in rural Tasmania are surprised to discover their visits are significantly subsidised or fully covered.
 
 ---
 
@@ -208,9 +208,9 @@ No. Chronic lower back pain — even of many years' duration — responds to phy
 
 ---
 
-## Back Pain in North Tasmania? Get Assessed at Home.
+## Back Pain in Tasmania? Get Assessed at Home.
 
-You should not have to choose between managing back pain alone and making a difficult trip to a clinic. Physio to Home brings AHPRA-registered physiotherapy assessment and treatment directly to your door across North Tasmania — including Launceston, George Town, Scottsdale, Ringarooma, and surrounding rural areas.
+You should not have to choose between managing back pain alone and making a difficult trip to a clinic. Physio to Home brings AHPRA-registered physiotherapy assessment and treatment directly to your door across Tasmania — including Launceston, George Town, Scottsdale, Ringarooma, and surrounding rural areas.
 
 Book a home physiotherapy assessment for your back pain today →
 
@@ -222,7 +222,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal physiotherapy, chronic pain management, falls prevention, and post-surgical rehabilitation — all delivered in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in musculoskeletal physiotherapy, chronic pain management, falls prevention, and post-surgical rehabilitation — all delivered in the home setting.
 
 ---
 
