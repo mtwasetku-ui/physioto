@@ -13,7 +13,7 @@ tags: ["Medicare physiotherapy", "GP Chronic Condition Management Plan", "physio
 
 If you have a chronic health condition that affects your mobility, strength, balance, pain or ability to manage everyday activities, you may be eligible for Medicare-subsidised physiotherapy as part of a GP Chronic Condition Management Plan.
 
-The Medicare system changed on 1 July 2025, so some information you may find online about "GP Management Plans", "Team Care Arrangements" and Medicare physiotherapy is now outdated.
+The Medicare system changed on 1 July 2025. New arrangements use a GP Chronic Condition Management Plan. Eligible GP Management Plans and Team Care Arrangements already in place before 1 July 2025 can continue to support relevant services until 30 June 2027.
 
 This guide explains how Medicare-subsidised physiotherapy works, who may be eligible, how the annual allied-health service limit works, what you may still have to pay, and how home physiotherapy may fit into your care.
 
