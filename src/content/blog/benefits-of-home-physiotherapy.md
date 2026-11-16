@@ -147,13 +147,13 @@ Initial assessments are typically 45–60 minutes. Follow-up sessions are genera
 
 ### Can home physiotherapy help with the same conditions as clinic physiotherapy?
 
-Yes — the full range of musculoskeletal, neurological, and aged care conditions treated in a clinic can be managed effectively at home. Some treatments require equipment or facilities that are not available in a home, such as hydrotherapy pools or specialised rehabilitation equipment. Your physiotherapist can discuss whether home-based treatment is suitable or whether another setting would be more appropriate.
+Many musculoskeletal, neurological and aged-care rehabilitation needs can be addressed during a home visit, but not every condition or treatment is suitable for home delivery. Some interventions require facilities or equipment that are not available in a home, such as hydrotherapy pools or specialised rehabilitation equipment. Your physiotherapist can assess your needs and discuss the most appropriate setting.
 
 ---
 
 ## Book a Home Visit
 
-Same-week appointments are available across Tasmania. No GP referral required.
+Ask us about current appointment availability across Tasmania. A GP referral is not usually required for private physiotherapy appointments.
 
 **Call:** 1300 433 233
 **Email:** info@physiotohome.com
