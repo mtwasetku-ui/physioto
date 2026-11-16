@@ -6,52 +6,47 @@ const BASE_URL = 'https://www.physiotohome.com'
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts()
 
+  // Omit lastModified until the content pipeline records genuine update dates.
+  // Publication dates are not reliable substitutes for last-modified dates.
+
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
-      lastModified: new Date('2026-07-05'),
       changeFrequency: 'monthly',
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/services`,
-      lastModified: new Date('2026-07-05'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/booking`,
-      lastModified: new Date('2026-03-09'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/contact`,
-      lastModified: new Date('2026-03-09'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/team`,
-      lastModified: new Date('2026-03-09'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/blog`,
-      lastModified: new Date('2026-03-09'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/privacy-policy`,
-      lastModified: new Date('2026-03-08'),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${BASE_URL}/terms-of-service`,
-      lastModified: new Date('2026-03-08'),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
@@ -90,7 +85,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((post) => post.date && !isNaN(new Date(post.date).getTime()))
     .map((post) => ({
       url: `${BASE_URL}/blog/${post.slug}`,
-      lastModified: new Date(post.date),
       changeFrequency: 'monthly' as const,
       priority: getBlogPriority(post.slug),
     }))
