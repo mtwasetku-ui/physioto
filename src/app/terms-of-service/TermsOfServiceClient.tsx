@@ -1,6 +1,6 @@
 "use client";
 
-const LAST_UPDATED = "8 March 2026";
+const LAST_UPDATED = "16 November 2026";
 const COMPANY = "Physio to Home";
 const EMAIL = "info@physiotohome.com";
 const PHONE = "1300 433 233";
