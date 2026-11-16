@@ -147,7 +147,7 @@ Both. Physiotherapy is most effective when started before a fall occurs — it c
 
 ### Is home physiotherapy covered by Medicare or aged care funding in Tasmania?
 
-It can be. If you have a GP Management Plan (also called a Team Care Arrangement), you may be eligible for up to five Medicare-subsidised physiotherapy sessions per year. If you receive Support at Home, physiotherapy may be funded as a clinical support where it is included in your approved services. CHSP remains a separate pathway for eligible older people. NDIS participants can also access home physiotherapy under their plan. We are happy to help you navigate your funding options — contact us for a no-obligation chat.
+It can be. If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027. If you receive Support at Home, physiotherapy may be funded as a clinical support where it is included in your approved services. CHSP remains a separate pathway for eligible older people. NDIS participants can also access home physiotherapy under their plan. We are happy to help you navigate your funding options — contact us for a no-obligation chat.
 
 ### How long does it take to see results from a falls prevention programme?
 
