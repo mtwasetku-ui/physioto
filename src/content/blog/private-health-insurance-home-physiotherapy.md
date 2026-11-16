@@ -7,16 +7,16 @@ category: "Funding & Access"
 featured: false
 image: /image/blog/private-health-insurance-home-physiotherapy.jpg
 
-tags: ["private health insurance", "extras cover", "physiotherapy rebate", "funded physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "health insurance physio"]
+tags: ["private health insurance", "extras cover", "physiotherapy rebate", "funded physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "health insurance physio"]
 ---
 
 # PRIVATE HEALTH INSURANCE | HOME PHYSIOTHERAPY
 
-## Using Private Health Insurance for Home Physiotherapy in North Tasmania
+## Using Private Health Insurance for Home Physiotherapy in Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 If you have private health insurance with extras cover, there is a very good chance it includes physiotherapy — and in most cases, that cover extends to home visits as well as clinic-based treatment. Many Australians with extras policies do not claim the physiotherapy benefits they are entitled to, simply because they are not sure what is covered or how to use it.
 
@@ -24,7 +24,7 @@ This guide explains how private health extras cover works for physiotherapy, wha
 
 ### Who this guide is for
 
-This article is for people in North Tasmania who have private health insurance and are wondering whether it covers home physiotherapy visits from Physio to Home. It is also useful for anyone trying to understand how to layer different funding sources together.
+This article is for people in Tasmania who have private health insurance and are wondering whether it covers home physiotherapy visits from Physio to Home. It is also useful for anyone trying to understand how to layer different funding sources together.
 
 ---
 
@@ -147,7 +147,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in home-based physiotherapy for older adults, post-surgical rehabilitation, and chronic pain management across North Tasmania.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in home-based physiotherapy for older adults, post-surgical rehabilitation, and chronic pain management across Tasmania.
 
 ---
 
