@@ -57,6 +57,19 @@ const getServicePhoto = (name: string) => {
   return servicePhotos['default']
 }
 
+const getServiceHref = (name: string) => {
+  const lower = name.toLowerCase()
+
+  if (lower.includes('back') || lower.includes('neck') || lower.includes('joint') || lower.includes('musculoskeletal')) return '/services#back-neck-joint-pain'
+  if (lower.includes('post-surgery') || lower.includes('surgery') || lower.includes('orthopaedic')) return '/services#post-surgery'
+  if (lower.includes('fall') || lower.includes('balance')) return '/services#falls-prevention'
+  if (lower.includes('neurological') || lower.includes('stroke') || lower.includes('parkinson')) return '/services#neurological'
+  if (lower.includes('aged')) return '/services#aged-care'
+  if (lower.includes('chronic') || lower.includes('persistent pain')) return '/services#chronic-pain'
+
+  return '/services'
+}
+
 const fallbackServices = [
   {
     id: '1',
@@ -688,7 +701,7 @@ export default function HomeClient() {
               (s, i) => (
                 <Link
                   key={s.id}
-                  href="/services"
+                  href={getServiceHref(s.name)}
                   className={`fade-up d${Math.min(i + 1, 5)} ${
                     vis('services') ? 'in' : ''
                   } card-lift group relative block h-[420px] overflow-hidden rounded-2xl`}
