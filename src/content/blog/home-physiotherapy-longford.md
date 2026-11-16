@@ -58,7 +58,7 @@ Alongside Longford itself, our team regularly visits Cressy, Perth, Evandale, Ca
 
 **Medicare GP Management Plan** — up to five partially subsidised visits per year for a chronic condition.
 
-**My Aged Care — Home Care Package or CHSP** — physiotherapy is covered under every package level; we can coordinate directly with your care coordinator.
+**My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we can discuss the relevant funding pathway with your coordinator.
 
 **NDIS** — funded under Improved Daily Living or Improved Health and Wellbeing categories.
 
