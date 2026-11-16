@@ -24,8 +24,8 @@ const nav: { label: Section; icon: typeof CalendarDays }[] = [
 
 export default function PortalDemo() {
   const [section, setSection] = useState<Section>('Diary')
-  const [day, setDay] = useState(16)
-  const [demoAppointments, setDemoAppointments] = useState(initialAppointments.map(appointment => ({ ...appointment, day: 16 })))
+  const [weekOffset, setWeekOffset] = useState(0)
+  const [demoAppointments, setDemoAppointments] = useState(initialAppointments.map(appointment => ({ ...appointment, day: 0 })))
   const [draggedAppointment, setDraggedAppointment] = useState<number | null>(null)
   const [search, setSearch] = useState('')
   const [selected, setSelected] = useState<(typeof patients)[number] | null>(null)
@@ -35,6 +35,7 @@ export default function PortalDemo() {
   const [toast, setToast] = useState('')
   const filtered = useMemo(() => patients.filter(p => (p.name + p.suburb + p.focus).toLowerCase().includes(search.toLowerCase())), [search])
   const notify = (message: string) => { setToast(message); window.setTimeout(() => setToast(''), 2400) }
+  const weekStart = new Date(2026, 10, 16 + weekOffset * 7)
 
   return (
     <div className="demo-shell">
@@ -55,7 +56,7 @@ export default function PortalDemo() {
           <AnimatePresence mode="wait">
             <motion.div key={section} className="demo-motion-in" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -7 }} transition={{ duration: .22 }}>
               {section === 'Diary' && <>
-                <div className="demo-heading-row"><div><div className="demo-eyebrow">Monday, 16 November 2026</div><h1 className="demo-heading">Your day, in focus.</h1><p className="demo-sub">Here’s what your schedule looks like today.</p></div><button className="demo-btn lime" onClick={() => setShowBooking(true)}><Plus size={16} className="inline mr-2"/>New appointment</button></div>
+                <div className="demo-heading-row"><div><div className="demo-eyebrow">Your weekly schedule</div><h1 className="demo-heading">Your week, in focus.</h1><p className="demo-sub">Plan and manage your visits across the week.</p></div><button className="demo-btn lime" onClick={() => setShowBooking(true)}><Plus size={16} className="inline mr-2"/>New appointment</button></div>
                 <div className="demo-stats">
                   <Stat label="Today's visits" value="4" note="Across 3 locations"/>
                   <Stat label="Travel time" value="1h 15m" note="Planned between visits"/>
@@ -63,8 +64,8 @@ export default function PortalDemo() {
                   <Stat label="Next appointment" value="9:00 am" note="Margaret · Devonport"/>
                 </div>
                 <div className="demo-grid">
-                  <section className="demo-panel"><div className="demo-panel-head"><div><div className="demo-panel-title">Your diary</div><div className="demo-small">Monday 16 – Sunday 22 November · Tasmania time</div></div><div className="flex items-center gap-2"><button className="demo-btn light !px-3 !py-2" aria-label="Previous day" onClick={() => setDay(d => Math.max(16,d-1))}><ChevronLeft size={16}/></button><button className="demo-btn light !px-3 !py-2" aria-label="Next day" onClick={() => setDay(d => Math.min(22,d+1))}><ChevronRight size={16}/></button></div></div>
-                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-7">{['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((weekday,index)=><div key={weekday} onDragOver={e=>e.preventDefault()} onDrop={e=>{e.preventDefault();if(draggedAppointment!==null){setDemoAppointments(items=>items.map((item,i)=>i===draggedAppointment?{...item,day:16+index}:item));setDraggedAppointment(null);notify(`Moved sample visit to ${weekday}.`)}}} className="min-h-40 rounded-xl border border-[#e6e8df] bg-[#fbfcf8] p-2 transition-colors hover:border-[#9dbd9f]"><button className="mb-2 flex w-full items-center justify-between text-xs font-extrabold" onClick={()=>{setDay(16+index);setCalendarView('day')}}><span>{weekday}</span><span className="text-[#75816f]">{16+index} Nov</span></button>{demoAppointments.map((a,i)=>a.day===16+index?<div key={a.time+a.name} draggable onDragStart={()=>setDraggedAppointment(i)} onDragEnd={()=>setDraggedAppointment(null)} onClick={()=>a.name!=='Travel time'&&setSelected(patients.find(p=>p.name===a.name)??null)} className="mb-2 cursor-grab rounded-lg border border-[#e6e8df] bg-white p-2 text-left shadow-sm active:cursor-grabbing"><div className="text-[10px] font-extrabold text-[#55733e]">{a.time}</div><div className="mt-1 text-[11px] font-bold leading-tight">{a.name}</div><div className="mt-1 text-[10px] text-[#738078]">{a.type}</div></div>:null)}<div className="mt-2 text-center text-[10px] text-[#9aa49a]">Drop visit here</div></div>)}</div>
+                  <section className="demo-panel"><div className="demo-panel-head"><div><div className="demo-panel-title">Your diary</div><div className="demo-small">Week of {weekStart.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })} · Tasmania time</div></div><div className="flex items-center gap-2"><button className="demo-btn light !px-3 !py-2" aria-label="Previous week" onClick={() => setWeekOffset(offset => offset - 1)}><ChevronLeft size={16}/></button><button className="demo-btn light !px-3 !py-2" aria-label="Next week" onClick={() => setWeekOffset(offset => offset + 1)}><ChevronRight size={16}/></button></div></div>
+                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-7">{['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((weekday,index)=><div key={weekday} onDragOver={e=>e.preventDefault()} onDrop={e=>{e.preventDefault();if(draggedAppointment!==null){setDemoAppointments(items=>items.map((item,i)=>i===draggedAppointment?{...item,day:index}:item));setDraggedAppointment(null);notify(`Moved sample visit to ${weekday}.`)}}} className="min-h-40 rounded-xl border border-[#e6e8df] bg-[#fbfcf8] p-2 transition-colors hover:border-[#9dbd9f]"><button className="mb-2 flex w-full items-center justify-between text-xs font-extrabold" onClick={()=>{}}><span>{weekday}</span><span className="text-[#75816f]">{new Date(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate()+index).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })}</span></button>{demoAppointments.map((a,i)=>a.day===index?<div key={a.time+a.name} draggable onDragStart={()=>setDraggedAppointment(i)} onDragEnd={()=>setDraggedAppointment(null)} onClick={()=>a.name!=='Travel time'&&setSelected(patients.find(p=>p.name===a.name)??null)} className="mb-2 cursor-grab rounded-lg border border-[#e6e8df] bg-white p-2 text-left shadow-sm active:cursor-grabbing"><div className="text-[10px] font-extrabold text-[#55733e]">{a.time}</div><div className="mt-1 text-[11px] font-bold leading-tight">{a.name}</div><div className="mt-1 text-[10px] text-[#738078]">{a.type}</div></div>:null)}<div className="mt-2 text-center text-[10px] text-[#9aa49a]">Drop visit here</div></div>)}</div>
                   </section>
                   <section className="demo-panel"><div className="demo-panel-head"><div><div className="demo-panel-title">Quick actions</div><div className="demo-small">Common tasks, one tap away</div></div><Activity size={19}/></div>
                     <div className="demo-list">
