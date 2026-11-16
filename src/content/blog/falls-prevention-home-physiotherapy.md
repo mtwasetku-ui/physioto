@@ -6,7 +6,7 @@ date: "2026-02-25"
 category: "Falls Prevention"
 featured: true
 image: /image/blog/falls-prevention-home-physiotherapy.jpg
-tags: ["falls prevention", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "balance", "aged care"]
+tags: ["falls prevention", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "balance", "aged care"]
 ---
 
 # FALLS PREVENTION | HOME PHYSIOTHERAPY
@@ -15,15 +15,15 @@ tags: ["falls prevention", "home physiotherapy", "physiotherapy North Tasmania",
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: February 2026
+Physio to Home | Last reviewed: 16 November 2026
 
-Falls are the leading cause of injury-related hospitalisation for older Australians — and the majority happen at home. The good news is that most falls are preventable with the right physiotherapy assessment, targeted exercises, and simple home modifications. If you or a loved one lives in a rural or regional area of North Tasmania and finds it difficult to get to a clinic, home-based physiotherapy may be the safest and most effective option available.
+Falls are the leading cause of injury-related hospitalisation for older Australians — and the majority happen at home. The good news is that most falls are preventable with the right physiotherapy assessment, targeted exercises, and simple home modifications. If you or a loved one lives in a rural or regional area of Tasmania and finds it difficult to get to a clinic, home-based physiotherapy may be the safest and most effective option available.
 
 This guide explains why falls happen, what the research says about prevention, and what you can realistically do today to reduce your risk — without needing to leave home.
 
 ### Who this guide is for
 
-This article is written for older Tasmanians aged 65 and over — and their families and carers — who are concerned about fall risk at home. It is particularly relevant for those living in rural and remote areas of North Tasmania where access to outpatient physiotherapy clinics is limited.
+This article is written for older Tasmanians aged 65 and over — and their families and carers — who are concerned about fall risk at home. It is particularly relevant for those living in rural and remote areas of Tasmania where access to outpatient physiotherapy clinics is limited.
 
 ---
 
@@ -63,11 +63,11 @@ The Australian Physiotherapy Association (APA) recommends that older adults at r
 
 - A home hazard assessment conducted in the actual environment where falls are most likely to occur
 
-Critically, the evidence shows that home-based programmes are just as effective as clinic-based ones — and for people in rural North Tasmania, they are often more practical and consistent.
+Critically, the evidence shows that home-based programmes are just as effective as clinic-based ones — and for people in rural Tasmania, they are often more practical and consistent.
 
 ---
 
-## The North Tasmania Context: Why Home Physio Matters Here
+## The Tasmania Context: Why Home Physio Matters Here
 
 For older residents in areas like George Town, Scottsdale, Ringarooma, or along the Tamar Valley, getting to a physiotherapy clinic in Launceston isn't always straightforward. Transport dependency, long distances, and weather conditions in winter can make regular clinic attendance unrealistic.
 
@@ -139,7 +139,7 @@ One fall significantly increases the risk of another. Early intervention after a
 
 ### How do I know if I am at risk of falling?
 
-Common signs include feeling unsteady on your feet, needing to hold onto walls or furniture when walking, having had a near-miss stumble, or feeling dizzy when you stand up quickly. A physiotherapy falls risk assessment is the most reliable way to identify your specific risks. At Physio to Home, we conduct these assessments in your own home across North Tasmania.
+Common signs include feeling unsteady on your feet, needing to hold onto walls or furniture when walking, having had a near-miss stumble, or feeling dizzy when you stand up quickly. A physiotherapy falls risk assessment is the most reliable way to identify your specific risks. At Physio to Home, we conduct these assessments in your own home across Tasmania.
 
 ### Can physiotherapy actually prevent falls, or just help after one has happened?
 
@@ -167,7 +167,7 @@ Use our free Falls Risk Questionnaire to assess your risk level before booking �
 
 ## Ready to Reduce Your Fall Risk at Home?
 
-If you or a family member in North Tasmania is concerned about falls, we are here to help. Physio to Home provides AHPRA-registered physiotherapy in your own home — no travel required. We work with Medicare, My Aged Care, NDIS, and private clients.
+If you or a family member in Tasmania is concerned about falls, we are here to help. Physio to Home provides AHPRA-registered physiotherapy in your own home — no travel required. We work with Medicare, My Aged Care, NDIS, and private clients.
 
 Contact us to book a falls risk assessment in your home →
 
@@ -179,7 +179,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and post-surgical rehabilitation in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in falls prevention, aged care physiotherapy, and post-surgical rehabilitation in the home setting.
 
 ---
 
