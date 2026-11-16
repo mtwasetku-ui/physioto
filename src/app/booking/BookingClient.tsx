@@ -39,9 +39,8 @@ const SERVICES = [
 
 const TIME_OPTIONS = [
   'No preference',
-  'Morning (8am – 12pm)',
-  'Afternoon (12pm – 4pm)',
-  'Late Afternoon (4pm – 6pm)',
+  'Morning (9am – 12pm)',
+  'Afternoon (12pm – 5pm)',
 ]
 
 const inputCx =
@@ -223,7 +222,7 @@ export default function BookingClient() {
           info@physiotohome.com
         </a>
       ),
-      sub: "We'll respond within 24 hours",
+      sub: "We'll respond within one business day",
     },
     {
       Icon: MapPin,
