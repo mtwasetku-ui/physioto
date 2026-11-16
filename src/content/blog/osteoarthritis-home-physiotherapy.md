@@ -7,7 +7,7 @@ category: "Conditions & Rehab"
 featured: false
 image: /image/blog/osteoarthritis-home-physiotherapy.jpg
 
-tags: ["osteoarthritis", "arthritis", "chronic pain", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "pain management", "musculoskeletal"]
+tags: ["osteoarthritis", "arthritis", "chronic pain", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "pain management", "musculoskeletal"]
 ---
 
 # Osteoarthritis (OA)
@@ -16,7 +16,7 @@ tags: ["osteoarthritis", "arthritis", "chronic pain", "physiotherapy North Tasma
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: February 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 Part of the Physio to Home Chronic Pain Series
 
@@ -124,13 +124,13 @@ RA management requires closer coordination with your rheumatologist, as the leve
 
 ---
 
-## Accessing Arthritis Physiotherapy in Rural North Tasmania
+## Accessing Arthritis Physiotherapy in Rural Tasmania
 
 For many older Tasmanians living in areas like Scottsdale, Ringarooma, George Town, or the Tamar Valley, accessing regular physiotherapy for arthritis management is genuinely difficult. Long distances, transport dependency, and limited appointment availability in regional areas mean that many people with arthritis simply go without the evidence-based care that would meaningfully improve their quality of life.
 
 Mobile physiotherapy addresses this directly. A Physio to Home visit brings all assessment and treatment capability to your home — no travel, no waiting rooms, and a programme designed around your actual home environment. For arthritis patients, this has a specific clinical advantage: exercises are designed using your furniture, your garden, and your specific daily movements. The programme is immediately applicable to your real life.
 
-### Funding options for arthritis physiotherapy in North Tasmania
+### Funding options for arthritis physiotherapy in Tasmania
 
 **Medicare:** If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 
@@ -190,11 +190,11 @@ Yes. Physiotherapy is effective for arthritis affecting any joint, including the
 
 ---
 
-## Managing Arthritis in North Tasmania? We Come to You.
+## Managing Arthritis in Tasmania? We Come to You.
 
-You do not have to manage arthritis pain alone or accept it as inevitable. Physio to Home provides AHPRA-registered, evidence-based arthritis physiotherapy across North Tasmania — in your own home, funded through Medicare, My Aged Care, NDIS, and private health insurance.
+You do not have to manage arthritis pain alone or accept it as inevitable. Physio to Home provides AHPRA-registered, evidence-based arthritis physiotherapy across Tasmania — in your own home, funded through Medicare, My Aged Care, NDIS, and private health insurance.
 
-Book a home arthritis assessment today — we cover all of North Tasmania →
+Book a home arthritis assessment today — we cover all of Tasmania →
 
 ---
 
@@ -202,7 +202,7 @@ Book a home arthritis assessment today — we cover all of North Tasmania →
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in chronic pain management, arthritis rehabilitation, falls prevention, and post-surgical care — all delivered in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in chronic pain management, arthritis rehabilitation, falls prevention, and post-surgical care — all delivered in the home setting.
 
 ---
 
