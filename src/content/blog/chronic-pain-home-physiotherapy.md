@@ -6,7 +6,7 @@ date: "2026-02-27"
 category: "Pain Management"
 featured: true
 image: /image/blog/chronic-pain-home-physiotherapy.jpg
-tags: ["chronic pain", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "pain management", "musculoskeletal"]
+tags: ["chronic pain", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "pain management", "musculoskeletal"]
 ---
 
 # CHRONIC PAIN | HOME PHYSIOTHERAPY
@@ -15,15 +15,15 @@ tags: ["chronic pain", "home physiotherapy", "physiotherapy North Tasmania", "in
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: February 2026
+Physio to Home | Last reviewed: 16 November 2026
 
-Chronic pain affects more than 3.6 million Australians and is one of the most common reasons older adults seek physiotherapy. If you live in a rural or regional area of North Tasmania and have been managing ongoing pain — whether from arthritis, back problems, or a previous injury — getting consistent, quality physiotherapy can feel out of reach. A home visit changes that.
+Chronic pain affects more than 3.6 million Australians and is one of the most common reasons older adults seek physiotherapy. If you live in a rural or regional area of Tasmania and have been managing ongoing pain — whether from arthritis, back problems, or a previous injury — getting consistent, quality physiotherapy can feel out of reach. A home visit changes that.
 
 This article explains what chronic pain actually is, how physiotherapy helps manage it, and exactly what happens during a home physiotherapy visit — so you know what to expect before we even knock on your door.
 
 ### Who this guide is for
 
-This article is for older Tasmanians living with persistent pain who want to understand how home physiotherapy works before booking their first visit. It is particularly relevant for those in rural North Tasmania — including areas around Launceston, George Town, Scottsdale, and the Tamar Valley — where regular clinic attendance is not always practical.
+This article is for older Tasmanians living with persistent pain who want to understand how home physiotherapy works before booking their first visit. It is particularly relevant for those in rural Tasmania — including areas around Launceston, George Town, Scottsdale, and the Tamar Valley — where regular clinic attendance is not always practical.
 
 ---
 
@@ -121,7 +121,7 @@ You do not need to do much — the whole point of a home visit is that it meets 
 
 ---
 
-## Accessing Home Physiotherapy in North Tasmania: Your Funding Options
+## Accessing Home Physiotherapy in Tasmania: Your Funding Options
 
 One of the most common questions we receive is about cost. The good news is that for many older Tasmanians, home physiotherapy is partially or fully funded through existing government programmes.
 
@@ -143,7 +143,7 @@ Most extras policies cover physiotherapy. Home visits are covered by the majorit
 
 ### Not sure which funding applies to you?
 
-We are happy to help you work it out before you book. Contact Physio to Home and we will check your eligibility at no cost and no obligation. Many of our North Tasmania patients are surprised to find their visits are more affordable than they expected.
+We are happy to help you work it out before you book. Contact Physio to Home and we will check your eligibility at no cost and no obligation. Many of our Tasmania patients are surprised to find their visits are more affordable than they expected.
 
 ---
 
@@ -173,7 +173,7 @@ Absolutely. Osteoarthritis and osteoporosis are among the most common conditions
 
 ## Ready to Take the First Step Toward Better Pain Management?
 
-Living with chronic pain in rural North Tasmania does not mean living without proper physiotherapy care. Physio to Home brings AHPRA-registered, evidence-based treatment directly to your door — whether you are in Launceston, George Town, Scottsdale, or anywhere across the North Tasmania region.
+Living with chronic pain in rural Tasmania does not mean living without proper physiotherapy care. Physio to Home brings AHPRA-registered, evidence-based treatment directly to your door — whether you are in Launceston, George Town, Scottsdale, or anywhere across the Tasmania region.
 
 Book your first home visit today — and find out what life with better pain management feels like →
 
@@ -185,7 +185,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in chronic pain management, falls prevention, and post-surgical rehabilitation delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in chronic pain management, falls prevention, and post-surgical rehabilitation delivered entirely in the home setting.
 
 ---
 
