@@ -11,7 +11,7 @@ const patients = [
   { name: 'Elizabeth Martin', initials: 'EM', suburb: 'Ulverstone', focus: 'Chronic lower back pain', next: '1:00 pm' },
   { name: 'James Anderson', initials: 'JA', suburb: 'Hobart', focus: 'Neurological rehabilitation', next: '2:30 pm' },
 ]
-const appointments = [
+const initialAppointments = [
   { time: '9:00', name: 'Margaret Wilson', detail: 'Home visit · Devonport · Knee rehabilitation', type: 'Follow-up', tone: '' },
   { time: '10:30', name: 'Robert Thompson', detail: 'Home visit · Burnie · Balance assessment', type: 'Initial', tone: 'blue' },
   { time: '12:00', name: 'Travel time', detail: 'Burnie → Ulverstone', type: 'Travel', tone: 'orange' },
@@ -25,6 +25,9 @@ const nav: { label: Section; icon: typeof CalendarDays }[] = [
 export default function PortalDemo() {
   const [section, setSection] = useState<Section>('Diary')
   const [day, setDay] = useState(16)
+  const [calendarView, setCalendarView] = useState<'day' | 'week'>('day')
+  const [demoAppointments, setDemoAppointments] = useState(initialAppointments.map((appointment, index) => ({ ...appointment, day: index === 0 ? 16 : index === 1 ? 16 : index === 2 ? 16 : index === 3 ? 16 : 16 })))
+  const [draggedAppointment, setDraggedAppointment] = useState<number | null>(null)
   const [search, setSearch] = useState('')
   const [selected, setSelected] = useState<(typeof patients)[number] | null>(null)
   const [showNote, setShowNote] = useState(false)
@@ -61,11 +64,13 @@ export default function PortalDemo() {
                   <Stat label="Next appointment" value="9:00 am" note="Margaret · Devonport"/>
                 </div>
                 <div className="demo-grid">
-                  <section className="demo-panel"><div className="demo-panel-head"><div><div className="demo-panel-title">Today's schedule</div><div className="demo-small">Monday 16 November · Tasmania time</div></div><div className="flex gap-1"><button className="demo-btn light !px-3 !py-2" aria-label="Previous day" onClick={() => setDay(d => Math.max(14,d-1))}><ChevronLeft size={16}/></button><button className="demo-btn light !px-3 !py-2" aria-label="Next day" onClick={() => setDay(d => Math.min(20,d+1))}><ChevronRight size={16}/></button></div></div>
-                    <div className="demo-week">{['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((d,i)=><button key={d} className={'demo-day '+(day===16+i-0?'active':'')} onClick={() => setDay(16+i)}>{d}<strong>{16+i}</strong></button>)}</div>
-                    {appointments.map((a,i)=><button key={a.time} onClick={() => a.name !== 'Travel time' && setSelected(patients.find(p=>p.name===a.name) ?? null)} className="demo-appointment w-full text-left hover:bg-[#f8f9f2]">
+                  <section className="demo-panel"><div className="demo-panel-head"><div><div className="demo-panel-title">Your diary</div><div className="demo-small">Monday 16 – Sunday 22 November · Tasmania time</div></div><div className="flex items-center gap-2"><div className="inline-flex rounded-lg border border-[#e5e8df] bg-[#f5f6f0] p-1" role="group" aria-label="Diary view"><button className={`rounded-md px-3 py-1.5 text-xs font-bold transition ${calendarView === 'day' ? 'bg-white text-[#102d23] shadow-sm' : 'text-[#738078]'}`} aria-pressed={calendarView === 'day'} onClick={() => setCalendarView('day')}>Day</button><button className={`rounded-md px-3 py-1.5 text-xs font-bold transition ${calendarView === 'week' ? 'bg-white text-[#102d23] shadow-sm' : 'text-[#738078]'}`} aria-pressed={calendarView === 'week'} onClick={() => setCalendarView('week')}>Week</button></div><button className="demo-btn light !px-3 !py-2" aria-label="Previous day" onClick={() => setDay(d => Math.max(16,d-1))}><ChevronLeft size={16}/></button><button className="demo-btn light !px-3 !py-2" aria-label="Next day" onClick={() => setDay(d => Math.min(22,d+1))}><ChevronRight size={16}/></button></div></div>
+                    {calendarView === 'day' ? <>
+                    <div className="demo-week">{['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((d,i)=><button key={d} className={'demo-day '+(day===16+i?'active':'')} onClick={() => setDay(16+i)}>{d}<strong>{16+i}</strong></button>)}</div>
+                    {demoAppointments.filter(a => a.day === day).map((a,i)=><button key={a.time+a.name} onClick={() => a.name !== 'Travel time' && setSelected(patients.find(p=>p.name===a.name) ?? null)} className="demo-appointment w-full text-left hover:bg-[#f8f9f2]">
                       <span className="demo-time">{a.time}</span><span className="demo-time-line" style={{background:a.tone==='orange'?'#e8a15e':a.tone==='blue'?'#83a9c8':'#82b88f'}}/><span><span className="demo-appt-name block">{a.name}</span><span className="demo-appt-meta block">{a.detail}</span></span><span className={'demo-tag '+a.tone}>{a.type}</span>
                     </button>)}
+                    </> : <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-7">{['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((weekday,index)=><div key={weekday} onDragOver={e=>e.preventDefault()} onDrop={e=>{e.preventDefault();if(draggedAppointment!==null){setDemoAppointments(items=>items.map((item,i)=>i===draggedAppointment?{...item,day:16+index}:item));setDraggedAppointment(null);notify(`Moved sample visit to ${weekday}.`)}}} className="min-h-40 rounded-xl border border-[#e6e8df] bg-[#fbfcf8] p-2 transition-colors hover:border-[#9dbd9f]"><button className="mb-2 flex w-full items-center justify-between text-xs font-extrabold" onClick={()=>{setDay(16+index);setCalendarView('day')}}><span>{weekday}</span><span className="text-[#75816f]">{16+index} Nov</span></button>{demoAppointments.map((a,i)=>a.day===16+index?<div key={a.time+a.name} draggable onDragStart={()=>setDraggedAppointment(i)} onDragEnd={()=>setDraggedAppointment(null)} onClick={()=>a.name!=='Travel time'&&setSelected(patients.find(p=>p.name===a.name)??null)} className="mb-2 cursor-grab rounded-lg border border-[#e6e8df] bg-white p-2 text-left shadow-sm active:cursor-grabbing"><div className="text-[10px] font-extrabold text-[#55733e]">{a.time}</div><div className="mt-1 text-[11px] font-bold leading-tight">{a.name}</div><div className="mt-1 text-[10px] text-[#738078]">{a.type}</div></div>:null)}<div className="mt-2 text-center text-[10px] text-[#9aa49a]">Drop visit here</div></div>)}</div>}
                   </section>
                   <section className="demo-panel"><div className="demo-panel-head"><div><div className="demo-panel-title">Quick actions</div><div className="demo-small">Common tasks, one tap away</div></div><Activity size={19}/></div>
                     <div className="demo-list">
