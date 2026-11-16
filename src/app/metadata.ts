@@ -7,7 +7,7 @@ const BASE_URL = 'https://www.physiotohome.com'
 /* -------------------------------------------------------------------------- */
 
 export const homeMetadata: Metadata = {
-  title: 'Home Visit Physiotherapy Tasmania | Physio To Home',
+  title: 'Home Visit Physiotherapy Tasmania | Physio to Home',
 
   description:
     'Physio to Home provides home visit physiotherapy across Tasmania. AHPRA-registered physios support older adults, private clients and NDIS participants with pain, mobility and rehabilitation.',
