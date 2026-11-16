@@ -178,7 +178,7 @@ Carer involvement in rehabilitation after hip fracture is associated with better
 
 ## Funding Hip Fracture Rehabilitation in North Tasmania
 
-**My Aged Care — Home Care Package** — Physiotherapy is a covered allied health service under all package levels. Hip fracture rehabilitation is a high-priority clinical use of aged care funding. If the patient does not yet have a package, an urgent review can be requested given the changed care needs following fracture.
+**My Aged Care — Support at Home or CHSP** — Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where included in the person's approved services and plan. CHSP remains a separate pathway for eligible older people. A reassessment may be appropriate after a hip fracture if care needs have changed.
 
 **Medicare GP Management Plan** — Up to five subsidised physiotherapy sessions per year for patients with a chronic condition. Hip fracture and its consequences qualify. Speak to the patient's GP about establishing a plan promptly after discharge.
 

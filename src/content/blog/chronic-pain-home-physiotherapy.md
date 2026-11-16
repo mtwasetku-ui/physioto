@@ -101,7 +101,7 @@ You will leave the first visit with a small, manageable set of exercises tailore
 
 **6 A plan for ongoing care**
 
-Micheal will recommend a treatment frequency based on your needs and discuss funding options — including Medicare GP Management Plans, My Aged Care Home Care Packages, and NDIS plans. You are never obligated to commit to anything on the day.
+Micheal will recommend a treatment frequency based on your needs and discuss funding options — including Medicare, My Aged Care (Support at Home or CHSP, where eligible), NDIS plans, and private funding. You are never obligated to commit to anything on the day.
 
 ---
 
@@ -129,9 +129,9 @@ One of the most common questions we receive is about cost. The good news is that
 
 If your GP believes physiotherapy is clinically necessary for your chronic pain, they can write a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year. A small gap payment may apply.
 
-### My Aged Care — Home Care Package
+### My Aged Care — Support at Home and CHSP
 
-If you are aged 65 or over and receiving a Home Care Package through My Aged Care, physiotherapy is a covered allied health service. Depending on your package level (Level 1–4), multiple sessions per month may be funded. Contact your care coordinator to discuss adding physiotherapy to your care plan.
+Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where it is included in your approved services and plan. CHSP continues separately for eligible older people. Contact your provider or care coordinator to discuss your current options.
 
 ### NDIS
 

@@ -129,11 +129,17 @@ function linkifyText(
     for (const kw of keywords) {
       if (used.has(kw)) continue
 
-      const idx = remaining
-        .toLowerCase()
-        .indexOf(kw.toLowerCase())
+      // Match complete words/phrases only. This prevents short keywords
+      // such as "DVA" from linking inside unrelated words like "advantage".
+      const escapedKeyword = kw.split('').map((char) => '\\^$.*+?()[]{}|'.includes(char) ? '\\' + char : char).join('')
+      const boundaryPattern = new RegExp(
+        `(?<![\\p{L}\\p{N}])${escapedKeyword}(?![\\p{L}\\p{N}])`,
+        'iu'
+      )
+      const match = boundaryPattern.exec(remaining)
 
-      if (idx === -1) continue
+      if (!match) continue
+      const idx = match.index
 
       if (!earliest || idx < earliest.index) {
         earliest = {

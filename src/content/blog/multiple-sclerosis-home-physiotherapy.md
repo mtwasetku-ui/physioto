@@ -130,7 +130,7 @@ Yes. Physiotherapy is a recommended component of MS management across all guidel
 
 **NDIS** — MS is a common NDIS primary disability. Physiotherapy is funded under Improved Daily Living and Improved Health and Wellbeing. Physio to Home is completing NDIS provider registration.
 
-**My Aged Care** — For people with MS who are 65+, Home Care Packages cover physiotherapy.
+**My Aged Care** — For eligible older people, Support at Home may fund physiotherapy as a clinical support where it is included in the approved services. CHSP remains a separate pathway.
 
 **Private health insurance** — Most extras policies cover physiotherapy including home visits.
 

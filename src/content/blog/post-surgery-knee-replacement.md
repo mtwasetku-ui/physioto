@@ -223,7 +223,7 @@ For a right knee replacement, most surgeons clear patients to drive at 6–8 wee
 
 ### Is home physiotherapy after knee replacement covered by Medicare or My Aged Care?
 
-Yes, in most cases. If your GP sets up a GP Management Plan (also called a Team Care Arrangement), you are entitled to up to five Medicare-rebated physiotherapy sessions per year. If you receive a Home Care Package through My Aged Care, physiotherapy is a covered service. Private health extras cover applies for most policies. Contact Physio to Home and we will check your specific entitlements before your first visit.
+Yes, in most cases. If your GP prepares a GP Chronic Condition Management Plan and refers you for eligible allied health care, you may access Medicare-subsidised physiotherapy within the annual service limit. Under My Aged Care, Support at Home may fund physiotherapy as a clinical support where included in your approved services; CHSP is a separate pathway. Private health extras cover may also apply, depending on your policy. Contact Physio to Home to discuss your circumstances before your first visit.
 
 ### What is manipulation under anaesthesia and how do I avoid it?
 

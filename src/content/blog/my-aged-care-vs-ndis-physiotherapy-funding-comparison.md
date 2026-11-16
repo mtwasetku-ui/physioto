@@ -46,16 +46,15 @@ Entry-level support for older Australians who need a small amount of assistance 
 
 **To access CHSP:** Contact My Aged Care on 1800 200 422. You will have a brief screening conversation and, if eligible, be referred for an assessment. The process typically takes 2–4 weeks.
 
-### Home Care Packages (HCP)
+### Support at Home
 
-More comprehensive, ongoing support for older Australians with moderate to high care needs. Home Care Packages are allocated at four levels (Level 1–4) with increasing funding — Level 1 at approximately $10,000 per year and Level 4 at approximately $60,000 per year (2025 rates, subject to change).
+Support at Home commenced on 1 November 2025, replacing the former Home Care Packages Program and Short-Term Restorative Care Programme. It provides coordinated support for eligible older people who need help to remain living at home.
 
-Physiotherapy is a covered allied health service under all package levels. Package holders work with an approved provider to manage their funding and choose their services — including which physiotherapy provider they use.
+Physiotherapy may be funded as a clinical support where it is included in the person's approved services and plan. The exact services and funding arrangements depend on the person's assessment and individual circumstances.
 
-**Important:** As of 1 July 2025, Home Care Packages are transitioning to the new Support at Home program. The new system changes some administrative details but retains physiotherapy as a covered service. Contact My Aged Care or your provider for current details.
+**If you previously had a Home Care Package:** former Home Care Package participants transitioned to Support at Home on 1 November 2025. The old Level 1–4 package structure and funding descriptions in older articles no longer describe the current program.
 
-**To access a Home Care Package:** Contact My Aged Care for an ACAT (Aged Care Assessment Team) assessment. There is currently a waiting list for packages — particularly Level 3 and 4. Apply as early as possible.
-
+**To access Support at Home:** Contact My Aged Care on 1800 200 422 or visit myagedcare.gov.au to discuss an assessment and eligibility.
 ---
 
 ## NDIS: What It Is and How It Funds Physiotherapy
@@ -92,10 +91,10 @@ The specific rules here can be complex. If you are in this situation, contact bo
 |---|---|---|
 | **Who it's for** | Older Australians 65+ | People with permanent disability, typically under 65 |
 | **Funded by** | Commonwealth aged care system | National Disability Insurance Agency |
-| **Physiotherapy covered?** | Yes — CHSP and Home Care Packages | Yes — Capacity Building supports |
-| **Amount of support** | Depends on CHSP or HCP level | Depends on individual plan |
+| **Physiotherapy covered?** | Yes — CHSP and approved Support at Home clinical supports | Yes — Capacity Building supports |
+| **Amount of support** | Depends on CHSP arrangements or the person's approved Support at Home services | Depends on individual plan |
 | **How to apply** | Call My Aged Care 1800 200 422 | Apply via ndis.gov.au |
-| **Access time** | CHSP: 2–4 weeks. HCP: weeks to months (waitlist) | Several months typically |
+| **Access time** | Timing depends on assessment, eligibility and program availability | Several months typically |
 | **Care coordinator** | Care manager through approved provider | Support coordinator (if funded in plan) |
 | **Provider registration** | Approved provider required | Registered or unregistered (self-managed) |
 
@@ -131,9 +130,9 @@ If you are trying to determine which system applies to you:
 
 Generally no — they are separate systems and most people will be on one or the other. However, you can use Medicare GP Management Plan subsidies alongside either system.
 
-### My Home Care Package provider told me they don't offer physiotherapy. Is that right?
+### My aged care provider told me they don't offer physiotherapy. Is that right?
 
-Not exactly. Home Care Package providers do not all directly employ physiotherapists — but they are obligated to use your package funding to purchase allied health services from external providers, including Physio to Home. If your provider is not arranging physiotherapy, ask them specifically to add it to your care plan.
+Not necessarily. A Support at Home provider may arrange clinical supports through external allied health professionals rather than employing physiotherapists directly. Ask your provider or care coordinator whether physiotherapy can be included in your approved services and how to arrange it.
 
 ### How long does it take to get NDIS funding for physiotherapy?
 
@@ -141,9 +140,9 @@ The NDIS access and planning process typically takes 3–6 months from initial a
 
 ---
 
-## Ready to Access Funded Physiotherapy in North Tasmania?
+## Ready to Access Funded Physiotherapy Across Tasmania?
 
-Physio to Home accepts clients funded through My Aged Care (CHSP and Home Care Packages), NDIS, Medicare GP Management Plan, and private health insurance, as well as private self-funded arrangements. We work with your care coordinator or support coordinator to make the process as simple as possible.
+Physio to Home accepts enquiries from eligible people using My Aged Care pathways, including CHSP and Support at Home, as well as NDIS, Medicare and private health insurance clients and private self-funded clients. We work with your care coordinator or support coordinator to make the process as simple as possible.
 
 Contact us today — we will help you find the right pathway →
 
@@ -155,7 +154,7 @@ Contact us today — we will help you find the right pathway →
 ## About the Author
 
 Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
-Founder, Physio to Home — North Tasmania's home physiotherapy service.
+Founder, Physio to Home — providing home physiotherapy across Tasmania.
 
 ---
 

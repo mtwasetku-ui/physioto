@@ -58,7 +58,7 @@ From our Deloraine service, our team also regularly visits Chudleigh, Mole Creek
 
 **Medicare GP Management Plan** — up to five partially subsidised visits per year for a chronic condition, arranged through your GP.
 
-**My Aged Care — Home Care Package or CHSP** — physiotherapy is a covered allied health service; we work directly with care coordinators to arrange funded visits.
+**My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we work with care coordinators to discuss available arrangements.
 
 **NDIS** — physiotherapy funded under Improved Daily Living or Improved Health and Wellbeing for eligible participants.
 

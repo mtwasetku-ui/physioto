@@ -125,7 +125,7 @@ Contact us before discharge if you can — a phone call before your parent comes
 
 ## Funding Home Physiotherapy for Your Parent in North Tasmania
 
-**My Aged Care — Home Care Package** — If your parent receives a Home Care Package, physiotherapy is a covered service. Contact their care coordinator to arrange it.
+**My Aged Care — Support at Home or CHSP** — Physiotherapy may be funded under Support at Home where it is included in your parent's approved clinical supports. CHSP remains a separate program for eligible older people. Contact their provider or care coordinator to discuss available arrangements.
 
 **Medicare GP Management Plan** — Up to five subsidised visits per year. Your parent's GP can write the plan before or shortly after discharge.
 

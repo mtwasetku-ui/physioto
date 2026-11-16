@@ -57,7 +57,7 @@ Alongside George Town itself, our service extends to Low Head, Bell Bay, Clarenc
 
 **Medicare GP Management Plan** — up to five partially subsidised visits per year for a chronic condition.
 
-**My Aged Care — Home Care Package or CHSP** — physiotherapy is covered at every package level; we liaise directly with your care coordinator.
+**My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we liaise with your care coordinator about available arrangements.
 
 **NDIS** — physiotherapy under Improved Daily Living or Improved Health and Wellbeing categories.
 
@@ -79,9 +79,9 @@ Yes — our George Town service extends to Low Head, Bell Bay, and Clarence Poin
 
 Yes. You don't need an existing referral or recent history with a physiotherapist to book a private home visit. We'll take a full history at your first appointment.
 
-### Is home visit physiotherapy covered by my Home Care Package?
+### Is home visit physiotherapy covered by Support at Home?
 
-In most cases, yes — physiotherapy is a standard allied health inclusion across all Home Care Package levels. We can liaise directly with your care coordinator to arrange funded visits.
+Physiotherapy may be funded as a clinical support under Support at Home when it is included in your approved services. Eligibility and arrangements depend on your assessment and individual plan. We can liaise with your care coordinator to discuss the options.
 
 ### How soon can someone come out to George Town?
 

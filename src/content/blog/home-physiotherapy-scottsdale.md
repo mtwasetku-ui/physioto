@@ -58,7 +58,7 @@ Beyond Scottsdale itself, our team's northeast service extends to Bridport, Bran
 
 **Medicare GP Management Plan** — up to five partially subsidised visits per year for a chronic condition.
 
-**My Aged Care — Home Care Package or CHSP** — physiotherapy is a covered allied health service; we liaise directly with care coordinators.
+**My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we liaise with care coordinators about available arrangements.
 
 **NDIS** — funded under Improved Daily Living or Improved Health and Wellbeing categories.
 

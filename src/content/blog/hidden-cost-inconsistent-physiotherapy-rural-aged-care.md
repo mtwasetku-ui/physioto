@@ -18,7 +18,7 @@ By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experienc
 
 Physio to Home, North Tasmania | Last reviewed: March 2026
 
-*This article is intended for aged care coordinators, Home Care Package providers, GPs, health planners, and anyone involved in the planning and delivery of allied health services for older Australians in rural and regional communities. It draws on published evidence from physiotherapy outcome research, geriatric medicine, and health services literature to describe a harm that is systematic, measurable, and largely invisible in current accountability frameworks.*
+*This article is intended for aged care coordinators, Support at Home providers, CHSP services, GPs, health planners, and anyone involved in the planning and delivery of allied health services for older Australians in rural and regional communities. It draws on published evidence from physiotherapy outcome research, geriatric medicine, and health services literature to describe a harm that is systematic, measurable, and largely invisible in current accountability frameworks.*
 
 ---
 
@@ -72,7 +72,7 @@ In urban and peri-urban settings, physiotherapy inconsistency most commonly resu
 
 In rural settings, the primary drivers of inconsistency are structural — transport, distance, provider availability, and care coordination gaps — and they are not amenable to clinical management at the individual provider level. They require systemic responses.
 
-For an older adult in rural North Tasmania receiving a Home Care Package, the physiotherapy component of their care plan is frequently the first service disrupted when care coordination is complex, transport arrangements fail, or the local physiotherapy provider is unavailable. Unlike domestic assistance or personal care — which have higher care coordination priority and more established rural provider networks — allied health services in rural home care are more fragile.
+For an older adult in rural North Tasmania receiving aged-care support through Support at Home or CHSP, access to physiotherapy may be disrupted when care coordination is complex, transport arrangements fail, or a local physiotherapy provider is unavailable. Unlike domestic assistance or personal care — which have higher care coordination priority and more established rural provider networks — allied health services in rural home care are more fragile.
 
 The consequences of this structural fragility are borne by the individual — in the form of declining strength, increasing falls risk, and progressive loss of function — and by the health system, in the form of avoidable hospitalisation, premature residential aged care transition, and the downstream costs of preventable fractures and falls-related injury.
 
@@ -100,13 +100,13 @@ Home-based physiotherapy does not depend on the patient having transport. It doe
 
 The evidence for home-based physiotherapy as equivalent in outcome to clinic-based physiotherapy is well-established (Tousignant et al., *Age and Ageing*, 2018; Outpatient Service Trialists, *Cochrane*, 2003). The evidence for its superiority in consistency outcomes — fewer missed appointments, higher adherence, better patient satisfaction — is equally strong.
 
-For rural aged care services in North Tasmania — Home Care Package providers, GPs writing GP Management Plans, and care coordinators building care plans for older clients — the implication is clear: for any older client in a rural or regional area where transport is a realistic barrier to consistent clinic attendance, home-based physiotherapy delivery should be the default, not the exception.
+For rural aged care services in North Tasmania — Support at Home providers, CHSP services, GPs and care coordinators — the implication is clear: for any older client in a rural or regional area where transport is a realistic barrier to consistent clinic attendance, home-based physiotherapy delivery should be the default, not the exception.
 
 ---
 
 ## Accountability and the Visibility Problem
 
-One reason the harm of physiotherapy inconsistency persists is that it is not visible in current accountability frameworks. Home Care Package quality reporting measures do not currently include physiotherapy attendance rates, exercise programme adherence, or functional outcome measures as standard metrics. The Royal Commission into Aged Care Quality and Safety (2021) identified inadequate allied health provision as a systemic quality issue in home and residential care — but the specific measurement infrastructure to track it has not yet been fully implemented.
+One reason the harm of physiotherapy inconsistency persists is that it is not visible in current accountability frameworks. Aged-care quality and reporting arrangements should be examined to ensure that physiotherapy attendance, exercise-programme adherence and functional outcomes are appropriately visible. The Royal Commission into Aged Care Quality and Safety (2021) identified inadequate allied health provision as a systemic quality issue in home and residential care — but the specific measurement infrastructure to track it has not yet been fully implemented.
 
 Until physiotherapy consistency in community aged care is measured, reported, and benchmarked — at the care coordinator, provider, and regional level — the harm it causes will remain invisible, unattributable, and unremedied.
 
@@ -116,7 +116,7 @@ The recommendations of the Royal Commission regarding allied health staffing and
 
 ## What This Means for Care Coordinators and Providers
 
-For care coordinators and Home Care Package providers in North Tasmania, the practical implications of this analysis are:
+For care coordinators and aged-care providers in North Tasmania, the practical implications of this analysis are:
 
 **Physiotherapy consistency should be explicitly planned and resourced in care plans.** A care plan that includes "physiotherapy as needed" is not a plan for consistency. A care plan that includes "fortnightly home physiotherapy visits from a named home-visiting provider" is.
 

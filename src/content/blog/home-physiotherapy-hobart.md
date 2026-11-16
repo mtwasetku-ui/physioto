@@ -159,7 +159,6 @@ It helps to have the person's suburb or postcode, a short description of their m
 
 If you or someone you support needs physiotherapy at home, contact Physio To Home. Tell us where the person lives and what support they need. We will discuss whether we can provide a visit and the earliest suitable appointment.
 
-<box-placeholder />
 
 **Phone:** 1300 433 233
 

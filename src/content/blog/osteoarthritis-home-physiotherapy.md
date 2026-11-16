@@ -134,9 +134,9 @@ Mobile physiotherapy addresses this directly. A Physio to Home visit brings all 
 
 **Medicare GP Management Plan:** If your GP has documented arthritis as a chronic condition, you may be eligible for up to five Medicare-rebated physiotherapy sessions per year under a Team Care Arrangement.
 
-**My Aged Care Home Care Package:** If you receive a Home Care Package at any level, physiotherapy for arthritis is a covered allied health service. Speak with your care coordinator.
+**My Aged Care:** Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where included in your approved services. CHSP remains a separate program for eligible older people. Speak with your provider or care coordinator.
 
-**Commonwealth Home Support Programme (CHSP):** Entry-level support for older Australians who do not yet have a Home Care Package. Allied health services including physiotherapy are covered. Contact My Aged Care on 1800 200 422.
+**Commonwealth Home Support Programme (CHSP):** Entry-level support for older Australians who are eligible for entry-level support. Allied health services including physiotherapy are covered. Contact My Aged Care on 1800 200 422.
 
 **Private Health Insurance:** Most extras policies cover physiotherapy. Home visits are covered by the majority of major Australian funds.
 

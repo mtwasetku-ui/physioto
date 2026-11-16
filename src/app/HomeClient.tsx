@@ -110,7 +110,7 @@ const funding = [
   {
     Icon: Home,
     label: 'My Aged Care',
-    sub: 'Home care packages',
+    sub: 'Support at Home & CHSP',
     tint: 'bg-[#FFF3D3]',
   },
   {

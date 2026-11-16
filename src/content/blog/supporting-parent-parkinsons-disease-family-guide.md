@@ -121,7 +121,7 @@ For families, home physiotherapy visits also provide:
 
 ## Funding Physiotherapy for a Parent With Parkinson's in North Tasmania
 
-**My Aged Care — Home Care Package** — Physiotherapy is a covered allied health service. For a person with Parkinson's disease, regular physiotherapy is a high-priority clinical use of package funding. If your parent does not yet have a package, help them contact My Aged Care on 1800 200 422 to begin the assessment process.
+**My Aged Care — Support at Home or CHSP** — Physiotherapy may be funded under Support at Home where it is included in your parent's approved clinical supports. CHSP remains a separate program for eligible older people. Contact their provider or My Aged Care on 1800 200 422 to discuss an assessment and available services.
 
 **Medicare GP Management Plan** — Up to five subsidised physiotherapy visits per year. Your parent's GP can write the plan at any appointment.
 
