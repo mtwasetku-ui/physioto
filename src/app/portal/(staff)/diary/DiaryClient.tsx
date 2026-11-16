@@ -183,8 +183,6 @@ function shiftDateTime(iso: string, dayDelta: number, minuteDelta: number) {
 export default function DiaryClient() {
   const router = useRouter()
   const [weekStart, setWeekStart] = useState(() => startOfWeek(new Date()))
-  const [calendarView, setCalendarView] = useState<'week' | 'day'>('week')
-  const [activeDay, setActiveDay] = useState(() => new Date())
   const [appointments, setAppointments] = useState<DiaryAppointment[] | null>(null)
   const [travelBlocks, setTravelBlocks] = useState<TravelBlock[] | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -799,19 +797,11 @@ export default function DiaryClient() {
     }
     setAddTravelSaving(false)
   }
-  const visibleDays = calendarView === 'week' ? days : [activeDay]
-  const columnTemplate = `56px repeat(${visibleDays.length}, minmax(130px, 1fr))`
-  const visibleDateLabel = calendarView === 'week'
-    ? `${weekStart.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })} – ${addDays(weekStart, 6).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}`
-    : activeDay.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+  const visibleDays = days
+  const columnTemplate = `56px repeat(7, minmax(130px, 1fr))`
+  const visibleDateLabel = `${weekStart.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })} – ${addDays(weekStart, 6).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}`
   function moveCalendarPeriod(direction: -1 | 1) {
-    if (calendarView === 'week') {
-      setWeekStart((w) => addDays(w, direction * 7))
-    } else {
-      const nextDay = addDays(activeDay, direction)
-      setActiveDay(nextDay)
-      setWeekStart(startOfWeek(nextDay))
-    }
+    setWeekStart((w) => addDays(w, direction * 7))
   }
 
   return (
@@ -827,10 +817,6 @@ export default function DiaryClient() {
       </p>
 
       <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-        <div className="inline-flex rounded-lg border border-input bg-muted/40 p-1" role="group" aria-label="Diary view">
-          <button type="button" onClick={() => setCalendarView('day')} aria-pressed={calendarView === 'day'} className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${calendarView === 'day' ? 'bg-white text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>Day</button>
-          <button type="button" onClick={() => setCalendarView('week')} aria-pressed={calendarView === 'week'} className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${calendarView === 'week' ? 'bg-white text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>Week</button>
-        </div>
         <div className="flex items-center gap-3">
         <button
           type="button"
@@ -845,7 +831,7 @@ export default function DiaryClient() {
           type="button"
           onClick={() => moveCalendarPeriod(1)}
           className="h-8 w-8 rounded-md border border-input hover:bg-secondary flex items-center justify-center"
-          aria-label={calendarView === 'week' ? 'Next week' : 'Next day'}
+          aria-label="Next week"
         >
           <ChevronRight className="h-4 w-4" />
         </button>
