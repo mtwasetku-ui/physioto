@@ -1,5 +1,5 @@
 ---
-title: "Home Visit Physiotherapy Devonport & Burnie | Physio To Home"
+title: "Home Visit Physiotherapy Devonport & Burnie | Physio to Home"
 description: "Looking for a physiotherapist in Devonport or Burnie? Physio To Home provides mobile physiotherapy at home across Tasmania. Contact us to confirm local availability."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-11-13"
@@ -130,7 +130,7 @@ Options may include:
 
 - **Private appointments:** You can contact us directly to discuss private home visits and fees.
 - **Private health insurance:** Rebates depend on your policy and insurer. Check your cover and any home-visit conditions with your fund.
-- **Medicare:** Eligible patients may be able to access a limited number of allied health services under a GP Chronic Disease Management plan. Ask your GP about eligibility and referral requirements.
+- **Medicare:** Eligible patients may be able to access a limited number of allied health services under a GP Chronic Condition Management Plan. Existing GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue to be used until 30 June 2027. Ask your GP about eligibility and referral requirements.
 - **NDIS:** We can discuss physiotherapy enquiries from NDIS participants and the applicable plan and payment arrangements.
 - **DVA:** Eligible veterans can contact us to discuss home physiotherapy and the relevant referral or approval requirements.
 - **My Aged Care:** Physiotherapy may be available through Support at Home or CHSP where it is included in the person's approved services and provider arrangements.

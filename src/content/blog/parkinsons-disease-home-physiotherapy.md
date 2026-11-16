@@ -7,7 +7,7 @@ category: "Conditions & Rehab"
 featured: true
 image: /image/blog/parkinsons-disease-home-physiotherapy.jpg
 
-tags: ["Parkinson's disease", "neurological physiotherapy", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "movement disorders", "falls prevention"]
+tags: ["Parkinson's disease", "neurological physiotherapy", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "movement disorders", "falls prevention"]
 ---
 
 # PARKINSON'S DISEASE | HOME PHYSIOTHERAPY
@@ -16,17 +16,17 @@ tags: ["Parkinson's disease", "neurological physiotherapy", "home physiotherapy"
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 Parkinson's disease is a progressive neurological condition that affects movement, balance, and physical function in ways that can profoundly impact daily life. It is also one of the conditions for which physiotherapy has the strongest and most consistent evidence base — not as a cure, but as a way to maintain function, slow decline, improve quality of life, and reduce falls risk over the long term.
 
-For people living with Parkinson's disease in rural or regional North Tasmania, accessing consistent physiotherapy is one of the most significant practical challenges they face. Clinic waiting lists, long travel distances, fluctuating energy and medication timing — these are real barriers that reduce the consistency of care and undermine outcomes. Home-based physiotherapy removes those barriers.
+For people living with Parkinson's disease in rural or regional Tasmania, accessing consistent physiotherapy is one of the most significant practical challenges they face. Clinic waiting lists, long travel distances, fluctuating energy and medication timing — these are real barriers that reduce the consistency of care and undermine outcomes. Home-based physiotherapy removes those barriers.
 
 This guide explains what Parkinson's disease does to the body, how physiotherapy helps, and exactly what home physiotherapy for Parkinson's looks like in practice — for both the person living with the condition and the family members and carers who support them.
 
 ### Who this guide is for
 
-This article is for people in North Tasmania who have been diagnosed with Parkinson's disease, and for their families and carers. It is particularly relevant for those in rural areas — including George Town, Scottsdale, Ringarooma, Longford, and the Tamar Valley — where regular clinic attendance is not practical, and for anyone managing the additional complexity of planning physiotherapy around medication schedules.
+This article is for people in Tasmania who have been diagnosed with Parkinson's disease, and for their families and carers. It is particularly relevant for those in rural areas — including George Town, Scottsdale, Ringarooma, Longford, and the Tamar Valley — where regular clinic attendance is not practical, and for anyone managing the additional complexity of planning physiotherapy around medication schedules.
 
 ---
 
@@ -110,7 +110,7 @@ Parkinson's disease affects the whole family, not just the person diagnosed. Fam
 
 A home physiotherapy visit is an opportunity for family members and carers to learn alongside the person with Parkinson's. Micheal regularly involves carers in sessions — explaining the rationale for exercises, demonstrating safe handling and cueing techniques, and identifying environmental modifications that make daily care safer and more effective.
 
-If you care for someone with Parkinson's disease in North Tasmania and are unsure how to support their mobility safely, a home visit is one of the most practical things you can arrange.
+If you care for someone with Parkinson's disease in Tasmania and are unsure how to support their mobility safely, a home visit is one of the most practical things you can arrange.
 
 ---
 
@@ -138,7 +138,7 @@ You will leave the first visit with a clear, manageable daily programme — incl
 
 ---
 
-## Accessing Home Physiotherapy in North Tasmania: Funding Options
+## Accessing Home Physiotherapy in Tasmania: Funding Options
 
 ### Medicare — GP Management Plan
 
@@ -182,11 +182,11 @@ Yes, indirectly. Exercise has well-established benefits for fatigue, mood, and s
 
 ---
 
-## Ready to Start Physiotherapy for Parkinson's Disease in North Tasmania?
+## Ready to Start Physiotherapy for Parkinson's Disease in Tasmania?
 
-Whether you are newly diagnosed and want to build a strong foundation, or you are managing more advanced Parkinson's and looking for better support — Physio to Home is here. We provide AHPRA-registered, evidence-based physiotherapy in your own home across North Tasmania, funded through Medicare, My Aged Care, NDIS, and private health insurance.
+Whether you are newly diagnosed and want to build a strong foundation, or you are managing more advanced Parkinson's and looking for better support — Physio to Home is here. We provide AHPRA-registered, evidence-based physiotherapy in your own home across Tasmania, funded through Medicare, My Aged Care, NDIS, and private health insurance.
 
-Book your first home visit today — we cover all of North Tasmania →
+Book your first home visit today — we cover all of Tasmania →
 
 ---
 
@@ -196,7 +196,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in neurological rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
 
 ---
 

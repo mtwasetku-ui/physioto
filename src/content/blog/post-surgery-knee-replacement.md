@@ -6,7 +6,7 @@ date: "2026-03-06"
 category: "Post-Surgery Recovery"
 featured: false
 image: /image/blog/post-surgery-knee-replacement.jpg
-tags: ["post-surgery recovery", "knee replacement", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "rehabilitation", "total knee arthroplasty"]
+tags: ["post-surgery recovery", "knee replacement", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "rehabilitation", "total knee arthroplasty"]
 ---
 
 # POST-SURGERY RECOVERY | KNEE REPLACEMENT
@@ -15,11 +15,11 @@ tags: ["post-surgery recovery", "knee replacement", "physiotherapy North Tasmani
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 Knee replacement surgery — technically called total knee arthroplasty — is one of the most commonly performed orthopaedic procedures in Australia, with over 70,000 operations performed each year. For most people, the surgery itself goes smoothly. What determines how well and how quickly you recover is almost entirely what happens in the weeks and months that follow.
 
-Knee replacement rehabilitation is more demanding than hip replacement in one important respect: regaining full range of motion requires consistent, daily physiotherapy work — particularly in the first six weeks. If that window is missed, scar tissue can limit movement permanently. For patients in rural and regional North Tasmania, accessing consistent clinic-based physiotherapy during this period is often not practical. Home-based physiotherapy solves that problem directly.
+Knee replacement rehabilitation is more demanding than hip replacement in one important respect: regaining full range of motion requires consistent, daily physiotherapy work — particularly in the first six weeks. If that window is missed, scar tissue can limit movement permanently. For patients in rural and regional Tasmania, accessing consistent clinic-based physiotherapy during this period is often not practical. Home-based physiotherapy solves that problem directly.
 
 This guide walks you through what to expect at each stage of knee replacement recovery — week by week — and explains how a home physiotherapist supports you through every phase, right in your own home.
 
@@ -29,7 +29,7 @@ This guide provides general information about knee replacement recovery and is n
 
 ### Who this guide is for
 
-This article is for people in North Tasmania who are preparing for or recovering from a total knee replacement, and their family members and carers. It is particularly relevant for those in rural areas — including George Town, Scottsdale, Ringarooma, Longford, and the Tamar Valley — where attending a clinic in the early post-operative weeks is not practical.
+This article is for people in Tasmania who are preparing for or recovering from a total knee replacement, and their family members and carers. It is particularly relevant for those in rural areas — including George Town, Scottsdale, Ringarooma, Longford, and the Tamar Valley — where attending a clinic in the early post-operative weeks is not practical.
 
 ---
 
@@ -155,7 +155,7 @@ Swelling after knee replacement is normal and can persist for several months. Th
 
 **A note on rural access from Week 6 onward**
 
-Once you are cleared to drive, some patients transition to clinic-based physiotherapy. However, many of our North Tasmania patients in areas like Scottsdale, Ringarooma, and the Tamar Valley continue with home visits throughout this phase due to distance. Home physiotherapy remains just as effective and can be funded through My Aged Care, Medicare, and private health insurance.
+Once you are cleared to drive, some patients transition to clinic-based physiotherapy. However, many of our Tasmania patients in areas like Scottsdale, Ringarooma, and the Tamar Valley continue with home visits throughout this phase due to distance. Home physiotherapy remains just as effective and can be funded through My Aged Care, Medicare, and private health insurance.
 
 ---
 
@@ -197,7 +197,7 @@ Knee replacement recovery involves a level of swelling, stiffness, and discomfor
 
 The evidence for early, consistent physiotherapy after knee replacement is unambiguous — patients who receive regular, supervised physiotherapy in the first 12 weeks post-operatively regain range of motion faster, have better function at one year, and are less likely to require manipulation under anaesthesia for stiffness. The challenge for rural Tasmanians is accessing that physiotherapy consistently.
 
-Home-based physiotherapy solves this directly. For patients in North Tasmania, it means:
+Home-based physiotherapy solves this directly. For patients in Tasmania, it means:
 
 - No reliance on family members to drive to Launceston for clinic appointments in the first 6 weeks when driving is not permitted
 
@@ -229,21 +229,21 @@ Yes, in most cases. If your GP prepares a GP Chronic Condition Management Plan a
 
 Manipulation under anaesthesia (MUA) is a procedure where a surgeon manually breaks down scar tissue that has formed inside the knee, limiting bend. It is typically performed between 6 and 12 weeks post-operatively when a patient has failed to progress beyond 90 degrees of bend despite physiotherapy. The best way to avoid it is consistent, daily range of motion exercises from Day 1 — something a home physiotherapist will guide and monitor closely at each visit.
 
-### Can I do my knee replacement physiotherapy entirely at home in North Tasmania?
+### Can I do my knee replacement physiotherapy entirely at home in Tasmania?
 
-Yes. The full post-operative rehabilitation programme — from the first day home through to six-month strength maintenance — can be delivered entirely in your home. Physio to Home covers North Tasmania including Launceston, George Town, Scottsdale, Ringarooma, Longford, and surrounding rural areas. Contact us to confirm service availability in your specific location.
+Yes. The full post-operative rehabilitation programme — from the first day home through to six-month strength maintenance — can be delivered entirely in your home. Physio to Home covers Tasmania including Launceston, George Town, Scottsdale, Ringarooma, Longford, and surrounding rural areas. Contact us to confirm service availability in your specific location.
 
 ### What equipment do I need at home before I come home from hospital?
 
-Before discharge, ensure you have: a raised toilet seat, a shower stool or chair, a long-handled reacher or grabber, a non-slip bath mat, a supply of ice packs or a bag of frozen peas, and a firm chair with armrests that you can push up from easily. Your physiotherapist can advise on sourcing these in North Tasmania or assist in arranging them through your My Aged Care package if applicable.
+Before discharge, ensure you have: a raised toilet seat, a shower stool or chair, a long-handled reacher or grabber, a non-slip bath mat, a supply of ice packs or a bag of frozen peas, and a firm chair with armrests that you can push up from easily. Your physiotherapist can advise on sourcing these in Tasmania or assist in arranging them through your My Aged Care package if applicable.
 
 ---
 
-## Recovering from Knee Replacement in North Tasmania?
+## Recovering from Knee Replacement in Tasmania?
 
 Whether you are on the waiting list and want to start prehab now, or you have just come home from hospital and need physiotherapy this week — Physio to Home is here. We provide AHPRA-registered, evidence-based knee replacement rehabilitation in your own home, funded through Medicare, My Aged Care, NDIS, and private health insurance.
 
-Book your first home visit today — we cover all of North Tasmania →
+Book your first home visit today — we cover all of Tasmania →
 
 ---
 
@@ -253,7 +253,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in post-surgical rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in post-surgical rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
 
 ---
 

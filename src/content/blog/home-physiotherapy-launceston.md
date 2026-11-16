@@ -1,5 +1,5 @@
 ---
-title: "Home Visit Physiotherapy Launceston | Physio To Home"
+title: "Home Visit Physiotherapy Launceston | Physio to Home"
 description: "Need a physiotherapist who visits your home in Launceston? Learn about Physio To Home's mobile physiotherapy services and enquire about availability."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-07-25"
@@ -73,7 +73,7 @@ You can read about the clinicians and their professional backgrounds on our [tea
 The way your physiotherapy is funded depends on your circumstances, eligibility and the arrangements in place for your care. Options may include:
 
 - **Private appointments:** You can contact us directly to discuss fees and availability. A GP referral is not required for a standard private appointment.
-- **Medicare GP Management Plan:** Eligible people with a chronic condition may be able to access a Medicare rebate for a limited number of allied health visits when referred under the relevant GP plan.
+- **Medicare:** Eligible people with a chronic conditions and complex care needs may be referred for up to five individual allied health services per calendar year under a GP Chronic Condition Management Plan. Existing GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 - **My Aged Care:** Physiotherapy may be included where it is assessed and approved as part of a person's aged-care supports. Read our guide to [My Aged Care physiotherapy funding](/blog/my-aged-care-home-physiotherapy-funding), including Support at Home and CHSP.
 - **NDIS:** Eligible NDIS participants may be able to use plan funding for physiotherapy where it relates to their disability support needs and plan goals. See our guide to [NDIS home physiotherapy funding](/blog/ndis-home-physiotherapy-funding).
 - **Private health insurance:** Depending on your policy and level of cover, you may be able to claim a benefit for physiotherapy. Ask us about claiming arrangements before your appointment.

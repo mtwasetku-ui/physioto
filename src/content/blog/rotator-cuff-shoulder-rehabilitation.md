@@ -7,26 +7,26 @@ category: "Pain Management"
 featured: false
 image: /image/blog/rotator-cuff-shoulder-rehabilitation.jpg
 
-tags: ["rotator cuff", "shoulder pain", "shoulder rehabilitation", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "musculoskeletal", "shoulder injury"]
+tags: ["rotator cuff", "shoulder pain", "shoulder rehabilitation", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "musculoskeletal", "shoulder injury"]
 ---
 
 # ROTATOR CUFF | SHOULDER REHABILITATION
 
-## Rotator Cuff Injury and Shoulder Rehabilitation at Home: A Guide from a North Tasmania Home Physiotherapist
+## Rotator Cuff Injury and Shoulder Rehabilitation at Home: A Guide from a Tasmania Home Physiotherapist
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 Rotator cuff injuries are among the most common musculoskeletal presentations in physiotherapy — and among the most mismanaged. Many people with rotator cuff pain are told to rest and wait, or referred directly for imaging without a structured rehabilitation trial. Both approaches delay recovery. The evidence is clear that physiotherapy-led rehabilitation is the first-line treatment for the vast majority of rotator cuff injuries — and that it produces outcomes equivalent to surgery for most presentations.
 
-For older adults in rural and regional North Tasmania, getting consistent access to shoulder physiotherapy is genuinely challenging. Clinic appointments are limited, transport is burdensome, and a shoulder that is not progressing tends to become more restricted and more painful with time. Home physiotherapy solves the access problem and brings the treatment to the environment where the shoulder needs to function.
+For older adults in rural and regional Tasmania, getting consistent access to shoulder physiotherapy is genuinely challenging. Clinic appointments are limited, transport is burdensome, and a shoulder that is not progressing tends to become more restricted and more painful with time. Home physiotherapy solves the access problem and brings the treatment to the environment where the shoulder needs to function.
 
 This guide explains the anatomy and mechanisms of rotator cuff injury, what the evidence says about management, and exactly what home physiotherapy for rotator cuff rehabilitation looks like in practice.
 
 ### Who this guide is for
 
-This article is for people in North Tasmania with rotator cuff pain or a confirmed rotator cuff injury — and for those recovering from rotator cuff surgery — who want to understand their options and what home physiotherapy involves. It is particularly relevant for older adults in rural areas where regular clinic attendance is impractical.
+This article is for people in Tasmania with rotator cuff pain or a confirmed rotator cuff injury — and for those recovering from rotator cuff surgery — who want to understand their options and what home physiotherapy involves. It is particularly relevant for older adults in rural areas where regular clinic attendance is impractical.
 
 ---
 
@@ -162,11 +162,11 @@ If you have been told you need surgery for a rotator cuff tear without a structu
 
 ---
 
-## Funding Your Home Physiotherapy in North Tasmania
+## Funding Your Home Physiotherapy in Tasmania
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-A GP Management Plan (also called a Team Care Arrangement) entitles you to up to five Medicare-rebated physiotherapy sessions per year. Your GP can include physiotherapy if they determine it is clinically necessary for your shoulder condition.
+If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year, shared across eligible professions. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 
 ### My Aged Care — Support at Home and CHSP
 
@@ -206,9 +206,9 @@ Yes, when the programme is well-designed and adherence is maintained. The eviden
 
 ---
 
-## Ready to Start Shoulder Rehabilitation at Home in North Tasmania?
+## Ready to Start Shoulder Rehabilitation at Home in Tasmania?
 
-Living with shoulder pain in rural North Tasmania does not mean accepting limited function or waiting for surgery. Physio to Home brings AHPRA-registered, evidence-based rotator cuff rehabilitation directly to your door — whether you are in Launceston, George Town, Scottsdale, or anywhere across the North Tasmania region.
+Living with shoulder pain in rural Tasmania does not mean accepting limited function or waiting for surgery. Physio to Home brings AHPRA-registered, evidence-based rotator cuff rehabilitation directly to your door — whether you are in Launceston, George Town, Scottsdale, or anywhere across the Tasmania region.
 
 Book your first home visit today — and get your shoulder moving again →
 
@@ -220,7 +220,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and post-surgical care delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in musculoskeletal rehabilitation, falls prevention, and post-surgical care delivered entirely in the home setting.
 
 ---
 

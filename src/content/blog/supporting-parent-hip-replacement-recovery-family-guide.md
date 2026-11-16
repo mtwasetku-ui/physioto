@@ -7,20 +7,20 @@ category: "Post-Surgery Recovery"
 featured: false
 image: /image/blog/supporting-parent-hip-replacement-recovery-family-guide.jpg
 
-tags: ["hip replacement family guide", "supporting parent hip replacement", "hip replacement recovery Tasmania", "aged care Tasmania", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "carer guide", "post-surgery family"]
+tags: ["hip replacement family guide", "supporting parent hip replacement", "hip replacement recovery Tasmania", "aged care Tasmania", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "Physio to Home", "carer guide", "post-surgery family"]
 ---
 
 # SUPPORTING A PARENT'S HIP REPLACEMENT RECOVERY
 
-## How to Support Your Parent's Recovery After Hip Replacement: A Guide for Families in North Tasmania
+## How to Support Your Parent's Recovery After Hip Replacement: A Guide for Families in Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 When a parent comes home from hospital after a hip replacement, families are often simultaneously relieved and overwhelmed. The surgery went well. They are home. But now what? The hospital has given a folder of instructions, a follow-up appointment in six weeks, and a walking frame. The person in front of you is moving carefully, in pain, and nothing like as capable as they were before they went in.
 
-The weeks that follow discharge are the most critical period in hip replacement recovery — and they are the period during which families carry the most responsibility for the person's safety, progress, and wellbeing. This guide is written specifically for adult children and family carers navigating this period in North Tasmania.
+The weeks that follow discharge are the most critical period in hip replacement recovery — and they are the period during which families carry the most responsibility for the person's safety, progress, and wellbeing. This guide is written specifically for adult children and family carers navigating this period in Tasmania.
 
 ### Who this guide is for
 
@@ -123,11 +123,11 @@ Contact us before discharge if you can — a phone call before your parent comes
 
 ---
 
-## Funding Home Physiotherapy for Your Parent in North Tasmania
+## Funding Home Physiotherapy for Your Parent in Tasmania
 
 **My Aged Care — Support at Home or CHSP** — Physiotherapy may be funded under Support at Home where it is included in your parent's approved clinical supports. CHSP remains a separate program for eligible older people. Contact their provider or care coordinator to discuss available arrangements.
 
-**Medicare GP Management Plan** — Up to five subsidised visits per year. Your parent's GP can write the plan before or shortly after discharge.
+**Medicare GP Chronic Condition Management Plan** — If your parent has a chronic condition and complex care needs, their GP may prepare a plan and refer them for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements may continue until 30 June 2027.
 
 **Private health insurance** — Most extras policies cover physiotherapy including home visits.
 
@@ -153,9 +153,9 @@ It depends entirely on their level of function at discharge and the specific lay
 
 ---
 
-## Ready to Arrange Home Physiotherapy for Your Parent in North Tasmania?
+## Ready to Arrange Home Physiotherapy for Your Parent in Tasmania?
 
-Whether your parent is preparing for surgery or has just come home from hospital — Physio to Home is here. We provide AHPRA-registered hip replacement rehabilitation in the home, funded through My Aged Care, Medicare, and private health insurance, across all of North Tasmania.
+Whether your parent is preparing for surgery or has just come home from hospital — Physio to Home is here. We provide AHPRA-registered hip replacement rehabilitation in the home, funded through My Aged Care, Medicare, and private health insurance, across all of Tasmania.
 
 Contact us today — we can usually arrange a first visit within the first week of discharge →
 
@@ -170,7 +170,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in post-surgical rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in post-surgical rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Home Visit Physiotherapy Hobart | Physio To Home"
+title: "Home Visit Physiotherapy Hobart | Physio to Home"
 description: "Looking for a home visit physiotherapist in Hobart? Explore Physio To Home's mobile physiotherapy services, client supports and local availability."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-07-26"
@@ -111,7 +111,7 @@ For more detail, read our guide to [My Aged Care home physiotherapy funding, inc
 Depending on your circumstances, other payment or funding options may include:
 
 - **Private appointments:** You can contact us directly to discuss fees and availability. A GP referral is not generally required for a standard private physiotherapy appointment.
-- **Medicare:** People with an eligible chronic condition may be able to access a rebate for a limited number of allied health services under a GP Management Plan or the relevant Medicare arrangements. A GP referral and eligibility requirements apply.
+- **Medicare:** People with an eligible chronic condition may be able to access a rebate for a limited number of allied health services under a GP Chronic Condition Management Plan. Eligible existing GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue to be used until 30 June 2027. A GP referral and eligibility requirements apply.
 - **DVA:** Veterans can contact us to discuss referral, approval and service arrangements for their circumstances.
 - **Private health insurance:** Rebates depend on your policy, level of cover and insurer's rules. Contact your fund to confirm whether a home visit is covered and ask us about our current claiming arrangements.
 

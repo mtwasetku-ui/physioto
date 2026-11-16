@@ -212,7 +212,7 @@ export default function TeamClient() {
 
         <div id="team-stats" ref={setRef('team-stats') as any} className={`fade-up ${vis('team-stats') ? 'in' : ''} mb-12 rounded-2xl bg-[#0E2C22] p-10 text-center text-white`}>
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            {['AHPRA Registered', '15+ Years Experience', 'Evidence-Based Care', 'DVA Approved'].map((item) => (
+            {['AHPRA Registered', '15+ Years Experience', 'Evidence-Based Care', 'DVA Physiotherapy'].map((item) => (
               <div key={item}>
                 <p className="font-display text-lg font-bold text-[#FFC53D]">&#10003;</p>
                 <p className="text-sm text-slate-300">{item}</p>

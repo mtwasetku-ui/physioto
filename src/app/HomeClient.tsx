@@ -92,7 +92,7 @@ const trustBadges = [
   'Private Health Rebates',
   'NDIS (Self & Plan Managed)',
   'DVA Welcome',
-  'Medicare Care Plans',
+  'Medicare Chronic Condition Plans',
 ]
 
 const conditions = [
@@ -134,7 +134,7 @@ const funding = [
   {
     Icon: Cross,
     label: 'Medicare',
-    sub: 'Chronic Disease Care Plans',
+    sub: 'GP Chronic Condition Management Plans',
     tint: 'bg-[#E7F2E7]',
   },
 ]
