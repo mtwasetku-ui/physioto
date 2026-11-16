@@ -168,9 +168,9 @@ If you have been told you need surgery for a rotator cuff tear without a structu
 
 A GP Management Plan (also called a Team Care Arrangement) entitles you to up to five Medicare-rebated physiotherapy sessions per year. Your GP can include physiotherapy if they determine it is clinically necessary for your shoulder condition.
 
-### My Aged Care — Home Care Package
+### My Aged Care — Support at Home and CHSP
 
-If you are aged 65 or over and receive a Home Care Package through My Aged Care, physiotherapy is a covered allied health service. Speak to your care coordinator about including shoulder rehabilitation in your care plan.
+Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where included in your approved services and plan. CHSP continues separately for eligible older people. Speak with your provider or care coordinator about shoulder rehabilitation options.
 
 ### NDIS
 
