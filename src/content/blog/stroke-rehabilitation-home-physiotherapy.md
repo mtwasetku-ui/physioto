@@ -142,9 +142,9 @@ Carer involvement in stroke rehabilitation is strongly associated with better ou
 
 A GP Management Plan (also called a Team Care Arrangement) entitles you to up to five Medicare-rebated physiotherapy sessions per year. For stroke survivors, physiotherapy is a clinically appropriate inclusion in almost all cases. Speak to your GP about establishing or renewing a plan.
 
-### My Aged Care — Home Care Package
+### My Aged Care — Support at Home and CHSP
 
-If you are aged 65 or over and receive a Home Care Package through My Aged Care, physiotherapy is a covered allied health service. Stroke rehabilitation is a clinically high-priority use of package funding. Speak to your care coordinator about including regular physiotherapy in your care plan.
+Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where included in your approved services and plan. CHSP continues separately for eligible older people. Discuss stroke rehabilitation needs with your provider or care coordinator.
 
 ### NDIS
 
