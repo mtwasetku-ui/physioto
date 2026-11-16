@@ -56,7 +56,7 @@ Alongside Longford itself, our team regularly visits Cressy, Perth, Evandale, Ca
 
 ## Funding Options
 
-**Medicare GP Management Plan** — up to five partially subsidised visits per year for a chronic condition.
+**Medicare GP Chronic Condition Management Plan** — eligible people may access up to five individual allied health services per calendar year. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
 
 **My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we can discuss the relevant funding pathway with your coordinator.
 
