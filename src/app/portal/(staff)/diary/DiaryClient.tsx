@@ -399,7 +399,8 @@ export default function DiaryClient() {
 
   function onPointerMove(e: React.PointerEvent<HTMLDivElement>, block: Block) {
     if (pendingRef.current && pendingRef.current.block.data.id === block.data.id) {
-      const dx = e.clientX - pendingRef.current.startClientX      const dy = e.clientY - pendingRef.current.startClientY
+      const dx = e.clientX - pendingRef.current.startClientX
+      const dy = e.clientY - pendingRef.current.startClientY
       if (Math.hypot(dx, dy) > PRE_ARM_CANCEL_PX) {
         // Reads as a scroll attempt, not a hold-to-drag — let it go.
         clearTimeout(pendingRef.current.timer)
