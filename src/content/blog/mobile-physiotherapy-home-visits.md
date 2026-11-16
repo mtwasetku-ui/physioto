@@ -108,7 +108,7 @@ Call or email us to make initial contact. You do not need a GP referral to book 
 
 ### Step 2 Eligibility and funding check (at no cost)
 
-Before confirming your booking, we will check your funding eligibility at no cost. This includes confirming whether you qualify for Medicare-rebated sessions, whether your My Aged Care Home Care Package or CHSP funding covers physiotherapy, and whether your NDIS plan includes relevant supports. Many patients are surprised to find their visits are more affordable than expected.
+Before confirming your booking, we will check your funding eligibility at no cost. This includes confirming whether you qualify for Medicare-rebated sessions, whether your Support at Home or CHSP arrangements include physiotherapy, and whether your NDIS plan includes relevant supports. Many patients are surprised to find their visits are more affordable than expected.
 
 ### Step 3 Booking your first appointment
 
@@ -184,13 +184,13 @@ Mobile physiotherapy through Physio to Home can be funded through several pathwa
 
 If your GP determines that physiotherapy is clinically necessary for a chronic or complex condition, they can create a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year. A GP referral is required to access this rebate. Gap payments may apply.
 
-### My Aged Care — Home Care Package
+### My Aged Care — Support at Home
 
-If you receive a Home Care Package at Level 1–4 through My Aged Care, physiotherapy is a covered allied health service. The number of funded sessions available depends on your package level and care plan. Speak with your home care coordinator to add physiotherapy to your plan. We can assist with the referral process.
+Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where it is included in your approved services and plan. Speak with your provider or care coordinator about arranging physiotherapy. We can help discuss the home-visit option.
 
 ### Commonwealth Home Support Program (CHSP)
 
-The CHSP provides entry-level support for older Australians who need some assistance to remain living independently at home but do not yet have a Home Care Package. Allied health services including physiotherapy are a covered service category. Contact My Aged Care on 1800 200 422 to check your eligibility.
+The Commonwealth Home Support Programme (CHSP) continues as a separate entry-level program for eligible older Australians who need support to remain living independently at home. Allied health services, including physiotherapy, may be available depending on the person's assessment and local service arrangements. Contact My Aged Care on 1800 200 422 to check your eligibility.
 
 ### NDIS
 
