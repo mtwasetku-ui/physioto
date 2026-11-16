@@ -28,6 +28,7 @@ export default function PortalDemo() {
   const [demoAppointments, setDemoAppointments] = useState(initialAppointments.map(appointment => ({ ...appointment, day: 0 })))
   const [drag, setDrag] = useState<{ id: string; startClientX: number; startClientY: number; deltaPx: number; originDay: number; targetDay: number; offsetX: number } | null>(null)
   const dragRef = useRef<typeof drag>(null)
+  const suppressClickRef = useRef(false)
   const dayColRefs = useRef<Array<HTMLDivElement | null>>([])
   const [search, setSearch] = useState('')
   const [selected, setSelected] = useState<(typeof patients)[number] | null>(null)
@@ -43,6 +44,7 @@ export default function PortalDemo() {
   const PX_PER_MIN = 64 / 60
   function beginAppointmentDrag(e: React.PointerEvent<HTMLDivElement>, appointment: typeof demoAppointments[number]) {
     e.stopPropagation()
+    suppressClickRef.current = false
     if (e.pointerType !== 'mouse') return
     try { e.currentTarget.setPointerCapture(e.pointerId) } catch {}
     const next = { id: appointment.name, startClientX: e.clientX, startClientY: e.clientY, deltaPx: 0, originDay: appointment.day, targetDay: appointment.day, offsetX: 0 }
@@ -79,6 +81,7 @@ export default function PortalDemo() {
     dragRef.current = null
     setDrag(null)
     if (Math.abs(current.deltaPx) < 5 && targetDay === current.originDay) return
+    suppressClickRef.current = true
     const parts = appointment.time.split(':')
     const originalMinutes = (Number(parts[0]) - 8) * 60 + Number(parts[1] || 0)
     const deltaMinutes = Math.round((current.deltaPx / PX_PER_MIN) / 15) * 15
@@ -131,7 +134,7 @@ export default function PortalDemo() {
       <div className="relative h-[704px] border-r border-[#e6e8df]">{Array.from({length:12},(_,i)=>{const hour=i+8;return <div key={hour} className="absolute left-0 right-0 border-t border-[#e6e8df] pr-2 text-right" style={{top:i*64}}><span className="relative -top-2.5 bg-white px-1 text-[10px] font-semibold tabular-nums text-[#7c897f]">{hour===12?"12 pm":hour>12?`${hour-12} pm`:`${hour} am`}</span></div>})}</div>
       {["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map((weekday,index)=><div key={weekday} ref={el=>{dayColRefs.current[index]=el}} className="relative h-[704px] border-r border-[#e6e8df] last:border-r-0 bg-[#fbfcf8] transition-colors hover:bg-[#f5f8ef]">
         {Array.from({length:12},(_,i)=><div key={i} className="pointer-events-none absolute left-0 right-0 border-t border-[#e1e6dc]" style={{top:i*64}}/>)}
-        {demoAppointments.map((a,i)=>{if(a.day!==index)return null;const parts=a.time.split(":");const minutes=(Number(parts[0])-8)*60+Number(parts[1]||0);const top=minutes/60*64;const activeDrag=drag?.id===a.name;return <div key={a.name} onPointerDown={e=>beginAppointmentDrag(e,a)} onPointerMove={e=>moveAppointmentDrag(e,a)} onPointerUp={e=>finishAppointmentDrag(e,a)} onPointerCancel={()=>cancelAppointmentDrag(a)} onClick={()=>!activeDrag&&a.name!=="Travel time"&&setSelected(patients.find(p=>p.name===a.name)??null)} className={"absolute left-1 right-1 z-10 select-none touch-pan-y cursor-grab overflow-hidden rounded-lg border p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:cursor-grabbing "+(a.tone==="blue"?"border-[#c9d9eb] bg-[#edf4fb]":a.tone==="orange"?"border-[#f0d5b8] bg-[#fff2e5]":"border-[#cbdcc8] bg-[#edf5e9]")} style={{top:top+3,height:56,transform:activeDrag?'translate('+drag.offsetX+'px, '+drag.deltaPx+'px)':undefined,zIndex:activeDrag?30:10,transition:activeDrag?'none':undefined}}>
+        {demoAppointments.map((a,i)=>{if(a.day!==index)return null;const parts=a.time.split(":");const minutes=(Number(parts[0])-8)*60+Number(parts[1]||0);const top=minutes/60*64;const activeDrag=drag?.id===a.name;return <div key={a.name} onPointerDown={e=>beginAppointmentDrag(e,a)} onPointerMove={e=>moveAppointmentDrag(e,a)} onPointerUp={e=>finishAppointmentDrag(e,a)} onPointerCancel={()=>cancelAppointmentDrag(a)} onClick={()=>{if(suppressClickRef.current){suppressClickRef.current=false;return}if(!activeDrag&&a.name!=="Travel time")setSelected(patients.find(p=>p.name===a.name)??null)}} className={"absolute left-1 right-1 z-10 select-none touch-pan-y cursor-grab overflow-hidden rounded-lg border p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:cursor-grabbing "+(a.tone==="blue"?"border-[#c9d9eb] bg-[#edf4fb]":a.tone==="orange"?"border-[#f0d5b8] bg-[#fff2e5]":"border-[#cbdcc8] bg-[#edf5e9]")} style={{top:top+3,height:56,transform:activeDrag?'translate('+drag.offsetX+'px, '+drag.deltaPx+'px)':undefined,zIndex:activeDrag?30:10,transition:activeDrag?'none':undefined}}>
           <div className="text-[10px] font-extrabold text-[#55733e]">{a.time}</div><div className="mt-1 truncate text-[11px] font-bold leading-tight text-[#24382d]">{a.name}</div><div className="mt-1 truncate text-[10px] text-[#738078]">{a.type}</div>
         </div>})}
       </div>)}
