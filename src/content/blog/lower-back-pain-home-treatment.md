@@ -170,7 +170,7 @@ Back pain in older adults often occurs against a backdrop of reduced general fit
 
 If your back pain warrants professional assessment — and especially if it is recurring or has persisted beyond 2 weeks — home physiotherapy is accessible and often funded for eligible patients in North Tasmania.
 
-- **Medicare GP Management Plan:** If your GP diagnoses a chronic condition contributing to your back pain (such as osteoarthritis or osteoporosis), you may be eligible for up to five Medicare-rebated physiotherapy sessions per year under a Team Care Arrangement.
+- **Medicare:** If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 
 - **My Aged Care:** Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where it is included in your approved services. CHSP remains a separate pathway for eligible older people. Speak with your care coordinator about your current arrangements.
 
