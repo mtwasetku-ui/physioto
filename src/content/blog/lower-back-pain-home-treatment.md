@@ -172,7 +172,7 @@ If your back pain warrants professional assessment — and especially if it is r
 
 - **Medicare GP Management Plan:** If your GP diagnoses a chronic condition contributing to your back pain (such as osteoarthritis or osteoporosis), you may be eligible for up to five Medicare-rebated physiotherapy sessions per year under a Team Care Arrangement.
 
-- **My Aged Care Home Care Package:** If you are aged 65 or over and receive a Home Care Package, physiotherapy for back pain management is a covered allied health service. Speak with your care coordinator.
+- **My Aged Care:** Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where it is included in your approved services. CHSP remains a separate pathway for eligible older people. Speak with your care coordinator about your current arrangements.
 
 - **NDIS:** If you have an NDIS plan, physiotherapy for musculoskeletal conditions including lower back pain may be funded under Improved Daily Living supports.
 
