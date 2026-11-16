@@ -118,7 +118,7 @@ You will leave the first visit with a small, manageable set of exercises tailore
 
 **6 A plan for ongoing care**
 
-Micheal will recommend a treatment frequency and discuss funding options including Medicare GP Management Plans, My Aged Care Home Care Packages, and private health insurance.
+Micheal will recommend a treatment frequency and discuss funding options including Medicare, My Aged Care (Support at Home or CHSP, where eligible), and private health insurance.
 
 ---
 
@@ -158,9 +158,9 @@ Surgery should not be the first option, and research consistently shows that peo
 
 If your GP determines that physiotherapy is clinically necessary for your knee osteoarthritis, they can write a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year. A small gap payment may apply.
 
-### My Aged Care — Home Care Package
+### My Aged Care — Support at Home and CHSP
 
-If you are aged 65 or over and receive a Home Care Package through My Aged Care, physiotherapy is a covered allied health service. Depending on your package level, multiple sessions per month may be funded. Speak to your care coordinator about adding physiotherapy to your care plan.
+Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where included in your approved services and plan. CHSP continues separately for eligible older people. Speak with your provider or care coordinator about available arrangements.
 
 ### NDIS
 
