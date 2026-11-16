@@ -7,20 +7,20 @@ category: "Conditions & Rehab"
 featured: false
 image: /image/blog/multiple-sclerosis-home-physiotherapy.jpg
 
-tags: ["multiple sclerosis physiotherapy", "MS home physiotherapy", "MS fatigue management", "MS balance", "neurological physiotherapy Tasmania", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "MS Tasmania"]
+tags: ["multiple sclerosis physiotherapy", "MS home physiotherapy", "MS fatigue management", "MS balance", "neurological physiotherapy Tasmania", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "Physio to Home", "MS Tasmania"]
 ---
 
 # MULTIPLE SCLEROSIS | HOME PHYSIOTHERAPY
 
-## Physiotherapy for Multiple Sclerosis: A Guide for People with MS and Their Families in North Tasmania
+## Physiotherapy for Multiple Sclerosis: A Guide for People with MS and Their Families in Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home | Last reviewed: 16 November 2026
 
 Multiple sclerosis is the most common acquired neurological condition affecting young adults in Australia, with peak onset between the ages of 20 and 40. It is also a lifelong condition — one that changes in its character and demands across decades, requiring a rehabilitation approach that adapts alongside it.
 
-For people with MS in North Tasmania, the geography and workforce distribution of the region create a particular access challenge: neurological physiotherapy is concentrated in Launceston, and for people managing MS fatigue, mobility impairment, or heat sensitivity, regular clinic attendance is among the most demanding aspects of treatment.
+For people with MS in Tasmania, the geography and workforce distribution of the region create a particular access challenge: neurological physiotherapy is concentrated in Launceston, and for people managing MS fatigue, mobility impairment, or heat sensitivity, regular clinic attendance is among the most demanding aspects of treatment.
 
 Home-based physiotherapy resolves this directly. It brings skilled neurological rehabilitation to the person's door, in the environment where their MS actually affects their daily life — and without the energy expenditure of travel that can consume the capacity needed for rehabilitation itself.
 
@@ -124,7 +124,7 @@ Yes. Physiotherapy is a recommended component of MS management across all guidel
 
 ---
 
-## Funding Home Physiotherapy for MS in North Tasmania
+## Funding Home Physiotherapy for MS in Tasmania
 
 **Medicare GP Chronic Condition Management Plan** — Eligible people may access up to five individual allied health services per calendar year, shared across eligible professions. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements may continue until 30 June 2027.
 
@@ -136,9 +136,9 @@ Yes. Physiotherapy is a recommended component of MS management across all guidel
 
 ---
 
-## Ready to Start Home Physiotherapy for MS in North Tasmania?
+## Ready to Start Home Physiotherapy for MS in Tasmania?
 
-Physio to Home provides AHPRA-registered neurological physiotherapy in your home across North Tasmania — designed around your fatigue, your environment, and your goals.
+Physio to Home provides AHPRA-registered neurological physiotherapy in your home across Tasmania — designed around your fatigue, your environment, and your goals.
 
 Book your home visit today →
 
@@ -147,7 +147,7 @@ Book your home visit today →
 ## About the Author
 
 Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
-Founder, Physio to Home — North Tasmania's home physiotherapy service.
+Founder, Physio to Home — Tasmania's home physiotherapy service.
 
 ---
 
