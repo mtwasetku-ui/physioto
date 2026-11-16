@@ -29,7 +29,7 @@ export default function PortalDemo() {
   const [drag, setDrag] = useState<{ id: string; startClientX: number; startClientY: number; deltaPx: number; originDay: number; targetDay: number; offsetX: number } | null>(null)
   const dragRef = useRef<typeof drag>(null)
   const suppressClickRef = useRef(false)
-  const pendingTouchRef = useRef<{ id: string; timer: ReturnType<typeof setTimeout> } | null>(null)
+  const pendingTouchRef = useRef<{ id: string; x: number; y: number; timer: ReturnType<typeof setTimeout> } | null>(null)
   const dayColRefs = useRef<Array<HTMLDivElement | null>>([])
   const [search, setSearch] = useState('')
   const [selected, setSelected] = useState<(typeof patients)[number] | null>(null)
@@ -65,12 +65,12 @@ export default function PortalDemo() {
       pendingTouchRef.current = null
       armAppointmentDrag(el, pointerId, x, y, appointment)
     }, 260)
-    pendingTouchRef.current = { id: appointment.name, timer }
+    pendingTouchRef.current = { id: appointment.name, x, y, timer }
   }
   function moveAppointmentDrag(e: React.PointerEvent<HTMLDivElement>, appointment: typeof demoAppointments[number]) {
     const pending = pendingTouchRef.current
     if (pending?.id === appointment.name) {
-      if (Math.hypot(e.clientX - (dragRef.current?.startClientX ?? e.clientX), e.clientY - (dragRef.current?.startClientY ?? e.clientY)) > 10) {
+      if (Math.hypot(e.clientX - pending.x, e.clientY - pending.y) > 10) {
         clearTimeout(pending.timer)
         pendingTouchRef.current = null
       }
