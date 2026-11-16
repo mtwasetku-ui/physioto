@@ -141,4 +141,19 @@ Outside of work, Mindy enjoys ballet, cooking, knitting and crochet, bushwalking
   photo: '/team/mindy.jpg', // update to actual filename once uploaded
   order: 6,
 },
+    {
+    id: '11',
+    name: 'Cynthia Chong',
+    title: 'Occupational Therapist',
+    qualifications: 'BSc (Hons) Occupational Therapy, MSc Clinical Gerontology, AHPRA Registered',
+    "AHPRA registration number": 'OCC0002615618',
+    specialties: 'Aged Care, Home Environmental Assessment, Home Modifications, Assistive Equipment Prescription, Falls Prevention, Cognitive Assessment and Intervention, Dementia Care',
+    bio: `Cynthia is an occupational therapist with over a decade of experience across Australia and Hong Kong, specialising in the care of older adults. She has worked in community, rehabilitation, acute hospital and residential care home settings, completing home visits, environmental assessments and equipment prescription, and supporting carers of people living with dementia.
+
+Her practical, client-centred approach is shaped by her Master of Science in Clinical Gerontology. Through Physio to Home, Cynthia focuses on helping people live safely and independently in their own homes. She provides home visits and environmental assessments, recommends home modifications, and prescribes assistive equipment to make everyday tasks easier and reduce falls risk. She also supports families and carers with practical education and strategies.
+
+Cynthia is fluent in English, Cantonese and Mandarin.`,
+    photo: '/team/cynthia.jpg', 
+    order: 4,
+  },
 ]
