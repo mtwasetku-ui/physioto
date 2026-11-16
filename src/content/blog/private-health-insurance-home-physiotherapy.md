@@ -92,7 +92,7 @@ Contact Physio to Home before your first visit and we will give you a clear brea
 
 Private health insurance can be used alongside other funding sources to extend the number of visits you can access or reduce your out-of-pocket costs.
 
-**Private health + Medicare GP Management Plan.** In some circumstances, private health insurance can contribute a rebate on top of the Medicare rebate under a GP Management Plan. The rules around this are complex and fund-specific — ask your fund whether they cover the gap remaining after a Medicare rebate is applied.
+**Private health + Medicare.** You generally cannot claim a private health insurance benefit for the same service for which you receive a Medicare benefit. Check the current rules with Medicare and your health fund before combining funding arrangements.
 
 **Private health + aged care funding.** If you receive Support at Home, physiotherapy may be funded as a clinical support where it is included in your approved services. CHSP may also provide allied health support for eligible people. Private health insurance would not typically pay for the same service already funded through another program; check your fund and provider before claiming.
 
@@ -104,7 +104,7 @@ Private health insurance can be used alongside other funding sources to extend t
 
 Private health insurance is one of several funding options for home physiotherapy — but it is not the only one, and many of our patients access funded visits through other pathways. Alternatives include:
 
-- **Medicare GP Management Plan** — up to five subsidised visits per year for people with a chronic medical condition (see our separate guide)
+- **Medicare GP Chronic Condition Management Plan** — up to five eligible individual allied health services per calendar year, shared across eligible professions (see our separate guide). Eligible legacy GP Management Plans and Team Care Arrangements may continue until 30 June 2027.
 - **My Aged Care — Support at Home or CHSP** — possible funding for eligible older Australians, subject to approved services and program arrangements (see our separate guide)
 - **NDIS** — funded physiotherapy for eligible participants with a disability (see our separate guide)
 - **Private self-funding** — paying directly for home visits without insurance or government subsidy
