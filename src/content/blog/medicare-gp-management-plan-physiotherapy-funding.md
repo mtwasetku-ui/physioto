@@ -1,5 +1,5 @@
 ---
-title: "Medicare Physiotherapy: How GP Management Plans Work"
+title: "Medicare Physiotherapy: GP Chronic Condition Management Plans"
 description: "Can Medicare help pay for physiotherapy? How GP Chronic Condition Management Plans work, who qualifies, and what the five-service annual limit means."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-08-19"
@@ -182,9 +182,9 @@ Not necessarily. Home physiotherapy may be an appropriate option depending on yo
 
 Speak with your GP about whether a GP Chronic Condition Management Plan is appropriate for your condition and whether physiotherapy should form part of your care.
 
-## Home physiotherapy in North Tasmania
+## Home physiotherapy across Tasmania
 
-Physio to Home provides mobile physiotherapy for people who need treatment in their own home across North Tasmania.
+Physio to Home provides mobile physiotherapy for people who need treatment in their own home across Tasmania. Our physiotherapists travel to clients rather than operating an onsite clinic.
 
 Home-based physiotherapy can be particularly useful for people who find travelling to a clinic difficult or whose main mobility problems occur during everyday activities at home.
 
@@ -202,6 +202,6 @@ Always confirm the current MBS requirements and your expected out-of-pocket cost
 
 **Micheal Ghattas, DPT**  
 AHPRA Registered Physiotherapist  
-Physio to Home | North Tasmania
+Physio to Home | Tasmania-wide home visits
 
-Micheal provides home-based physiotherapy for people living with mobility, neurological, musculoskeletal and rehabilitation needs across North Tasmania.
+Micheal and the Physio to Home team provide home-based physiotherapy for people living with mobility, neurological, musculoskeletal and rehabilitation needs across Tasmania.
