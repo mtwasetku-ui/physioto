@@ -219,7 +219,7 @@ A physiotherapy assessment for dizziness and falls risk is accessible and often 
 
 - **My Aged Care Home Care Package:** If you already receive a Home Care Package, physiotherapy for dizziness and falls prevention is a covered allied health service. Speak with your care coordinator.
 
-- **Medicare GP Management Plan:** If your GP determines that dizziness is related to a chronic condition, a Team Care Arrangement can provide up to five Medicare-rebated physiotherapy sessions per year.
+- **Medicare:** If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 
 - **NDIS:** For eligible participants, physiotherapy for balance and dizziness management may be funded under Improved Daily Living or Improved Health and Wellbeing categories.
 
