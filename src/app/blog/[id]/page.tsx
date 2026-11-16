@@ -131,7 +131,7 @@ function linkifyText(
 
       // Match complete words/phrases only. This prevents short keywords
       // such as "DVA" from linking inside unrelated words like "advantage".
-      const escapedKeyword = kw.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')
+      const escapedKeyword = kw.split('').map((char) => '\\^$.*+?()[]{}|'.includes(char) ? '\\' + char : char).join('')
       const boundaryPattern = new RegExp(
         `(?<![\\p{L}\\p{N}])${escapedKeyword}(?![\\p{L}\\p{N}])`,
         'iu'
