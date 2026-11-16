@@ -17,7 +17,7 @@ The Medicare system changed on 1 July 2025, so some information you may find onl
 
 This guide explains how Medicare-subsidised physiotherapy works, who may be eligible, how the annual allied-health service limit works, what you may still have to pay, and how home physiotherapy may fit into your care.
 
-**Last reviewed: August 2026**
+**Last reviewed: 16 November 2026**
 
 ## The short answer
 
