@@ -126,9 +126,9 @@ Yes. Physiotherapy is a recommended component of MS management across all guidel
 
 ## Funding Home Physiotherapy for MS in North Tasmania
 
-**Medicare GP Management Plan** — Up to five subsidised visits per year. Your GP can write the plan.
+**Medicare GP Chronic Condition Management Plan** — Eligible people may access up to five individual allied health services per calendar year, shared across eligible professions. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements may continue until 30 June 2027.
 
-**NDIS** — MS is a common NDIS primary disability. Physiotherapy is funded under Improved Daily Living and Improved Health and Wellbeing. Physio to Home is completing NDIS provider registration.
+**NDIS** — MS is a common NDIS primary disability. Physiotherapy is funded under Improved Daily Living and Improved Health and Wellbeing. Physio to Home can discuss enquiries from self-managed and plan-managed NDIS participants. Funding must be available in the participant's plan and the physiotherapy must meet the applicable NDIS funding requirements.
 
 **My Aged Care** — For eligible older people, Support at Home may fund physiotherapy as a clinical support where it is included in the approved services. CHSP remains a separate pathway.
 
