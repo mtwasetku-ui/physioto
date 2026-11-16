@@ -24,7 +24,7 @@ Through Physio to Home, Micheal focuses on delivering high-quality physiotherapy
 
 Outside of work, Micheal enjoys spending time with family, listening to music, and cooking.`,
     photo: '/team/micheal.webp',
-    order: 4,
+    order: 8,
   },
   {
     id: '2',
