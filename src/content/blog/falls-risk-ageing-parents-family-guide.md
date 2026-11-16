@@ -122,11 +122,11 @@ If your parent has had a fall in North Tasmania and you are concerned, contact P
 
 ## Funding a Home Falls Assessment for Your Parent
 
-**My Aged Care — Home Care Package** — If your parent receives a Home Care Package, a physiotherapy falls risk assessment and prevention programme can be funded through their package. Contact their care coordinator.
+**My Aged Care — Support at Home** — A physiotherapy falls risk assessment or prevention programme may be funded where it is included in your parent's approved clinical supports. Contact their provider or care coordinator to discuss the current plan.
 
 **Medicare GP Management Plan** — A GP Management Plan provides up to five subsidised physiotherapy visits per year. The falls assessment counts as a covered visit.
 
-**My Aged Care — CHSP** — Entry-level support for older Australians not yet on a package.
+**My Aged Care — CHSP** — A separate entry-level support program for eligible older Australians.
 
 **Private health insurance** — Most extras policies cover physiotherapy including home visits.
 
