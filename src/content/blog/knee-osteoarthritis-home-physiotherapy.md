@@ -154,9 +154,9 @@ Surgery should not be the first option, and research consistently shows that peo
 
 ## Funding Your Home Physiotherapy in North Tasmania
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-If your GP determines that physiotherapy is clinically necessary for your knee osteoarthritis, they can write a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year. A small gap payment may apply.
+If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year, shared across eligible professions. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027. A gap payment may apply.
 
 ### My Aged Care — Support at Home and CHSP
 
