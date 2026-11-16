@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CalendarDays, Users, LayoutDashboard, UserRound, Search, Plus, ChevronLeft, ChevronRight, Clock3, MapPin, ArrowUpRight, Check, X, Activity, FileText, HeartPulse } from 'lucide-react'
 
@@ -26,7 +26,9 @@ export default function PortalDemo() {
   const [section, setSection] = useState<Section>('Diary')
   const [weekOffset, setWeekOffset] = useState(0)
   const [demoAppointments, setDemoAppointments] = useState(initialAppointments.map(appointment => ({ ...appointment, day: 0 })))
-  const [draggedAppointment, setDraggedAppointment] = useState<number | null>(null)
+  const [drag, setDrag] = useState<{ id: string; startClientX: number; startClientY: number; deltaPx: number; originDay: number; targetDay: number; offsetX: number } | null>(null)
+  const dragRef = useRef<typeof drag>(null)
+  const dayColRefs = useRef<Array<HTMLDivElement | null>>([])
   const [search, setSearch] = useState('')
   const [selected, setSelected] = useState<(typeof patients)[number] | null>(null)
   const [showNote, setShowNote] = useState(false)
@@ -36,6 +38,60 @@ export default function PortalDemo() {
   const filtered = useMemo(() => patients.filter(p => (p.name + p.suburb + p.focus).toLowerCase().includes(search.toLowerCase())), [search])
   const notify = (message: string) => { setToast(message); window.setTimeout(() => setToast(''), 2400) }
   const weekStart = new Date(2026, 10, 16 + weekOffset * 7)
+
+  // Match the live diary's pointer-delta drag model and quarter-hour snapping.
+  const PX_PER_MIN = 64 / 60
+  function beginAppointmentDrag(e: React.PointerEvent<HTMLDivElement>, appointment: typeof demoAppointments[number]) {
+    e.stopPropagation()
+    if (e.pointerType !== 'mouse') return
+    try { e.currentTarget.setPointerCapture(e.pointerId) } catch {}
+    const next = { id: appointment.name, startClientX: e.clientX, startClientY: e.clientY, deltaPx: 0, originDay: appointment.day, targetDay: appointment.day, offsetX: 0 }
+    dragRef.current = next
+    setDrag(next)
+  }
+  function moveAppointmentDrag(e: React.PointerEvent<HTMLDivElement>, appointment: typeof demoAppointments[number]) {
+    const current = dragRef.current
+    if (!current || current.id !== appointment.name) return
+    let targetDay = current.originDay
+    for (let i = 0; i < dayColRefs.current.length; i++) {
+      const col = dayColRefs.current[i]
+      if (!col) continue
+      const rect = col.getBoundingClientRect()
+      if (e.clientX >= rect.left && e.clientX < rect.right) { targetDay = i; break }
+    }
+    const origin = dayColRefs.current[current.originDay]
+    const target = dayColRefs.current[targetDay]
+    const offsetX = origin && target ? target.getBoundingClientRect().left - origin.getBoundingClientRect().left : 0
+    const next = { ...current, deltaPx: e.clientY - current.startClientY, targetDay, offsetX }
+    dragRef.current = next
+    setDrag(next)
+  }
+  function finishAppointmentDrag(e: React.PointerEvent<HTMLDivElement>, appointment: typeof demoAppointments[number]) {
+    const current = dragRef.current
+    if (!current || current.id !== appointment.name) return
+    let targetDay = current.originDay
+    for (let i = 0; i < dayColRefs.current.length; i++) {
+      const col = dayColRefs.current[i]
+      if (!col) continue
+      const rect = col.getBoundingClientRect()
+      if (e.clientX >= rect.left && e.clientX < rect.right) { targetDay = i; break }
+    }
+    dragRef.current = null
+    setDrag(null)
+    if (Math.abs(current.deltaPx) < 5 && targetDay === current.originDay) return
+    const parts = appointment.time.split(':')
+    const originalMinutes = (Number(parts[0]) - 8) * 60 + Number(parts[1] || 0)
+    const deltaMinutes = Math.round((current.deltaPx / PX_PER_MIN) / 15) * 15
+    const newMinutes = Math.max(0, Math.min(600, originalMinutes + deltaMinutes))
+    const hour = 8 + Math.floor(newMinutes / 60)
+    const minute = newMinutes % 60
+    const time = String(hour).padStart(2, '0') + ':' + String(minute).padStart(2, '0')
+    setDemoAppointments(items => items.map(item => item.name === appointment.name ? { ...item, day: targetDay, time } : item))
+    notify('Moved sample visit to ' + ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][targetDay] + ' at ' + time + '.')
+  }
+  function cancelAppointmentDrag(appointment: typeof demoAppointments[number]) {
+    if (dragRef.current?.id === appointment.name) { dragRef.current = null; setDrag(null) }
+  }
 
   return (
     <div className="demo-shell">
@@ -73,9 +129,9 @@ export default function PortalDemo() {
     </div>
     <div className="grid grid-cols-[58px_repeat(7,minmax(0,1fr))]">
       <div className="relative h-[704px] border-r border-[#e6e8df]">{Array.from({length:12},(_,i)=>{const hour=i+8;return <div key={hour} className="absolute left-0 right-0 border-t border-[#e6e8df] pr-2 text-right" style={{top:i*64}}><span className="relative -top-2.5 bg-white px-1 text-[10px] font-semibold tabular-nums text-[#7c897f]">{hour===12?"12 pm":hour>12?`${hour-12} pm`:`${hour} am`}</span></div>})}</div>
-      {["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map((weekday,index)=><div key={weekday} onDragOver={e=>e.preventDefault()} onDrop={e=>{e.preventDefault();if(draggedAppointment!==null){const bounds=e.currentTarget.getBoundingClientRect();const y=Math.max(0,Math.min(bounds.height,e.clientY-bounds.top));const rawMinutes=(y/bounds.height)*660;const snapped=Math.max(0,Math.min(600,Math.round(rawMinutes/15)*15));const hour=8+Math.floor(snapped/60);const minute=snapped%60;const time=String(hour).padStart(2,"0")+":"+String(minute).padStart(2,"0");setDemoAppointments(items=>items.map((item,i)=>i===draggedAppointment?{...item,day:index,time}:item));setDraggedAppointment(null);notify("Moved sample visit to "+weekday+" at "+time+".")}}} className="relative h-[704px] border-r border-[#e6e8df] last:border-r-0 bg-[#fbfcf8] transition-colors hover:bg-[#f5f8ef]">
+      {["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map((weekday,index)=><div key={weekday} ref={el=>{dayColRefs.current[index]=el}} className="relative h-[704px] border-r border-[#e6e8df] last:border-r-0 bg-[#fbfcf8] transition-colors hover:bg-[#f5f8ef]">
         {Array.from({length:12},(_,i)=><div key={i} className="pointer-events-none absolute left-0 right-0 border-t border-[#e1e6dc]" style={{top:i*64}}/>)}
-        {demoAppointments.map((a,i)=>{if(a.day!==index)return null;const parts=a.time.split(":");const minutes=(Number(parts[0])-8)*60+Number(parts[1]||0);const top=minutes/60*64;return <div key={a.time+a.name} draggable onDragStart={()=>setDraggedAppointment(i)} onDragEnd={()=>setDraggedAppointment(null)} onClick={()=>a.name!=="Travel time"&&setSelected(patients.find(p=>p.name===a.name)??null)} className={"absolute left-1 right-1 z-10 cursor-grab overflow-hidden rounded-lg border p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:cursor-grabbing "+(a.tone==="blue"?"border-[#c9d9eb] bg-[#edf4fb]":a.tone==="orange"?"border-[#f0d5b8] bg-[#fff2e5]":"border-[#cbdcc8] bg-[#edf5e9]")} style={{top:top+3,height:56}}>
+        {demoAppointments.map((a,i)=>{if(a.day!==index)return null;const parts=a.time.split(":");const minutes=(Number(parts[0])-8)*60+Number(parts[1]||0);const top=minutes/60*64;const activeDrag=drag?.id===a.name;return <div key={a.name} onPointerDown={e=>beginAppointmentDrag(e,a)} onPointerMove={e=>moveAppointmentDrag(e,a)} onPointerUp={e=>finishAppointmentDrag(e,a)} onPointerCancel={()=>cancelAppointmentDrag(a)} onClick={()=>!activeDrag&&a.name!=="Travel time"&&setSelected(patients.find(p=>p.name===a.name)??null)} className={"absolute left-1 right-1 z-10 select-none touch-pan-y cursor-grab overflow-hidden rounded-lg border p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:cursor-grabbing "+(a.tone==="blue"?"border-[#c9d9eb] bg-[#edf4fb]":a.tone==="orange"?"border-[#f0d5b8] bg-[#fff2e5]":"border-[#cbdcc8] bg-[#edf5e9]")} style={{top:top+3,height:56,transform:activeDrag?'translate('+drag.offsetX+'px, '+drag.deltaPx+'px)':undefined,zIndex:activeDrag?30:10,transition:activeDrag?'none':undefined}}>
           <div className="text-[10px] font-extrabold text-[#55733e]">{a.time}</div><div className="mt-1 truncate text-[11px] font-bold leading-tight text-[#24382d]">{a.name}</div><div className="mt-1 truncate text-[10px] text-[#738078]">{a.type}</div>
         </div>})}
       </div>)}
