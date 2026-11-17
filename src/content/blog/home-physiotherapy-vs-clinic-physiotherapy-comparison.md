@@ -7,7 +7,7 @@ category: "Physiotherapy Tips"
 featured: true
 image: /image/blog/home-physiotherapy-vs-clinic-physiotherapy-comparison.jpg
 
-tags: ["home physiotherapy vs clinic", "home physio better than clinic", "mobile physiotherapy vs clinic", "in-home physiotherapy evidence", "home care physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "physiotherapy comparison", "home vs clinic physio"]
+tags: ["home physiotherapy vs clinic", "home physio better than clinic", "mobile physiotherapy vs clinic", "in-home physiotherapy evidence", "home care physiotherapy", "physiotherapy Tasmania", "Physio to Home", "physiotherapy comparison", "home vs clinic physio"]
 ---
 
 # HOME PHYSIOTHERAPY VS CLINIC PHYSIOTHERAPY: WHICH IS BETTER?
@@ -16,7 +16,7 @@ tags: ["home physiotherapy vs clinic", "home physio better than clinic", "mobile
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 When most people think about physiotherapy, they picture a clinic — a waiting room, an adjustable treatment table, an array of equipment. Home physiotherapy — a fully qualified physiotherapist coming to your house — is less familiar, and a natural question follows: is it really as good?
 
@@ -99,7 +99,7 @@ For falls prevention, post-surgical rehabilitation, neurological conditions, and
 If yes — home physiotherapy enables their involvement in a way that clinic attendance does not.
 
 **5. Do you have access to funded home physiotherapy?**
-My Aged Care, NDIS, Medicare GP Management Plan, and most private health insurance extras policies all fund home-based physiotherapy. Cost is rarely a barrier unique to home delivery.
+Funding depends on the person's eligibility and the relevant provider or scheme arrangements. Support at Home may include physiotherapy as a clinical support when it is part of approved services; CHSP is a separate pathway. NDIS funding must relate to the participant's disability support needs and plan. Medicare rebates may be available under a GP Chronic Condition Management Plan or an eligible legacy plan, subject to referral and Medicare requirements. Private health rebates depend on the policy and insurer, and home visits may have specific limits or exclusions.
 
 ---
 
@@ -119,9 +119,9 @@ Not necessarily. Home physiotherapy fees are typically comparable to clinic fees
 
 ---
 
-## Considering Home Physiotherapy in North Tasmania?
+## Considering Home Physiotherapy Across Tasmania?
 
-Physio to Home provides AHPRA-registered home physiotherapy across North Tasmania — Launceston, George Town, Longford, Deloraine, Scottsdale, the Tamar Valley, and surrounding rural areas.
+Physio to Home provides AHPRA-registered home physiotherapy across Tasmania, subject to location and appointment availability. Contact us with your town or suburb to confirm whether a visit can be arranged.
 
 Book your first home visit today →
 
@@ -130,7 +130,7 @@ Book your first home visit today →
 ## About the Author
 
 Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
-Founder, Physio to Home — North Tasmania's home physiotherapy service.
+Founder, Physio to Home — Tasmania-wide home-visit physiotherapy.
 
 ---
 
