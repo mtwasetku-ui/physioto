@@ -7,7 +7,7 @@ category: "Conditions & Rehab"
 featured: false
 image: /image/blog/parkinsons-exercise-neuroprotection-evidence.jpg
 
-tags: ["Parkinson's disease exercise", "neuroprotection Parkinson's", "exercise neuroscience", "Parkinson's physiotherapy", "BDNF Parkinson's", "high intensity exercise Parkinson's", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "neuroplasticity"]
+tags: ["Parkinson's disease exercise", "neuroprotection Parkinson's", "exercise neuroscience", "Parkinson's physiotherapy", "BDNF Parkinson's", "high intensity exercise Parkinson's", "home physiotherapy", "physiotherapy Tasmania", "Physio to Home", "neuroplasticity"]
 ---
 
 # PARKINSON'S DISEASE & EXERCISE: THE NEUROPROTECTION EVIDENCE
