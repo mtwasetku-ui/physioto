@@ -140,9 +140,9 @@ You will leave the first visit with a clear, manageable daily programme — incl
 
 ## Accessing Home Physiotherapy in Tasmania: Funding Options
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-If your GP determines that physiotherapy is clinically necessary for your Parkinson's disease management, they can write a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year.
+If your GP determines that physiotherapy is appropriate for your chronic condition management, they may prepare a GP Chronic Condition Management Plan (GPCCMP) and refer you for eligible allied health services. Eligible patients may access up to five individual allied health services per calendar year, shared across eligible professions. A GP referral is required. Eligible GP Management Plans and Team Care Arrangements established before 1 July 2025 may continue to support services until 30 June 2027.
 
 ### My Aged Care — Support at Home and CHSP
 
@@ -184,7 +184,7 @@ Yes, indirectly. Exercise has well-established benefits for fatigue, mood, and s
 
 ## Ready to Start Physiotherapy for Parkinson's Disease in Tasmania?
 
-Whether you are newly diagnosed and want to build a strong foundation, or you are managing more advanced Parkinson's and looking for better support — Physio to Home is here. We provide AHPRA-registered, evidence-based physiotherapy in your own home across Tasmania, funded through Medicare, My Aged Care, NDIS, and private health insurance.
+Whether you are newly diagnosed and want to build a strong foundation, or you are managing more advanced Parkinson's and looking for better support — Physio to Home is here. We provide AHPRA-registered physiotherapy in your own home across Tasmania. Funding options depend on individual eligibility and provider arrangements.
 
 Book your first home visit today — we cover all of Tasmania →
 
@@ -201,6 +201,9 @@ Micheal is the founder of Physio to Home, a mobile physiotherapy practice servin
 ---
 
 ## References & Further Reading
+
+Services Australia. MBS billing rules for chronic condition allied health and other primary health care items. Commonwealth of Australia, 2026. https://www.servicesaustralia.gov.au/mbs-billing-rules-for-chronic-condition-allied-health-and-other-primary-health-care-items?context=20
+
 
 Keus SHJ, et al. European Physiotherapy Guideline for Parkinson's Disease. KNGF/ParkinsonNet, 2014.
 
