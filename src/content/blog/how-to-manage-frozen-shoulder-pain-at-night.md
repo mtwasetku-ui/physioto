@@ -118,7 +118,7 @@ The freezing stage — when night pain is typically worst — lasts on average 2
 
 ---
 
-## Managing Frozen Shoulder With Physiotherapy in North Tasmania
+## Managing Frozen Shoulder With Physiotherapy in Tasmania
 
 Night pain management is one component of frozen shoulder care. The other — equally important — is addressing the joint dysfunction and capsular fibrosis that underlies the condition through physiotherapy. Physio to Home provides stage-appropriate frozen shoulder management in your home across Tasmania.
 
