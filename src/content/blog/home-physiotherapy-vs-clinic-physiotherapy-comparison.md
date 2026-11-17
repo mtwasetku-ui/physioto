@@ -7,7 +7,7 @@ category: "Physiotherapy Tips"
 featured: true
 image: /image/blog/home-physiotherapy-vs-clinic-physiotherapy-comparison.jpg
 
-tags: ["home physiotherapy vs clinic", "home physio better than clinic", "mobile physiotherapy vs clinic", "in-home physiotherapy evidence", "home care physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "physiotherapy comparison", "home vs clinic physio"]
+tags: ["home physiotherapy vs clinic", "home physio better than clinic", "mobile physiotherapy vs clinic", "in-home physiotherapy evidence", "home care physiotherapy", "physiotherapy Tasmania", "Physio to Home", "physiotherapy comparison", "home vs clinic physio"]
 ---
 
 # HOME PHYSIOTHERAPY VS CLINIC PHYSIOTHERAPY: WHICH IS BETTER?
