@@ -16,7 +16,7 @@ tags: ["physiotherapy Longford", "home physiotherapy Longford", "mobile physioth
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania-Wide | Last reviewed: July 2026
 
 Longford is a Georgian-era village at the meeting point of the Macquarie and South Esk Rivers, about 20 km south of Launceston. It's home to Woolmers Estate and Brickendon — both UNESCO World Heritage–listed convict sites — and to a population with a median age noticeably older than the Tasmanian average. That combination of history, agriculture, and an ageing population means physiotherapy demand in Longford is high, even though the town itself has never had a resident physiotherapy clinic.
 
@@ -56,7 +56,7 @@ Alongside Longford itself, our team regularly visits Cressy, Perth, Evandale, Ca
 
 ## Funding Options
 
-**Medicare GP Chronic Condition Management Plan** — eligible people may access up to five individual allied health services per calendar year. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
+**Medicare GP Chronic Condition Management Plan** — eligible people with a chronic condition and complex care needs may be referred for up to five MBS-supported individual allied health services per calendar year, shared across eligible professions. A GP referral and Medicare eligibility requirements apply. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
 
 **My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we can discuss the relevant funding pathway with your coordinator.
 
@@ -100,7 +100,7 @@ Usually within 1–2 weeks of enquiry. For urgent situations, such as a recent f
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including Longford and the Northern Midlands.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across Tasmania, including Longford and the Northern Midlands.
 
 ---
 
