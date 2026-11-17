@@ -38,7 +38,7 @@ The consequences for allied health access are substantial, underreported, and di
 
 The Australian Institute of Health and Welfare (AIHW) Health Workforce data consistently shows that physiotherapy workforce density — physiotherapists per 100,000 population — is significantly lower in regional and remote areas of Australia than in major cities. In Tasmania specifically, physiotherapy services are heavily concentrated in Hobart and Launceston, with thin and fragmented coverage in regional and rural areas.
 
-According to the AIHW's *Allied Health Workforce 2023* report, the rate of physiotherapy FTE (full-time equivalent) per 100,000 population in regional Tasmania is approximately 40–50% of the rate in major cities. For communities classified as remote or very remote, coverage is lower still.
+AIHW workforce reporting identifies geographic variation in allied health workforce distribution. A precise Tasmania-specific physiotherapy FTE comparison should be calculated from the underlying workforce tables before a percentage is quoted; this article therefore does not assign a 40–50% figure to regional Tasmania. For communities classified as remote or very remote, coverage is lower still.
 
 The practical consequence is not merely longer waiting times — though those exist. It is a fundamental mismatch between where physiotherapy is needed and where it is delivered. The communities with the oldest populations, the highest rates of musculoskeletal and neurological conditions, and the greatest barriers to travel are the communities with the least access to the services that would most benefit them.
 
@@ -66,7 +66,7 @@ The conditions for which physiotherapy is most evidence-supported are precisely 
 
 The economic and health burden of inadequate physiotherapy access in rural communities is rarely quantified directly, but the available data allows reasonable estimation.
 
-**Falls-related hospitalisation** costs the Australian health system approximately $2.3 billion annually, according to the AIHW. A 2019 Cochrane Review found that physiotherapy-led balance and strength programmes reduce falls rates in community-dwelling older adults by approximately 23%. If rural Tasmanians at high falls risk received evidence-based physiotherapy at the same rate as their urban counterparts, the reduction in falls-related hospitalisation in Tasmania alone would represent a meaningful reduction in system cost — and, far more importantly, a meaningful reduction in hip fractures, traumatic brain injuries, and the permanent functional decline that follows serious falls in older adults.
+**Falls-related hospitalisation** creates a substantial health-system burden. AIHW estimated that $2.3 billion was spent treating fall injuries among Australians aged 65 and over in 2019–20; this is a dated estimate, not a current annual cost. A 2019 Cochrane Review found that physiotherapy-led balance and strength programmes reduce falls rates in community-dwelling older adults by approximately 23%. If rural Tasmanians at high falls risk received evidence-based physiotherapy at the same rate as their urban counterparts, the reduction in falls-related hospitalisation in Tasmania alone would represent a meaningful reduction in system cost — and, far more importantly, a meaningful reduction in hip fractures, traumatic brain injuries, and the permanent functional decline that follows serious falls in older adults.
 
 **Musculoskeletal conditions and the GP burden.** The Productivity Commission's *Report on Government Services* data consistently shows that inadequate allied health access in rural areas increases GP consultation rates for musculoskeletal conditions — conditions for which physiotherapy, not GP consultation, is the appropriate primary clinical response. GPs managing chronic back pain, arthritis flares, and post-surgical recovery in the absence of available physiotherapy are providing suboptimal care through no fault of their own. The system has created a referral pathway with no destination.
 
@@ -127,11 +127,11 @@ If you are a GP, aged care coordinator, health planner, or policymaker who found
 ## Key Statistics Summary
 
 - Tasmania's median age (42 years) is the highest of any Australian state — ABS Census 2021
-- Physiotherapy FTE per 100,000 population in regional Tasmania is approximately 40–50% of major city rates — AIHW Allied Health Workforce 2023
+- AIHW reports geographic variation in allied health workforce distribution; a Tasmania-specific physiotherapy FTE percentage requires analysis of the underlying workforce tables
 - Falls account for 43% of injury hospitalisations in Australians over 65 — AIHW 2022
 - Physiotherapy-led exercise programmes reduce community falls rates by approximately 23% — Cochrane Review, Sherrington et al., 2019
 - Falls-related hospitalisation costs Australia approximately $2.3 billion annually — AIHW
-- Home-based physiotherapy produces equivalent outcomes to clinic-based care across falls prevention, OA management, and post-surgical rehabilitation — Age and Ageing systematic review, 2018
+- Evidence comparing home-based with centre-based exercise after hospitalisation remains uncertain; the appropriate setting depends on the person's clinical needs and access requirements
 
 ---
 
@@ -161,7 +161,9 @@ Sherrington C, et al. Exercise for preventing falls in older people living in th
 
 Langhorne P, et al. Early supported discharge services for inpatient stroke care. *Cochrane Database of Systematic Reviews*, 2017.
 
-Tousignant M, et al. Systematic review of the effectiveness of home physiotherapy. *Age and Ageing*, 2018.
+Taylor NF, et al. Effectiveness of home-based exercise for improving physical activity, quality of life and function in older adults after hospitalisation: a systematic review and meta-analysis. *Clinical Rehabilitation*, 2022.
+
+Clemson L, et al. Environmental interventions for preventing falls in older people living in the community. *Cochrane Database of Systematic Reviews*, 2023.
 
 National Rural Health Alliance. Allied health in rural, regional and remote Australia. NRHA, 2022.
 
