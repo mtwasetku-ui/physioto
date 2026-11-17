@@ -255,7 +255,7 @@ const fundingOptions = [
   {
     icon: "🎖️",
     label: "DVA",
-    desc: "Department of Veterans' Affairs clients",
+    desc: "Eligible Department of Veterans' Affairs clients",
     slug: "dva-physiotherapy-tasmania",
   },
   {
