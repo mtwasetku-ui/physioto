@@ -3,6 +3,7 @@ Allow: /
 
 Disallow: /api/
 Disallow: /portal/
+Disallow: /admin/
 
 Sitemap: https://www.physiotohome.com/sitemap.xml
 
