@@ -331,7 +331,7 @@ const faqs = [
   {
     question: "How soon can I get an appointment?",
     answer:
-      "We aim to offer same-week appointments where availability allows. Contact us with your location and preferred timing and we'll let you know the earliest suitable appointment.",
+      "Appointment availability depends on your location, appointment requirements and clinician capacity. Contact us with your location and we can discuss the earliest suitable option.",
   },
   {
     question: "Do you visit apartments and retirement villages?",
@@ -1097,7 +1097,7 @@ export default function ServicesPage() {
             {[
               "No GP Referral Required",
               "AHPRA Registered",
-              "Same-Week Appointments",
+              "Ask About Availability",
               "NDIS Welcome",
             ].map((badge) => (
               <span
