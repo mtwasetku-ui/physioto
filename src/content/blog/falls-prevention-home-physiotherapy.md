@@ -63,7 +63,7 @@ The Australian Physiotherapy Association (APA) recommends that older adults at r
 
 - A home hazard assessment conducted in the actual environment where falls are most likely to occur
 
-Critically, the evidence shows that home-based programmes are just as effective as clinic-based ones — and for people in rural Tasmania, they are often more practical and consistent.
+Home-based programmes can make it easier to practise balance and strength exercises in a familiar environment, particularly when travel is difficult. Their effectiveness depends on the programme, supervision, adherence and the person's clinical needs; this evidence does not establish that home delivery is universally equivalent to clinic-based care.
 
 ---
 
