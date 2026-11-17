@@ -94,7 +94,7 @@ This is also the period when attending a clinic in Launceston is most impractica
 
 A home physiotherapy visit from Physio to Home resolves this directly. The physiotherapist comes to the home — assesses the actual environment, teaches the exercises in the actual space, corrects technique on the actual furniture, and reviews the hip precautions in the actual daily context. This is not a lesser substitute for clinic physiotherapy. For post-surgical recovery, it is better.
 
-Families who want to do the most impactful thing for their parent's recovery should arrange home physiotherapy before or immediately after discharge. Contact Physio to Home and we will schedule the first visit within the first week at home.
+Families who want to support their parent's recovery can ask about home physiotherapy before discharge or soon after returning home. Contact Physio to Home to discuss the person's needs, location and current appointment availability.
 
 ---
 
@@ -119,7 +119,7 @@ Many adult children in Tasmania have parents in regional areas but live themselv
 - Communicating with your parent's GP, surgeon's rooms, or aged care coordinator on your behalf
 - Advising on home modifications and equipment needs remotely before your parent comes home from hospital
 
-Contact us before discharge if you can — a phone call before your parent comes home allows us to plan the first visit for the first week, which is when it matters most.
+Contact us before discharge if possible. This gives us an opportunity to discuss the home environment, discharge instructions and whether a visit can be arranged around the person's needs and current availability.
 
 ---
 
@@ -157,7 +157,7 @@ It depends entirely on their level of function at discharge and the specific lay
 
 Whether your parent is preparing for surgery or has just come home from hospital — Physio to Home is here. We provide AHPRA-registered hip replacement rehabilitation in the home, funded through My Aged Care, Medicare, and private health insurance, across all of Tasmania.
 
-Contact us today — we can usually arrange a first visit within the first week of discharge →
+Contact us today to discuss whether a home visit can be arranged after discharge →
 
 📞 1300 433 233
 🌐 physiotohome.com
