@@ -187,7 +187,7 @@ Book your home falls risk assessment today →
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes falls prevention, aged care physiotherapy and home-based rehabilitation.
 
 ---
 
