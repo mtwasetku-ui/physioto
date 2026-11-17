@@ -15,7 +15,7 @@ tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home phys
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: September 2026
+Physio to Home, Tasmania | Last reviewed: September 2026
 
 Part of the Physio to Home Falls Prevention Series
 
@@ -29,7 +29,7 @@ This guide explains exactly what makes footwear safe or dangerous for older adul
 
 ## Who this guide is for
 
-This article is written for older Tasmanians who want to understand how their footwear choices affect their fall risk at home and outdoors. It is also highly relevant for family members and carers who help with footwear selection. For people in rural North Tasmania, where podiatry and specialist footwear advice can be difficult to access, this guide provides practical, evidence-based guidance you can apply immediately.
+This article is written for older Tasmanians who want to understand how their footwear choices affect their fall risk at home and outdoors. It is also highly relevant for family members and carers who help with footwear selection. For people in rural parts of Tasmania, where podiatry and specialist footwear advice can be difficult to access, this guide provides practical, evidence-based guidance you can apply immediately.
 
 ---
 
@@ -133,7 +133,7 @@ Hallux valgus (bunions), hammer toes, and other foot deformities are common in o
 
 ### Tasmania's Climate and Wet Conditions
 
-North Tasmania's weather — particularly in autumn and winter — means wet paths, wet grass, and damp floors are a regular feature of daily life. Outdoor footwear for Tasmanian conditions should have deep rubber tread designed for wet surfaces. Smooth-soled leather shoes that may be appropriate indoors become extremely hazardous on wet pavement or dewy grass. Waterproof walking shoes or lace-up boots with deep tread are the practical choice for Tasmanian winters.
+Tasmania's weather — particularly in autumn and winter — means wet paths, wet grass, and damp floors are a regular feature of daily life. Outdoor footwear for Tasmanian conditions should have deep rubber tread designed for wet surfaces. Smooth-soled leather shoes that may be appropriate indoors become extremely hazardous on wet pavement or dewy grass. Waterproof walking shoes or lace-up boots with deep tread are the practical choice for Tasmanian winters.
 
 ---
 
@@ -141,7 +141,7 @@ North Tasmania's weather — particularly in autumn and winter — means wet pat
 
 Footwear is one component of a comprehensive falls risk assessment — important on its own, but most powerful when reviewed alongside balance, strength, medications, vision, and home hazards together. In a home physiotherapy visit, Micheal reviews footwear as a routine part of the falls assessment and can make specific recommendations based on your foot shape, any conditions present, and the specific flooring and surfaces in your home.
 
-If footwear issues are complex — particularly for people with diabetes, peripheral neuropathy, or significant foot deformities — Micheal will refer to a podiatrist as part of a coordinated care approach. In North Tasmania, podiatry services are available in Launceston and through some community health services in regional areas.
+If footwear issues are complex — particularly for people with diabetes, peripheral neuropathy, or significant foot deformities — Micheal will refer to a podiatrist as part of a coordinated care approach. In Tasmania, podiatry services are available in Launceston and through some community health services in regional areas.
 
 ### A simple action you can take today
 
@@ -177,7 +177,7 @@ For older adults with balance impairment or a history of falls, wearing appropri
 
 Footwear is just one piece of the falls prevention puzzle. A home physiotherapy assessment from Physio to Home covers your balance, strength, gait, dizziness, medications, home hazards, and footwear in a single visit — and leaves you with a personalised action plan you can start on the same day.
 
-We serve older adults and rural residents across North Tasmania — including Launceston, George Town, Scottsdale, Ringarooma, and the Tamar Valley — with visits funded through Medicare, My Aged Care, NDIS, and private health insurance.
+We serve older adults and rural residents across Tasmania — including Launceston, George Town, Scottsdale, Ringarooma, and the Tamar Valley — with visits funded through Medicare, My Aged Care, NDIS, and private health insurance.
 
 Book your home falls risk assessment today →
 
@@ -187,7 +187,7 @@ Book your home falls risk assessment today →
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes falls prevention, aged-care physiotherapy and home-based rehabilitation.
 
 ---
 
@@ -201,4 +201,4 @@ Sherrington C & Menz HB. An evaluation of footwear worn at the time of fall-rela
 
 Australian Commission on Safety and Quality in Health Care. Preventing Falls and Harm from Falls in Older People. ACSQHC, Sydney, 2021.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+Australian Government Department of Health, Disability and Ageing. Support at Home program. https://www.health.gov.au/our-work/support-at-home
