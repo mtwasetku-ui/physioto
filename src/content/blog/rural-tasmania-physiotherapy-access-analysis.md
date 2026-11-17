@@ -7,7 +7,7 @@ category: "Aged Care"
 featured: false
 image: /image/blog/rural-tasmania-physiotherapy-access-analysis.jpg
 
-tags: ["rural health Tasmania", "allied health access", "home physiotherapy Tasmania", "health equity", "rural aged care", "physiotherapy workforce", "health policy Tasmania", "Physio to Home", "North Tasmania health"]
+tags: ["rural health Tasmania", "allied health access", "home physiotherapy Tasmania", "health equity", "rural aged care", "physiotherapy workforce", "health policy Tasmania", "Physio to Home", "rural Tasmania health"]
 ---
 
 # THE STATE OF HOME PHYSIOTHERAPY ACCESS IN RURAL TASMANIA
@@ -16,9 +16,9 @@ tags: ["rural health Tasmania", "allied health access", "home physiotherapy Tasm
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania-Wide | Last reviewed: March 2026
 
-*This article is intended to contribute to the public record on rural allied health access in Tasmania. It draws on published data from the Australian Institute of Health and Welfare, the Australian Bureau of Statistics, the Productivity Commission, and peer-reviewed literature on rural health equity. It is written from the perspective of a practising home physiotherapist serving North Tasmania and reflects both the clinical evidence and the lived reality of the access problem described.*
+*This article is intended to contribute to the public record on rural allied health access in Tasmania. It draws on published data from the Australian Institute of Health and Welfare, the Australian Bureau of Statistics, the Productivity Commission, and peer-reviewed literature on rural health equity. It is written from the perspective of a practising home physiotherapist serving rural and regional communities across Tasmania, including northern Tasmania and reflects both the clinical evidence and the lived reality of the access problem described.*
 
 ---
 
@@ -98,7 +98,7 @@ If the evidence supports home-based physiotherapy and the need in rural Tasmania
 
 **Referral pathway opacity.** GPs in rural Tasmania frequently report difficulty identifying available home-based allied health providers for their patients. The absence of a clear, accessible directory of home-visiting physiotherapists in regional areas means that appropriate referrals are not made — not because GPs do not want to make them, but because the infrastructure to support them is inadequate.
 
-**Consumer awareness.** A significant proportion of older Tasmanians who are eligible for funded home physiotherapy through My Aged Care or Medicare GP Management Plans do not know that home-based delivery is an option. The assumption that physiotherapy requires clinic attendance is deeply embedded and has not been adequately countered by public health messaging.
+**Consumer awareness.** A significant proportion of older Tasmanians who may be eligible for funded home physiotherapy through My Aged Care or Medicare GP Chronic Condition Management Plans do not know that home-based delivery is an option. The assumption that physiotherapy requires clinic attendance is deeply embedded and has not been adequately countered by public health messaging.
 
 ---
 
@@ -143,7 +143,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has a clinical and advocacy interest in rural allied health access and the role of home-based delivery models in addressing health equity gaps in regional communities.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He has a clinical and advocacy interest in rural allied health access and the role of home-based delivery models in addressing health equity gaps in regional communities.
 
 Correspondence and media enquiries: physiotohome.com
 
