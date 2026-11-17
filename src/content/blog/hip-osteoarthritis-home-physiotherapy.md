@@ -190,7 +190,7 @@ Funding rules change, so we check your current eligibility when you book.
 
 **Support at Home (My Aged Care)** - Since 1 November 2025, Support at Home has replaced the Home Care Packages Program. Physiotherapy falls under clinical supports, which are fully government-funded with no participant co-contribution, drawn from your approved budget. You need a My Aged Care assessment and approval. Existing Home Care Package recipients were moved across automatically [10].
 
-**Commonwealth Home Support Programme (CHSP)** - Continues for now for eligible older people who enter through My Aged Care. It is scheduled to transition to Support at Home no earlier than 1 July 2027.
+**Commonwealth Home Support Programme (CHSP)** - CHSP continues as a separate program for eligible older people. On 21 August 2026, the Australian Government announced that CHSP funding would be extended until 30 June 2029. Check current eligibility and local service availability with My Aged Care.
 
 **Medicare (GP Chronic Condition Management Plan)** - Since 1 July 2025, a single plan has replaced the old GP Management Plan and Team Care Arrangements. If your GP prepares one for you, you may claim up to five individual allied health services per calendar year, shared across all allied health professions [8]. Existing plans can still be used until 30 June 2027. Your GP decides whether you are eligible.
 
