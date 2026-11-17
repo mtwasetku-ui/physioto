@@ -380,7 +380,7 @@ export default function ContactClient() {
                   'Personalised treatment plans',
                   'Mobile physiotherapy across Tasmania',
                   'Appointment availability confirmed individually',
-                  'NDIS and DVA clients welcome',
+                  'NDIS self-managed and plan-managed participants; eligible DVA clients',
                 ].map((item) => (
                   <li
                     key={item}
