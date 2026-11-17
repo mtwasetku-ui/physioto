@@ -7,7 +7,7 @@ category: "Aged Care"
 featured: false
 image: /image/blog/hidden-cost-inconsistent-physiotherapy-rural-aged-care.jpg
 
-tags: ["rural aged care", "physiotherapy consistency", "deconditioning older adults", "aged care physiotherapy", "rural health equity", "home care physiotherapy", "physiotherapy access", "Physio to Home", "North Tasmania", "health policy"]
+tags: ["rural aged care", "physiotherapy consistency", "deconditioning older adults", "aged care physiotherapy", "rural health equity", "home care physiotherapy", "physiotherapy access", "Physio to Home", "Tasmania", "health policy"]
 ---
 
 # THE HIDDEN COST OF INCONSISTENT PHYSIOTHERAPY IN AGED CARE
@@ -16,7 +16,7 @@ tags: ["rural aged care", "physiotherapy consistency", "deconditioning older adu
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 *This article is intended for aged care coordinators, Support at Home providers, CHSP services, GPs, health planners, and anyone involved in the planning and delivery of allied health services for older Australians in rural and regional communities. It draws on published evidence from physiotherapy outcome research, geriatric medicine, and health services literature to describe a harm that is systematic, measurable, and largely invisible in current accountability frameworks.*
 
@@ -72,7 +72,7 @@ In urban and peri-urban settings, physiotherapy inconsistency most commonly resu
 
 In rural settings, the primary drivers of inconsistency are structural — transport, distance, provider availability, and care coordination gaps — and they are not amenable to clinical management at the individual provider level. They require systemic responses.
 
-For an older adult in rural North Tasmania receiving aged-care support through Support at Home or CHSP, access to physiotherapy may be disrupted when care coordination is complex, transport arrangements fail, or a local physiotherapy provider is unavailable. Unlike domestic assistance or personal care — which have higher care coordination priority and more established rural provider networks — allied health services in rural home care are more fragile.
+For an older adult in rural Tasmania receiving aged-care support through Support at Home or CHSP, access to physiotherapy may be disrupted when care coordination is complex, transport arrangements fail, or a local physiotherapy provider is unavailable. Unlike domestic assistance or personal care — which have higher care coordination priority and more established rural provider networks — allied health services in rural home care are more fragile.
 
 The consequences of this structural fragility are borne by the individual — in the form of declining strength, increasing falls risk, and progressive loss of function — and by the health system, in the form of avoidable hospitalisation, premature residential aged care transition, and the downstream costs of preventable fractures and falls-related injury.
 
@@ -86,7 +86,7 @@ The causal chain from physiotherapy inconsistency to hospitalisation is not alwa
 
 The AIHW's analysis of potentially preventable hospitalisations (PPH) identifies falls-related hospitalisation as a key indicator of gaps in community-based preventive care. In rural and regional Tasmania, PPH rates for falls-related injury consistently exceed major city rates. While multiple factors contribute to this disparity, inadequate or inconsistent access to falls prevention physiotherapy is a documented contributor.
 
-A conservative model: if inconsistent physiotherapy increases annual falls rate in a high-risk rural older adult population by a relative 15% compared to consistent care (substantially below the 23–35% absolute risk reduction demonstrated in well-executed falls prevention programmes), and if the affected population in rural North Tasmania is conservatively estimated at 2,000 people with significant falls risk, this translates to approximately 300 additional falls per year in the region attributable to the access gap. At a hospitalisation rate of approximately 20% of falls, this represents approximately 60 avoidable hospitalisations per year — at an average cost of $8,000–$12,000 per admission, a system cost of $480,000–$720,000 annually. For a single statistical region.
+A conservative model: if inconsistent physiotherapy increases annual falls rate in a high-risk rural older adult population by a relative 15% compared to consistent care (substantially below the 23–35% absolute risk reduction demonstrated in well-executed falls prevention programmes), and if the affected population in rural Tasmania is conservatively estimated at 2,000 people with significant falls risk, this translates to approximately 300 additional falls per year in the region attributable to the access gap. At a hospitalisation rate of approximately 20% of falls, this represents approximately 60 avoidable hospitalisations per year — at an average cost of $8,000–$12,000 per admission, a system cost of $480,000–$720,000 annually. For a single statistical region.
 
 These are conservative estimates. The model does not include residential aged care transitions, rehabilitation costs, or the value of QALYs lost. It does not include the equivalent analysis for the stroke, Parkinson's, and post-surgical populations whose outcomes are similarly affected by treatment inconsistency.
 
@@ -100,7 +100,7 @@ Home-based physiotherapy does not depend on the patient having transport. It doe
 
 The evidence for home-based physiotherapy as equivalent in outcome to clinic-based physiotherapy is well-established (Tousignant et al., *Age and Ageing*, 2018; Outpatient Service Trialists, *Cochrane*, 2003). The evidence for its superiority in consistency outcomes — fewer missed appointments, higher adherence, better patient satisfaction — is equally strong.
 
-For rural aged care services in North Tasmania — Support at Home providers, CHSP services, GPs and care coordinators — the implication is clear: for any older client in a rural or regional area where transport is a realistic barrier to consistent clinic attendance, home-based physiotherapy delivery should be the default, not the exception.
+For rural aged care services in Tasmania — Support at Home providers, CHSP services, GPs and care coordinators — the implication is clear: for any older client in a rural or regional area where transport is a realistic barrier to consistent clinic attendance, home-based physiotherapy delivery should be the default, not the exception.
 
 ---
 
@@ -116,7 +116,7 @@ The recommendations of the Royal Commission regarding allied health staffing and
 
 ## What This Means for Care Coordinators and Providers
 
-For care coordinators and aged-care providers in North Tasmania, the practical implications of this analysis are:
+For care coordinators and aged-care providers in Tasmania, the practical implications of this analysis are:
 
 **Physiotherapy consistency should be explicitly planned and resourced in care plans.** A care plan that includes "physiotherapy as needed" is not a plan for consistency. A care plan that includes "fortnightly home physiotherapy visits from a named home-visiting provider" is.
 
@@ -134,7 +134,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has a clinical and advocacy interest in rural aged care physiotherapy quality and the role of home-based delivery in addressing the systemic consistency gap in rural community care.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He has a clinical and advocacy interest in rural aged care physiotherapy quality and the role of home-based delivery in addressing the systemic consistency gap in rural community care.
 
 Correspondence and care coordinator enquiries: physiotohome.com
 
