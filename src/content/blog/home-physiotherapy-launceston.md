@@ -16,7 +16,7 @@ Physio To Home provides **physiotherapy home visits in Launceston** for people w
 
 Home visits can be useful after a hospital stay or operation, for older people who want to maintain their mobility, and for people managing pain, disability or a long-term health condition. You do not need to organise transport or practise movements in an unfamiliar clinic environment.
 
-**Same-week appointments are available, and same-day visits may be possible for urgent cases**, depending on your location and clinician availability. Contact us as soon as possible so we can discuss the earliest suitable appointment.
+Appointment availability is confirmed individually based on your location, care needs and clinician capacity. Contact us to discuss the earliest suitable appointment.
 
 ---
 
@@ -86,7 +86,7 @@ If you are a family member, support coordinator or care coordinator, you are wel
 1. **Get in touch:** Call 1300 433 233 or send an enquiry through our [contact page](/contact).
 2. **Tell us about the person and their location:** Let us know the Launceston suburb, the main reason for physiotherapy and any relevant mobility or access needs.
 3. **Discuss funding and referral details:** If the appointment will be funded through Medicare, My Aged Care, NDIS or DVA, tell us what arrangements or approvals are already in place.
-4. **Confirm availability:** We offer same-week appointments, with same-day visits potentially available for urgent cases. Our team will confirm what is possible for your location.
+4. **Confirm availability:** Our team will check your location and discuss the earliest suitable appointment based on current clinician capacity.
 
 You can also make an enquiry through our [booking page](/booking). Please note that submitting an enquiry does not itself confirm an appointment.
 
@@ -98,7 +98,7 @@ Yes. Physio To Home provides mobile physiotherapy home visits in Launceston and 
 
 ### How soon can I get an appointment?
 
-We offer **same-week appointments**, and in urgent cases a **same-day appointment may be possible**, subject to clinician availability, your location and the type of support required. Call 1300 433 233 for urgent enquiries, or use our [contact page](/contact), and our team will discuss the earliest suitable appointment.
+Appointment timing depends on your location, care needs and clinician capacity. Call 1300 433 233 or use our [contact page](/contact) and our team will discuss the earliest suitable appointment.
 
 ### Do I need a GP referral?
 
