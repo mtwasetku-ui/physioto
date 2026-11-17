@@ -6,7 +6,7 @@ date: "2026-02-27"
 category: "Falls Prevention"
 featured: false
 image: /image/blog/falls-prevention-dizziness.jpg
-tags: ["falls prevention", "dizziness", "vertigo", "BPPV", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "vestibular"]
+tags: ["falls prevention", "dizziness", "vertigo", "BPPV", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "vestibular"]
 ---
 
 # FALLS PREVENTION | DIZZINESS
@@ -15,7 +15,7 @@ tags: ["falls prevention", "dizziness", "vertigo", "BPPV", "physiotherapy North 
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: February 2026
+Physio to Home, Tasmania | Last reviewed: February 2026
 
 Part of the Physio to Home Falls Prevention Series
 
@@ -211,15 +211,15 @@ Following the assessment, Micheal will either begin treatment in the same sessio
 
 ---
 
-## Accessing Funded Home Physiotherapy for Dizziness in North Tasmania
+## Accessing Funded Home Physiotherapy for Dizziness Across Tasmania
 
 A physiotherapy assessment for dizziness and falls risk is accessible and often subsidised for older Tasmanians through several pathways:
 
 - **Commonwealth Home Support Programme (CHSP):** For older Australians who need entry-level support to remain living independently at home. Allied health services including physiotherapy are a covered service category. Contact My Aged Care on 1800 200 422 to determine your eligibility.
 
-- **My Aged Care Home Care Package:** If you already receive a Home Care Package, physiotherapy for dizziness and falls prevention is a covered allied health service. Speak with your care coordinator.
+- **Support at Home:** Support at Home replaced the Home Care Packages Program on 1 November 2025. Physiotherapy may be funded as a clinical support where it is included in your approved services and plan. Speak with your provider or care coordinator. **CHSP** remains a separate pathway for eligible older people.
 
-- **Medicare:** If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
+- **Medicare:** If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The limit is up to five individual allied health services per calendar year, shared across eligible professions. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 
 - **NDIS:** For eligible participants, physiotherapy for balance and dizziness management may be funded under Improved Daily Living or Improved Health and Wellbeing categories.
 
@@ -227,7 +227,7 @@ A physiotherapy assessment for dizziness and falls risk is accessible and often 
 
 ### Not sure which pathway applies to you?
 
-Call us before you book. We help patients across North Tasmania — including in Launceston, George Town, Scottsdale, Ringarooma, and the Tamar Valley — identify their funding entitlements at no cost. Many families are surprised to discover that a home physiotherapy assessment for dizziness is more affordable than they expected.
+Call us before you book. We can discuss funding pathways with people across Tasmania and help identify which provider or scheme to contact. Eligibility and approval are determined by the relevant program or provider. Many families are surprised to discover that a home physiotherapy assessment for dizziness is more affordable than they expected.
 
 ---
 
@@ -235,11 +235,11 @@ Call us before you book. We help patients across North Tasmania — including in
 
 ### Is dizziness just a normal part of getting older?
 
-Dizziness is common in older adults, but it is not simply something to accept as a normal part of ageing. In many cases — particularly BPPV and orthostatic hypotension — dizziness has a specific, treatable cause. Even when dizziness cannot be fully eliminated, its impact on fall risk can be significantly reduced through physiotherapy, lifestyle adjustments, and medication review. Normalising dizziness and doing nothing about it is one of the most common and avoidable contributors to falls in older Australians.
+Dizziness is common in older adults, but it is not simply something to accept as a normal part of ageing. Dizziness can have identifiable and treatable causes, including BPPV and orthostatic hypotension, although assessment is needed to determine what is contributing in each person. Even when dizziness cannot be fully eliminated, its impact on fall risk can be significantly reduced through physiotherapy, lifestyle adjustments, and medication review. Normalising dizziness and doing nothing about it is one of the most common and avoidable contributors to falls in older Australians.
 
 ### Can BPPV go away on its own?
 
-BPPV can resolve spontaneously, but this may take weeks to months — during which fall risk remains elevated. The Epley manoeuvre, performed by a trained physiotherapist, resolves BPPV in 80–90% of cases within one to three sessions. There is no benefit in waiting for BPPV to resolve on its own when a highly effective, non-invasive treatment is available.
+BPPV can sometimes resolve spontaneously, but symptoms may persist. For appropriate cases of posterior-canal BPPV, a canalith repositioning procedure such as the Epley manoeuvre is a recommended treatment. Whether it is suitable depends on assessment and individual circumstances; some people need repeat treatment or follow-up.
 
 ### My parent keeps saying their dizziness is nothing to worry about. How do I convince them to get assessed?
 
@@ -247,7 +247,7 @@ This is one of the most common conversations families have with us. A helpful ap
 
 ### How quickly can BPPV be treated in a home visit?
 
-In many cases, the Epley manoeuvre can be performed and the dizziness significantly reduced in the first visit. The manoeuvre itself takes less than five minutes once the assessment has confirmed the diagnosis and identified the affected canal. Most patients notice improvement immediately or within 24 hours. A follow-up visit is usually recommended to confirm resolution and introduce balance exercises.
+If assessment confirms BPPV and it is safe to do so, a canalith repositioning procedure may be provided during the visit. The procedure itself is brief, but assessment and treatment time varies. Some people improve quickly; others need repeat treatment or follow-up to check symptoms and balance.
 
 ### Can dizziness come back after treatment?
 
@@ -255,11 +255,11 @@ BPPV recurs in approximately 30–50% of patients within five years. Vestibular 
 
 ---
 
-## Experiencing Dizziness in North Tasmania? Don't Wait for a Fall.
+## Experiencing Dizziness? Don't Wait for a Fall.
 
-Dizziness is not something to push through or accept as inevitable. Whether it is BPPV that can be resolved in a single visit, orthostatic hypotension that can be managed with simple strategies, or vestibular dysfunction that responds to rehabilitation — a home physiotherapy assessment is the clearest first step.
+Dizziness is not something to push through or accept as inevitable. Some cases of benign paroxysmal positional vertigo (BPPV) may respond to a canalith repositioning procedure after appropriate assessment. Other causes, including orthostatic hypotension and vestibular disorders, need assessment and management suited to the underlying problem. A physiotherapist can help determine whether home-based assessment or rehabilitation is appropriate.
 
-Physio to Home provides AHPRA-registered physiotherapy assessment and treatment for dizziness and falls prevention across North Tasmania — in your own home, funded through Medicare, My Aged Care, NDIS, and private health insurance.
+Physio to Home provides AHPRA-registered physiotherapy assessment and treatment for dizziness and falls-prevention concerns across Tasmania, subject to location and appointment availability. Funding options depend on individual eligibility and provider arrangements.
 
 Book a home dizziness and falls risk assessment today →
 
@@ -271,13 +271,13 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in vestibular physiotherapy, falls prevention, and aged care — all delivered in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving clients across Tasmania. He provides physiotherapy assessment and rehabilitation for balance, mobility and falls-prevention needs.
 
 ---
 
 ## References & Further Reading
 
-Bhattacharyya N, et al. Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo. *Otolaryngology–Head and Neck Surgery*, 2017.
+Bhattacharyya N, et al. Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (Update). *Otolaryngology–Head and Neck Surgery*, 2017. https://pubmed.ncbi.nlm.nih.gov/28248609/
 
 Agrawal Y, et al. Disorders of balance and vestibular function in US adults. *Archives of Internal Medicine*, 2009.
 
@@ -285,4 +285,4 @@ McDonnell MN & Hillier SL. Vestibular rehabilitation for unilateral peripheral v
 
 Australian Institute of Health and Welfare. Falls in older Australians 2019–20. AIHW, Canberra, 2022.
 
-My Aged Care. Commonwealth Home Support Programme. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Aged care programs. Commonwealth of Australia, 2026. https://www.myagedcare.gov.au/aged-care-programs

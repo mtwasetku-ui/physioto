@@ -6,7 +6,7 @@ date: "2026-03-07"
 category: "Conditions & Rehab"
 featured: false
 image: /image/blog/how-to-exercise-safely-with-arthritis.jpg
-tags: ["exercise with arthritis", "arthritis exercise safe", "how to exercise arthritis", "osteoarthritis exercise", "arthritis home exercise", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "joint pain exercise", "arthritis self management"]
+tags: ["exercise with arthritis", "arthritis exercise safe", "how to exercise arthritis", "osteoarthritis exercise", "arthritis home exercise", "home physiotherapy", "physiotherapy Tasmania", "Physio to Home", "joint pain exercise", "arthritis self management"]
 ---
 
 # HOW TO EXERCISE SAFELY WITH ARTHRITIS
@@ -15,7 +15,7 @@ tags: ["exercise with arthritis", "arthritis exercise safe", "how to exercise ar
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 If you have arthritis — osteoarthritis in particular — you have almost certainly been told to rest when it hurts, to take it easy, to avoid exercise that causes pain. This advice is wrong. Not unhelpful — wrong. It is contradicted by decades of research showing that appropriate exercise is one of the most effective treatments for arthritis pain and function, and that rest and inactivity make arthritis worse over time.
 
@@ -117,9 +117,9 @@ A physiotherapist is particularly important if: your pain is severe and limiting
 
 ---
 
-## Ready for a Personalised Arthritis Exercise Programme in North Tasmania?
+## Ready for a Personalised Arthritis Exercise Programme in Tasmania?
 
-Physio to Home provides AHPRA-registered arthritis assessment and home exercise programme prescription across North Tasmania — in your own home, using your own furniture, calibrated to your specific joints and capacity.
+Physio to Home provides AHPRA-registered arthritis assessment and home exercise programme prescription across Tasmania — in your own home, using your own furniture, calibrated to your specific joints and capacity.
 
 Book your home visit today →
 
@@ -128,7 +128,7 @@ Book your home visit today →
 ## About the Author
 
 Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
-Founder, Physio to Home — North Tasmania's home physiotherapy service.
+Founder, Physio to Home — Tasmania-wide home-visit physiotherapy.
 
 ---
 

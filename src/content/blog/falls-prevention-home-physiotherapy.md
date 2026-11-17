@@ -63,7 +63,7 @@ The Australian Physiotherapy Association (APA) recommends that older adults at r
 
 - A home hazard assessment conducted in the actual environment where falls are most likely to occur
 
-Critically, the evidence shows that home-based programmes are just as effective as clinic-based ones — and for people in rural Tasmania, they are often more practical and consistent.
+Home-based programmes can make it easier to practise balance and strength exercises in a familiar environment, particularly when travel is difficult. Their effectiveness depends on the programme, supervision, adherence and the person's clinical needs; this evidence does not establish that home delivery is universally equivalent to clinic-based care.
 
 ---
 
@@ -191,4 +191,4 @@ Sherrington C, et al. Exercise for preventing falls in older people living in th
 
 Australian Physiotherapy Association. Falls prevention in older people: Clinical practice guidelines. APA, 2023.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Aged care programs. Commonwealth of Australia, 2026. https://www.myagedcare.gov.au/aged-care-programs

@@ -7,7 +7,7 @@ category: "Falls Prevention"
 featured: false
 image: /image/blog/how-to-improve-balance-at-home-older-adults.jpg
 
-tags: ["how to improve balance", "balance exercises older adults", "falls prevention exercises", "improve balance at home", "balance training elderly", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "falls prevention Tasmania", "balance rehabilitation"]
+tags: ["how to improve balance", "balance exercises older adults", "falls prevention exercises", "improve balance at home", "balance training elderly", "home physiotherapy", "physiotherapy Tasmania", "Physio to Home", "falls prevention Tasmania", "balance rehabilitation"]
 ---
 
 # HOW TO IMPROVE BALANCE AT HOME | EXERCISES FOR OLDER ADULTS
@@ -16,7 +16,7 @@ tags: ["how to improve balance", "balance exercises older adults", "falls preven
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 Balance is not a fixed ability. It is a trainable skill — one that deteriorates when not actively maintained, and improves meaningfully with the right training at any age. The Cochrane evidence base on falls prevention shows clearly that balance-specific exercise reduces falls rates by up to 35% in community-dwelling older adults. This is not a small effect. It represents a genuine, measurable reduction in one of the most significant risks older Australians face.
 
@@ -144,9 +144,9 @@ A physiotherapy falls risk assessment identifies the specific components of your
 
 ---
 
-## Ready for a Personalised Balance Programme in North Tasmania?
+## Ready for a Personalised Balance Programme in Tasmania?
 
-Physio to Home provides AHPRA-registered falls risk assessment and personalised balance rehabilitation in your own home across North Tasmania. We assess your specific balance deficits, prescribe a programme targeted to them, and review your progress at every visit.
+Physio to Home provides AHPRA-registered falls risk assessment and personalised balance rehabilitation in your own home across Tasmania. We assess your specific balance deficits, prescribe a programme targeted to them, and review your progress at every visit.
 
 Book your home assessment today →
 
@@ -155,7 +155,7 @@ Book your home assessment today →
 ## About the Author
 
 Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
-Founder, Physio to Home — North Tasmania's home physiotherapy service.
+Founder, Physio to Home — Tasmania-wide home-visit physiotherapy.
 
 ---
 

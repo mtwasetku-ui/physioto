@@ -188,7 +188,7 @@ We talk through your symptoms, medical history and goals, examine your hip and w
 
 Funding rules change, so we check your current eligibility when you book.
 
-**Support at Home (My Aged Care)** - Since 1 November 2025, Support at Home has replaced the Home Care Packages Program. Physiotherapy falls under clinical supports, which are fully government-funded with no participant co-contribution, drawn from your approved budget. You need a My Aged Care assessment and approval. Existing Home Care Package recipients were moved across automatically [10].
+**Support at Home (My Aged Care)** - Since 1 November 2025, Support at Home has replaced the Home Care Packages Program. Physiotherapy is a clinical support and has no participant contribution. The service must still be included in your approved services and arranged through your Support at Home provider's funding arrangements. You need a My Aged Care assessment and approval. Existing Home Care Package recipients were moved across automatically [10].
 
 **Commonwealth Home Support Programme (CHSP)** - Continues for now for eligible older people who enter through My Aged Care. It is scheduled to transition to Support at Home no earlier than 1 July 2027.
 

@@ -199,4 +199,4 @@ Moseley GL & Butler DS. Fifteen Years of Explaining Pain: The Past, Present, and
 
 Australian Physiotherapy Association. Clinical guidelines for chronic pain management. APA, 2023.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Aged care programs. Commonwealth of Australia, 2026. https://www.myagedcare.gov.au/aged-care-programs

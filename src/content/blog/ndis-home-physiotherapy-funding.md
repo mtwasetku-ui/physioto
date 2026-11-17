@@ -207,7 +207,7 @@ NDIS pricing arrangements change over time.
 
 The NDIS publishes current pricing arrangements and maximum price information, including therapy support pricing.
 
-From 1 July 2026, the NDIS pricing schedule applies to the current pricing period.
+The NDIS 2026–27 pricing schedule was updated following the Minister's pricing determination and is effective 24 September 2026. Maximum price limits apply to NDIA-managed and plan-managed participants; self-managed participants can negotiate prices with providers. Check the current schedule and your plan management arrangement before agreeing a price.
 
 Participants and providers should use the current NDIS pricing arrangements rather than relying on older online articles or historical price lists.
 
@@ -243,9 +243,9 @@ Ask:
 9. What are your cancellation terms?
 10. How do you communicate with support coordinators and other treating professionals?
 
-## NDIS physiotherapy in North Tasmania
+## NDIS physiotherapy across Tasmania
 
-Physio to Home provides mobile physiotherapy for NDIS participants across North Tasmania.
+Physio to Home provides mobile physiotherapy for NDIS participants across Tasmania, subject to location and appointment availability.
 
 Home-based physiotherapy can be particularly appropriate when a participant's goals involve mobility, transfers, balance, independence or participation in their usual home and community environments.
 
@@ -263,6 +263,6 @@ NDIS rules and pricing arrangements can change. Always check the current NDIS in
 
 **Micheal Ghattas, DPT**
 AHPRA Registered Physiotherapist
-Physio to Home | North Tasmania
+Physio to Home | Tasmania
 
-Micheal provides home-based physiotherapy for people living with neurological, musculoskeletal, mobility and rehabilitation needs across North Tasmania.
+Micheal provides home-based physiotherapy for people living with neurological, musculoskeletal, mobility and rehabilitation needs across Tasmania.

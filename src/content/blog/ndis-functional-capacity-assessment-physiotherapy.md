@@ -128,7 +128,7 @@ Whether the NDIS pays depends on where you are in the process. If you already ha
 
 ### How long does an FCA take, and how quickly will I get the report?
 
-The visit itself usually takes 60 to 90 minutes. We aim to provide the completed written report within one to two weeks. This can take longer if the situation needs more detailed follow-up or additional standardised testing.
+The visit itself usually takes 60 to 90 minutes. We will discuss the expected report timeframe after the assessment. Timing depends on the complexity of the assessment, availability of supporting information and any additional testing required.
 
 ### Can a Functional Capacity Assessment be used to increase my plan funding?
 

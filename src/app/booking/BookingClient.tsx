@@ -242,7 +242,7 @@ export default function BookingClient() {
           Mon–Sat: 9am – 5pm
         </p>
       ),
-      sub: 'After-hours appointments available on request',
+      sub: 'Contact us to discuss suitable appointment times',
     },
   ]
 
@@ -538,7 +538,7 @@ export default function BookingClient() {
                     'Initial assessment at your first visit',
                     'Personalised treatment plan',
                     'Treatment tailored to your home environment',
-                    'My Aged Care, NDIS and private clients welcome',
+                    'My Aged Care, NDIS self-managed and plan-managed participants, and private clients welcome',
                   ].map((item) => (
                     <div
                       key={item}

@@ -255,7 +255,7 @@ const fundingOptions = [
   {
     icon: "🎖️",
     label: "DVA",
-    desc: "Department of Veterans' Affairs clients",
+    desc: "Eligible Department of Veterans' Affairs clients",
     slug: "dva-physiotherapy-tasmania",
   },
   {
@@ -331,7 +331,7 @@ const faqs = [
   {
     question: "How soon can I get an appointment?",
     answer:
-      "We aim to offer same-week appointments where availability allows. Contact us with your location and preferred timing and we'll let you know the earliest suitable appointment.",
+      "We confirm the earliest suitable appointment based on your location, care needs and clinician availability. Contact us with your suburb or town and preferred timing.",
   },
   {
     question: "Do you visit apartments and retirement villages?",
@@ -1095,10 +1095,10 @@ export default function ServicesPage() {
             }}
           >
             {[
-              "No GP Referral Required",
+              "Private Clients Can Self-Refer",
               "AHPRA Registered",
-              "Same-Week Appointments",
-              "NDIS Welcome",
+              "Appointment Availability",
+              "NDIS Self & Plan Managed",
             ].map((badge) => (
               <span
                 key={badge}

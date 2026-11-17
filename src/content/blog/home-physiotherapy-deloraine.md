@@ -16,7 +16,7 @@ tags: ["physiotherapy Deloraine", "home physiotherapy Deloraine", "mobile physio
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania | Last reviewed: July 2026
 
 Deloraine sits on the Meander River, in the shadow of the Great Western Tiers, about 50 km — and a 40-minute drive — from Launceston. It's Tasmania's largest inland town, known for its National Trust–listed Georgian and Victorian streetscapes and its strong farming community across the Meander Valley. It's also a town where "just pop into the clinic" isn't a small ask. For residents managing an ongoing condition, that 50 km trip each way — often needing someone else to drive — is a real barrier to the kind of regular physiotherapy that actually produces results.
 
@@ -84,7 +84,7 @@ No referral is required for a private booking. If you're funding visits through 
 
 ### How soon can I be seen?
 
-We aim to see new Deloraine patients within 1–2 weeks of enquiry. For urgent situations, such as a recent fall or hospital discharge, let us know and we'll prioritise where we can.
+Appointment timing depends on your address, clinical needs and current clinician capacity. For urgent situations, such as a recent fall or hospital discharge, tell us when you enquire so we can discuss the next step.
 
 ---
 
@@ -100,7 +100,7 @@ We aim to see new Deloraine patients within 1–2 weeks of enquiry. For urgent s
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including the Meander Valley and Deloraine region.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across Tasmania, including the Meander Valley and Deloraine region.
 
 ---
 

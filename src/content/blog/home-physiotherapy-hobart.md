@@ -18,7 +18,7 @@ Looking for a **physiotherapist in Hobart who comes to you?** Physio To Home pro
 
 Our AHPRA-registered physiotherapists provide assessment, treatment and rehabilitation in the place where you live. Home visits can help older people maintain mobility, people recovering after surgery or a hospital stay, NDIS participants working towards functional goals, and people managing pain, balance or neurological conditions.
 
-We offer **same-week appointments**, and **same-day visits may be possible for urgent cases**. Appointment options depend on your Hobart address, the type of care required and clinician availability. Contact us to confirm the earliest suitable visit.
+Appointment availability is confirmed individually based on your Hobart address, care needs and clinician capacity. Contact us to discuss the earliest suitable visit.
 
 
 **Call 1300 433 233** or [send an enquiry](/contact) to discuss a home visit in Hobart.
@@ -80,7 +80,7 @@ We aim to make the process straightforward for clients, families and care coordi
 
 1. **Make an enquiry.** Call 1300 433 233 or use our [contact page](/contact). Tell us the Hobart suburb, who needs treatment and the main reason for the visit.
 2. **We discuss your needs.** Our team may ask about mobility, recent surgery or hospital discharge, relevant health conditions, access to the home and any referral or funding arrangements.
-3. **We confirm location and availability.** We check whether a physiotherapist can attend your address and discuss the earliest suitable appointment. Same-week appointments are available, and same-day visits may be possible for urgent cases.
+3. **We confirm location and availability.** We check whether a physiotherapist can attend your address and discuss the earliest suitable appointment based on location, care needs and clinician capacity.
 4. **Your physiotherapist visits your home.** They assess the person's movement and functional needs, discuss goals and recommend an individual treatment plan.
 5. **You work towards practical goals.** Follow-up visits and exercises are guided by clinical need, progress and the person's goals.
 
@@ -131,7 +131,7 @@ Yes. Physio To Home provides mobile physiotherapy home visits in Hobart and surr
 
 ### How quickly can I get an appointment?
 
-We offer **same-week appointments**. For urgent cases, a **same-day appointment may be possible**, depending on clinician availability, your location and the type of support required. Call 1300 433 233 so we can discuss the earliest suitable option.
+Appointment timing depends on your location, care needs and clinician capacity. Call 1300 433 233 and we will discuss the earliest suitable option.
 
 ### Do you provide NDIS physiotherapy in Hobart?
 
@@ -166,7 +166,7 @@ If you or someone you support needs physiotherapy at home, contact Physio To Hom
 
 **For care coordinators and support coordinators:** You can contact us to discuss the client's location, goals, funding arrangements and referral information.
 
-**Same-week appointments are available. Same-day visits may be possible for urgent cases, subject to availability.**
+Appointment availability is confirmed individually before a visit is booked.
 
 ---
 

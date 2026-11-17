@@ -16,7 +16,7 @@ tags: ["physiotherapy George Town", "home physiotherapy George Town", "mobile ph
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania | Last reviewed: July 2026
 
 George Town sits where the Tamar River meets Bass Strait — one of Australia's oldest European settlements, with a community shaped by the Bell Bay industrial precinct, the Low Head Pilot Station, and a population that skews older than the state average. It's roughly 45 km from Launceston, close enough for occasional trips but far enough that a fortnightly clinic appointment becomes something people quietly stop bothering with.
 
@@ -85,7 +85,7 @@ Physiotherapy may be funded as a clinical support under Support at Home when it 
 
 ### How soon can someone come out to George Town?
 
-Typically within 1–2 weeks of enquiry. For urgent situations, such as a recent fall or hospital discharge, let us know and we'll do our best to prioritise you.
+Appointment timing depends on your address, clinical needs and current clinician capacity. For urgent situations, such as a recent fall or hospital discharge, tell us when you enquire so we can discuss the next step.
 
 ---
 
@@ -101,7 +101,7 @@ Typically within 1–2 weeks of enquiry. For urgent situations, such as a recent
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving North Tasmania, including George Town and the Tamar estuary area.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving Tasmania, including George Town and the Tamar estuary area.
 
 ---
 

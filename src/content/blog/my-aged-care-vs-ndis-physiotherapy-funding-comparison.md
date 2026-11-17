@@ -7,7 +7,7 @@ category: "Funding & Access"
 featured: false
 image: /image/blog/my-aged-care-vs-ndis-physiotherapy-funding-comparison.jpg
 
-tags: ["My Aged Care vs NDIS", "NDIS or My Aged Care", "aged care NDIS difference", "physiotherapy funding Australia", "NDIS physiotherapy", "My Aged Care physiotherapy", "home care funding", "Physio to Home", "North Tasmania", "allied health funding"]
+tags: ["My Aged Care vs NDIS", "NDIS or My Aged Care", "aged care NDIS difference", "physiotherapy funding Australia", "NDIS physiotherapy", "My Aged Care physiotherapy", "home care funding", "Physio to Home", "Tasmania", "allied health funding"]
 ---
 
 # MY AGED CARE VS NDIS — WHICH FUNDING APPLIES TO YOU?
@@ -16,7 +16,7 @@ tags: ["My Aged Care vs NDIS", "NDIS or My Aged Care", "aged care NDIS differenc
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 The question of which funding system applies is one of the most common and most confusing aspects of accessing home physiotherapy in Australia. My Aged Care and the National Disability Insurance Scheme (NDIS) both fund physiotherapy for eligible people — but they are separate systems, designed for different populations, with different eligibility criteria, different amounts of support, and different access processes.
 
@@ -162,7 +162,7 @@ Founder, Physio to Home — providing home physiotherapy across Tasmania.
 
 Department of Health and Aged Care. Support at Home Program. Commonwealth of Australia, 2025. www.health.gov.au
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Aged care programs. Commonwealth of Australia, 2026. https://www.myagedcare.gov.au/aged-care-programs
 
 National Disability Insurance Agency. NDIS — Who we help. www.ndis.gov.au, 2025.
 
