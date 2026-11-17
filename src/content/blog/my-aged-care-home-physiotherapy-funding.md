@@ -75,7 +75,7 @@ The aim is to provide treatment that addresses your assessed needs and helps you
 
 This means participants do not pay an additional contribution towards the cost of approved physiotherapy services.
 
-However, there is an important distinction: the physiotherapy service still uses funding from the participant's allocated Support at Home budget. The government funds the full price of clinical supports, but the service is not unlimited or outside the funding arrangements.
+However, there is an important distinction: the physiotherapy service still uses funding from the participant's allocated Support at Home budget. The government funds the full price of clinical supports, with no participant contribution. The service still needs to fit the person's assessed needs and approved services and is delivered through the provider's funded Support at Home arrangements.
 
 The physiotherapy must be consistent with the person's assessed needs and approved services. Your Support at Home provider can explain how the service will be arranged and how it affects your available budget.
 
