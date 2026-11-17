@@ -169,15 +169,15 @@ Prescribed footwear and orthotic devices may be funded through an aged-care or d
 
 ### Should I wear shoes indoors all the time?
 
-For older adults with balance impairment or a history of falls, wearing appropriate footwear indoors at all times is the evidence-based recommendation. The majority of falls in older adults happen at home, most commonly in the bedroom, bathroom, and living areas where footwear is most often removed. A well-fitted, comfortable walking shoe worn consistently indoors and outdoors is the simplest and most effective footwear intervention available.
+For some older adults, wearing secure, well-fitting shoes indoors may reduce risks associated with going barefoot or wearing socks. The best choice depends on balance, foot health, comfort and the home environment. If you have a history of falls or foot problems, ask your physiotherapist or podiatrist for individual advice.
 
 ---
 
 ## Want a Full Falls Risk Assessment — Including Footwear Review — at Home?
 
-Footwear is just one piece of the falls prevention puzzle. A home physiotherapy assessment from Physio to Home covers your balance, strength, gait, dizziness, medications, home hazards, and footwear in a single visit — and leaves you with a personalised action plan you can start on the same day.
+Footwear is just one piece of the falls prevention puzzle. A home physiotherapy assessment may include balance, strength, gait, dizziness, footwear and relevant home hazards, depending on the person's needs. Your physiotherapist can discuss findings and agree on practical next steps with you.
 
-We serve older adults and rural residents across Tasmania — including Launceston, George Town, Scottsdale, Ringarooma, and the Tamar Valley — with visits funded through Medicare, My Aged Care, NDIS, and private health insurance.
+We provide home visits across Tasmania, subject to location and clinician availability. Funding may be available through eligible Medicare, aged-care or NDIS arrangements, or private payment; eligibility, referral and approval requirements apply.
 
 Book your home falls risk assessment today →
 
