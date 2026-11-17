@@ -117,7 +117,7 @@ A physiotherapist is particularly important if: your pain is severe and limiting
 
 ---
 
-## Ready for a Personalised Arthritis Exercise Programme in North Tasmania?
+## Ready for a Personalised Arthritis Exercise Programme in Tasmania?
 
 Physio to Home provides AHPRA-registered arthritis assessment and home exercise programme prescription across Tasmania — in your own home, using your own furniture, calibrated to your specific joints and capacity.
 
