@@ -7,7 +7,7 @@ category: "Aged Care"
 featured: false
 image: /image/blog/supporting-parent-parkinsons-disease-family-guide.jpg
 
-tags: ["Parkinson's disease family guide", "caring for parent Parkinson's", "Parkinson's carer Tasmania", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "carer guide", "Parkinson's Tasmania", "aged care"]
+tags: ["Parkinson's disease family guide", "caring for parent Parkinson's", "Parkinson's carer Tasmania", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "Physio to Home", "carer guide", "Parkinson's Tasmania", "aged care"]
 ---
 
 # SUPPORTING A PARENT WITH PARKINSON'S DISEASE
@@ -16,15 +16,15 @@ tags: ["Parkinson's disease family guide", "caring for parent Parkinson's", "Par
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 Parkinson's disease changes the person you love — gradually, unpredictably, and in ways that are sometimes hard to understand from the outside. The slowness, the stiffness, the shuffling walk, the moments when they seem to freeze completely in a doorway — these are not stubbornness, laziness, or a failure of effort. They are the direct neurological consequences of a condition that disrupts the brain's ability to initiate and regulate movement.
 
-For families caring for a parent with Parkinson's disease in North Tasmania, understanding what is driving these changes — and what physiotherapy can do about them — is one of the most practically useful things available. This guide covers what families most need to know: the movement changes that matter, the falls risks that are specific to Parkinson's, the medication considerations that affect everything including physiotherapy timing, and how home visits help both the person with Parkinson's and the people who care for them.
+For families caring for a parent with Parkinson's disease in Tasmania, understanding what is driving these changes — and what physiotherapy can do about them — is one of the most practically useful things available. This guide covers what families most need to know: the movement changes that matter, the falls risks that are specific to Parkinson's, the medication considerations that affect everything including physiotherapy timing, and how home visits help both the person with Parkinson's and the people who care for them.
 
 ### Who this guide is for
 
-This article is for adult children and family carers of people with Parkinson's disease in North Tasmania — particularly those who are managing care at home and want practical, evidence-based guidance on supporting mobility, safety, and physiotherapy engagement.
+This article is for adult children and family carers of people with Parkinson's disease in Tasmania — particularly those who are managing care at home and want practical, evidence-based guidance on supporting mobility, safety, and physiotherapy engagement.
 
 ---
 
@@ -119,7 +119,7 @@ For families, home physiotherapy visits also provide:
 
 ---
 
-## Funding Physiotherapy for a Parent With Parkinson's in North Tasmania
+## Funding Physiotherapy for a Parent With Parkinson's in Tasmania
 
 **My Aged Care — Support at Home or CHSP** — Physiotherapy may be funded under Support at Home where it is included in your parent's approved clinical supports. CHSP remains a separate program for eligible older people. Contact their provider or My Aged Care on 1800 200 422 to discuss an assessment and available services.
 
@@ -149,7 +149,7 @@ There is emerging evidence that high-intensity exercise may have neuroprotective
 
 ## Ready to Arrange Home Physiotherapy for Your Parent With Parkinson's?
 
-Whether you are newly navigating a Parkinson's diagnosis or managing a parent with more advanced disease — Physio to Home is here. We provide AHPRA-registered, evidence-based Parkinson's physiotherapy in the home across North Tasmania.
+Whether you are newly navigating a Parkinson's diagnosis or managing a parent with more advanced disease — Physio to Home is here. We provide AHPRA-registered, evidence-based Parkinson's physiotherapy in the home across Tasmania.
 
 Contact us today — for your parent, and for you →
 
@@ -164,7 +164,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. His clinical work includes neurological rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes neurological rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
 
 ---
 
