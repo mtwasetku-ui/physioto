@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Location slugs get highest blog priority (0.8) — highest search volume in TAS
+  // Location-specific service pages receive a higher sitemap priority (0.8).
   const locationSlugs = [
     'home-physiotherapy-launceston',
     'home-physiotherapy-deloraine',
