@@ -207,7 +207,7 @@ NDIS pricing arrangements change over time.
 
 The NDIS publishes current pricing arrangements and maximum price information, including therapy support pricing.
 
-From 1 July 2026, the NDIS pricing schedule applies to the current pricing period.
+The NDIS 2026–27 pricing schedule was updated following the Minister's pricing determination and is effective 24 September 2026. Maximum price limits apply to NDIA-managed and plan-managed participants; self-managed participants can negotiate prices with providers. Check the current schedule and your plan management arrangement before agreeing a price.
 
 Participants and providers should use the current NDIS pricing arrangements rather than relying on older online articles or historical price lists.
 
