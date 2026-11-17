@@ -202,7 +202,7 @@ Book a home arthritis assessment today — we cover all of Tasmania →
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in chronic pain management, arthritis rehabilitation, falls prevention, and post-surgical care — all delivered in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes chronic pain management, arthritis rehabilitation, falls prevention, and post-surgical care — all delivered in the home setting.
 
 ---
 
