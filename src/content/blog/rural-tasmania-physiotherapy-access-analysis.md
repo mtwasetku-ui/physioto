@@ -7,7 +7,7 @@ category: "Aged Care"
 featured: false
 image: /image/blog/rural-tasmania-physiotherapy-access-analysis.jpg
 
-tags: ["rural health Tasmania", "allied health access", "home physiotherapy Tasmania", "health equity", "rural aged care", "physiotherapy workforce", "health policy Tasmania", "Physio to Home", "North Tasmania health"]
+tags: ["rural health Tasmania", "allied health access", "home physiotherapy Tasmania", "health equity", "rural aged care", "physiotherapy workforce", "health policy Tasmania", "Physio to Home", "Tasmania rural health"]
 ---
 
 # THE STATE OF HOME PHYSIOTHERAPY ACCESS IN RURAL TASMANIA
@@ -16,7 +16,7 @@ tags: ["rural health Tasmania", "allied health access", "home physiotherapy Tasm
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 *This article is intended to contribute to the public record on rural allied health access in Tasmania. It draws on published data from the Australian Institute of Health and Welfare, the Australian Bureau of Statistics, the Productivity Commission, and peer-reviewed literature on rural health equity. It is written from the perspective of a practising home physiotherapist serving North Tasmania and reflects both the clinical evidence and the lived reality of the access problem described.*
 
@@ -118,7 +118,7 @@ The access problem in rural Tasmania is not intractable. Evidence from comparabl
 
 ## A Note on What Physio to Home Is and Is Not
 
-This article is an evidence-based analysis of a systemic problem, written by a practising clinician who operates within that system. Physio to Home is one home-visiting physiotherapy practice serving one region of North Tasmania. Its existence does not solve the access problem described in this article — it addresses a fraction of it, for a fraction of the people who need it.
+This article is an evidence-based analysis of a systemic problem, written by a practising clinician who operates within that system. Physio to Home is a home-visiting physiotherapy practice providing services across Tasmania, including rural and regional communities where travel and clinician availability can affect access. Its existence does not solve the access problem described in this article — it addresses only the people and locations it can practically reach.
 
 The access gap in rural Tasmania requires systemic responses at the policy, funding, and workforce planning level. This article is offered as a contribution to that conversation — grounded in the clinical reality of what happens when older Tasmanians cannot access the physiotherapy that the evidence says they need.
 
@@ -143,7 +143,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has a clinical and advocacy interest in rural allied health access and the role of home-based delivery models in addressing health equity gaps in regional communities.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He has a clinical and advocacy interest in rural allied health access and the role of home-based delivery models in addressing health equity gaps in regional communities.
 
 Correspondence and media enquiries: physiotohome.com
 

@@ -21,7 +21,7 @@ The key question is **why you need physiotherapy and what functional outcome the
 
 This guide explains how NDIS physiotherapy works, when home physiotherapy may be appropriate, what your physiotherapist may assess, and what information can help demonstrate the functional purpose of therapy.
 
-**Last reviewed: August 2026**
+**Last reviewed: November 2026**
 
 ## Can the NDIS fund physiotherapy?
 
@@ -243,9 +243,9 @@ Ask:
 9. What are your cancellation terms?
 10. How do you communicate with support coordinators and other treating professionals?
 
-## NDIS physiotherapy in North Tasmania
+## NDIS physiotherapy across Tasmania
 
-Physio to Home provides mobile physiotherapy for NDIS participants across North Tasmania.
+Physio to Home provides mobile physiotherapy for NDIS participants across Tasmania. Contact us with your town or suburb to confirm whether a home visit can be arranged.
 
 Home-based physiotherapy can be particularly appropriate when a participant's goals involve mobility, transfers, balance, independence or participation in their usual home and community environments.
 
@@ -263,6 +263,6 @@ NDIS rules and pricing arrangements can change. Always check the current NDIS in
 
 **Micheal Ghattas, DPT**
 AHPRA Registered Physiotherapist
-Physio to Home | North Tasmania
+Physio to Home | Tasmania
 
-Micheal provides home-based physiotherapy for people living with neurological, musculoskeletal, mobility and rehabilitation needs across North Tasmania.
+Micheal provides home-based physiotherapy for people living with neurological, musculoskeletal, mobility and rehabilitation needs across Tasmania.

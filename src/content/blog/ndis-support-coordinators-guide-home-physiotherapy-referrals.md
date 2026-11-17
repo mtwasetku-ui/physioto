@@ -7,7 +7,7 @@ category: "Funding & Access"
 featured: false
 image: /image/blog/my-aged-care-vs-ndis-physiotherapy-funding-comparison.jpg
 
-tags: ["NDIS support coordinator", "NDIS physiotherapy referral", "support coordinator guide", "NDIS allied health referral", "NDIS physiotherapy North Tasmania", "Physio to Home", "disability support coordination", "NDIS provider referral", "capacity building daily activity", "allied health Tasmania"]
+tags: ["NDIS support coordinator", "NDIS physiotherapy referral", "support coordinator guide", "NDIS allied health referral", "NDIS physiotherapy Tasmania", "Physio to Home", "disability support coordination", "NDIS provider referral", "capacity building daily activity", "allied health Tasmania"]
 ---
 
 # NDIS: A SUPPORT COORDINATOR'S GUIDE TO PHYSIO REFERRALS
@@ -16,15 +16,15 @@ tags: ["NDIS support coordinator", "NDIS physiotherapy referral", "support coord
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Support coordinators sit at the centre of a participant's NDIS journey, often managing referrals across multiple allied health disciplines while juggling plan budgets, review timelines, and a participant's evolving goals. Physiotherapy referrals carry their own specific considerations — particularly when a participant would benefit from home-based delivery rather than clinic-based care.
 
-This guide is written specifically for support coordinators managing physiotherapy referrals for NDIS participants in North Tasmania, covering what information is genuinely useful at referral, which funding categories apply, and how to set a new physiotherapy relationship up for success.
+This guide is written specifically for support coordinators managing physiotherapy referrals for NDIS participants across Tasmania, covering what information is genuinely useful at referral, which funding categories apply, and how to set a new physiotherapy relationship up for success.
 
 ### Who this guide is for
 
-NDIS support coordinators, plan managers, and Local Area Coordinators referring participants in North Tasmania for physiotherapy, particularly where home-based delivery is appropriate.
+NDIS support coordinators, plan managers, and Local Area Coordinators referring participants across Tasmania for physiotherapy, particularly where home-based delivery is appropriate.
 
 ---
 
@@ -74,7 +74,7 @@ Whether a participant can be referred to a given physiotherapist depends on thei
 - **Plan-managed participants** can use registered or unregistered providers.
 - **Self-managed participants** can use any provider, registered or unregistered.
 
-Physio to Home is currently completing NDIS provider registration and is presently able to work with plan-managed and self-managed participants. We're happy to confirm our current registration status directly with support coordinators at the time of referral.
+Physio to Home is not a registered NDIS provider. We can discuss referrals for self-managed and plan-managed participants, but we cannot provide services as a registered provider for NDIA-managed funding.
 
 ---
 
@@ -95,7 +95,7 @@ We're also happy to join case conferences or provide progress updates at interva
 
 ### How quickly can a referred participant be seen?
 
-We aim to make initial contact within one to two business days of receiving a referral, with the first home visit typically arranged within one to two weeks, depending on urgency and geographic location within North Tasmania.
+We aim to make initial contact within one to two business days of receiving a referral, with the first home visit typically arranged within one to two weeks, depending on urgency and geographic location withacross Tasmania.
 
 ### Can Physio to Home write a Functional Capacity Assessment as part of the referral?
 
@@ -115,7 +115,7 @@ We can still have an initial conversation and, where appropriate, provide docume
 
 ---
 
-## Ready to Refer a Participant for Home Physiotherapy in North Tasmania?
+## Ready to Refer a Participant for Home Physiotherapy across Tasmania?
 
 Physio to Home works closely with support coordinators across North Tasmania to deliver evidence-based, AHPRA-registered physiotherapy in participants' own homes. We understand the practical realities of NDIS plan management and aim to make the referral process as straightforward as possible.
 

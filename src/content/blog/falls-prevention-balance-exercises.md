@@ -6,7 +6,7 @@ date: "2026-02-27"
 category: "Falls Prevention"
 featured: false
 image: /image/blog/falls-prevention.jpg
-tags: ["falls prevention", "balance exercises", "seniors", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "balance training"]
+tags: ["falls prevention", "balance exercises", "seniors", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "balance training"]
 ---
 
 # FALLS PREVENTION | BALANCE EXERCISES
@@ -15,7 +15,7 @@ tags: ["falls prevention", "balance exercises", "seniors", "physiotherapy North 
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: February 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Part of the Physio to Home Falls Prevention Series
 
@@ -247,7 +247,7 @@ Progress by increasing the height of the step slightly, or by adding a brief sin
 
 For meaningful improvement in balance and fall risk reduction, the evidence recommends at least 3 sessions per week of targeted balance training, with sessions of at least 30 minutes duration. This does not all need to happen in one block — two shorter sessions in a day count.
 
-A practical structure for most people in North Tasmania looks like this:
+A practical structure for many older adults looks like this:
 
 - Monday, Wednesday, Friday: Full programme (Level 1, 2, or 3 as appropriate) — approximately 20–30 minutes
 

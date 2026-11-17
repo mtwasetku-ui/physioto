@@ -332,9 +332,9 @@ A physiotherapist can observe how you move through your actual environment, incl
 
 This can provide information that is difficult to reproduce in a clinic.
 
-## Cervicogenic dizziness physiotherapy in North Tasmania
+## Cervicogenic dizziness physiotherapy across Tasmania
 
-Physio to Home provides home-based physiotherapy across North Tasmania.
+Physio to Home provides home-based physiotherapy across Tasmania, subject to location and clinician availability.
 
 If you have ongoing dizziness together with neck pain or stiffness, a physiotherapy assessment may help determine whether a cervical component could be contributing to your symptoms and whether physiotherapy is appropriate.
 

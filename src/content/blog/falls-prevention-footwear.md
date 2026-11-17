@@ -15,7 +15,7 @@ tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home phys
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: September 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Part of the Physio to Home Falls Prevention Series
 
@@ -29,7 +29,7 @@ This guide explains exactly what makes footwear safe or dangerous for older adul
 
 ## Who this guide is for
 
-This article is written for older Tasmanians who want to understand how their footwear choices affect their fall risk at home and outdoors. It is also highly relevant for family members and carers who help with footwear selection. For people in rural North Tasmania, where podiatry and specialist footwear advice can be difficult to access, this guide provides practical, evidence-based guidance you can apply immediately.
+This article is written for older Tasmanians who want to understand how their footwear choices affect their fall risk at home and outdoors. It is also highly relevant for family members and carers who help with footwear selection. For people in rural and regional Tasmania, where access to podiatry and specialist footwear advice may vary, this guide provides practical information to discuss with an appropriate health professional.
 
 ---
 
@@ -187,7 +187,7 @@ Book your home falls risk assessment today →
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation.
 
 ---
 
