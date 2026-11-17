@@ -76,15 +76,13 @@ The economic and health burden of inadequate physiotherapy access in rural commu
 
 ## The Home-Based Delivery Solution: Evidence and Precedent
 
-The evidence for home-based physiotherapy as an effective, clinically equivalent alternative to clinic-based delivery is robust and well-established:
+The evidence does not support a blanket claim that home-based physiotherapy is clinically equivalent or superior to clinic-based care across all conditions. The suitability of each setting depends on the person's clinical needs, goals, safety, required equipment and available services.
 
-A 2018 systematic review published in *Age and Ageing* found that home-based physiotherapy programmes for older adults produced equivalent functional outcomes to clinic-based programmes across a range of conditions, with superior adherence rates — a finding consistent across falls prevention, osteoarthritis management, and post-surgical rehabilitation literature.
+Home-based exercise and rehabilitation can be useful after hospital discharge and may improve some functional outcomes compared with no intervention or standard care. However, a systematic review of home-based exercise for older adults after hospitalisation found that it was unclear whether home-based exercise was more effective than centre-based exercise. [Read the review](https://research.monash.edu/en/publications/effectiveness-of-home-based-exercise-for-improving-physical-activ/).
 
-For stroke rehabilitation specifically, a 2014 Cochrane Review found that early supported discharge with home-based rehabilitation produced outcomes equivalent to continued inpatient rehabilitation, with higher patient and carer satisfaction.
+For falls prevention, home-based exercise can be one way to deliver a tailored programme, with progression and follow-up suited to the person's needs. This does not mean every person should receive home-based treatment or that a home visit can replace clinic equipment or other specialist services when those are needed.
 
-For falls prevention, the most effective programmes in the evidence base — including the Otago Exercise Programme, one of the most rigorously evaluated falls prevention interventions globally — were designed from the outset for home delivery.
-
-The implication is direct: if home-based delivery is clinically equivalent or superior for these conditions, and if clinic-based delivery is inaccessible to rural populations, then home-based delivery is not merely a convenient alternative — it is the appropriate primary model of service delivery for rural communities.
+The practical case for home visits in rural areas is primarily about access: when travel, mobility or transport barriers make clinic attendance difficult, a home visit may make it easier to receive appropriate assessment and follow-up. The clinician should still identify when clinic equipment, specialist services or medical review are required.
 
 ---
 
@@ -112,7 +110,7 @@ The access problem in rural Tasmania is not intractable. Evidence from comparabl
 
 **GP referral support infrastructure.** A maintained, publicly accessible directory of home-visiting allied health providers, indexed by service area and condition type, would significantly reduce the referral opacity that currently prevents appropriate clinical pathways from functioning.
 
-**Telehealth as complement, not substitute.** Telehealth physiotherapy has expanded significantly since 2020 and has genuine value for monitoring, education, and programme support. It does not, however, substitute for in-person assessment, manual therapy, and the environmental assessment that home-based physiotherapy uniquely provides. Policy that positions telehealth as an equivalent substitute for home visits — rather than a complement to them — will produce inferior outcomes in rural populations.
+**Telehealth as complement, not substitute.** Telehealth physiotherapy has expanded significantly since 2020 and has genuine value for monitoring, education, and programme support. It does not, however, substitute for in-person assessment, manual therapy, and the environmental assessment that home-based physiotherapy uniquely provides. Telehealth can complement in-person care for monitoring, education and exercise support. It may not be suitable when hands-on assessment, in-person mobility testing or observation of the home environment is required. The appropriate mix depends on the person's clinical needs and circumstances.
 
 ---
 
