@@ -42,7 +42,7 @@ My Aged Care is the entry point for the Australian Government's aged care system
 
 ### Commonwealth Home Support Programme (CHSP)
 
-Entry-level support for eligible older Australians who need help to remain independent at home. CHSP may subsidise allied health services, including physiotherapy, where they are available and included in the person's assessed support. Any client contribution depends on the service and provider arrangements. The program is generally intended for entry-level support.
+Entry-level support for eligible older Australians who need help to remain independent at home. CHSP may subsidise allied health services, including physiotherapy, where they are available and included in the person's assessed support. Any client contribution depends on the service and provider arrangements. The program is generally intended for entry-level support. On 21 August 2026, the Australian Government announced that CHSP funding would be extended until 30 June 2029.
 
 **To access CHSP:** Contact My Aged Care on 1800 200 422. You will have a brief screening conversation and, if eligible, be referred for an assessment. The process typically takes 2–4 weeks.
 
@@ -128,7 +128,7 @@ If you are trying to determine which system applies to you:
 
 ### Can I use both NDIS and My Aged Care?
 
-Generally no — they are separate systems and most people will be on one or the other. However, you can use Medicare GP Management Plan subsidies alongside either system.
+Generally no — they are separate systems. Eligible people may also access Medicare-subsidised allied health services under a GP Chronic Condition Management Plan, subject to Medicare eligibility, referral and service-limit rules.
 
 ### My aged care provider told me they don't offer physiotherapy. Is that right?
 
@@ -136,7 +136,7 @@ Not necessarily. A Support at Home provider may arrange clinical supports throug
 
 ### How long does it take to get NDIS funding for physiotherapy?
 
-The NDIS access and planning process typically takes 3–6 months from initial application to first plan. Once a plan is in place, physiotherapy funding can be used immediately. If you are waiting for an NDIS plan and have an urgent physiotherapy need, a Medicare GP Management Plan can provide subsidised visits in the interim.
+NDIS access and planning timeframes vary. Once a plan is in place, a physiotherapy service still needs to meet the participant's plan and NDIS funding criteria. If you are waiting for an NDIS plan, ask your GP whether you meet the requirements for a GP Chronic Condition Management Plan and whether physiotherapy is appropriate; Medicare eligibility is not automatic.
 
 ---
 
