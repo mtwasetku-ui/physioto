@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import '@/app/portal-theme.css'
@@ -5,7 +6,13 @@ import AuthProvider from '@/components/portal/AuthProvider'
 import PortalSignOutButton from '@/components/portal/PortalSignOutButton'
 
 // Access control for this whole tree is enforced in middleware.ts (checks
-// the signed-in email against ADMIN_EMAIL) — this layout is chrome only.
+// the signed-in email against ADMIN_EMAIL). This layout also prevents the
+// private admin interface from appearing in search results.
+export const metadata: Metadata = {
+  title: 'Admin',
+  robots: { index: false, follow: false },
+}
+
 // Uses the same theme and colours as the staff portal.
 const navLink =
   'rounded-md px-3 py-2 text-sm text-white/75 transition-colors hover:bg-white/10 hover:text-white'
