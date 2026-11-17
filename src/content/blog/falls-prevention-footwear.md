@@ -15,7 +15,7 @@ tags: ["falls prevention", "footwear", "physiotherapy Launceston", "in-home phys
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: September 2026
+Physio to Home, Tasmania | Last reviewed: September 2026
 
 Part of the Physio to Home Falls Prevention Series
 
@@ -177,7 +177,7 @@ For older adults with balance impairment or a history of falls, wearing appropri
 
 Footwear is just one piece of the falls prevention puzzle. A home physiotherapy assessment from Physio to Home covers your balance, strength, gait, dizziness, medications, home hazards, and footwear in a single visit — and leaves you with a personalised action plan you can start on the same day.
 
-We serve older adults and rural residents across North Tasmania — including Launceston, George Town, Scottsdale, Ringarooma, and the Tamar Valley — with visits funded through Medicare, My Aged Care, NDIS, and private health insurance.
+We serve older adults and rural residents across Tasmania — including Launceston, George Town, Scottsdale, Ringarooma, and the Tamar Valley — with visits funded through Medicare, My Aged Care, NDIS, and private health insurance.
 
 Book your home falls risk assessment today →
 
@@ -187,7 +187,7 @@ Book your home falls risk assessment today →
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation.
 
 ---
 
