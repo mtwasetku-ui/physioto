@@ -153,9 +153,9 @@ A home visit may allow the physiotherapist to review walking, transfers, stairs,
 
 ## The Psychological Dimension: Fear of Falling After Hip Fracture
 
-Fear of falling after a hip fracture is almost universal — and it is one of the most significant barriers to recovery. The fear is entirely rational: the person has experienced the consequences of a fall firsthand, and the idea of another one is terrifying. But fear leads to inactivity, inactivity leads to deconditioning, and deconditioning leads to — paradoxically — higher falls risk.
+Fear of falling after a hip fracture is common and can be a barrier to recovery. The fear is entirely rational: the person has experienced the consequences of a fall firsthand, and the idea of another one is terrifying. But fear leads to inactivity, inactivity leads to deconditioning, and deconditioning leads to — paradoxically — higher falls risk.
 
-A skilled physiotherapist addresses this directly. Not by dismissing the fear, but by rebuilding the physical capacity and movement confidence that makes it rational to be less afraid. Graded exposure to previously feared activities — walking outdoors, navigating stairs, moving through a crowded space — within a supported and progressed rehabilitation framework is the most effective approach.
+A skilled physiotherapist addresses this directly. Not by dismissing the fear, but by rebuilding the physical capacity and movement confidence that makes it rational to be less afraid. Graded exposure to previously feared activities — walking outdoors, navigating stairs, moving through a crowded space — within a supported and progressed rehabilitation framework may be useful when introduced gradually and tailored to the person's confidence, goals and clinical status.
 
 Many home physiotherapy sessions after hip fracture are as much about confidence as they are about strength. Both matter.
 
