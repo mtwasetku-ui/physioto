@@ -218,6 +218,6 @@ Fransen M, et al. Exercise for osteoarthritis of the hip. *Cochrane Database of 
 
 Australian Physiotherapy Association. Clinical guidelines: osteoarthritis management. APA, 2023.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Aged care programs. Commonwealth of Australia, 2026. https://www.myagedcare.gov.au/aged-care-programs
 
 For Exercises: What Are the Best Exercises for Knee Osteoarthritis? | AlphaCare Physiotherapy Blog
