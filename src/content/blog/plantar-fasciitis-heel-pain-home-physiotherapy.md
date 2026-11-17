@@ -7,7 +7,7 @@ category: "Pain Management"
 featured: false
 image: /image/blog/plantar-fasciitis-heel-pain-home-physiotherapy.jpg
 
-tags: ["plantar fasciitis", "heel pain", "foot pain physiotherapy", "plantar fasciitis treatment", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "musculoskeletal", "foot rehabilitation"]
+tags: ["plantar fasciitis", "heel pain", "foot pain physiotherapy", "plantar fasciitis treatment", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "Physio to Home", "musculoskeletal", "foot rehabilitation"]
 ---
 
 # PLANTAR FASCIITIS & HEEL PAIN | HOME PHYSIOTHERAPY
