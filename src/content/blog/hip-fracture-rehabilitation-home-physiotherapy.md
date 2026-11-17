@@ -18,7 +18,7 @@ By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experienc
 
 Physio to Home, Tasmania | Last reviewed: March 2026
 
-Hip fracture is among the most serious and most consequential injuries in older adults. In Australia, approximately 23,000 hip fractures occur each year, overwhelmingly in people over 70. The one-year mortality rate is approximately 20–30% — making it, statistically, one of the most dangerous injuries an older Australian can sustain. For those who survive, the rehabilitation journey is long, demanding, and critically dependent on consistent physiotherapy in the weeks and months following surgery.
+Hip fracture is a serious injury, particularly for older adults, and can affect mobility, independence and long-term health. The Australian Commission on Safety and Quality in Health Care reports that people who sustain a hip fracture are more than 3.5 times as likely to die within 12 months as people without an injury. Individual outcomes vary according to health, fracture type, treatment and recovery.
 
 For families in Tasmania whose parent or loved one has come home from hospital after a hip fracture, the period after discharge can be overwhelming. The person is weaker than before, more fearful, often in pain, and facing a home environment that may not be well-adapted to their new needs. This is exactly when home physiotherapy matters most — and when access to consistent, skilled rehabilitation at the front door makes the difference between meaningful recovery and permanent decline.
 
@@ -52,13 +52,13 @@ The type of fracture and the surgical procedure performed determine the specific
 
 The statistics around hip fracture outcomes are sobering:
 
-- Approximately 50% of people who sustain a hip fracture do not recover to their pre-fracture level of function within one year
-- Approximately 20–30% die within one year of their hip fracture, often from complications of immobility or the fracture itself
-- Many survivors experience a permanent reduction in mobility, independence, and quality of life
+- Many people do not regain their pre-fracture level of mobility or independence; recovery varies between individuals
+- Hip fracture is associated with substantially increased mortality risk compared with people without an injury
+- Some people need ongoing rehabilitation, support or changes to their home environment after discharge
 
-The single most important modifiable factor in determining outcomes after hip fracture is the quality, consistency, and early commencement of rehabilitation. Patients who receive intensive, early physiotherapy after hip fracture recover faster, regain higher levels of function, and return home at higher rates than those who receive standard or delayed rehabilitation.
+Early mobilisation and an individualised rehabilitation plan are important parts of hip fracture care. The Australian Hip Fracture Clinical Care Standard recommends mobilisation on the day of, or the day after, surgery and at least daily thereafter, when clinically appropriate. It also recommends an individualised discharge plan that describes ongoing care needs, rehabilitation services and equipment.
 
-For families in Tasmania: the rehabilitation your loved one receives in the first 12 weeks after coming home from hospital will determine, more than any other factor, how much function they recover. Home physiotherapy is how you ensure that rehabilitation happens consistently, in the right environment, at the right frequency.
+Recovery after discharge varies. Follow the plan provided by the hospital and the advice of the treating team. Home physiotherapy may be one way to support the agreed rehabilitation plan when a home visit is clinically suitable.
 
 ---
 
@@ -68,7 +68,7 @@ For families in Tasmania: the rehabilitation your loved one receives in the firs
 
 **The most important transition in the rehabilitation journey**
 
-Most patients are discharged from hospital within 5–7 days of hip fracture surgery — often before their family feels ready and before the patient feels well enough. This early discharge reflects the evidence that returning to a familiar home environment supports recovery, but it means the rehabilitation responsibility shifts rapidly to the community.
+Discharge timing varies according to the person's health, surgery, recovery, home circumstances and local care arrangements. The hospital team should discuss the discharge plan and any rehabilitation or support needed after the person returns home.
 
 **Goals for Week 1 at home**
 
@@ -85,9 +85,9 @@ Most patients are discharged from hospital within 5–7 days of hip fracture sur
 - Assessment of the home environment for immediate hazards
 - Communication with the surgical team or GP about any concerns
 
-**Why home physiotherapy in Week 1 is critical**
+**How a home visit may help after discharge**
 
-This is when patients are most vulnerable. Pain is significant, confidence is low, and the home environment has not yet been adapted for recovery. A home physiotherapy visit in the first week after discharge assesses all of this directly — and prevents the early complications (falls, wound problems, loss of walking confidence) that can derail recovery before it begins.
+A home visit may allow the physiotherapist to review walking, transfers, stairs, home hazards and daily activities in the person's actual environment, while following the hospital discharge plan and any post-operative precautions. It does not replace medical follow-up or wound assessment by the treating team. New or worsening symptoms, wound changes, fever, chest pain or breathlessness need prompt medical advice.
 
 ---
 
