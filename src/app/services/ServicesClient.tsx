@@ -1095,7 +1095,7 @@ export default function ServicesPage() {
             }}
           >
             {[
-              "No GP Referral Required",
+              "Private Clients Can Self-Refer",
               "AHPRA Registered",
               "Ask About Availability",
               "NDIS Welcome",
