@@ -84,7 +84,7 @@ No — and this is exactly the situation home visits are designed for. Whatever 
 
 ### How soon can someone come out to Scottsdale?
 
-Typically within 1–2 weeks of enquiry. For urgent situations, contact us directly and we'll prioritise where possible.
+Appointment timing depends on your address, clinical needs and current clinician capacity. For urgent situations, contact us directly and we can discuss the next step.
 
 ---
 
