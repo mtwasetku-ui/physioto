@@ -16,7 +16,7 @@ tags: ["physiotherapy Exeter Tasmania", "physiotherapy Tamar Valley", "home phys
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 The West Tamar region — Exeter, Beaconsfield, Beauty Point, Legana, Rosevears, Gravelly Beach, and the townships along both banks of the Tamar River — is wine country, orchard country, and one of Tasmania's most popular places to retire. Beaconsfield's history as a 19th-century gold mining town and Exeter's roots as an orchard district have given way to a region now shaped by a growing, ageing population choosing river views over city living.
 
@@ -100,7 +100,7 @@ Usually within 1–2 weeks of enquiry. For urgent situations, such as a recent f
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including the Tamar Valley and West Tamar communities.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving clients across Tasmania, including the Tamar Valley and West Tamar communities, subject to location and availability.
 
 ---
 

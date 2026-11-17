@@ -6,7 +6,7 @@ date: "2026-03-07"
 category: "Conditions & Rehab"
 featured: false
 image: /image/blog/how-to-exercise-safely-with-arthritis.jpg
-tags: ["exercise with arthritis", "arthritis exercise safe", "how to exercise arthritis", "osteoarthritis exercise", "arthritis home exercise", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "joint pain exercise", "arthritis self management"]
+tags: ["exercise with arthritis", "arthritis exercise safe", "how to exercise arthritis", "osteoarthritis exercise", "arthritis home exercise", "home physiotherapy", "physiotherapy Tasmania", "Physio to Home", "joint pain exercise", "arthritis self management"]
 ---
 
 # HOW TO EXERCISE SAFELY WITH ARTHRITIS
@@ -15,7 +15,7 @@ tags: ["exercise with arthritis", "arthritis exercise safe", "how to exercise ar
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 If you have arthritis — osteoarthritis in particular — you have almost certainly been told to rest when it hurts, to take it easy, to avoid exercise that causes pain. This advice is wrong. Not unhelpful — wrong. It is contradicted by decades of research showing that appropriate exercise is one of the most effective treatments for arthritis pain and function, and that rest and inactivity make arthritis worse over time.
 

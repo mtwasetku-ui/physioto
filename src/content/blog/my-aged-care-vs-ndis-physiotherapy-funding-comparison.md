@@ -69,7 +69,7 @@ NDIS plans are individually funded — the amount allocated for physiotherapy de
 
 **To access NDIS:** Apply through the NDIS website (ndis.gov.au) or call 1800 800 110. Eligibility requires Australian residency, age under 65 at time of access request, and a permanent and significant disability affecting daily function. The access process takes several months in most cases.
 
-**NDIS and physiotherapy providers:** The NDIS distinguishes between registered and unregistered providers. Physio to Home is completing NDIS provider registration and welcomes enquiries from NDIS participants and support coordinators in the interim.
+**NDIS and physiotherapy providers:** The NDIS distinguishes between registered and unregistered providers. Physio to Home is not a registered NDIS provider. We can discuss enquiries from self-managed and plan-managed participants, but we do not provide services as a registered provider for NDIA-managed funding.
 
 ---
 
