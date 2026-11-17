@@ -1095,10 +1095,10 @@ export default function ServicesPage() {
             }}
           >
             {[
-              "No GP Referral Required",
+              "Private Clients Can Self-Refer",
               "AHPRA Registered",
               "Appointment Availability",
-              "NDIS Welcome",
+              "NDIS Self & Plan Managed",
             ].map((badge) => (
               <span
                 key={badge}
