@@ -6,7 +6,7 @@ date: "2026-03-06"
 category: "Pain Management"
 featured: false
 image: /image/blog/frozen-shoulder-adhesive-capsulitis-home-physiotherapy.jpg
-tags: ["frozen shoulder", "adhesive capsulitis", "shoulder pain", "shoulder stiffness", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "musculoskeletal"]
+tags: ["frozen shoulder", "adhesive capsulitis", "shoulder pain", "shoulder stiffness", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "musculoskeletal"]
 ---
 
 # FROZEN SHOULDER | ADHESIVE CAPSULITIS | HOME PHYSIOTHERAPY
@@ -15,7 +15,7 @@ tags: ["frozen shoulder", "adhesive capsulitis", "shoulder pain", "shoulder stif
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 Frozen shoulder — the clinical term is adhesive capsulitis — is one of the most painful and most commonly mismanaged shoulder conditions in physiotherapy. It is characterised by a progressive, often severe restriction of shoulder movement in all directions, accompanied by pain that can be constant, debilitating, and particularly brutal at night. It lasts, on average, two to three years if left unmanaged.
 
@@ -27,7 +27,7 @@ This guide covers all of this in detail.
 
 ### Who this guide is for
 
-This article is for people in North Tasmania who have been told they have frozen shoulder or adhesive capsulitis — or who suspect they might — and want to understand their condition and their treatment options. It is also useful for people who have been managing shoulder stiffness without a clear diagnosis and want to know whether frozen shoulder might explain their symptoms.
+This article is for people in Tasmania who have been told they have frozen shoulder or adhesive capsulitis — or who suspect they might — and want to understand their condition and their treatment options. It is also useful for people who have been managing shoulder stiffness without a clear diagnosis and want to know whether frozen shoulder might explain their symptoms.
 
 ---
 
@@ -172,7 +172,7 @@ Yes. Frozen shoulder in diabetic patients tends to be more severe, longer in dur
 
 ## Ready to Start Managing Your Frozen Shoulder at Home?
 
-Living with frozen shoulder in North Tasmania — the pain, the sleepless nights, the frustration of a shoulder that will not move — is not something you need to manage alone or wait years to resolve. Physio to Home provides AHPRA-registered, stage-appropriate frozen shoulder management in your own home, across the region.
+Living with frozen shoulder in Tasmania — the pain, the sleepless nights, the frustration of a shoulder that will not move — is not something you need to manage alone or wait years to resolve. Physio to Home provides AHPRA-registered, stage-appropriate frozen shoulder management in your own home, across the region.
 
 Book your first home visit today →
 
@@ -184,7 +184,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. His clinical work includes shoulder rehabilitation, musculoskeletal physiotherapy, and home-based care for complex presentations.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes shoulder rehabilitation, musculoskeletal physiotherapy, and home-based care for complex presentations.
 
 ---
 
