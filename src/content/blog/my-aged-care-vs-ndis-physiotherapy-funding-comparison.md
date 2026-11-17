@@ -7,7 +7,7 @@ category: "Funding & Access"
 featured: false
 image: /image/blog/my-aged-care-vs-ndis-physiotherapy-funding-comparison.jpg
 
-tags: ["My Aged Care vs NDIS", "NDIS or My Aged Care", "aged care NDIS difference", "physiotherapy funding Australia", "NDIS physiotherapy", "My Aged Care physiotherapy", "home care funding", "Physio to Home", "North Tasmania", "allied health funding"]
+tags: ["My Aged Care vs NDIS", "NDIS or My Aged Care", "aged care NDIS difference", "physiotherapy funding Australia", "NDIS physiotherapy", "My Aged Care physiotherapy", "home care funding", "Physio to Home", "Tasmania", "allied health funding"]
 ---
 
 # MY AGED CARE VS NDIS — WHICH FUNDING APPLIES TO YOU?
@@ -16,7 +16,7 @@ tags: ["My Aged Care vs NDIS", "NDIS or My Aged Care", "aged care NDIS differenc
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 The question of which funding system applies is one of the most common and most confusing aspects of accessing home physiotherapy in Australia. My Aged Care and the National Disability Insurance Scheme (NDIS) both fund physiotherapy for eligible people — but they are separate systems, designed for different populations, with different eligibility criteria, different amounts of support, and different access processes.
 
@@ -42,13 +42,13 @@ My Aged Care is the entry point for the Australian Government's aged care system
 
 ### Commonwealth Home Support Programme (CHSP)
 
-Entry-level support for older Australians who need a small amount of assistance to remain at home. CHSP provides subsidised allied health services — including physiotherapy — for eligible clients, with a small co-contribution from the client. The support is episodic rather than ongoing — appropriate for time-limited physiotherapy for a specific condition.
+Entry-level support for eligible older Australians who need help to remain independent at home. CHSP may subsidise allied health services, including physiotherapy, where they are available and included in the person's assessed support. Any client contribution depends on the service and provider arrangements. The program is generally intended for entry-level support.
 
 **To access CHSP:** Contact My Aged Care on 1800 200 422. You will have a brief screening conversation and, if eligible, be referred for an assessment. The process typically takes 2–4 weeks.
 
 ### Support at Home
 
-Support at Home commenced on 1 November 2025, replacing the former Home Care Packages Program and Short-Term Restorative Care Programme. It provides coordinated support for eligible older people who need help to remain living at home.
+Support at Home commenced on 1 November 2025, replacing the former Home Care Packages Program and Short-Term Restorative Care Programme. It provides coordinated support for eligible older people who need help to remain living at home. Physiotherapy may be funded as a clinical support when included in approved services and the participant's plan; approved clinical supports such as physiotherapy have no participant contribution.
 
 Physiotherapy may be funded as a clinical support where it is included in the person's approved services and plan. The exact services and funding arrangements depend on the person's assessment and individual circumstances.
 
@@ -104,7 +104,7 @@ The specific rules here can be complex. If you are in this situation, contact bo
 
 Neither My Aged Care nor NDIS is the only option. Two others are often missed:
 
-**Medicare GP Management Plan (formerly Enhanced Primary Care):** Your GP can write a GP Management Plan for any person with a chronic medical condition, providing up to five partially subsidised physiotherapy visits per year. The Medicare rebate is currently $58.30 per session (2025). This is available regardless of age or disability and can be used alongside My Aged Care or NDIS funding.
+**Medicare GP Chronic Condition Management Plan:** People who meet the chronic-condition and complex-care requirements may be referred for up to five MBS-supported individual allied health services per calendar year, shared across eligible professions. The services require an appropriate referral and must be consistent with the plan. Eligibility is determined under Medicare rules by the treating GP; a chronic condition alone does not guarantee eligibility.
 
 **Private health insurance — extras cover:** Most extras policies cover physiotherapy visits including home visits, up to an annual cap. HICAPS can be processed at the time of the home visit.
 
@@ -118,7 +118,7 @@ If you are trying to determine which system applies to you:
 
 2. **Over 65 and need help at home?** Contact My Aged Care on 1800 200 422 for an assessment.
 
-3. **Have a chronic condition and a GP?** Ask your GP about a GP Management Plan for subsidised physiotherapy visits regardless of other funding.
+3. **Have a chronic condition and a GP?** Ask your GP whether you meet the requirements for a GP Chronic Condition Management Plan and whether physiotherapy is appropriate within the shared annual allied-health service limit.
 
 4. **Unsure?** Contact Physio to Home. We will help you identify the most appropriate funding pathway for your situation before you book — at no cost and no obligation.
 
