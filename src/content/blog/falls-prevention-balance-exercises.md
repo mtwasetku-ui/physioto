@@ -41,7 +41,7 @@ Progressive balance exercise works by doing two things simultaneously: it streng
 
 ### What the research shows
 
-A landmark Cochrane Review of over 100 randomised controlled trials found that exercise programmes targeting balance and strength reduce fall rates in older adults by approximately 23% and reduce the number of people who fall by around 15%. The most effective programmes are progressive — meaning they get harder over time — and are performed at least 3 times per week for a minimum of 12 weeks.
+A Cochrane review of 108 randomised trials found that exercise reduces the rate of falls in community-dwelling older adults by about 23% and the number of people who fall by around 15%. Programmes that challenge balance and include functional exercise are particularly useful. Exercise should be tailored to the person's abilities and progressed safely over time.
 
 ---
 
@@ -337,4 +337,6 @@ Tiedemann A, et al. The development and validation of a brief performance-based 
 
 Australian Commission on Safety and Quality in Health Care. Preventing Falls and Harm from Falls in Older People: Best Practice Guidelines. ACSQHC, Sydney, 2021.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+Australian Government Department of Health, Disability and Ageing. Support at Home program. https://www.health.gov.au/our-work/support-at-home
+
+Australian Government Department of Health, Disability and Ageing. Commonwealth Home Support Programme (CHSP) reforms and extension to 30 June 2029. https://www.health.gov.au/our-work/chsp/reforms
