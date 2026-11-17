@@ -7,7 +7,7 @@ category: "Pain Management"
 featured: false
 image: /image/blog/neck-pain-cervicogenic-headache-home-physiotherapy.jpg
 
-tags: ["neck pain", "cervicogenic headache", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "headache treatment", "cervical spine", "musculoskeletal"]
+tags: ["neck pain", "cervicogenic headache", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "headache treatment", "cervical spine", "musculoskeletal"]
 ---
 
 # NECK PAIN & CERVICOGENIC HEADACHE | HOME PHYSIOTHERAPY
