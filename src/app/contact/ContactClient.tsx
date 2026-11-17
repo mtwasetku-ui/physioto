@@ -75,7 +75,7 @@ const faqs = [
   {
     question: 'How quickly can I get an appointment?',
     answer:
-      'We aim to offer same-week appointments where availability allows. Contact us with your location and preferred timing and we can let you know the earliest suitable appointment.',
+      'Appointment availability depends on your location, appointment requirements and clinician capacity. Contact us and we can discuss the earliest suitable option.',
   },
   {
     question: 'What should I do if I am not sure which service I need?',
