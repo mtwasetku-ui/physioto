@@ -84,7 +84,7 @@ Yes — this is one of the most common reasons families reach out to us. We can 
 
 ### How soon can we get an appointment?
 
-Usually within 1–2 weeks of enquiry. For urgent situations, such as a recent fall or hospital discharge, contact us directly and we'll prioritise where we can.
+Appointment timing depends on your address, clinical needs and current clinician capacity. For urgent situations, such as a recent fall or hospital discharge, tell us when you enquire so we can discuss the next step.
 
 ---
 
