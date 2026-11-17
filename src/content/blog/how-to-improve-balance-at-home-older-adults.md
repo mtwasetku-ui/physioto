@@ -144,7 +144,7 @@ A physiotherapy falls risk assessment identifies the specific components of your
 
 ---
 
-## Ready for a Personalised Balance Programme in North Tasmania?
+## Ready for a Personalised Balance Programme in Tasmania?
 
 Physio to Home provides AHPRA-registered falls risk assessment and personalised balance rehabilitation in your own home across Tasmania. We assess your specific balance deficits, prescribe a programme targeted to them, and review your progress at every visit.
 
