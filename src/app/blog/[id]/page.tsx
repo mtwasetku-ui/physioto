@@ -834,7 +834,6 @@ export default async function BlogPostDetail({
     description: post.excerpt,
     image: imageUrl,
     datePublished: post.date,
-    dateModified: post.date,
     author: {
       '@type': 'Person',
       name: 'Micheal Ghattas',
