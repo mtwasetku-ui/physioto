@@ -597,7 +597,7 @@ export default function HomeClient() {
                 {[
                   'All AHPRA Registered',
                   'Extensive Clinical Experience',
-                  'Specialist Expertise',
+                  'Clinical Experience',
                   'Evidence-Based Practice',
                 ].map((b) => (
                   <span
