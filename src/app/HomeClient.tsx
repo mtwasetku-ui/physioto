@@ -81,7 +81,7 @@ const fallbackServices = [
     id: '2',
     name: 'Post-Surgery Rehabilitation',
     description:
-      'Expert recovery support following joint replacements, fractures, and orthopaedic surgery — progressing you safely toward full independence.',
+      'Rehabilitation support following joint replacements, fractures, and orthopaedic surgery — progressing you safely toward greater independence.',
   },
   {
     id: '3',
