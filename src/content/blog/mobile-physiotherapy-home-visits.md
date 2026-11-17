@@ -290,6 +290,6 @@ Coulter CL, et al. Physiotherapy after total hip replacement: a systematic revie
 
 Australian Physiotherapy Association. Position statement: home-based physiotherapy. APA, 2023.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Aged care programs. Commonwealth of Australia, 2026. https://www.myagedcare.gov.au/aged-care-programs
 
 NDIS. Physiotherapy supports. National Disability Insurance Agency, 2025. www.ndis.gov.au
