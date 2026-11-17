@@ -6,7 +6,7 @@ date: "2026-03-06"
 category: "Falls Prevention"
 featured: false
 image: /image/blog/falls-risk-ageing-parents-family-guide.jpg
-tags: ["falls prevention family", "elderly parent falls", "aged care Tasmania", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "carer guide", "ageing parents", "family caregiver"]
+tags: ["falls prevention family", "elderly parent falls", "aged care Tasmania", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "Physio to Home", "carer guide", "ageing parents", "family caregiver"]
 ---
 
 # FALLS RISK IN AGEING PARENTS | A GUIDE FOR FAMILIES
@@ -15,7 +15,7 @@ tags: ["falls prevention family", "elderly parent falls", "aged care Tasmania", 
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 For many families, the moment they start worrying seriously about a parent's safety at home comes after a fall has already happened. A phone call from a neighbour. A bruise that is hard to explain. A quiet admission over the phone that Mum slipped in the bathroom last week but is fine, don't worry.
 
@@ -93,9 +93,9 @@ What does not work, despite its common use: generic exercise programmes without 
 
 ---
 
-## How Physio to Home Helps Families in North Tasmania
+## How Physio to Home Helps Families in Tasmania
 
-Physio to Home provides home physiotherapy falls risk assessments for older adults across North Tasmania — including Launceston, George Town, Longford, Deloraine, Scottsdale, Exeter, Beaconsfield, and surrounding rural areas. The assessment is conducted in the person's own home — the environment where the falls risk is actually present.
+Physio to Home provides home physiotherapy falls risk assessments for older adults across Tasmania — including Launceston, George Town, Longford, Deloraine, Scottsdale, Exeter, Beaconsfield, and surrounding rural areas. The assessment is conducted in the person's own home — the environment where the falls risk is actually present.
 
 A home falls risk assessment from Physio to Home includes:
 
@@ -116,7 +116,7 @@ If your parent has already had a fall, the priority is twofold: medical assessme
 
 A previous fall is the single strongest predictor of a future fall. The period immediately after a fall — when fear is high and confidence is low — is both the time when people are most motivated to accept help and the time when intervention has the greatest potential to break the cycle.
 
-If your parent has had a fall in North Tasmania and you are concerned, contact Physio to Home. We can typically arrange a home visit within 1–2 weeks and will prioritise post-fall assessments where possible.
+If your parent has had a fall in Tasmania and you are concerned, contact Physio to Home. Appointment timing depends on location and clinician capacity. Contact us to discuss the earliest suitable option. A serious injury or urgent medical concern should be assessed through appropriate medical services.
 
 ---
 
@@ -124,7 +124,7 @@ If your parent has had a fall in North Tasmania and you are concerned, contact P
 
 **My Aged Care — Support at Home** — A physiotherapy falls risk assessment or prevention programme may be funded where it is included in your parent's approved clinical supports. Contact their provider or care coordinator to discuss the current plan.
 
-**Medicare GP Management Plan** — A GP Management Plan provides up to five subsidised physiotherapy visits per year. The falls assessment counts as a covered visit.
+**Medicare GP Chronic Condition Management Plan** — Eligible people with a chronic condition and complex care needs may be referred for up to five MBS-supported individual allied health services per calendar year, shared across eligible professions. Your GP determines eligibility and whether physiotherapy is appropriate; a falls assessment is not automatically Medicare-funded.
 
 **My Aged Care — CHSP** — A separate entry-level support program for eligible older Australians.
 
@@ -140,7 +140,7 @@ If your parent has had a fall in North Tasmania and you are concerned, contact P
 
 You cannot force an assessment. What you can do is arrange a conversation — many older adults are more open to a physiotherapist calling them directly than they are to their child raising the topic. A phone call from Physio to Home, framed as a brief discussion rather than a commitment, often goes further than a family conversation. Contact us and we can discuss the best approach for your parent's specific situation.
 
-### My parent lives in rural North Tasmania and I live interstate. Can I arrange a home visit for them remotely?
+### My parent lives in rural Tasmania and I live interstate. Can I arrange a home visit for them remotely?
 
 Yes. Contact Physio to Home with your parent's details and we will manage the arrangements. We can also email you a copy of the assessment findings so you are kept informed, with your parent's consent.
 
@@ -150,9 +150,9 @@ If you have noticed any of the warning signs described in this article — furni
 
 ---
 
-## Concerned About Your Parent's Falls Risk in North Tasmania?
+## Concerned About Your Parent's Falls Risk in Tasmania?
 
-Contact Physio to Home today — we can discuss your parent's situation, advise on the most appropriate assessment, and arrange a home visit anywhere across North Tasmania.
+Contact Physio to Home today — we can discuss your parent's situation, advise on the most appropriate assessment, and arrange a home visit anywhere across Tasmania.
 
 📞 1300 433 233
 🌐 physiotohome.com
@@ -167,7 +167,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and home-based rehabilitation for complex presentations.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes falls prevention, aged-care physiotherapy and home-based rehabilitation for complex presentations.
 
 ---
 
