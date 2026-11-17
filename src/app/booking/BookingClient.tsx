@@ -242,7 +242,7 @@ export default function BookingClient() {
           Mon–Sat: 9am – 5pm
         </p>
       ),
-      sub: 'After-hours appointments available on request',
+      sub: 'Contact us to discuss suitable appointment times',
     },
   ]
 
