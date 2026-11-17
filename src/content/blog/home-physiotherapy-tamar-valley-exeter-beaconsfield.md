@@ -16,7 +16,7 @@ tags: ["physiotherapy Exeter Tasmania", "physiotherapy Tamar Valley", "home phys
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania-Wide | Last reviewed: July 2026
 
 The West Tamar region — Exeter, Beaconsfield, Beauty Point, Legana, Rosevears, Gravelly Beach, and the townships along both banks of the Tamar River — is wine country, orchard country, and one of Tasmania's most popular places to retire. Beaconsfield's history as a 19th-century gold mining town and Exeter's roots as an orchard district have given way to a region now shaped by a growing, ageing population choosing river views over city living.
 
@@ -56,7 +56,7 @@ Our West Tamar service covers Exeter, Beaconsfield, Beauty Point, Legana, Roseve
 
 ## Funding Options
 
-**Medicare GP Chronic Condition Management Plan** — eligible people may access up to five individual allied health services per calendar year. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
+**Medicare GP Chronic Condition Management Plan** — eligible people with a chronic condition and complex care needs may be referred for up to five MBS-supported individual allied health services per calendar year, shared across eligible professions. A GP referral and Medicare eligibility requirements apply. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
 
 **My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we coordinate with care coordinators about available arrangements.
 
@@ -100,7 +100,7 @@ Usually within 1–2 weeks of enquiry. For urgent situations, such as a recent f
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including the Tamar Valley and West Tamar communities.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across Tasmania, including the Tamar Valley and West Tamar communities.
 
 ---
 
