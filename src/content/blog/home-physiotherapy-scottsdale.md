@@ -16,7 +16,7 @@ tags: ["physiotherapy Scottsdale", "home physiotherapy Scottsdale", "mobile phys
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania-Wide | Last reviewed: July 2026
 
 Scottsdale is the largest town in northeast Tasmania and the administrative centre for the Dorset region — a community built on potato farming, dairy, forestry, and more recently, tourism drawn by Bridestowe Lavender Estate and Barnbougle. It's also about 63 km from Launceston, much of it along the winding Tasman Highway over the Sideling, which means the nearest physiotherapy clinic is realistically an hour away each way.
 
@@ -56,7 +56,7 @@ Beyond Scottsdale itself, our team's northeast service extends to Bridport, Bran
 
 ## Funding Your Physiotherapy
 
-**Medicare GP Chronic Condition Management Plan** — eligible people may access up to five individual allied health services per calendar year. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
+**Medicare GP Chronic Condition Management Plan** — eligible people with a chronic condition and complex care needs may be referred for up to five MBS-supported individual allied health services per calendar year, shared across eligible professions. A GP referral and Medicare eligibility requirements apply. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
 
 **My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we liaise with care coordinators about available arrangements.
 
@@ -72,7 +72,7 @@ Beyond Scottsdale itself, our team's northeast service extends to Bridport, Bran
 
 ### Is Scottsdale really within your service area? It's a long way from Launceston.
 
-Yes — Scottsdale and the wider Dorset region are a core part of our North Tasmania coverage. It's precisely the kind of distance that makes home visits worthwhile rather than optional.
+Yes — Scottsdale and the wider Dorset region are part of our Tasmania-wide home-visit service. Contact us with the address so we can confirm current travel availability.
 
 ### Do you cover Bridport and Derby as well?
 
@@ -100,7 +100,7 @@ Typically within 1–2 weeks of enquiry. For urgent situations, contact us direc
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including the northeast region.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across Tasmania, including the northeast region.
 
 ---
 
