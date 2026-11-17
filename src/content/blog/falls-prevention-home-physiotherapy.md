@@ -179,7 +179,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in falls prevention, aged care physiotherapy, and post-surgical rehabilitation in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes falls prevention, aged-care physiotherapy and post-surgical rehabilitation in the home setting.
 
 ---
 
@@ -191,4 +191,4 @@ Sherrington C, et al. Exercise for preventing falls in older people living in th
 
 Australian Physiotherapy Association. Falls prevention in older people: Clinical practice guidelines. APA, 2023.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+Australian Government Department of Health, Disability and Ageing. Support at Home program. https://www.health.gov.au/our-work/support-at-home
