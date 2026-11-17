@@ -1,6 +1,6 @@
 ---
 title: "The Shoes That Cause Falls — And What to Wear Instead"
-description: "Wrong footwear is behind up to 50% of falls in older adults. Physiotherapist Micheal Ghattas explains which shoes are risky and what to look for."
+description: "Footwear can affect stability and may contribute to falls in older adults. Physiotherapist Micheal Ghattas explains practical features to consider when choosing shoes."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-09-19"
 category: "Falls Prevention"
@@ -21,7 +21,7 @@ Part of the Physio to Home Falls Prevention Series
 
 This article is a companion to our complete guide: How to Prevent Falls at Home — A Guide for Older Tasmanians. For the full picture on fall risk — including balance training, dizziness, medications, and home hazards — we recommend reading the full series alongside this article.
 
-Of all the fall risk factors we assess in home physiotherapy visits, inappropriate footwear is one of the most common — and one of the easiest to fix. Research shows that hazardous footwear is a contributing factor in up to 50% of falls in older adults, yet it is rarely the first thing people think of when discussing fall prevention.
+Of all the fall risk factors we assess in home physiotherapy visits, inappropriate footwear is one of the most common — and one of the easiest to fix. Footwear can influence stability and may contribute to some falls, but the available research does not support one percentage that applies to all older adults. Fall risk also depends on balance, strength, vision, medicines, the walking surface and individual footwear fit.
 
 This guide explains exactly what makes footwear safe or dangerous for older adults, delivers a verdict on the most common types of household footwear, and gives you a clear checklist for assessing any shoe before putting it on. No specialist equipment required — just the right information.
 
@@ -75,7 +75,7 @@ High heels shift the body's centre of gravity forward and significantly reduce t
 
 ### Worn or Old Shoes — MODERATE TO HIGH RISK — replace promptly
 
-Worn soles lose grip on smooth surfaces. Compressed midsoles lose shock absorption and reduce proprioceptive feedback. Stretched uppers no longer hold the foot securely. A shoe that feels comfortable because it has moulded to the foot is often a shoe that has lost its structural integrity. As a general rule, walking shoes used daily should be replaced every 12–18 months regardless of how they look.
+Worn soles lose grip on smooth surfaces. Compressed midsoles lose shock absorption and reduce proprioceptive feedback. Stretched uppers no longer hold the foot securely. A shoe that feels comfortable because it has moulded to the foot is often a shoe that has lost its structural integrity. Replace footwear when the tread is worn, the sole is compressed, the upper no longer holds the foot securely or the fit has changed. There is no single replacement interval that suits every shoe or person.
 
 ### Lace-Up Athletic or Walking Shoes — LOW RISK — the gold standard
 
@@ -145,7 +145,7 @@ If footwear issues are complex — particularly for people with diabetes, periph
 
 ### A simple action you can take today
 
-Walk through your home and collect every pair of footwear you wear regularly — slippers, walking shoes, garden shoes, thongs. Apply the five-feature checklist to each one. If any item fails two or more features, it is contributing to your fall risk and should be replaced. For many people in North Tasmania, this single exercise identifies the highest-impact, lowest-cost improvement in their falls prevention plan.
+Walk through your home and collect every pair of footwear you wear regularly — slippers, walking shoes, garden shoes, thongs. Apply the five-feature checklist to each one. This checklist is a practical prompt, not a validated falls-risk score. If footwear fails several features, consider asking a physiotherapist or podiatrist to assess whether it is suitable. Whether it should be replaced depends on fit, condition and the person's needs.
 
 ---
 
