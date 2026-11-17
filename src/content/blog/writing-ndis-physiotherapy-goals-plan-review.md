@@ -7,7 +7,7 @@ category: "Funding & Access"
 featured: false
 image: /image/blog/ndis-home-physiotherapy-funding.jpg
 
-tags: ["NDIS physiotherapy goals", "NDIS plan review", "writing NDIS goals", "NDIS goal examples physiotherapy", "NDIS plan review preparation", "Physio to Home", "North Tasmania", "NDIS participant guide", "capacity building daily activity", "disability support"]
+tags: ["NDIS physiotherapy goals", "NDIS plan review", "writing NDIS goals", "NDIS goal examples physiotherapy", "NDIS plan review preparation", "Physio to Home", "Tasmania", "NDIS participant guide", "capacity building daily activity", "disability support"]
 ---
 
 # HOW TO WRITE NDIS PHYSIOTHERAPY GOALS FOR YOUR PLAN REVIEW
@@ -16,7 +16,7 @@ tags: ["NDIS physiotherapy goals", "NDIS plan review", "writing NDIS goals", "ND
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania | Last reviewed: July 2026
 
 Every NDIS plan is built around goals — and physiotherapy funding is approved, renewed, or increased based on how clearly those goals connect to a genuine, evidenced need. Vague goals like "improve my health" or "get stronger" give the NDIA very little to act on. Specific, functional goals give planners a clear reason to approve the physiotherapy support you actually need.
 
@@ -24,7 +24,7 @@ This guide walks through how to write physiotherapy goals that hold up at a plan
 
 ### Who this guide is for
 
-NDIS participants, families, and support coordinators in North Tasmania preparing for a plan review where physiotherapy funding is being requested, renewed, or increased.
+NDIS participants, families, and support coordinators in Tasmania preparing for a plan review where physiotherapy funding is being requested, renewed, or increased.
 
 ---
 
@@ -119,7 +119,7 @@ Your overall NDIS plan can include broader life goals — social participation, 
 
 ## Ready to Prepare Strong Physiotherapy Goals for Your Next Review?
 
-Physio to Home provides home-based physiotherapy assessments across North Tasmania and can help you develop clear, evidence-based goals ahead of your next NDIS plan review — whether you're a participant, family member, or support coordinator.
+Physio to Home provides home-based physiotherapy assessments across Tasmania and can help you develop clear, evidence-based goals ahead of your next NDIS plan review — whether you're a participant, family member, or support coordinator.
 
 Contact us today to discuss your situation — no obligation, no cost →
 
@@ -131,7 +131,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and disability-related physiotherapy delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes neurological rehabilitation, falls prevention and disability-related physiotherapy delivered in the home setting.
 
 ---
 
