@@ -567,7 +567,7 @@ export default function HomeClient() {
               </p>
 
               <h2 className="font-display mt-3 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
-                Specialist care,
+                Experienced care,
                 <br />
                 <span className="italic text-[#FF5638]">
                   where you live.
