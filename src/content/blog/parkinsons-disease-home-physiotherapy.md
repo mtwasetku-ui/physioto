@@ -140,9 +140,9 @@ You will leave the first visit with a clear, manageable daily programme — incl
 
 ## Accessing Home Physiotherapy in Tasmania: Funding Options
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-If your GP determines that physiotherapy is clinically necessary for your Parkinson's disease management, they can write a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year.
+If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five MBS-supported individual allied health services per calendar year, shared across eligible professions; it is not five physiotherapy sessions automatically. Your GP determines eligibility and whether physiotherapy is appropriate. Eligible GP Management Plans and Team Care Arrangements made before 1 July 2025 may continue until 30 June 2027.
 
 ### My Aged Care — Support at Home and CHSP
 
@@ -196,7 +196,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in neurological rehabilitation, falls prevention, and chronic pain management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes neurological rehabilitation, falls prevention and chronic pain management delivered in the home setting.
 
 ---
 
