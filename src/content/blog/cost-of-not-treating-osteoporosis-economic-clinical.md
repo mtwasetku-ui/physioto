@@ -15,7 +15,7 @@ tags: ["osteoporosis cost", "fracture prevention economics", "osteoporosis Austr
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania-Wide | Last reviewed: March 2026
 
 *This article is written for people with osteoporosis, their families, GPs, aged care planners, and health policymakers. It draws on published health economic data, clinical guidelines, and the physiotherapy evidence base to make the case for proactive osteoporosis management — and examines what happens when that management does not occur.*
 
@@ -148,7 +148,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in osteoporosis management, falls prevention, and home-based rehabilitation for complex presentations.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in osteoporosis management, falls prevention, and home-based rehabilitation for complex presentations.
 
 Correspondence and GP referrals: physiotohome.com
 
