@@ -16,7 +16,7 @@ tags: ["physiotherapy George Town", "home physiotherapy George Town", "mobile ph
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania-Wide | Last reviewed: July 2026
 
 George Town sits where the Tamar River meets Bass Strait — one of Australia's oldest European settlements, with a community shaped by the Bell Bay industrial precinct, the Low Head Pilot Station, and a population that skews older than the state average. It's roughly 45 km from Launceston, close enough for occasional trips but far enough that a fortnightly clinic appointment becomes something people quietly stop bothering with.
 
@@ -55,7 +55,7 @@ Alongside George Town itself, our service extends to Low Head, Bell Bay, Clarenc
 
 ## Funding Your Care
 
-**Medicare GP Chronic Condition Management Plan** — eligible people may access up to five individual allied health services per calendar year. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
+**Medicare GP Chronic Condition Management Plan** — eligible people with a chronic condition and complex care needs may be referred for up to five MBS-supported individual allied health services per calendar year, shared across eligible professions. A GP referral and Medicare eligibility requirements apply. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements can continue until 30 June 2027.
 
 **My Aged Care — Support at Home or CHSP** — physiotherapy may be funded under approved Support at Home clinical supports. CHSP remains a separate program for eligible older people; we liaise with your care coordinator about available arrangements.
 
@@ -101,7 +101,7 @@ Typically within 1–2 weeks of enquiry. For urgent situations, such as a recent
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving North Tasmania, including George Town and the Tamar estuary area.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving clients across Tasmania, including George Town and the Tamar estuary area.
 
 ---
 
