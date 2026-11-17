@@ -85,7 +85,7 @@ Physiotherapy may be funded as a clinical support under Support at Home when it 
 
 ### How soon can someone come out to George Town?
 
-Typically within 1–2 weeks of enquiry. For urgent situations, such as a recent fall or hospital discharge, let us know and we'll do our best to prioritise you.
+Appointment timing depends on your address, clinical needs and current clinician capacity. For urgent situations, such as a recent fall or hospital discharge, tell us when you enquire so we can discuss the next step.
 
 ---
 
