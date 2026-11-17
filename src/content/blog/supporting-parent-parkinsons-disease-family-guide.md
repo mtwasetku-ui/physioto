@@ -176,4 +176,4 @@ Parkinson's Australia. Caring for someone with Parkinson's. www.parkinsons.org.a
 
 Allen NE, et al. The role of physiotherapy in Parkinson's disease. *Movement Disorders Clinical Practice*, 2019.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Aged care programs. Commonwealth of Australia, 2026. https://www.myagedcare.gov.au/aged-care-programs
