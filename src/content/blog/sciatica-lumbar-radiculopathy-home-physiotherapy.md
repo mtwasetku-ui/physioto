@@ -7,7 +7,7 @@ category: "Pain Management"
 featured: false
 image: /image/blog/sciatica-lumbar-radiculopathy-home-physiotherapy.jpg
 
-tags: ["sciatica", "lumbar radiculopathy", "leg pain", "back pain", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "nerve pain", "disc herniation"]
+tags: ["sciatica", "lumbar radiculopathy", "leg pain", "back pain", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "nerve pain", "disc herniation"]
 ---
 
 # SCIATICA & LUMBAR RADICULOPATHY | HOME PHYSIOTHERAPY
@@ -173,7 +173,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. His clinical work includes lumbar spine rehabilitation, chronic pain management, and home-based physiotherapy for complex musculoskeletal presentations.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes lumbar spine rehabilitation, chronic pain management, and home-based physiotherapy for complex musculoskeletal presentations.
 
 ---
 
