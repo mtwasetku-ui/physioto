@@ -150,9 +150,9 @@ Yes, and it is particularly important after fracture. Physiotherapy after a vert
 
 ---
 
-## Ready to Address Your Bone Health at Home in North Tasmania?
+## Ready to Address Your Bone Health at Home?
 
-Osteoporosis management does not have to mean restriction, fear, and declining function. Physio to Home provides AHPRA-registered, evidence-based bone health and falls prevention physiotherapy in your own home across North Tasmania — helping you move confidently, strengthen safely, and protect what matters most.
+Osteoporosis management does not have to mean restriction, fear, and declining function. Physio to Home provides AHPRA-registered bone-health and falls-prevention physiotherapy in your own home across Tasmania, subject to location and appointment availability — helping you move confidently, strengthen safely, and protect what matters most.
 
 Book your first home visit today →
 
@@ -164,7 +164,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in falls prevention, aged care physiotherapy, and bone health management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes falls prevention, aged care physiotherapy and bone-health management in home settings.
 
 ---
 
