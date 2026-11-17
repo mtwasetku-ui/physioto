@@ -424,7 +424,7 @@ export default function HomeClient() {
               },
               {
                 Icon: CheckCircle,
-                title: 'Expert',
+                title: 'Experienced',
                 desc: 'Every clinician is AHPRA-registered and experienced, bringing hospital, rehabilitation, and community-care expertise to your door.',
               },
             ].map(({ Icon, title, desc }, i) => (
@@ -476,7 +476,7 @@ export default function HomeClient() {
             </p>
 
             <h2 className="font-display mt-3 text-4xl font-extrabold tracking-tight text-[#12241D] md:text-5xl">
-              Expert care,{' '}
+              Personalised care,{' '}
               <span className="italic text-[#FF5638]">
                 at your door
               </span>
@@ -500,7 +500,7 @@ export default function HomeClient() {
                   n: '01',
                   icon: Phone,
                   title: 'Get in Touch',
-                  desc: "Call 1300 433 233 or submit a booking request. We'll have a quick conversation about what you're dealing with and find a time that suits you — usually within the same week.",
+                  desc: "Call 1300 433 233 or submit a booking request. We'll discuss your needs, location and appointment options, then confirm a suitable time.",
                 },
                 {
                   n: '02',
@@ -597,7 +597,7 @@ export default function HomeClient() {
                 {[
                   'All AHPRA Registered',
                   'Extensive Clinical Experience',
-                  'Specialist Expertise',
+                  'Clinical Experience',
                   'Evidence-Based Practice',
                 ].map((b) => (
                   <span
@@ -624,8 +624,8 @@ export default function HomeClient() {
                 },
                 {
                   Icon: Clock,
-                  title: 'Same-Week Appointments',
-                  desc: 'Fast access to the right clinician — often within the same week of your first call',
+                  title: 'Ask About Availability',
+                  desc: 'Appointment timing depends on your location and clinician availability. Contact us to discuss the earliest suitable option.',
                 },
                 {
                   Icon: MapPin,
@@ -916,10 +916,9 @@ export default function HomeClient() {
           </h2>
 
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-slate-400">
-            Our team of specialist physiotherapists is ready to deliver the
+            Our team of experienced physiotherapists is ready to deliver the
             quality of care you deserve — in the comfort of your own home.
-            No GP referral needed. Same-week appointments are available across
-            Tasmania.
+            Private clients can generally book without a GP referral. Funded pathways may have their own referral and eligibility requirements. Contact us to confirm current appointment availability.
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
