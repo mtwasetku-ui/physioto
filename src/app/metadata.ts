@@ -76,7 +76,7 @@ export const bookingMetadata: Metadata = {
   title: 'Book an Appointment — Home Physiotherapy Tasmania',
 
   description:
-    'Book an in-home physiotherapy appointment with Physio to Home. We provide physiotherapy across Tasmania, with appointment availability confirmed individually. NDIS, DVA, Medicare and private clients welcome.',
+    'Book an in-home physiotherapy appointment with Physio to Home across Tasmania. Private clients can self-refer; NDIS, DVA and Medicare pathways depend on eligibility and referral requirements.',
 
   alternates: {
     canonical: `${BASE_URL}/booking`,
