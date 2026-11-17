@@ -7,7 +7,7 @@ category: "Pain Management"
 featured: false
 image: /image/blog/plantar-fasciitis-heel-pain-home-physiotherapy.jpg
 
-tags: ["plantar fasciitis", "heel pain", "foot pain physiotherapy", "plantar fasciitis treatment", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "musculoskeletal", "foot rehabilitation"]
+tags: ["plantar fasciitis", "heel pain", "foot pain physiotherapy", "plantar fasciitis treatment", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "Physio to Home", "musculoskeletal", "foot rehabilitation"]
 ---
 
 # PLANTAR FASCIITIS & HEEL PAIN | HOME PHYSIOTHERAPY
@@ -16,7 +16,7 @@ tags: ["plantar fasciitis", "heel pain", "foot pain physiotherapy", "plantar fas
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Few musculoskeletal conditions are as reliably miserable as plantar fasciitis. The pain is worst first thing in the morning — that first step out of bed produces a sharp, stabbing sensation in the heel that makes many people limp to the bathroom. It eases slightly after a few minutes of walking, then returns after periods of sitting or standing. And for a condition that sounds minor, it has a remarkable capacity to persist for months, or even years, without appropriate management.
 

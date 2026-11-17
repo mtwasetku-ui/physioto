@@ -7,16 +7,16 @@ category: "Pain Management"
 featured: false
 image: /image/blog/neck-pain-cervicogenic-headache-home-physiotherapy.jpg
 
-tags: ["neck pain", "cervicogenic headache", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "headache treatment", "cervical spine", "musculoskeletal"]
+tags: ["neck pain", "cervicogenic headache", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "headache treatment", "cervical spine", "musculoskeletal"]
 ---
 
 # NECK PAIN & CERVICOGENIC HEADACHE | HOME PHYSIOTHERAPY
 
-## Managing Neck Pain and Cervicogenic Headache at Home: A Guide from a North Tasmania Home Physiotherapist
+## Managing Neck Pain and Cervicogenic Headache at Home: A Guide from a Tasmania Home Physiotherapist
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Neck pain is one of the most common musculoskeletal presentations in physiotherapy, affecting people across all ages and activity levels. For many people it is recurrent and familiar — a stiff neck after sleeping badly, tension that builds through a long day at a desk. For others it is more persistent and more disabling: pain that limits head movement, radiates into the shoulder or arm, or triggers headaches that are mistaken for migraines or tension headaches and managed ineffectively for years.
 

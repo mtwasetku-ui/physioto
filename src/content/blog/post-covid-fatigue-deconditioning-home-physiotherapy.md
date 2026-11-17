@@ -7,7 +7,7 @@ category: "Conditions & Rehab"
 featured: false
 image: /image/blog/post-covid-fatigue-deconditioning-home-physiotherapy.jpg
 
-tags: ["long COVID physiotherapy", "post-COVID fatigue", "long COVID Tasmania", "post-COVID deconditioning", "COVID rehabilitation", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "breathlessness rehabilitation"]
+tags: ["long COVID physiotherapy", "post-COVID fatigue", "long COVID Tasmania", "post-COVID deconditioning", "COVID rehabilitation", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "Physio to Home", "breathlessness rehabilitation"]
 ---
 
 # POST-COVID FATIGUE & DECONDITIONING | HOME PHYSIOTHERAPY
@@ -16,7 +16,7 @@ tags: ["long COVID physiotherapy", "post-COVID fatigue", "long COVID Tasmania", 
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Post-COVID syndrome — commonly called long COVID — is a condition defined by symptoms persisting beyond 12 weeks after acute COVID-19 infection, not explained by an alternative diagnosis. It affects people across all ages and across all severities of initial illness, including many who had mild acute COVID-19 with no hospitalisation.
 

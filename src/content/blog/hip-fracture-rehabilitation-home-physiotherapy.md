@@ -7,16 +7,16 @@ category: "Post-Surgery Recovery"
 featured: false
 image: /image/blog/hip-fracture-rehabilitation-home-physiotherapy.jpg
 
-tags: ["hip fracture", "hip fracture rehabilitation", "neck of femur fracture", "post-surgery recovery", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "falls prevention", "aged care"]
+tags: ["hip fracture", "hip fracture rehabilitation", "neck of femur fracture", "post-surgery recovery", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "falls prevention", "aged care"]
 ---
 
 # HIP FRACTURE REHABILITATION | HOME PHYSIOTHERAPY
 
-## Hip Fracture Rehabilitation at Home: A Guide for Patients and Families in North Tasmania
+## Hip Fracture Rehabilitation at Home: A Guide for Patients and Families in Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Hip fracture is among the most serious and most consequential injuries in older adults. In Australia, approximately 23,000 hip fractures occur each year, overwhelmingly in people over 70. The one-year mortality rate is approximately 20–30% — making it, statistically, one of the most dangerous injuries an older Australian can sustain. For those who survive, the rehabilitation journey is long, demanding, and critically dependent on consistent physiotherapy in the weeks and months following surgery.
 
@@ -30,7 +30,7 @@ Hip fracture rehabilitation is an individualised clinical process. Recovery time
 
 ### Who this guide is for
 
-This article is for people in North Tasmania recovering from a hip fracture — and for their families, carers, and care coordinators — who want to understand the rehabilitation process and how home physiotherapy supports it. It is particularly relevant for those in rural areas where clinic attendance is not practical in the post-operative period.
+This article is for people in Tasmania recovering from a hip fracture — and for their families, carers, and care coordinators — who want to understand the rehabilitation process and how home physiotherapy supports it. It is particularly relevant for those in rural areas where clinic attendance is not practical in the post-operative period.
 
 ---
 
@@ -58,7 +58,7 @@ The statistics around hip fracture outcomes are sobering:
 
 The single most important modifiable factor in determining outcomes after hip fracture is the quality, consistency, and early commencement of rehabilitation. Patients who receive intensive, early physiotherapy after hip fracture recover faster, regain higher levels of function, and return home at higher rates than those who receive standard or delayed rehabilitation.
 
-For families in North Tasmania: the rehabilitation your loved one receives in the first 12 weeks after coming home from hospital will determine, more than any other factor, how much function they recover. Home physiotherapy is how you ensure that rehabilitation happens consistently, in the right environment, at the right frequency.
+For families in Tasmania: the rehabilitation your loved one receives in the first 12 weeks after coming home from hospital will determine, more than any other factor, how much function they recover. Home physiotherapy is how you ensure that rehabilitation happens consistently, in the right environment, at the right frequency.
 
 ---
 

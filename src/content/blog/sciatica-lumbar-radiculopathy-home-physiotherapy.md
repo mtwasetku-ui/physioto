@@ -7,16 +7,16 @@ category: "Pain Management"
 featured: false
 image: /image/blog/sciatica-lumbar-radiculopathy-home-physiotherapy.jpg
 
-tags: ["sciatica", "lumbar radiculopathy", "leg pain", "back pain", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "nerve pain", "disc herniation"]
+tags: ["sciatica", "lumbar radiculopathy", "leg pain", "back pain", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "nerve pain", "disc herniation"]
 ---
 
 # SCIATICA & LUMBAR RADICULOPATHY | HOME PHYSIOTHERAPY
 
-## Managing Sciatica and Lumbar Radiculopathy at Home: A Guide from a North Tasmania Home Physiotherapist
+## Managing Sciatica and Lumbar Radiculopathy at Home: A Guide from a Tasmania Home Physiotherapist
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Sciatica is one of the most searched health terms in Australia — and one of the most misunderstood. Many people use the word to describe any pain that runs down the leg, and many others believe that sciatica inevitably requires rest, injections, or surgery. Neither of these things is accurate.
 

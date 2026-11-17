@@ -7,7 +7,7 @@ category: "Aged Care"
 featured: false
 image: /image/blog/supporting-parent-parkinsons-disease-family-guide.jpg
 
-tags: ["Parkinson's disease family guide", "caring for parent Parkinson's", "Parkinson's carer Tasmania", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "carer guide", "Parkinson's Tasmania", "aged care"]
+tags: ["Parkinson's disease family guide", "caring for parent Parkinson's", "Parkinson's carer Tasmania", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "Physio to Home", "carer guide", "Parkinson's Tasmania", "aged care"]
 ---
 
 # SUPPORTING A PARENT WITH PARKINSON'S DISEASE
@@ -16,7 +16,7 @@ tags: ["Parkinson's disease family guide", "caring for parent Parkinson's", "Par
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Parkinson's disease changes the person you love — gradually, unpredictably, and in ways that are sometimes hard to understand from the outside. The slowness, the stiffness, the shuffling walk, the moments when they seem to freeze completely in a doorway — these are not stubbornness, laziness, or a failure of effort. They are the direct neurological consequences of a condition that disrupts the brain's ability to initiate and regulate movement.
 
