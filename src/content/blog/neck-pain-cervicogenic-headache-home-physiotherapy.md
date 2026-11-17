@@ -164,7 +164,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has specialist training in the assessment and treatment of cervicogenic dizziness and cervicogenic headache, and treats complex cervical presentations as a particular area of clinical focus.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. His clinical focus includes assessment and management of cervicogenic dizziness, cervicogenic headache and complex cervical presentations.
 
 ---
 
