@@ -1,6 +1,6 @@
 ---
 title: "DVA Home Physiotherapy Funding — Tasmania"
-description: "DVA Gold and White Card holders can access funded home physiotherapy in Tasmania. Physio to Home explains eligibility, referrals, and what to expect."
+description: "Eligible DVA Gold and White Card holders may be able to access home physiotherapy in Tasmania, subject to card coverage, referral and approval requirements."
 author: "Micheal Ghattas, Physiotherapist"
 date: "2026-07-27"
 category: "Funding & Access"
