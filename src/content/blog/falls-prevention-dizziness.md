@@ -15,7 +15,7 @@ tags: ["falls prevention", "dizziness", "vertigo", "BPPV", "physiotherapy North 
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: February 2026
+Physio to Home, Tasmania | Last reviewed: February 2026
 
 Part of the Physio to Home Falls Prevention Series
 
@@ -157,7 +157,7 @@ The following situations are not emergencies but warrant professional assessment
 
 - Dizziness that started or worsened shortly after a new medication was prescribed
 
-For many of these presentations, a home physiotherapy assessment is the ideal first step. Micheal can assess your specific type of dizziness, screen for red flags requiring GP or specialist referral, and begin treatment in the same visit where appropriate.
+For some of these presentations, a home physiotherapy assessment may be an appropriate next step, provided urgent medical causes have been considered. A physiotherapist can assess your specific type of dizziness, screen for red flags requiring GP or specialist referral, and begin treatment in the same visit where appropriate.
 
 ---
 
@@ -215,9 +215,9 @@ Following the assessment, Micheal will either begin treatment in the same sessio
 
 A physiotherapy assessment for dizziness and falls risk is accessible and often subsidised for older Tasmanians through several pathways:
 
-- **Commonwealth Home Support Programme (CHSP):** For older Australians who need entry-level support to remain living independently at home. Allied health services including physiotherapy are a covered service category. Contact My Aged Care on 1800 200 422 to determine your eligibility.
+- **Commonwealth Home Support Programme (CHSP):** CHSP provides entry-level support for eligible older people. Allied health and therapy services may be available through local CHSP providers; availability and arrangements vary by area.
 
-- **My Aged Care Home Care Package:** If you already receive a Home Care Package, physiotherapy for dizziness and falls prevention is a covered allied health service. Speak with your care coordinator.
+- **Support at Home:** Physiotherapy may be funded as a clinical support where it is included in the person's approved services and available funding. Speak with your registered provider or care coordinator about arranging visits with an external physiotherapist.
 
 - **Medicare:** If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027.
 
@@ -271,7 +271,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in vestibular physiotherapy, falls prevention, and aged care — all delivered in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in vestibular physiotherapy, falls prevention, and aged care — all delivered in the home setting.
 
 ---
 

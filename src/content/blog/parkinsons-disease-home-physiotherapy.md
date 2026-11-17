@@ -140,9 +140,9 @@ You will leave the first visit with a clear, manageable daily programme — incl
 
 ## Accessing Home Physiotherapy in Tasmania: Funding Options
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-If your GP determines that physiotherapy is clinically necessary for your Parkinson's disease management, they can write a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year.
+If you have Parkinson's disease and meet the eligibility requirements for a GP Chronic Condition Management Plan, your GP may refer you for eligible allied health services. The combined limit is up to five individual MBS-supported allied health services per calendar year, shared across eligible professions. A GP or prescribed medical practitioner referral is required, and services must be consistent with the plan. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements may continue under transition arrangements until 30 June 2027.
 
 ### My Aged Care — Support at Home and CHSP
 
@@ -150,11 +150,11 @@ Support at Home replaced the Home Care Packages Program on 1 November 2025. Phys
 
 ### NDIS
 
-If you have an NDIS plan, physiotherapy for Parkinson's disease is typically funded under the Improved Daily Living or Improved Health and Wellbeing support categories. Home-based delivery is fully supported under NDIS. Physio to Home is currently completing NDIS provider registration and welcomes enquiries from participants and their support coordinators.
+NDIS funding may be available where physiotherapy is an appropriate disability-related support and meets the participant's plan and current NDIS funding requirements. Physio to Home is not a registered NDIS provider. We can discuss enquiries from self-managed and plan-managed participants; we do not provide services as a registered provider for NDIA-managed funding.
 
 ### Private Health Insurance
 
-Most extras policies cover physiotherapy. Home visits are covered by the majority of major Australian health funds. Contact your fund to confirm your rebate before booking.
+Some extras policies provide physiotherapy benefits, but cover for home visits varies by insurer and policy. Contact your fund to confirm your benefits before booking.
 
 ---
 

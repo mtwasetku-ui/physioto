@@ -16,9 +16,9 @@ tags: ["mobile physiotherapy", "home visits", "physiotherapy Tasmania", "in-home
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, Tasmania | Last reviewed: February 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
-Mobile physiotherapy brings AHPRA-registered, evidence-based physiotherapy treatment directly to your home — no travel, no waiting room, no disruption to your daily routine. For older adults and people living in rural and regional Tasmania, it is often not just the most convenient option, but the most clinically effective one.
+Mobile physiotherapy brings AHPRA-registered, evidence-based physiotherapy treatment directly to your home. For older adults and people living in rural and regional Tasmania, it can be a practical option when travel is difficult or when an assessment in the home environment is useful.
 
 This guide explains exactly what mobile physiotherapy is, who it is for, what happens during a visit, how to book, and how to access funding. It also links to our full library of condition-specific guides so you can explore the topics most relevant to you.
 
@@ -32,7 +32,7 @@ This page is for anyone across Tasmania — or their family members and carers �
 
 Mobile physiotherapy — also called home visit physiotherapy or domiciliary physiotherapy — is physiotherapy delivered in your home rather than in a clinic. The physiotherapist brings all necessary assessment and treatment equipment to you.
 
-It is not a lesser version of clinic-based care. For many patients — particularly older adults, people with limited mobility, and those in rural areas — home-based physiotherapy is clinically superior to clinic-based care because:
+Home visits and clinic appointments offer different advantages. A home visit can be useful when travel is difficult or when assessment in the person's usual environment is relevant. Clinic-based care may be preferable when specialist equipment or facilities are needed. The most suitable setting depends on the person's clinical needs, goals and available services. Potential practical benefits of a home visit include:
 
 - Assessment and treatment happen in the actual environment where function is most relevant — your home, your furniture, your stairs, your specific daily challenges
 
@@ -44,9 +44,9 @@ It is not a lesser version of clinic-based care. For many patients — particula
 
 - Continuity of care is maintained — you see the same physiotherapist at every visit, building a genuine therapeutic relationship
 
-### Mobile physiotherapy is not a compromise — it is a clinical advantage
+### Practical advantages of home-based care
 
-A 2019 Cochrane Review of falls prevention programs found that home-based exercise programs were equally effective to supervised clinic programs for reducing fall rates in older adults. For post-surgical rehabilitation, studies consistently show that home-based programs produce equivalent functional outcomes to outpatient clinic care — with significantly higher patient satisfaction and adherence.
+Exercise-based falls-prevention programmes can reduce falls in older adults. That evidence does not establish that home delivery is inherently more effective than clinic delivery. A home visit may help a physiotherapist assess the person's environment and practise everyday tasks; a clinic may offer equipment or facilities that some people need.
 
 ---
 
@@ -68,7 +68,7 @@ The early weeks after hip replacement, knee replacement, or other orthopedic sur
 
 ### NDIS Participants
 
-NDIS participants with physiotherapy funded under their plan can access mobile physiotherapy as their primary or supplementary service. Home delivery is fully supported under NDIS and is often the preferred option for participants with complex needs or limited transport.
+NDIS participants may be able to use plan funding for home physiotherapy when the support relates to their disability, meets the applicable funding requirements and is included in their plan. The suitability of home delivery depends on the participant's goals and circumstances.
 
 ### Anyone Who Prefers Home-Based Care
 
@@ -108,7 +108,7 @@ Call or email us to make initial contact. You do not need a GP referral to book 
 
 ### Step 2 Eligibility and funding check (at no cost)
 
-Before confirming your booking, we will check your funding eligibility at no cost. This includes confirming whether you qualify for Medicare-rebated sessions, whether your Support at Home or CHSP arrangements include physiotherapy, and whether your NDIS plan includes relevant supports. Many patients are surprised to find their visits are more affordable than expected.
+We can discuss the likely funding pathway and the information you may need. Eligibility, referrals and approvals are determined by the relevant scheme, GP, plan manager or aged-care provider, including whether physiotherapy is included in approved services.
 
 ### Step 3 Booking your first appointment
 
@@ -180,9 +180,9 @@ Contact us with your location and we will confirm service availability. For pati
 
 Mobile physiotherapy through Physio to Home can be funded through several pathways. Many patients access multiple funding sources across a year.
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-If your GP determines that physiotherapy is clinically necessary for a chronic or complex condition, they can create a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year. A GP referral is required to access this rebate. Gap payments may apply.
+If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual MBS-supported allied health services per calendar year, shared across eligible professions. A GP or prescribed medical practitioner referral is required, and services must be consistent with the plan. Eligible GP Management Plans and Team Care Arrangements in place before 1 July 2025 may continue under transition arrangements until 30 June 2027. Medicare rebates may not cover the full fee.
 
 ### My Aged Care — Support at Home
 
@@ -238,7 +238,7 @@ Physio to Home has developed a comprehensive library of evidence-based guides co
 
 ### Do I need a GP referral to book mobile physiotherapy?
 
-No — you do not need a referral to book a private physiotherapy appointment. You can contact Physio to Home directly and book without any GP involvement. However, if you want to access Medicare-rebated sessions under a GP Management Plan or Team Care Arrangement, a GP referral and plan are required before your first session. We recommend speaking with your GP about this if you have a chronic condition — it can significantly reduce your out-of-pocket costs.
+No referral is generally required for a standard private physiotherapy appointment. Medicare-subsidised allied health services under a GP Chronic Condition Management Plan require a referral from a GP or prescribed medical practitioner, and the service must be consistent with the plan. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements may continue under transition arrangements until 30 June 2027.
 
 ### How is mobile physiotherapy different from what a clinic offers?
 

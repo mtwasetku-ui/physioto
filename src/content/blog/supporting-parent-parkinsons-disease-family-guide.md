@@ -119,13 +119,13 @@ For families, home physiotherapy visits also provide:
 
 ---
 
-## Funding Physiotherapy for a Parent With Parkinson's in North Tasmania
+## Funding Physiotherapy for a Parent With Parkinson's in Tasmania
 
 **My Aged Care — Support at Home or CHSP** — Physiotherapy may be funded under Support at Home where it is included in your parent's approved clinical supports. CHSP remains a separate program for eligible older people. Contact their provider or My Aged Care on 1800 200 422 to discuss an assessment and available services.
 
-**Medicare GP Management Plan** — Up to five subsidised physiotherapy visits per year. Your parent's GP can write the plan at any appointment.
+**Medicare GP Chronic Condition Management Plan** — If your parent meets the eligibility requirements, their GP may refer them for eligible allied health services. The combined limit is up to five individual MBS-supported allied health services per calendar year, shared across eligible professions. A GP or prescribed medical practitioner referral is required, and services must be consistent with the plan. Eligible pre-1 July 2025 GP Management Plans and Team Care Arrangements may continue under transition arrangements until 30 June 2027.
 
-**NDIS** — If your parent is eligible for NDIS, physiotherapy for Parkinson's disease is typically funded under Improved Daily Living. Physio to Home is completing NDIS provider registration.
+**NDIS** — NDIS funding may be available where physiotherapy is an appropriate disability-related support and meets the participant's plan and current funding requirements. Physio to Home is not a registered NDIS provider and can discuss enquiries from self-managed and plan-managed participants. We do not provide services as a registered provider for NDIA-managed funding.
 
 **Private health insurance** — Most extras policies cover physiotherapy including home visits.
 
@@ -149,7 +149,7 @@ There is emerging evidence that high-intensity exercise may have neuroprotective
 
 ## Ready to Arrange Home Physiotherapy for Your Parent With Parkinson's?
 
-Whether you are newly navigating a Parkinson's diagnosis or managing a parent with more advanced disease — Physio to Home is here. We provide AHPRA-registered, evidence-based Parkinson's physiotherapy in the home across North Tasmania.
+Whether you are newly navigating a Parkinson's diagnosis or managing a parent with more advanced disease — Physio to Home is here. We provide AHPRA-registered, evidence-based Parkinson's physiotherapy in the home across Tasmania, subject to location and appointment availability.
 
 Contact us today — for your parent, and for you →
 
@@ -164,7 +164,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in neurological rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He specialises in neurological rehabilitation, falls prevention, and aged care physiotherapy delivered entirely in the home setting.
 
 ---
 
@@ -176,4 +176,4 @@ Parkinson's Australia. Caring for someone with Parkinson's. www.parkinsons.org.a
 
 Allen NE, et al. The role of physiotherapy in Parkinson's disease. *Movement Disorders Clinical Practice*, 2019.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Support at Home. Commonwealth of Australia, 2026. www.myagedcare.gov.au/support-at-home
