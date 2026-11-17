@@ -180,6 +180,6 @@ Australian Orthopaedic Association National Joint Replacement Registry (AOANJRR)
 
 Coulter CL, et al. Physiotherapy after total hip replacement: a systematic review. *Physiotherapy*, 2019.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Aged care programs. Commonwealth of Australia, 2026. https://www.myagedcare.gov.au/aged-care-programs
 
 Australian Physiotherapy Association. Post-operative rehabilitation guidelines: hip arthroplasty. APA, 2023.
