@@ -180,9 +180,9 @@ Contact us with your location and we will confirm service availability. For pati
 
 Mobile physiotherapy through Physio to Home can be funded through several pathways. Many patients access multiple funding sources across a year.
 
-### Medicare — GP Management Plan
+### Medicare — GP Chronic Condition Management Plan
 
-If your GP determines that physiotherapy is clinically necessary for a chronic or complex condition, they can create a GP Management Plan (also called a Team Care Arrangement). This entitles you to up to five Medicare-rebated physiotherapy sessions per year. A GP referral is required to access this rebate. Gap payments may apply.
+Since 1 July 2025, new Medicare chronic condition management arrangements use a GP Chronic Condition Management Plan (GPCCMP). Eligible patients may access up to five individual allied health services per calendar year across eligible professions, subject to the plan, referral and Medicare requirements. Existing GP Management Plans and Team Care Arrangements established before 1 July 2025 may continue to support eligible services until 30 June 2027. A GP referral is required for Medicare benefits and gap payments may apply.
 
 ### My Aged Care — Support at Home
 
@@ -238,7 +238,7 @@ Physio to Home has developed a comprehensive library of evidence-based guides co
 
 ### Do I need a GP referral to book mobile physiotherapy?
 
-No — you do not need a referral to book a private physiotherapy appointment. You can contact Physio to Home directly and book without any GP involvement. However, if you want to access Medicare-rebated sessions under a GP Management Plan or Team Care Arrangement, a GP referral and plan are required before your first session. We recommend speaking with your GP about this if you have a chronic condition — it can significantly reduce your out-of-pocket costs.
+No — you do not need a referral to book a private physiotherapy appointment. You can contact Physio to Home directly and book without any GP involvement. However, to access Medicare benefits under a GP Chronic Condition Management Plan, or an eligible pre-1 July 2025 GP Management Plan and Team Care Arrangement, you need a valid referral and must meet the relevant Medicare requirements. We recommend speaking with your GP about this if you have a chronic condition — it can significantly reduce your out-of-pocket costs.
 
 ### How is mobile physiotherapy different from what a clinic offers?
 
