@@ -6,7 +6,7 @@ date: "2026-03-06"
 category: "Pain Management"
 featured: false
 image: /image/blog/frozen-shoulder-adhesive-capsulitis-home-physiotherapy.jpg
-tags: ["frozen shoulder", "adhesive capsulitis", "shoulder pain", "shoulder stiffness", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "musculoskeletal"]
+tags: ["frozen shoulder", "adhesive capsulitis", "shoulder pain", "shoulder stiffness", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "musculoskeletal"]
 ---
 
 # FROZEN SHOULDER | ADHESIVE CAPSULITIS | HOME PHYSIOTHERAPY
@@ -15,7 +15,7 @@ tags: ["frozen shoulder", "adhesive capsulitis", "shoulder pain", "shoulder stif
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Frozen shoulder — the clinical term is adhesive capsulitis — is one of the most painful and most commonly mismanaged shoulder conditions in physiotherapy. It is characterised by a progressive, often severe restriction of shoulder movement in all directions, accompanied by pain that can be constant, debilitating, and particularly brutal at night. It lasts, on average, two to three years if left unmanaged.
 
