@@ -7,7 +7,7 @@ category: "Aged Care"
 featured: false
 image: /image/blog/hidden-cost-inconsistent-physiotherapy-rural-aged-care.jpg
 
-tags: ["rural aged care", "physiotherapy consistency", "deconditioning older adults", "aged care physiotherapy", "rural health equity", "home care physiotherapy", "physiotherapy access", "Physio to Home", "North Tasmania", "health policy"]
+tags: ["rural aged care", "physiotherapy consistency", "deconditioning older adults", "aged care physiotherapy", "rural health equity", "home care physiotherapy", "physiotherapy access", "Physio to Home", "Tasmania", "health policy"]
 ---
 
 # THE HIDDEN COST OF INCONSISTENT PHYSIOTHERAPY IN AGED CARE
@@ -16,7 +16,7 @@ tags: ["rural aged care", "physiotherapy consistency", "deconditioning older adu
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 *This article is intended for aged care coordinators, Support at Home providers, CHSP services, GPs, health planners, and anyone involved in the planning and delivery of allied health services for older Australians in rural and regional communities. It draws on published evidence from physiotherapy outcome research, geriatric medicine, and health services literature to describe a harm that is systematic, measurable, and largely invisible in current accountability frameworks.*
 
@@ -134,7 +134,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He has a clinical and advocacy interest in rural aged care physiotherapy quality and the role of home-based delivery in addressing the systemic consistency gap in rural community care.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. He has a clinical and advocacy interest in rural aged care physiotherapy quality and the role of home-based delivery in addressing the systemic consistency gap in rural community care.
 
 Correspondence and care coordinator enquiries: physiotohome.com
 
