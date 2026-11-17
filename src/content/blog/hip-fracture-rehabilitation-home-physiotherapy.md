@@ -204,11 +204,11 @@ Yes, absolutely. Age alone is not a contraindication to rehabilitation after hip
 
 ### Can hip fracture rehabilitation be done entirely at home in Tasmania?
 
-Yes. The full post-fracture rehabilitation programme — from the first week at home through to longer-term falls prevention and strength maintenance — can be delivered entirely in your home. Physio to Home provides home visits across Tasmania, subject to location and clinician availability. We can discuss visits in Launceston, George Town, Longford, Deloraine and surrounding rural areas.
+Some components of post-fracture rehabilitation may be delivered at home when clinically appropriate. Others may require outpatient, community or facility-based services. The treating team and physiotherapist can discuss the most suitable setting for the person's recovery and equipment needs. Physio to Home can discuss home visits across Tasmania, subject to location and clinician availability.
 
 ### My parent refuses physiotherapy after their hip fracture. What should I do?
 
-Reluctance to engage with physiotherapy after hip fracture is common and understandable — the person is in pain, frightened, and exhausted. A home visit is often more acceptable than a clinic appointment because it requires no effort from the patient. Sometimes the most effective approach is a first visit framed simply as a check-in and a conversation, with no pressure to "exercise." A skilled physiotherapist builds rapport and engagement before building a programme.
+Reluctance to engage with physiotherapy after hip fracture can have many causes, including pain, fatigue, fear or uncertainty about what is safe. Some people may prefer a home visit because it avoids travel; others may prefer a clinic or another setting. A first conversation can help identify the person's concerns, goals and preferred approach. The treating team should guide when and how rehabilitation begins.
 
 ---
 
@@ -216,7 +216,7 @@ Reluctance to engage with physiotherapy after hip fracture is common and underst
 
 Whether your family member has just come home from hospital, or recovery stalled weeks ago and you need a new plan — Physio to Home is here. We provide AHPRA-registered, evidence-based hip fracture rehabilitation in your own home across Tasmania, with funding potentially available through eligible My Aged Care, Medicare, NDIS or private health pathways, depending on individual requirements.
 
-Book your first home visit today — the earlier, the better →
+Contact us to discuss whether a home visit may be suitable after discharge →
 
 ---
 
@@ -240,4 +240,6 @@ Handoll HH, et al. Multidisciplinary rehabilitation for older people with hip fr
 
 Australian Institute of Health and Welfare (AIHW). Hip fracture incidence and outcomes in Australia. AIHW, Canberra, 2022.
 
-My Aged Care. Home Care Packages Program. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+Australian Commission on Safety and Quality in Health Care. Hip Fracture Clinical Care Standard. Updated 30 April 2026. https://www.safetyandquality.gov.au/clinical-care-standards/hip-fracture
+
+My Aged Care. Support at Home. Commonwealth of Australia. https://www.myagedcare.gov.au/support-at-home
