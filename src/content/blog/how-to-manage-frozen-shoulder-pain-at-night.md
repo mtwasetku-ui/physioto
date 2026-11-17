@@ -7,7 +7,7 @@ category: "Pain Management"
 featured: false
 image: /image/blog/how-to-manage-frozen-shoulder-pain-at-night.jpg
 
-tags: ["frozen shoulder night pain", "how to sleep with frozen shoulder", "frozen shoulder pain relief", "adhesive capsulitis night pain", "shoulder pain at night", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "frozen shoulder relief", "shoulder pain sleeping"]
+tags: ["frozen shoulder night pain", "how to sleep with frozen shoulder", "frozen shoulder pain relief", "adhesive capsulitis night pain", "shoulder pain at night", "home physiotherapy", "physiotherapy Tasmania", "Physio to Home", "frozen shoulder relief", "shoulder pain sleeping"]
 ---
 
 # HOW TO MANAGE FROZEN SHOULDER PAIN AT NIGHT
@@ -16,7 +16,7 @@ tags: ["frozen shoulder night pain", "how to sleep with frozen shoulder", "froze
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Ask anyone with frozen shoulder what the worst part is, and the answer is almost always the same: the nights. The daytime pain — though significant — is at least distractible. The night pain is relentless. It wakes people at 2am and keeps them awake for hours. It prevents lying on either side. It produces a gnawing, aching, sometimes burning discomfort that sleep medication barely touches. And it occurs at its worst precisely when the body most needs rest for healing.
 

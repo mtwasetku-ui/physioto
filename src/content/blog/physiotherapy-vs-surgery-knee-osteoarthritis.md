@@ -7,7 +7,7 @@ category: "Post-Surgery Recovery"
 featured: false
 image: /image/blog/physiotherapy-vs-surgery-knee-osteoarthritis.jpg
 
-tags: ["physiotherapy vs surgery knee", "knee replacement decision", "knee arthroscopy evidence", "knee OA treatment options", "avoid knee surgery", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "knee osteoarthritis treatment", "conservative vs surgical"]
+tags: ["physiotherapy vs surgery knee", "knee replacement decision", "knee arthroscopy evidence", "knee OA treatment options", "avoid knee surgery", "home physiotherapy", "physiotherapy Tasmania", "Physio to Home", "knee osteoarthritis treatment", "conservative vs surgical"]
 ---
 
 # PHYSIOTHERAPY VS SURGERY FOR KNEE OSTEOARTHRITIS
@@ -16,7 +16,7 @@ tags: ["physiotherapy vs surgery knee", "knee replacement decision", "knee arthr
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 If you have knee osteoarthritis and your pain has been getting worse, you have probably considered surgery — or been told by someone that surgery is the next step. The question of whether to pursue physiotherapy or surgery for knee OA is one of the most common clinical decisions in musculoskeletal medicine, and the answer the research provides is considerably more nuanced than most people realise.
 

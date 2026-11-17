@@ -7,7 +7,7 @@ category: "Conditions & Rehab"
 featured: false
 image: /image/blog/osteoporosis-bone-health-home-physiotherapy.jpg
 
-tags: ["osteoporosis", "bone health", "fracture prevention", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "falls prevention", "osteopenia"]
+tags: ["osteoporosis", "bone health", "fracture prevention", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "falls prevention", "osteopenia"]
 ---
 
 # OSTEOPOROSIS & BONE HEALTH | HOME PHYSIOTHERAPY
@@ -16,7 +16,7 @@ tags: ["osteoporosis", "bone health", "fracture prevention", "home physiotherapy
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Osteoporosis is often called the silent disease — it causes no pain, no obvious symptoms, and no warning signs until a fracture occurs. By then, the structural integrity of the skeleton has already been significantly compromised. In Australia, osteoporosis-related fractures are more common than heart attacks, strokes, and breast cancer combined. For older Tasmanians — particularly women in the post-menopausal years and men over 70 — it represents one of the most significant and most preventable threats to long-term independence.
 

@@ -7,7 +7,7 @@ category: "Funding & Access"
 featured: false
 image: /image/blog/ndis-home-physiotherapy-funding.jpg
 
-tags: ["NDIS physiotherapy goals", "NDIS plan review", "writing NDIS goals", "NDIS goal examples physiotherapy", "NDIS plan review preparation", "Physio to Home", "North Tasmania", "NDIS participant guide", "capacity building daily activity", "disability support"]
+tags: ["NDIS physiotherapy goals", "NDIS plan review", "writing NDIS goals", "NDIS goal examples physiotherapy", "NDIS plan review preparation", "Physio to Home", "Tasmania", "NDIS participant guide", "capacity building daily activity", "disability support"]
 ---
 
 # HOW TO WRITE NDIS PHYSIOTHERAPY GOALS FOR YOUR PLAN REVIEW
@@ -16,7 +16,7 @@ tags: ["NDIS physiotherapy goals", "NDIS plan review", "writing NDIS goals", "ND
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Every NDIS plan is built around goals — and physiotherapy funding is approved, renewed, or increased based on how clearly those goals connect to a genuine, evidenced need. Vague goals like "improve my health" or "get stronger" give the NDIA very little to act on. Specific, functional goals give planners a clear reason to approve the physiotherapy support you actually need.
 

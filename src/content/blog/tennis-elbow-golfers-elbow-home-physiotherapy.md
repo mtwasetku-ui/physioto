@@ -7,16 +7,16 @@ category: "Pain Management"
 featured: false
 image: /image/blog/tennis-elbow-golfers-elbow-home-physiotherapy.jpg
 
-tags: ["tennis elbow", "golfer's elbow", "lateral epicondylalgia", "medial epicondylalgia", "elbow tendinopathy", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "Physio to Home", "elbow pain", "forearm pain"]
+tags: ["tennis elbow", "golfer's elbow", "lateral epicondylalgia", "medial epicondylalgia", "elbow tendinopathy", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "Physio to Home", "elbow pain", "forearm pain"]
 ---
 
 # TENNIS ELBOW & GOLFER'S ELBOW | HOME PHYSIOTHERAPY
 
-## Tennis Elbow and Golfer's Elbow: A Physiotherapy Guide for North Tasmania
+## Tennis Elbow and Golfer's Elbow: A Physiotherapy Guide for Tasmania
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Tennis elbow — lateral epicondylalgia — is one of the most common upper limb presentations in musculoskeletal physiotherapy. Despite its name, only a minority of sufferers have ever played tennis. It is overwhelmingly an occupational and activity-related overuse condition, affecting manual workers, tradespeople, keyboard users, and anyone who performs repetitive gripping or wrist extension tasks. Its counterpart, golfer's elbow (medial epicondylalgia), affects the inner side of the elbow and is equally unrelated to the sport that names it.
 

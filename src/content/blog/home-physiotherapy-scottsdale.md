@@ -16,7 +16,7 @@ tags: ["physiotherapy Scottsdale", "home physiotherapy Scottsdale", "mobile phys
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 Scottsdale is the largest town in northeast Tasmania and the administrative centre for the Dorset region — a community built on potato farming, dairy, forestry, and more recently, tourism drawn by Bridestowe Lavender Estate and Barnbougle. It's also about 63 km from Launceston, much of it along the winding Tasman Highway over the Sideling, which means the nearest physiotherapy clinic is realistically an hour away each way.
 
@@ -100,7 +100,7 @@ Typically within 1–2 weeks of enquiry. For urgent situations, contact us direc
 
 ## About the Practice
 
-Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving older adults and rural residents across North Tasmania, including the northeast region.
+Physio to Home is led by Micheal Ghattas, DPT, AHPRA Registered Physiotherapist with 15+ years of clinical experience, supported by a team of physiotherapists serving clients across Tasmania, including the northeast region, subject to location and availability.
 
 ---
 

@@ -7,7 +7,7 @@ category: "Conditions & Rehab"
 featured: false
 image: /image/blog/parkinsons-exercise-neuroprotection-evidence.jpg
 
-tags: ["Parkinson's disease exercise", "neuroprotection Parkinson's", "exercise neuroscience", "Parkinson's physiotherapy", "BDNF Parkinson's", "high intensity exercise Parkinson's", "home physiotherapy", "physiotherapy North Tasmania", "Physio to Home", "neuroplasticity"]
+tags: ["Parkinson's disease exercise", "neuroprotection Parkinson's", "exercise neuroscience", "Parkinson's physiotherapy", "BDNF Parkinson's", "high intensity exercise Parkinson's", "home physiotherapy", "physiotherapy Tasmania", "Physio to Home", "neuroplasticity"]
 ---
 
 # PARKINSON'S DISEASE & EXERCISE: THE NEUROPROTECTION EVIDENCE
@@ -16,7 +16,7 @@ tags: ["Parkinson's disease exercise", "neuroprotection Parkinson's", "exercise 
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: November 2026
 
 *This article is written for people with Parkinson's disease, their families, and the clinicians who care for them. It reviews the current state of evidence on exercise and neuroprotection in Parkinson's disease, with specific attention to the mechanisms proposed, the quality of existing trials, and the clinical implications for physiotherapy practice. References are provided throughout.*
 
