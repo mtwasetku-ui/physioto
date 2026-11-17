@@ -235,11 +235,11 @@ Call us before you book. We can discuss funding pathways with people across Tasm
 
 ### Is dizziness just a normal part of getting older?
 
-Dizziness is common in older adults, but it is not simply something to accept as a normal part of ageing. In many cases — particularly BPPV and orthostatic hypotension — dizziness has a specific, treatable cause. Even when dizziness cannot be fully eliminated, its impact on fall risk can be significantly reduced through physiotherapy, lifestyle adjustments, and medication review. Normalising dizziness and doing nothing about it is one of the most common and avoidable contributors to falls in older Australians.
+Dizziness is common in older adults, but it is not simply something to accept as a normal part of ageing. Dizziness can have identifiable and treatable causes, including BPPV and orthostatic hypotension, although assessment is needed to determine what is contributing in each person. Even when dizziness cannot be fully eliminated, its impact on fall risk can be significantly reduced through physiotherapy, lifestyle adjustments, and medication review. Normalising dizziness and doing nothing about it is one of the most common and avoidable contributors to falls in older Australians.
 
 ### Can BPPV go away on its own?
 
-BPPV can resolve spontaneously, but this may take weeks to months — during which fall risk remains elevated. The Epley manoeuvre, performed by a trained physiotherapist, resolves BPPV in 80–90% of cases within one to three sessions. There is no benefit in waiting for BPPV to resolve on its own when a highly effective, non-invasive treatment is available.
+BPPV can sometimes resolve spontaneously, but symptoms may persist. For appropriate cases of posterior-canal BPPV, a canalith repositioning procedure such as the Epley manoeuvre is a recommended treatment. Whether it is suitable depends on assessment and individual circumstances; some people need repeat treatment or follow-up.
 
 ### My parent keeps saying their dizziness is nothing to worry about. How do I convince them to get assessed?
 
@@ -247,7 +247,7 @@ This is one of the most common conversations families have with us. A helpful ap
 
 ### How quickly can BPPV be treated in a home visit?
 
-In many cases, the Epley manoeuvre can be performed and the dizziness significantly reduced in the first visit. The manoeuvre itself takes less than five minutes once the assessment has confirmed the diagnosis and identified the affected canal. Most patients notice improvement immediately or within 24 hours. A follow-up visit is usually recommended to confirm resolution and introduce balance exercises.
+If assessment confirms BPPV and it is safe to do so, a canalith repositioning procedure may be provided during the visit. The procedure itself is brief, but assessment and treatment time varies. Some people improve quickly; others need repeat treatment or follow-up to check symptoms and balance.
 
 ### Can dizziness come back after treatment?
 
@@ -277,7 +277,7 @@ Micheal is the founder of Physio to Home, a mobile physiotherapy practice servin
 
 ## References & Further Reading
 
-Bhattacharyya N, et al. Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo. *Otolaryngology–Head and Neck Surgery*, 2017.
+Bhattacharyya N, et al. Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (Update). *Otolaryngology–Head and Neck Surgery*, 2017. https://pubmed.ncbi.nlm.nih.gov/28248609/
 
 Agrawal Y, et al. Disorders of balance and vestibular function in US adults. *Archives of Internal Medicine*, 2009.
 
@@ -285,4 +285,4 @@ McDonnell MN & Hillier SL. Vestibular rehabilitation for unilateral peripheral v
 
 Australian Institute of Health and Welfare. Falls in older Australians 2019–20. AIHW, Canberra, 2022.
 
-My Aged Care. Commonwealth Home Support Programme. Commonwealth of Australia, 2025. www.myagedcare.gov.au
+My Aged Care. Aged care programs. Commonwealth of Australia, 2026. https://www.myagedcare.gov.au/aged-care-programs
