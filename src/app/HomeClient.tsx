@@ -500,7 +500,7 @@ export default function HomeClient() {
                   n: '01',
                   icon: Phone,
                   title: 'Get in Touch',
-                  desc: "Call 1300 433 233 or submit a booking request. We'll have a quick conversation about what you're dealing with and find a time that suits you — usually within the same week.",
+                  desc: "Call 1300 433 233 or submit a booking request. We'll discuss your needs and confirm the earliest suitable appointment based on your location and clinician availability.",
                 },
                 {
                   n: '02',
@@ -567,7 +567,7 @@ export default function HomeClient() {
               </p>
 
               <h2 className="font-display mt-3 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
-                Specialist care,
+                Experienced care,
                 <br />
                 <span className="italic text-[#FF5638]">
                   where you live.
@@ -624,8 +624,8 @@ export default function HomeClient() {
                 },
                 {
                   Icon: Clock,
-                  title: 'Same-Week Appointments',
-                  desc: 'Fast access to the right clinician — often within the same week of your first call',
+                  title: 'Appointment Availability',
+                  desc: 'We confirm suitable appointment options based on your location and clinical needs.',
                 },
                 {
                   Icon: MapPin,
@@ -916,10 +916,10 @@ export default function HomeClient() {
           </h2>
 
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-slate-400">
-            Our team of specialist physiotherapists is ready to deliver the
-            quality of care you deserve — in the comfort of your own home.
-            No GP referral needed. Same-week appointments are available across
-            Tasmania.
+            Our experienced, AHPRA-registered physiotherapists provide care in the
+            comfort of your own home. Private clients can usually self-refer;
+            funded pathways may have separate referral and eligibility
+            requirements. Contact us to confirm availability in your area.
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">

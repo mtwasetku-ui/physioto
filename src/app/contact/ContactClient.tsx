@@ -75,7 +75,7 @@ const faqs = [
   {
     question: 'How quickly can I get an appointment?',
     answer:
-      'We aim to offer same-week appointments where availability allows. Contact us with your location and preferred timing and we can let you know the earliest suitable appointment.',
+      'Appointment timing depends on your location, appointment needs and clinician availability. Contact us and we will confirm the earliest suitable option.',
   },
   {
     question: 'What should I do if I am not sure which service I need?',
@@ -379,7 +379,7 @@ export default function ContactClient() {
                   'Convenient home-based care',
                   'Personalised treatment plans',
                   'Mobile physiotherapy across Tasmania',
-                  'Same-week appointments where available',
+                  'Appointment availability confirmed for each location',
                   'NDIS and DVA clients welcome',
                 ].map((item) => (
                   <li
