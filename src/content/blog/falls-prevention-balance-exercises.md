@@ -305,13 +305,13 @@ Balance exercise is one of the most important components of fall prevention — 
 
 ### Can a physiotherapist supervise these exercises during a home visit?
 
-Yes — and for many patients, particularly those at higher fall risk or with more complex balance problems, supervised sessions are significantly more effective than unsupervised training alone. A home visit from Physio to Home allows Micheal to observe your technique, correct errors in real time, and progress your programme at the right pace. Sessions can be funded through Medicare, My Aged Care, NDIS, and private health insurance.
+Yes — and for many patients, particularly those at higher fall risk or with more complex balance problems, supervised sessions may be useful for people who need help with technique, exercise progression or safety, particularly when balance is impaired or fall risk is high. A home visit from Physio to Home allows Micheal to observe your technique, correct errors in real time, and progress your programme at the right pace. Funding may be available through eligible Medicare, aged-care or NDIS arrangements, or private payment. Eligibility, referral and approval requirements apply.
 
 ---
 
 ## Want a Balance Programme Tailored Specifically to You?
 
-This guide gives you a strong foundation — but every person's balance impairment is different, and a programme designed around your specific assessment findings will always outperform a general one. Physio to Home provides AHPRA-registered physiotherapy balance assessments and supervised exercise programmes across Tasmania — in your own home, at a time that suits you.
+This guide gives you a strong foundation — but every person's balance impairment is different, and a programme informed by your assessment can be tailored to your balance, strength, mobility and goals. General exercise guidance can still be useful, but it may not address every individual's needs. Physio to Home provides AHPRA-registered physiotherapy balance assessments and supervised exercise programmes across Tasmania — in your own home, at a time that suits you.
 
 Book a home balance assessment today — we cover all of Tasmania →
 
