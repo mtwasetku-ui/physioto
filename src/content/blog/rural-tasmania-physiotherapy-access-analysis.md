@@ -118,7 +118,7 @@ The access problem in rural Tasmania is not intractable. Evidence from comparabl
 
 ## A Note on What Physio to Home Is and Is Not
 
-This article is an evidence-based analysis of a systemic problem, written by a practising clinician who operates within that system. Physio to Home is one home-visiting physiotherapy practice serving one region of North Tasmania. Its existence does not solve the access problem described in this article — it addresses a fraction of it, for a fraction of the people who need it.
+This article is an evidence-based analysis of a systemic problem, written by a practising clinician who operates within that system. Physio to Home is one home-visiting physiotherapy practice serving clients across Tasmania. Its existence does not solve the access problem described in this article — it addresses a fraction of it, for a fraction of the people who need it.
 
 The access gap in rural Tasmania requires systemic responses at the policy, funding, and workforce planning level. This article is offered as a contribution to that conversation — grounded in the clinical reality of what happens when older Tasmanians cannot access the physiotherapy that the evidence says they need.
 
