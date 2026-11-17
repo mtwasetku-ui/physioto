@@ -105,7 +105,7 @@ She was inspired to pursue physiotherapy after seeing firsthand how rehabilitati
     specialties: 'Vestibular Rehabilitation, Falls Prevention, Geriatric Care, Acute & Inpatient Care, Intensive Care, NDIS',
     bio: `Cheng is a dedicated physiotherapist with over a decade of clinical experience helping individuals rebuild their strength, mobility, and confidence. Cheng graduated with a Bachelor of Physiotherapy (Honours) from The University of Queensland.
 
-With extensive experience working in a large acute care hospital, Cheng brings deep expertise in inpatient general medicine, emergency care, and intensive care settings. Her clinical background includes specialised work in vestibular rehabilitation, fall prevention, and geriatric care, alongside ongoing experience working within the NDIS sector to support community-based functional goals.
+With extensive experience working in a large acute care hospital, Cheng brings deep expertise in inpatient general medicine, emergency care, and intensive care settings. Her clinical background includes experience in vestibular rehabilitation, falls prevention and geriatric care, alongside ongoing work within the NDIS sector to support community-based functional goals.
 
 Outside the clinic, she stays active and practices what she preaches—you'll often find her exploring the great outdoors, running, cycling, or playing tennis. Whether you are recovering from an injury, managing a chronic condition, or working to improve your balance and mobility, Cheng is committed to guiding you every step of the way.`,
     photo: '/team/cheng.jpg',
