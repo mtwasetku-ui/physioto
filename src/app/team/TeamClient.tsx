@@ -118,7 +118,7 @@ function TeamModal({ member, onClose }: { member: TeamMember; onClose: () => voi
               <div>
                 <div className="mb-2 flex items-center gap-2">
                   <Heart className="h-5 w-5 flex-shrink-0 text-[#FFC53D]" />
-                  <span className="text-lg font-semibold uppercase tracking-wide text-[#FFC53D]">Specialties</span>
+                  <span className="text-lg font-semibold uppercase tracking-wide text-[#FFC53D]">Clinical Focus Areas</span>
                 </div>
                 <p className="pl-7 text-lg leading-relaxed text-white/90 md:text-xl">{member.specialties}</p>
               </div>
@@ -184,7 +184,7 @@ export default function TeamClient() {
             Meet <span className="italic text-[#FF5638]">our team</span>
           </h1>
           <p className={`fade-up d2 ${vis('team-hero') ? 'in' : ''} mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-slate-300 md:text-xl`}>
-            AHPRA registered physiotherapists delivering expert in-home care across Tasmania.
+            AHPRA-registered practitioners delivering home-based care across Tasmania.
           </p>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function TeamClient() {
         <div id="team-why" ref={setRef('team-why') as any} className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           {[
             { title: 'Comfortable Treatment Plans', desc: 'Tailored treatment plans designed to utilise your home environment for optimal recovery and healing.' },
-            { title: 'Expert Care Delivered', desc: 'Professional physiotherapists come to you, ensuring convenience and personalised attention in your own space.' },
+            { title: 'Personalised Care Delivered', desc: 'Our practitioners come to you, providing convenient care and individualised attention in your own space.' },
             { title: 'Personalised Therapy Solutions', desc: 'We provide in-home physiotherapy services tailored to your environment, ensuring comfort and effective treatment plans based on your living space.' },
           ].map(({ title, desc }, i) => (
             <div key={title} className={`fade-up d${i + 1} ${vis('team-why') ? 'in' : ''} card-lift rounded-2xl border border-[#12241D]/10 bg-[#F2EFE4] p-6`}>
