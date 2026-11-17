@@ -233,7 +233,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist (registration PHY0002634794) | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults, people with disability and rural residents across Tasmania. He specialises in post-surgical rehabilitation, neurological rehabilitation, falls prevention and disability-related physiotherapy delivered in the home.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults, people with disability and rural residents across Tasmania. His clinical work includes post-surgical rehabilitation, neurological rehabilitation, falls prevention and disability-related physiotherapy delivered in the home.
 
 ---
 
