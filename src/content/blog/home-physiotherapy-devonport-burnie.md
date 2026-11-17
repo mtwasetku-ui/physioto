@@ -130,7 +130,7 @@ Options may include:
 
 - **Private appointments:** You can contact us directly to discuss private home visits and fees.
 - **Private health insurance:** Rebates depend on your policy and insurer. Check your cover and any home-visit conditions with your fund.
-- **Medicare:** Eligible patients may be able to access a limited number of allied health services under a GP Chronic Condition Management Plan. Existing GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue to be used until 30 June 2027. Ask your GP about eligibility and referral requirements.
+- **Medicare:** Eligible people with a chronic condition and complex care needs may be referred for up to five MBS-supported individual allied health services per calendar year, shared across eligible professions, under a GP Chronic Condition Management Plan. A GP referral and Medicare eligibility requirements apply. Eligible GP Management Plans and Team Care Arrangements made before 1 July 2025 may continue until 30 June 2027.
 - **NDIS:** We can discuss physiotherapy enquiries from NDIS participants and the applicable plan and payment arrangements.
 - **DVA:** Eligible veterans can contact us to discuss home physiotherapy and the relevant referral or approval requirements.
 - **My Aged Care:** Physiotherapy may be available through Support at Home or CHSP where it is included in the person's approved services and provider arrangements.
