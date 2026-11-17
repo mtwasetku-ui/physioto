@@ -7,7 +7,7 @@ category: "Conditions & Rehab"
 featured: false
 image: /image/blog/osteoporosis-bone-health-home-physiotherapy.jpg
 
-tags: ["osteoporosis", "bone health", "fracture prevention", "home physiotherapy", "physiotherapy North Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "falls prevention", "osteopenia"]
+tags: ["osteoporosis", "bone health", "fracture prevention", "home physiotherapy", "physiotherapy Tasmania", "in-home physio", "home care physiotherapy Tasmania", "Physio to Home", "older adults", "falls prevention", "osteopenia"]
 ---
 
 # OSTEOPOROSIS & BONE HEALTH | HOME PHYSIOTHERAPY
@@ -16,7 +16,7 @@ tags: ["osteoporosis", "bone health", "fracture prevention", "home physiotherapy
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: March 2026
+Physio to Home, Tasmania | Last reviewed: March 2026
 
 Osteoporosis is often called the silent disease — it causes no pain, no obvious symptoms, and no warning signs until a fracture occurs. By then, the structural integrity of the skeleton has already been significantly compromised. In Australia, osteoporosis-related fractures are more common than heart attacks, strokes, and breast cancer combined. For older Tasmanians — particularly women in the post-menopausal years and men over 70 — it represents one of the most significant and most preventable threats to long-term independence.
 
@@ -26,7 +26,7 @@ This guide explains what osteoporosis is, how physiotherapy helps, and exactly w
 
 ### Who this guide is for
 
-This article is for people in North Tasmania who have been diagnosed with osteoporosis or osteopenia — and for those at risk — who want to understand how physiotherapy fits into their management. It is particularly relevant for older adults in rural areas where accessing specialist allied health services consistently is difficult.
+This article is for people in Tasmania who have been diagnosed with osteoporosis or osteopenia — and for those at risk — who want to understand how physiotherapy fits into their management. It is particularly relevant for older adults in rural areas where accessing specialist allied health services consistently is difficult.
 
 ---
 
@@ -150,9 +150,9 @@ Yes, and it is particularly important after fracture. Physiotherapy after a vert
 
 ---
 
-## Ready to Address Your Bone Health at Home in North Tasmania?
+## Ready to Address Your Bone Health at Home in Tasmania?
 
-Osteoporosis management does not have to mean restriction, fear, and declining function. Physio to Home provides AHPRA-registered, evidence-based bone health and falls prevention physiotherapy in your own home across North Tasmania — helping you move confidently, strengthen safely, and protect what matters most.
+Osteoporosis management does not have to mean restriction, fear, and declining function. Physio to Home provides AHPRA-registered, evidence-based bone health and falls prevention physiotherapy in your own home across Tasmania — helping you move confidently, strengthen safely, and protect what matters most.
 
 Book your first home visit today →
 
@@ -164,7 +164,7 @@ Micheal Ghattas, DPT
 
 AHPRA Registered Physiotherapist | Doctor of Physical Therapy | 15+ Years Clinical Experience
 
-Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across North Tasmania. He specialises in falls prevention, aged care physiotherapy, and bone health management delivered entirely in the home setting.
+Micheal is the founder of Physio to Home, a mobile physiotherapy practice serving older adults and rural residents across Tasmania. His clinical work includes falls prevention, aged-care physiotherapy and bone health management delivered in the home setting.
 
 ---
 
