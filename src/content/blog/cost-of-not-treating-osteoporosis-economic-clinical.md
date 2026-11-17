@@ -134,10 +134,10 @@ For GPs, aged care coordinators, and patients in North Tasmania, proactive osteo
 - 924,000 Australians have osteoporosis — AIHW
 - Only ~20% of people with osteoporosis receive appropriate treatment — Osteoporosis Australia, 2021
 - Osteoporosis-related fractures cost Australia ~$3.84 billion annually — Osteoporosis Australia
-- One-year mortality after hip fracture: approximately 20–30% — Australian cohort data
+- People who sustain a hip fracture are more than 3.5 times as likely to die within 12 months as people without an injury — Australian Hip Fracture Clinical Care Standard
 - ~25–30% of hip fracture survivors do not return to community living — systematic review evidence
 - High-intensity resistance and impact training increases femoral neck BMD significantly — LIFTMOR trial, Watson et al., 2018
-- Exercise programmes with balance training reduce community falls rates by 23% — Cochrane Review, Sherrington et al., 2019
+- Exercise programmes reduce the rate of falls in community-dwelling older adults by about 23% — Cochrane Review, Sherrington et al., 2019
 - Bisphosphonates reduce hip fracture risk by ~40–50% — BMJ meta-analyses
 
 ---
