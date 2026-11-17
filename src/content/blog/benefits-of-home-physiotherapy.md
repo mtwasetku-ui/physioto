@@ -166,3 +166,5 @@ Tousignant M, et al. Systematic review of the effectiveness of home physiotherap
 Buhagiar MA, et al. Effect of inpatient rehabilitation vs a monitored home-based program on mobility in patients with total knee arthroplasty. *JAMA*, 2017.
 
 Langhorne P, et al. Early supported discharge services for inpatient stroke care. *Cochrane Database of Systematic Reviews*, 2017.
+
+Clemson L, Stark S, Pighills AC, Fairhall NJ, Lamb SE, Ali J, Sherrington C. Environmental interventions for preventing falls in older people living in the community. *Cochrane Database of Systematic Reviews*, 2023. https://www.cochrane.org/evidence/CD013258_reducing-fall-hazards-within-environment
