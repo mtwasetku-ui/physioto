@@ -51,7 +51,7 @@ A single fall can trigger a cycle of fear, reduced activity, further decondition
 
 ## What the Evidence Says About Physiotherapy and Fall Prevention
 
-The research is clear: physiotherapy is one of the most effective interventions for preventing falls in older adults. A landmark Cochrane Review analysed over 100 trials and found that exercise programmes delivered by physiotherapists — particularly those targeting balance and strength — significantly reduce both the rate of falls and the number of people who fall.
+A Cochrane review of 108 trials found that exercise reduces the rate of falls in community-dwelling older adults by about 23%. Programmes that challenge balance and include functional exercise are particularly useful. A physiotherapist can help assess a person's abilities, select appropriate exercises and progress them safely.
 
 The Australian Physiotherapy Association (APA) recommends that older adults at risk of falling undertake a structured, physiotherapy-led programme that includes:
 
@@ -143,15 +143,15 @@ Common signs include feeling unsteady on your feet, needing to hold onto walls o
 
 ### Can physiotherapy actually prevent falls, or just help after one has happened?
 
-Both. Physiotherapy is most effective when started before a fall occurs — it can strengthen the muscles and improve the balance systems that protect you. However, physiotherapy after a fall is equally important. It addresses both the physical deconditioning and the fear of falling again, which is a significant risk factor in its own right.
+Both. Strength and balance exercise may help reduce falls risk before a fall occurs. After a fall, physiotherapy may help address mobility, strength and confidence once any injury or urgent medical issue has been assessed. The right timing and programme depend on the person's health and recovery.
 
 ### Is home physiotherapy covered by Medicare or aged care funding in Tasmania?
 
-It can be. If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027. If you receive Support at Home, physiotherapy may be funded as a clinical support where it is included in your approved services. CHSP remains a separate pathway for eligible older people. NDIS participants can also access home physiotherapy under their plan. We are happy to help you navigate your funding options — contact us for a no-obligation chat.
+It can be. If you have a chronic condition and complex care needs, your GP may prepare a GP Chronic Condition Management Plan and refer you for eligible allied health services. The combined limit is up to five individual allied health services per calendar year, shared across eligible professions. Eligible GP Management Plans and Team Care Arrangements created before 1 July 2025 may continue until 30 June 2027. If you receive Support at Home, physiotherapy may be funded as a clinical support where it is included in your approved services; approved clinical supports have no participant contribution. CHSP remains a separate pathway for eligible older people and has been extended to 30 June 2029. NDIS participants can also access home physiotherapy under their plan. We are happy to help you navigate your funding options — contact us for a no-obligation chat.
 
 ### How long does it take to see results from a falls prevention programme?
 
-Research shows meaningful improvements in balance and strength within 6–12 weeks of a consistent exercise programme. The key word is consistent — exercises need to be done regularly, not just during physiotherapy visits. Your home physiotherapist will give you a personalised home programme to do between sessions.
+Progress varies between people. Some may notice changes over several weeks with regular practice, while others need longer. Your physiotherapist can review your response and adjust the programme as your strength, balance and confidence change.
 
 ### What happens during a home physiotherapy falls risk assessment?
 
