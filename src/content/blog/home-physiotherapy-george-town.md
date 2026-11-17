@@ -16,7 +16,7 @@ tags: ["physiotherapy George Town", "home physiotherapy George Town", "mobile ph
 
 By Micheal Ghattas, DPT | AHPRA Registered Physiotherapist | 15+ Years Experience
 
-Physio to Home, North Tasmania | Last reviewed: July 2026
+Physio to Home, Tasmania | Last reviewed: July 2026
 
 George Town sits where the Tamar River meets Bass Strait — one of Australia's oldest European settlements, with a community shaped by the Bell Bay industrial precinct, the Low Head Pilot Station, and a population that skews older than the state average. It's roughly 45 km from Launceston, close enough for occasional trips but far enough that a fortnightly clinic appointment becomes something people quietly stop bothering with.
 
