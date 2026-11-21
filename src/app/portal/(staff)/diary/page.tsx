@@ -1,12 +1,12 @@
 import DiaryClient from './DiaryClient'
-import DashboardBanner from '@/components/portal/DashboardBanner'
+import LatestAnnouncement from '@/components/portal/LatestAnnouncement'
 
 export const dynamic = 'force-dynamic'
 
 export default function DiaryPage() {
   return (
     <>
-      <DashboardBanner />
+      <LatestAnnouncement />
       <DiaryClient />
     </>
   )
