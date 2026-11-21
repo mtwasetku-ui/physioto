@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Pin, Plus } from 'lucide-react'
+import { ChevronDown, MessageSquare, Pin, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { DashboardPostRow, DashboardReplyRow } from '@/lib/db'
 import { When, PostBody } from './dashboardText'
@@ -154,12 +154,14 @@ export default function DashboardClient({
   currentEmail,
   isAdmin,
   loadError,
+  focusId,
 }: {
   posts: DashboardPostRow[]
   replies: DashboardReplyRow[]
   currentEmail: string
   isAdmin: boolean
   loadError: boolean
+  focusId: string | null
 }) {
   const router = useRouter()
   const repliesByPost = useMemo(() => {
@@ -174,12 +176,26 @@ export default function DashboardClient({
   // Captured once on first render so "New" tags stay put for this visit even
   // after we mark the dashboard as seen and refresh.
   const [newIds] = useState(() => new Set(posts.filter((p) => p.is_unread).map((p) => p.id)))
+  // Which strips are open. Starts with the notice linked from the calendar
+  // strip (?post=), otherwise the most recently published live notice.
+  const [openIds, setOpenIds] = useState<Set<string>>(() => {
+    if (focusId && posts.some((p) => p.id === focusId)) return new Set([focusId])
+    let latest: DashboardPostRow | null = null
+    for (const p of posts) {
+      if (statusOf(p) !== 'live') continue
+      if (!latest || new Date(p.publish_at).getTime() > new Date(latest.publish_at).getTime()) latest = p
+    }
+    return new Set(latest ? [latest.id] : [])
+  })
+  const [highlightId, setHighlightId] = useState<string | null>(
+    focusId && posts.some((p) => p.id === focusId) ? focusId : null
+  )
   const [creating, setCreating] = useState(false)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [busyId, setBusyId] = useState<string | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
 
-  // Opening the dashboard clears the nav badge and the calendar banner.
+  // Opening the dashboard clears the nav badge and the calendar strip's "New".
   useEffect(() => {
     if (newIds.size === 0) return
     fetch('/api/portal/dashboard/seen', { method: 'POST' })
@@ -189,6 +205,27 @@ export default function DashboardClient({
       .catch(() => {})
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  // Scroll to and briefly highlight the notice linked from the calendar strip.
+  useEffect(() => {
+    if (!highlightId) return
+    const el = document.getElementById(`post-${highlightId}`)
+    if (el) {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      el.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' })
+    }
+    const t = setTimeout(() => setHighlightId(null), 2200)
+    return () => clearTimeout(t)
+  }, [highlightId])
+
+  function toggle(id: string) {
+    setOpenIds((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+  }
 
   async function patch(id: string, payload: Record<string, unknown>) {
     setActionError(null)
@@ -222,7 +259,7 @@ export default function DashboardClient({
       <div className="mb-6 flex items-start justify-between gap-4">
         <div>
           <h1 className="serif mb-1 text-2xl font-semibold text-primary">Dashboard</h1>
-          <p className="text-sm text-muted-foreground">Notices for the team.</p>
+          <p className="text-sm text-muted-foreground">Notices for the team. Tap any strip to open or close it.</p>
         </div>
         {isAdmin && !creating && (
           <Button onClick={() => { setCreating(true); setEditingId(null) }}>
@@ -255,7 +292,7 @@ export default function DashboardClient({
         </div>
       )}
 
-      <ul className="space-y-4">
+      <ul className="space-y-2.5">
         {posts.map((post) => {
           const status = statusOf(post)
           const isNew = newIds.has(post.id)
@@ -272,60 +309,96 @@ export default function DashboardClient({
             )
           }
 
+          const open = openIds.has(post.id)
+          const replyCount = repliesByPost.get(post.id)?.length ?? 0
+          const accent = isNew ? 'border-l-[var(--portal-signal)]' : open ? 'border-l-primary' : 'border-l-border'
+
           return (
-            <li key={post.id} className="rounded-lg border border-border bg-white p-5">
-              <div className="mb-2 flex flex-wrap items-center gap-2">
-                {post.pinned && (
-                  <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground">
-                    <Pin className="h-3.5 w-3.5" aria-hidden />
-                    Pinned
+            <li
+              key={post.id}
+              id={`post-${post.id}`}
+              className={`rounded-lg border border-border border-l-[5px] bg-white transition-shadow ${accent} ${
+                highlightId === post.id ? 'ring-2 ring-[var(--portal-signal)]/40' : ''
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() => toggle(post.id)}
+                aria-expanded={open}
+                aria-controls={`post-body-${post.id}`}
+                className="grid w-full grid-cols-[1fr_auto] items-center gap-3 px-[18px] py-3.5 text-left"
+              >
+                <span className="min-w-0">
+                  {(post.pinned || isNew || (isAdmin && status !== 'live')) && (
+                    <span className="mb-1.5 flex flex-wrap items-center gap-2">
+                      {post.pinned && (
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground">
+                          <Pin className="h-3.5 w-3.5" aria-hidden />
+                          Pinned
+                        </span>
+                      )}
+                      {isNew && (
+                        <span className="rounded-full bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground">New</span>
+                      )}
+                      {isAdmin && status === 'scheduled' && (
+                        <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-900">Scheduled</span>
+                      )}
+                      {isAdmin && status === 'expired' && (
+                        <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">Expired</span>
+                      )}
+                    </span>
+                  )}
+                  <span className="block text-base font-semibold text-foreground">{post.title}</span>
+                  <span className="mt-0.5 block text-xs text-muted-foreground">
+                    <When iso={post.publish_at} />
+                    {post.author_name ? ` · ${post.author_name}` : ''}
+                    {isAdmin && post.expires_at && (
+                      <>
+                        {' · hides '}
+                        <When iso={post.expires_at} />
+                      </>
+                    )}
                   </span>
-                )}
-                {isNew && (
-                  <span className="rounded-full bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground">New</span>
-                )}
-                {isAdmin && status === 'scheduled' && (
-                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-900">Scheduled</span>
-                )}
-                {isAdmin && status === 'expired' && (
-                  <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">Expired</span>
-                )}
-              </div>
+                </span>
+                <span className="flex items-center gap-3 text-xs font-bold text-muted-foreground">
+                  {replyCount > 0 && (
+                    <span className="inline-flex items-center gap-1">
+                      <MessageSquare className="h-4 w-4" aria-hidden />
+                      {replyCount}
+                      <span className="sr-only"> {replyCount === 1 ? 'reply' : 'replies'}</span>
+                    </span>
+                  )}
+                  <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden />
+                </span>
+              </button>
 
-              <h2 className="mb-1 text-base font-semibold text-foreground">{post.title}</h2>
-              <p className="mb-3 text-xs text-muted-foreground">
-                <When iso={post.publish_at} />
-                {post.author_name ? ` · ${post.author_name}` : ''}
-                {isAdmin && post.expires_at && (
-                  <>
-                    {' · hides '}
-                    <When iso={post.expires_at} />
-                  </>
-                )}
-              </p>
-              <PostBody text={post.body} />
+              {open && (
+                <div id={`post-body-${post.id}`} className="mx-[18px] border-t border-border pb-[18px] pt-3.5">
+                  <PostBody text={post.body} />
 
-              <div className="mt-4">
-                <ReplyThread
-                  postId={post.id}
-                  replies={repliesByPost.get(post.id) ?? []}
-                  currentEmail={currentEmail}
-                  isAdmin={isAdmin}
-                  canReply={status === 'live'}
-                />
-              </div>
+                  <div className="mt-4">
+                    <ReplyThread
+                      postId={post.id}
+                      replies={repliesByPost.get(post.id) ?? []}
+                      currentEmail={currentEmail}
+                      isAdmin={isAdmin}
+                      canReply={status === 'live'}
+                    />
+                  </div>
 
-              {isAdmin && (
-                <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-3">
-                  <Button size="sm" variant="outline" disabled={busyId === post.id} onClick={() => { setEditingId(post.id); setCreating(false) }}>
-                    Edit
-                  </Button>
-                  <Button size="sm" variant="outline" disabled={busyId === post.id} onClick={() => patch(post.id, { pinned: !post.pinned })}>
-                    {post.pinned ? 'Unpin' : 'Pin'}
-                  </Button>
-                  <Button size="sm" variant="outline" disabled={busyId === post.id} onClick={() => archive(post)}>
-                    Archive
-                  </Button>
+                  {isAdmin && (
+                    <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-3">
+                      <Button size="sm" variant="outline" disabled={busyId === post.id} onClick={() => { setEditingId(post.id); setCreating(false) }}>
+                        Edit
+                      </Button>
+                      <Button size="sm" variant="outline" disabled={busyId === post.id} onClick={() => patch(post.id, { pinned: !post.pinned })}>
+                        {post.pinned ? 'Unpin' : 'Pin'}
+                      </Button>
+                      <Button size="sm" variant="outline" disabled={busyId === post.id} onClick={() => archive(post)}>
+                        Archive
+                      </Button>
+                    </div>
+                  )}
                 </div>
               )}
             </li>

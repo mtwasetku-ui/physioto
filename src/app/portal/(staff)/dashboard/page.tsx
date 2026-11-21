@@ -9,10 +9,18 @@ export const dynamic = 'force-dynamic'
 
 // Staff Dashboard: notices from admin. Auth is enforced by middleware; this
 // page only decides what to show. Local database only — no Cliniko calls.
-export default async function DashboardPage() {
+// ?post=<id> (from the strip above the calendar) opens and highlights that
+// notice. It's only used to pick which strip to open, never to query.
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams?: { post?: string | string[] }
+}) {
   const session = await getServerSession(authOptions)
   const email = session?.user?.email ?? ''
   const isAdmin = isAdminEmail(email)
+  const rawFocus = Array.isArray(searchParams?.post) ? searchParams?.post[0] : searchParams?.post
+  const focusId = rawFocus && /^\d{1,18}$/.test(rawFocus) ? rawFocus : null
 
   let posts: DashboardPostRow[] = []
   let loadError = false
@@ -39,6 +47,7 @@ export default async function DashboardPage() {
       currentEmail={email.toLowerCase()}
       isAdmin={isAdmin}
       loadError={loadError}
+      focusId={focusId}
     />
   )
 }
